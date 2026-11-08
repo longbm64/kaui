@@ -1,3 +1,20 @@
+- [x] Đồng bộ active sidebar button với URL hash khi load, click, hashchange và scroll.
+- [x] Dark theme: làm đậm nền button menu sidebar active để tăng độ tương phản.
+- [x] Dark theme: đồng bộ nền hover menu sidebar với nền active để trạng thái tương tác rõ ràng.
+- [x] Dark theme: đổi nền row table khi hover sang primary-900 để tránh nền sáng chói và tăng tương phản.
+- [x] Fix Dark theme table hover: override trực tiếp `tr:hover` và cell hover để loại bỏ nền primary-50 trắng chói, kể cả frozen cell.
+
+
+
+
+
+
+
+
+- [x] Thêm link GitHub thật (`https://github.com/longbm64/kaui`) vào sidebar footer và cập nhật link GitHub cuối trang, mở tab mới an toàn.
+
+- [x] Đổi nền nút mũi tên scroll từ trắng tinh sang trắng khói để giảm độ chói.
+
 - [x] Căn cụm mũi tên scroll ở center-right, sắp xếp theo chiều dọc trên-dưới.
 
 - [x] Ẩn hoàn toàn scrollbar native của sidebar nhưng giữ wheel/touch/keyboard scrolling.
@@ -186,4 +203,17 @@
 
 - [x] Khắc phục click Copy trên color swatch: bind `[data-copy-color]` vào clipboard helper, hiển thị `Copied!` và khôi phục label sau timeout.
 - [x] Xóa hiệu ứng hover của color swatch và nút Copy mã màu, giữ trạng thái copied/focus cần thiết.
+
+
+## Chart Component
+
+## Chart demo copy actions
+- [x] Thêm `Copy code` riêng cho Chart section, Line, Bar, Donut và Realtime demo.
+- [x] Thêm snippet tương ứng vào `componentSnippets` và kiểm tra clipboard contract.
+
+- [x] Thiết kế chart hybrid không dùng thư viện ngoài: native SVG + opt-in CSS/JS bundle.
+- [x] Implement line, bar, donut renderer và API add/update/delete series/data.
+- [x] Implement realtime `push`/`pushBatch`, RAF batching, sliding window, backpressure và pause/resume.
+- [x] Thêm demo Charts với realtime traffic, bar chart, donut chart và controls.
+- [x] Build chart artifacts, cập nhật test contract và chạy test suite.
 

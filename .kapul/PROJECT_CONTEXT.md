@@ -80,6 +80,10 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Sidebar scroll contract: `.demo-sidebar__body` keeps `overflow-y: auto` and independent scrolling, hides native scrollbars across Firefox/WebKit/Edge, and exposes `.demo-sidebar__scroll-controls` overlay arrows on hover/focus. Up/down buttons reflect top/middle/bottom scroll state and scroll by viewport-sized steps.
 - Scroll control alignment: `.demo-sidebar__scroll-controls` is vertically centered and right-aligned within the sidebar body, with the up button above the down button.
 
+- Scroll button surface tone: `.demo-sidebar__scroll-button` uses a subtle smoky white background (`var(--k-color-surface-subtle, #f8fafc)`) with a slightly softened border to prevent high-glare contrast against light sidebar text.
+- GitHub link contract: the demo sidebar footer and page footer link to `https://github.com/longbm64/kaui`, use the Lucide GitHub icon in the sidebar, and open external links in a new tab with `rel="noopener noreferrer"`.
+
+
 
 
 
@@ -147,5 +151,21 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 - Color palette demo contract: `.demo-swatch-meta` and `.demo-color-copy` are grouped in `.demo-swatch-meta-row` on one line to keep swatches compact.
-- Color copy button contract: `.demo-color-copy` follows `.demo-copy-button` visual styling and uses `.demo-copy-label` for consistent copied-state behavior.
+- Sidebar active sync: `.demo-sidebar__link.is-active` tracks `window.location.hash`, updates on `hashchange`, and tracks active sections during vertical scroll.
+- Dark theme sidebar active: `.demo-sidebar__link.is-active` dùng nền primary-900 (`#1e3a8a` fallback) để nổi bật trên nền sidebar tối; light theme giữ nguyên primary-50.
+- Dark theme sidebar hover: `.demo-sidebar__link:hover` dùng cùng nền primary-900 như trạng thái active để feedback tương tác nhất quán.
+- Dark theme table hover: `.k-table` remap `--k-table-hover-bg` sang primary-900 (`#1e3a8a` fallback), giữ row hover rõ nhưng không bị nền sáng chói.
+- Dark theme table hover fix: override trực tiếp `.k-table.k-table--hover tbody tr:hover` và các `td` con bằng primary-900 để thắng specificity của rule component và xử lý cả frozen cell.
 
+
+
+
+
+
+## Chart Component (opt-in)
+- Chart is isolated from the core bundle: `src/scss/kaui-chart.scss` builds `dist/kaui-chart.css` and `dist/kaui-chart.min.css`; `src/js/kaui-chart.js` builds `dist/kaui-chart.js` and `dist/kaui-chart.min.js`.
+- Native SVG, zero external chart dependencies. Public API starts with `KauiChart.create(target, options)` / `KauiChart.mount(target, options)`.
+- Supported types: `line`, `bar`, `donut`. Instance API: `push`, `pushBatch`, `appendData`, `addSeries`, `updateSeries`, `removeSeries`, `updatePoint`, `removeData`, `clear`, `pause`, `resume`, `destroy`.
+- Realtime contract: updates are batched with `requestAnimationFrame`; `maxPoints`, `window`, `maxPending`, and automatic pause on hidden documents are supported.
+
+- Chart demo contract: `#charts` exposes copy buttons with keys `charts`, `chart-line`, `chart-bar`, `chart-donut`, and `chart-realtime`; snippets live in `componentSnippets` in `demo/demo.js` and use the opt-in `kaui-chart` bundle/API.

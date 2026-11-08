@@ -21,6 +21,8 @@ const DIST_MIN_CSS = path.resolve('dist/kaui.min.css');
 const DIST_CSS_MAP = path.resolve('dist/kaui.css.map');
 const DIST_MIN_MAP = path.resolve('dist/kaui.min.css.map');
 const DEMO_HTML = path.resolve('demo/index.html');
+const CHART_CSS = path.resolve('dist/kaui-chart.css');
+
 const SCSS_ENTRY = path.resolve('src/scss/kaui.scss');
 const PKG_JSON = path.resolve('package.json');
 
@@ -1514,7 +1516,7 @@ describe('Tier 4: Real-World Application Scenarios & Demo Audit', () => {
     // Verify zero orphaned or misspelled classes
     const missing = [];
     for (const cls of usedKitClasses) {
-      if (!cssContent.includes(`.${cls}`)) {
+      if (!cssContent.includes(`.${cls}`) && !(fs.existsSync(CHART_CSS) && fs.readFileSync(CHART_CSS, 'utf8').includes(`.${cls}`))) {
         missing.push(cls);
       }
     }

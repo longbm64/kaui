@@ -1674,6 +1674,11 @@ hr {
   text-align: center;
 }
 
+[data-theme=dark] .k-table.k-table--hover tbody tr:hover,
+[data-theme=dark] .k-table.k-table--hover tbody tr:hover > td {
+  background-color: var(--k-color-primary-900, #1e3a8a);
+}
+
 .k-m-0 {
   margin: var(--k-spacing-0) !important;
 }

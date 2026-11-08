@@ -457,6 +457,10 @@
 .demo-sidebar__link:hover, .demo-sidebar__link.is-active { color: var(--k-primary, #2563eb); background: var(--k-color-primary-50, #eff6ff); }
 .demo-sidebar__footer { flex: 0 0 auto; display: flex; flex-direction: column; gap: .75rem; padding: .75rem 1rem 1.5rem; border-top: 1px solid var(--k-border, #e2e8f0); }
 .demo-sidebar__footer .k-btn { width: 100%; justify-content: center; }
+.demo-sidebar__github { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; width: 100%; padding: .55rem .75rem; border: 1px solid var(--k-border, #e2e8f0); border-radius: var(--k-radius-md, .375rem); color: var(--k-text-muted, #64748b); font-size: .875rem; font-weight: var(--k-weight-semibold, 600); text-decoration: none; transition: background-color .15s, border-color .15s, color .15s; }
+.demo-sidebar__github:hover, .demo-sidebar__github:focus-visible { border-color: var(--k-primary, #2563eb); background: var(--k-color-primary-50, #eff6ff); color: var(--k-primary, #2563eb); outline: none; }
+.demo-sidebar__github [data-lucide], .demo-sidebar__github .lucide { width: 1rem; height: 1rem; }
+
 .demo-page { margin-left: 15.5rem; min-width: 0; }
 .demo-sidebar-toggle { display: none; }
 /* .k-navbar showcased as inline component */
@@ -484,7 +488,7 @@ html { scroll-behavior: smooth; }
 
 
 .demo-sidebar:hover .demo-sidebar__scroll-controls, .demo-sidebar:focus-within .demo-sidebar__scroll-controls, .demo-sidebar__scroll-controls:focus-within { opacity: 1; }
-.demo-sidebar__scroll-button { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; padding: 0; border: 1px solid var(--k-border, #e2e8f0); border-radius: 999px; background: var(--k-color-surface, #fff); color: var(--k-text-muted, #64748b); box-shadow: var(--k-shadow-sm, 0 1px 2px rgba(15,23,42,.08)); cursor: pointer; pointer-events: auto; }
+.demo-sidebar__scroll-button { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; padding: 0; border: 1px solid var(--k-border, #e2e8f0); border-radius: 999px; background: var(--k-color-surface-subtle, #f8fafc); color: var(--k-text-muted, #64748b); box-shadow: var(--k-shadow-sm, 0 1px 2px rgba(15,23,42,.08)); cursor: pointer; pointer-events: auto; }
 .demo-sidebar__scroll-button:hover, .demo-sidebar__scroll-button:focus-visible { background: var(--k-primary, #2563eb); border-color: var(--k-primary, #2563eb); color: #fff; outline: none; }
 .demo-sidebar__scroll-button[hidden] { display: none; }
 
@@ -544,6 +548,10 @@ html { scroll-behavior: smooth; }
 [data-theme="dark"] .demo-copy-button:hover {
   color: var(--k-color-primary-300, #93c5fd);
 }
+[data-theme="dark"] .demo-sidebar__link.is-active { background-color: var(--k-color-primary-900, #1e3a8a); }
+[data-theme="dark"] .demo-sidebar__link:hover { background-color: var(--k-color-primary-900, #1e3a8a); }
+
+
 
 /* The showcase card is a static example: keep the card contract, disable lift on hover here. */
 .demo-page .k-card--interactive:hover {
@@ -570,6 +578,19 @@ html { scroll-behavior: smooth; }
 .demo-sidebar__brand small {
   color: #475569;
   font-weight: 600;
+}
+
+/* Chart examples use equal-height cards across the responsive grid. */
+#charts .k-grid { align-items: stretch; }
+#charts .k-grid > [class*="k-col-"] { display: flex; }
+#charts .k-grid > [class*="k-col-"] > .k-card { width: 100%; min-height: 30rem; display: flex; flex-direction: column; }
+#charts .k-grid > [class*="k-col-"] > .k-card > .k-chart { flex: 1 1 auto; min-height: 20rem; }
+#charts .k-grid > [class*="k-col-"] > .k-card > .k-chart.k-chart--sm { --k-chart-height: 20rem; }
+
+@media (max-width: 767px) {
+  #charts .k-grid > [class*="k-col-"] > .k-card { min-height: 0; }
+  #charts .k-grid > [class*="k-col-"] > .k-card > .k-chart,
+  #charts .k-grid > [class*="k-col-"] > .k-card > .k-chart.k-chart--sm { min-height: 0; }
 }
 .demo-section-desc {
   color: #334155;

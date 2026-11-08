@@ -572,14 +572,55 @@
         var open = sidebar.classList.toggle('is-open');
         sidebarToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
+      // Keep sidebar state synchronized with the URL hash and the section in view.
+      function setActiveSidebarHash(hash) {
+        var target = hash || '#hero';
+        var matched = false;
+        sidebarLinks.forEach(function (item) {
+          var active = item.getAttribute('href') === target;
+          item.classList.toggle('is-active', active);
+          if (active) matched = true;
+        });
+        if (!matched && !hash) {
+          var overview = sidebar.querySelector('a[href="#hero"]');
+          if (overview) overview.classList.add('is-active');
+        }
+      }
+
+      function updateActiveSection() {
+        var sections = [];
+        sidebarLinks.forEach(function (item) {
+          var href = item.getAttribute('href') || '';
+          if (href.charAt(0) !== '#') return;
+          var section = document.getElementById(href.slice(1));
+          if (section) sections.push({ section: section, hash: href });
+        });
+        var threshold = window.innerHeight * 0.35;
+        var current = sections[0];
+        sections.forEach(function (entry) {
+          if (entry.section.getBoundingClientRect().top <= threshold) current = entry;
+        });
+        if (current) setActiveSidebarHash(current.hash);
+      }
+
+      setActiveSidebarHash(window.location.hash);
+      window.addEventListener('hashchange', function () {
+        setActiveSidebarHash(window.location.hash);
+        window.setTimeout(updateActiveSection, 0);
+      });
+      window.addEventListener('scroll', updateActiveSection, { passive: true });
+      if (!window.location.hash) updateActiveSection();
+
+
       sidebarLinks.forEach(function (link) {
         link.addEventListener('click', function () {
-          sidebarLinks.forEach(function (item) { item.classList.remove('is-active'); });
-          link.classList.add('is-active');
           sidebar.classList.remove('is-open');
           sidebarToggle.setAttribute('aria-expanded', 'false');
         });
       });
+
+
+
 
     // Hide the native scrollbar while preserving wheel, touch, keyboard, and button scrolling.
     var sidebarBody = document.querySelector('.demo-sidebar__body');
@@ -746,7 +787,11 @@
       cards: '<div class="k-card">\n  <div class="k-card__header"><span class="k-card__icon"><i data-lucide="layers"></i></span>Card Header</div>\n  <div class="k-card__body">Card content</div>\n</div>',
       badges: '<span class="k-badge k-badge--success k-badge--pill">Completed</span>',
       alerts: '<div class="k-alert k-alert--success">\n  <strong class="k-alert__title">Success</strong>\n  <div class="k-alert__body">Operation completed.</div>\n</div>',
-      table: '<div class="k-table-wrap">\n  <table class="k-table k-table--striped k-table--hover">\n    <thead><tr><th scope="col">Project</th><th scope="col">Status</th></tr></thead>\n    <tbody><tr><th scope="row">KAUI Dashboard</th><td><span class="k-badge k-badge--success">Active</span></td></tr></tbody>\n  </table>\n</div>'
+      charts: '<link rel="stylesheet" href="dist/kaui-chart.min.css">\n<script src="dist/kaui-chart.min.js"></script>\n\n<div id="revenue-chart" class="k-chart" data-k-chart="line" aria-label="Revenue trend"></div>\n\n<script>\n  KauiChart.create("#revenue-chart", {\n    type: "line",\n    labels: ["Jan", "Feb", "Mar", "Apr"],\n    datasets: [{ id: "revenue", label: "Revenue", data: [42, 58, 51, 74] }]\n  });\n</script>',
+      'chart-line': '<div id="revenue-chart" class="k-chart" data-k-chart="line" aria-label="Revenue trend"></div>\n<script>\nKauiChart.create("#revenue-chart", { type: "line", labels: ["Jan", "Feb", "Mar"], datasets: [{ id: "revenue", label: "Revenue", data: [42, 58, 51] }] });\n</script>',
+      'chart-bar': '<div id="sales-chart" class="k-chart k-chart--sm" data-k-chart="bar" aria-label="Quarterly sales"></div>\n<script>\nKauiChart.create("#sales-chart", { type: "bar", labels: ["Q1", "Q2", "Q3", "Q4"], datasets: [{ id: "sales", label: "Sales", data: [42, 68, 54, 82] }] });\n</script>',
+      'chart-donut': '<div id="status-chart" class="k-chart k-chart--sm k-chart--donut" data-k-chart="donut" aria-label="Project status"></div>\n<script>\nKauiChart.create("#status-chart", { type: "donut", labels: ["Done", "Review", "Todo"], datasets: [{ id: "status", label: "Status", data: [58, 24, 18] }] });\n</script>',
+      'chart-realtime': '<div id="traffic-chart" class="k-chart" data-k-chart="line" aria-label="Realtime traffic"></div>\n<script>\nconst chart = KauiChart.create("#traffic-chart", { type: "line", maxPoints: 60, datasets: [{ id: "requests", label: "Requests", data: [] }] });\nsetInterval(() => chart.push({ time: Date.now(), values: { requests: Math.round(Math.random() * 100) } }), 1000);\n</script>',
 
     };
 
@@ -805,6 +850,31 @@
           });
         });
       });
+    }
+
+
+    // Dependency-free chart showcase: realtime push + static SVG examples.
+    if (window.KauiChart) {
+      var line = window.KauiChart.create('#demo-line-chart', { type: 'line', labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ id: 'revenue', label: 'Revenue', color: 'var(--k-chart-1)', data: [42, 58, 51, 74, 68, 88] }, { id: 'orders', label: 'Orders', color: 'var(--k-chart-3)', data: [28, 36, 44, 40, 56, 63] }] });
+      var bar = window.KauiChart.create('#demo-bar-chart', { type: 'bar', labels: ['Q1', 'Q2', 'Q3', 'Q4'], datasets: [{ id: 'sales', label: 'Sales', color: 'var(--k-chart-1)', data: [42, 68, 54, 82] }, { id: 'target', label: 'Target', color: 'var(--k-chart-2)', data: [55, 60, 65, 70] }] });
+      var donut = window.KauiChart.create('#demo-donut-chart', { type: 'donut', labels: ['Done', 'Review', 'Todo'], datasets: [{ id: 'status', label: 'Status', data: [58, 24, 18] }] });
+      var realtime = window.KauiChart.create('#demo-realtime-chart', {
+        type: 'line', maxPoints: 24, pauseWhenHidden: true,
+        labels: [], datasets: [{ id: 'requests', label: 'Requests', color: 'var(--k-chart-1)', data: [] }, { id: 'errors', label: 'Errors', color: 'var(--k-chart-2)', data: [] }]
+      });
+      var tick = 0, streamActive = true, stream = setInterval(function () {
+        if (!streamActive) return;
+        tick += 1;
+        realtime.push({ time: Date.now(), values: { requests: 45 + Math.round(Math.random() * 40), errors: 4 + Math.round(Math.random() * 12) } });
+      }, 700);
+      var toggle = document.querySelector('[data-chart-toggle]'), clear = document.querySelector('[data-chart-clear]');
+      if (toggle) toggle.addEventListener('click', function () {
+        streamActive = !streamActive;
+        if (streamActive) { realtime.resume(); toggle.textContent = 'Pause'; }
+        else { realtime.pause(); toggle.textContent = 'Resume'; }
+      });
+      if (clear) clear.addEventListener('click', function () { realtime.clear(); });
+      window.addEventListener('beforeunload', function () { clearInterval(stream); realtime.destroy(); line.destroy(); bar.destroy(); donut.destroy(); });
     }
 
     }
