@@ -36,6 +36,8 @@
         <a href="#layout" class="demo-sidebar__link"><i data-lucide="layout-grid"></i> <span>Layout &amp; Grid</span></a>
         <a href="#buttons" class="demo-sidebar__link"><i data-lucide="square-mouse-pointer"></i> <span>Buttons</span></a>
         <a href="#forms" class="demo-sidebar__link"><i data-lucide="file-text"></i> <span>Forms</span></a>
+        <a href="versions.html" class="demo-sidebar__link"><i data-lucide="history"></i> <span>Versions</span></a>
+
 <a href="#charts" class="demo-sidebar__link"><i data-lucide="chart-no-axes-combined"></i> <span>Charts</span></a>
 
         <a href="#cards" class="demo-sidebar__link"><i data-lucide="layers"></i> <span>Cards</span></a>
@@ -71,8 +73,42 @@
           </p>
           <div class="demo-hero-actions">
             <a href="#components" class="k-btn k-btn--primary k-btn--lg">Explore Components</a>
-            <a href="#tokens" class="k-btn k-btn--outline k-btn--lg">View Design Tokens</a>
+              <a href="versions.html" class="k-btn k-btn--outline k-btn--lg"><i data-lucide="history"></i><span class="k-btn__text">Version Registry</span></a>
+
             
+          </div>
+
+
+          <!-- Agent Prompt Box -->
+          <div class="k-card k-card--bordered k-p-5 k-mt-6" style="max-width: 780px; margin-left: auto; margin-right: auto; text-align: left;">
+            <div class="k-flex k-items-center k-justify-between k-mb-2">
+              <span class="k-fs-sm k-fw-semibold k-text-main k-flex k-items-center k-gap-2">
+                <i data-lucide="bot"></i> AI Agent Design Prompt
+              </span>
+              <button type="button" class="demo-copy-button" data-copy-component="agent-prompt">
+                <span class="demo-copy-label">Copy prompt</span>
+              </button>
+            </div>
+            <div class="k-fs-xs k-text-muted k-mb-3" data-agent-manifest-description>
+              <strong>MANDATORY: First access https://longbm64.github.io/kaui/demo/ and inspect the live demo source/examples.</strong> If web access is unavailable, read the latest versioned manifest URL shown below. The page automatically resolves the latest release from <code>dist/versions/index.json</code>:
+            </div>
+            <pre class="demo-code k-p-3" id="agent-prompt-code" style="margin: 0; white-space: pre-wrap; font-size: 0.8125rem; line-height: 1.55; background: var(--k-color-surface-subtle); border: 1px solid var(--k-border); border-radius: var(--k-radius-md); max-height: 14rem; overflow-y: auto;"><code>You are a frontend developer building modern UI with the KAUI CSS Kit.
+
+MANDATORY FIRST STEP: You must build frontend UI exclusively with the KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Before writing code, read the latest manifest from https://longbm64.github.io/kaui/dist/versions/index.json, take its latest version, then access https://longbm64.github.io/kaui/dist/versions/{latest}/kaui-agent-manifest.json. Inspect the manifest contracts, classes, tokens, and the live demo at https://longbm64.github.io/kaui/demo/ then copy the closest existing KAUI markup pattern. If the live demo is unavailable, the latest manifest is the authoritative source. Custom CSS is strictly forbidden unless explicitly documented as unsupported in the manifest.
+
+Always follow these design &amp; code rules:
+
+1. Stylesheet: Include &lt;link rel="stylesheet" href="dist/kaui.min.css"&gt; (single bundle for core and extended UI). For charts, optionally link dist/kaui-chart.min.css and dist/kaui-chart.min.js.
+2. Naming &amp; Prefix: Every CSS class uses the .k- prefix with strict BEM (.k-block__element--modifier) and state classes (.is-valid, .is-invalid, .is-active, .is-disabled, .is-open).
+3. Layout &amp; Grid: Use .k-container / .k-container--fluid. Build responsive layouts with .k-grid and column spans .k-col-12, .k-col-md-6, .k-col-lg-4, etc. Use .k-gap-{0..16} and flexbox utilities (.k-flex, .k-items-center, .k-justify-between).
+4. Core Components:
+   - Buttons: .k-btn, variants .k-btn--primary, --secondary, --outline, --success, --danger, --warning; sizes .k-btn--sm, .k-btn--lg, .k-btn--block; loading state .k-btn--loading / .is-loading with .k-btn__loader, .k-btn__icon, and .k-btn__text.
+   - Forms: .k-form-group, .k-form-label, .k-input, .k-select, .k-textarea, .k-form-hint, .k-form-feedback. For icon inputs use .k-input-wrapper with .k-input__icon--left or --right.
+   - Cards: .k-card with optional .k-card__header, .k-card__title, .k-card__icon, .k-card__body, .k-card__footer, and modifiers .k-card--bordered, .k-card--interactive.
+   - Badges &amp; Alerts: .k-badge (.k-badge--pill), .k-alert with .k-alert__close.
+   - Extended: .k-modal, .k-confirm, .k-toast, .k-tabs, .k-accordion, .k-table.
+5. Design Tokens &amp; Themes: Never hardcode ad-hoc colors. Use CSS custom properties: var(--k-primary), var(--k-color-surface), var(--k-color-border), var(--k-spacing-*), var(--k-radius-*). Support native dark theme with [data-theme="dark"].
+6. Zero Runtime Overhead: Do not add external UI libraries. Keep HTML clean and accessible with aria-* attributes.</code></pre>
           </div>
 
         </div>

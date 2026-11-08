@@ -337,6 +337,25 @@
 @media (max-width: 580px) {
   .demo-hero-actions {
     grid-template-columns: 1fr;
+/* Version registry tree */
+.demo-version-tree { display: grid; gap: .5rem; }
+.demo-version-tree__item { position: relative; }
+.demo-version-tree__summary { display: flex; align-items: center; gap: .65rem; width: 100%; padding: .85rem 1rem; border: 1px solid var(--k-border, #e2e8f0); border-radius: var(--k-radius-md, .375rem); background: var(--k-color-surface, #fff); color: var(--k-text, #0f172a); cursor: pointer; list-style: none; }
+.demo-version-tree__summary::-webkit-details-marker { display: none; }
+.demo-version-tree__summary::before { content: '▸'; color: var(--k-primary, #2563eb); font-size: 1rem; transition: transform .15s ease; }
+.demo-version-tree__item[open] > .demo-version-tree__summary::before { transform: rotate(90deg); }
+.demo-version-tree__version { font-weight: var(--k-weight-semibold, 600); }
+.demo-version-tree__meta { margin-left: auto; color: var(--k-text-muted, #64748b); font-size: .8rem; }
+.demo-version-tree__children { position: relative; display: grid; gap: .35rem; margin: .35rem 0 .5rem 1.9rem; padding-left: 1.1rem; }
+.demo-version-tree__children::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; border-left: 1px solid var(--k-border, #cbd5e1); }
+.demo-version-tree__file { position: relative; display: flex; align-items: center; gap: .5rem; min-height: 2rem; padding: .35rem .6rem; color: var(--k-text-muted, #475569); font: .85rem var(--k-font-mono, monospace); text-decoration: none; }
+.demo-version-tree__file::before { content: ''; position: absolute; left: -1.1rem; width: .85rem; border-top: 1px solid var(--k-border, #cbd5e1); }
+.demo-version-tree__file:hover { color: var(--k-primary, #2563eb); background: var(--k-color-primary-50, #eff6ff); border-radius: var(--k-radius-sm, .25rem); }
+.demo-version-tree__file .lucide { width: 1rem; height: 1rem; }
+[data-theme="dark"] .demo-version-tree__summary { background: var(--k-color-surface-subtle, #1e293b); }
+@media (max-width: 600px) { .demo-version-tree__meta { display: none; } .demo-version-tree__children { margin-left: 1.25rem; } }
+
+
   }
 }
 

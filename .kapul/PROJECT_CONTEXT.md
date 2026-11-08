@@ -28,7 +28,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - `.k-input`, `.k-select`, `.k-textarea`: block control, width 100%, border 1px, focus đổi `border-color`.
 - `.k-checkbox`, `.k-radio`: custom control với `:checked` và `:focus-visible`.
 - `.k-form-group`, `.k-form-label`, `.k-form-hint`, `.k-form-feedback`: layout và thông báo validation.
-- Build contract: `npm run build` tạo `dist/kaui.css` và `dist/kaui.min.css`.
+- Version contract: canonical version is `package.json`; `npm run release:patch|minor|major` bumps version and archives immutable artifacts under `dist/versions/<version>/`. `dist/versions/index.json` tracks latest/version history; unversioned `dist/*` remains the compatibility alias.
 - Table contract: `src/scss/components/_table.scss` xuất `.k-table-wrap`, `.k-table`, `.k-table th/td`, `.k-table--striped`, `.k-table--hover`, `.k-table--bordered`, `.k-table--sm`, `.k-table--responsive`, `.k-table--frozen`, `.k-table__actions`, `.k-table__empty`, `.k-table__toolbar`, `.k-table__search`, và `.k-table__sort`. Partial được forward từ `components/_index.scss`; extended bundle không còn định nghĩa trùng trong `extended/_data_shell.scss`.
 - Table options contract: root `[data-k-table]` nhận `data-k-searchable="true"`, `data-k-sortable="true"`, `data-k-sort-columns="0,3"`, và `data-k-freeze="1"`. Search input là `[data-k-table-search]`; thuật toán giống dropdown: chuẩn hóa Unicode/không dấu, tách từ khóa bằng khoảng trắng và chỉ giữ row chứa đủ mọi từ khóa. Sort chỉ gắn button cho các chỉ số cột được chỉ định; giá trị số dùng `data-k-sort-value`. Freeze làm sticky `--k-table-freeze-count` cột đầu tiên.
 
@@ -151,7 +151,11 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 - Color palette demo contract: `.demo-swatch-meta` and `.demo-color-copy` are grouped in `.demo-swatch-meta-row` on one line to keep swatches compact.
-- Sidebar active sync: `.demo-sidebar__link.is-active` tracks `window.location.hash`, updates on `hashchange`, and tracks active sections during vertical scroll.
+- Prompt latest-version contract: the Overview prompt reads `dist/versions/index.json` at runtime and replaces the manifest URL with the registry's `latest` version; release does not require hardcoding a new version in the prompt.
+- Version Registry tree view: `demo/versions.html` renders release versions as an interactive directory tree (`.demo-version-tree`), defaulting the latest version to open with direct artifact and metadata links.
+
+
+- Agent prompt contract: explicitly instructs the agent to access and inspect `https://longbm64.github.io/kaui/demo/` before writing code, then copy the closest existing markup pattern instead of inventing a new structure.
 - Dark theme sidebar active: `.demo-sidebar__link.is-active` dùng nền primary-900 (`#1e3a8a` fallback) để nổi bật trên nền sidebar tối; light theme giữ nguyên primary-50.
 - Dark theme sidebar hover: `.demo-sidebar__link:hover` dùng cùng nền primary-900 như trạng thái active để feedback tương tác nhất quán.
 - Dark theme table hover: `.k-table` remap `--k-table-hover-bg` sang primary-900 (`#1e3a8a` fallback), giữ row hover rõ nhưng không bị nền sáng chói.

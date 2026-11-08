@@ -1,0 +1,21 @@
+{
+  "latest": "1.0.0",
+  "versions": {
+    "1.0.0": {
+      "version": "1.0.0",
+      "builtAt": "2026-11-08T05:48:14.835Z",
+      "directory": "dist/versions/1.0.0",
+      "files": [
+        "kaui.css",
+        "kaui.css.map",
+        "kaui.min.css",
+        "kaui.min.css.map",
+        "kaui-chart.css",
+        "kaui-chart.js",
+        "kaui-chart.min.css",
+        "kaui-chart.min.js",
+        "kaui-agent-manifest.json"
+      ]
+    }
+  }
+}

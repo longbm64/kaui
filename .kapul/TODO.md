@@ -1,3 +1,17 @@
+- [x] Chuyển Version Archives sang tree view theo version và artifact, có expand/collapse, Latest badge và link metadata.
+
+- [x] Prompt Overview tự đọc `dist/versions/index.json` để luôn dùng manifest version mới nhất.
+
+- [x] Tạo trang `demo/versions.html` và gắn link từ sidebar/hero của `demo/index.html`.
+
+- [x] Versioning: define release commands and immutable versioned build archives under `dist/versions/<version>/`.
+
+- [x] Thu gọn agent documentation còn một manifest canonical theo version tại `dist/versions/<version>/kaui-agent-manifest.json`; release tự copy và cập nhật URL manifest.
+
+- [x] Thêm prompt copyable trong Overview để AI agent sử dụng đúng KAUI CSS kit khi thiết kế frontend.
+- [x] Thêm link live demo GitHub Pages vào Overview và Agent Prompt để tham khảo code mẫu trực tiếp.
+
+
 - [x] Đồng bộ active sidebar button với URL hash khi load, click, hashchange và scroll.
 - [x] Dark theme: làm đậm nền button menu sidebar active để tăng độ tương phản.
 - [x] Dark theme: đồng bộ nền hover menu sidebar với nền active để trạng thái tương tác rõ ràng.

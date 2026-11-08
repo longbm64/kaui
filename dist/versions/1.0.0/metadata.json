@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "builtAt": "2026-11-08T05:48:14.835Z",
+  "files": {
+    "kaui.css": {
+      "bytes": 70600,
+      "sha256": "e6257d51311e36360978e0f90bdf08cbf74fb3782d749ef9bd0151380504ec95"
+    },
+    "kaui.css.map": {
+      "bytes": 14786,
+      "sha256": "baf72081fe4ebff79aaf698c256af814ee01c4bd8edc88670a44ff83ef8b501c"
+    },
+    "kaui.min.css": {
+      "bytes": 59695,
+      "sha256": "b5dc536a34c19d8c46dad72f5b5cfe6cbbf2eaff965890dfc201b6bade700d25"
+    },
+    "kaui.min.css.map": {
+      "bytes": 10718,
+      "sha256": "99dfe58d45b5eb58eeebc5ef25445b90cb461fa5640196f2274f265f23f9e878"
+    },
+    "kaui-chart.css": {
+      "bytes": 3470,
+      "sha256": "58e16705a3a602290c646ddee6c7b6ae7949c8a6f77317785e191c4dca5c9585"
+    },
+    "kaui-chart.js": {
+      "bytes": 11333,
+      "sha256": "ad873d2b192fb4fa41d89df3e26902723ae06a27ce2b8fb1ec0522e75ce3ac82"
+    },
+    "kaui-chart.min.css": {
+      "bytes": 2906,
+      "sha256": "a646fbaf7eeacd96b97f35fe37da9aeb107c8a1caa6c023802de344105033451"
+    },
+    "kaui-chart.min.js": {
+      "bytes": 11333,
+      "sha256": "ad873d2b192fb4fa41d89df3e26902723ae06a27ce2b8fb1ec0522e75ce3ac82"
+    },
+    "kaui-agent-manifest.json": {
+      "bytes": 5525,
+      "sha256": "e70f1470c61f76ee00e657ae0e9ddbd0739c2624182314dbcef223b8d8ae0ddd"
+    }
+  }
+}

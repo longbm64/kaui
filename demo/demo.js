@@ -83,6 +83,7 @@
         function updateDisplay() {
           if (!valueDisplay) return;
           if (!multiple) return;
+
           var selectedItems = container.querySelectorAll('.k-dropdown__item.is-selected');
           var labels = [];
           selectedItems.forEach(function (i) {
@@ -772,6 +773,7 @@
 
 
 
+    var latestManifestUrl = 'https://longbm64.github.io/kaui/dist/versions/{latest}/kaui-agent-manifest.json';
     // Component HTML copy actions
     var componentSnippets = {
       layout: '<div class="k-container">\n  <div class="k-grid k-gap-4">\n    <div class="k-col-12 k-col-md-6 k-col-lg-4">Content</div>\n  </div>\n</div>',
@@ -794,6 +796,14 @@
       'chart-realtime': '<div id="traffic-chart" class="k-chart" data-k-chart="line" aria-label="Realtime traffic"></div>\n<script>\nconst chart = KauiChart.create("#traffic-chart", { type: "line", maxPoints: 60, datasets: [{ id: "requests", label: "Requests", data: [] }] });\nsetInterval(() => chart.push({ time: Date.now(), values: { requests: Math.round(Math.random() * 100) } }), 1000);\n</script>',
 
     };
+
+    fetch('https://longbm64.github.io/kaui/dist/versions/index.json').then(function (response) { return response.json(); }).then(function (registry) {
+      var latest = registry.latest;
+      latestManifestUrl = 'https://longbm64.github.io/kaui/dist/versions/' + latest + '/kaui-agent-manifest.json';
+      componentSnippets['agent-prompt'] = componentSnippets['agent-prompt'].replace('{latest}', latest);
+      var promptCode = document.querySelector('#agent-prompt-code code');
+      if (promptCode) promptCode.textContent = promptCode.textContent.replace('{latest}', latest);
+    }).catch(function () {});
 
     function copyText(text, done) {
       if (navigator.clipboard && navigator.clipboard.writeText) {

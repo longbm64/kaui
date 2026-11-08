@@ -403,7 +403,25 @@ Responsive navigation header with collapsible mobile drawer:
 
 ---
 
-## Living Styleguide Demo
+If live demo access is unavailable, use the single versioned agent manifest URL instead:
+
+```text
+https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-agent-manifest.json
+```
+
+The versioned manifest is the canonical machine-readable contract for AI agents. Update only the version segment when releasing a new version.
+
+
+`package.json` is the canonical version source. Use the release commands to bump the semantic version and archive immutable build artifacts:
+
+```bash
+npm run release:patch   # 1.0.0 -> 1.0.1
+npm run release:minor   # 1.0.0 -> 1.1.0
+npm run release:major   # 1.0.0 -> 2.0.0
+npm run build:versioned # build current version without bumping
+```
+
+Each release keeps the compatibility aliases in `dist/` and stores a versioned snapshot under `dist/versions/<version>/`. The registry is `dist/versions/index.json`, while each version includes `metadata.json` with build time, file sizes, and SHA-256 checksums.
 
 KAUI provides a living styleguide showcase located at `demo/index.html`.
 
