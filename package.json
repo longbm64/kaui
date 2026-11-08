@@ -1,0 +1,28 @@
+{
+  "name": "kaui",
+  "version": "1.0.0",
+  "description": "Production-ready modern SCSS/CSS kit with design tokens, responsive layout, and UI components",
+  "main": "dist/kaui.css",
+  "style": "dist/kaui.min.css",
+  "type": "module",
+  "scripts": {
+    "build:css:dev": "sass src/scss/kaui.scss dist/kaui.css --style=expanded --source-map",
+    "build:css:prod": "sass src/scss/kaui.scss dist/kaui.min.css --style=compressed --source-map",
+    "build": "npm run build:css:dev && npm run build:css:prod",
+    "watch": "sass --watch src/scss/kaui.scss:dist/kaui.css --style=expanded",
+    "serve:tailscale": "python3 -m http.server 4173 --bind 0.0.0.0 --directory .",
+    "test": "node --test test/kit.test.mjs"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "ui-kit",
+    "design-tokens",
+    "components"
+  ],
+  "author": "KAUI Contributors",
+  "license": "MIT"
+}

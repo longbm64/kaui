@@ -1,0 +1,98 @@
+// ==========================================================================
+// KAUI Root CSS Custom Properties & Dynamic Dark Theme
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+:root {
+  // Color Tokens
+  @each $name, $value in $colors {
+    --k-color-#{$name}: #{$value};
+  }
+
+  // Spacing Tokens
+  @each $name, $value in $spacing {
+    --k-spacing-#{$name}: #{$value};
+  }
+
+  // Typography Tokens
+  @each $name, $value in $typography {
+    --k-#{$name}: #{$value};
+  }
+
+  // Radii Tokens
+  @each $name, $value in $radii {
+    --k-radius-#{$name}: #{$value};
+  }
+
+  // Shadow Tokens
+  @each $name, $value in $shadows {
+    --k-shadow-#{$name}: #{$value};
+  }
+
+  // Z-Index Tokens
+  @each $name, $value in $z-indices {
+    --k-z-#{$name}: #{$value};
+  }
+
+  // Semantic Color & Theme Aliases
+  --k-primary: var(--k-color-primary-600);
+  --k-primary-hover: var(--k-color-primary-700);
+  --k-primary-light: var(--k-color-primary-50);
+  --k-secondary: var(--k-color-secondary-600);
+  --k-secondary-hover: var(--k-color-secondary-700);
+  --k-secondary-light: var(--k-color-secondary-50);
+
+  --k-amber: var(--k-color-amber-600);
+  --k-amber-hover: var(--k-color-amber-700);
+  --k-amber-light: var(--k-color-amber-50);
+  --k-brown: var(--k-color-brown-600);
+  --k-brown-hover: var(--k-color-brown-700);
+  --k-brown-light: var(--k-color-brown-50);
+
+
+  --k-success: var(--k-color-success-600);
+  --k-success-hover: var(--k-color-success-700);
+  --k-success-light: var(--k-color-success-50);
+
+  --k-warning: var(--k-color-warning-600);
+  --k-warning-hover: var(--k-color-warning-700);
+  --k-warning-light: var(--k-color-warning-50);
+
+  --k-error: var(--k-color-error-600);
+  --k-error-hover: var(--k-color-error-700);
+  --k-error-light: var(--k-color-error-50);
+
+  --k-info: var(--k-color-info-600);
+  --k-info-hover: var(--k-color-info-700);
+  --k-info-light: var(--k-color-info-50);
+
+  // Surface & Layout Aliases
+  --k-bg: var(--k-color-surface);
+  --k-text: var(--k-color-text-main);
+  --k-text-muted: var(--k-color-text-muted);
+  --k-border: var(--k-color-border);
+  --k-border-subtle: var(--k-color-border-subtle);
+  --k-transition-base: 0.15s ease-in-out;
+}
+
+// Dynamic Dark Theme Mapping
+[data-theme="dark"] {
+  --k-color-surface: #0f172a;
+  --k-color-surface-subtle: #1e293b;
+  --k-color-text-main: #f8fafc;
+  --k-color-text-muted: #94a3b8;
+  --k-color-border: #334155;
+  --k-color-border-subtle: #1e293b;
+
+  --k-bg: var(--k-color-surface);
+  --k-text: var(--k-color-text-main);
+  --k-text-muted: var(--k-color-text-muted);
+  --k-border: var(--k-color-border);
+  --k-border-subtle: var(--k-color-border-subtle);
+
+  --k-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --k-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  --k-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.6);
+  --k-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
+}

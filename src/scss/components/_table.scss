@@ -1,0 +1,164 @@
+// ==========================================================================
+// KAUI Components — Tables
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+.k-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--k-color-border);
+  border-radius: var(--k-radius-md);
+}
+
+.k-table {
+  --k-table-bg: var(--k-color-surface);
+  --k-table-color: var(--k-color-text-main);
+  --k-table-border: var(--k-color-border);
+  --k-table-header-bg: var(--k-color-surface-subtle);
+  --k-table-header-color: var(--k-text-muted);
+  --k-table-hover-bg: var(--k-color-primary-50);
+  --k-table-stripe-bg: var(--k-color-surface-subtle);
+
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: var(--k-table-color);
+  background-color: var(--k-table-bg);
+  caption-side: bottom;
+
+  th,
+  td {
+    padding: var(--k-spacing-3);
+    border-bottom: 1px solid var(--k-table-border);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    font-size: var(--k-size-sm);
+    font-weight: var(--k-weight-semibold);
+    color: var(--k-table-header-color);
+    background-color: var(--k-table-header-bg);
+  }
+
+  caption {
+    padding: var(--k-spacing-2) var(--k-spacing-3);
+    color: var(--k-text-muted);
+    font-size: var(--k-size-sm);
+    text-align: left;
+  }
+
+  &--striped tbody tr:nth-child(even) {
+    background-color: var(--k-table-stripe-bg);
+  }
+
+  &--hover tbody tr:hover {
+    background-color: var(--k-table-hover-bg);
+  }
+
+  &--bordered {
+    border: 1px solid var(--k-table-border);
+
+    th,
+    td {
+      border: 1px solid var(--k-table-border);
+    }
+  }
+
+  &--sm {
+
+    th,
+    td {
+      padding: var(--k-spacing-2);
+      font-size: var(--k-size-sm);
+    }
+  }
+
+  &--responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--k-spacing-3);
+    padding: var(--k-spacing-3);
+    border-bottom: 1px solid var(--k-table-border);
+    background-color: var(--k-table-bg);
+  }
+
+  &__search {
+    position: relative;
+    width: min(100%, 22rem);
+  }
+
+  &__search-icon {
+    position: absolute;
+    top: 50%;
+    left: var(--k-spacing-3);
+    display: inline-flex;
+    color: var(--k-text-muted);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  &__search-input {
+    padding-left: 2.5rem;
+  }
+
+  &__sort {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--k-spacing-1);
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
+  }
+
+  &__sort[aria-sort="ascending"] .k-table__sort-icon,
+  &__sort[aria-sort="descending"] .k-table__sort-icon { color: var(--k-primary); }
+
+  &--frozen-1 th:first-child,
+  &--frozen-1 td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: var(--k-table-bg);
+    box-shadow: 1px 0 0 var(--k-table-border);
+  }
+
+  &--frozen-1 thead th:first-child {
+    z-index: 2;
+    background-color: var(--k-table-header-bg);
+  }
+
+
+
+  /* Freeze count > 1 is progressively supported by runtime class modifiers. */
+
+  &--frozen-placeholder { display: table; }
+  
+
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--k-spacing-2);
+  }
+
+  &__empty {
+    padding: var(--k-spacing-6);
+    color: var(--k-text-muted);
+    text-align: center;
+  }
+}

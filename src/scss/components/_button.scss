@@ -1,0 +1,183 @@
+// ==========================================================================
+// KAUI Components — Buttons
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+.k-btn {
+  // Component-scoped CSS custom properties (default primary variant)
+  --k-btn-bg: var(--k-primary);
+  --k-btn-bg-hover: var(--k-primary-hover);
+  --k-btn-color: #ffffff;
+  --k-btn-border-color: transparent;
+  --k-btn-padding-y: var(--k-spacing-2);
+  --k-btn-padding-x: var(--k-spacing-4);
+  --k-btn-font-size: var(--k-size-base);
+  --k-btn-radius: var(--k-radius-md);
+
+  // Structural styles mapping to component-scoped variables
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--k-spacing-2);
+  min-height: 2.625rem;
+  padding: var(--k-btn-padding-y) var(--k-btn-padding-x);
+  font-family: inherit;
+  font-size: var(--k-btn-font-size);
+  font-weight: var(--k-weight-medium, 500);
+  line-height: var(--k-line-height-tight);
+  color: var(--k-btn-color);
+  background-color: var(--k-btn-bg);
+  border: 1px solid var(--k-btn-border-color);
+  border-radius: var(--k-btn-radius);
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  @include transition(all, var(--k-transition-base));
+
+  &:hover:not(:disabled):not(.is-disabled) {
+    background-color: var(--k-btn-bg-hover);
+  }
+
+  &:focus-visible {
+    @include focus-ring();
+  }
+
+  &:active:not(:disabled):not(.is-disabled) {
+    // Keep the button stationary when pressed; only its visual color state changes.
+    background-color: var(--k-btn-bg-hover);
+  }
+
+  &:disabled,
+  &[disabled],
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Loading State & Button Content Anatomy
+// --------------------------------------------------------------------------
+
+.k-btn__icon,
+.k-btn__loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.k-btn__icon {
+  line-height: 0;
+}
+
+.k-btn__text {
+  display: inline-block;
+}
+
+.k-btn__loader {
+  display: none;
+  width: 1em;
+  height: 1em;
+  border: 0.14em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: k-btn-spin 0.7s linear infinite;
+}
+
+.k-btn--loading,
+.k-btn.is-loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.k-btn--loading .k-btn__loader,
+.k-btn.is-loading .k-btn__loader {
+  display: inline-flex;
+}
+
+.k-btn--loading .k-btn__icon,
+.k-btn.is-loading .k-btn__icon {
+  display: none;
+}
+
+@keyframes k-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k-btn__loader {
+    animation-duration: 1.5s;
+  }
+}
+
+
+// --------------------------------------------------------------------------
+// Button Style Variants
+// --------------------------------------------------------------------------
+
+.k-btn--primary {
+  --k-btn-bg: var(--k-primary);
+  --k-btn-bg-hover: var(--k-primary-hover);
+}
+
+.k-btn--secondary {
+  --k-btn-bg: var(--k-secondary);
+  --k-btn-bg-hover: var(--k-secondary-hover);
+}
+
+.k-btn--outline,
+.k-btn--outline-primary {
+  --k-btn-bg: transparent;
+  --k-btn-bg-hover: var(--k-color-primary-50);
+  --k-btn-color: var(--k-primary);
+  --k-btn-border-color: var(--k-primary);
+}
+
+.k-btn--danger,
+.k-btn--error {
+  --k-btn-bg: var(--k-error);
+  --k-btn-bg-hover: var(--k-error-hover);
+}
+
+.k-btn--success {
+  --k-btn-bg: var(--k-success);
+  --k-btn-bg-hover: var(--k-success-hover);
+}
+
+.k-btn--warning {
+  --k-btn-bg: var(--k-warning);
+  --k-btn-bg-hover: var(--k-warning-hover);
+}
+
+// --------------------------------------------------------------------------
+// Button Sizing Scale
+// --------------------------------------------------------------------------
+
+.k-btn--sm {
+  min-height: 2rem;
+  --k-btn-padding-y: var(--k-spacing-1);
+  --k-btn-padding-x: var(--k-spacing-3);
+  --k-btn-font-size: var(--k-size-sm);
+  --k-btn-radius: var(--k-radius-sm);
+}
+
+.k-btn--lg {
+  min-height: 3rem;
+  --k-btn-padding-y: var(--k-spacing-3);
+  --k-btn-padding-x: var(--k-spacing-6);
+  --k-btn-font-size: var(--k-size-lg);
+  --k-btn-radius: var(--k-radius-lg);
+}
+
+.k-btn--block {
+  display: flex;
+  width: 100%;
+}

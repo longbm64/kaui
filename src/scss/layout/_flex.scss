@@ -1,0 +1,153 @@
+// ==========================================================================
+// KAUI Layout — Flexbox Utilities
+// ==========================================================================
+
+/// Flex display primitives
+.k-flex {
+  display: flex;
+}
+
+.k-inline-flex {
+  display: inline-flex;
+}
+
+/// Flex direction
+.k-flex-row {
+  flex-direction: row;
+}
+
+.k-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.k-flex-col {
+  flex-direction: column;
+}
+
+.k-flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+/// Flex wrap
+.k-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.k-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.k-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/// Justify content
+.k-justify-start {
+  justify-content: flex-start;
+}
+
+.k-justify-center {
+  justify-content: center;
+}
+
+.k-justify-end {
+  justify-content: flex-end;
+}
+
+.k-justify-between {
+  justify-content: space-between;
+}
+
+.k-justify-around {
+  justify-content: space-around;
+}
+
+.k-justify-evenly {
+  justify-content: space-evenly;
+}
+
+/// Align items
+.k-items-start {
+  align-items: flex-start;
+}
+
+.k-items-center {
+  align-items: center;
+}
+
+.k-items-end {
+  align-items: flex-end;
+}
+
+.k-items-baseline {
+  align-items: baseline;
+}
+
+.k-items-stretch {
+  align-items: stretch;
+}
+
+/// Align self
+.k-self-auto {
+  align-self: auto;
+}
+
+.k-self-start {
+  align-self: flex-start;
+}
+
+.k-self-center {
+  align-self: center;
+}
+
+.k-self-end {
+  align-self: flex-end;
+}
+
+.k-self-stretch {
+  align-self: stretch;
+}
+
+.k-self-baseline {
+  align-self: baseline;
+}
+
+/// Flex grow and shrink
+.k-flex-grow-0 {
+  flex-grow: 0;
+}
+
+.k-flex-grow-1 {
+  flex-grow: 1;
+}
+
+.k-flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.k-flex-shrink-1 {
+  flex-shrink: 1;
+}
+
+.k-flex-1 {
+  flex: 1 1 0%;
+}
+
+.k-flex-auto {
+  flex: 1 1 auto;
+}
+
+.k-flex-initial {
+  flex: 0 1 auto;
+}
+
+.k-flex-none {
+  flex: none;
+}
+
+/// Classic grid row container with negative gutter margins
+.k-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: calc(var(--k-spacing-4) * -0.5);
+}

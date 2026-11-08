@@ -1,0 +1,53 @@
+// ==========================================================================
+// KAUI Layout — 12-Column CSS Grid
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+/// 12-column grid container
+.k-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--k-spacing-4);
+}
+
+/// Standard column spans (1 through 12)
+@for $i from 1 through 12 {
+  .k-col-#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+.k-col-auto {
+  grid-column: auto;
+}
+
+.k-col-full {
+  grid-column: 1 / -1;
+}
+
+/// Responsive column spans for standard breakpoints (sm, md, lg, xl)
+$grid-breakpoints: ("sm", "md", "lg", "xl");
+
+@each $bp in $grid-breakpoints {
+  @include respond-to($bp) {
+    @for $i from 1 through 12 {
+      .k-col-#{$bp}-#{$i} {
+        grid-column: span #{$i};
+      }
+    }
+    .k-col-#{$bp}-auto {
+      grid-column: auto;
+    }
+    .k-col-#{$bp}-full {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+/// Grid gap utilities (.k-gap-0 to .k-gap-16)
+@each $key, $val in $spacing {
+  .k-gap-#{$key} {
+    gap: var(--k-spacing-#{$key}) !important;
+  }
+}

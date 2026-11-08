@@ -1,0 +1,99 @@
+// ==========================================================================
+// KAUI Components — Cards
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+.k-card {
+  // Component-scoped CSS custom properties
+  --k-card-bg: var(--k-color-surface);
+  --k-card-border-color: var(--k-color-border);
+  --k-card-border-radius: var(--k-radius-lg);
+  --k-card-shadow: var(--k-shadow-sm);
+
+  // Surface container structure
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--k-card-bg);
+  border: 1px solid var(--k-card-border-color);
+  border-radius: var(--k-card-border-radius);
+  box-shadow: var(--k-card-shadow);
+  color: var(--k-color-text-main);
+  overflow: hidden;
+  transition: transform var(--k-transition-base) ease-in-out, box-shadow var(--k-transition-base) ease-in-out;
+
+  // Allow dropdown menus, popovers, and tooltips to overlay smoothly without being clipped by the card container
+  &:has(.k-dropdown.is-open),
+  &:has(.k-popover.is-open),
+  &:has(.k-tooltip:hover) {
+    overflow: visible;
+  }
+
+  // Structured anatomy elements
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--k-spacing-3);
+    padding: var(--k-spacing-4);
+    border-bottom: 1px solid var(--k-color-border);
+    background-color: transparent;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: var(--k-size-lg);
+    font-weight: var(--k-weight-semibold, 600);
+    line-height: var(--k-line-height-tight);
+    color: var(--k-color-text-main);
+  }
+
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--k-primary);
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    padding: var(--k-spacing-4);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--k-spacing-3);
+    padding: var(--k-spacing-4);
+    border-top: 1px solid var(--k-color-border);
+    background-color: var(--k-color-surface-subtle);
+  }
+
+  // Modifiers
+  &--bordered {
+    border: 1px solid var(--k-color-border);
+    box-shadow: none;
+  }
+
+  &--interactive {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--k-shadow-md);
+    }
+  }
+}
+
+// Dark theme surface adaptation
+[data-theme="dark"] .k-card {
+  background-color: var(--k-color-surface);
+  border-color: var(--k-color-border);
+}

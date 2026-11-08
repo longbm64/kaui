@@ -1,0 +1,82 @@
+// ==========================================================================
+// KAUI Helper & Token Calculation Functions
+// ==========================================================================
+
+@use "sass:math";
+@use "sass:map";
+@use "tokens" as t;
+
+/// Convert pixel value to rem
+/// @param {Number} $px - Pixel value (with or without px unit)
+/// @param {Number} $base [16px] - Root base font size
+/// @return {Number} Rem equivalent
+@function rem($px, $base: 16px) {
+  @if math.is-unitless($px) {
+    $px: $px * 1px;
+  }
+  @if math.is-unitless($base) {
+    $base: $base * 1px;
+  }
+  @return math.div($px, $base) * 1rem;
+}
+
+/// Retrieve a color from the color token map
+/// @param {String} $key - Color token key (e.g. "primary-500", "surface")
+/// @return {Color} Color value
+@function color($key) {
+  @if map.has-key(t.$colors, $key) {
+    @return map.get(t.$colors, $key);
+  }
+  @error "Color token '#{$key}' not found in $colors map.";
+}
+
+/// Retrieve a spacing value from the spacing map
+/// @param {String|Number} $key - Spacing token key (e.g. "4", 4)
+/// @return {Number} Spacing value
+@function spacing($key) {
+  $key-str: "#{$key}";
+  @if map.has-key(t.$spacing, $key-str) {
+    @return map.get(t.$spacing, $key-str);
+  }
+  @error "Spacing token '#{$key}' not found in $spacing map.";
+}
+
+/// Retrieve a radius value from the radii map
+/// @param {String} $key - Radius token key (e.g. "md", "full")
+/// @return {Number} Radius value
+@function radius($key) {
+  @if map.has-key(t.$radii, $key) {
+    @return map.get(t.$radii, $key);
+  }
+  @error "Radius token '#{$key}' not found in $radii map.";
+}
+
+/// Retrieve a shadow from the shadows map
+/// @param {String} $key - Shadow token key (e.g. "sm", "lg")
+/// @return {String} Shadow value
+@function shadow($key) {
+  @if map.has-key(t.$shadows, $key) {
+    @return map.get(t.$shadows, $key);
+  }
+  @error "Shadow token '#{$key}' not found in $shadows map.";
+}
+
+/// Retrieve a breakpoint from the breakpoints map
+/// @param {String} $key - Breakpoint key (e.g. "sm", "md", "lg")
+/// @return {Number} Breakpoint pixel value
+@function breakpoint($key) {
+  @if map.has-key(t.$breakpoints, $key) {
+    @return map.get(t.$breakpoints, $key);
+  }
+  @error "Breakpoint '#{$key}' not found in $breakpoints map.";
+}
+
+/// Retrieve a z-index from the z-indices map
+/// @param {String} $key - Z-index key (e.g. "modal", "tooltip")
+/// @return {Number} Z-index integer
+@function z($key) {
+  @if map.has-key(t.$z-indices, $key) {
+    @return map.get(t.$z-indices, $key);
+  }
+  @error "Z-index token '#{$key}' not found in $z-indices map.";
+}

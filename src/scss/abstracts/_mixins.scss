@@ -1,0 +1,88 @@
+// ==========================================================================
+// KAUI Mixins
+// ==========================================================================
+
+@use "sass:map";
+@use "tokens" as t;
+
+/// Mobile-first responsive breakpoint mixin (min-width)
+/// @param {String} $breakpoint - Target breakpoint key (sm, md, lg, xl, 2xl)
+@mixin respond-to($breakpoint) {
+  @if map.has-key(t.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(t.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint '#{$breakpoint}'. Available breakpoints: #{map.keys(t.$breakpoints)}";
+  }
+}
+
+/// Max-width responsive breakpoint mixin (below target breakpoint)
+/// @param {String} $breakpoint - Target breakpoint key (sm, md, lg, xl, 2xl)
+@mixin respond-below($breakpoint) {
+  @if map.has-key(t.$breakpoints, $breakpoint) {
+    $width: map.get(t.$breakpoints, $breakpoint);
+    @media (max-width: ($width - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint '#{$breakpoint}'. Available breakpoints: #{map.keys(t.$breakpoints)}";
+  }
+}
+
+/// Range responsive breakpoint mixin (between two breakpoints)
+/// @param {String} $lower - Lower breakpoint key
+/// @param {String} $upper - Upper breakpoint key
+@mixin respond-between($lower, $upper) {
+  @if map.has-key(t.$breakpoints, $lower) and map.has-key(t.$breakpoints, $upper) {
+    $min-width: map.get(t.$breakpoints, $lower);
+    $max-width: map.get(t.$breakpoints, $upper);
+    @media (min-width: $min-width) and (max-width: ($max-width - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint range: '#{$lower}' to '#{$upper}'.";
+  }
+}
+
+/// Accessible focus ring mixin
+/// @param {Color} $color [rgba(59, 130, 246, 0.4)] - Ring color
+/// @param {Number} $size [3px] - Ring width
+/// @param {Number} $offset [0px] - Ring offset
+@mixin focus-ring($color: rgba(59, 130, 246, 0.4), $size: 3px, $offset: 0) {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  @if $offset == 0 {
+    box-shadow: 0 0 0 $size $color;
+  } @else {
+    box-shadow: 0 0 0 $offset #ffffff, 0 0 0 ($offset + $size) $color;
+  }
+}
+
+/// Transition shorthand mixin
+/// @param {List|String} $properties [all] - CSS properties to transition
+/// @param {Number} $duration [0.15s] - Transition duration
+/// @param {String} $timing [ease-in-out] - Timing function
+@mixin transition($properties: all, $duration: 0.15s, $timing: ease-in-out) {
+  transition: $properties $duration $timing;
+}
+
+/// Text truncation mixin (single line with ellipsis)
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/// Visually hidden helper (accessible to screen readers only)
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

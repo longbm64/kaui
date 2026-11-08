@@ -1,0 +1,88 @@
+// ==========================================================================
+// KAUI Components — Alerts
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+.k-alert {
+  // Component-scoped CSS custom properties
+  --k-alert-bg: var(--k-color-neutral-100);
+  --k-alert-border-color: var(--k-color-neutral-200);
+  --k-alert-color: var(--k-color-neutral-800);
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--k-spacing-3);
+  padding: var(--k-spacing-4);
+  background-color: var(--k-alert-bg);
+  border: 1px solid var(--k-alert-border-color);
+  border-radius: var(--k-radius-md);
+  color: var(--k-alert-color);
+  font-size: var(--k-size-base);
+  line-height: var(--k-line-height-normal, 1.5);
+  position: relative;
+
+  // Variants
+  &--success {
+    --k-alert-bg: var(--k-success-light);
+    --k-alert-border-color: var(--k-color-success-500);
+    --k-alert-color: var(--k-color-success-700);
+  }
+
+  &--warning {
+    --k-alert-bg: var(--k-warning-light);
+    --k-alert-border-color: var(--k-color-warning-500);
+    --k-alert-color: var(--k-color-warning-700);
+  }
+
+  &--error {
+    --k-alert-bg: var(--k-error-light);
+    --k-alert-border-color: var(--k-color-error-500);
+    --k-alert-color: var(--k-color-error-700);
+  }
+
+  &--info {
+    --k-alert-bg: var(--k-info-light);
+    --k-alert-border-color: var(--k-color-info-500);
+    --k-alert-color: var(--k-color-info-700);
+  }
+
+  // Anatomy elements
+  &__title {
+    font-weight: var(--k-weight-bold, 700);
+    font-size: var(--k-size-base);
+    line-height: var(--k-line-height-tight);
+    margin-top: 0;
+    margin-bottom: var(--k-spacing-1);
+    color: inherit;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    color: inherit;
+    font-size: var(--k-size-lg);
+    line-height: 1;
+    opacity: 0.7;
+    @include transition(opacity, var(--k-transition-base));
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      @include focus-ring();
+    }
+  }
+}

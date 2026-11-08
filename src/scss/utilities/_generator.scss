@@ -1,0 +1,33 @@
+// ==========================================================================
+// KAUI Utilities — Generator Engine
+// ==========================================================================
+
+@use "sass:map";
+@use "../abstracts" as *;
+
+/// Mixin to generate utility classes for given properties and values
+/// @param {Map} $props - Map of prefix => property list
+/// @param {Map} $values - Map of value key => CSS value
+/// @param {String} $infix [""] - Optional breakpoint infix (e.g., "-md")
+@mixin generate-utility($props, $values, $infix: "") {
+  @each $key, $properties in $props {
+    @each $val-key, $val in $values {
+      .k-#{$key}#{$infix}-#{$val-key} {
+        @each $prop in $properties {
+          #{$prop}: #{$val} !important;
+        }
+      }
+    }
+  }
+}
+
+/// Mixin to generate responsive utility classes across all configured breakpoints
+/// @param {Map} $props - Map of prefix => property list
+/// @param {Map} $values - Map of value key => CSS value
+@mixin generate-responsive-utility($props, $values) {
+  @each $bp, $width in $breakpoints {
+    @include respond-to($bp) {
+      @include generate-utility($props, $values, "-#{$bp}");
+    }
+  }
+}

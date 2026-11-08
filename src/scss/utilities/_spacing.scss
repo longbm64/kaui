@@ -1,0 +1,51 @@
+// ==========================================================================
+// KAUI Utilities — Spacing (Margin & Padding)
+// ==========================================================================
+
+@use "sass:map";
+@use "../abstracts" as *;
+@use "generator" as gen;
+
+$margin-props: (
+  "m": ("margin"),
+  "mt": ("margin-top"),
+  "mb": ("margin-bottom"),
+  "mx": ("margin-inline"),
+  "my": ("margin-block")
+);
+
+$padding-props: (
+  "p": ("padding"),
+  "pt": ("padding-top"),
+  "pb": ("padding-bottom"),
+  "px": ("padding-inline"),
+  "py": ("padding-block")
+);
+
+// Map of spacing token CSS custom property references
+$spacing-values: ();
+@each $key, $val in $spacing {
+  $spacing-values: map.set($spacing-values, $key, var(--k-spacing-#{$key}));
+}
+
+$all-spacing-props: map.merge($margin-props, $padding-props);
+
+// 1. Base spacing utilities (.k-m-0 to .k-m-16, .k-p-0 to .k-p-16 across core properties)
+@include gen.generate-utility($all-spacing-props, $spacing-values);
+
+// 2. Base auto margin utilities (.k-m-auto, .k-mx-auto)
+@include gen.generate-utility(("m": ("margin"), "mx": ("margin-inline")), ("auto": auto));
+
+// 3. Responsive spacing utilities across primary breakpoints (md, lg)
+$responsive-props: (
+  "m": ("margin"),
+  "p": ("padding")
+);
+
+@include respond-to(md) {
+  @include gen.generate-utility($responsive-props, $spacing-values, "-md");
+}
+
+@include respond-to(lg) {
+  @include gen.generate-utility($responsive-props, $spacing-values, "-lg");
+}

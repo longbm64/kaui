@@ -1,0 +1,119 @@
+// ==========================================================================
+// KAUI Base Typography Elements
+// ==========================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--k-font-sans);
+  font-weight: var(--k-weight-bold);
+  line-height: var(--k-line-height-tight);
+  color: var(--k-text);
+  margin-bottom: var(--k-spacing-3);
+}
+
+h1 {
+  font-size: var(--k-size-4xl);
+}
+
+h2 {
+  font-size: var(--k-size-3xl);
+}
+
+h3 {
+  font-size: var(--k-size-2xl);
+}
+
+h4 {
+  font-size: var(--k-size-xl);
+}
+
+h5 {
+  font-size: var(--k-size-lg);
+}
+
+h6 {
+  font-size: var(--k-size-base);
+}
+
+p {
+  margin-bottom: var(--k-spacing-4);
+  line-height: var(--k-line-height-base);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: var(--k-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--k-transition-base);
+
+  &:hover {
+    color: var(--k-primary-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--k-primary);
+    outline-offset: 2px;
+    border-radius: var(--k-radius-sm);
+  }
+}
+
+code,
+kbd,
+samp {
+  font-family: var(--k-font-mono);
+  font-size: 0.875em;
+  padding: 0.125rem 0.375rem;
+  background-color: var(--k-color-surface-subtle);
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-sm);
+}
+
+pre {
+  display: block;
+  padding: var(--k-spacing-4);
+  margin-bottom: var(--k-spacing-4);
+  overflow-x: auto;
+  font-family: var(--k-font-mono);
+  font-size: var(--k-size-sm);
+  background-color: var(--k-color-surface-subtle);
+  border: 1px solid var(--k-border);
+  border-radius: var(--k-radius-md);
+
+  code {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+blockquote {
+  margin: 0 0 var(--k-spacing-4) 0;
+  padding: var(--k-spacing-2) 0 var(--k-spacing-2) var(--k-spacing-4);
+  border-left: 4px solid var(--k-border);
+  color: var(--k-text-muted);
+  font-style: italic;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+small {
+  font-size: var(--k-size-sm);
+  color: var(--k-text-muted);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--k-border);
+  margin: var(--k-spacing-6) 0;
+}

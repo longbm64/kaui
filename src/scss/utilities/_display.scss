@@ -1,0 +1,50 @@
+// ==========================================================================
+// KAUI Utilities — Display & Visibility
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+$displays: (
+  "none": none,
+  "inline": inline,
+  "inline-block": inline-block,
+  "block": block,
+  "flex": flex,
+  "inline-flex": inline-flex,
+  "grid": grid
+);
+
+// Base display utilities
+@each $name, $val in $displays {
+  .k-d-#{$name} {
+    display: $val !important;
+  }
+}
+
+// Responsive display utilities (sm, md, lg, xl)
+@include respond-to(sm) {
+  .k-d-sm-none { display: none !important; }
+  .k-d-sm-block { display: block !important; }
+  .k-d-sm-flex { display: flex !important; }
+}
+
+@include respond-to(md) {
+  .k-d-md-none { display: none !important; }
+  .k-d-md-block { display: block !important; }
+  .k-d-md-flex { display: flex !important; }
+  .k-d-md-grid { display: grid !important; }
+}
+
+@include respond-to(lg) {
+  .k-d-lg-none { display: none !important; }
+  .k-d-lg-block { display: block !important; }
+  .k-d-lg-flex { display: flex !important; }
+  .k-d-lg-grid { display: grid !important; }
+}
+
+@include respond-to(xl) {
+  .k-d-xl-none { display: none !important; }
+  .k-d-xl-block { display: block !important; }
+  .k-d-xl-flex { display: flex !important; }
+  .k-d-xl-grid { display: grid !important; }
+}

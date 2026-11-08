@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+*.log
+npm-debug.log*
+.agents/
+
+# Local-only secrets and environment overrides
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json

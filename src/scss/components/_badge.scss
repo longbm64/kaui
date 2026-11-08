@@ -1,0 +1,61 @@
+// ==========================================================================
+// KAUI Components — Badges
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+.k-badge {
+  // Component-scoped CSS custom properties
+  --k-badge-bg: var(--k-color-neutral-100);
+  --k-badge-color: var(--k-color-neutral-700);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--k-spacing-1);
+  padding: var(--k-spacing-1) var(--k-spacing-2);
+  font-size: var(--k-size-xs);
+  font-weight: var(--k-weight-medium, 500);
+  line-height: 1;
+  color: var(--k-badge-color);
+  background-color: var(--k-badge-bg);
+  border-radius: var(--k-radius-md);
+  white-space: nowrap;
+  vertical-align: middle;
+
+  // Variants
+  &--primary {
+    --k-badge-bg: var(--k-primary-light);
+    --k-badge-color: var(--k-primary);
+  }
+
+  &--secondary {
+    --k-badge-bg: var(--k-secondary-light);
+    --k-badge-color: var(--k-secondary);
+  }
+
+  &--success {
+    --k-badge-bg: var(--k-success-light);
+    --k-badge-color: var(--k-success);
+  }
+
+  &--warning {
+    --k-badge-bg: var(--k-warning-light);
+    --k-badge-color: var(--k-warning);
+  }
+
+  &--error {
+    --k-badge-bg: var(--k-error-light);
+    --k-badge-color: var(--k-error);
+  }
+
+  &--info {
+    --k-badge-bg: var(--k-info-light);
+    --k-badge-color: var(--k-info);
+  }
+
+  // Pill modifier
+  &--pill {
+    border-radius: var(--k-radius-full);
+  }
+}

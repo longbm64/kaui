@@ -1,0 +1,101 @@
+// ==========================================================================
+// KAUI Modern CSS Reset & Normalize
+// ==========================================================================
+
+// Box sizing border-box for all elements
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Reset margin on structural and content elements
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+}
+
+// Default list resets
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Root element setup
+html {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  font-family: var(--k-font-sans);
+  line-height: var(--k-line-height-base);
+  scroll-behavior: smooth;
+}
+
+// Body setup
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--k-text);
+  background-color: var(--k-bg);
+  font-family: var(--k-font-sans);
+  font-size: var(--k-size-base);
+  font-weight: var(--k-weight-normal);
+  line-height: var(--k-line-height-base);
+}
+
+// Responsive media elements
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Form control typography inheritance
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+// Restrict textarea resize to vertical only
+textarea {
+  resize: vertical;
+}
+
+// Remove default table borders and collapse
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Accessibility: Respect reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

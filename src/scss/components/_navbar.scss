@@ -1,0 +1,141 @@
+// ==========================================================================
+// KAUI Components — Navigation Bar
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+.k-navbar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: var(--k-z-sticky);
+  padding: var(--k-spacing-3) var(--k-spacing-4);
+  background-color: var(--k-color-surface);
+  border-bottom: 1px solid var(--k-color-border);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    gap: var(--k-spacing-3);
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--k-spacing-2);
+    font-size: var(--k-size-lg);
+    font-weight: var(--k-weight-bold, 700);
+    line-height: 1;
+    color: var(--k-color-text-main);
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--k-primary);
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: var(--k-spacing-2);
+    background: transparent;
+    border: 1px solid var(--k-color-border);
+    border-radius: var(--k-radius-md);
+    cursor: pointer;
+    color: var(--k-color-text-main);
+    line-height: 1;
+
+    span {
+      display: block;
+      width: 1.25rem;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: var(--k-radius-full);
+      transition: var(--k-transition-base);
+    }
+
+    &:hover {
+      background-color: var(--k-color-surface-subtle);
+    }
+
+    &:focus-visible {
+      @include focus-ring();
+    }
+  }
+
+  &__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--k-spacing-2);
+    padding-top: var(--k-spacing-3);
+
+    &.is-open {
+      display: flex;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: var(--k-spacing-2);
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--k-spacing-2) var(--k-spacing-3);
+    font-size: var(--k-size-base);
+    font-weight: var(--k-weight-medium, 500);
+    color: var(--k-color-text-muted);
+    text-decoration: none;
+    border-radius: var(--k-radius-md);
+    @include transition(color, var(--k-transition-base));
+
+    &:hover {
+      color: var(--k-color-text-main);
+    }
+
+    &:focus-visible {
+      @include focus-ring();
+    }
+
+    &.is-active {
+      color: var(--k-primary);
+      font-weight: var(--k-weight-semibold, 600);
+    }
+  }
+}
+
+// Responsive navigation drawer desktop styles (min-width: 768px)
+@include respond-to(md) {
+  .k-navbar__toggle {
+    display: none;
+  }
+
+  .k-navbar__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding-top: 0;
+    gap: var(--k-spacing-4);
+  }
+
+  .k-navbar__nav {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--k-spacing-4);
+  }
+}

@@ -1,0 +1,18 @@
+// ==========================================================================
+// KAUI SCSS Kit — Main Entry Point
+// ==========================================================================
+
+// 1. Base layer: :root CSS Custom Properties, Reset/Normalize, Base Typography
+@use "base";
+
+// 2. Layout layer: Container, 12-Column Grid, Flexbox
+@use "layout";
+
+// 3. Components layer: Buttons, Forms, Cards, Badges, Alerts, Navbar
+@use "components";
+
+// 4. Utilities layer: Spacing, Display, Text helpers
+@use "utilities";
+
+// 5. Extended UI layer: Modal, Toast, Tooltip, Tabs, Table, Switch, Avatar, etc.
+@use "extended";

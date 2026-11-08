@@ -1,0 +1,285 @@
+// ==========================================================================
+// KAUI Components — Forms & Validation
+// ==========================================================================
+
+@use "../abstracts" as *;
+
+// --------------------------------------------------------------------------
+// Form Layout & Labels
+// --------------------------------------------------------------------------
+
+.k-form-group {
+  margin-bottom: var(--k-spacing-4);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.k-form-label {
+  display: inline-block;
+  margin-bottom: var(--k-spacing-1);
+  font-size: var(--k-size-sm);
+  font-weight: var(--k-weight-medium, 500);
+  color: var(--k-color-text-main);
+  line-height: var(--k-line-height-tight);
+}
+
+.k-form-hint {
+  display: block;
+  margin-top: var(--k-spacing-1);
+  font-size: var(--k-size-xs);
+  color: var(--k-color-text-muted);
+  line-height: var(--k-line-height-base);
+}
+
+// --------------------------------------------------------------------------
+// Form Controls: Text Inputs, Select Dropdowns, Textareas
+// --------------------------------------------------------------------------
+
+.k-input,
+.k-select,
+.k-textarea {
+  // Component-scoped CSS custom properties
+  --k-input-bg: var(--k-color-surface);
+  --k-input-color: var(--k-color-text-main);
+  --k-input-border: var(--k-color-border);
+  --k-input-focus-border: var(--k-primary);
+  --k-input-focus-ring: rgba(59, 130, 246, 0.35);
+  --k-input-padding-y: var(--k-spacing-2);
+  --k-input-padding-x: var(--k-spacing-3);
+  --k-input-font-size: var(--k-size-base);
+  --k-input-radius: var(--k-radius-md);
+
+  display: block;
+  width: 100%;
+  min-height: 2.625rem;
+  padding: var(--k-input-padding-y) var(--k-input-padding-x);
+  font-family: inherit;
+  font-size: var(--k-input-font-size);
+  line-height: var(--k-line-height-base);
+  color: var(--k-input-color);
+  background-color: var(--k-input-bg);
+  border: 1px solid var(--k-input-border);
+  border-radius: var(--k-input-radius);
+  // Restrict animation to colors. `transition: all` also animates layout
+  // properties when the control receives focus, causing visible jitter.
+  transition:
+    border-color var(--k-transition-base),
+    background-color var(--k-transition-base),
+    color var(--k-transition-base);
+
+  &::placeholder {
+    color: var(--k-color-text-muted);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-color: var(--k-input-focus-border);
+  }
+
+  &:disabled,
+  &[disabled],
+  &.is-disabled {
+    cursor: not-allowed;
+    background-color: var(--k-color-surface-subtle);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+}
+
+// --------------------------------------------------------------------------
+// Input Icons
+// --------------------------------------------------------------------------
+
+.k-input-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.k-input-wrapper > .k-input,
+.k-input-wrapper > .k-select,
+.k-input-wrapper > .k-textarea {
+  position: relative;
+  z-index: 1;
+}
+
+.k-input-wrapper > .k-input__icon--left + .k-input,
+.k-input-wrapper > .k-input__icon--left + .k-select,
+.k-input-wrapper > .k-input__icon--left + .k-textarea {
+  padding-left: 2.5rem;
+}
+
+.k-input-wrapper:has(> .k-input__icon--right) > .k-input,
+.k-input-wrapper:has(> .k-input__icon--right) > .k-select,
+.k-input-wrapper:has(> .k-input__icon--right) > .k-textarea {
+  padding-right: 2.5rem;
+}
+
+.k-input__icon {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--k-color-text-muted);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.k-input__icon--left { left: var(--k-spacing-3); }
+.k-input__icon--right { right: var(--k-spacing-3); }
+.k-input-wrapper:focus-within .k-input__icon { color: var(--k-primary); }
+
+// --------------------------------------------------------------------------
+// Select Dropdown Customization
+// --------------------------------------------------------------------------
+
+.k-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem 1.25rem;
+  cursor: pointer;
+}
+
+// --------------------------------------------------------------------------
+// Textarea Customization
+// --------------------------------------------------------------------------
+
+.k-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+// --------------------------------------------------------------------------
+// Custom Checkbox & Radio Controls
+// --------------------------------------------------------------------------
+
+.k-checkbox,
+.k-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  vertical-align: -0.125rem;
+  background-color: var(--k-color-surface);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--k-color-border);
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  flex-shrink: 0;
+  transition:
+    border-color var(--k-transition-base),
+    background-color var(--k-transition-base);
+
+  &:focus-visible {
+    @include focus-ring();
+  }
+
+  &:disabled,
+  &[disabled],
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: var(--k-color-surface-subtle);
+    pointer-events: none;
+  }
+}
+
+.k-checkbox {
+  border-radius: var(--k-radius-sm);
+
+  &:checked {
+    background-color: var(--k-primary);
+    border-color: var(--k-primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='m3.5 8.5 3 3 6-6'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+  }
+}
+
+.k-radio {
+  border-radius: var(--k-radius-full);
+
+  &:checked {
+    background-color: var(--k-primary);
+    border-color: var(--k-primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Ccircle cx='8' cy='8' r='3.5'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+  }
+}
+
+// --------------------------------------------------------------------------
+// Validation States & Feedback Messages
+// --------------------------------------------------------------------------
+
+.is-valid,
+.k-input--valid {
+  --k-input-border: var(--k-success);
+  --k-input-focus-border: var(--k-success);
+  --k-input-focus-ring: rgba(16, 185, 129, 0.35);
+  border-color: var(--k-success);
+
+  &:focus {
+    border-color: var(--k-success);
+  }
+}
+
+.is-invalid,
+.k-input--invalid {
+  --k-input-border: var(--k-error);
+  --k-input-focus-border: var(--k-error);
+  --k-input-focus-ring: rgba(239, 68, 68, 0.35);
+  border-color: var(--k-error);
+
+  &:focus {
+    border-color: var(--k-error);
+  }
+}
+
+// Specificity rule: .is-invalid overrides .is-valid when both are present
+.is-valid.is-invalid,
+.k-input--valid.k-input--invalid {
+  --k-input-border: var(--k-error);
+  --k-input-focus-border: var(--k-error);
+  --k-input-focus-ring: rgba(239, 68, 68, 0.35);
+  border-color: var(--k-error);
+}
+
+.k-form-feedback {
+  display: block;
+  margin-top: var(--k-spacing-1);
+  font-size: var(--k-size-xs);
+  line-height: var(--k-line-height-base);
+  color: var(--k-color-text-muted);
+
+  &--valid {
+    color: var(--k-success);
+  }
+
+  &--invalid {
+    color: var(--k-error);
+  }
+}
+
+// --------------------------------------------------------------------------
+// Theme Integration: [data-theme="dark"] Form Overrides
+// --------------------------------------------------------------------------
+/* [data-theme="dark"] */
+[data-theme="dark"] .k-input {
+  --k-input-bg: var(--k-color-surface);
+}
