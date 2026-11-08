@@ -74,7 +74,16 @@
     attempt();
   }
 
+  function formatBuildTime(value) {
+    var date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value || 'Release ready';
+    function pad(number) { return String(number).padStart(2, '0'); }
+    return date.getFullYear() + '/' + pad(date.getMonth() + 1) + '/' + pad(date.getDate());
+  }
+
   function render(data) {
+
+
     var latest = data.latest;
     var badge = document.getElementById('latest-version-badge');
     var url = document.getElementById('manifest-url-display');
@@ -89,7 +98,7 @@
       var item = data.versions[version];
       var isLatest = version === latest;
       var files = item.files || [];
-      var built = item.builtAt && !isNaN(Date.parse(item.builtAt)) ? new Date(item.builtAt).toLocaleString() : (item.builtAt || 'Release ready');
+      var built = formatBuildTime(item.builtAt);
       return '<details class="demo-version-tree__item"' + (isLatest ? ' open' : '') + '><summary class="demo-version-tree__summary"><i data-lucide="folder" aria-hidden="true"></i><span class="demo-version-tree__version">v' + version + '</span>' + (isLatest ? '<span class="k-badge k-badge--success k-badge--pill">Latest</span>' : '') + '<span class="demo-version-tree__meta">Built ' + built + '</span></summary><div class="demo-version-tree__children">' + fileLinks(version, files) + '<a class="demo-version-tree__file" href="../dist/versions/' + version + '/metadata.json" target="_blank" rel="noopener noreferrer"><i data-lucide="clipboard-list" aria-hidden="true"></i><span>metadata.json</span></a></div></details>';
     }).join('');
   }

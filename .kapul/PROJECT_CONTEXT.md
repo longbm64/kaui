@@ -153,6 +153,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Color palette demo contract: `.demo-swatch-meta` and `.demo-color-copy` are grouped in `.demo-swatch-meta-row` on one line to keep swatches compact.
 - Prompt latest-version contract: the Overview prompt reads `dist/versions/index.json` at runtime and replaces the manifest URL with the registry's `latest` version; release does not require hardcoding a new version in the prompt.
 - Version Registry tree view: `demo/versions.html` renders release versions as an interactive directory tree (`.demo-version-tree`), defaulting the latest version to open with direct artifact and metadata links.
+- Version Registry time format: build dates render as local `yyyy/MM/dd` with zero-padded month and day; time is intentionally omitted.
+
 
 
 - Agent prompt contract: explicitly instructs the agent to access and inspect `https://longbm64.github.io/kaui/demo/` before writing code, then copy the closest existing markup pattern instead of inventing a new structure.

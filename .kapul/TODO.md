@@ -1,3 +1,7 @@
+- [x] Version Registry chỉ hiển thị ngày theo `yyyy/MM/dd`, không hiển thị giờ.
+
+- [x] Chuẩn hóa thời gian Version Registry về `yyyy/MM/dd` (không hiển thị giờ).
+
 - [x] Chuyển Version Archives sang tree view theo version và artifact, có expand/collapse, Latest badge và link metadata.
 
 - [x] Prompt Overview tự đọc `dist/versions/index.json` để luôn dùng manifest version mới nhất.
