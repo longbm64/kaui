@@ -152,7 +152,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Color palette demo contract: `.demo-swatch-meta` and `.demo-color-copy` are grouped in `.demo-swatch-meta-row` on one line to keep swatches compact.
 - Prompt quality contract: displayed and copied prompts are synchronized; workflow explicitly resolves latest version, reads the manifest, reuses documented markup, forbids redundant CSS, and requires final accessibility/responsive/theme validation.
-- Version registry URLs: `dist/versions/index.json` stores each version's `files` as objects with `name`, absolute public `url`, and checksum metadata; Version Registry renders those URLs directly.
+- Sidebar brand contract: `.demo-sidebar__brand` keeps `KAUI` and `CSS KIT` on one baseline-aligned row; KAUI is 1.75rem and CSS KIT is .8rem with increased weight/spacing.
 - Version Registry time format: build dates render as local `yyyy/MM/dd` with zero-padded month and day; time is intentionally omitted.
 
 

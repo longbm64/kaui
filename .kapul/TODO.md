@@ -1,3 +1,5 @@
+- [x] Tăng size header brand sidebar: KAUI lên 1.75rem, CSS KIT lên 0.8rem và đưa lên nằm cùng dòng (inline-flex baseline).
+
 - [x] Chuẩn hóa live demo URL thành `https://longbm64.github.io/kaui/demo` không có dấu slash cuối.
 
 - [x] Sửa prompt: sau khi đọc latest từ index.json, truy cập trực tiếp file `kaui-agent-manifest.json` của phiên bản mới nhất đó (không còn URL cứng).
