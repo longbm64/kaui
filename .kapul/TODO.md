@@ -1,3 +1,11 @@
+- [x] Căn cụm mũi tên scroll ở center-right, sắp xếp theo chiều dọc trên-dưới.
+
+- [x] Ẩn hoàn toàn scrollbar native của sidebar nhưng giữ wheel/touch/keyboard scrolling.
+- [x] Thêm overlay mũi tên lên/xuống khi hover/focus, tự ẩn mũi tên theo vị trí scroll và hỗ trợ click để cuộn theo bước.
+- [x] Căn 2 mũi tên scroll vào chính giữa khung sidebar, giữ nguyên hướng cuộn lên/xuống.
+
+
+
 - [x] Căn nút Copy code nằm ngang và thẳng hàng với label trong `.demo-form-label` (desktop giữ một hàng, mobile cho phép wrap).
 - [x] Tăng nhẹ khoảng cách giữa label và control trong các component form của demo.
 - [x] Xóa item `Select a country...` khỏi dropdown Country / Region và đặt Vietnam làm lựa chọn mặc định.
@@ -158,9 +166,15 @@
 - [x] Thêm freeze số cột đầu tiên.
 - [x] Thêm search theo contract Unicode/multi-keyword của dropdown.
 - [x] Cập nhật demo, CSS và chạy test suite.
+- [x] Đưa button copy màu và mã hex về chung 1 dòng bằng `.demo-swatch-meta-row`, tiết kiệm chiều cao từng swatch.
+- [x] Đồng bộ visual của button copy màu với `.demo-copy-button`: cùng font, padding, border, màu hover/copied, dark mode và icon sizing.
+
+
 
 
 - [x] Hiển thị icon sort `arrow-up-down` trên header cột chỉ định, click để toggle `arrow-up`/`arrow-down` và sắp xếp dữ liệu.
+- [x] Thêm button copy mã hex cho từng color swatch trong Color Palette, có feedback `Copied!` và fallback clipboard.
+
 - [x] Sửa lỗi sort: không còn coi cell thiếu `data-k-sort-value` là số 0; hỗ trợ sort text đúng và giữ row no-results ở cuối.
 - [x] Rà soát lại toàn bộ handler sort, sửa lỗi `ReferenceError` do event chưa truyền vào callback; dùng `table.tHead/tBodies` và event guard ổn định.
 - [x] Đã sửa triệt để toggle đảo chiều sort 2 chiều (ascending <-> descending): click lần 1 sort tăng dần (icon `arrow-up`), click lần 2 đảo chiều giảm dần (icon `arrow-down`), click tiếp tục lặp lại chu kỳ đảo chiều mượt mà.
@@ -168,4 +182,8 @@
 
 
 
+
+
+- [x] Khắc phục click Copy trên color swatch: bind `[data-copy-color]` vào clipboard helper, hiển thị `Copied!` và khôi phục label sau timeout.
+- [x] Xóa hiệu ứng hover của color swatch và nút Copy mã màu, giữ trạng thái copied/focus cần thiết.
 

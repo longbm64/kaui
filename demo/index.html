@@ -21,6 +21,10 @@
       <a href="#hero" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a>
     </header>
     <div class="demo-sidebar__body">
+      <div class="demo-sidebar__scroll-controls" aria-hidden="true">
+        <button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-lucide="chevron-up"></i></button>
+        <button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-lucide="chevron-down"></i></button>
+      </div>
       <nav class="demo-sidebar__nav">
         <a href="#hero" class="demo-sidebar__link is-active"><i data-lucide="home"></i> <span>Overview</span></a>
         <a href="#tokens" class="demo-sidebar__link"><i data-lucide="palette"></i> <span>Design Tokens</span></a>
@@ -92,8 +96,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-50);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-50</div>
-                <div class="demo-swatch-meta">#eff6ff</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#eff6ff" aria-label="Copy #eff6ff" title="Copy #eff6ff"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#eff6ff</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#eff6ff" aria-label="Copy #eff6ff" title="Copy #eff6ff"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -102,8 +108,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-100);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-100</div>
-                <div class="demo-swatch-meta">#dbeafe</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#dbeafe" aria-label="Copy #dbeafe" title="Copy #dbeafe"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#dbeafe</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#dbeafe" aria-label="Copy #dbeafe" title="Copy #dbeafe"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -112,8 +120,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-200);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-200</div>
-                <div class="demo-swatch-meta">#bfdbfe</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#bfdbfe" aria-label="Copy #bfdbfe" title="Copy #bfdbfe"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#bfdbfe</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#bfdbfe" aria-label="Copy #bfdbfe" title="Copy #bfdbfe"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -122,8 +132,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-300);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-300</div>
-                <div class="demo-swatch-meta">#93c5fd</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#93c5fd" aria-label="Copy #93c5fd" title="Copy #93c5fd"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#93c5fd</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#93c5fd" aria-label="Copy #93c5fd" title="Copy #93c5fd"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -132,8 +144,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-400);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-400</div>
-                <div class="demo-swatch-meta">#60a5fa</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#60a5fa" aria-label="Copy #60a5fa" title="Copy #60a5fa"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#60a5fa</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#60a5fa" aria-label="Copy #60a5fa" title="Copy #60a5fa"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -142,8 +156,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-500</div>
-                <div class="demo-swatch-meta">#3b82f6</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#3b82f6" aria-label="Copy #3b82f6" title="Copy #3b82f6"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#3b82f6</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#3b82f6" aria-label="Copy #3b82f6" title="Copy #3b82f6"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -152,8 +168,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-600);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-600</div>
-                <div class="demo-swatch-meta">#2563eb</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#2563eb" aria-label="Copy #2563eb" title="Copy #2563eb"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#2563eb</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#2563eb" aria-label="Copy #2563eb" title="Copy #2563eb"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -162,8 +180,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-primary-700);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">primary-700</div>
-                <div class="demo-swatch-meta">#1d4ed8</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#1d4ed8" aria-label="Copy #1d4ed8" title="Copy #1d4ed8"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#1d4ed8</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#1d4ed8" aria-label="Copy #1d4ed8" title="Copy #1d4ed8"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -178,8 +198,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-amber-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">amber-500</div>
-                <div class="demo-swatch-meta">#f59e0b (Yellow–Orange)</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#f59e0b" aria-label="Copy #f59e0b" title="Copy #f59e0b"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#f59e0b (Yellow–Orange)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#f59e0b" aria-label="Copy #f59e0b" title="Copy #f59e0b"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -188,8 +210,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-amber-700);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">amber-700</div>
-                <div class="demo-swatch-meta">#b45309 (Orange)</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#b45309" aria-label="Copy #b45309" title="Copy #b45309"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#b45309 (Orange)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#b45309" aria-label="Copy #b45309" title="Copy #b45309"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -198,8 +222,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-brown-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">brown-500</div>
-                <div class="demo-swatch-meta">#78716c</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#78716c" aria-label="Copy #78716c" title="Copy #78716c"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#78716c</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#78716c" aria-label="Copy #78716c" title="Copy #78716c"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -208,8 +234,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-brown-800);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">brown-800</div>
-                <div class="demo-swatch-meta">#292524</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#292524" aria-label="Copy #292524" title="Copy #292524"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#292524</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#292524" aria-label="Copy #292524" title="Copy #292524"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -223,8 +251,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-success-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">success-500</div>
-                <div class="demo-swatch-meta">#10b981 (Success)</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#10b981" aria-label="Copy #10b981" title="Copy #10b981"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#10b981 (Success)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#10b981" aria-label="Copy #10b981" title="Copy #10b981"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -233,8 +263,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-warning-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">warning-500</div>
-                <div class="demo-swatch-meta">#f59e0b (Warning)</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#f59e0b" aria-label="Copy #f59e0b" title="Copy #f59e0b"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#f59e0b (Warning)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#f59e0b" aria-label="Copy #f59e0b" title="Copy #f59e0b"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -243,8 +275,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-error-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">error-500</div>
-                <div class="demo-swatch-meta">#ef4444 (Error)</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#ef4444" aria-label="Copy #ef4444" title="Copy #ef4444"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#ef4444 (Error)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#ef4444" aria-label="Copy #ef4444" title="Copy #ef4444"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -253,8 +287,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-info-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">info-500</div>
-                <div class="demo-swatch-meta">#0ea5e9 (Info)</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#0ea5e9" aria-label="Copy #0ea5e9" title="Copy #0ea5e9"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#0ea5e9 (Info)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#0ea5e9" aria-label="Copy #0ea5e9" title="Copy #0ea5e9"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -268,8 +304,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-100); border-bottom: 1px solid var(--k-border);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">neutral-100</div>
-                <div class="demo-swatch-meta">#f1f5f9</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#f1f5f9" aria-label="Copy #f1f5f9" title="Copy #f1f5f9"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#f1f5f9</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#f1f5f9" aria-label="Copy #f1f5f9" title="Copy #f1f5f9"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -278,8 +316,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-300);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">neutral-300</div>
-                <div class="demo-swatch-meta">#cbd5e1</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#cbd5e1" aria-label="Copy #cbd5e1" title="Copy #cbd5e1"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#cbd5e1</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#cbd5e1" aria-label="Copy #cbd5e1" title="Copy #cbd5e1"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -288,8 +328,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-500);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">neutral-500</div>
-                <div class="demo-swatch-meta">#64748b</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#64748b" aria-label="Copy #64748b" title="Copy #64748b"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#64748b</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#64748b" aria-label="Copy #64748b" title="Copy #64748b"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -298,8 +340,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-700);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">neutral-700</div>
-                <div class="demo-swatch-meta">#334155</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#334155" aria-label="Copy #334155" title="Copy #334155"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#334155</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#334155" aria-label="Copy #334155" title="Copy #334155"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -308,8 +352,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-800);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">neutral-800</div>
-                <div class="demo-swatch-meta">#1e293b</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#1e293b" aria-label="Copy #1e293b" title="Copy #1e293b"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#1e293b</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#1e293b" aria-label="Copy #1e293b" title="Copy #1e293b"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>
@@ -318,8 +364,10 @@
               <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-900);"></div>
               <div class="demo-swatch-info">
                 <div class="demo-swatch-name">neutral-900</div>
-                <div class="demo-swatch-meta">#0f172a</div>
-                <button type="button" class="demo-color-copy" data-copy-color="#0f172a" aria-label="Copy #0f172a" title="Copy #0f172a"><i data-lucide="copy"></i><span class="demo-color-copy-label">Copy</span></button>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#0f172a</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#0f172a" aria-label="Copy #0f172a" title="Copy #0f172a"><i data-lucide="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
               </div>
             </div>
           </div>

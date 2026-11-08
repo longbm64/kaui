@@ -61,6 +61,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Bundle chính: `kaui.scss` giữ các thành phần cơ bản để tuân thủ ngân sách < 64KB cho kiểm thử tự động.
 
 - Bundle mở rộng: `kaui-extended.scss` tập hợp component nâng cao:
+- Color palette demo contract: each `.demo-swatch` displays its hex value and includes `.demo-color-copy[data-copy-color]` to copy the exact color code, with `Copied!` feedback and clipboard fallback.
+
   - Core & Overlay: Modal, Toast, Tooltip, Popover, Dropdown, Tabs, Accordion, Breadcrumb, Pagination, Spinner, Progress, Skeleton, Avatar, Empty State.
   - Forms: Switch, Range slider, Input Group, File Upload, Floating label.
   - Data: Table, Responsive Table, Data Table, Timeline.
@@ -75,6 +77,14 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Sidebar `.demo-sidebar` cố định bên trái trên desktop, mở dạng drawer trên mobile; các link trỏ tới section IDs hiện có.
 - `demo/demo.css` chứa style sidebar; `demo/demo.js` quản lý active state và drawer.
 - Sidebar layout contract: `.demo-sidebar` is a fixed-height flex column; `.demo-sidebar__header` and `.demo-sidebar__footer` are non-scrolling fixed sections, while `.demo-sidebar__body` owns vertical scrolling with `min-height: 0` and `overflow-y: auto`.
+- Sidebar scroll contract: `.demo-sidebar__body` keeps `overflow-y: auto` and independent scrolling, hides native scrollbars across Firefox/WebKit/Edge, and exposes `.demo-sidebar__scroll-controls` overlay arrows on hover/focus. Up/down buttons reflect top/middle/bottom scroll state and scroll by viewport-sized steps.
+- Scroll control alignment: `.demo-sidebar__scroll-controls` is vertically centered and right-aligned within the sidebar body, with the up button above the down button.
+
+
+
+
+- Sidebar scroll contract: `.demo-sidebar__body` keeps `overflow-y: auto` and independent scrolling, hides native scrollbars across Firefox/WebKit/Edge, and exposes `.demo-sidebar__scroll-controls` overlay arrows on hover/focus. Up/down buttons reflect top/middle/bottom scroll state and scroll by viewport-sized steps.
+
 
 - Demo icon contract: dùng Lucide Icons qua CDN `https://unpkg.com/lucide@latest`; markup icon dùng `data-lucide` và khởi tạo trong `demo/demo.js`.
 - Component demo contract: load only `dist/kaui.css`; showcase sections expose `.k-modal`, `.k-toast`, `.k-tabs__*`, `.k-accordion__*`, `.k-spinner`, `.k-progress`, `.k-skeleton`, Table, and interactive vanilla JS examples.
@@ -134,4 +144,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Warm color token contract: `$colors` defines `amber-50..700` (yellow through orange) and `brown-50..900`; `_root.scss` emits `--k-color-amber-*` / `--k-color-brown-*` plus semantic aliases `--k-amber`, `--k-amber-hover`, `--k-amber-light`, `--k-brown`, `--k-brown-hover`, and `--k-brown-light`.
 
+
+
+- Color palette demo contract: `.demo-swatch-meta` and `.demo-color-copy` are grouped in `.demo-swatch-meta-row` on one line to keep swatches compact.
+- Color copy button contract: `.demo-color-copy` follows `.demo-copy-button` visual styling and uses `.demo-copy-label` for consistent copied-state behavior.
 

@@ -580,6 +580,31 @@
           sidebarToggle.setAttribute('aria-expanded', 'false');
         });
       });
+
+    // Hide the native scrollbar while preserving wheel, touch, keyboard, and button scrolling.
+    var sidebarBody = document.querySelector('.demo-sidebar__body');
+    var scrollControls = document.querySelector('.demo-sidebar__scroll-controls');
+    var scrollUp = scrollControls && scrollControls.querySelector('.demo-sidebar__scroll-button--up');
+    var scrollDown = scrollControls && scrollControls.querySelector('.demo-sidebar__scroll-button--down');
+    if (sidebarBody && scrollControls && scrollUp && scrollDown) {
+      function updateSidebarScrollControls() {
+        var maxScroll = Math.max(0, sidebarBody.scrollHeight - sidebarBody.clientHeight);
+        var atTop = sidebarBody.scrollTop <= 1;
+        var atBottom = sidebarBody.scrollTop >= maxScroll - 1;
+        scrollUp.hidden = atTop;
+        scrollDown.hidden = atBottom;
+        scrollControls.setAttribute('aria-hidden', atTop && atBottom ? 'true' : 'false');
+      }
+      function scrollSidebar(direction) {
+        sidebarBody.scrollBy({ top: direction * Math.max(120, sidebarBody.clientHeight * 0.72), behavior: 'smooth' });
+      }
+      scrollUp.addEventListener('click', function () { scrollSidebar(-1); });
+      scrollDown.addEventListener('click', function () { scrollSidebar(1); });
+      sidebarBody.addEventListener('scroll', updateSidebarScrollControls, { passive: true });
+      window.addEventListener('resize', updateSidebarScrollControls);
+      updateSidebarScrollControls();
+    }
+
     }
 
     // -------------------------------------------------------------------------
@@ -762,6 +787,26 @@
         });
         });
       });
+
+    // Color palette copy actions
+    if (typeof document.querySelectorAll === 'function') {
+      document.querySelectorAll('[data-copy-color]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var color = button.getAttribute('data-copy-color');
+          if (!color) return;
+          copyText(color, function () {
+            var label = button.querySelector('.demo-copy-label');
+            if (label) label.textContent = 'Copied!';
+            button.classList.add('is-copied');
+            setTimeout(function () {
+              if (label) label.textContent = 'Copy';
+              button.classList.remove('is-copied');
+            }, 1400);
+          });
+        });
+      });
+    }
+
     }
 
   });
