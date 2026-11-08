@@ -1,0 +1,15 @@
+name: filekat
+description: Cross-platform design system widgets and token bindings for KAUI Flutter apps.
+version: 1.1.0
+
+homepage: https://github.com/longbm64/kaui
+repository: https://github.com/longbm64/kaui
+issue_tracker: https://github.com/longbm64/kaui/issues
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter

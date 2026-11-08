@@ -1,16 +1,29 @@
 {
   "name": "kaui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Production-ready modern SCSS/CSS kit with design tokens, responsive layout, and UI components",
   "main": "dist/kaui.css",
   "style": "dist/kaui.min.css",
   "type": "module",
+  "exports": {
+    ".": {
+      "style": "./dist/kaui.min.css",
+      "default": "./dist/kaui.min.css"
+    },
+    "./css": "./dist/kaui.css",
+    "./min.css": "./dist/kaui.min.css",
+    "./charts": {
+      "style": "./dist/kaui-chart.min.css",
+      "default": "./dist/kaui-chart.min.js"
+    },
+    "./tokens/*": "./dist/tokens/*"
+  },
   "scripts": {
     "build:css:dev": "sass src/scss/kaui.scss dist/kaui.css --style=expanded --source-map",
     "build:css:prod": "sass src/scss/kaui.scss dist/kaui.min.css --style=compressed --source-map",
+    "build:icons:bundle": "node scripts/merge-icon-css.mjs",
     "build:chart:dev": "sass src/scss/kaui-chart.scss dist/kaui-chart.css --style=expanded --no-source-map",
-    "build": "npm run build:css:dev && npm run build:css:prod",
-
+    "build": "npm run build:css:dev && npm run build:css:prod && npm run icons:build && npm run build:icons:bundle",
     "build:chart:prod": "sass src/scss/kaui-chart.scss dist/kaui-chart.min.css --style=compressed --no-source-map",
     "build:chart:js": "cp src/js/kaui-chart.js dist/kaui-chart.js && cp src/js/kaui-chart.js dist/kaui-chart.min.js",
     "build:chart": "npm run build:chart:dev && npm run build:chart:prod && npm run build:chart:js",
@@ -19,6 +32,14 @@
     "release:minor": "node scripts/release.mjs minor",
     "release:major": "node scripts/release.mjs major",
     "build:versioned": "node scripts/release.mjs build-only",
+    "tokens:build": "node scripts/build-tokens.mjs",
+    "tokens:verify": "node scripts/verify-tokens.mjs",
+    "audit:license": "node scripts/audit-license.mjs",
+    "verify:release": "node scripts/verify-release.mjs",
+    "icons:build": "node scripts/build-icons.mjs",
+    "icons:social:add": "node scripts/add-kaui-social-icons.mjs && npm run icons:build",
+    "icons:groups:add": "node scripts/add-kaui-icon-groups.mjs && npm run icons:build",
+    "icons:core:build": "node scripts/build-kaui-core.mjs",
     "serve:tailscale": "python3 -m http.server 4173 --bind 0.0.0.0 --directory .",
     "test": "node --test test/kit.test.mjs"
   },
@@ -33,5 +54,5 @@
     "components"
   ],
   "author": "KAUI Contributors",
-  "license": "MIT"
+  "license": "LicenseRef-KAUI-NonCommercial"
 }

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Layout & Grid</title>
+  <meta name="description" content="KAUI CSS Kit Layout & Grid component showcase.">
+  <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Component navigation">
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link is-active"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-page"><main class="demo-main">
+<section id="layout" class="demo-section">
+      <div class="k-container">
+        <div class="demo-section-header">
+          <h2 class="demo-section-title">
+            <i data-kaui-icon="layout-grid"></i> Responsive Layout &amp; Grid Engine <button type="button" class="demo-copy-button" data-copy-component="layout"><span class="demo-copy-label">Copy code</span></button>
+          </h2>
+          <p class="demo-section-desc">
+            12-column CSS Grid with responsive spans (<code>.k-col-{1..12}</code>, <code>.k-col-md-*</code>), fluid containers, and flexbox utilities.
+          </p>
+        </div>
+
+        <h3 class="demo-subheading">12-Column Responsive Grid</h3>
+        <!-- 12-col visual -->
+        <div class="k-grid k-gap-2 k-mb-4">
+          <div class="k-col-1"><div class="demo-grid-col">1</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">2</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">3</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">4</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">5</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">6</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">7</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">8</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">9</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">10</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">11</div></div>
+          <div class="k-col-1"><div class="demo-grid-col">12</div></div>
+        </div>
+
+        <!-- 2, 3, 4, 6 column visual -->
+        <div class="k-grid k-gap-3 k-mb-4">
+          <div class="k-col-6"><div class="demo-grid-col">.k-col-6 (50%)</div></div>
+          <div class="k-col-6"><div class="demo-grid-col">.k-col-6 (50%)</div></div>
+        </div>
+        <div class="k-grid k-gap-3 k-mb-4">
+          <div class="k-col-4"><div class="demo-grid-col">.k-col-4 (33.3%)</div></div>
+          <div class="k-col-4"><div class="demo-grid-col">.k-col-4 (33.3%)</div></div>
+          <div class="k-col-4"><div class="demo-grid-col">.k-col-4 (33.3%)</div></div>
+        </div>
+        <div class="k-grid k-gap-3 k-mb-4">
+          <div class="k-col-3"><div class="demo-grid-col">.k-col-3 (25%)</div></div>
+          <div class="k-col-3"><div class="demo-grid-col">.k-col-3 (25%)</div></div>
+          <div class="k-col-3"><div class="demo-grid-col">.k-col-3 (25%)</div></div>
+          <div class="k-col-3"><div class="demo-grid-col">.k-col-3 (25%)</div></div>
+        </div>
+
+        <!-- Responsive Breakpoints Demonstration -->
+        <div class="k-grid k-gap-3 k-mb-8">
+          <div class="k-col-12 k-col-md-6 k-col-lg-4">
+            <div class="demo-grid-col">.k-col-12.k-col-md-6.k-col-lg-4</div>
+          </div>
+          <div class="k-col-12 k-col-md-6 k-col-lg-4">
+            <div class="demo-grid-col">.k-col-12.k-col-md-6.k-col-lg-4</div>
+          </div>
+          <div class="k-col-12 k-col-md-12 k-col-lg-4">
+            <div class="demo-grid-col">.k-col-12.k-col-md-12.k-col-lg-4</div>
+          </div>
+        </div>
+
+        <!-- Flexbox Alignment Utilities -->
+        <h3 class="demo-subheading">Flexbox Alignment &amp; Justify Utilities</h3>
+        <div class="k-grid k-gap-4">
+          <div class="k-col-12 k-col-md-6">
+            <div class="demo-flex-box k-flex k-items-center k-justify-between">
+              <div class="demo-flex-item">Item 1</div>
+              <div class="demo-flex-item">Item 2</div>
+              <div class="demo-flex-item">Item 3</div>
+            </div>
+            <div class="k-fs-xs k-text-muted k-mt-2"><code>.k-flex .k-items-center .k-justify-between</code></div>
+          </div>
+          <div class="k-col-12 k-col-md-6">
+            <div class="demo-flex-box k-flex k-items-center k-justify-center k-gap-3">
+              <div class="demo-flex-item">Start</div>
+              <div class="demo-flex-item">Center</div>
+              <div class="demo-flex-item">End</div>
+            </div>
+            <div class="k-fs-xs k-text-muted k-mt-2"><code>.k-flex .k-items-center .k-justify-center .k-gap-3</code></div>
+          </div>
+        </div>
+        <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-layout"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Use <code>.k-container</code> with <code>.k-grid</code> and 12-column span classes. Combine breakpoints like <code>.k-col-12.k-col-md-6</code> for responsive flow.</p><pre class="demo-code"><code>&lt;div class="k-grid k-gap-4"&gt;
+  &lt;div class="k-col-12 k-col-md-6"&gt;Left column&lt;/div&gt;
+  &lt;div class="k-col-12 k-col-md-6"&gt;Right column&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+      </div>
+    </section>
+  </main>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+</body>
+</html>

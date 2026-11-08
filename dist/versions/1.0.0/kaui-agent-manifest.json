@@ -5,6 +5,25 @@
   "manifestUrl": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-agent-manifest.json",
   "liveDemoUrl": "https://longbm64.github.io/kaui/demo",
   "strictRule": "MANDATORY: Use ONLY KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Custom CSS is strictly forbidden unless explicitly documented as unsupported by this manifest.",
+  "tokenRegistry": {
+    "source": "tokens/kaui.tokens.json",
+    "verifiedOutput": "dist/tokens/kaui.tokens.json",
+    "verifyCommand": "npm run tokens:verify",
+    "platformTargets": [
+      "web",
+      "nextjs",
+      "flutter",
+      "android-compose",
+      "ios-swiftui"
+    ]
+  },
+  "license": {
+    "name": "MIT License",
+    "commercialUse": true,
+    "permissionRequired": false,
+    "contact": "contact@filekat.com",
+    "transition": "KAUI 1.0.x remains MIT; KAUI 1.1.0+ requires permission for commercial use."
+  },
   "stylesheet": {
     "bundle": "dist/kaui.min.css",
     "description": "Production compressed single stylesheet containing both core and extended UI components plus design tokens and layout utilities.",
@@ -208,7 +227,7 @@
       ]
     }
   },
-  "builtAt": "2026-11-08T06:23:12.132Z",
+  "builtAt": "2026-11-08T15:11:21.430Z",
   "build": {
     "version": "1.0.0",
     "mainCss": "dist/kaui.min.css",
@@ -216,5 +235,17 @@
     "chartJs": "dist/kaui-chart.min.js",
     "artifactDirectory": "dist/versions/1.0.0/",
     "generatedBy": "npm run build:versioned or npm run release:patch|minor|major"
-  }
+  },
+  "tokenFiles": [
+    "dist/tokens/kaui.tokens.json",
+    "dist/tokens/kaui.tokens.css",
+    "dist/tokens/kaui.tokens.dart",
+    "dist/tokens/KauiTokens.kt",
+    "dist/tokens/KauiTokens.swift"
+  ],
+  "iconFiles": [
+    "dist/icons/sprite.svg",
+    "dist/icons/kaui-icons.css",
+    "dist/icons/kaui-icons.json"
+  ]
 }

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Forms</title>
+  <meta name="description" content="KAUI CSS Kit Forms component showcase.">
+  <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Component navigation">
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link is-active"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-page"><main class="demo-main">
+<section id="forms" class="demo-section">
+        <div class="k-container">
+          <div class="demo-section-header">
+            <h2 class="demo-section-title">
+              <i data-kaui-icon="file-text"></i> Form Controls &amp; Validation States
+            </h2>
+            <p class="demo-section-desc">
+              Cross-browser inputs, selects, textareas, accessible checkboxes and radios, complete with validation states (<code>.is-valid</code>, <code>.is-invalid</code>) and feedback messages.
+            </p>
+                  <div class="k-dropdown k-dropdown-select" data-k-dropdown-select data-k-searchable="true" data-k-show-all="true">
+          </div>
+
+          <div class="k-grid k-gap-6">
+            <!-- Left Column: Standard Form Controls -->
+            <div class="k-col-12 k-col-md-6">
+              <div class="k-card k-card--bordered k-p-6">
+                <h3 class="k-fs-lg k-fw-semibold k-mb-4">Standard Controls</h3>
+
+                <!-- Text Input -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-name" class="k-form-label">Full Name</label><button type="button" class="demo-copy-button" data-copy-component="full-name"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                    <i data-kaui-icon="user" class="k-input__icon k-input__icon--left" aria-hidden="true"></i>
+                    <input type="text" id="demo-name" class="k-input" placeholder="e.g. Dang Long">
+                  </div>
+                  <span class="k-form-hint">Enter your legal full name as shown on official ID.</span>
+                </div>
+
+                <!-- Select Dropdown -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-country" class="k-form-label">Country / Region</label><button type="button" class="demo-copy-button" data-copy-component="country"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-dropdown k-dropdown-select" data-k-dropdown-select data-k-searchable="true" data-k-placeholder="Select country...">
+                    <select id="demo-country" class="k-select k-d-none" tabindex="-1" aria-hidden="true">
+                      <option value="" disabled selected hidden>Select country...</option>
+                      <option value="vn">Vietnam</option>
+                      <option value="us">United States</option>
+                      <option value="sg">Singapore</option>
+                      <option value="jp">Japan</option>
+                    </select>
+                    <button type="button" class="k-input k-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="k-dropdown__value is-placeholder">Select country...</span>
+                      <span class="k-dropdown__chevron"><i data-kaui-icon="chevron-down"></i></span>
+                    </button>
+                    <div class="k-dropdown__menu" role="listbox" aria-label="Country / Region">
+                      <div class="k-dropdown__search">
+                        <span class="k-dropdown__search-icon"><i data-kaui-icon="search"></i></span>
+                        <input type="text" class="k-input k-dropdown__search-input" data-k-dropdown-search placeholder="Search countries..." autocomplete="off">
+                      </div>
+                      <button type="button" class="k-dropdown__item" data-value="vn" role="option">Vietnam</button>
+                      <button type="button" class="k-dropdown__item" data-value="us" role="option">United States</button>
+                      <button type="button" class="k-dropdown__item" data-value="sg" role="option">Singapore</button>
+                      <button type="button" class="k-dropdown__item" data-value="jp" role="option">Japan</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-region-all" class="k-form-label">Region (Show All Option)</label><button type="button" class="demo-copy-button" data-copy-component="region-all"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-dropdown k-dropdown-select" data-k-dropdown-select data-k-show-all="true">
+                    <select id="demo-region-all" class="k-select k-d-none" tabindex="-1" aria-hidden="true">
+                      <option value="all" selected>All regions</option>
+                      <option value="north">Northern region</option>
+                      <option value="central">Central region</option>
+                      <option value="south">Southern region</option>
+                    </select>
+                    <button type="button" class="k-input k-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="k-dropdown__value">All regions</span>
+                      <span class="k-dropdown__chevron"><i data-kaui-icon="chevron-down"></i></span>
+                    </button>
+                    <div class="k-dropdown__menu" role="listbox" aria-label="Region (Show All Option)">
+                      <button type="button" class="k-dropdown__item is-selected" data-value="all" role="option" aria-selected="true">All regions</button>
+                      <button type="button" class="k-dropdown__item" data-value="north" role="option">Northern region</button>
+                      <button type="button" class="k-dropdown__item" data-value="central" role="option">Central region</button>
+                      <button type="button" class="k-dropdown__item" data-value="south" role="option">Southern region</button>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-notification-types" class="k-form-label">Notification Types (Multi-select)</label><button type="button" class="demo-copy-button" data-copy-component="notification-types"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-dropdown k-dropdown-select" data-k-dropdown-select data-k-k-multiple="true" data-k-multiple="true" data-k-placeholder="Select notification types...">
+                    <select id="demo-notification-types" class="k-select k-d-none" multiple tabindex="-1" aria-hidden="true">
+                      <option value="email">Email</option>
+                      <option value="sms">SMS</option>
+                      <option value="push">Push notification</option>
+                      <option value="webhook">Webhook</option>
+                    </select>
+                    <button type="button" class="k-input k-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="k-dropdown__value">Select notification types...</span>
+                      <span class="k-dropdown__chevron"><i data-kaui-icon="chevron-down"></i></span>
+                    </button>
+                    <div class="k-dropdown__menu" role="listbox" aria-multiselectable="true" aria-label="Notification Types">
+                      <button type="button" class="k-dropdown__item" data-value="email" role="option" aria-selected="false">Email</button>
+                      <button type="button" class="k-dropdown__item" data-value="sms" role="option" aria-selected="false">SMS</button>
+                      <button type="button" class="k-dropdown__item" data-value="push" role="option" aria-selected="false">Push notification</button>
+                      <button type="button" class="k-dropdown__item" data-value="webhook" role="option" aria-selected="false">Webhook</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Textarea -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-notes" class="k-form-label">Project Bio / Notes</label><button type="button" class="demo-copy-button" data-copy-component="notes"><span class="demo-copy-label">Copy code</span></button></div>
+                  <textarea id="demo-notes" class="k-textarea" rows="3" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <!-- Checkbox & Radio -->
+                <div class="k-mb-4">
+                  <span class="k-form-label k-d-block k-mb-2">Notification Preferences</span>
+                  <div class="k-flex k-flex-col k-gap-2">
+                    <label class="k-flex k-items-center k-gap-2">
+                      <input type="checkbox" class="k-checkbox" checked>
+                      <span>Email product release notifications</span>
+                    </label>
+                    <label class="k-flex k-items-center k-gap-2">
+                      <input type="checkbox" class="k-checkbox">
+                      <span>SMS security alerts</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="k-form-label k-d-block k-mb-2">Subscription Tier</span>
+                  <div class="k-flex k-gap-4">
+                    <label class="k-flex k-items-center k-gap-2">
+                      <input type="radio" name="tier" class="k-radio" checked>
+                      <span>Developer</span>
+                    </label>
+                    <label class="k-flex k-items-center k-gap-2">
+                      <input type="radio" name="tier" class="k-radio">
+                      <span>Team</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Validation States & Disabled -->
+            <div class="k-col-12 k-col-md-6">
+              <div class="k-card k-card--bordered k-p-6">
+                <h3 class="k-fs-lg k-fw-semibold k-mb-4">Validation States &amp; Feedback</h3>
+
+                <!-- Valid Input -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-valid-email" class="k-form-label">Valid Username / Email</label><button type="button" class="demo-copy-button" data-copy-component="valid-email"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                      <input type="text" id="demo-valid-email" class="k-input is-valid" value="danglong@example.com">
+                      <i data-kaui-icon="check-circle-2" class="k-input__icon k-input__icon--right" aria-hidden="true"></i>
+                    </div>
+                  <div class="k-form-feedback k-form-feedback--valid">Username is available and looks great!</div>
+                </div>
+
+                <!-- Invalid Input -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-invalid-password" class="k-form-label">Account Password</label><button type="button" class="demo-copy-button" data-copy-component="password"><span class="demo-copy-label">Copy code</span></button></div>
+                  <input type="password" id="demo-invalid-password" class="k-input is-invalid" value="123">
+                  <div class="k-form-feedback k-form-feedback--invalid">Password must contain at least 8 characters with numbers and symbols.</div>
+                </div>
+
+                <!-- Input Invalid Modifier (.k-input--invalid) -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-invalid-mod" class="k-form-label">Explicit Modifier State</label><button type="button" class="demo-copy-button" data-copy-component="invalid-mod"><span class="demo-copy-label">Copy code</span></button></div>
+                  <input type="text" id="demo-invalid-mod" class="k-input k-input--invalid" value="invalid_token_syntax">
+                  <div class="k-form-feedback k-form-feedback--invalid">Syntax error detected in token definition.</div>
+                </div>
+
+                <!-- Disabled Control -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-disabled" class="k-form-label">Disabled Control</label><button type="button" class="demo-copy-button" data-copy-component="disabled"><span class="demo-copy-label">Copy code</span></button></div>
+                  <input type="text" id="demo-disabled" class="k-input is-disabled" value="Read-only system value" disabled>
+                  <span class="k-form-hint">This setting is locked by administrator policy.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-forms"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Wrap controls in <code>.k-form-group</code>, pair labels with controls, and use <code>.k-form-feedback</code> for validation messaging.</p><pre class="demo-code"><code>&lt;div class="k-form-group"&gt;
+  &lt;label for="email" class="k-form-label"&gt;Email&lt;/label&gt;
+  &lt;input id="email" class="k-input" type="email"&gt;
+  &lt;span class="k-form-hint"&gt;We never share your email.&lt;/span&gt;
+&lt;/div&gt;</code></pre></div>
+        </div>
+      </section>
+  </main>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+</body>
+</html>

@@ -69,6 +69,60 @@
   vector-effect: non-scaling-stroke;
 }
 
+.k-chart__line-category {
+  fill: var(--k-chart-axis);
+  font: 11px system-ui, sans-serif;
+}
+
+.k-chart__bar {
+  vector-effect: non-scaling-stroke;
+}
+
+.k-chart__bar-label {
+  fill: var(--k-chart-axis);
+  font: 600 10px system-ui, sans-serif;
+  paint-order: stroke;
+  stroke: var(--k-chart-bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.k-chart__bar-category {
+  fill: var(--k-chart-axis);
+  font: 11px system-ui, sans-serif;
+}
+
+.k-chart__donut-leader {
+  fill: none;
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.85;
+}
+
+.k-chart__donut-dot {
+  stroke: var(--k-chart-bg);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.k-chart__donut-label {
+  fill: var(--k-chart-axis);
+  font: 600 10px system-ui, sans-serif;
+  paint-order: stroke;
+  stroke: var(--k-chart-bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.k-chart__donut-label--inside {
+  font-size: 9px;
+  fill: #ffffff;
+  stroke: none;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
 .k-chart__tooltip {
   position: absolute;
   z-index: 2;

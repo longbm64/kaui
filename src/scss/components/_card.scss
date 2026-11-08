@@ -1,3 +1,5 @@
+// Fixed section heights keep cards aligned when header/footer content differs.
+
 // ==========================================================================
 // KAUI Components — Cards
 // ==========================================================================
@@ -10,6 +12,8 @@
   --k-card-border-color: var(--k-color-border);
   --k-card-border-radius: var(--k-radius-lg);
   --k-card-shadow: var(--k-shadow-sm);
+  --k-card-header-height: 3.5rem;
+  --k-card-footer-height: 3.5rem;
 
   // Surface container structure
   display: flex;
@@ -33,9 +37,12 @@
   // Structured anatomy elements
   &__header {
     display: flex;
+    flex: 0 0 var(--k-card-header-height);
+    box-sizing: border-box;
     align-items: center;
     justify-content: space-between;
     gap: var(--k-spacing-3);
+    height: var(--k-card-header-height);
     padding: var(--k-spacing-4);
     border-bottom: 1px solid var(--k-color-border);
     background-color: transparent;
@@ -68,10 +75,13 @@
 
   &__footer {
     display: flex;
+    flex: 0 0 var(--k-card-footer-height);
+    box-sizing: border-box;
     align-items: center;
     justify-content: flex-end;
     gap: var(--k-spacing-3);
-    padding: var(--k-spacing-4);
+    height: var(--k-card-footer-height);
+    padding: var(--k-spacing-3);
     border-top: 1px solid var(--k-color-border);
     background-color: var(--k-color-surface-subtle);
   }

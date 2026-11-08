@@ -1,6 +1,6 @@
 # KAUI — Modern SCSS/CSS Kit & Component Framework
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](package.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Tests: 176 passed](https://img.shields.io/badge/tests-176%20passed-brightgreen.svg)](test/kit.test.mjs)
 [![Bundle Size](https://img.shields.io/badge/bundle-<60KB%20all--in--one-informational.svg)](dist/kaui.min.css)
@@ -55,6 +55,27 @@
 
 ---
 
+### Install in a Web, React, or Next.js application
+
+```bash
+npm install filekat
+```
+
+Import the production stylesheet from the package root (no `dist` path is required):
+
+```tsx
+// Next.js app/layout.tsx, React, or Vite entrypoint
+import 'filekat/kaui';
+```
+
+For the expanded development stylesheet or optional charts:
+
+```tsx
+import 'filekat/css';
+import 'filekat/charts';
+```
+
+
 ## Quick Start & Installation
 
 ### 1. Clone & Install Build Tools
@@ -66,7 +87,9 @@ cd kaui
 
 # Install native Dart Sass compiler dependency
 npm install
-```
+### Direct HTML usage
+
+Bundler users should prefer `import 'filekat/kaui';`. If a static HTML deployment needs a stylesheet URL, copy the published `dist/kaui.min.css` artifact to your public assets directory and reference that copied asset.
 
 ### 2. Compile CSS Bundles
 
@@ -403,7 +426,26 @@ Responsive navigation header with collapsible mobile drawer:
 
 ---
 
-If live demo access is unavailable, use the single versioned agent manifest URL instead:
+## License
+
+KAUI `1.0.x` is released under the MIT License. Starting with `1.1.0`, KAUI uses the KAUI Personal / Non-Commercial License.
+
+- `1.0.x`: MIT; commercial use is permitted under MIT.
+- `1.1.0+`: personal, educational, research, prototype, and non-commercial use only.
+- Commercial use of `1.1.0+` requires prior written permission. See `COMMERCIAL_LICENSE.md`.
+
+---
+
+## Design Tokens
+
+The canonical cross-platform token registry is `tokens/kaui.tokens.json`. Verify it against the compiled web bundle and generate a distributable snapshot with:
+
+```bash
+npm run tokens:verify
+```
+
+The registry is designed to produce future Web CSS, Flutter Dart, Android Compose Kotlin, and iOS SwiftUI outputs without changing the existing `.k-*` web API.
+
 
 ```text
 Read `https://longbm64.github.io/kaui/dist/versions/index.json`, take its `latest` version, then access `kaui-agent-manifest.json` inside that latest version directory.

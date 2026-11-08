@@ -3,58 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KAUI — Release Versions &amp; Artifact Registry</title>
+  <title>KAUI CSS Kit — Version Registry</title>
   <meta name="description" content="Official release archive and machine-readable manifest registry for KAUI CSS Kit.">
   <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="demo.js" defer></script>
   <script src="versions.js" defer></script>
 </head>
 <body class="demo-body">
   <aside class="demo-sidebar" aria-label="Version navigation">
-    <header class="demo-sidebar__header">
-      <a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a>
-    </header>
-    <div class="demo-sidebar__body">
-      <nav class="demo-sidebar__nav">
-        <a href="index.html#hero" class="demo-sidebar__link"><i data-lucide="arrow-left"></i> <span>Back to Demo</span></a>
-        <a href="#latest" class="demo-sidebar__link is-active"><i data-lucide="sparkles"></i> <span>Latest Version</span></a>
-        <a href="#history" class="demo-sidebar__link"><i data-lucide="history"></i> <span>Build History</span></a>
-      </nav>
-
-    </div>
-    <footer class="demo-sidebar__footer">
-      <button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button>
-      <a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-lucide="github" aria-hidden="true"></i><span>View on GitHub</span></a>
-    </footer>
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link is-active"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link is-active"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
   </aside>
-  <button type="button" class="demo-sidebar-toggle" aria-label="Open version navigation" aria-expanded="false"><i data-lucide="menu"></i></button>
-
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
   <div class="demo-page">
     <main class="demo-main">
-      <section id="latest" class="demo-hero">
-        <div class="k-container">
-          <div class="k-text-center">
-            <span class="k-badge k-badge--primary k-badge--pill k-mb-3" id="latest-version-badge">Loading...</span>
-            <h1 class="k-fs-4xl k-fw-bold k-mb-3">Release Versions &amp; Artifact Registry</h1>
-            <p class="k-fs-xl k-text-muted k-mb-6" style="max-width: 720px; margin-left: auto; margin-right: auto;">
-              Immutable compiled stylesheets, source maps, chart bundles, and machine-readable agent manifests archived by semantic version.
-            </p>
-            <div class="demo-hero-actions">
-              <a href="index.html" class="k-btn k-btn--primary k-btn--lg">Open Styleguide Demo</a>
-              <a href="#history" class="k-btn k-btn--outline k-btn--lg">Browse Build Archives</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="history" class="demo-section">
         <div class="k-container">
           <div class="demo-section-header">
-            <h2 class="demo-section-title"><i data-lucide="history"></i> Version Archives</h2>
+            <h2 class="demo-section-title"><i data-kaui-icon="history"></i> Version Archives</h2>
             <p class="demo-section-desc">Every release snapshots compiled assets into dedicated directories. Click any tree item to open its complete public URL.</p>
           </div>
           <div id="versions-container" class="k-flex k-flex-col k-gap-4">
+
             <div class="k-card k-card--bordered k-p-5"><p class="k-text-muted">Loading version archives...</p></div>
           </div>
         </div>

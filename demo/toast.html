@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Toast</title>
+  <meta name="description" content="KAUI CSS Kit Toast component showcase.">
+  <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Component navigation">
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link is-active"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-page"><main class="demo-main">
+<section id="toast" class="demo-section">
+        <div class="k-container">
+          <div class="demo-section-header">
+            <h2 class="demo-section-title">
+              <i data-kaui-icon="message-square"></i> Toast Notifications (<code>.k-toast</code>)
+            </h2>
+            <p class="demo-section-desc">Floating contextual alerts positioned in <code>.k-toast-container</code> with auto-dismiss triggers.</p>
+          </div>
+          <div class="k-card k-card--bordered k-p-6">
+            <div class="k-grid k-gap-4 k-items-end">
+              <div class="k-col-12 k-col-md-4">
+                <label for="demo-toast-position" class="k-form-label">Toast Placement (<code>.k-toast-container--*</code>)</label>
+                <div class="k-dropdown k-dropdown-select" data-k-dropdown-select>
+                  <select id="demo-toast-position" class="k-select k-d-none" tabindex="-1" aria-hidden="true">
+                    <option value="top-right" selected>Top Right (Default)</option>
+                    <option value="top-center">Top Center</option>
+                    <option value="top-left">Top Left</option>
+                    <option value="bottom-right">Bottom Right</option>
+                    <option value="bottom-center">Bottom Center</option>
+                    <option value="bottom-left">Bottom Left</option>
+                  </select>
+                  <div class="k-input-wrapper">
+                    <i data-kaui-icon="compass" class="k-input__icon k-input__icon--left" aria-hidden="true"></i>
+                    <button type="button" class="k-input k-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="k-dropdown__value">Top Right (Default)</span>
+                      <span class="k-dropdown__chevron" aria-hidden="true">
+                        <i data-kaui-icon="chevron-down"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="k-dropdown__menu" role="listbox" aria-label="Toast Placement">
+                    <button type="button" class="k-dropdown__item is-selected" data-value="top-right" role="option" aria-selected="true">Top Right (Default)</button>
+                    <button type="button" class="k-dropdown__item" data-value="top-center" role="option">Top Center</button>
+                    <button type="button" class="k-dropdown__item" data-value="top-left" role="option">Top Left</button>
+                    <button type="button" class="k-dropdown__item" data-value="bottom-right" role="option">Bottom Right</button>
+                    <button type="button" class="k-dropdown__item" data-value="bottom-center" role="option">Bottom Center</button>
+                    <button type="button" class="k-dropdown__item" data-value="bottom-left" role="option">Bottom Left</button>
+                  </div>
+                </div>
+              </div>
+              <div class="k-col-12 k-col-md-4">
+                <label for="demo-toast-autoclose" class="k-form-label">Auto-dismiss Behavior</label>
+                <div class="k-dropdown k-dropdown-select" data-k-dropdown-select>
+                  <select id="demo-toast-autoclose" class="k-select k-d-none" tabindex="-1" aria-hidden="true">
+                    <option value="auto-5s" selected>Auto-close (5 seconds)</option>
+                    <option value="auto-3s">Auto-close (3 seconds)</option>
+                    <option value="auto-10s">Auto-close (10 seconds)</option>
+                    <option value="persistent">Manual close only (No auto-close)</option>
+                  </select>
+                  <div class="k-input-wrapper">
+                    <i data-kaui-icon="timer" class="k-input__icon k-input__icon--left" aria-hidden="true"></i>
+                    <button type="button" class="k-input k-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="k-dropdown__value">Auto-close (5 seconds)</span>
+                      <span class="k-dropdown__chevron" aria-hidden="true">
+                        <i data-kaui-icon="chevron-down"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="k-dropdown__menu" role="listbox" aria-label="Auto-dismiss Behavior">
+                    <button type="button" class="k-dropdown__item is-selected" data-value="auto-5s" role="option" aria-selected="true">Auto-close (5 seconds)</button>
+                    <button type="button" class="k-dropdown__item" data-value="auto-3s" role="option">Auto-close (3 seconds)</button>
+                    <button type="button" class="k-dropdown__item" data-value="auto-10s" role="option">Auto-close (10 seconds)</button>
+                    <button type="button" class="k-dropdown__item" data-value="persistent" role="option">Manual close only (No auto-close)</button>
+                  </div>
+                </div>
+              </div>
+              <div class="k-col-12 k-col-md-4">
+                <div class="k-flex k-gap-3 k-flex-wrap">
+                  <button type="button" class="k-btn k-btn--primary" id="demo-trigger-toast">
+                    <span class="k-btn__icon"><i data-kaui-icon="bell-ring"></i></span>
+                    <span class="k-btn__text">Trigger Toast Notification</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-toast-container k-toast-container--top-right" id="demo-toast-container" aria-live="polite">
+            <div class="k-toast k-toast--success">
+              <div class="k-toast__content">
+                <div class="k-toast__title">Settings Saved</div>
+                <div class="k-toast__body">User interface preferences synchronized.</div>
+                <div class="k-toast__footer">
+                  <span class="k-toast__time" data-toast-time="0">
+                    <i data-kaui-icon="check-circle-2" class="k-text-success"></i>
+                    <span>just now</span>
+                  </span>
+                </div>
+              </div>
+              <button type="button" class="k-alert__close" onclick="this.closest('.k-toast').remove()">&times;</button>
+            </div>
+          </div>
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-toast"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Place toasts in one position-specific container and add <code>aria-live="polite"</code>. Choose auto-dismiss or keep a close button for persistent messages.</p><pre class="demo-code"><code>&lt;div class="k-toast-container k-toast-container--top-right" aria-live="polite"&gt;
+  &lt;div class="k-toast k-toast--success"&gt;
+    &lt;div class="k-toast__title"&gt;Saved&lt;/div&gt;
+    &lt;div class="k-toast__body"&gt;Preferences updated.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+        </div>
+      </section>
+  </main>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+</body>
+</html>

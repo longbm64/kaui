@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Navbar</title>
+  <meta name="description" content="KAUI CSS Kit Navbar component showcase.">
+  <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Component navigation">
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link is-active"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-page"><main class="demo-main">
+<section id="navbar" class="demo-section">
+      <div class="k-container">
+        <div class="demo-section-header">
+          <h2 class="demo-section-title">
+            <i data-kaui-icon="compass"></i> Navigation Bar (<code>.k-navbar</code>)
+          </h2>
+          <p class="demo-section-desc">Responsive header bar with brand, collapsible links drawer, and responsive actions.</p>
+        </div>
+        <header class="k-navbar k-navbar--expand-lg k-navbar--offcanvas k-navbar--sticky k-navbar--shadow" id="demo-navbar">
+          <div class="k-navbar__container">
+            <a href="#hero" class="k-navbar__brand">
+              <span class="k-navbar__brand-mark"><i data-kaui-icon="layers" aria-hidden="true"></i></span>
+              <span><span class="k-fw-bold k-text-primary">KAUI</span> App</span>
+            </a>
+            <button type="button" class="k-navbar__toggle" aria-label="Toggle navigation" aria-controls="demo-navbar-menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+            <nav class="k-navbar__menu" id="demo-navbar-menu" aria-label="Primary navigation">
+              <ul class="k-navbar__nav k-navbar__nav--scroll">
+                <li><a href="#tokens" class="k-navbar__link is-active" aria-current="page">Tokens</a></li>
+                <li class="k-navbar__item--has-children">
+                  <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Components <i data-kaui-icon="chevron-down" aria-hidden="true"></i></button>
+                  <ul class="k-navbar__submenu">
+                    <li><a href="#buttons" class="k-navbar__link"><i data-kaui-icon="plus" aria-hidden="true"></i> Buttons</a></li>
+                    <li class="k-navbar__item--has-children">
+                      <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Advanced <i data-kaui-icon="chevron-right" aria-hidden="true"></i></button>
+                      <ul class="k-navbar__submenu">
+                        <li><a href="#tables" class="k-navbar__link">Tables</a></li>
+                        <li><a href="#charts" class="k-navbar__link">Charts</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#icons" class="k-navbar__link">Icons</a></li>
+              </ul>
+              <div class="k-navbar__actions">
+                <button type="button" class="k-btn k-btn--sm k-btn--outline-primary"><span class="k-btn__icon"><i data-kaui-icon="user" aria-hidden="true"></i></span><span class="k-btn__text">Sign in</span></button>
+                <button type="button" class="k-btn k-btn--sm k-btn--primary"><span class="k-btn__text">Get Started</span><span class="k-btn__icon"><i data-kaui-icon="arrow-right" aria-hidden="true"></i></span></button>
+              </div>
+            </nav>
+          </div>
+        </header>
+      </div>
+    </section>
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-navbar"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Use <code>.k-navbar</code> with optional modifiers for sticky, shadow, transparent, dark, compact, centered, and borderless surfaces. Add <code>.k-navbar__actions</code> for CTAs and <code>.k-navbar__submenu</code> for nested navigation.</p><pre class="demo-code"><code>&lt;header class="k-navbar k-navbar--sticky k-navbar--shadow"&gt;
+  &lt;div class="k-navbar__container"&gt;
+    &lt;a href="#" class="k-navbar__brand"&gt;Brand&lt;/a&gt;
+    &lt;nav class="k-navbar__menu"&gt;
+      &lt;ul class="k-navbar__nav"&gt;
+        &lt;li&gt;&lt;a href="#" class="k-navbar__link is-active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="k-navbar__item--has-children"&gt;
+          &lt;a href="#" class="k-navbar__link"&gt;Products&lt;/a&gt;
+          &lt;ul class="k-navbar__submenu"&gt;&lt;li&gt;&lt;a href="#" class="k-navbar__link"&gt;Overview&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class="k-navbar__actions"&gt;&lt;button class="k-btn k-btn--primary"&gt;Get started&lt;/button&gt;&lt;/div&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre></div>
+  </main>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "KAUI CSS Kit Agent Manifest",
+  "version": "1.1.0",
+  "manifestUrl": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui-agent-manifest.json",
+  "liveDemoUrl": "https://longbm64.github.io/kaui/demo",
+  "strictRule": "MANDATORY: Use ONLY KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Custom CSS is strictly forbidden unless explicitly documented as unsupported by this manifest.",
+  "tokenRegistry": {
+    "source": "tokens/kaui.tokens.json",
+    "verifiedOutput": "dist/tokens/kaui.tokens.json",
+    "verifyCommand": "npm run tokens:verify",
+    "platformTargets": [
+      "web",
+      "nextjs",
+      "flutter",
+      "android-compose",
+      "ios-swiftui"
+    ]
+  },
+  "license": {
+    "name": "KAUI Personal / Non-Commercial License",
+    "commercialUse": false,
+    "permissionRequired": true,
+    "contact": "contact@filekat.com",
+    "transition": "KAUI 1.0.x remains MIT; KAUI 1.1.0+ requires permission for commercial use."
+  },
+  "stylesheet": {
+    "bundle": "dist/kaui.min.css",
+    "description": "Production compressed single stylesheet containing both core and extended UI components plus design tokens and layout utilities.",
+    "chartsOptIn": {
+      "css": "dist/kaui-chart.min.css",
+      "js": "dist/kaui-chart.min.js"
+    }
+  },
+  "conventions": {
+    "prefix": "k-",
+    "methodology": "BEM (.k-block__element--modifier)",
+    "stateClasses": [
+      "is-valid",
+      "is-invalid",
+      "is-active",
+      "is-disabled",
+      "is-open",
+      "is-loading"
+    ],
+    "designTokens": "Use CSS custom properties only: var(--k-primary), var(--k-secondary), var(--k-color-surface), var(--k-color-border), var(--k-spacing-*), var(--k-radius-*).",
+    "theme": "Support [data-theme=\"dark\"] natively without rewriting component styles.",
+    "externalLibraries": "ZERO external UI frameworks. Pure HTML + KAUI classes + semantic aria-* attributes."
+  },
+  "layout": {
+    "container": [
+      ".k-container",
+      ".k-container--fluid"
+    ],
+    "grid": [
+      ".k-grid",
+      ".k-col-12",
+      ".k-col-md-6",
+      ".k-col-lg-4",
+      ".k-col-sm-*",
+      ".k-col-xl-*"
+    ],
+    "gap": [
+      ".k-gap-0",
+      ".k-gap-1",
+      ".k-gap-2",
+      ".k-gap-3",
+      ".k-gap-4",
+      ".k-gap-6",
+      ".k-gap-8",
+      ".k-gap-12",
+      ".k-gap-16"
+    ],
+    "flex": [
+      ".k-flex",
+      ".k-flex-col",
+      ".k-flex-wrap",
+      ".k-items-center",
+      ".k-items-start",
+      ".k-items-end",
+      ".k-justify-between",
+      ".k-justify-center",
+      ".k-justify-end"
+    ]
+  },
+  "components": {
+    "button": {
+      "base": ".k-btn",
+      "variants": [
+        ".k-btn--primary",
+        ".k-btn--secondary",
+        ".k-btn--outline",
+        ".k-btn--success",
+        ".k-btn--warning",
+        ".k-btn--danger"
+      ],
+      "sizes": [
+        ".k-btn--sm",
+        ".k-btn--lg",
+        ".k-btn--block"
+      ],
+      "states": [
+        ":disabled",
+        ".is-disabled",
+        ".k-btn--loading",
+        ".is-loading"
+      ],
+      "anatomy": [
+        ".k-btn__icon",
+        ".k-btn__loader",
+        ".k-btn__text"
+      ]
+    },
+    "form": {
+      "layout": [
+        ".k-form-group",
+        ".k-form-label",
+        ".k-form-hint",
+        ".k-form-feedback",
+        ".k-form-feedback--valid",
+        ".k-form-feedback--invalid"
+      ],
+      "controls": [
+        ".k-input",
+        ".k-select",
+        ".k-textarea"
+      ],
+      "iconWrapper": [
+        ".k-input-wrapper",
+        ".k-input__icon--left",
+        ".k-input__icon--right"
+      ],
+      "states": [
+        ".is-valid",
+        ".is-invalid",
+        ".is-disabled"
+      ]
+    },
+    "card": {
+      "base": ".k-card",
+      "anatomy": [
+        ".k-card__header",
+        ".k-card__title",
+        ".k-card__icon",
+        ".k-card__body",
+        ".k-card__footer"
+      ],
+      "modifiers": [
+        ".k-card--bordered",
+        ".k-card--interactive"
+      ]
+    },
+    "badge": {
+      "base": ".k-badge",
+      "variants": [
+        ".k-badge--primary",
+        ".k-badge--secondary",
+        ".k-badge--success",
+        ".k-badge--warning",
+        ".k-badge--danger",
+        ".k-badge--info"
+      ],
+      "modifiers": [
+        ".k-badge--pill"
+      ]
+    },
+    "alert": {
+      "base": ".k-alert",
+      "variants": [
+        ".k-alert--success",
+        ".k-alert--warning",
+        ".k-alert--error",
+        ".k-alert--info"
+      ],
+      "anatomy": [
+        ".k-alert__title",
+        ".k-alert__body",
+        ".k-alert__close"
+      ]
+    },
+    "table": {
+      "base": ".k-table-wrap",
+      "table": ".k-table",
+      "modifiers": [
+        ".k-table--striped",
+        ".k-table--hover",
+        ".k-table--bordered",
+        ".k-table--sm",
+        ".k-table--responsive",
+        ".k-table--frozen"
+      ]
+    },
+    "extended": {
+      "modal": [
+        ".k-modal",
+        ".k-modal-backdrop",
+        ".k-modal__dialog",
+        ".k-modal__header",
+        ".k-modal__body",
+        ".k-modal__footer"
+      ],
+      "confirm": [
+        ".k-confirm",
+        ".k-confirm__content",
+        ".k-confirm__icon",
+        ".k-confirm__title",
+        ".k-confirm__message"
+      ],
+      "toast": [
+        ".k-toast-container",
+        ".k-toast",
+        ".k-toast__title",
+        ".k-toast__message",
+        ".k-toast__footer",
+        ".k-toast__time"
+      ],
+      "tabs": [
+        ".k-tabs__list",
+        ".k-tabs__tab",
+        ".k-tabs__panel"
+      ],
+      "accordion": [
+        ".k-accordion",
+        ".k-accordion__item",
+        ".k-accordion__header",
+        ".k-accordion__body"
+      ]
+    }
+  },
+  "builtAt": "2026-11-08T16:39:11.294Z",
+  "build": {
+    "version": "1.1.0",
+    "mainCss": "dist/kaui.min.css",
+    "chartCss": "dist/kaui-chart.min.css",
+    "chartJs": "dist/kaui-chart.min.js",
+    "artifactDirectory": "dist/versions/1.1.0/",
+    "generatedBy": "npm run build:versioned or npm run release:patch|minor|major"
+  },
+  "tokenFiles": [
+    "dist/tokens/kaui.tokens.json",
+    "dist/tokens/kaui.tokens.css",
+    "dist/tokens/kaui.tokens.dart",
+    "dist/tokens/KauiTokens.kt",
+    "dist/tokens/KauiTokens.swift"
+  ],
+  "iconFiles": [
+    "dist/icons/sprite.svg",
+    "dist/icons/kaui-icons.css",
+    "dist/icons/kaui-icons.json"
+  ]
+}

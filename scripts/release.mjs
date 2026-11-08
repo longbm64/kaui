@@ -7,6 +7,10 @@ const ROOT = process.cwd();
 const PKG_PATH = path.join(ROOT, 'package.json');
 const LOCK_PATH = path.join(ROOT, 'package-lock.json');
 const DEMO_HTML_PATH = path.join(ROOT, 'demo/index.html');
+
+const README_PATH = path.join(ROOT, 'README.md');
+const LICENSE_PATH = path.join(ROOT, 'LICENSE');
+const NON_COMMERCIAL_LICENSE_PATH = path.join(ROOT, 'NON_COMMERCIAL_LICENSE.md');
 const VERSIONS_DIR = path.join(ROOT, 'dist/versions');
 const PUBLIC_BASE_URL = 'https://longbm64.github.io/kaui';
 const INDEX_JSON_PATH = path.join(VERSIONS_DIR, 'index.json');
@@ -15,6 +19,12 @@ const INDEX_JSON_PATH = path.join(VERSIONS_DIR, 'index.json');
 function manifestPath(version) {
   return path.join(VERSIONS_DIR, version, 'kaui-agent-manifest.json');
 }
+
+function isNonCommercialVersion(version) {
+  const [major, minor] = version.split('.').map(Number);
+  return major > 1 || (major === 1 && minor >= 1);
+}
+
 
 function bumpSemver(version, type) {
   const parts = version.split('.').map((n) => Number.parseInt(n, 10));
@@ -68,11 +78,23 @@ function main() {
       readme = readme.replace(/badge\/version-\d+\.\d+\.\d+-blue/, `badge/version-${nextVersion}-blue`);
       fs.writeFileSync(README_PATH, readme);
     }
+    if (isNonCommercialVersion(nextVersion)) {
+      pkg.license = 'LicenseRef-KAUI-NonCommercial';
+      fs.writeFileSync(PKG_PATH, JSON.stringify(pkg, null, 2) + '\n');
+      if (fs.existsSync(LICENSE_PATH) && fs.existsSync(NON_COMMERCIAL_LICENSE_PATH)) fs.copyFileSync(NON_COMMERCIAL_LICENSE_PATH, LICENSE_PATH);
+      if (fs.existsSync(DEMO_HTML_PATH)) {
+        let demoHtml = fs.readFileSync(DEMO_HTML_PATH, 'utf8');
+        demoHtml = demoHtml.replace(/Released under MIT License\.[^<]*/, 'Personal and educational use is allowed. Commercial use requires a KAUI license.');
+        fs.writeFileSync(DEMO_HTML_PATH, demoHtml);
+      }
+    }
   }
 
   // Compile CSS and charts
   execSync('npm run build', { stdio: 'inherit' });
   execSync('npm run build:chart', { stdio: 'inherit' });
+  execSync('npm run tokens:build', { stdio: 'inherit' });
+  execSync('npm run icons:build', { stdio: 'inherit' });
 
   const targetDir = path.join(VERSIONS_DIR, nextVersion);
   fs.mkdirSync(targetDir, { recursive: true });
@@ -88,7 +110,17 @@ function main() {
     builtAt: new Date().toISOString(),
     manifestUrl: `https://longbm64.github.io/kaui/dist/versions/${nextVersion}/kaui-agent-manifest.json`,
     liveDemoUrl: 'https://longbm64.github.io/kaui/demo',
+    license: {
+      name: isNonCommercialVersion(nextVersion) ? 'KAUI Personal / Non-Commercial License' : 'MIT License',
+      commercialUse: isNonCommercialVersion(nextVersion) ? false : true,
+      permissionRequired: isNonCommercialVersion(nextVersion),
+      contact: 'contact@filekat.com',
+      transition: 'KAUI 1.0.x remains MIT; KAUI 1.1.0+ requires permission for commercial use.'
+    },
     strictRule: 'MANDATORY: Use ONLY KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Custom CSS is strictly forbidden unless explicitly documented as unsupported by this manifest.',
+
+    tokenFiles: ["dist/tokens/kaui.tokens.json", "dist/tokens/kaui.tokens.css", "dist/tokens/kaui.tokens.dart", "dist/tokens/KauiTokens.kt", "dist/tokens/KauiTokens.swift"],
+    iconFiles: ["dist/icons/sprite.svg", "dist/icons/kaui-icons.css", "dist/icons/kaui-icons.json"],
     build: {
       version: nextVersion,
       mainCss: 'dist/kaui.min.css',
@@ -97,6 +129,7 @@ function main() {
       artifactDirectory: `dist/versions/${nextVersion}/`,
       generatedBy: 'npm run build:versioned or npm run release:patch|minor|major'
     }
+
   });
 
   fs.writeFileSync(manifestPath(nextVersion), JSON.stringify(manifest, null, 2) + '\n');
@@ -114,7 +147,15 @@ function main() {
     'kaui-chart.js',
     'kaui-chart.min.css',
     'kaui-chart.min.js',
-    'kaui-agent-manifest.json'
+    'kaui-agent-manifest.json',
+    'tokens/kaui.tokens.json',
+    'tokens/kaui.tokens.css',
+    'tokens/kaui.tokens.dart',
+    'tokens/KauiTokens.kt',
+    'tokens/KauiTokens.swift',
+    'icons/sprite.svg',
+    'icons/kaui-icons.css',
+    'icons/kaui-icons.json'
   ];
 
   const versionManifest = {
@@ -124,10 +165,13 @@ function main() {
   };
 
   for (const file of artifacts) {
-    const src = file === 'kaui-agent-manifest.json' ? manifestPath(nextVersion) : path.join(ROOT, 'dist', file);
+    const src = file === 'kaui-agent-manifest.json' ? manifestPath(nextVersion) : (file.startsWith('tokens/') || file.startsWith('icons/') ? path.join(ROOT, 'dist', file.replace(/^tokens\//, 'tokens/').replace(/^icons\//, 'icons/')) : path.join(ROOT, 'dist', file));
+
     if (fs.existsSync(src)) {
       const dest = path.join(targetDir, file);
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
       fs.copyFileSync(src, dest);
+
       versionManifest.files[file] = getFileMeta(src);
     }
   }

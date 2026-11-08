@@ -46,16 +46,16 @@
     return files.map(function (entry) {
       var file = typeof entry === 'string' ? entry : entry.name;
       var href = typeof entry === 'string' ? 'https://longbm64.github.io/kaui/dist/versions/' + encodeURIComponent(version) + '/' + encodeURIComponent(file) : entry.url;
-      return '<a class="demo-version-tree__file" href="' + href + '" target="_blank" rel="noopener noreferrer"><i data-lucide="file-code-2" aria-hidden="true"></i><span>' + file + '</span></a>';
+      return '<a class="demo-version-tree__file" href="' + href + '" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="file-code-2" aria-hidden="true"></i><span>' + file + '</span></a>';
     }).join('');
   }
 
   function fallbackRegistry() {
     return {
-      latest: '1.0.0',
+      latest: '1.1.0',
       versions: {
-        '1.0.0': {
-          version: '1.0.0',
+        '1.1.0': {
+          version: '1.1.0',
           builtAt: 'Build archive available locally',
           files: ['kaui.css', 'kaui.css.map', 'kaui.min.css', 'kaui.min.css.map', 'kaui-chart.css', 'kaui-chart.js', 'kaui-chart.min.css', 'kaui-chart.min.js', 'kaui-agent-manifest.json']
         }
@@ -101,13 +101,23 @@
       var isLatest = version === latest;
       var files = item.files || [];
       var built = formatBuildTime(item.builtAt);
-      return '<details class="demo-version-tree__item"' + (isLatest ? ' open' : '') + '><summary class="demo-version-tree__summary"><i data-lucide="folder" aria-hidden="true"></i><span class="demo-version-tree__version">v' + version + '</span>' + (isLatest ? '<span class="k-badge k-badge--success k-badge--pill">Latest</span>' : '') + '<span class="demo-version-tree__meta">Built ' + built + '</span></summary><div class="demo-version-tree__children">' + fileLinks(version, files) + '<a class="demo-version-tree__file" href="https://longbm64.github.io/kaui/dist/versions/' + version + '/metadata.json" target="_blank" rel="noopener noreferrer"><i data-lucide="clipboard-list" aria-hidden="true"></i><span>metadata.json</span></a></div></details>';
+      var install = '<div class="k-card k-card--bordered k-p-4 k-mt-4"><h3 class="demo-subheading k-mt-0">Install this version</h3><div class="k-grid k-gap-4"><div class="k-col-12 k-col-md-6"><p class="k-text-muted k-fs-sm k-mb-2">Web / React / Next.js — npm</p><pre class="demo-code"><code>npm install filekat@' + version + '\n\nimport \'filekat/kaui\';</code></pre><a class="k-btn k-btn--sm k-btn--outline-primary" href="https://www.npmjs.com/package/filekat/v/' + version + '" target="_blank" rel="noopener noreferrer">View npm version</a></div><div class="k-col-12 k-col-md-6"><p class="k-text-muted k-fs-sm k-mb-2">Flutter — pub.dev</p><pre class="demo-code"><code>flutter pub add filekat@' + version + '\n\nimport \'package:filekat/kaui.dart\';</code></pre><a class="k-btn k-btn--sm k-btn--outline-primary" href="https://pub.dev/packages/filekat/versions/' + version + '" target="_blank" rel="noopener noreferrer">View pub version</a></div></div><p class="k-text-muted k-fs-xs k-mt-3 k-mb-0">KAUI 1.1.0+ is Personal / Non-Commercial. Commercial use requires written permission: contact@filekat.com.</p></div>';
+      return '<div class="k-accordion__item' + (isLatest ? ' is-open' : '') + '"><button type="button" class="k-accordion__trigger" aria-expanded="' + (isLatest ? 'true' : 'false') + '"><span class="k-flex k-items-center k-gap-2"><i data-kaui-icon="folder" aria-hidden="true"></i><span class="demo-version-tree__version">v' + version + '</span>' + (isLatest ? '<span class="k-badge k-badge--success k-badge--pill">Latest</span>' : '') + '</span><span class="demo-version-tree__meta">Built ' + built + '</span></button><div class="k-accordion__body"><div class="demo-version-tree__children">' + fileLinks(version, files) + '<a class="demo-version-tree__file" href="https://longbm64.github.io/kaui/dist/versions/' + version + '/metadata.json" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="clipboard-list" aria-hidden="true"></i><span>metadata.json</span></a></div>' + install + '</div></div>';
     }).join('');
+    container.querySelectorAll('.k-accordion__trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var item = trigger.closest('.k-accordion__item');
+        if (!item) return;
+        var open = item.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(open));
+      });
+    });
+    if (window.renderKauiIcons) window.renderKauiIcons();
   }
 
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+    if (window.renderKauiIcons) window.renderKauiIcons();
     initTheme();
     initDrawer();
     var copyButton = document.getElementById('copy-manifest-url-button');

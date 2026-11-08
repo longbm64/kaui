@@ -37,17 +37,14 @@
   user-select: none;
   @include transition(all, var(--k-transition-base));
 
-  &:hover:not(:disabled):not(.is-disabled) {
+  &:hover:not(:disabled):not(.is-disabled),
+  &:active:not(:disabled):not(.is-disabled) {
     background-color: var(--k-btn-bg-hover);
+    color: var(--k-btn-color);
   }
 
   &:focus-visible {
     @include focus-ring();
-  }
-
-  &:active:not(:disabled):not(.is-disabled) {
-    // Keep the button stationary when pressed; only its visual color state changes.
-    background-color: var(--k-btn-bg-hover);
   }
 
   &:disabled,

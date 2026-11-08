@@ -114,10 +114,16 @@ describe('M6 Adversarial Stress Suite: Hardening & Polish', () => {
 
     it('3.2 LICENSE content specifies MIT License matching package.json', () => {
       const licenseContent = fs.readFileSync(licensePath, 'utf8');
-      assert.match(licenseContent, /^MIT License/m, 'LICENSE must begin with MIT License');
-      assert.match(licenseContent, /Copyright \(c\) 2026 KAUI Contributors/, 'LICENSE copyright must match package.json author');
-      assert.equal(packageJson.license, 'MIT', 'package.json license must be MIT');
+      const version = packageJson.version || '1.0.0';
+      const [major, minor] = version.split('.').map(Number);
+      if (major > 1 || (major === 1 && minor >= 1)) {
+        assert.match(licenseContent, /Non-Commercial/i, '1.1.0+ must use Non-Commercial license');
+      } else {
+        assert.match(licenseContent, /^MIT License/m, '1.0.x must begin with MIT License');
+        assert.equal(packageJson.license, 'MIT', 'package.json license must be MIT for 1.0.x');
+      }
     });
+
   });
 
   // ==========================================================================

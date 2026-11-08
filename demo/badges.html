@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Badges</title>
+  <meta name="description" content="KAUI CSS Kit Badges component showcase.">
+  <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Component navigation">
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link is-active"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-page"><main class="demo-main">
+<section id="badges" class="demo-section">
+        <div class="k-container">
+          <div class="demo-section-header">
+            <h2 class="demo-section-title">
+              <i data-kaui-icon="tag"></i> Status Badges (<code>.k-badge</code>) <button type="button" class="demo-copy-button" data-copy-component="badges"><span class="demo-copy-label">Copy code</span></button>
+            </h2>
+            <p class="demo-section-desc">
+              Compact visual indicators for categories, counts, and statuses. Supports semantic color variants and pill shape (<code>.k-badge--pill</code>).
+            </p>
+          </div>
+
+          <!-- Semantic Variants -->
+          <h3 class="demo-subheading">Semantic Status Variants</h3>
+          <div class="k-flex k-items-center k-gap-3 k-flex-wrap k-mb-6">
+            <span class="k-badge k-badge--primary">Primary</span>
+            <span class="k-badge k-badge--secondary">Secondary</span>
+            <span class="k-badge k-badge--success">Success</span>
+            <span class="k-badge k-badge--warning">Warning</span>
+            <span class="k-badge k-badge--error">Error</span>
+            <span class="k-badge k-badge--info">Info</span>
+          </div>
+
+          <!-- Pill Modifier -->
+          <h3 class="demo-subheading">Pill Badges (<code>.k-badge--pill</code>)</h3>
+          <div class="k-flex k-items-center k-gap-3 k-flex-wrap k-mb-6">
+            <span class="k-badge k-badge--primary k-badge--pill">Active 12</span>
+            <span class="k-badge k-badge--secondary k-badge--pill">Draft</span>
+            <span class="k-badge k-badge--success k-badge--pill">Completed</span>
+            <span class="k-badge k-badge--warning k-badge--pill">Pending Review</span>
+            <span class="k-badge k-badge--error k-badge--pill">Rejected</span>
+            <span class="k-badge k-badge--info k-badge--pill">New Release</span>
+          </div>
+
+          <!-- Inside Headings and Buttons -->
+          <h3 class="demo-subheading">Badges Inside Headings &amp; Buttons</h3>
+          <div class="k-flex k-items-center k-gap-4 k-flex-wrap">
+            <div class="k-fs-xl k-fw-bold k-flex k-items-center k-gap-2">
+              <span>Dashboard Overview</span>
+              <span class="k-badge k-badge--primary">Live</span>
+            </div>
+            <button type="button" class="k-btn k-btn--secondary k-flex k-items-center k-gap-2">
+              <span>Unread Messages</span>
+              <span class="k-badge k-badge--error k-badge--pill">5</span>
+            </button>
+          </div>
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-badges"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Use badges for short status labels. Add a semantic modifier and <code>.k-badge--pill</code> when a fully rounded shape is preferred.</p><pre class="demo-code"><code>&lt;span class="k-badge k-badge--success k-badge--pill"&gt;Completed&lt;/span&gt;</code></pre></div>
+        </div>
+      </section>
+  </main>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+</body>
+</html>

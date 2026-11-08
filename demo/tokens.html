@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Design Tokens</title>
+  <meta name="description" content="KAUI CSS Kit Design Tokens component showcase.">
+  <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Component navigation">
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link is-active"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-page"><main class="demo-main">
+<section id="tokens" class="demo-section">
+      <div class="k-container">
+        <div class="demo-section-header">
+          <h2 class="demo-section-title">
+            <i data-kaui-icon="palette"></i> Design Tokens Visualizer
+          </h2>
+          <p class="demo-section-desc">
+            Two-tier token architecture: Sass maps compiled into CSS Custom Properties (<code>--k-*</code>) at <code>:root</code> with dynamic overrides under <code>[data-theme="dark"]</code>.
+          </p>
+        </div>
+
+        <!-- 3.1 Color Palette -->
+        <h3 class="demo-subheading">Color Palette</h3>
+
+        <!-- Primary Scale -->
+        <h4 class="k-fs-sm k-text-muted k-mb-2">Primary Color Scale (Blue)</h4>
+        <div class="k-grid k-gap-3 k-mb-6">
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-50);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-50</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#eff6ff</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#eff6ff" aria-label="Copy #eff6ff" title="Copy #eff6ff"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-100);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-100</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#dbeafe</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#dbeafe" aria-label="Copy #dbeafe" title="Copy #dbeafe"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-200);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-200</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#bfdbfe</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#bfdbfe" aria-label="Copy #bfdbfe" title="Copy #bfdbfe"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-300);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-300</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#93c5fd</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#93c5fd" aria-label="Copy #93c5fd" title="Copy #93c5fd"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-400);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-400</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#60a5fa</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#60a5fa" aria-label="Copy #60a5fa" title="Copy #60a5fa"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#3b82f6</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#3b82f6" aria-label="Copy #3b82f6" title="Copy #3b82f6"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-600);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-600</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#2563eb</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#2563eb" aria-label="Copy #2563eb" title="Copy #2563eb"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-primary-700);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">primary-700</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#1d4ed8</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#1d4ed8" aria-label="Copy #1d4ed8" title="Copy #1d4ed8"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Warm Palettes -->
+        <h4 class="k-fs-sm k-text-muted k-mb-2">Warm Palettes (Amber Yellow–Orange &amp; Brown)</h4>
+        <div class="k-grid k-gap-3 k-mb-6">
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-amber-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">amber-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#f59e0b (Yellow–Orange)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#f59e0b" aria-label="Copy #f59e0b" title="Copy #f59e0b"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-amber-700);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">amber-700</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#b45309 (Orange)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#b45309" aria-label="Copy #b45309" title="Copy #b45309"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-brown-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">brown-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#78716c</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#78716c" aria-label="Copy #78716c" title="Copy #78716c"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-brown-800);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">brown-800</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#292524</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#292524" aria-label="Copy #292524" title="Copy #292524"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback & Status Colors -->
+        <h4 class="k-fs-sm k-text-muted k-mb-2">Feedback &amp; Status Colors</h4>
+        <div class="k-grid k-gap-3 k-mb-6">
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-success-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">success-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#10b981 (Success)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#10b981" aria-label="Copy #10b981" title="Copy #10b981"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-warning-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">warning-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#f59e0b (Warning)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#f59e0b" aria-label="Copy #f59e0b" title="Copy #f59e0b"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-error-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">error-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#ef4444 (Error)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#ef4444" aria-label="Copy #ef4444" title="Copy #ef4444"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-info-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">info-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#0ea5e9 (Info)</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#0ea5e9" aria-label="Copy #0ea5e9" title="Copy #0ea5e9"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neutral Scale -->
+        <h4 class="k-fs-sm k-text-muted k-mb-2">Neutral Palette (Slate Grayscale 50–900)</h4>
+        <div class="k-grid k-gap-3 k-mb-8">
+          <div class="k-col-4 k-col-md-2">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-100); border-bottom: 1px solid var(--k-border);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">neutral-100</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#f1f5f9</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#f1f5f9" aria-label="Copy #f1f5f9" title="Copy #f1f5f9"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-4 k-col-md-2">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-300);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">neutral-300</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#cbd5e1</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#cbd5e1" aria-label="Copy #cbd5e1" title="Copy #cbd5e1"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-4 k-col-md-2">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-500);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">neutral-500</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#64748b</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#64748b" aria-label="Copy #64748b" title="Copy #64748b"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-4 k-col-md-2">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-700);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">neutral-700</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#334155</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#334155" aria-label="Copy #334155" title="Copy #334155"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-4 k-col-md-2">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-800);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">neutral-800</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#1e293b</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#1e293b" aria-label="Copy #1e293b" title="Copy #1e293b"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="k-col-4 k-col-md-2">
+            <div class="demo-swatch">
+              <div class="demo-swatch-color" style="background-color: var(--k-color-neutral-900);"></div>
+              <div class="demo-swatch-info">
+                <div class="demo-swatch-name">neutral-900</div>
+                <div class="demo-swatch-meta-row">
+                  <div class="demo-swatch-meta">#0f172a</div>
+                  <button type="button" class="demo-color-copy" data-copy-color="#0f172a" aria-label="Copy #0f172a" title="Copy #0f172a"><i data-kaui-icon="copy"></i><span class="demo-copy-label">Copy</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.2 Typography Scale -->
+        <h3 class="demo-subheading">Typography Scale &amp; Hierarchy</h3>
+        <div class="k-card k-card--bordered k-p-6 k-mb-8">
+          <div class="k-mb-4">
+            <div class="k-fs-4xl k-fw-bold k-lh-tight">Display 4XL (2.25rem / 36px) — The quick brown fox jumps</div>
+            <div class="k-fs-xs k-text-muted"><code>.k-fs-4xl .k-fw-bold .k-lh-tight</code></div>
+          </div>
+          <div class="k-mb-4">
+            <div class="k-fs-3xl k-fw-bold">Heading 3XL (1.875rem / 30px) — Over the lazy dog</div>
+            <div class="k-fs-xs k-text-muted"><code>.k-fs-3xl .k-fw-bold</code></div>
+          </div>
+          <div class="k-mb-4">
+            <div class="k-fs-2xl k-fw-semibold">Heading 2XL (1.5rem / 24px) — Modern responsive modular type scale</div>
+            <div class="k-fs-xs k-text-muted"><code>.k-fs-2xl .k-fw-semibold</code></div>
+          </div>
+          <div class="k-mb-4">
+            <div class="k-fs-xl k-fw-semibold">Heading XL (1.25rem / 20px) — Clean typographic hierarchy</div>
+            <div class="k-fs-xs k-text-muted"><code>.k-fs-xl .k-fw-semibold</code></div>
+          </div>
+          <div class="k-mb-4">
+            <div class="k-fs-lg k-fw-medium">Heading LG (1.125rem / 18px) — Subheadings and featured callouts</div>
+            <div class="k-fs-xs k-text-muted"><code>.k-fs-lg .k-fw-medium</code></div>
+          </div>
+          <div class="k-mb-4">
+            <div class="k-fs-base k-fw-normal k-lh-base">Body Base (1rem / 16px) — Standard reading body text with optimal line-height and contrast. Designed for long-form readability across all desktop and mobile devices.</div>
+            <div class="k-fs-xs k-text-muted"><code>.k-fs-base .k-fw-normal .k-lh-base</code></div>
+          </div>
+          <div>
+            <div class="k-fs-sm k-text-muted">Body Small (0.875rem / 14px) and Extra Small (0.75rem / 12px) for captions, helpers, and meta tokens.</div>
+            <div class="k-fs-xs k-text-muted"><code>.k-fs-sm .k-text-muted</code></div>
+          </div>
+        </div>
+
+        <!-- 3.3 Spacing Scale -->
+        <h3 class="demo-subheading">Spacing Scale (Harmonic 4px/8px Grid)</h3>
+        <div class="k-card k-card--bordered k-p-6 k-mb-8">
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-1 (0.25rem / 4px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 1rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-2 (0.5rem / 8px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 2rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-3 (0.75rem / 12px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 3rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-4 (1rem / 16px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 4rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-5 (1.25rem / 20px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 5rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-6 (1.5rem / 24px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 6rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-8 (2rem / 32px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 8rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-10 (2.5rem / 40px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 10rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-12 (3rem / 48px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 12rem;"></div></div>
+          </div>
+          <div class="demo-spacing-item">
+            <div class="demo-spacing-label">spacing-16 (4rem / 64px)</div>
+            <div class="demo-spacing-bar-wrap"><div class="demo-spacing-bar" style="width: 16rem;"></div></div>
+          </div>
+        </div>
+
+        <!-- 3.4 Radii & Elevation Shadows -->
+        <h3 class="demo-subheading">Border Radii &amp; Elevation Shadows</h3>
+        <div class="k-grid k-gap-4 k-mb-4">
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-radius-box" style="border-radius: var(--k-radius-sm);">
+              radius-sm (4px)
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-radius-box" style="border-radius: var(--k-radius-md);">
+              radius-md (6px)
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-radius-box" style="border-radius: var(--k-radius-lg);">
+              radius-lg (8px)
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-radius-box" style="border-radius: var(--k-radius-full);">
+              radius-full (9999px)
+            </div>
+          </div>
+        </div>
+        <div class="k-grid k-gap-4">
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-shadow-box" style="box-shadow: var(--k-shadow-sm);">
+              shadow-sm
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-shadow-box" style="box-shadow: var(--k-shadow-md);">
+              shadow-md
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-shadow-box" style="box-shadow: var(--k-shadow-lg);">
+              shadow-lg
+            </div>
+          </div>
+          <div class="k-col-6 k-col-md-3">
+            <div class="demo-shadow-box" style="box-shadow: var(--k-shadow-xl);">
+              shadow-xl
+            </div>
+          </div>
+        </div>
+        <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-tokens"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Use semantic tokens such as <code>--k-primary</code> in custom properties only when no existing utility fits. Toggle dark mode with <code>data-theme="dark"</code>.</p><pre class="demo-code"><code>&lt;div style="color: var(--k-primary); background: var(--k-bg);"&gt;
+  Token-powered content
+&lt;/div&gt;</code></pre></div>
+      </div>
+    </section>
+  </main>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+</body>
+</html>

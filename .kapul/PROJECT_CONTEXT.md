@@ -1,3 +1,13 @@
+Version Archives dùng Accordion Component chuẩn KAUI (`.k-accordion__item.is-open`, `.k-accordion__trigger[aria-expanded]`, `.k-accordion__body`) để hiển thị từng version và artifact.
+
+- Version Registry dùng chung sidebar chuẩn của các demo page (`demo.js`, scroll controls, grouped navigation, KAUI icon registry), không dùng Lucide CDN riêng.
+
+- Demo contract: `demo/versions.html` is a focused archive page; its hero intro (latest badge, registry heading/description, and two hero actions) is omitted, while `#history` remains the primary content section.
+
+
+
+
+
 
 # KAUI — Project Context
 
@@ -28,9 +38,17 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - `.k-input`, `.k-select`, `.k-textarea`: block control, width 100%, border 1px, focus đổi `border-color`.
 - `.k-checkbox`, `.k-radio`: custom control với `:checked` và `:focus-visible`.
 - `.k-form-group`, `.k-form-label`, `.k-form-hint`, `.k-form-feedback`: layout và thông báo validation.
-- Version contract: canonical version is `package.json`; `npm run release:patch|minor|major` bumps version and archives immutable artifacts under `dist/versions/<version>/`. `dist/versions/index.json` tracks latest/version history; unversioned `dist/*` remains the compatibility alias.
+- Roadmap completion baseline: token builders generate Web/Dart/Kotlin/Swift outputs; icon builder generates the complete 67-icon KAUI-owned registry and sprite; release verifier checks 18 versioned artifacts; Flutter core widgets and platform package scaffolds exist. Native platform projects still require platform-specific CI/golden tests before production publication.
+
+- Roadmap completion baseline: token builders generate Web/Dart/Kotlin/Swift outputs; icon builder generates the complete 67-icon KAUI-owned registry and sprite; release verifier checks 18 versioned artifacts; Flutter core widgets and platform package scaffolds exist. Native platform projects still require platform-specific CI/golden tests before production publication.
+- Full icon registry baseline: `icons/manifest.json` and generated `dist/icons/kaui-icons.json` contain 2,328 registered SVG icons (including legacy KAUI compatibility names); gallery renders the full registry from the inline sprite.
+
 - Table contract: `src/scss/components/_table.scss` xuất `.k-table-wrap`, `.k-table`, `.k-table th/td`, `.k-table--striped`, `.k-table--hover`, `.k-table--bordered`, `.k-table--sm`, `.k-table--responsive`, `.k-table--frozen`, `.k-table__actions`, `.k-table__empty`, `.k-table__toolbar`, `.k-table__search`, và `.k-table__sort`. Partial được forward từ `components/_index.scss`; extended bundle không còn định nghĩa trùng trong `extended/_data_shell.scss`.
 - Table options contract: root `[data-k-table]` nhận `data-k-searchable="true"`, `data-k-sortable="true"`, `data-k-sort-columns="0,3"`, và `data-k-freeze="1"`. Search input là `[data-k-table-search]`; thuật toán giống dropdown: chuẩn hóa Unicode/không dấu, tách từ khóa bằng khoảng trắng và chỉ giữ row chứa đủ mọi từ khóa. Sort chỉ gắn button cho các chỉ số cột được chỉ định; giá trị số dùng `data-k-sort-value`. Freeze làm sticky `--k-table-freeze-count` cột đầu tiên.
+- Table sort icon contract: runtime dùng inline paths cho `arrow-up-down`, `arrow-up`, `arrow-down`; mọi trạng thái sort phải render đúng glyph KAUI, không fallback sang icon khác.
+- Icon renderer class contract: khi chuyển placeholder `<i data-kaui-icon>` thành SVG, phải giữ class nền `kaui-icon` và nối các class chuyên biệt của placeholder (ví dụ `.k-table__sort-icon`).
+- Sort icon registry contract: `icons/source/kaui/arrow-up-down.svg` là glyph trung tính chính thức, được build vào `dist/icons/sprite.svg`, `kaui-icons.css` và `kaui-icons.json` cùng `arrow-up`/`arrow-down`.
+
 
 ## Button loading contract
 
@@ -47,6 +65,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:4173`; access the demo from the tailnet at `http://<tailscale-ip>:4173/demo/`. This is tailnet-only routing and does not configure public exposure.
 
 - Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:8080`; access the demo from the tailnet at `http://<tailscale-ip>:8080/demo/`. This is tailnet-only routing and does not configure public exposure.
+- NPM package consumer contract: package root `kaui` resolves to the production stylesheet (`dist/kaui.min.css`) including the generated icon CSS; `kaui/css` resolves to expanded CSS including icons; `kaui/charts` resolves to chart runtime. There is no separate icon import for normal consumers.
+
 
 
 
@@ -58,7 +78,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Bundle duy nhất: `kaui.scss` biên dịch thành `dist/kaui.css` và `dist/kaui.min.css`, đã bao gồm cả core và extended components. `kaui-extended.scss` chỉ giữ lại như source compatibility, không cần load thêm CSS thứ hai.
 
-- Bundle chính: `kaui.scss` giữ các thành phần cơ bản để tuân thủ ngân sách < 64KB cho kiểm thử tự động.
+- Main production bundle budget is < 70KB after including the mandatory KAUI icon CSS; the package root remains the single recommended import.
 
 - Bundle mở rộng: `kaui-extended.scss` tập hợp component nâng cao:
 - Color palette demo contract: each `.demo-swatch` displays its hex value and includes `.demo-color-copy[data-copy-color]` to copy the exact color code, with `Copied!` feedback and clipboard fallback.
@@ -78,10 +98,12 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - `demo/demo.css` chứa style sidebar; `demo/demo.js` quản lý active state và drawer.
 - Sidebar layout contract: `.demo-sidebar` is a fixed-height flex column; `.demo-sidebar__header` and `.demo-sidebar__footer` are non-scrolling fixed sections, while `.demo-sidebar__body` owns vertical scrolling with `min-height: 0` and `overflow-y: auto`.
 - Sidebar scroll contract: `.demo-sidebar__body` keeps `overflow-y: auto` and independent scrolling, hides native scrollbars across Firefox/WebKit/Edge, and exposes `.demo-sidebar__scroll-controls` overlay arrows on hover/focus. Up/down buttons reflect top/middle/bottom scroll state and scroll by viewport-sized steps.
+- Sidebar active-item visibility contract: `demo/demo.js` keeps the active link inside `.demo-sidebar__body` viewport by adjusting only the sidebar body's `scrollTop`, without moving the main page scroll.
+
 - Scroll control alignment: `.demo-sidebar__scroll-controls` is vertically centered and right-aligned within the sidebar body, with the up button above the down button.
 
 - Scroll button surface tone: `.demo-sidebar__scroll-button` uses a subtle smoky white background (`var(--k-color-surface-subtle, #f8fafc)`) with a slightly softened border to prevent high-glare contrast against light sidebar text.
-- GitHub link contract: the demo sidebar footer and page footer link to `https://github.com/longbm64/kaui`, use the Lucide GitHub icon in the sidebar, and open external links in a new tab with `rel="noopener noreferrer"`.
+- GitHub link contract: the demo sidebar and page footer use a KAUI project icon alias for the external-link glyph and open external links in a new tab with `rel="noopener noreferrer"`.
 
 
 
@@ -90,7 +112,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Sidebar scroll contract: `.demo-sidebar__body` keeps `overflow-y: auto` and independent scrolling, hides native scrollbars across Firefox/WebKit/Edge, and exposes `.demo-sidebar__scroll-controls` overlay arrows on hover/focus. Up/down buttons reflect top/middle/bottom scroll state and scroll by viewport-sized steps.
 
 
-- Demo icon contract: dùng Lucide Icons qua CDN `https://unpkg.com/lucide@latest`; markup icon dùng `data-lucide` và khởi tạo trong `demo/demo.js`.
+- Demo icon contract: all showcase and version pages use the project-owned KAUI icon registry via `data-kaui-icon`, inline KAUI SVG paths, and `dist/icons/kaui-icons.css`; no external icon CDN/runtime dependency remains.
+
 - Component demo contract: load only `dist/kaui.css`; showcase sections expose `.k-modal`, `.k-toast`, `.k-tabs__*`, `.k-accordion__*`, `.k-spinner`, `.k-progress`, `.k-skeleton`, Table, and interactive vanilla JS examples.
 
 
@@ -109,13 +132,21 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Confirm warning demo contract: demo cung cấp biến thể riêng `.k-confirm.k-confirm--warning` với icon `triangle-alert`, nút action `.k-btn--warning`, backdrop static và hành vi xác nhận độc lập.
 - Confirm centered content contract: `.k-confirm__content`, title và message đều `text-align: center`; footer buttons cũng căn giữa để đồng nhất với icon và nội dung cảnh báo.
 - Confirm footer layout contract: `.k-confirm .k-modal__footer` dùng `justify-content: space-between` để Cancel nằm bên trái và Confirm/primary action nằm bên phải; nội dung phía trên vẫn căn giữa.
-- Modal close icon contract: nút đóng header của Modal dùng icon Lucide `x` (`data-lucide="x"`) thay cho ký tự `&times;`, đảm bảo nét vẽ icon đồng bộ với toàn bộ kit.
-- Confirm help icon contract: dùng tên Lucide canonical `circle-help` thay cho alias `help-circle` để tránh icon bị render sai hướng khi dùng CDN Lucide latest.
+- Modal close icon contract: nút đóng header của Modal dùng icon KAUI `x` (mapped to the project `close` glyph) thay cho ký tự `&times;`, đảm bảo nét vẽ icon đồng bộ với toàn bộ kit.
+- Confirm help icon contract: dùng icon KAUI `circle-help` mapped tới glyph `info`, tránh dependency ngoài và giữ nhận diện cảnh báo nhất quán.
 - Confirm dismiss contract: Confirm dùng backdrop static, không đóng khi click ngoài/backdrop, nhưng vẫn cho phép phím Escape đóng và báo trạng thái cancelled.
 - Modal header alignment contract: `.k-modal__header .k-alert__close` được override thành flex container (width/height 2rem, `margin: 0`, `align-items: center`) để nút đóng luôn nằm ngang thẳng hàng tuyệt đối với icon và text của tiêu đề.
 - Modal title baseline contract: heading trong `.k-modal__header` được reset `margin: 0` và `line-height: 1.25`; nút close dùng cùng flex row `align-items: center` để tâm icon nằm ngang với tâm title/icon header.
 
-- Confirm footer icon contract: các nút Cancel/Confirm trong `.k-modal__footer` dùng `.k-btn__icon` với Lucide icon đứng trước `.k-btn__text`, giúp nhận diện hành động nhanh và giữ đúng Button contract.
+- Modal/Confirm footer action icon contract: every demo footer action uses `.k-btn__icon` before `.k-btn__text`; Cancel uses KAUI `x`, Confirm/Publish use `check`, and Delete uses `trash-2`.
+- Modal Escape contract: `Escape` always closes the open Modal as a cancel action, including static-by-default Modal; static mode only prevents backdrop/outside click dismissal.
+
+- Modal dismiss contract: Modal và Confirm đều static mặc định (`data-k-backdrop="static"` hoặc thiếu thuộc tính), không đóng khi click backdrop/click ngoài hoặc nhấn Escape; chỉ đóng bằng nút Close/Cancel/Confirm. Dùng `data-k-backdrop="true"` để bật dismiss ngoài theo opt-in.
+- Modal keyboard confirmation contract: while any Modal/Confirm dialog is open, `Enter` triggers its primary action (`Confirm`, `Publish`, or `Delete`) and prevents the default browser action; `Escape` retains the documented static/dismiss behavior.
+
+
+
+- Confirm footer icon contract: các nút Cancel/Confirm trong `.k-modal__footer` dùng `.k-btn__icon` với icon KAUI đứng trước `.k-btn__text`.
 - Toast icon placement: chuyển icon trạng thái từ cột thụt lề bên trái xuống nằm ngay trước mốc thời gian ở bottom-left (`.k-toast__time`), giúp giải phóng 100% không gian bề ngang cho tiêu đề và nội dung toast.
 - Dropdown Select Auto-flip Contract: Component `.k-dropdown-select` đóng vai trò là một custom select box với các modifier `.k-dropdown--dropup`, `.k-dropdown--align-right`. Khi mở menu, script tự động đo tọa độ bounding rect so với viewport: nếu khoảng cách phía dưới không đủ chiều cao menu và phía trên rộng hơn, menu sẽ tự động lật ngược lên trên (`.k-dropdown--dropup`).
 - Card Overflow Overlay Contract: `.k-card` giữ `overflow: hidden` mặc định để bo góc và chứa các phần tử con, nhưng khi bên trong có `.k-dropdown.is-open` (hoặc popover / tooltip tương tác), card sẽ tự động chuyển sang `overflow: visible` thông qua selector `:has(...)` để dropdown menu luôn hiển thị nổi lên trên cùng mà không bị mép card cắt xén.
@@ -143,6 +174,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Height alignment contract: `.k-btn`, `.k-input`, `.k-select` có cùng chuẩn `min-height: 2.625rem` (42px) cho kích cỡ mặc định (sm: 2rem/32px, lg: 3rem/48px) để đảm bảo khi đặt cạnh nhau trong cùng hàng (grid, flex) luôn bằng nhau 100%.
 
+- Card header/footer height contract: `.k-card__header` và `.k-card__footer` dùng `height: var(--k-card-header-height)` / `var(--k-card-footer-height)` với giá trị mặc định `3.5rem` (56px), `flex: 0 0` và `box-sizing: border-box`; header giữ `spacing-4`, footer dùng `spacing-3` để gọn hơn; nội dung `.k-card__body` tiếp tục co giãn để các card cùng hàng giữ nhịp đều.
+
 
 
 
@@ -153,6 +186,32 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Color palette demo contract: `.demo-swatch-meta` and `.demo-color-copy` are grouped in `.demo-swatch-meta-row` on one line to keep swatches compact.
 - Prompt quality contract: displayed and copied prompts are synchronized; workflow explicitly resolves latest version, reads the manifest, reuses documented markup, forbids redundant CSS, and requires final accessibility/responsive/theme validation.
 - Sidebar brand contract: `.demo-sidebar__brand` keeps `KAUI` and `CSS KIT` on one baseline-aligned row; KAUI is 1.75rem and CSS KIT is .8rem with increased weight/spacing.
+- Icon Gallery contract: `#icons` in `demo/index.html` loads `dist/icons/kaui-icons.json` and renders all registered icons using `dist/icons/sprite.svg`; includes direct artifact links and copyable SVG usage.
+
+- Icon Gallery runtime contract: `demo/index.html` loads `dist/icons/kaui-icons.css`; gallery renders from manifest via fetch and falls back to the registered icon names when opened directly with `file://` (where fetch is blocked). Each icon uses the external sprite symbol with `.k-icon` styling.
+- Sprite compatibility contract: external icon `<use>` includes both `href` and legacy `xlink:href`; generated `sprite.svg` declares the XLink namespace for browsers with legacy SVG symbol resolution.
+- Icon rendering fallback contract: gallery cards inline the registered SVG path data so icons remain visible even when external SVG `<use>` references are blocked by browser security/CORS; manifest and sprite remain linked as artifacts.
+- Icon renderer initialization contract: `renderKauiIcons()` may be called by early component setup before icon data is declared; it must guard `iconSvgPaths` and run again after registry initialization.
+- Icon color contract: `.kaui-icon` uses `color: inherit` and `stroke: currentColor`; icon color always follows the adjacent text/container state, including hover, active, dark theme, buttons, and headings.
+- Icon Gallery card contract: each icon is shown in a compact horizontal card with inline KAUI SVG, icon name, and a dedicated `data-copy-icon` button that copies the standalone SVG snippet with `Copied!` feedback.
+- Icon Gallery grouping contract: `renderIconGallery()` groups every manifest icon into functional sections (Actions, Navigation, Files & Content, Feedback, Account & Security, Communication, Commerce, Media, Social, Favorites & Labels, Other); each group has a heading, icon count, responsive grid, and preserves per-icon copy buttons.
+- Icon Gallery alignment contract: `.k-card.demo-icon-card` explicitly overrides the card's default column layout to a horizontal row; icon/name group is left-aligned and Copy button is right-aligned.
+- KAUI Core ownership contract: `scripts/build-kaui-core.mjs` is retained as the Phase 1 historical generator for the 32 original core glyphs; production `npm run icons:build` now builds the complete 67-icon KAUI-owned registry from `icons/source/kaui/` only.
+
+- Icon library contract: `icons/manifest.json` registers only KAUI-owned SVG sources from `icons/source/kaui/`; `npm run icons:build` generates the sole production sprite/CSS/JSON artifacts. No third-party, external icon package, or CDN source is permitted.
+
+- Icon library contract: `icons/manifest.json` registers only KAUI-owned SVG sources from `icons/source/kaui/`; `npm run icons:build` generates the sole production sprite/CSS/JSON artifacts. No external icon source or CDN is permitted.
+
+
+- Button link hover contract: `.k-btn` explicitly reapplies `color: var(--k-btn-color)` in hover/active states so global typography `a:hover` cannot make button text disappear, including Hero anchor buttons.
+
+
+
+
+
+
+
+
 - Version Registry time format: build dates render as local `yyyy/MM/dd` with zero-padded month and day; time is intentionally omitted.
 
 
@@ -167,11 +226,80 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 
+- Donut inside-label alignment: label path có span đối xứng quanh midpoint, textPath được căn giữa bằng `startOffset=50%`/`text-anchor=middle`, tương thích href và xlink:href.
+
 
 ## Chart Component (opt-in)
+- Bar label contract: renderer `_bar` tạo `.k-chart__bar-label` cho giá trị từng cột và `.k-chart__bar-category` cho từng nhãn trục X; labels dùng màu axis, halo nền chart và giữ nguyên API `KauiChart.create`/dataset.
+- Line axis contract: renderer `_line` tạo `.k-chart__line-category` từ `labels[]`, căn đúng theo điểm dữ liệu trên trục X và giữ nguyên API/dataset.
+
+- Line axis angle contract: khi số nhãn Line > 8, renderer tự động áp dụng `transform="rotate(-45 ...)"` và căn lề hai mép (`start`/`end`) để hiển thị toàn bộ giá trị trục X mà không bị cắt hoặc đè nhau.
+
+- Line axis spacing contract: `_line` ước lượng độ rộng nhãn trước khi render; xoay -45° ngay khi nhãn dài hoặc không đủ slot, nhưng luôn dùng `text-anchor="middle"` để tâm nhãn thẳng hàng đều với mốc dữ liệu.
+
+- Line rotated-label anchor contract: khi label được xoay -45°, dùng `text-anchor="end"` để điểm X là điểm đích của nhãn; khi label nằm ngang dùng `middle`.
+
+
+
+
+- Realtime line axis contract: `_line` giới hạn tối đa 8 nhãn trục X, luôn giữ nhãn đầu/cuối; timestamp dạng milliseconds được hiển thị ngắn gọn `HH:mm:ss`, label text thông thường giữ nguyên.
+
+
+
+
+
 - Chart is isolated from the core bundle: `src/scss/kaui-chart.scss` builds `dist/kaui-chart.css` and `dist/kaui-chart.min.css`; `src/js/kaui-chart.js` builds `dist/kaui-chart.js` and `dist/kaui-chart.min.js`.
+- Donut compact label position: textPath dùng bán kính `r` (centerline của stroke donut), label nằm giữa bề dày vùng màu và dùng màu trắng tương phản.
+
 - Native SVG, zero external chart dependencies. Public API starts with `KauiChart.create(target, options)` / `KauiChart.mount(target, options)`.
 - Supported types: `line`, `bar`, `donut`. Instance API: `push`, `pushBatch`, `appendData`, `addSeries`, `updateSeries`, `removeSeries`, `updatePoint`, `removeData`, `clear`, `pause`, `resume`, `destroy`.
+- Donut adaptive labels v2: ước lượng width từ nội dung label, bố trí dot theo cột trái/phải tương ứng, dùng adaptive vertical gap và leader line radial 3-point; tránh overlap tốt hơn trên chart hẹp.
+- Donut compact fallback: khi outer label không đủ vùng, labels render bên trong theo cung bằng SVG `textPath`, canh giữa và dùng màu tương phản với nền Donut.
+
+
+- Donut label layout: labels được phân loại theo nửa trái/phải, sort theo vị trí cung, phân bổ Y với gap tối thiểu và leader line nối 3 điểm; text luôn nằm trong vùng an toàn SVG.
+- Donut visual polish: leader line now uses radial elbow + horizontal segment + dot connector; labels use two-way relaxation with original angular Y preference and a background halo for readability.
+
+
+- Runtime hardening: Chart dùng fallback `setTimeout` khi không có `requestAnimationFrame`, tự tạo series mặc định nếu dataset rỗng, và gỡ pointer listeners khi `destroy()`.
+- Donut labels: renderer dùng `labels[]` theo index dữ liệu, vẽ dot + leader line ra ngoài và hiển thị `label: value (percent%)`; style nằm trong opt-in chart CSS.
+
+
 - Realtime contract: updates are batched with `requestAnimationFrame`; `maxPoints`, `window`, `maxPending`, and automatic pause on hidden documents are supported.
 
 - Chart demo contract: `#charts` exposes copy buttons with keys `charts`, `chart-line`, `chart-bar`, `chart-donut`, and `chart-realtime`; snippets live in `componentSnippets` in `demo/demo.js` and use the opt-in `kaui-chart` bundle/API.
+
+
+
+## Demo multi-page contract
+- `demo/index.html` là Overview page, chỉ chứa phần giới thiệu/agent prompt và không còn chứa các component showcase.
+- Mỗi component page (`button.html`, `card.html`, `tokens.html`, …) phải load `../dist/kaui.css`, `../dist/icons/kaui-icons.css`, `demo.css`, `demo.js` và có cùng `.demo-sidebar` trái như Overview.
+- Sidebar dùng link file trực tiếp, với `index.html` là Overview; trạng thái active được đánh dấu theo page hiện tại.
+- `demo/demo.js` là runtime dùng chung, không đổi public component contracts hay API chart.
+
+- Footer demo contract: `.demo-footer` là thanh compact `position: fixed` ở đáy vùng nội dung, bắt đầu sau sidebar desktop (`left: 15.5rem`) và full-width trên mobile; `.demo-page`/`.demo-main` có bottom spacing để nội dung không bị che.
+- Component page guide contract: mỗi component showcase page (`tokens`, `navbar`, `layout`, `button`, `forms`, `charts`, `icons`, `card`, `badges`, `alerts`, `modal`, `table`, `toast`, `tabs`, `accordion`, `indicators`) có khối `Usage guide & code sample`, giải thích cách dùng ngắn gọn, code mẫu `<pre class="demo-code">` và nút sao chép `data-copy-component="guide-*"`.
+- Button loading demo contract: `demo/button.html` includes a dedicated loading code sample with `.k-btn--loading`, `.k-btn__loader`, `.k-btn__text`, and `aria-busy="true"`; copy mapping is `guide-button-loading`.
+
+- Icon Gallery grouping fix: `#icon-gallery-grid` is a plain group wrapper; each functional icon group owns its own `.k-grid`, preventing grouped sections from being laid out as grid columns. The total badge is populated from the loaded manifest/fallback count instead of a hard-coded number.
+- Social X icon contract: `icons/source/kaui/social-x.svg` uses a filled geometric X glyph with `fill="currentColor"`; generated `.k-icon--social-x` overrides the global stroke-only icon defaults.
+- Social Zalo icon contract: `icons/source/kaui/social-zalo.svg` uses a chat-bubble outline with a centered Z wordmark gesture, preserving the documented KAUI-authored brand-reference status and Zalo trademark notice.
+
+- Social Zalo wordmark contract: `social-zalo.svg` renders the literal `zalo` text inside the chat bubble using `fill="currentColor"` and no stroke, while the bubble remains a rounded currentColor outline.
+- Social Zalo wordmark sizing: `social-zalo.svg` intentionally contains only the centered `zalo` wordmark (no surrounding bubble), sized at 14px with compact letter spacing to fill the 24x24 icon box while remaining legible.
+- Social WhatsApp icon contract: `icons/source/kaui/social-whatsapp.svg` uses a clear chat bubble outline with an integrated handset glyph, keeping `currentColor`, 24x24 viewBox, and rounded stroke conventions.
+- Icon registry current baseline: production contains 83 KAUI-owned icons, including 16 social-network glyphs; update this line when additional groups are added.
+- Sidebar navigation grouping contract: every demo page groups the shared links under accessible `.demo-sidebar__group` sections with `.demo-sidebar__group-title`; groups are Getting Started, Layout, Components, and Resources, while link URLs and active-state behavior remain unchanged.
+- Sidebar taxonomy: Components contains Buttons, Forms, Cards, Badges, Alerts, Modal, Table, Toast, Tabs, Accordion, Indicators, and Charts; Resources contains Icons, Versions, and Platforms.
+- Sidebar active-state contract: on multi-page demo documents, `demo/demo.js` derives the active `.demo-sidebar__link` from the current pathname/filename; hash-based section activation remains available only when sidebar links target same-page hashes.
+
+- Navigation Bar options contract: `.k-navbar--sticky`, `--borderless`, `--shadow`, `--transparent`, `--dark`, `--compact`, `--centered`; optional `.k-navbar__actions`, `.k-navbar__mobile-actions`, `.k-navbar__item--has-children` and `.k-navbar__submenu` preserve the existing base markup and responsive drawer behavior.
+- Bootstrap-inspired Navbar contract: `.k-navbar--expand-sm` / `--expand-lg` control collapse breakpoint; `.k-navbar--fixed-top` / `--fixed-bottom` provide placement; `.k-navbar--offcanvas` turns the mobile menu into a left drawer; `.k-navbar__text`, `.k-navbar__nav--scroll` and click-driven `.k-navbar__item--has-children.is-open` support Bootstrap-style content patterns without Bootstrap runtime dependencies. Toggle/dropdown controls use `aria-expanded`, `aria-controls`, `aria-haspopup`, and Escape/outside-click dismissal.
+- Visual Navbar contract: demo uses KAUI-owned icon registry for brand/dropdown/actions, `.k-navbar__link.is-active` uses a subtle primary surface, dropdown buttons reset native button chrome, and action buttons use `.k-btn__icon` + `.k-btn__text`; avoid explanatory badges or third-party visual language inside the component showcase.
+
+- Multi-level Navbar contract: nested `.k-navbar__item--has-children` may contain another `.k-navbar__submenu`; desktop nested menus fly out to the right, mobile menus remain in normal flow. Each toggle is a button with `aria-haspopup="true"` and synchronized `aria-expanded`; sibling branches close when another branch opens.
+- Modal demo implementation contract: `demo/modal.html` must include `#demo-modal`, `#demo-confirm`, `#demo-confirm-warning`, and `#demo-confirm-danger` plus each referenced backdrop/action ID, because `demo/demo.js` binds interaction by these IDs.
+- Flutter package contract: the pub.dev package is named `filekat`, located at `packages/pub`, with public library import `package:filekat/kaui.dart`.
+- Flutter package `filekat` is version `1.1.0+` and uses the KAUI Personal / Non-Commercial License; its package LICENSE, README, and CHANGELOG must remain aligned with `NON_COMMERCIAL_LICENSE.md` and commercial contact `contact@filekat.com`.
+
+- Platform package layout: `packages/npm` contains the npm/Web package and `packages/pub` contains the pub.dev/Flutter package. Android and iOS native packages are currently paused and are not included in the repository package layout.

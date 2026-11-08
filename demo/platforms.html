@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Platforms</title>
+  <meta name="description" content="KAUI CSS Kit Platforms component showcase.">
+  <link rel="stylesheet" href="../dist/kaui.css">
+  <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Component navigation">
+    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="platforms.html" class="demo-sidebar__link is-active"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-page"><main class="demo-main">
+<section id="platforms" class="demo-section">
+        <div class="k-container">
+          <div class="demo-section-header">
+            <h2 class="demo-section-title"><i data-kaui-icon="layers-3"></i> Platform Packages &amp; Developer Workflow</h2>
+            <p class="demo-section-desc">KAUI tokens and contracts are prepared for Web/Next.js, Flutter, Android Compose, and iOS SwiftUI.</p>
+          </div>
+
+          <div class="k-grid k-gap-4 k-mb-6">
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="globe" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Web / Next.js</h3><p class="k-text-muted k-fs-sm">Import the single CSS bundle globally.</p><code class="demo-code">kaui</code></article></div>
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="smartphone" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Flutter</h3><p class="k-text-muted k-fs-sm">Use KauiTheme and core native widgets.</p><code class="demo-code">kaui</code></article></div>
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="tablet-smartphone" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Android Compose</h3><p class="k-text-muted k-fs-sm">Generate Compose tokens from the registry.</p><code class="demo-code">com.kaui</code></article></div>
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="apple" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">iOS SwiftUI</h3><p class="k-text-muted k-fs-sm">Use KauiTokens with SwiftUI views.</p><code class="demo-code">KaUI</code></article></div>
+          </div>
+
+          <div class="k-grid k-gap-4">
+            <div class="k-col-12 k-col-lg-6">
+              <article class="k-card k-card--bordered k-p-5">
+                <div class="k-flex k-items-center k-justify-between k-mb-3"><h3 class="k-card__title"><i data-kaui-icon="braces"></i> Design Tokens</h3><button type="button" class="demo-copy-button" data-copy-component="platform-tokens"><span class="demo-copy-label">Copy command</span></button></div>
+                <p class="k-text-muted k-fs-sm">One JSON source generates platform-ready token outputs.</p>
+                <pre class="demo-code"><code>npm run tokens:build
+npm run tokens:verify
+
+Source: tokens/kaui.tokens.json
+Output: dist/tokens/</code></pre>
+              </article>
+            </div>
+            <div class="k-col-12 k-col-lg-6">
+              <article class="k-card k-card--bordered k-p-5">
+                <div class="k-flex k-items-center k-justify-between k-mb-3"><h3 class="k-card__title"><i data-kaui-icon="shapes"></i> KAUI Icons</h3><button type="button" class="demo-copy-button" data-copy-component="platform-icons"><span class="demo-copy-label">Copy command</span></button></div>
+                <p class="k-text-muted k-fs-sm">Proprietary 24x24 SVG icons using currentColor and a shared sprite.</p>
+                <pre class="demo-code"><code>npm run icons:build
+
+Source: icons/source/
+Output: dist/icons/</code></pre>
+              </article>
+            </div>
+            <div class="k-col-12">
+              <article class="k-card k-card--bordered k-p-5">
+                <div class="k-flex k-items-center k-justify-between k-mb-3"><h3 class="k-card__title"><i data-kaui-icon="shield-check"></i> Release &amp; Commercial Compliance</h3><button type="button" class="demo-copy-button" data-copy-component="platform-release"><span class="demo-copy-label">Copy commands</span></button></div>
+                <p class="k-text-muted k-fs-sm">Verify artifacts, licenses, manifests, tokens, and icon outputs before publishing a release.</p>
+                <pre class="demo-code"><code>npm run audit:license
+npm run verify:release
+npm test
+
+KAUI 1.0.x: MIT License
+KAUI 1.1.0+: Personal / Non-Commercial
+Commercial permission: contact@filekat.com</code></pre>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+</body>
+</html>
