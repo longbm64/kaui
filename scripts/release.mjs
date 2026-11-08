@@ -8,7 +8,9 @@ const PKG_PATH = path.join(ROOT, 'package.json');
 const LOCK_PATH = path.join(ROOT, 'package-lock.json');
 const DEMO_HTML_PATH = path.join(ROOT, 'demo/index.html');
 const VERSIONS_DIR = path.join(ROOT, 'dist/versions');
+const PUBLIC_BASE_URL = 'https://longbm64.github.io/kaui';
 const INDEX_JSON_PATH = path.join(VERSIONS_DIR, 'index.json');
+
 
 function manifestPath(version) {
   return path.join(VERSIONS_DIR, version, 'kaui-agent-manifest.json');
@@ -130,9 +132,12 @@ function main() {
     }
   }
 
-  fs.writeFileSync(path.join(targetDir, 'metadata.json'), JSON.stringify(versionManifest, null, 2) + '\n');
+  const fileEntries = Object.keys(versionManifest.files).map((file) => ({
+    name: file,
+    url: `${PUBLIC_BASE_URL}/dist/versions/${nextVersion}/${encodeURIComponent(file)}`,
+    metadata: versionManifest.files[file]
+  }));
 
-  // Update registry index
   let indexData = { latest: nextVersion, versions: {} };
   if (fs.existsSync(INDEX_JSON_PATH)) {
     try {
@@ -144,7 +149,7 @@ function main() {
     version: nextVersion,
     builtAt: versionManifest.builtAt,
     directory: `dist/versions/${nextVersion}`,
-    files: Object.keys(versionManifest.files)
+    files: fileEntries
   };
 
   fs.writeFileSync(INDEX_JSON_PATH, JSON.stringify(indexData, null, 2) + '\n');

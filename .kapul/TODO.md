@@ -1,3 +1,7 @@
+- [x] Mỗi file trong `dist/versions/index.json` được chuyển thành URL hoàn chỉnh có thể truy cập trực tiếp nội dung; xóa section nhắc lại manifest dư thừa bên dưới.
+
+- [x] Xóa dòng mô tả dư phía trên Agent Prompt để giao diện Overview gọn hơn.
+
 - [x] Version Registry chỉ hiển thị ngày theo `yyyy/MM/dd`, không hiển thị giờ.
 
 - [x] Chuẩn hóa thời gian Version Registry về `yyyy/MM/dd` (không hiển thị giờ).

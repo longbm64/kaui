@@ -20,8 +20,8 @@
         <a href="index.html#hero" class="demo-sidebar__link"><i data-lucide="arrow-left"></i> <span>Back to Demo</span></a>
         <a href="#latest" class="demo-sidebar__link is-active"><i data-lucide="sparkles"></i> <span>Latest Version</span></a>
         <a href="#history" class="demo-sidebar__link"><i data-lucide="history"></i> <span>Build History</span></a>
-        <a href="#manifest-guide" class="demo-sidebar__link"><i data-lucide="file-json"></i> <span>Agent Manifest</span></a>
       </nav>
+
     </div>
     <footer class="demo-sidebar__footer">
       <button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button>
@@ -52,31 +52,14 @@
         <div class="k-container">
           <div class="demo-section-header">
             <h2 class="demo-section-title"><i data-lucide="history"></i> Version Archives</h2>
-            <p class="demo-section-desc">Every release snapshots compiled assets into dedicated directories with checksums and file sizes.</p>
+            <p class="demo-section-desc">Every release snapshots compiled assets into dedicated directories. Click any tree item to open its complete public URL.</p>
           </div>
           <div id="versions-container" class="k-flex k-flex-col k-gap-4">
-            <div class="k-card k-card--bordered k-p-5">
-              <p class="k-text-muted">Loading version archives...</p>
-            </div>
+            <div class="k-card k-card--bordered k-p-5"><p class="k-text-muted">Loading version archives...</p></div>
           </div>
         </div>
       </section>
 
-      <section id="manifest-guide" class="demo-section">
-        <div class="k-container">
-          <div class="demo-section-header">
-            <h2 class="demo-section-title"><i data-lucide="file-json"></i> Canonical Agent Manifest URL</h2>
-            <p class="demo-section-desc">AI coding agents should read the manifest of the target version before generating frontend code.</p>
-          </div>
-          <div class="k-card k-card--bordered k-p-5">
-            <div class="k-flex k-items-center k-justify-between k-flex-wrap k-gap-2 k-mb-3">
-              <code class="demo-code" id="manifest-url-display">https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-agent-manifest.json</code>
-              <button type="button" class="demo-copy-button" id="copy-manifest-url-button"><span class="demo-copy-label">Copy URL</span></button>
-            </div>
-            <p class="k-fs-xs k-text-muted">When publishing a new release, update only the version number segment in the URL.</p>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="demo-footer">

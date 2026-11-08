@@ -3,18 +3,81 @@
   "versions": {
     "1.0.0": {
       "version": "1.0.0",
-      "builtAt": "2026-11-08T05:48:14.835Z",
+      "builtAt": "2026-11-08T06:23:12.133Z",
       "directory": "dist/versions/1.0.0",
       "files": [
-        "kaui.css",
-        "kaui.css.map",
-        "kaui.min.css",
-        "kaui.min.css.map",
-        "kaui-chart.css",
-        "kaui-chart.js",
-        "kaui-chart.min.css",
-        "kaui-chart.min.js",
-        "kaui-agent-manifest.json"
+        {
+          "name": "kaui.css",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.css",
+          "metadata": {
+            "bytes": 70600,
+            "sha256": "e6257d51311e36360978e0f90bdf08cbf74fb3782d749ef9bd0151380504ec95"
+          }
+        },
+        {
+          "name": "kaui.css.map",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.css.map",
+          "metadata": {
+            "bytes": 14786,
+            "sha256": "baf72081fe4ebff79aaf698c256af814ee01c4bd8edc88670a44ff83ef8b501c"
+          }
+        },
+        {
+          "name": "kaui.min.css",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.min.css",
+          "metadata": {
+            "bytes": 59695,
+            "sha256": "b5dc536a34c19d8c46dad72f5b5cfe6cbbf2eaff965890dfc201b6bade700d25"
+          }
+        },
+        {
+          "name": "kaui.min.css.map",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.min.css.map",
+          "metadata": {
+            "bytes": 10718,
+            "sha256": "99dfe58d45b5eb58eeebc5ef25445b90cb461fa5640196f2274f265f23f9e878"
+          }
+        },
+        {
+          "name": "kaui-chart.css",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.css",
+          "metadata": {
+            "bytes": 3470,
+            "sha256": "58e16705a3a602290c646ddee6c7b6ae7949c8a6f77317785e191c4dca5c9585"
+          }
+        },
+        {
+          "name": "kaui-chart.js",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.js",
+          "metadata": {
+            "bytes": 11333,
+            "sha256": "ad873d2b192fb4fa41d89df3e26902723ae06a27ce2b8fb1ec0522e75ce3ac82"
+          }
+        },
+        {
+          "name": "kaui-chart.min.css",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.min.css",
+          "metadata": {
+            "bytes": 2906,
+            "sha256": "a646fbaf7eeacd96b97f35fe37da9aeb107c8a1caa6c023802de344105033451"
+          }
+        },
+        {
+          "name": "kaui-chart.min.js",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.min.js",
+          "metadata": {
+            "bytes": 11333,
+            "sha256": "ad873d2b192fb4fa41d89df3e26902723ae06a27ce2b8fb1ec0522e75ce3ac82"
+          }
+        },
+        {
+          "name": "kaui-agent-manifest.json",
+          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-agent-manifest.json",
+          "metadata": {
+            "bytes": 5525,
+            "sha256": "8fc7ea92ce0fce936b782932c4e3a5ac35c766970bcab210aa2bac5284b4c461"
+          }
+        }
       ]
     }
   }

@@ -776,7 +776,7 @@
     var latestManifestUrl = 'https://longbm64.github.io/kaui/dist/versions/{latest}/kaui-agent-manifest.json';
     // Component HTML copy actions
     var componentSnippets = {
-      layout: '<div class="k-container">\n  <div class="k-grid k-gap-4">\n    <div class="k-col-12 k-col-md-6 k-col-lg-4">Content</div>\n  </div>\n</div>',
+      'agent-prompt': 'MANDATORY FIRST STEP: Build frontend UI exclusively with the KAUI CSS Kit. Before writing code, read https://longbm64.github.io/kaui/dist/versions/index.json, take its latest version, then access the corresponding https://longbm64.github.io/kaui/dist/versions/{latest}/kaui-agent-manifest.json. Inspect the manifest and live demo at https://longbm64.github.io/kaui/demo/; reuse the closest markup. Do not invent or custom-write CSS when KAUI has a matching class, component, or token. Custom CSS is forbidden unless explicitly unsupported.\\n\\nUse only documented .k-* BEM classes, --k-* tokens, responsive utilities, semantic HTML, aria-* attributes, and [data-theme="dark"]. Never add external UI libraries or duplicate CSS.',
       buttons: '<button class="k-btn k-btn--primary"><span class="k-btn__icon"><i data-lucide="plus"></i></span><span class="k-btn__text">Primary Action</span></button>',
       forms: '<div class="k-input-wrapper">\n  <i data-lucide="mail" class="k-input__icon k-input__icon--left"></i>\n  <input class="k-input" type="email">\n</div>',
       'full-name': '<div class="k-form-group">\n  <label for="demo-name" class="k-form-label">Full Name</label>\n  <div class="k-input-wrapper">\n    <i data-lucide="user" class="k-input__icon k-input__icon--left" aria-hidden="true"></i>\n    <input type="text" id="demo-name" class="k-input" placeholder="e.g. Dang Long">\n  </div>\n  <span class="k-form-hint">Enter your legal full name as shown on official ID.</span>\n</div>',
@@ -830,16 +830,23 @@
       document.querySelectorAll('[data-copy-component]').forEach(function (button) {
         button.addEventListener('click', function () {
         var key = button.getAttribute('data-copy-component');
-        if (!componentSnippets[key]) return;
-        copyText(componentSnippets[key], function () {
+        var payload = componentSnippets[key];
+        if (!payload && key === 'agent-prompt') {
+          var promptBlock = document.querySelector('#agent-prompt-code code');
+          if (promptBlock) payload = promptBlock.textContent;
+        }
+        if (!payload) return;
+        copyText(payload, function () {
           var label = button.querySelector('.demo-copy-label');
+          var fallbackText = key === 'agent-prompt' ? 'Copy prompt' : 'Copy code';
           if (label) label.textContent = 'Copied!';
           button.classList.add('is-copied');
           setTimeout(function () {
-            if (label) label.textContent = 'Copy code';
+            if (label) label.textContent = fallbackText;
             button.classList.remove('is-copied');
           }, 1400);
         });
+
         });
       });
 

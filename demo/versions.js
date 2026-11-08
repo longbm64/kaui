@@ -43,8 +43,10 @@
   }
 
   function fileLinks(version, files) {
-    return files.map(function (file) {
-      return '<a class="demo-version-tree__file" href="../dist/versions/' + encodeURIComponent(version) + '/' + encodeURIComponent(file) + '" target="_blank" rel="noopener noreferrer"><i data-lucide="file-code-2" aria-hidden="true"></i><span>' + file + '</span></a>';
+    return files.map(function (entry) {
+      var file = typeof entry === 'string' ? entry : entry.name;
+      var href = typeof entry === 'string' ? 'https://longbm64.github.io/kaui/dist/versions/' + encodeURIComponent(version) + '/' + encodeURIComponent(file) : entry.url;
+      return '<a class="demo-version-tree__file" href="' + href + '" target="_blank" rel="noopener noreferrer"><i data-lucide="file-code-2" aria-hidden="true"></i><span>' + file + '</span></a>';
     }).join('');
   }
 
@@ -99,7 +101,7 @@
       var isLatest = version === latest;
       var files = item.files || [];
       var built = formatBuildTime(item.builtAt);
-      return '<details class="demo-version-tree__item"' + (isLatest ? ' open' : '') + '><summary class="demo-version-tree__summary"><i data-lucide="folder" aria-hidden="true"></i><span class="demo-version-tree__version">v' + version + '</span>' + (isLatest ? '<span class="k-badge k-badge--success k-badge--pill">Latest</span>' : '') + '<span class="demo-version-tree__meta">Built ' + built + '</span></summary><div class="demo-version-tree__children">' + fileLinks(version, files) + '<a class="demo-version-tree__file" href="../dist/versions/' + version + '/metadata.json" target="_blank" rel="noopener noreferrer"><i data-lucide="clipboard-list" aria-hidden="true"></i><span>metadata.json</span></a></div></details>';
+      return '<details class="demo-version-tree__item"' + (isLatest ? ' open' : '') + '><summary class="demo-version-tree__summary"><i data-lucide="folder" aria-hidden="true"></i><span class="demo-version-tree__version">v' + version + '</span>' + (isLatest ? '<span class="k-badge k-badge--success k-badge--pill">Latest</span>' : '') + '<span class="demo-version-tree__meta">Built ' + built + '</span></summary><div class="demo-version-tree__children">' + fileLinks(version, files) + '<a class="demo-version-tree__file" href="https://longbm64.github.io/kaui/dist/versions/' + version + '/metadata.json" target="_blank" rel="noopener noreferrer"><i data-lucide="clipboard-list" aria-hidden="true"></i><span>metadata.json</span></a></div></details>';
     }).join('');
   }
 
