@@ -151,13 +151,13 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 - Color palette demo contract: `.demo-swatch-meta` and `.demo-color-copy` are grouped in `.demo-swatch-meta-row` on one line to keep swatches compact.
-- Prompt UI contract: Overview keeps the prompt container compact by rendering the title, copy button, and code block directly without redundant intro paragraphs.
+- Prompt quality contract: displayed and copied prompts are synchronized; workflow explicitly resolves latest version, reads the manifest, reuses documented markup, forbids redundant CSS, and requires final accessibility/responsive/theme validation.
 - Version registry URLs: `dist/versions/index.json` stores each version's `files` as objects with `name`, absolute public `url`, and checksum metadata; Version Registry renders those URLs directly.
 - Version Registry time format: build dates render as local `yyyy/MM/dd` with zero-padded month and day; time is intentionally omitted.
 
 
 
-- Agent prompt contract: explicitly instructs the agent to access and inspect `https://longbm64.github.io/kaui/demo/` before writing code, then copy the closest existing markup pattern instead of inventing a new structure.
+- Agent prompt contract: explicitly instructs the agent to access and inspect `https://longbm64.github.io/kaui/demo` before writing code, then copy the closest existing markup pattern instead of inventing a new structure.
 - Dark theme sidebar active: `.demo-sidebar__link.is-active` dùng nền primary-900 (`#1e3a8a` fallback) để nổi bật trên nền sidebar tối; light theme giữ nguyên primary-50.
 - Dark theme sidebar hover: `.demo-sidebar__link:hover` dùng cùng nền primary-900 như trạng thái active để feedback tương tác nhất quán.
 - Dark theme table hover: `.k-table` remap `--k-table-hover-bg` sang primary-900 (`#1e3a8a` fallback), giữ row hover rõ nhưng không bị nền sáng chói.

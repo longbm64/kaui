@@ -1,3 +1,7 @@
+- [x] Chuẩn hóa live demo URL thành `https://longbm64.github.io/kaui/demo` không có dấu slash cuối.
+
+- [x] Sửa prompt: sau khi đọc latest từ index.json, truy cập trực tiếp file `kaui-agent-manifest.json` của phiên bản mới nhất đó (không còn URL cứng).
+
 - [x] Mỗi file trong `dist/versions/index.json` được chuyển thành URL hoàn chỉnh có thể truy cập trực tiếp nội dung; xóa section nhắc lại manifest dư thừa bên dưới.
 
 - [x] Xóa dòng mô tả dư phía trên Agent Prompt để giao diện Overview gọn hơn.

@@ -87,7 +87,7 @@ function main() {
     version: nextVersion,
     builtAt: new Date().toISOString(),
     manifestUrl: `https://longbm64.github.io/kaui/dist/versions/${nextVersion}/kaui-agent-manifest.json`,
-    liveDemoUrl: 'https://longbm64.github.io/kaui/demo/',
+    liveDemoUrl: 'https://longbm64.github.io/kaui/demo',
     strictRule: 'MANDATORY: Use ONLY KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Custom CSS is strictly forbidden unless explicitly documented as unsupported by this manifest.',
     build: {
       version: nextVersion,

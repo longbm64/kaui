@@ -406,7 +406,7 @@ Responsive navigation header with collapsible mobile drawer:
 If live demo access is unavailable, use the single versioned agent manifest URL instead:
 
 ```text
-https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-agent-manifest.json
+Read `https://longbm64.github.io/kaui/dist/versions/index.json`, take its `latest` version, then access `kaui-agent-manifest.json` inside that latest version directory.
 ```
 
 The versioned manifest is the canonical machine-readable contract for AI agents. Update only the version segment when releasing a new version.
