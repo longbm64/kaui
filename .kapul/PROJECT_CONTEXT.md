@@ -74,6 +74,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Sidebar `.demo-sidebar` cố định bên trái trên desktop, mở dạng drawer trên mobile; các link trỏ tới section IDs hiện có.
 - `demo/demo.css` chứa style sidebar; `demo/demo.js` quản lý active state và drawer.
+- Sidebar layout contract: `.demo-sidebar` is a fixed-height flex column; `.demo-sidebar__header` and `.demo-sidebar__footer` are non-scrolling fixed sections, while `.demo-sidebar__body` owns vertical scrolling with `min-height: 0` and `overflow-y: auto`.
+
 - Demo icon contract: dùng Lucide Icons qua CDN `https://unpkg.com/lucide@latest`; markup icon dùng `data-lucide` và khởi tạo trong `demo/demo.js`.
 - Component demo contract: load only `dist/kaui.css`; showcase sections expose `.k-modal`, `.k-toast`, `.k-tabs__*`, `.k-accordion__*`, `.k-spinner`, `.k-progress`, `.k-skeleton`, Table, and interactive vanilla JS examples.
 

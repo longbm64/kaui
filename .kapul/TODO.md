@@ -17,6 +17,8 @@
 - [x] Chạy test suite và kiểm tra lại markup/CSS demo.
 
 
+- [x] Chia sidebar thành 3 phần header/body/footer; header và footer cố định, body scroll độc lập.
+
 # TODO — KAUI
 
 ## Phân tích
