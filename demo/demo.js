@@ -519,51 +519,49 @@
 
 
     // -------------------------------------------------------------------------
-    // 1. Dark Mode Switcher Contract
+    // 1. Theme preset selector contract
     // -------------------------------------------------------------------------
-    var themeToggleBtn = document.getElementById('theme-toggle');
+    var themePreset = document.getElementById('theme-preset');
     var htmlElement = document.documentElement;
+    var themePresets = ['default', 'ocean', 'forest', 'sunset', 'dark'];
 
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        htmlElement.setAttribute('data-theme', 'dark');
-        if (themeToggleBtn) {
-          themeToggleBtn.innerHTML = '☀️ Light Mode';
-          themeToggleBtn.setAttribute('aria-label', 'Switch to light mode');
-        }
-      } else {
-        htmlElement.removeAttribute('data-theme');
-        if (themeToggleBtn) {
-          themeToggleBtn.innerHTML = '🌙 Dark Mode';
-          themeToggleBtn.setAttribute('aria-label', 'Switch to dark mode');
-        }
-      }
+    function syncThemePresetDropdown(value) {
+      var container = document.querySelector('[data-k-theme-preset]');
+      if (!container) return;
+      var item = container.querySelector('.k-dropdown__item[data-value="' + value + '"]');
+      var display = container.querySelector('.k-dropdown__value');
+      if (display && item) display.textContent = item.textContent.trim();
+      container.querySelectorAll('.k-dropdown__item').forEach(function (option) {
+        var active = option === item;
+        option.classList.toggle('is-selected', active);
+        option.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
     }
 
-    // Initialize theme from localStorage or system preference
+    function applyThemePreset(theme) {
+      var selected = themePresets.indexOf(theme) >= 0 ? theme : 'default';
+      if (selected === 'default') htmlElement.removeAttribute('data-theme');
+      else htmlElement.setAttribute('data-theme', selected);
+      if (themePreset) themePreset.value = selected;
+      syncThemePresetDropdown(selected);
+    }
+
     var savedTheme = null;
-    try {
-      savedTheme = localStorage.getItem('kaui-theme');
-    } catch (e) {
-      // localStorage may be disabled in private browsing or iframe
-    }
+    try { savedTheme = localStorage.getItem('kaui-theme'); } catch (e) {}
+    applyThemePreset(savedTheme || 'default');
 
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      applyTheme('dark');
-    } else {
-      applyTheme('light');
+    if (themePreset) {
+      themePreset.addEventListener('change', function () {
+        applyThemePreset(themePreset.value);
+        try { localStorage.setItem('kaui-theme', themePreset.value); } catch (e) {}
+      });
     }
-
-    if (themeToggleBtn) {
-      themeToggleBtn.addEventListener('click', function () {
-        var isDark = htmlElement.getAttribute('data-theme') === 'dark';
-        var nextTheme = isDark ? 'light' : 'dark';
-        applyTheme(nextTheme);
-        try {
-          localStorage.setItem('kaui-theme', nextTheme);
-        } catch (e) {}
+    var themeDropdown = document.querySelector('[data-k-theme-preset]');
+    if (themeDropdown) {
+      themeDropdown.addEventListener('change', function () {
+        if (!themePreset) return;
+        applyThemePreset(themePreset.value);
+        try { localStorage.setItem('kaui-theme', themePreset.value); } catch (e) {}
       });
     }
 
@@ -639,27 +637,28 @@
         sidebarToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
       // Keep sidebar state synchronized with the current page and optional section hash.
+      var sidebarScrollStorageKey = 'kaui-demo-sidebar-scroll-top';
+      var sidebarBody;
+
+      function saveSidebarScrollPosition() {
+        if (!sidebarBody) return;
+        try { sessionStorage.setItem(sidebarScrollStorageKey, String(sidebarBody.scrollTop)); } catch (e) {}
+      }
+
+      function restoreSidebarScrollPosition() {
+        if (!sidebarBody) return;
+        var savedPosition = null;
+        try { savedPosition = sessionStorage.getItem(sidebarScrollStorageKey); } catch (e) {}
+        if (savedPosition === null) return;
+        var position = Number(savedPosition);
+        if (!Number.isFinite(position)) return;
+        sidebarBody.scrollTop = Math.max(0, position);
+      }
+
       function currentSidebarPage() {
         var path = (window.location.pathname || '').split('/').pop();
         return path || 'index.html';
       }
-
-      function scrollActiveSidebarLinkIntoView() {
-        var body = sidebar.querySelector('.demo-sidebar__body');
-        var active = sidebar.querySelector('.demo-sidebar__link.is-active');
-        if (!body || !active) return;
-
-        var bodyRect = body.getBoundingClientRect();
-        var activeRect = active.getBoundingClientRect();
-        var padding = 8;
-        if (activeRect.top < bodyRect.top + padding) {
-          body.scrollTop -= bodyRect.top + padding - activeRect.top;
-        } else if (activeRect.bottom > bodyRect.bottom - padding) {
-          body.scrollTop += activeRect.bottom - (bodyRect.bottom - padding);
-        }
-      }
-
-
       function setActiveSidebarPage() {
         var page = currentSidebarPage();
         var matched = false;
@@ -671,7 +670,6 @@
           item.classList.toggle('is-active', active);
           if (active) matched = true;
         });
-        scrollActiveSidebarLinkIntoView();
         return matched;
       }
 
@@ -698,7 +696,6 @@
           var overview = sidebar.querySelector('a[href="#hero"]');
           if (overview) overview.classList.add('is-active');
         }
-        scrollActiveSidebarLinkIntoView();
       }
 
       function updateActiveSection() {
@@ -718,7 +715,6 @@
       }
 
       setActiveSidebarHash(window.location.hash);
-      window.setTimeout(scrollActiveSidebarLinkIntoView, 0);
       window.addEventListener('hashchange', function () {
         setActiveSidebarHash(window.location.hash);
         window.setTimeout(updateActiveSection, 0);
@@ -729,6 +725,7 @@
 
       sidebarLinks.forEach(function (link) {
         link.addEventListener('click', function () {
+          saveSidebarScrollPosition();
           sidebar.classList.remove('is-open');
           sidebarToggle.setAttribute('aria-expanded', 'false');
         });
@@ -737,28 +734,12 @@
 
 
 
-    // Hide the native scrollbar while preserving wheel, touch, keyboard, and button scrolling.
     var sidebarBody = document.querySelector('.demo-sidebar__body');
-    var scrollControls = document.querySelector('.demo-sidebar__scroll-controls');
-    var scrollUp = scrollControls && scrollControls.querySelector('.demo-sidebar__scroll-button--up');
-    var scrollDown = scrollControls && scrollControls.querySelector('.demo-sidebar__scroll-button--down');
-    if (sidebarBody && scrollControls && scrollUp && scrollDown) {
-      function updateSidebarScrollControls() {
-        var maxScroll = Math.max(0, sidebarBody.scrollHeight - sidebarBody.clientHeight);
-        var atTop = sidebarBody.scrollTop <= 1;
-        var atBottom = sidebarBody.scrollTop >= maxScroll - 1;
-        scrollUp.hidden = atTop;
-        scrollDown.hidden = atBottom;
-        scrollControls.setAttribute('aria-hidden', atTop && atBottom ? 'true' : 'false');
-      }
-      function scrollSidebar(direction) {
-        sidebarBody.scrollBy({ top: direction * Math.max(120, sidebarBody.clientHeight * 0.72), behavior: 'smooth' });
-      }
-      scrollUp.addEventListener('click', function () { scrollSidebar(-1); });
-      scrollDown.addEventListener('click', function () { scrollSidebar(1); });
-      sidebarBody.addEventListener('scroll', updateSidebarScrollControls, { passive: true });
-      window.addEventListener('resize', updateSidebarScrollControls);
-      updateSidebarScrollControls();
+    if (sidebarBody) {
+      sidebarBody.addEventListener('scroll', saveSidebarScrollPosition, { passive: true });
+      restoreSidebarScrollPosition();
+      window.addEventListener('pagehide', saveSidebarScrollPosition);
+      window.addEventListener('beforeunload', saveSidebarScrollPosition);
     }
 
     }

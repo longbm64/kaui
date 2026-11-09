@@ -19,17 +19,44 @@
   }
 
   function initTheme() {
-    var button = document.getElementById('theme-toggle');
-    if (!button) return;
-    var theme = localStorage.getItem('kaui-theme');
-    if (theme === 'dark') root.setAttribute('data-theme', 'dark');
-    function sync() { button.textContent = root.getAttribute('data-theme') === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'; }
-    sync();
-    button.addEventListener('click', function () {
-      if (root.getAttribute('data-theme') === 'dark') { root.removeAttribute('data-theme'); localStorage.setItem('kaui-theme', 'light'); }
-      else { root.setAttribute('data-theme', 'dark'); localStorage.setItem('kaui-theme', 'dark'); }
-      sync();
+    var select = document.getElementById('theme-preset');
+    var container = document.querySelector('[data-k-theme-preset]');
+    if (!select) return;
+    var root = document.documentElement;
+    var presets = ['default', 'ocean', 'forest', 'sunset', 'dark'];
+    var theme = localStorage.getItem('kaui-theme') || 'default';
+
+    function syncDropdown(value) {
+      if (!container) return;
+      var item = container.querySelector('.k-dropdown__item[data-value="' + value + '"]');
+      var display = container.querySelector('.k-dropdown__value');
+      if (display && item) display.textContent = item.textContent.trim();
+      container.querySelectorAll('.k-dropdown__item').forEach(function (option) {
+        var active = option === item;
+        option.classList.toggle('is-selected', active);
+        option.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    }
+
+    function apply(value) {
+      var selected = presets.indexOf(value) >= 0 ? value : 'default';
+      if (selected === 'default') root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', selected);
+      select.value = selected;
+      syncDropdown(selected);
+    }
+
+    apply(theme);
+    select.addEventListener('change', function () {
+      apply(select.value);
+      localStorage.setItem('kaui-theme', select.value);
     });
+    if (container) {
+      container.addEventListener('change', function () {
+        apply(select.value);
+        localStorage.setItem('kaui-theme', select.value);
+      });
+    }
   }
 
   function initDrawer() {

@@ -12,8 +12,8 @@
 </head>
 <body class="demo-body">
   <aside class="demo-sidebar" aria-label="Component navigation">
-    <header class="demo-sidebar__header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
-    <div class="demo-sidebar__body"><div class="demo-sidebar__scroll-controls" aria-hidden="true"><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--up" aria-label="Scroll navigation up" tabindex="-1"><i data-kaui-icon="chevron-up"></i></button><button type="button" class="demo-sidebar__scroll-button demo-sidebar__scroll-button--down" aria-label="Scroll navigation down" tabindex="-1"><i data-kaui-icon="chevron-down"></i></button></div><nav class="demo-sidebar__nav">
+    <header class="demo-sidebar__header" data-sidebar-region="header"><a href="index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body" data-sidebar-region="body"><nav class="demo-sidebar__nav">
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Getting Started</h2>
           <a href="index.html" class="demo-sidebar__link"><i data-kaui-icon="home"></i> <span>Overview</span></a>
@@ -46,10 +46,16 @@
           <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
         </div>
       </nav></div>
-    <footer class="demo-sidebar__footer"><button type="button" id="theme-toggle" class="k-btn k-btn--sm k-btn--secondary" aria-label="Toggle dark mode">🌙 Dark Mode</button><a href="https://github.com/longbm64/kaui" class="demo-sidebar__github" target="_blank" rel="noopener noreferrer"><i data-kaui-icon="github" aria-hidden="true"></i><span>View on GitHub</span></a></footer>
+    <footer class="demo-sidebar__footer" data-sidebar-region="footer"><div class="demo-theme-select"><span>Theme</span><div class="k-dropdown k-dropdown-select" data-k-dropdown-select data-k-theme-preset>
+  <select id="theme-preset" class="k-select k-d-none" tabindex="-1" aria-hidden="true">
+    <option value="default" selected>Blue</option><option value="ocean">Ocean</option><option value="forest">Forest</option><option value="sunset">Sunset</option><option value="dark">Dark</option>
+  </select>
+  <button type="button" class="k-input k-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose color theme"><span class="k-dropdown__value">Blue</span><span class="k-dropdown__chevron"><i data-kaui-icon="chevron-down"></i></span></button>
+  <div class="k-dropdown__menu" role="listbox"><button type="button" class="k-dropdown__item is-selected" data-value="default" role="option" aria-selected="true">Blue</button><button type="button" class="k-dropdown__item" data-value="ocean" role="option">Ocean</button><button type="button" class="k-dropdown__item" data-value="forest" role="option">Forest</button><button type="button" class="k-dropdown__item" data-value="sunset" role="option">Sunset</button><button type="button" class="k-dropdown__item" data-value="dark" role="option">Dark</button></div>
+</div></div></footer>
   </aside>
   <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
-  <div class="demo-page"><main class="demo-main">
+  <div class="demo-right"><header class="demo-header"><div class="k-container"><span class="demo-header__eyebrow">KAUI CSS Kit</span><span class="demo-header__context">Component Showcase</span></div></header><div class="demo-right__body"><main class="demo-main">
 <section id="cards" class="demo-section">
         <div class="k-container">
           <div class="demo-section-header">
@@ -129,7 +135,7 @@
 &lt;/article&gt;</code></pre></div>
         </div>
       </section>
-  </main>
+  </main></div>
   <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
 </body>
 </html>

@@ -1,3 +1,21 @@
+- Sidebar footer contract: `.demo-sidebar__footer` contains only the `#theme-preset` KAUI dropdown; the redundant GitHub button and Light/Dark toggle have been removed.
+
+- Custom sidebar scroll controls are removed. `.demo-sidebar__body` retains native `overflow-y: auto` scrolling for wheel, touch, trackpad, and keyboard accessibility.
+
+- Preset semantic color contract: `ocean`, `forest`, and `sunset` override surface/background, subtle surface, main/muted text, border/subtle border, primary scale, and semantic aliases (`--k-bg`, `--k-text`, `--k-border`) so borders and backgrounds follow the selected theme.
+
+- Sidebar separator contract: `.demo-sidebar__header` has a `1px` bottom border using `var(--k-border)` to visibly separate the fixed header from the independently scrolling body; footer keeps its top border.
+
+- Theme preset label contract: the default preset keeps value `default` but displays the shorter label `Blue` in the dropdown.
+
+- Theme preset dropdown contract: footer uses `.k-dropdown.k-dropdown-select[data-k-theme-preset]` with the standard KAUI toggle/menu/item anatomy; the hidden `#theme-preset` select remains the value bridge and `kaui-theme` persistence key.
+
+- Sidebar theme contract: `.demo-sidebar__footer` uses `#theme-preset`, a native dropdown with `default`, `ocean`, `forest`, `sunset`, and `dark` presets; no Light/Dark toggle button or system-preference auto-switch remains.
+
+- Sidebar footer contract: `.demo-sidebar__footer` contains only the `#theme-toggle` button; the redundant "View on GitHub" button has been removed from the left sidebar.
+
+- Sidebar region contract: every demo page marks semantic sidebar regions with `data-sidebar-region="header"`, `data-sidebar-region="body"`, and `data-sidebar-region="footer"`; these attributes supplement the existing BEM classes without changing runtime selectors.
+
 Version Archives dùng Accordion Component chuẩn KAUI (`.k-accordion__item.is-open`, `.k-accordion__trigger[aria-expanded]`, `.k-accordion__body`) để hiển thị từng version và artifact.
 
 - Version Registry dùng chung sidebar chuẩn của các demo page (`demo.js`, scroll controls, grouped navigation, KAUI icon registry), không dùng Lucide CDN riêng.
@@ -98,7 +116,10 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - `demo/demo.css` chứa style sidebar; `demo/demo.js` quản lý active state và drawer.
 - Sidebar layout contract: `.demo-sidebar` is a fixed-height flex column; `.demo-sidebar__header` and `.demo-sidebar__footer` are non-scrolling fixed sections, while `.demo-sidebar__body` owns vertical scrolling with `min-height: 0` and `overflow-y: auto`.
 - Sidebar scroll contract: `.demo-sidebar__body` keeps `overflow-y: auto` and independent scrolling, hides native scrollbars across Firefox/WebKit/Edge, and exposes `.demo-sidebar__scroll-controls` overlay arrows on hover/focus. Up/down buttons reflect top/middle/bottom scroll state and scroll by viewport-sized steps.
-- Sidebar active-item visibility contract: `demo/demo.js` keeps the active link inside `.demo-sidebar__body` viewport by adjusting only the sidebar body's `scrollTop`, without moving the main page scroll.
+- Sidebar active-item contract: active state chỉ cập nhật class `.is-active`; đổi trang/hash không tự động thay đổi `scrollTop` của `.demo-sidebar__body`. Người dùng vẫn có thể cuộn sidebar bằng wheel/touch/keyboard hoặc scroll controls.
+
+- Sidebar navigation persistence: multi-page navigation stores the user's `.demo-sidebar__body.scrollTop` in `sessionStorage` and restores it after reload, so changing active pages does not reset the menu to the top or auto-scroll to the active item.
+
 
 - Scroll control alignment: `.demo-sidebar__scroll-controls` is vertically centered and right-aligned within the sidebar body, with the up button above the down button.
 
@@ -301,5 +322,11 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Modal demo implementation contract: `demo/modal.html` must include `#demo-modal`, `#demo-confirm`, `#demo-confirm-warning`, and `#demo-confirm-danger` plus each referenced backdrop/action ID, because `demo/demo.js` binds interaction by these IDs.
 - Flutter package contract: the pub.dev package is named `filekat`, located at `packages/pub`, with public library import `package:filekat/kaui.dart`.
 - Flutter package `filekat` is version `1.1.0+` and uses the KAUI Personal / Non-Commercial License; its package LICENSE, README, and CHANGELOG must remain aligned with `NON_COMMERCIAL_LICENSE.md` and commercial contact `contact@filekat.com`.
+- Demo shell scroll contract: `.demo-body` và `.demo-right` giữ `height: 100vh` với `overflow: hidden`; `.demo-header` và `.demo-footer` là flex items cố định không co/không scroll; chỉ `.demo-right__body` có `overflow-y: auto` và `min-height: 0` để cuộn nội dung.
+- Header alignment contract: `.demo-sidebar__header` and `.demo-header` share `--demo-header-height` (4.25rem desktop, 3.5rem mobile), with explicit border-box height so their bottom borders align exactly.
+
+
+
+- Demo right-shell contract: every demo page now uses `.demo-right` beside the fixed sidebar; its ordered children are `.demo-header`, `.demo-right__body` (containing `.demo-main`), and `.demo-footer`. The header is a compact page-context bar; body owns page content; footer remains fixed to the content viewport.
 
 - Platform package layout: `packages/npm` contains the npm/Web package and `packages/pub` contains the pub.dev/Flutter package. Android and iOS native packages are currently paused and are not included in the repository package layout.

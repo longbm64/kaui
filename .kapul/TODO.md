@@ -1,3 +1,45 @@
+- [x] Fix lỗi JavaScript sau khi xóa custom scroll: loại bỏ đoạn `sidebarBody` bị chèn ngoài IIFE ở đầu `demo/demo.js`; giữ lại native scroll handler bên trong DOMContentLoaded.
+
+- [x] Xóa custom scroll arrows/overlay khỏi menu trái; khôi phục native scrollbar và giữ lưu/khôi phục vị trí scroll.
+
+- [x] Sửa sidebar active item: đổi trang/hash chỉ cập nhật trạng thái active, không tự động cuộn menu; scroll chỉ xảy ra khi người dùng dùng wheel/touch/keyboard hoặc nút mũi tên.
+- [x] Giữ nguyên vị trí scroll sidebar qua reload khi chọn item menu multi-page, không reset về top và không cuộn theo active item.
+
+
+
+- [x] Khóa viewport 100vh và chỉ cho phép `.demo-right__body` cuộn; header/footer đứng yên.
+- [x] Đồng bộ chiều cao sidebar header và right header bằng `--demo-header-height`, gồm cả breakpoint mobile.
+
+- [x] Chuyển footer khỏi `position: fixed` overlay sang flex item cố định trong right shell.
+
+
+- [x] Mở rộng theme presets để đổi đồng bộ background, surface, text, muted text, border và border-subtle; không chỉ đổi primary color.
+
+- [x] Thêm đường ngăn cách giữa sidebar header và body bằng `border-bottom` theo token `--k-border`, giữ body scroll độc lập.
+
+- [x] Đổi nhãn preset mặc định từ `KAUI Blue` thành `Blue`, giữ nguyên value `default` và persistence.
+
+- [x] Thay native theme `<select>` bằng KAUI `.k-dropdown-select` chuẩn trong footer; giữ hidden select bridge, ARIA menu item state, keyboard navigation và persistence.
+
+- [x] Fix menu trái fixed: `.demo-sidebar` giữ `position: fixed`, `.demo-right` bù `margin-left: 15.5rem` trên desktop và reset về `0` trên mobile.
+
+- [x] Thay Light/Dark toggle bằng dropdown theme preset trong footer menu: KAUI Blue, Ocean, Forest, Sunset, Dark; lưu lựa chọn qua `kaui-theme`.
+
+- [x] Xóa nút "View on GitHub" khỏi `.demo-sidebar__footer` trên toàn bộ 19 demo pages, dọn CSS `.demo-sidebar__github`.
+
+- [x] Restructure demo content shell into `.demo-header`, `.demo-right__body`, and `.demo-footer` so the left menu remains independent and the right content has explicit header/body/footer regions.
+
+# TODO — KAUI
+
+## Layout restructuring
+- [x] Inspect current demo shell and identify sidebar/page/footer dependents.
+- [x] Restructure the right content region into header, body, and footer.
+- [x] Apply the same right-shell markup to all 19 demo pages and add responsive header/body/footer styles.
+- [x] Run `npm test` and `npm run build`; 177 tests pass and production artifacts rebuild successfully.
+
+## Blockers
+- [!] None.
+
 - [x] Chuẩn bị package Flutter public với tên `kaui`: thêm metadata GitHub, LICENSE MIT, CHANGELOG và README cài đặt; giữ `publish_to: none` cho tới khi chủ động publish.
 
 - [x] Bar Chart: gắn label giá trị trên từng cột (`.k-chart__bar-label`) và label danh mục (`.k-chart__bar-category`), tương tự label của Donut Chart.
@@ -154,6 +196,8 @@
 - [x] Đưa nút Copy code từ tiêu đề section xuống cạnh label của từng form component trong `demo/index.html`.
 - [x] Thêm snippet copy riêng cho từng form component và style responsive.
 - [x] Chạy test suite và kiểm tra lại markup/CSS demo.
+
+- [x] Chuẩn hóa contract sidebar trái bằng `data-sidebar-region` cho ba vùng semantic header/body/footer trên toàn bộ 19 demo pages; giữ nguyên class, scroll độc lập và active state.
 
 ## Cập nhật đang thực hiện
 
