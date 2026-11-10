@@ -432,6 +432,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Main footer copyright & contact contract: the left side of `.demo-footer` provides `<span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> &copy; 2026 KAUI Contributors. Contact: <a href="mailto:contact@filekat.com" class="k-navbar__link">contact@filekat.com</a>` across all 20 demo pages.
 - Overview hero rhythm contract: `.demo-hero` uses `padding: 1.5rem 0` to match the exact vertical padding and container gutter alignment of `.demo-section` on all other component pages.
 - Scroll containment contract: all scrollable containers (`.demo-sidebar__body`, `.demo-right__body`, `pre`, `.demo-code`, `.k-dropdown__menu`, `.k-tabs__list`, `.k-modal__body`, `.k-table-viewport--scrollable`) strictly declare `overscroll-behavior: contain` to prevent scroll chaining across adjacent viewports.
+- Triple-platform release contract: `scripts/release-flow.mjs` and `scripts/release.mjs` automatically synchronize `packages/npm/package.json` and `packages/pub/pubspec.yaml`, copy latest dist artifacts into `packages/npm/dist`, deploy to Railway, and publish live to NPM (`filekat`) and Pub.dev (`filekat`).
+
 
 
 

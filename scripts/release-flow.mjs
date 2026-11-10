@@ -55,6 +55,21 @@ function main() {
     run('git', ['switch', sourceBranch]);
   }
 
+  // Publish platform packages to NPM and Pub.dev
+  try {
+    console.log('[release-flow] Publishing package to NPM (packages/npm)...');
+    run('npm', ['publish', '--access', 'public'], { cwd: `${root}/packages/npm` });
+  } catch (err) {
+    console.warn(`[release-flow] NPM publish warning: ${err.message}`);
+  }
+
+  try {
+    console.log('[release-flow] Publishing package to pub.dev (packages/pub)...');
+    run('dart', ['pub', 'publish', '-f'], { cwd: `${root}/packages/pub` });
+  } catch (err) {
+    console.warn(`[release-flow] Pub.dev publish warning: ${err.message}`);
+  }
+
   run(deployCommand.split(/\s+/)[0], deployCommand.split(/\s+/).slice(1));
   console.log(`[release-flow] v${version} merged to release and deployed successfully.`);
 }

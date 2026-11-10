@@ -194,5 +194,3 @@
   function create(target, opts) { return new Chart(target, opts); }
   global.KauiChart = { create: create, mount: create };
 })(typeof window !== 'undefined' ? window : globalThis);
-
-

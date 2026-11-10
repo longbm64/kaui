@@ -1,22 +1,36 @@
 {
   "name": "filekat",
-  "version": "1.1.0",
+  "version": "1.1.5",
   "description": "KAUI CSS Kit for modern Web, React, and Next.js applications",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/kaui.css",
   "style": "dist/kaui.min.css",
   "type": "module",
-  "publishConfig": { "access": "public" },
-  "files": ["dist", "README.md", "LICENSE", "COMMERCIAL_LICENSE.md"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "COMMERCIAL_LICENSE.md"
+  ],
   "exports": {
-    ".": { "style": "./dist/kaui.min.css", "default": "./dist/kaui.min.css" },
-    "./kaui": { "style": "./dist/kaui.min.css", "default": "./dist/kaui.min.css" },
+    ".": {
+      "style": "./dist/kaui.min.css",
+      "default": "./dist/kaui.min.css"
+    },
+    "./kaui": {
+      "style": "./dist/kaui.min.css",
+      "default": "./dist/kaui.min.css"
+    },
     "./css": "./dist/kaui.css",
     "./min.css": "./dist/kaui.min.css",
-    "./charts": { "style": "./dist/kaui-chart.min.css", "default": "./dist/kaui-chart.min.js" },
+    "./charts": {
+      "style": "./dist/kaui-chart.min.css",
+      "default": "./dist/kaui-chart.min.js"
+    },
     "./tokens/*": "./dist/tokens/*"
   },
   "homepage": "https://kaui.filekat.com"
 }
-
-
