@@ -6,6 +6,14 @@
 - [x] Document GitHub/CLI Railway deployment flow in `README.md`.
 - [x] Verify server syntax, HTTP smoke tests, `npm test` (177 passing), and `npm run build`.
 - [!] Actual Railway deployment/domain generation still requires the user's Railway account and GitHub/CLI authentication.
+- [x] Tạo Railway project `kaui`, deploy service production và tạo custom domain `kaui.filekat.com`.
+- [-] Chờ chủ DNS thêm CNAME/TXT verification để Railway cấp certificate HTTPS cho `kaui.filekat.com`.
+- [ ] Chuyển Railway service từ CLI upload sang GitHub Autodeploy repository `longbm64/kaui`, branch `release`.
+- [ ] Sau khi kết nối, xác minh deployment tự động từ branch `release` và giữ domain `kaui.filekat.com`.
+
+- [-] Railway ownership đã verify (`Verified: yes`) và CNAME public đã đúng; certificate TLS vẫn đang `VALIDATING_OWNERSHIP`, nên tiếp tục chờ Railway hoàn tất cấp chứng chỉ trước khi đánh dấu domain HTTPS hoàn tất.
+
+
 
 - [x] Chuẩn hóa `demo/templates.html` theo shell canonical của các demo page: sidebar đầy đủ, theme dropdown, mobile drawer, header/body/footer và Resources active state.
 

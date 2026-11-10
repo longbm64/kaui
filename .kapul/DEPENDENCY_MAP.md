@@ -12,6 +12,8 @@
 - **Node:** `package.json`
   - **New contract:** `scripts.start` launches `server.mjs`; existing build/test scripts remain unchanged.
   - **Dependents:** Railway Railpack/Nixpacks deployment and local production smoke tests.
+- **GitHub deployment source:** Railway service `kaui` is connected to `longbm64/kaui` branch `release`; pushes to `release` trigger production deployments. Local `railway up` is reserved for exceptional/manual deployments.
+
 
 - **Node:** `demo/templates.html` canonical page shell
   - **Exports/public contract:** Same sidebar, theme dropdown, mobile toggle, right shell, and footer structure as `demo/card.html`; only the main catalog body is template-specific.

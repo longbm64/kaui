@@ -98,6 +98,20 @@ railway up
 railway domain
 ```
 
+
+#### Production release branch
+
+Production Railway deployments follow the GitHub `release` branch. Push approved changes to `release`; Railway automatically runs the configured build, start command, and `/health` check. The `main` branch is for development and does not directly deploy production.
+
+```bash
+git checkout release
+git pull origin release
+npm test
+npm run build
+git push origin release
+```
+
+
 No database or environment variable is required. Do not use `serve:tailscale` in Railway; that command is for local tailnet development and binds a fixed port.
 
 
