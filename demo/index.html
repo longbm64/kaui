@@ -140,7 +140,12 @@ MANDATORY FIRST STEP: Use official KAUI components, widgets, tokens, and contrac
 3. SYSTEM CONVENTIONS &amp; THEME TOKENS:
    - BEM Hierarchy: All class names strictly follow `.k-*` (e.g. `.k-btn`, `.k-card`, `.k-table`, `.k-modal`).
    - Tokens: Consume standard CSS variables `--k-primary`, `--k-bg`, `--k-text`, `--k-border`, `--k-spacing-*`, `--k-radius-*`.
-   - Dark Theme: Native theme switching supported out-of-the-box via `[data-theme="dark"]`.
+   - Theme Presets: Native theme switching supported out-of-the-box by setting data-theme on <html> or any container:
+     * `data-theme="sunset"`: Warm Sunset palette (orange primary #ea580c, warm surface #fff7ed)
+     * `data-theme="ocean"`: Cool Ocean palette (cyan primary #0e7490, clean cyan surface #f0fdff)
+     * `data-theme="forest"`: Natural Forest palette (emerald primary #15803d, fresh mint surface #f0fdf4)
+     * `data-theme="dark"`: Native Dark theme (slate #0f172a, text #f8fafc)
+     * Default (no attribute): KAUI Blue palette (blue primary #2563eb)
 
 4. COMPONENT ARCHITECTURE &amp; CONTRACTS:
    - Tables:

@@ -44,7 +44,14 @@
       "is-loading"
     ],
     "designTokens": "Use CSS custom properties only: var(--k-primary), var(--k-secondary), var(--k-color-surface), var(--k-color-border), var(--k-spacing-*), var(--k-radius-*).",
-    "theme": "Support [data-theme=\"dark\"] natively without rewriting component styles.",
+    "theme": "Support [data-theme=\"dark\"], [data-theme=\"ocean\"], [data-theme=\"forest\"], and [data-theme=\"sunset\"] natively without rewriting component styles.",
+    "themePresets": {
+      "default": "Default KAUI Blue palette (no data-theme attribute needed)",
+      "dark": "Set data-theme=\"dark\" on <html> or container for dark mode",
+      "ocean": "Set data-theme=\"ocean\" on <html> or container for cyan/ocean palette",
+      "forest": "Set data-theme=\"forest\" on <html> or container for emerald/forest palette",
+      "sunset": "Set data-theme=\"sunset\" on <html> or container for orange/warm amber palette"
+    },
     "externalLibraries": "ZERO external UI frameworks. Pure HTML + KAUI classes + semantic aria-* attributes."
   },
   "layout": {

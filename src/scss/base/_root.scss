@@ -96,3 +96,72 @@
   --k-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.6);
   --k-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
 }
+
+// Preset Theme: Ocean
+[data-theme="ocean"] {
+  --k-color-surface: #f0fdff;
+  --k-color-surface-subtle: #cffafe;
+  --k-color-text-main: #164e63;
+  --k-color-text-muted: #075985;
+  --k-color-border: #a5f3fc;
+  --k-color-border-subtle: #cffafe;
+  --k-color-primary-50: #ecfeff;
+  --k-color-primary-500: #0891b2;
+  --k-color-primary-600: #0e7490;
+  --k-color-primary-700: #155e75;
+  --k-color-primary-900: #164e63;
+  --k-primary: #0e7490;
+  --k-primary-hover: #155e75;
+  --k-primary-light: #ecfeff;
+  --k-bg: var(--k-color-surface);
+  --k-text: var(--k-color-text-main);
+  --k-text-muted: var(--k-color-text-muted);
+  --k-border: var(--k-color-border);
+  --k-border-subtle: var(--k-color-border-subtle);
+}
+
+// Preset Theme: Forest
+[data-theme="forest"] {
+  --k-color-surface: #f0fdf4;
+  --k-color-surface-subtle: #dcfce7;
+  --k-color-text-main: #14532d;
+  --k-color-text-muted: #166534;
+  --k-color-border: #bbf7d0;
+  --k-color-border-subtle: #dcfce7;
+  --k-color-primary-50: #f0fdf4;
+  --k-color-primary-500: #16a34a;
+  --k-color-primary-600: #15803d;
+  --k-color-primary-700: #166534;
+  --k-color-primary-900: #14532d;
+  --k-primary: #15803d;
+  --k-primary-hover: #166534;
+  --k-primary-light: #f0fdf4;
+  --k-bg: var(--k-color-surface);
+  --k-text: var(--k-color-text-main);
+  --k-text-muted: var(--k-color-text-muted);
+  --k-border: var(--k-color-border);
+  --k-border-subtle: var(--k-color-border-subtle);
+}
+
+// Preset Theme: Sunset
+[data-theme="sunset"] {
+  --k-color-surface: #fff7ed;
+  --k-color-surface-subtle: #ffedd5;
+  --k-color-text-main: #7c2d12;
+  --k-color-text-muted: #9a3412;
+  --k-color-border: #fed7aa;
+  --k-color-border-subtle: #ffedd5;
+  --k-color-primary-50: #fff7ed;
+  --k-color-primary-500: #f97316;
+  --k-color-primary-600: #ea580c;
+  --k-color-primary-700: #c2410c;
+  --k-color-primary-900: #7c2d12;
+  --k-primary: #ea580c;
+  --k-primary-hover: #c2410c;
+  --k-primary-light: #fff7ed;
+  --k-bg: var(--k-color-surface);
+  --k-text: var(--k-color-text-main);
+  --k-text-muted: var(--k-color-text-muted);
+  --k-border: var(--k-color-border);
+  --k-border-subtle: var(--k-color-border-subtle);
+}
