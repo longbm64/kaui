@@ -1,5 +1,5 @@
 /*!
- * KAUI CSS Kit v1.1.11
+ * KAUI CSS Kit v1.1.12
  * Copyright (c) 2026 KAUI Contributors
  * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
  * Official Website: https://kaui.filekat.com
@@ -161,7 +161,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         var openModal = document.querySelector('.k-modal.is-open');
-        if (openModal && openModal.getAttribute('data-k-backdrop') !== 'static') {
+        if (openModal) {
           openModal.classList.remove('is-open');
         }
       }
@@ -189,7 +189,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         var openConfirm = document.querySelector('.k-confirm.is-open');
-        if (openConfirm && openConfirm.getAttribute('data-k-backdrop') !== 'static') {
+        if (openConfirm) {
           openConfirm.classList.remove('is-open');
         }
       }

@@ -180,6 +180,12 @@
   - **Exports/public contract:** idempotently create Phase 3–5 SVG sources under `icons/source/kaui/` without overwriting existing glyphs.
   - **Dependencies:** Node `fs`/`path`, `scripts/build-icons.mjs` through their npm commands.
   - **Dependents:** generated icon manifest, sprite, CSS/JSON artifacts and `demo/icons.html`.
+- **Node:** `scripts/add-kaui-phase6-15-icons.mjs`
+  - **Exports/public contract:** idempotently creates Phase 6–15 SVG sources under `icons/source/kaui/` without overwriting existing glyphs.
+  - **Dependencies:** Node `fs`/`path`, `scripts/build-icons.mjs` via `npm run icons:phase6-15:add`.
+  - **Dependents:** generated icon manifest, sprite, CSS/JSON artifacts and `demo/icons.html`.
+
+
 
 
   - **Exports/public contract:** `#cards .demo-card-grid`, `.demo-card-equal`, `.demo-card-countries`, `.demo-country-list`, `.demo-country-row` markup; no `.k-card--interactive` instance remains on this page.

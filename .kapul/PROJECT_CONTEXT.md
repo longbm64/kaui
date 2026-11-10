@@ -140,6 +140,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Phase 3–5 icon expansion: generators `scripts/add-kaui-phase3-icons.mjs`, `scripts/add-kaui-phase4-icons.mjs`, and `scripts/add-kaui-phase5-icons.mjs` create idempotent KAUI-owned SVG sources for media/communication, commerce/infrastructure, and editing/accessibility/localization. Their npm commands rebuild the shared registry.
 
+- Phase 6–15 icon expansion: `scripts/add-kaui-phase6-15-icons.mjs` creates 180 idempotent KAUI-owned SVG sources across domains (Business, Logistics, AI, Finance, Healthcare, Smart Home, Travel, Education, Publishing, Gaming); invoked via `npm run icons:phase6-15:add`.
+
 - Cards showcase scroll contract: `.demo-card-countries .k-card__body` owns vertical scrolling with header/footer fixed; `.demo-country-list` is not independently scrollable and preserves four equal columns for number, calling code, country, and time zone.
 
 
@@ -236,7 +238,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Toast timestamp style: thời gian được hiển thị tinh tế ở bottom-left (không dùng viền phân cách), font size nhỏ gọn (0.6875rem), icon 12x12px đồng bộ với text.
 - Modal Dialog Overlay Contract: `.k-modal` đóng vai trò là container toàn màn hình (`position: fixed; inset: 0; z-index: var(--k-z-modal, 1050)`). `.k-modal-backdrop` có `position: fixed; inset: 0; z-index: var(--k-z-modal-backdrop, 1040)`. Phần tử `.k-modal__dialog` được thiết lập `position: relative; z-index: var(--k-z-modal, 1050)` để luôn nổi bật trên lớp backdrop đen mờ, không bao giờ bị overlay che khuất hay làm mờ bóng đen. Hỗ trợ animation mở mượt mà và đóng linh hoạt qua nút Close/Cancel/Confirm, click vào backdrop, click ngoài dialog hoặc phím Escape.
-- Confirm Component Contract: `.k-confirm` là một component độc lập riêng biệt với `.k-modal` (không phụ thuộc class `.k-modal`), có anatomy riêng: `.k-confirm`, `.k-confirm__backdrop`, `.k-confirm__dialog`, `.k-confirm__body`, `.k-confirm__icon`, `.k-confirm__title`, `.k-confirm__message`, `.k-confirm__footer`. Hỗ trợ các tone `.k-confirm--warning`, `--danger`, `--success`, `--info`. Backdrop mặc định là static (`data-k-backdrop="static"`): click ngoài và Escape không đóng hộp thoại; chỉ đóng bằng nút Cancel hoặc Confirm/Action. Đặt `data-k-backdrop="true"` nếu muốn cho phép click ngoài.
+- Confirm Component Contract: `.k-confirm` là một component độc lập riêng biệt với `.k-modal` (không phụ thuộc class `.k-modal`), có anatomy riêng: `.k-confirm`, `.k-confirm__backdrop`, `.k-confirm__dialog`, `.k-confirm__body`, `.k-confirm__icon`, `.k-confirm__title`, `.k-confirm__message`, `.k-confirm__footer`. Hỗ trợ các tone `.k-confirm--warning`, `--danger`, `--success`, `--info`. Mặc định là static (`data-k-backdrop="static"` hoặc không khai báo): click vào backdrop hoặc click ra ngoài dialog không đóng hộp thoại; phím Escape luôn đóng hộp thoại (hoạt động tương đương Cancel). Đặt `data-k-backdrop="true"` nếu muốn cho phép click backdrop/click ngoài để đóng.
 - Confirm layout contract: `.k-confirm__icon` nằm trên một dòng riêng phía trên `.k-confirm__title` và `.k-confirm__message`, giúp dialog dễ đọc trên desktop/mobile; footer actions giữ nguyên layout ngang.
 - Confirm icon layout contract: `.k-confirm__icon` căn giữa theo chiều ngang (`margin-inline: auto`) và dùng kích thước 4rem với icon bên trong 2rem để tạo điểm nhấn rõ ràng.
 - Confirm warning demo contract: demo cung cấp biến thể riêng `.k-confirm.k-confirm--warning` với icon `triangle-alert`, nút action `.k-btn--warning`, backdrop static và hành vi xác nhận độc lập.
@@ -251,7 +253,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Modal/Confirm footer action icon contract: every demo footer action uses `.k-btn__icon` before `.k-btn__text`; Cancel uses `close`, Confirm/Publish use `check`, and Delete uses `delete`.
 - Modal Escape contract: `Escape` always closes the open Modal as a cancel action, including static-by-default Modal; static mode only prevents backdrop/outside click dismissal.
 
-- Modal dismiss contract: Modal và Confirm đều static mặc định (`data-k-backdrop="static"` hoặc thiếu thuộc tính), không đóng khi click backdrop/click ngoài hoặc nhấn Escape; chỉ đóng bằng nút Close/Cancel/Confirm. Dùng `data-k-backdrop="true"` để bật dismiss ngoài theo opt-in.
+- Modal and Confirm static & Escape contract: Cả Modal và Confirm đều mặc định là static (`data-k-backdrop="static"` hoặc không khai báo), tức là click vào backdrop hoặc click ra ngoài dialog sẽ KHÔNG đóng hộp thoại. Tuy nhiên, phím Escape luôn đóng hộp thoại đang mở (hành vi tiêu chuẩn tương đương Cancel).
 - Modal keyboard confirmation contract: while any Modal/Confirm dialog is open, `Enter` triggers its primary action (`Confirm`, `Publish`, or `Delete`) and prevents the default browser action; `Escape` retains the documented static/dismiss behavior.
 
 

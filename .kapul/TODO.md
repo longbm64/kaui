@@ -1,3 +1,4 @@
+- [x] Chuẩn hóa Modal và Confirm: Mặc định là static (click ra ngoài/backdrop không đóng) và nhấn phím Escape luôn đóng hộp thoại (chuẩn accessibility).
 - [x] Rà soát và chuẩn hóa toàn bộ văn bản sang tiếng Anh trên tất cả các trang demo (`demo/*.html`), bao gồm code samples, chú thích multi-level submenu, script callback guides, bảng dữ liệu mẫu và mô tả component.
 - [x] Thêm tài liệu & hướng dẫn script callback cho Confirm component trong `demo/confirm.html` (cả 2 cách: DOM listener trực tiếp và hàm Promise async/await).
 - [x] Cập nhật scripts/release.mjs và quy trình #release để tự động chèn comment header chứa đầy đủ version, bản quyền, website chính thức và GitHub project vào tất cả các file phân phối (dist/ CSS, JS, Tokens).
@@ -202,6 +203,8 @@
 - [x] Mở rộng Phase 2 thêm 37 icon KAUI cho data, dashboard, file, user, security và thao tác nâng cao; thêm generator idempotent `scripts/add-kaui-phase2-icons.mjs`.
 
 - [x] Hoàn tất liên tục Phase 3–5: bổ sung icon Media/Communication, Commerce/Infrastructure và Editing/Accessibility/Localization; rebuild registry, sprite và CSS artifacts.
+- [x] Triển khai toàn diện Phase 6–15: bổ sung 180 icon chuyên ngành (Business, Logistics, AI, Finance, Health, Smart Home, Travel, Education, Publishing, Gaming); bổ sung generator `scripts/add-kaui-phase6-15-icons.mjs` và rebuild registry.
+
 
 
 - [x] Xóa các TODO lịch sử mô tả third-party-derived registry sau khi chuyển production registry sang 67 icon KAUI-owned.
