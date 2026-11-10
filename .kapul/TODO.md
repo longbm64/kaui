@@ -1,3 +1,9 @@
+- [x] Tạo template dashboard (`demo/templates/dashboard.html`) sao chép từ mẫu demo hiện tại và loại bỏ card Living Styleguide khỏi catalog `demo/templates.html`.
+- [x] Tạo template one-column (`demo/templates/one-column.html`) đồng bộ width của navbar container và footer khớp với body (max-width 60rem), căn giữa menu Account/Playground/API.
+- [x] Chuyển đổi toàn bộ ngôn ngữ trên trang `demo/templates/one-column.html` sang tiếng Anh (thay "Đăng xuất" thành "Log out").
+- [x] Tích hợp các icon KAUI phù hợp vào `demo/templates/one-column.html` (user, play, code, arrow-right, columns, monitor, tag).
+- [x] Xóa hiệu ứng hover nâng card và đổi shadow trên card template; giữ trạng thái focus cho bàn phím.
+
 
 ## Railway deployment preparation
 
@@ -61,7 +67,7 @@
 - [x] Tạo page Templates (`demo/templates.html`) hiển thị card item theo grid responsive.
 - [x] Cấu hình mỗi card item mở template trong tab mới bằng `target="_blank" rel="noopener noreferrer"`.
 - [x] Đặt template demo hiện tại (`demo/index.html`) làm example đầu tiên.
-- [x] Phát triển thêm 3 template độc lập bằng KAUI: Blog (`demo/templates/blog.html`), Dashboard (`demo/templates/dashboard.html`), E-commerce (`demo/templates/e-commerce.html`).
+- [x] Tạo template dashboard (`demo/templates/dashboard.html`) sao chép từ mẫu demo hiện tại và loại bỏ card Living Styleguide khỏi catalog `demo/templates.html`.
 - [x] Bổ sung styles catalog và shell preview (`.demo-template-*`) vào `demo/demo.css`.
 - [x] Thêm link điều hướng Templates vào sidebar Overview (`demo/index.html`).
 
@@ -673,3 +679,22 @@
 - [x] Chuẩn hóa flyout Navbar desktop: submenu mở ngang trái/phải và luôn căn top bằng item cha; chỉ mobile mới xếp dọc.
 
 - [x] Tách hướng submenu Navbar: menu root mở trên/dưới và tự flip lên; menu con lồng sâu mở trái/phải, căn top theo item cha.
+
+## Sidebar demo/menu visibility
+- [x] Add `Sidebar` to the Components menu on every demo HTML page.
+- [x] Add `demo/sidebar.html` with a working `.k-sidebar` showcase and copy snippet.
+- [x] Add the Sidebar copy payload to `demo/demo.js` and verify menu/link counts.
+- [x] Update Sidebar demo to show fixed header, scrollable body with long navigation, and fixed footer.
+- [x] Add visible separator lines between Sidebar header/body and body/footer.
+- [x] Make header/body and body/footer separators full width by moving sidebar spacing into each region.
+- [x] Mirror KAUI left navigation sidebar styling and right-flush scrollbar directly into `.k-sidebar`.
+
+
+
+
+
+
+## Sidebar component
+- [x] Add reusable `.k-sidebar` component with header/body/footer/nav/group/link anatomy.
+- [x] Export sidebar from the component barrel and remove duplicate sidebar CSS from extended data-shell.
+- [ ] Validate sidebar visually in a dedicated demo page if requested.
