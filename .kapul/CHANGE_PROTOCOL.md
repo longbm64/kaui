@@ -9,6 +9,8 @@
 - `demo/templates.html` must be kept structurally aligned with a canonical component page such as `demo/card.html`: do not create a reduced sidebar or alternate footer. Verify the shared regions and theme dropdown before changing catalog content.
 - **Protected release branch:** tuyệt đối không chỉnh sửa, commit hoặc push trực tiếp trên `release`. Nếu branch hiện tại là `release`, agent phải cảnh báo và dừng mọi hoạt động thay đổi/deploy ngay lập tức; chỉ được phát hành thông qua `#release` từ `main` hoặc feature branch.
 - Local Git hooks (`.githooks/pre-commit`, `.githooks/pre-push`) chặn commit/push trực tiếp trên `release`; mỗi clone cần cấu hình `git config core.hooksPath .githooks`.
+- **Canonical `#release` flow:** run `npm run release [patch|minor|major]` from a clean `main`/feature branch. It bumps and builds the version, runs `npm test`, `npm run verify:release`, `npm run tokens:verify`, and `npm run audit:license`, commits/pushes the source branch, merges with `--no-verify` into protected `release`, pushes `release`, then deploys with `railway up`. Set `KAUI_DEPLOY_COMMAND` to override the deploy command. Do not run from `release` or with uncommitted changes.
+
 
 
 

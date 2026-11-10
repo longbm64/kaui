@@ -9,6 +9,9 @@
   - **Exports/public contract:** Railway build command `npm run build`, start command `npm start`, healthcheck `/health`.
   - **Dependencies:** `package.json`, `server.mjs`.
   - **Dependents:** Railway service deployment configuration.
+- `npm run release` / `scripts/release-flow.mjs`: orchestrates version bump, release verification, commit/push, merge into `release`, push, and Railway deployment. It depends on `scripts/release.mjs`, `scripts/verify-release.mjs`, package scripts, Git remotes, and Railway CLI.
+  - **Dependents:** maintainers invoking `#release`; protected release branch workflow.
+
 - **Node:** `package.json`
   - **New contract:** `scripts.start` launches `server.mjs`; existing build/test scripts remain unchanged.
   - **Dependents:** Railway Railpack/Nixpacks deployment and local production smoke tests.

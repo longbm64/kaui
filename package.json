@@ -29,7 +29,9 @@
     "build:chart:js": "cp src/js/kaui-chart.js dist/kaui-chart.js && cp src/js/kaui-chart.js dist/kaui-chart.min.js",
     "build:chart": "npm run build:chart:dev && npm run build:chart:prod && npm run build:chart:js",
     "watch": "sass --watch src/scss/kaui.scss:dist/kaui.css --style=expanded",
+    "release": "node scripts/release-flow.mjs",
     "release:patch": "node scripts/release.mjs patch",
+
     "release:minor": "node scripts/release.mjs minor",
     "release:major": "node scripts/release.mjs major",
     "build:versioned": "node scripts/release.mjs build-only",

@@ -9,6 +9,8 @@
 
 - [x] Chuẩn hóa `demo/templates.html` theo shell canonical của các demo page: sidebar đầy đủ, theme dropdown, mobile drawer, header/body/footer và Resources active state.
 
+- [x] Add canonical `#release` automation: patch bump, build and verification, source push, protected `release` merge/push, then Railway deploy.
+
 
 - [x] Di chuyển item Templates vào nhóm Resources trên toàn bộ 20 demo pages, giữ active state riêng tại `demo/templates.html` và loại bỏ item trùng ở Getting Started.
 

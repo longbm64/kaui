@@ -120,6 +120,19 @@ Bundler users should prefer `import 'filekat/kaui';`. If a static HTML deploymen
 ```bash
 npm run build
 
+
+### Automated release and deploy
+
+Run `#release` (equivalent to `npm run release`) from a clean `main` or feature branch. The flow automatically:
+
+1. bumps the patch version (`patch` by default; pass `minor` or `major` to the npm command),
+2. builds immutable versioned artifacts and runs tests, release verification, token verification, and license audit,
+3. commits and pushes the source branch,
+4. merges and pushes the protected `release` branch,
+5. deploys with `railway up`.
+
+The flow never permits direct work on `release`. Set `KAUI_DEPLOY_COMMAND` when a different deploy command is required.
+
 > **Protected branch policy:** Never edit or commit directly on `release`. Develop on `main` or a feature branch. To publish, use `#release` (equivalent to `npm run release`); it validates and merges into `release` in an isolated worktree. If the current branch is `release`, the release workflow warns and stops.
 
 npm run build:css:dev   # dist/kaui.css (expanded, with source maps)
