@@ -1,3 +1,5 @@
+/* Theme readability fix: opaque footer and consistent weight prevent low-frequency blur/softness on Ocean, Forest, Sunset, and Dark preset surfaces. */
+
 
 - `npm run release` is the canonical `#release` flow: from a clean non-`release` branch it bumps the patch version by default, builds/verifies/tests/audits, commits and pushes the source branch, merges it into protected `release`, pushes `release`, then runs `railway up` (override with `KAUI_DEPLOY_COMMAND`).
 
@@ -435,4 +437,20 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 - Navbar guide contract: `demo/navbar.html` provides three independent copy actions (`guide-navbar-basic`, `guide-navbar-nested`, `guide-navbar-overflow`) covering base structure, ARIA nested menus, modifiers, responsive drawer, and viewport-aware flip behavior; payloads live in `demo/demo.js`.
+- Demo typography rendering contract: `demo/demo.css` must use `antialiased`/`grayscale`/`text-rendering: auto` and opaque theme surfaces; do not reintroduce `subpixel-antialiased`, `optimizeLegibility`, or transparent `color-mix` on fixed chrome because they can cause visible blur on macOS/WebKit.
+- Core package typography contract: `src/scss/base/_reset.scss` and generated package CSS use `text-rendering: auto` with antialiased/grayscale smoothing; consumers importing `filekat/kaui` receive the same rendering fix as the demo.
+- Core text contrast contract: `--k-color-text-muted` source value is `#475569` (not the lighter `#64748b`) so secondary text remains crisp on light surfaces in both demo and published package artifacts.
+- Demo footer version contract: the right-aligned link in `.demo-footer` displays the current release version (`v1.1.4`) and links to `versions.html` across all 20 demo pages, instead of linking to Overview.
+- Dark sidebar active contrast contract: in Dark mode (`[data-theme="dark"]`), `.demo-sidebar__link.is-active` and `.demo-sidebar__link:hover` (including their icons) strictly enforce text color `#ffffff` over the dark blue background `--demo-sidebar-active-bg` (`#1e3a8a`) for crystal-clear readability.
+- Main footer copyright & contact contract: the left side of `.demo-footer` provides `<span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> &copy; 2026 KAUI Contributors. Contact: <a href="mailto:contact@filekat.com" class="k-navbar__link">contact@filekat.com</a>` across all 20 demo pages.
+- Overview hero rhythm contract: `.demo-hero` uses `padding: 1.5rem 0` to match the exact vertical padding and container gutter alignment of `.demo-section` on all other component pages.
+- Scroll containment contract: all scrollable containers (`.demo-sidebar__body`, `.demo-right__body`, `pre`, `.demo-code`, `.k-dropdown__menu`, `.k-tabs__list`, `.k-modal__body`, `.k-table-viewport--scrollable`) strictly declare `overscroll-behavior: contain` to prevent scroll chaining across adjacent viewports.
+
+
+
+
+
+
+
+
 - Navbar direction contract: root submenu (`.k-navbar__nav > li > .k-navbar__submenu`) opens vertically below/above its root item; nested submenus open horizontally left/right with top edge aligned to their parent item. Runtime only applies `.is-dropstart` to nested items.

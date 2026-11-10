@@ -65,7 +65,7 @@
   --k-color-surface: #ffffff;
   --k-color-surface-subtle: #f8fafc;
   --k-color-text-main: #0f172a;
-  --k-color-text-muted: #64748b;
+  --k-color-text-muted: #475569;
   --k-color-border: #e2e8f0;
   --k-color-border-subtle: #f1f5f9;
   --k-spacing-0: 0;
@@ -202,7 +202,7 @@ html {
 
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--k-text);
@@ -326,6 +326,7 @@ pre {
   padding: var(--k-spacing-4);
   margin-bottom: var(--k-spacing-4);
   overflow-x: auto;
+  overscroll-behavior: contain;
   font-family: var(--k-font-mono);
   font-size: var(--k-size-sm);
   background-color: var(--k-color-surface-subtle);
@@ -3529,6 +3530,7 @@ hr {
   min-width: 100%;
   max-height: 16rem;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: var(--k-spacing-1);
   background: var(--k-color-surface);
   border: 1px solid var(--k-border);
@@ -3668,6 +3670,7 @@ hr {
   gap: var(--k-spacing-4);
   border-bottom: 1px solid var(--k-border);
   overflow-x: auto;
+  overscroll-behavior: contain;
 }
 
 .k-tabs__tab {

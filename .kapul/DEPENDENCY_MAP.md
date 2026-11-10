@@ -177,3 +177,8 @@
   - **Exports/public contract:** three copy buttons with `data-copy-component="guide-navbar-basic|nested|overflow"`, explanatory modifier/accessibility notes, and visible base markup sample.
   - **Dependencies:** `demo/demo.js` component snippet map and `demo/demo.css` guide card styles.
   - **Dependents:** Navbar demo users and static guide contract checks.
+
+- **Node:** `demo/demo.css` theme readability
+  - **Exports/public contract:** `.demo-footer` dùng nền opaque, không blur; các preset Ocean/Forest/Sunset/Dark áp dụng cùng độ đậm typography để chữ và biên không bị mềm/nhòe.
+  - **Dependencies:** `demo/demo.js` và `demo/versions.js` chỉ đặt `data-theme`; không thay đổi runtime preset.
+  - **Dependents:** mọi `demo/*.html` dùng shared `demo.css`.

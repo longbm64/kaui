@@ -517,10 +517,16 @@
   border: 1px solid var(--k-border, #e2e8f0);
   color: var(--k-primary, #2563eb);
 }
+pre.demo-code {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+}
+
 
 /* Overview uses the same full-width container rhythm as component pages. */
 .demo-hero {
-  padding: 3rem 1rem;
+  padding: 1.5rem 0;
   text-align: left;
   background: linear-gradient(180deg, var(--k-color-surface-subtle, #f8fafc) 0%, var(--k-bg, #ffffff) 100%);
   border-bottom: 1px solid var(--k-border, #e2e8f0);
@@ -572,14 +578,22 @@
   z-index: 10;
   width: 100%;
   box-sizing: border-box;
-  background-color: color-mix(in srgb, var(--k-color-surface-subtle, #f8fafc) 96%, transparent);
+  background-color: var(--k-color-surface-subtle, #f8fafc);
   border-top: 1px solid var(--k-border, #e2e8f0);
   padding: 0.5rem 1.25rem;
   color: var(--k-text-muted, #64748b);
   font-size: var(--k-size-xs, 0.75rem);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* Opaque surface prevents transparent compositing from softening theme text. */
 }
+
+/* Keep the fixed footer opaque. Backdrop blur makes text and edges behind the
+   composited footer look soft on some displays, especially with light presets. */
+.demo-footer {
+  background-color: var(--k-color-surface-subtle, #f8fafc);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 
 /* Component copy button */
 .demo-copy-button {
@@ -628,6 +642,111 @@
   .demo-footer .k-flex {
     gap: 0.75rem;
   }
+}
+
+
+.demo-footer__left {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--k-text-muted, #64748b);
+  font-size: var(--k-size-xs, 0.75rem);
+  line-height: 1.4;
+}
+
+.demo-footer__brand {
+  color: var(--k-text, #0f172a);
+  font-weight: 500;
+}
+
+.demo-footer__sep {
+  color: var(--k-border, #cbd5e1);
+  font-size: 0.65rem;
+  user-select: none;
+}
+
+.demo-footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--k-primary, #2563eb);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.demo-footer__link:hover {
+  color: var(--k-primary-hover, #1d4ed8);
+  text-decoration: underline;
+}
+
+.demo-footer__link [data-kaui-icon],
+.demo-footer__link .kaui-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  stroke-width: 2;
+}
+
+.demo-footer__right {
+  display: inline-flex;
+  align-items: center;
+}
+
+.demo-footer__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  background-color: var(--k-color-primary-50, #eff6ff);
+  color: var(--k-primary, #2563eb);
+  border: 1px solid var(--k-color-border-subtle, #bfdbfe);
+  font-family: var(--k-font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.demo-footer__badge:hover {
+  background-color: var(--k-primary, #2563eb);
+  color: #ffffff;
+  border-color: var(--k-primary, #2563eb);
+}
+
+.demo-footer__badge [data-kaui-icon],
+.demo-footer__badge .kaui-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+[data-theme="dark"] .demo-footer__brand {
+  color: var(--k-color-text-main, #f8fafc);
+}
+
+[data-theme="dark"] .demo-footer__link {
+  color: var(--k-color-primary-400, #60a5fa);
+}
+
+[data-theme="dark"] .demo-footer__link:hover {
+  color: var(--k-color-primary-300, #93c5fd);
+}
+
+[data-theme="dark"] .demo-footer__sep {
+  color: var(--k-color-border, #334155);
+}
+
+[data-theme="dark"] .demo-footer__badge {
+  background-color: var(--k-color-surface-subtle, #1e293b);
+  border-color: var(--k-color-border, #334155);
+  color: var(--k-color-primary-300, #93c5fd);
+}
+
+[data-theme="dark"] .demo-footer__badge:hover {
+  background-color: var(--k-primary, #2563eb);
+  color: #ffffff;
+  border-color: var(--k-primary, #2563eb);
 }
 
 .demo-copy-button:hover {
@@ -884,7 +1003,6 @@ html { scroll-behavior: smooth; }
 [data-theme="dark"] .demo-sidebar__link:hover,
 [data-theme="dark"] .demo-sidebar__link.is-active,
 [data-theme="dark"] .demo-language-button:hover,
-#cards .demo-card-equal { width: 100%; min-height: 30rem; height: 100%; }
 [data-theme="dark"] .demo-copy-button:hover {
   color: var(--k-color-primary-300, #93c5fd);
 }
@@ -935,12 +1053,20 @@ html { scroll-behavior: smooth; }
   font-weight: var(--k-weight-semibold, 600);
 }
 
+[data-theme="dark"] .demo-body .demo-sidebar__link.is-active,
+[data-theme="dark"] .demo-body .demo-sidebar__link:hover,
 [data-theme="dark"] .demo-body .k-navbar__link:hover,
 [data-theme="dark"] .demo-body .k-navbar__link.is-active,
 [data-theme="dark"] .demo-body .k-navbar__item--has-children:hover > .k-navbar__link,
 [data-theme="dark"] .demo-body .k-navbar__item--has-children.is-open > .k-navbar__link {
   color: #ffffff;
   background-color: var(--demo-sidebar-active-bg);
+}
+[data-theme="dark"] .demo-body .demo-sidebar__link.is-active [data-kaui-icon],
+[data-theme="dark"] .demo-body .demo-sidebar__link.is-active .kaui-icon,
+[data-theme="dark"] .demo-body .demo-sidebar__link:hover [data-kaui-icon],
+[data-theme="dark"] .demo-body .demo-sidebar__link:hover .kaui-icon {
+  color: #ffffff;
 }
 
 
@@ -956,9 +1082,9 @@ html { scroll-behavior: smooth; }
 
 /* Ultra-crisp typography & contrast for demo showcase */
 .demo-body {
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: auto;
-  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
   color: #0f172a;
 }
 .demo-body .k-text-muted {
@@ -1039,6 +1165,47 @@ html { scroll-behavior: smooth; }
 }
 
 /* Blue preset (default) uses slightly stronger text weights for readability. */
+/* Theme readability fix: opaque footer and consistent weight prevent low-frequency blur/softness on Ocean, Forest, Sunset, and Dark preset surfaces. */
+
+
+/* Preset contrast contract: every theme keeps opaque, high-frequency text. */
+
+
+/* All light presets need the same crisp text treatment. Their semantic colors
+   remain theme-specific, while weight prevents pale themes from looking blurry. */
+html[data-theme="ocean"] .demo-body,
+html[data-theme="forest"] .demo-body,
+html[data-theme="sunset"] .demo-body {
+  font-weight: 500;
+}
+html[data-theme="ocean"] .demo-body .k-text-muted,
+html[data-theme="forest"] .demo-body .k-text-muted,
+html[data-theme="sunset"] .demo-body .k-text-muted,
+html[data-theme="ocean"] .demo-body .demo-section-desc,
+html[data-theme="forest"] .demo-body .demo-section-desc,
+html[data-theme="sunset"] .demo-body .demo-section-desc,
+html[data-theme="ocean"] .demo-body .demo-footer,
+html[data-theme="forest"] .demo-body .demo-footer,
+html[data-theme="sunset"] .demo-body .demo-footer,
+html[data-theme="ocean"] .demo-body .demo-sidebar__group-title,
+html[data-theme="forest"] .demo-body .demo-sidebar__group-title,
+html[data-theme="sunset"] .demo-body .demo-sidebar__group-title,
+html[data-theme="ocean"] .demo-body .demo-theme-select,
+html[data-theme="forest"] .demo-body .demo-theme-select,
+html[data-theme="sunset"] .demo-body .demo-theme-select {
+  font-weight: 500;
+}
+html[data-theme="ocean"] .demo-body .demo-sidebar__link,
+html[data-theme="forest"] .demo-body .demo-sidebar__link,
+html[data-theme="sunset"] .demo-body .demo-sidebar__link,
+html[data-theme="dark"] .demo-body .demo-sidebar__link,
+html[data-theme="ocean"] .demo-body .k-navbar__link,
+html[data-theme="forest"] .demo-body .k-navbar__link,
+html[data-theme="sunset"] .demo-body .k-navbar__link,
+html[data-theme="dark"] .demo-body .k-navbar__link {
+  font-weight: 600;
+}
+
 html:not([data-theme]) .demo-body { font-weight: 500; }
 html:not([data-theme]) .demo-body .k-text-muted,
 html:not([data-theme]) .demo-body .demo-section-desc,
