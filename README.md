@@ -7,6 +7,15 @@
 
 **KAUI** is a standalone, production-ready SCSS/CSS framework built for modern web applications. Engineered with a robust two-tier design token architecture, a responsive 12-column grid engine, modular BEM UI components, and native runtime dark theme support — all with zero external dependencies and a strict performance budget.
 
+## Official Links
+
+- **Official website:** https://kaui.filekat.com
+- **Open-source source code:** https://github.com/longbm64/kaui
+- **GitHub Pages demo:** https://longbm64.github.io/kaui/demo
+
+The official website is the primary production entry point. The GitHub repository is public for source code, issues, contributions, and releases. The GitHub Pages demo remains available as a development/showcase page.
+
+
 ---
 
 ## Table of Contents

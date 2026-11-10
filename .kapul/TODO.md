@@ -11,6 +11,8 @@
 
 - [x] Add canonical `#release` automation: patch bump, build and verification, source push, protected `release` merge/push, then Railway deploy.
 
+- [x] Publish the source-code links in README: official website `https://kaui.filekat.com`, public GitHub repository, and existing GitHub Pages demo.
+
 
 - [x] Di chuyển item Templates vào nhóm Resources trên toàn bộ 20 demo pages, giữ active state riêng tại `demo/templates.html` và loại bỏ item trùng ở Getting Started.
 

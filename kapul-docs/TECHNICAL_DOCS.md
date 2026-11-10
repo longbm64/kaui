@@ -11,6 +11,15 @@ Tài liệu kỹ thuật chi tiết dành cho Developer và DevOps về kiến t
 Quy trình phát hành chuẩn được lưu tại [`.kapul/RELEASE_PROTOCOL.md`](../.kapul/RELEASE_PROTOCOL.md). Flow gồm bump version, build, test/verify, commit và push branch nguồn, merge/push branch `release`, rồi mới deploy. Không chạy trên `release`, không force-push và phải dừng khi có conflict.
 
 
+
+## Public project links
+
+- Official website: https://kaui.filekat.com
+- Open-source repository: https://github.com/longbm64/kaui
+- GitHub Pages demo: https://longbm64.github.io/kaui/demo
+
+The official website is the production source for CDN and release artifacts. GitHub remains the public source and collaboration hub, while GitHub Pages continues hosting the current demo.
+
 KAUI là thư viện CSS/SCSS Kit hiện đại xây dựng trên Dart Sass, sử dụng kiến trúc phân tầng chuẩn:
 1. **Base Layer:** `:root` biến CSS Custom Properties, reset, chuẩn hóa typography.
 2. **Layout Layer:** Container, 12-column Grid, Flexbox helpers.

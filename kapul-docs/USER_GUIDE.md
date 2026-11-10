@@ -11,6 +11,15 @@ Tài liệu hướng dẫn sử dụng và kiểm thử tính năng Navigation B
 Maintainer chạy `#release` hoặc `npm run release` từ `main`/feature branch sạch. Hệ thống sẽ tự tăng version, build, kiểm thử, merge sang `release` và deploy sau cùng. Không tự ý chạy khi còn thay đổi chưa commit; xem quy trình copy đầy đủ tại [`.kapul/RELEASE_PROTOCOL.md`](../.kapul/RELEASE_PROTOCOL.md).
 
 
+
+## Official links
+
+- Website chính thức: https://kaui.filekat.com
+- Mã nguồn mở trên GitHub: https://github.com/longbm64/kaui
+- Demo GitHub Pages hiện tại: https://longbm64.github.io/kaui/demo
+
+Người dùng nên dùng website chính thức cho bản production; GitHub Pages dùng để xem demo và GitHub dùng để xem mã nguồn, issue và đóng góp.
+
 Navigation Bar (`.k-navbar`) là thanh điều hướng tiêu chuẩn nằm ở đầu trang web hoặc ứng dụng. Component hỗ trợ:
 - Điều hướng đa cấp không giới hạn (menu cha, con, cháu,...).
 - Tự động đổi hướng mở thông minh khi menu chạm mép màn hình.
