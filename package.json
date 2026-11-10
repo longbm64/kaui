@@ -1,6 +1,6 @@
 {
   "name": "kaui",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Production-ready modern SCSS/CSS kit with design tokens, responsive layout, and UI components",
   "main": "dist/kaui.css",
   "style": "dist/kaui.min.css",
@@ -31,7 +31,6 @@
     "watch": "sass --watch src/scss/kaui.scss:dist/kaui.css --style=expanded",
     "release": "node scripts/release-flow.mjs",
     "release:patch": "node scripts/release.mjs patch",
-
     "release:minor": "node scripts/release.mjs minor",
     "release:major": "node scripts/release.mjs major",
     "build:versioned": "node scripts/release.mjs build-only",
