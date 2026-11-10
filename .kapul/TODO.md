@@ -334,6 +334,10 @@
 - [x] Đã cấu hình tự động cập nhật `packages/pub/README.md` (đoạn `filekat: ^<version>`) và `packages/pub/CHANGELOG.md` theo version mới mỗi khi release để trên pub.dev trang của version nào thì README hiển thị đúng mã cài đặt của version đó.
 - [x] Đã chuẩn hóa tài liệu AI Agent và Core SCSS cho các Preset Themes:
   - Bổ sung `[data-theme="sunset"]`, `[data-theme="ocean"]`, `[data-theme="forest"]` vào `src/scss/base/_root.scss` để bất kỳ dự án nào import filekat/kaui đều sử dụng được trực tiếp các theme này bằng `data-theme="sunset"`.
+- [x] Đã làm giàu tài liệu cấu trúc component chi tiết trong `kaui-agent-manifest.json`:
+  - Bổ sung HTML code mẫu chính thức (`htmlSnippet`, `modalSnippet`, `toastSnippet`, `tabsSnippet`, `accordionSnippet`) cho Button, Navbar, Card, Badge, Alert, Modal, Toast, Tabs, Accordion.
+  - Cập nhật prompt hướng dẫn AI Agent ở `demo/index.html` và nút copy `demo/demo.js`: Agent truy cập `/dist/versions/<version>/kaui-agent-manifest.json` để lấy trọn vẹn HTML snippet và class contract chuẩn thay vì tự đoán hay chế CSS.
+
   - Cập nhật tài liệu `README.md`, `demo/index.html` (AI Agent Prompt), và `kaui-agent-manifest.json` ghi rõ hướng dẫn thiết lập theme cho các agent AI ở dự án khác.
 
 
