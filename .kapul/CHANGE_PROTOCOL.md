@@ -3,6 +3,7 @@
 
 - For deployment changes, preserve the static-site contract: no runtime framework or database is required.
 - Railway must use `npm run build` and `npm start`; the server must bind `0.0.0.0` and `process.env.PORT`.
+- Verify with `node --check server.mjs`, an HTTP smoke test for `/`, `/health`, `/button.html`, and an asset, then run `npm test`, `npm run build`, and `git diff --check`. The public demo is served at `/`; legacy `/demo` paths redirect to root equivalents.
 - Verify with `node --check server.mjs`, an HTTP smoke test for `/`, `/health`, `/demo/index.html`, and an asset, then run `npm test`, `npm run build`, and `git diff --check`.
 - Never use `serve:tailscale` as the Railway start command because it binds a fixed local port.
 - Production release flow: changes merge/push to GitHub branch `release`; Railway GitHub Autodeploy builds `npm run build`, starts `npm start`, checks `/health`, and preserves `kaui.filekat.com`.
@@ -11,6 +12,11 @@
 
 
 - `demo/templates.html` must be kept structurally aligned with a canonical component page such as `demo/card.html`: do not create a reduced sidebar or alternate footer. Verify the shared regions and theme dropdown before changing catalog content.
+- **Protected release branch:** tuyệt đối không chỉnh sửa, commit hoặc push trực tiếp trên `release`. Nếu branch hiện tại là `release`, agent phải cảnh báo và dừng mọi hoạt động thay đổi/deploy ngay lập tức; chỉ được phát hành thông qua `#release` từ `main` hoặc feature branch.
+- Local Git hooks (`.githooks/pre-commit`, `.githooks/pre-push`) chặn commit/push trực tiếp trên `release`; mỗi clone cần cấu hình `git config core.hooksPath .githooks`.
+- **Canonical `#release` flow:** run `npm run release [patch|minor|major]` from a clean `main`/feature branch. It bumps and builds the version, runs `npm test`, `npm run verify:release`, `npm run tokens:verify`, and `npm run audit:license`, commits/pushes the source branch, merges with `--no-verify` into protected `release`, pushes `release`, then deploys with `railway up`. Set `KAUI_DEPLOY_COMMAND` to override the deploy command. Do not run from `release` or with uncommitted changes.
+
+
 
 
 - Sidebar menu changes must be applied atomically to all 20 `demo/*.html` pages. Keep exactly one `Templates` link per page, under `Resources`, with `.is-active` only on `demo/templates.html`; verify with a full-page count, `git diff --check`, and `npm test`.
@@ -85,3 +91,5 @@ All 19 demo pages must place the content area beside the sidebar as `.demo-right
 - Navbar flyout visibility changes are atomic across `src/scss/components/_navbar.scss`, `demo/navbar.html`, and generated dist CSS. Verify desktop flyout overflow, closed initial markup, mobile scroll fallback, `git diff --check`, `npm test`, and `npm run build`.
 
 - Navbar guide changes must update `demo/navbar.html` and the matching `componentSnippets` keys in `demo/demo.js` atomically. Verify all `data-copy-component` keys have payloads, then run `node --check demo/demo.js`, `git diff --check`, `npm test`, and `npm run build`.
+- **Package service links:** The public demo exposes `View on npm` (`https://www.npmjs.com/package/filekat`) and `View on pub.dev` (`https://pub.dev/packages/filekat`) actions with `target="_blank" rel="noopener noreferrer"`; version-specific registry links in `demo/versions.js` follow the same external-link contract.
+- **Official public URL contract:** Public CDN, demo, release manifest, and version artifact links use `https://kaui.filekat.com`; project-owned GitHub source links are not published. Package ecosystem links (`npmjs.com`, `pub.dev`) and third-party attribution URLs remain external by design.

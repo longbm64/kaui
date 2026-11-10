@@ -6,6 +6,11 @@ Tài liệu hướng dẫn sử dụng và kiểm thử tính năng Navigation B
 
 ## 1. Giới thiệu Tính năng
 
+## Phát hành phiên bản bằng `#release`
+
+Maintainer chạy `#release` hoặc `npm run release` từ `main`/feature branch sạch. Hệ thống sẽ tự tăng version, build, kiểm thử, merge sang `release` và deploy sau cùng. Không tự ý chạy khi còn thay đổi chưa commit; xem quy trình copy đầy đủ tại [`.kapul/RELEASE_PROTOCOL.md`](../.kapul/RELEASE_PROTOCOL.md).
+
+
 Navigation Bar (`.k-navbar`) là thanh điều hướng tiêu chuẩn nằm ở đầu trang web hoặc ứng dụng. Component hỗ trợ:
 - Điều hướng đa cấp không giới hạn (menu cha, con, cháu,...).
 - Tự động đổi hướng mở thông minh khi menu chạm mép màn hình.

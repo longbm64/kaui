@@ -2,28 +2,31 @@
 ## Railway deployment changes
 
 - **Node:** `server.mjs`
-  - **Exports/public contract:** production static HTTP server; `GET /health` returns 200; `/` redirects to `/demo/`; static paths map to repository files; binds `0.0.0.0:$PORT`.
+  - **Exports/public contract:** production static HTTP server; `GET /health` returns 200; `/` serves the demo overview at the public root; static paths map to repository files; binds `0.0.0.0:$PORT`.
   - **Dependencies:** Node built-ins only (`fs`, `http`, `path`, `url`); repository static assets.
+- **Root demo route contract:** `server.mjs` serves `demo/index.html` at `/`, maps demo pages/assets to root-relative public paths (for example `/button.html`, `/demo.css`, `/demo.js`), and redirects legacy `/demo` paths to the equivalent root path.
   - **Dependents:** `package.json` `start` script and `railway.json` deploy start command.
 - **Node:** `railway.json`
   - **Exports/public contract:** Railway build command `npm run build`, start command `npm start`, healthcheck `/health`.
   - **Dependencies:** `package.json`, `server.mjs`.
   - **Dependents:** Railway service deployment configuration.
+- `npm run release` / `scripts/release-flow.mjs`: orchestrates version bump, release verification, commit/push, merge into `release`, push, and Railway deployment. It depends on `scripts/release.mjs`, `scripts/verify-release.mjs`, package scripts, Git remotes, and Railway CLI.
+  - **Dependents:** maintainers invoking `#release`; protected release branch workflow.
+
 - **Node:** `package.json`
   - **New contract:** `scripts.start` launches `server.mjs`; existing build/test scripts remain unchanged.
   - **Dependents:** Railway Railpack/Nixpacks deployment and local production smoke tests.
-- **GitHub deployment source:** Railway service `kaui` is connected to `longbm64/kaui` branch `release`; pushes to `release` trigger production deployments. Local `railway up` is reserved for exceptional/manual deployments.
-- **Node:** `scripts/release-to-railway.mjs`
-  - **Exports/public contract:** `npm run release`; source is current checked-out committed branch, target is `release`; isolated worktree merge/test/build/push workflow.
-  - **Dependencies:** Git, npm, `package.json` scripts, `origin` remote.
-  - **Dependents:** `#release` agent workflow and Railway GitHub Autodeploy.
-
-
+- **Public URL/source privacy contract:** `scripts/release.mjs`, `demo/demo.js`, `demo/versions.js`, `demo/index.html`, generated `dist/versions/**`, and README documentation must use `https://kaui.filekat.com` for public artifacts. Do not publish project-owned GitHub repository, issues, clone, or GitHub Pages links; keep only required third-party attribution and package-registry URLs.
 
 - **Node:** `demo/templates.html` canonical page shell
   - **Exports/public contract:** Same sidebar, theme dropdown, mobile toggle, right shell, and footer structure as `demo/card.html`; only the main catalog body is template-specific.
   - **Dependencies:** `demo/demo.css`, `demo/demo.js`, `dist/kaui.css`, `dist/icons/kaui-icons.css`.
   - **Dependents:** template catalog navigation and static demo shell checks.
+- **Node:** `scripts/check-protected-branch.mjs` + `.githooks/pre-commit` + `.githooks/pre-push`
+  - **Exports/public contract:** rejects commit/push operations when current branch is `release`; development must happen on `main`/feature branches and publish through `npm run release` (`#release`).
+  - **Dependencies:** Git branch state, Node.js.
+  - **Dependents:** local Git commit/push workflow and agent change protocol.
+
 
 
 - **Node:** shared demo sidebar Resources group

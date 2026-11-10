@@ -16,9 +16,7 @@
     "./charts": { "style": "./dist/kaui-chart.min.css", "default": "./dist/kaui-chart.min.js" },
     "./tokens/*": "./dist/tokens/*"
   },
-  "repository": { "type": "git", "url": "git+https://github.com/longbm64/kaui.git" },
-  "bugs": { "url": "https://github.com/longbm64/kaui/issues" },
-  "homepage": "https://github.com/longbm64/kaui#readme"
+  "homepage": "https://kaui.filekat.com"
 }
 
 

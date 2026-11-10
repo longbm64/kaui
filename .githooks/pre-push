@@ -1,0 +1,8 @@
+#!/bin/sh
+branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null || true)
+[ "$branch" = "release" ] || exit 0
+remote="$1"
+url="$2"
+printf '%s\n' "BLOCKED: direct pushes from protected branch 'release' are forbidden." >&2
+printf '%s\n' "Use main/feature branches and #release instead." >&2
+exit 1

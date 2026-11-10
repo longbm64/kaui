@@ -1,0 +1,603 @@
+{
+  "name": "KAUI Icons",
+  "version": "1.2.0",
+  "license": "KAUI Proprietary",
+  "ownership": "KAUI-authored artwork; brand references retain respective trademark ownership",
+  "canvas": "24x24",
+  "stroke": 2,
+  "linecap": "round",
+  "linejoin": "round",
+  "color": "currentColor",
+  "icons": [
+    "add",
+    "arrow-down",
+    "arrow-left",
+    "arrow-right",
+    "arrow-up",
+    "arrow-up-down",
+    "bell",
+    "calendar",
+    "camera",
+    "check",
+    "chevron-down",
+    "chevron-left",
+    "chevron-right",
+    "chevron-up",
+    "clipboard",
+    "close",
+    "code",
+    "columns",
+    "compass",
+    "copy",
+    "credit-card",
+    "delete",
+    "download",
+    "edit",
+    "error",
+    "external-link",
+    "eye",
+    "eye-off",
+    "file",
+    "file-code",
+    "file-text",
+    "filter",
+    "folder",
+    "folder-plus",
+    "grid",
+    "heart",
+    "help",
+    "home",
+    "image",
+    "info",
+    "layers",
+    "lock",
+    "mail",
+    "map",
+    "map-pin",
+    "menu",
+    "monitor",
+    "pause",
+    "play",
+    "refresh",
+    "save",
+    "search",
+    "settings",
+    "shield",
+    "shopping-cart",
+    "smartphone",
+    "social-community",
+    "social-discord",
+    "social-facebook",
+    "social-github",
+    "social-instagram",
+    "social-linkedin",
+    "social-reddit",
+    "social-share",
+    "social-telegram",
+    "social-threads",
+    "social-tiktok",
+    "social-wechat",
+    "social-whatsapp",
+    "social-x",
+    "social-youtube",
+    "social-zalo",
+    "star",
+    "success",
+    "sync",
+    "table",
+    "tag",
+    "terminal",
+    "unlock",
+    "upload",
+    "user",
+    "users",
+    "wallet",
+    "warning"
+  ],
+  "entries": [
+    {
+      "name": "add",
+      "source": "icons/source/kaui/add.svg",
+      "symbol": "add",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "arrow-down",
+      "source": "icons/source/kaui/arrow-down.svg",
+      "symbol": "arrow-down",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "arrow-left",
+      "source": "icons/source/kaui/arrow-left.svg",
+      "symbol": "arrow-left",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "arrow-right",
+      "source": "icons/source/kaui/arrow-right.svg",
+      "symbol": "arrow-right",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "arrow-up",
+      "source": "icons/source/kaui/arrow-up.svg",
+      "symbol": "arrow-up",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "arrow-up-down",
+      "source": "icons/source/kaui/arrow-up-down.svg",
+      "symbol": "arrow-up-down",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bell",
+      "source": "icons/source/kaui/bell.svg",
+      "symbol": "bell",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "calendar",
+      "source": "icons/source/kaui/calendar.svg",
+      "symbol": "calendar",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "camera",
+      "source": "icons/source/kaui/camera.svg",
+      "symbol": "camera",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "check",
+      "source": "icons/source/kaui/check.svg",
+      "symbol": "check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chevron-down",
+      "source": "icons/source/kaui/chevron-down.svg",
+      "symbol": "chevron-down",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chevron-left",
+      "source": "icons/source/kaui/chevron-left.svg",
+      "symbol": "chevron-left",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chevron-right",
+      "source": "icons/source/kaui/chevron-right.svg",
+      "symbol": "chevron-right",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chevron-up",
+      "source": "icons/source/kaui/chevron-up.svg",
+      "symbol": "chevron-up",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "clipboard",
+      "source": "icons/source/kaui/clipboard.svg",
+      "symbol": "clipboard",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "close",
+      "source": "icons/source/kaui/close.svg",
+      "symbol": "close",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "code",
+      "source": "icons/source/kaui/code.svg",
+      "symbol": "code",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "columns",
+      "source": "icons/source/kaui/columns.svg",
+      "symbol": "columns",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "compass",
+      "source": "icons/source/kaui/compass.svg",
+      "symbol": "compass",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "copy",
+      "source": "icons/source/kaui/copy.svg",
+      "symbol": "copy",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "credit-card",
+      "source": "icons/source/kaui/credit-card.svg",
+      "symbol": "credit-card",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "delete",
+      "source": "icons/source/kaui/delete.svg",
+      "symbol": "delete",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "download",
+      "source": "icons/source/kaui/download.svg",
+      "symbol": "download",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "edit",
+      "source": "icons/source/kaui/edit.svg",
+      "symbol": "edit",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "error",
+      "source": "icons/source/kaui/error.svg",
+      "symbol": "error",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "external-link",
+      "source": "icons/source/kaui/external-link.svg",
+      "symbol": "external-link",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "eye",
+      "source": "icons/source/kaui/eye.svg",
+      "symbol": "eye",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "eye-off",
+      "source": "icons/source/kaui/eye-off.svg",
+      "symbol": "eye-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file",
+      "source": "icons/source/kaui/file.svg",
+      "symbol": "file",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-code",
+      "source": "icons/source/kaui/file-code.svg",
+      "symbol": "file-code",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-text",
+      "source": "icons/source/kaui/file-text.svg",
+      "symbol": "file-text",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "filter",
+      "source": "icons/source/kaui/filter.svg",
+      "symbol": "filter",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "folder",
+      "source": "icons/source/kaui/folder.svg",
+      "symbol": "folder",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "folder-plus",
+      "source": "icons/source/kaui/folder-plus.svg",
+      "symbol": "folder-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "grid",
+      "source": "icons/source/kaui/grid.svg",
+      "symbol": "grid",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "heart",
+      "source": "icons/source/kaui/heart.svg",
+      "symbol": "heart",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "help",
+      "source": "icons/source/kaui/help.svg",
+      "symbol": "help",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "home",
+      "source": "icons/source/kaui/home.svg",
+      "symbol": "home",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "image",
+      "source": "icons/source/kaui/image.svg",
+      "symbol": "image",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "info",
+      "source": "icons/source/kaui/info.svg",
+      "symbol": "info",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "layers",
+      "source": "icons/source/kaui/layers.svg",
+      "symbol": "layers",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "lock",
+      "source": "icons/source/kaui/lock.svg",
+      "symbol": "lock",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "mail",
+      "source": "icons/source/kaui/mail.svg",
+      "symbol": "mail",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "map",
+      "source": "icons/source/kaui/map.svg",
+      "symbol": "map",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "map-pin",
+      "source": "icons/source/kaui/map-pin.svg",
+      "symbol": "map-pin",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "menu",
+      "source": "icons/source/kaui/menu.svg",
+      "symbol": "menu",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "monitor",
+      "source": "icons/source/kaui/monitor.svg",
+      "symbol": "monitor",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "pause",
+      "source": "icons/source/kaui/pause.svg",
+      "symbol": "pause",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "play",
+      "source": "icons/source/kaui/play.svg",
+      "symbol": "play",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "refresh",
+      "source": "icons/source/kaui/refresh.svg",
+      "symbol": "refresh",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "save",
+      "source": "icons/source/kaui/save.svg",
+      "symbol": "save",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "search",
+      "source": "icons/source/kaui/search.svg",
+      "symbol": "search",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "settings",
+      "source": "icons/source/kaui/settings.svg",
+      "symbol": "settings",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "shield",
+      "source": "icons/source/kaui/shield.svg",
+      "symbol": "shield",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "shopping-cart",
+      "source": "icons/source/kaui/shopping-cart.svg",
+      "symbol": "shopping-cart",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "smartphone",
+      "source": "icons/source/kaui/smartphone.svg",
+      "symbol": "smartphone",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-community",
+      "source": "icons/source/kaui/social-community.svg",
+      "symbol": "social-community",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-discord",
+      "source": "icons/source/kaui/social-discord.svg",
+      "symbol": "social-discord",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-facebook",
+      "source": "icons/source/kaui/social-facebook.svg",
+      "symbol": "social-facebook",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-github",
+      "source": "icons/source/kaui/social-github.svg",
+      "symbol": "social-github",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-instagram",
+      "source": "icons/source/kaui/social-instagram.svg",
+      "symbol": "social-instagram",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-linkedin",
+      "source": "icons/source/kaui/social-linkedin.svg",
+      "symbol": "social-linkedin",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-reddit",
+      "source": "icons/source/kaui/social-reddit.svg",
+      "symbol": "social-reddit",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-share",
+      "source": "icons/source/kaui/social-share.svg",
+      "symbol": "social-share",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-telegram",
+      "source": "icons/source/kaui/social-telegram.svg",
+      "symbol": "social-telegram",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-threads",
+      "source": "icons/source/kaui/social-threads.svg",
+      "symbol": "social-threads",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-tiktok",
+      "source": "icons/source/kaui/social-tiktok.svg",
+      "symbol": "social-tiktok",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-wechat",
+      "source": "icons/source/kaui/social-wechat.svg",
+      "symbol": "social-wechat",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-whatsapp",
+      "source": "icons/source/kaui/social-whatsapp.svg",
+      "symbol": "social-whatsapp",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-x",
+      "source": "icons/source/kaui/social-x.svg",
+      "symbol": "social-x",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-youtube",
+      "source": "icons/source/kaui/social-youtube.svg",
+      "symbol": "social-youtube",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "social-zalo",
+      "source": "icons/source/kaui/social-zalo.svg",
+      "symbol": "social-zalo",
+      "ownership": "KAUI-authored brand reference; Zalo trademark remains with Zalo"
+    },
+    {
+      "name": "star",
+      "source": "icons/source/kaui/star.svg",
+      "symbol": "star",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "success",
+      "source": "icons/source/kaui/success.svg",
+      "symbol": "success",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "sync",
+      "source": "icons/source/kaui/sync.svg",
+      "symbol": "sync",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "table",
+      "source": "icons/source/kaui/table.svg",
+      "symbol": "table",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "tag",
+      "source": "icons/source/kaui/tag.svg",
+      "symbol": "tag",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "terminal",
+      "source": "icons/source/kaui/terminal.svg",
+      "symbol": "terminal",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "unlock",
+      "source": "icons/source/kaui/unlock.svg",
+      "symbol": "unlock",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "upload",
+      "source": "icons/source/kaui/upload.svg",
+      "symbol": "upload",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "user",
+      "source": "icons/source/kaui/user.svg",
+      "symbol": "user",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "users",
+      "source": "icons/source/kaui/users.svg",
+      "symbol": "users",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "wallet",
+      "source": "icons/source/kaui/wallet.svg",
+      "symbol": "wallet",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "warning",
+      "source": "icons/source/kaui/warning.svg",
+      "symbol": "warning",
+      "ownership": "KAUI-owned"
+    }
+  ]
+}

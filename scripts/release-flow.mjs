@@ -1,0 +1,67 @@
+#!/usr/bin/env node
+import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
+
+const root = process.cwd();
+const args = process.argv.slice(2);
+const bump = args[0] || 'patch';
+const deployCommand = process.env.KAUI_DEPLOY_COMMAND || 'railway up';
+
+function run(command, commandArgs = [], options = {}) {
+  console.log(`[release-flow] ${command} ${commandArgs.join(' ')}`);
+  execFileSync(command, commandArgs, { cwd: root, stdio: 'inherit', ...options });
+}
+
+function capture(command, commandArgs = []) {
+  return execFileSync(command, commandArgs, { cwd: root, encoding: 'utf8' }).trim();
+}
+
+function assertClean() {
+  if (capture('git', ['status', '--porcelain'])) {
+    throw new Error('Working tree must be clean before #release. Commit or stash local changes first.');
+  }
+}
+
+function assertSourceBranch() {
+  const branch = capture('git', ['branch', '--show-current']);
+  if (!branch || branch === 'release') {
+    throw new Error('Run #release from main or a feature branch, never from release.');
+  }
+  return branch;
+}
+
+function main() {
+  const sourceBranch = assertSourceBranch();
+  assertClean();
+  run('git', ['fetch', 'origin', 'main', 'release']);
+  run('npm', ['run', `release:${bump}`]);
+  run('npm', ['test']);
+  run('npm', ['run', 'verify:release']);
+  run('npm', ['run', 'tokens:verify']);
+  run('npm', ['run', 'audit:license']);
+  run('git', ['diff', '--check']);
+
+  const version = JSON.parse(fs.readFileSync(`${root}/package.json`, 'utf8')).version;
+  run('git', ['add', '-A']);
+  run('git', ['commit', '-m', `release: v${version}`]);
+  run('git', ['push', 'origin', sourceBranch]);
+
+  run('git', ['switch', 'release']);
+  try {
+    run('git', ['pull', '--ff-only', 'origin', 'release']);
+    run('git', ['merge', '--no-ff', '--no-verify', sourceBranch, '-m', `merge: v${version} into release`]);
+    run('git', ['push', '--no-verify', 'origin', 'release']);
+  } finally {
+    run('git', ['switch', sourceBranch]);
+  }
+
+  run(deployCommand.split(/\s+/)[0], deployCommand.split(/\s+/).slice(1));
+  console.log(`[release-flow] v${version} merged to release and deployed successfully.`);
+}
+
+try {
+  main();
+} catch (error) {
+  console.error(`[release-flow] FAILED: ${error.message}`);
+  process.exitCode = 1;
+}

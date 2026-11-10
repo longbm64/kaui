@@ -17,9 +17,9 @@ flutter pub get
 
 ## Repository
 
-Source code and issue tracking:
+Official website and documentation:
 
-- https://github.com/longbm64/kaui
+- https://kaui.filekat.com
 
 ## License
 
