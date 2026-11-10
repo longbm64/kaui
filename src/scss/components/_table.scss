@@ -27,9 +27,16 @@
     border-radius: var(--k-radius-full);
   }
 
-  // Prevent double border at the bottom edge where wrapper border and last row border meet
+  // Prevent double borders between wrapper and table (outer borders merge seamlessly at 1px)
   > .k-table {
-    border-bottom: 0;
+    border: 0;
+
+    // Remove double outer boundaries on cells adjacent to the wrapper edge
+    thead tr:first-child th,
+    tbody tr:first-child th,
+    tbody tr:first-child td {
+      border-top: 0;
+    }
 
     tbody tr:last-child th,
     tbody tr:last-child td,
@@ -37,6 +44,21 @@
     tfoot tr:last-child td {
       border-bottom: 0;
     }
+
+    th:first-child,
+    td:first-child {
+      border-left: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+  }
+
+  // When a toolbar is present above table, toolbar owns the divider
+  .k-table__toolbar + .k-table {
+    border-top: 0;
   }
 }
 
@@ -108,11 +130,27 @@
     border: 0;
     height: 100%;
 
+    thead tr:first-child th,
+    tbody tr:first-child th,
+    tbody tr:first-child td {
+      border-top: 0;
+    }
+
     tbody tr:last-child th,
     tbody tr:last-child td,
     tfoot tr:last-child th,
     tfoot tr:last-child td {
       border-bottom: 0;
+    }
+
+    th:first-child,
+    td:first-child {
+      border-left: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
     }
 
     tr {

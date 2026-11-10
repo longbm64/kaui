@@ -1,3 +1,4 @@
+- [x] Chuẩn hóa viền 4 cạnh của Table: triệt tiêu double border ở cả 4 cạnh (top, bottom, left, right) khi bảng nằm trong .k-table-wrap hoặc .k-table-frozen-container, đảm bảo độ dày đồng nhất tuyệt đối 1px.
 - [x] Khắc phục lỗi viền đáy table bị dày: triệt tiêu border-bottom thừa ở hàng cuối cùng của tbody/tfoot khi bảng nằm trong .k-table-wrap và .k-table-frozen-container.
 - [x] Chuẩn hóa Modal và Confirm: Mặc định là static (click ra ngoài/backdrop không đóng) và nhấn phím Escape luôn đóng hộp thoại (chuẩn accessibility).
 - [x] Rà soát và chuẩn hóa toàn bộ văn bản sang tiếng Anh trên tất cả các trang demo (`demo/*.html`), bao gồm code samples, chú thích multi-level submenu, script callback guides, bảng dữ liệu mẫu và mô tả component.
