@@ -6,7 +6,7 @@ KAUI cross-platform token and widget foundation for Flutter (package: filekat).
 
 ```yaml
 dependencies:
-  filekat: ^1.1.0
+  filekat: ^1.1.6
 ```
 
 Then run:

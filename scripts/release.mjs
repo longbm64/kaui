@@ -104,6 +104,25 @@ function main() {
       fs.writeFileSync(pubspecPath, pubYaml);
       console.log(`[release] Synchronized packages/pub version to ${nextVersion}`);
     }
+    const pubReadmePath = path.join(ROOT, 'packages/pub/README.md');
+    if (fs.existsSync(pubReadmePath)) {
+      let pubReadme = fs.readFileSync(pubReadmePath, 'utf8');
+      pubReadme = pubReadme.replace(/filekat:\s*\^\d+\.\d+\.\d+/g, `filekat: ^${nextVersion}`);
+      pubReadme = pubReadme.replace(/KAUI `\d+\.\d+\.\d+\+`/g, `KAUI \`${nextVersion}+\``);
+      fs.writeFileSync(pubReadmePath, pubReadme);
+      console.log(`[release] Synchronized packages/pub/README.md installation guide to ^${nextVersion}`);
+    }
+    const pubChangelogPath = path.join(ROOT, 'packages/pub/CHANGELOG.md');
+    if (fs.existsSync(pubChangelogPath)) {
+      let pubChangelog = fs.readFileSync(pubChangelogPath, 'utf8');
+      if (!pubChangelog.includes(`## ${nextVersion}`)) {
+        pubChangelog = `## ${nextVersion}\n\n- Synchronized token variables and widget styles with KAUI CSS Kit v${nextVersion}.\n\n` + pubChangelog;
+        fs.writeFileSync(pubChangelogPath, pubChangelog);
+        console.log(`[release] Synchronized packages/pub/CHANGELOG.md to ${nextVersion}`);
+      }
+    }
+
+
 
       fs.writeFileSync(README_PATH, readme);
     }
