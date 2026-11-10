@@ -13,6 +13,11 @@
   - **New contract:** `scripts.start` launches `server.mjs`; existing build/test scripts remain unchanged.
   - **Dependents:** Railway Railpack/Nixpacks deployment and local production smoke tests.
 - **GitHub deployment source:** Railway service `kaui` is connected to `longbm64/kaui` branch `release`; pushes to `release` trigger production deployments. Local `railway up` is reserved for exceptional/manual deployments.
+- **Node:** `scripts/release-to-railway.mjs`
+  - **Exports/public contract:** `npm run release`; source is current checked-out committed branch, target is `release`; isolated worktree merge/test/build/push workflow.
+  - **Dependencies:** Git, npm, `package.json` scripts, `origin` remote.
+  - **Dependents:** `#release` agent workflow and Railway GitHub Autodeploy.
+
 
 
 - **Node:** `demo/templates.html` canonical page shell

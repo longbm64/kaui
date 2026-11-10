@@ -42,6 +42,8 @@
     "icons:groups:add": "node scripts/add-kaui-icon-groups.mjs && npm run icons:build",
     "icons:core:build": "node scripts/build-kaui-core.mjs",
     "serve:tailscale": "python3 -m http.server 4173 --bind 0.0.0.0 --directory .",
+    "release": "node scripts/release-to-railway.mjs",
+
     "start": "node server.mjs",
 
     "test": "node --test test/kit.test.mjs"

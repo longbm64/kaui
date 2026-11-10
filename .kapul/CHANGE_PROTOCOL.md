@@ -6,6 +6,8 @@
 - Verify with `node --check server.mjs`, an HTTP smoke test for `/`, `/health`, `/demo/index.html`, and an asset, then run `npm test`, `npm run build`, and `git diff --check`.
 - Never use `serve:tailscale` as the Railway start command because it binds a fixed local port.
 - Production release flow: changes merge/push to GitHub branch `release`; Railway GitHub Autodeploy builds `npm run build`, starts `npm start`, checks `/health`, and preserves `kaui.filekat.com`.
+- `npm run release` is the implementation behind the `#release` workflow: it releases the current committed branch into `release` via an isolated worktree, validates test/build, and pushes only after success.
+
 
 
 - `demo/templates.html` must be kept structurally aligned with a canonical component page such as `demo/card.html`: do not create a reduced sidebar or alternate footer. Verify the shared regions and theme dropdown before changing catalog content.

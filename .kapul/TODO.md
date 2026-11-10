@@ -13,6 +13,8 @@
 - [!] Railway GitHub App chưa có quyền truy cập `longbm64/kaui`; cần cấp quyền repository trong GitHub/Railway rồi chạy lại source connect.
 - [x] Railway GitHub App đã truy cập được `longbm64/kaui`; service đã kết nối branch `release` và deployment tự động đầu tiên thành công.
 
+- [x] Add `npm run release` / `#release` workflow: merge current committed branch into `release` via temporary worktree, verify, and push for Railway Autodeploy.
+
 
 
 - [-] Railway ownership đã verify (`Verified: yes`) và CNAME public đã đúng; certificate TLS vẫn đang `VALIDATING_OWNERSHIP`, nên tiếp tục chờ Railway hoàn tất cấp chứng chỉ trước khi đánh dấu domain HTTPS hoàn tất.

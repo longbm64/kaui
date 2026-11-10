@@ -111,6 +111,19 @@ npm run build
 git push origin release
 ```
 
+#### One-command release: `#release`
+
+You can work on `main` or any feature branch without deploying. After committing your changes, run the project release command (the agent maps `#release` to this command):
+
+```bash
+npm run release
+```
+
+The command uses the currently checked-out branch as the source, refuses uncommitted changes or a release from the `release` branch, creates an isolated temporary worktree, merges the current commit into `release`, runs `npm ci`, `npm test`, and `npm run build`, then pushes `release`. Railway detects that push and deploys automatically. Your current branch and working tree are not switched or modified.
+
+If the merge, test, build, or push fails, the command stops and leaves the production `release` branch unchanged (unless the remote push itself already completed). Resolve the issue and run `npm run release` again.
+
+
 
 No database or environment variable is required. Do not use `serve:tailscale` in Railway; that command is for local tailnet development and binds a fixed port.
 
