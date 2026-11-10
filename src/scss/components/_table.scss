@@ -28,7 +28,7 @@
   }
 
   // Prevent double borders between wrapper and table (outer borders merge seamlessly at 1px)
-  > .k-table {
+  .k-table {
     border: 0;
 
     // Remove double outer boundaries on cells adjacent to the wrapper edge
@@ -46,17 +46,25 @@
     }
 
     th:first-child,
-    td:first-child {
+    td:first-child,
+    .k-table__cell--frozen-left:first-child {
       border-left: 0;
     }
 
     th:last-child,
-    td:last-child {
+    td:last-child,
+    .k-table__cell--frozen-right:last-child {
       border-right: 0;
     }
   }
 
   // When a toolbar is present above table, toolbar owns the divider
+  .k-table__toolbar {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
   .k-table__toolbar + .k-table {
     border-top: 0;
   }
@@ -317,6 +325,7 @@
     left: 0;
     z-index: 1;
     background-color: var(--k-table-bg);
+    border-left: 0;
     box-shadow: 1px 0 0 var(--k-table-border);
   }
 
