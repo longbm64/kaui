@@ -8,6 +8,9 @@
 - Railway production project: `kaui` (`f651cd45-ac4e-41c1-b764-2dc7858292b6`), service `kaui`, deployment online.
 - Public service domain: `https://kaui-production-4c6d.up.railway.app`; custom domain configured: `https://kaui.filekat.com`.
 - Custom domain remains unverified until DNS records are added: CNAME `kaui` → `hg80i8zv.up.railway.app`; TXT `_railway-verify.kaui` → `railway-verify=fe348a2f9c764d62749b00cef390c9228f0ada7b1caa97865074446b1ab79688`.
+- Railway Autodeploy source: GitHub repository `longbm64/kaui`, branch `release`; latest release workflow commit `1d8751e`.
+- `npm run release` is the implementation behind `#release`: it takes the current committed branch, merges it in an isolated worktree into `release`, runs `npm ci`, tests, and build, then pushes `release` for Railway deployment.
+
 - Railway deployment source migration: service `kaui` will use GitHub repository `longbm64/kaui`, branch `release`; direct `railway up` is no longer the normal production flow.
 - GitHub source connection is pending because Railway CLI reports `User does not have access to the repo`; production remains online on the existing deployment until repository access is granted.
 - GitHub Autodeploy is active from `longbm64/kaui` branch `release`; deployment `c9306385-530d-44ef-9850-412d3ad04f8d` succeeded after the safe URL parsing fix.
