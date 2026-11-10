@@ -1,7 +1,7 @@
 # KAUI — Modern SCSS/CSS Kit & Component Framework
 
-[![Version](https://img.shields.io/badge/version-1.1.3-blue.svg)](package.json)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.1.4-blue.svg)](package.json)
+[![License: KAUI Personal / Non-Commercial](https://img.shields.io/badge/License-KAUI%20Personal%20%2F%20Non--Commercial-blue.svg)](LICENSE)
 [![Tests: 176 passed](https://img.shields.io/badge/tests-176%20passed-brightgreen.svg)](test/kit.test.mjs)
 [![Bundle Size](https://img.shields.io/badge/bundle-<60KB%20all--in--one-informational.svg)](dist/kaui.min.css)
 
@@ -529,11 +529,12 @@ Responsive navigation header with multi-level nested submenus and smart auto-fli
 
 ## License
 
-KAUI `1.0.x` is released under the MIT License. Starting with `1.1.0`, KAUI uses the KAUI Personal / Non-Commercial License.
+KAUI `1.0.x` was released under the MIT License. Starting with `1.1.0`, KAUI uses the KAUI Personal / Non-Commercial License.
 
 - `1.0.x`: MIT; commercial use is permitted under MIT.
 - `1.1.0+`: personal, educational, research, prototype, and non-commercial use only.
-- Commercial use of `1.1.0+` requires prior written permission. See `COMMERCIAL_LICENSE.md`.
+- Commercial use of `1.1.0+` requires prior written permission. See `COMMERCIAL_LICENSE.md` or contact `contact@filekat.com`.
+- The current release `1.1.3` is covered by the KAUI Personal / Non-Commercial License.
 
 ---
 
@@ -684,4 +685,4 @@ kaui/
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is publicly available under the [KAUI Personal / Non-Commercial License](LICENSE). KAUI `1.0.x` was historically released under MIT; current releases `1.1.0+` require written permission for commercial use. See `COMMERCIAL_LICENSE.md`.
