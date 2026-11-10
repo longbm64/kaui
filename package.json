@@ -46,7 +46,7 @@
     "release": "node scripts/release-to-railway.mjs",
 
     "start": "node server.mjs",
-    "prepare": "git config core.hooksPath .githooks",
+    "prepare": "test ! -d .git || git config core.hooksPath .githooks",
     "test": "node --test test/kit.test.mjs"
   },
   "devDependencies": {
