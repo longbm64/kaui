@@ -1322,7 +1322,12 @@
         return result;
       }, {});
       var categoryOrder = ['Actions', 'Navigation', 'Files & Content', 'Feedback', 'Account & Security', 'Communication', 'Commerce', 'Media', 'Social', 'Favorites & Labels', 'Other'];
-      grid.innerHTML = categoryOrder.filter(function (category) { return grouped[category] && grouped[category].length; }).map(function (category) {
+      var matchingCategories = categoryOrder.filter(function (category) { return grouped[category] && grouped[category].length; });
+      if (!matchingCategories.length) {
+        grid.innerHTML = '<div class="k-card k-card--bordered k-p-5 demo-icon-search-empty" role="status">No icons match your search.</div>';
+        return;
+      }
+      grid.innerHTML = matchingCategories.map(function (category) {
         var cards = grouped[category].sort().map(function (name) {
           return '<div class="k-col-6 k-col-md-4 k-col-lg-3"><article class="demo-icon-card k-card k-card--bordered">' +
             '<div class="demo-icon-card__main">' + iconSnippet(name) + '<code class="demo-icon-card__name">' + name + '</code></div>' +
@@ -1334,6 +1339,17 @@
           '<div class="k-grid k-gap-3">' + cards + '</div></section>';
       }).join('');
     }
+    var iconGallerySearch = document.getElementById('icon-gallery-search');
+    var iconGalleryNames = [];
+    function filterIconGallery() {
+      if (!iconGallerySearch) return;
+      var query = iconGallerySearch.value.trim().toLowerCase();
+      var filtered = iconGalleryNames.filter(function (name) { return !query || name.toLowerCase().indexOf(query) !== -1; });
+      renderIconGallery(filtered);
+    }
+    if (iconGallerySearch) iconGallerySearch.addEventListener('input', filterIconGallery);
+
+
 
     Promise.all([
       fetch('../dist/icons/sprite.svg').then(function (response) {
@@ -1346,9 +1362,11 @@
       })
     ]).then(function (result) {
       ensureInlineSprite(result[0]);
-      renderIconGallery(Array.isArray(result[1].icons) ? result[1].icons : iconNames);
+      iconGalleryNames = Array.isArray(result[1].icons) ? result[1].icons : iconNames;
+      renderIconGallery(iconGalleryNames);
     }).catch(function () {
-      renderIconGallery(iconNames);
+      iconGalleryNames = iconNames;
+      renderIconGallery(iconGalleryNames);
     });
 
 

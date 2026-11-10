@@ -497,6 +497,18 @@
   margin-left: auto;
 }
 
+.demo-icon-search {
+  max-width: 32rem;
+}
+.demo-icon-search .k-input-wrapper {
+  width: 100%;
+}
+.demo-icon-search-empty {
+  color: var(--k-text-muted, #64748b);
+  text-align: center;
+}
+
+
 
 /* Spacing Scale Bars */
 .demo-spacing-item {

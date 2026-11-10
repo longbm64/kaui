@@ -163,13 +163,25 @@
 - `src/scss/**` -> compiled CSS consumed by demo HTML and package artifacts.
 - `test/*.test.mjs` -> Node native test runner (`npm test`).
 - **Node:** `scripts/add-kaui-priority-icons.mjs`
-  - **Exports/public contract:** idempotently creates the 30 priority SVG sources under `icons/source/kaui/`; does not overwrite existing glyphs.
+- **Exports/public contract:** idempotently creates the 31 priority SVG sources under `icons/source/kaui/`; does not overwrite existing glyphs.
   - **Dependencies:** Node `fs`/`path`, `scripts/build-icons.mjs` via `npm run icons:priority:add`.
   - **Dependents:** `icons/manifest.json`, `dist/icons/sprite.svg`, `dist/icons/kaui-icons.css`, `dist/icons/kaui-icons.json`, `demo/icons.html`.
 
 
 
+- **Node:** `scripts/add-kaui-phase2-icons.mjs`
+  - **Exports/public contract:** idempotently creates 37 Phase 2 SVG sources under `icons/source/kaui/` without overwriting existing glyphs.
+  - **Dependencies:** Node `fs`/`path`, `scripts/build-icons.mjs` via `npm run icons:phase2:add`.
+  - **Dependents:** generated icon manifest, sprite, CSS/JSON artifacts and `demo/icons.html`.
+
+
 - **Node:** `demo/card.html` Cards showcase
+- **Nodes:** `scripts/add-kaui-phase3-icons.mjs`, `scripts/add-kaui-phase4-icons.mjs`, `scripts/add-kaui-phase5-icons.mjs`
+  - **Exports/public contract:** idempotently create Phase 3–5 SVG sources under `icons/source/kaui/` without overwriting existing glyphs.
+  - **Dependencies:** Node `fs`/`path`, `scripts/build-icons.mjs` through their npm commands.
+  - **Dependents:** generated icon manifest, sprite, CSS/JSON artifacts and `demo/icons.html`.
+
+
   - **Exports/public contract:** `#cards .demo-card-grid`, `.demo-card-equal`, `.demo-card-countries`, `.demo-country-list`, `.demo-country-row` markup; no `.k-card--interactive` instance remains on this page.
   - **Dependencies:** `demo/demo.css`, `dist/kaui.css`, `demo/demo.js` icon renderer.
   - **Dependents:** browser Cards demo and static markup checks.

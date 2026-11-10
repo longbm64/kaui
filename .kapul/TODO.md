@@ -179,7 +179,11 @@
 
 
 - [x] Mở rộng bộ icon KAUI bằng 35 glyph mới thuộc các nhóm Media, Layout, Device, Commerce, Navigation và Security; production registry đạt 67 icon KAUI-owned.
-- [x] Mở rộng bộ icon KAUI thêm 30 glyph ưu tiên cho navigation, actions, feedback, dashboard, data, user và security; bổ sung generator idempotent `scripts/add-kaui-priority-icons.mjs` và rebuild registry.
+- [x] Mở rộng bộ icon KAUI thêm 31 glyph ưu tiên cho navigation, actions, feedback, dashboard, data, user và security; bổ sung generator idempotent `scripts/add-kaui-priority-icons.mjs` và rebuild registry.
+- [x] Mở rộng Phase 2 thêm 37 icon KAUI cho data, dashboard, file, user, security và thao tác nâng cao; thêm generator idempotent `scripts/add-kaui-phase2-icons.mjs`.
+
+- [x] Hoàn tất liên tục Phase 3–5: bổ sung icon Media/Communication, Commerce/Infrastructure và Editing/Accessibility/Localization; rebuild registry, sprite và CSS artifacts.
+
 
 - [x] Xóa các TODO lịch sử mô tả third-party-derived registry sau khi chuyển production registry sang 67 icon KAUI-owned.
 
@@ -189,6 +193,8 @@
 - [x] Sửa Icon Gallery card theo hàng ngang: icon + tên canh trái, nút Copy canh phải; override `.k-card` column layout bằng selector `.k-card.demo-icon-card`.
 
 - [x] Hiển thị Icon Gallery theo nhóm chức năng, có tiêu đề và số lượng icon mỗi nhóm, giữ nguyên copy SVG từng icon.
+- [x] Thêm ô search icon vào `demo/icons.html`, lọc realtime theo tên icon, cập nhật badge tổng số và hiển thị empty state accessible khi không có kết quả.
+
 
 
 

@@ -121,7 +121,11 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Icon renderer class contract: khi chuyển placeholder `<i data-kaui-icon>` thành SVG, phải giữ class nền `kaui-icon` và nối các class chuyên biệt của placeholder (ví dụ `.k-table__sort-icon`).
 - Sort icon registry contract: `icons/source/kaui/arrow-up-down.svg` là glyph trung tính chính thức, được build vào `dist/icons/sprite.svg`, `kaui-icons.css` và `kaui-icons.json` cùng `arrow-up`/`arrow-down`.
 
-- Icon priority expansion: `scripts/add-kaui-priority-icons.mjs` creates 30 idempotent KAUI-owned SVG sources; `npm run icons:priority:add` invokes it then `scripts/build-icons.mjs`. The generated manifest, sprite and CSS are consumed by `demo/icons.html` through `dist/icons/kaui-icons.json`.
+- Icon priority expansion: `scripts/add-kaui-priority-icons.mjs` creates 31 idempotent KAUI-owned SVG sources; `npm run icons:priority:add` invokes it then `scripts/build-icons.mjs`. The generated manifest, sprite and CSS are consumed by `demo/icons.html` through `dist/icons/kaui-icons.json`.
+
+- Icon Phase 2 expansion: `scripts/add-kaui-phase2-icons.mjs` creates 37 idempotent KAUI-owned SVG sources for data, dashboard, files, user, security and advanced actions; `npm run icons:phase2:add` rebuilds the generated registry.
+
+- Phase 3–5 icon expansion: generators `scripts/add-kaui-phase3-icons.mjs`, `scripts/add-kaui-phase4-icons.mjs`, and `scripts/add-kaui-phase5-icons.mjs` create idempotent KAUI-owned SVG sources for media/communication, commerce/infrastructure, and editing/accessibility/localization. Their npm commands rebuild the shared registry.
 
 - Cards showcase scroll contract: `.demo-card-countries .k-card__body` owns vertical scrolling with header/footer fixed; `.demo-country-list` is not independently scrollable and preserves four equal columns for number, calling code, country, and time zone.
 
@@ -289,6 +293,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Icon Gallery card contract: each icon is shown in a compact horizontal card with inline KAUI SVG, icon name, and a dedicated `data-copy-icon` button that copies the standalone SVG snippet with `Copied!` feedback.
 - Icon Gallery grouping contract: `renderIconGallery()` groups every manifest icon into functional sections (Actions, Navigation, Files & Content, Feedback, Account & Security, Communication, Commerce, Media, Social, Favorites & Labels, Other); each group has a heading, icon count, responsive grid, and preserves per-icon copy buttons.
 - Icon Gallery alignment contract: `.k-card.demo-icon-card` explicitly overrides the card's default column layout to a horizontal row; icon/name group is left-aligned and Copy button is right-aligned.
+- Icon Gallery search contract: `#icon-gallery-search` filters the manifest-backed gallery by icon name on input, updates the total badge, preserves category grouping/copy actions, and renders an accessible empty state when there are no matches.
+
 - KAUI Core ownership contract: `scripts/build-kaui-core.mjs` is retained as the Phase 1 historical generator for the 32 original core glyphs; production `npm run icons:build` now builds the complete 67-icon KAUI-owned registry from `icons/source/kaui/` only.
 
 - Icon library contract: `icons/manifest.json` registers only KAUI-owned SVG sources from `icons/source/kaui/`; `npm run icons:build` generates the sole production sprite/CSS/JSON artifacts. No third-party, external icon package, or CDN source is permitted.
