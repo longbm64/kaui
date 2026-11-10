@@ -9,60 +9,169 @@
   "linejoin": "round",
   "color": "currentColor",
   "icons": [
+    "accessibility",
+    "activity",
     "add",
+    "align-center",
+    "align-left",
+    "align-right",
+    "analytics",
+    "archive",
     "arrow-down",
+    "arrow-down-left",
     "arrow-left",
     "arrow-right",
     "arrow-up",
     "arrow-up-down",
+    "arrow-up-right",
+    "at-sign",
+    "banknote",
     "bell",
+    "bold",
+    "book",
+    "book-open",
+    "bookmark",
     "calendar",
     "camera",
+    "captions",
+    "chart-bar",
+    "chart-line",
+    "chart-pie",
     "check",
     "chevron-down",
     "chevron-left",
     "chevron-right",
     "chevron-up",
     "clipboard",
+    "clock",
     "close",
+    "cloud",
+    "cloud-cog",
+    "cloud-download",
+    "cloud-upload",
     "code",
+    "code-branch",
+    "coins",
+    "collapse",
     "columns",
     "compass",
+    "contrast",
     "copy",
+    "cpu",
     "credit-card",
+    "dashboard",
+    "database",
+    "database-backup",
     "delete",
     "download",
     "edit",
     "error",
+    "error-circle",
+    "expand",
     "external-link",
     "eye",
+    "eye-dropper",
     "eye-off",
     "file",
+    "file-check",
     "file-code",
+    "file-minus",
+    "file-plus",
     "file-text",
+    "file-x",
+    "film",
     "filter",
+    "fingerprint",
     "folder",
+    "folder-minus",
+    "folder-open",
     "folder-plus",
+    "gauge",
+    "globe",
     "grid",
+    "hard-drive",
+    "headphones",
     "heart",
     "help",
+    "help-circle",
+    "history",
     "home",
     "image",
+    "image-plus",
+    "inbox",
     "info",
+    "info-circle",
+    "italic",
+    "kanban",
+    "key",
+    "keyboard",
+    "languages",
     "layers",
+    "link",
+    "link-off",
+    "list",
+    "list-check",
+    "list-filter",
+    "loader",
     "lock",
+    "log-in",
+    "log-out",
     "mail",
     "map",
     "map-pin",
+    "maximize",
+    "megaphone",
     "menu",
+    "message",
+    "message-circle",
+    "message-plus",
+    "message-square",
+    "messages",
+    "mic",
+    "mic-off",
+    "minimize",
+    "minus-circle",
     "monitor",
+    "more-horizontal",
+    "more-vertical",
+    "mouse",
+    "music",
+    "network",
+    "notification",
+    "package",
+    "package-check",
+    "package-plus",
+    "palette",
+    "paperclip",
     "pause",
+    "pause-circle",
+    "percent",
+    "phone",
+    "phone-call",
+    "pin",
     "play",
+    "play-circle",
+    "plus-circle",
+    "podcast",
+    "radio-tower",
+    "receipt",
+    "redo",
     "refresh",
+    "rotate-ccw",
+    "rotate-cw",
     "save",
+    "scan-barcode",
+    "screen-reader",
     "search",
+    "send",
+    "server",
+    "server-cog",
     "settings",
+    "share",
     "shield",
+    "shield-alert",
+    "shield-check",
+    "shield-x",
     "shopping-cart",
     "smartphone",
     "social-community",
@@ -82,19 +191,58 @@
     "social-youtube",
     "social-zalo",
     "star",
+    "stop-circle",
+    "store",
     "success",
+    "success-circle",
     "sync",
     "table",
+    "table-properties",
     "tag",
     "terminal",
+    "text",
+    "text-cursor",
+    "translate",
+    "trash",
+    "trending-down",
+    "trending-up",
+    "truck",
+    "underline",
+    "undo",
     "unlock",
     "upload",
     "user",
+    "user-check",
+    "user-circle",
+    "user-minus",
+    "user-plus",
+    "user-x",
     "users",
+    "video",
+    "video-off",
+    "volume",
+    "volume-off",
     "wallet",
-    "warning"
+    "warning",
+    "warning-triangle",
+    "webhook",
+    "wifi",
+    "wifi-off",
+    "zap"
   ],
   "entries": [
+    {
+      "name": "accessibility",
+      "source": "icons/source/kaui/accessibility.svg",
+      "symbol": "accessibility",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "activity",
+      "source": "icons/source/kaui/activity.svg",
+      "symbol": "activity",
+      "ownership": "KAUI-owned"
+    },
     {
       "name": "add",
       "source": "icons/source/kaui/add.svg",
@@ -102,9 +250,45 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "align-center",
+      "source": "icons/source/kaui/align-center.svg",
+      "symbol": "align-center",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "align-left",
+      "source": "icons/source/kaui/align-left.svg",
+      "symbol": "align-left",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "align-right",
+      "source": "icons/source/kaui/align-right.svg",
+      "symbol": "align-right",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "analytics",
+      "source": "icons/source/kaui/analytics.svg",
+      "symbol": "analytics",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "archive",
+      "source": "icons/source/kaui/archive.svg",
+      "symbol": "archive",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "arrow-down",
       "source": "icons/source/kaui/arrow-down.svg",
       "symbol": "arrow-down",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "arrow-down-left",
+      "source": "icons/source/kaui/arrow-down-left.svg",
+      "symbol": "arrow-down-left",
       "ownership": "KAUI-owned"
     },
     {
@@ -132,9 +316,51 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "arrow-up-right",
+      "source": "icons/source/kaui/arrow-up-right.svg",
+      "symbol": "arrow-up-right",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "at-sign",
+      "source": "icons/source/kaui/at-sign.svg",
+      "symbol": "at-sign",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "banknote",
+      "source": "icons/source/kaui/banknote.svg",
+      "symbol": "banknote",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "bell",
       "source": "icons/source/kaui/bell.svg",
       "symbol": "bell",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bold",
+      "source": "icons/source/kaui/bold.svg",
+      "symbol": "bold",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "book",
+      "source": "icons/source/kaui/book.svg",
+      "symbol": "book",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "book-open",
+      "source": "icons/source/kaui/book-open.svg",
+      "symbol": "book-open",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bookmark",
+      "source": "icons/source/kaui/bookmark.svg",
+      "symbol": "bookmark",
       "ownership": "KAUI-owned"
     },
     {
@@ -147,6 +373,30 @@
       "name": "camera",
       "source": "icons/source/kaui/camera.svg",
       "symbol": "camera",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "captions",
+      "source": "icons/source/kaui/captions.svg",
+      "symbol": "captions",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chart-bar",
+      "source": "icons/source/kaui/chart-bar.svg",
+      "symbol": "chart-bar",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chart-line",
+      "source": "icons/source/kaui/chart-line.svg",
+      "symbol": "chart-line",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chart-pie",
+      "source": "icons/source/kaui/chart-pie.svg",
+      "symbol": "chart-pie",
       "ownership": "KAUI-owned"
     },
     {
@@ -186,15 +436,63 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "clock",
+      "source": "icons/source/kaui/clock.svg",
+      "symbol": "clock",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "close",
       "source": "icons/source/kaui/close.svg",
       "symbol": "close",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "cloud",
+      "source": "icons/source/kaui/cloud.svg",
+      "symbol": "cloud",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "cloud-cog",
+      "source": "icons/source/kaui/cloud-cog.svg",
+      "symbol": "cloud-cog",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "cloud-download",
+      "source": "icons/source/kaui/cloud-download.svg",
+      "symbol": "cloud-download",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "cloud-upload",
+      "source": "icons/source/kaui/cloud-upload.svg",
+      "symbol": "cloud-upload",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "code",
       "source": "icons/source/kaui/code.svg",
       "symbol": "code",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "code-branch",
+      "source": "icons/source/kaui/code-branch.svg",
+      "symbol": "code-branch",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "coins",
+      "source": "icons/source/kaui/coins.svg",
+      "symbol": "coins",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "collapse",
+      "source": "icons/source/kaui/collapse.svg",
+      "symbol": "collapse",
       "ownership": "KAUI-owned"
     },
     {
@@ -210,15 +508,45 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "contrast",
+      "source": "icons/source/kaui/contrast.svg",
+      "symbol": "contrast",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "copy",
       "source": "icons/source/kaui/copy.svg",
       "symbol": "copy",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "cpu",
+      "source": "icons/source/kaui/cpu.svg",
+      "symbol": "cpu",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "credit-card",
       "source": "icons/source/kaui/credit-card.svg",
       "symbol": "credit-card",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "dashboard",
+      "source": "icons/source/kaui/dashboard.svg",
+      "symbol": "dashboard",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "database",
+      "source": "icons/source/kaui/database.svg",
+      "symbol": "database",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "database-backup",
+      "source": "icons/source/kaui/database-backup.svg",
+      "symbol": "database-backup",
       "ownership": "KAUI-owned"
     },
     {
@@ -246,6 +574,18 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "error-circle",
+      "source": "icons/source/kaui/error-circle.svg",
+      "symbol": "error-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "expand",
+      "source": "icons/source/kaui/expand.svg",
+      "symbol": "expand",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "external-link",
       "source": "icons/source/kaui/external-link.svg",
       "symbol": "external-link",
@@ -255,6 +595,12 @@
       "name": "eye",
       "source": "icons/source/kaui/eye.svg",
       "symbol": "eye",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "eye-dropper",
+      "source": "icons/source/kaui/eye-dropper.svg",
+      "symbol": "eye-dropper",
       "ownership": "KAUI-owned"
     },
     {
@@ -270,9 +616,27 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "file-check",
+      "source": "icons/source/kaui/file-check.svg",
+      "symbol": "file-check",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "file-code",
       "source": "icons/source/kaui/file-code.svg",
       "symbol": "file-code",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-minus",
+      "source": "icons/source/kaui/file-minus.svg",
+      "symbol": "file-minus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-plus",
+      "source": "icons/source/kaui/file-plus.svg",
+      "symbol": "file-plus",
       "ownership": "KAUI-owned"
     },
     {
@@ -282,9 +646,27 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "file-x",
+      "source": "icons/source/kaui/file-x.svg",
+      "symbol": "file-x",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "film",
+      "source": "icons/source/kaui/film.svg",
+      "symbol": "film",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "filter",
       "source": "icons/source/kaui/filter.svg",
       "symbol": "filter",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "fingerprint",
+      "source": "icons/source/kaui/fingerprint.svg",
+      "symbol": "fingerprint",
       "ownership": "KAUI-owned"
     },
     {
@@ -294,15 +676,51 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "folder-minus",
+      "source": "icons/source/kaui/folder-minus.svg",
+      "symbol": "folder-minus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "folder-open",
+      "source": "icons/source/kaui/folder-open.svg",
+      "symbol": "folder-open",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "folder-plus",
       "source": "icons/source/kaui/folder-plus.svg",
       "symbol": "folder-plus",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "gauge",
+      "source": "icons/source/kaui/gauge.svg",
+      "symbol": "gauge",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "globe",
+      "source": "icons/source/kaui/globe.svg",
+      "symbol": "globe",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "grid",
       "source": "icons/source/kaui/grid.svg",
       "symbol": "grid",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "hard-drive",
+      "source": "icons/source/kaui/hard-drive.svg",
+      "symbol": "hard-drive",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "headphones",
+      "source": "icons/source/kaui/headphones.svg",
+      "symbol": "headphones",
       "ownership": "KAUI-owned"
     },
     {
@@ -318,6 +736,18 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "help-circle",
+      "source": "icons/source/kaui/help-circle.svg",
+      "symbol": "help-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "history",
+      "source": "icons/source/kaui/history.svg",
+      "symbol": "history",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "home",
       "source": "icons/source/kaui/home.svg",
       "symbol": "home",
@@ -330,9 +760,57 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "image-plus",
+      "source": "icons/source/kaui/image-plus.svg",
+      "symbol": "image-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "inbox",
+      "source": "icons/source/kaui/inbox.svg",
+      "symbol": "inbox",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "info",
       "source": "icons/source/kaui/info.svg",
       "symbol": "info",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "info-circle",
+      "source": "icons/source/kaui/info-circle.svg",
+      "symbol": "info-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "italic",
+      "source": "icons/source/kaui/italic.svg",
+      "symbol": "italic",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "kanban",
+      "source": "icons/source/kaui/kanban.svg",
+      "symbol": "kanban",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "key",
+      "source": "icons/source/kaui/key.svg",
+      "symbol": "key",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "keyboard",
+      "source": "icons/source/kaui/keyboard.svg",
+      "symbol": "keyboard",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "languages",
+      "source": "icons/source/kaui/languages.svg",
+      "symbol": "languages",
       "ownership": "KAUI-owned"
     },
     {
@@ -342,9 +820,57 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "link",
+      "source": "icons/source/kaui/link.svg",
+      "symbol": "link",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "link-off",
+      "source": "icons/source/kaui/link-off.svg",
+      "symbol": "link-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "list",
+      "source": "icons/source/kaui/list.svg",
+      "symbol": "list",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "list-check",
+      "source": "icons/source/kaui/list-check.svg",
+      "symbol": "list-check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "list-filter",
+      "source": "icons/source/kaui/list-filter.svg",
+      "symbol": "list-filter",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "loader",
+      "source": "icons/source/kaui/loader.svg",
+      "symbol": "loader",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "lock",
       "source": "icons/source/kaui/lock.svg",
       "symbol": "lock",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "log-in",
+      "source": "icons/source/kaui/log-in.svg",
+      "symbol": "log-in",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "log-out",
+      "source": "icons/source/kaui/log-out.svg",
+      "symbol": "log-out",
       "ownership": "KAUI-owned"
     },
     {
@@ -366,9 +892,75 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "maximize",
+      "source": "icons/source/kaui/maximize.svg",
+      "symbol": "maximize",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "megaphone",
+      "source": "icons/source/kaui/megaphone.svg",
+      "symbol": "megaphone",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "menu",
       "source": "icons/source/kaui/menu.svg",
       "symbol": "menu",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "message",
+      "source": "icons/source/kaui/message.svg",
+      "symbol": "message",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "message-circle",
+      "source": "icons/source/kaui/message-circle.svg",
+      "symbol": "message-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "message-plus",
+      "source": "icons/source/kaui/message-plus.svg",
+      "symbol": "message-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "message-square",
+      "source": "icons/source/kaui/message-square.svg",
+      "symbol": "message-square",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "messages",
+      "source": "icons/source/kaui/messages.svg",
+      "symbol": "messages",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "mic",
+      "source": "icons/source/kaui/mic.svg",
+      "symbol": "mic",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "mic-off",
+      "source": "icons/source/kaui/mic-off.svg",
+      "symbol": "mic-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "minimize",
+      "source": "icons/source/kaui/minimize.svg",
+      "symbol": "minimize",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "minus-circle",
+      "source": "icons/source/kaui/minus-circle.svg",
+      "symbol": "minus-circle",
       "ownership": "KAUI-owned"
     },
     {
@@ -378,9 +970,105 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "more-horizontal",
+      "source": "icons/source/kaui/more-horizontal.svg",
+      "symbol": "more-horizontal",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "more-vertical",
+      "source": "icons/source/kaui/more-vertical.svg",
+      "symbol": "more-vertical",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "mouse",
+      "source": "icons/source/kaui/mouse.svg",
+      "symbol": "mouse",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "music",
+      "source": "icons/source/kaui/music.svg",
+      "symbol": "music",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "network",
+      "source": "icons/source/kaui/network.svg",
+      "symbol": "network",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "notification",
+      "source": "icons/source/kaui/notification.svg",
+      "symbol": "notification",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "package",
+      "source": "icons/source/kaui/package.svg",
+      "symbol": "package",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "package-check",
+      "source": "icons/source/kaui/package-check.svg",
+      "symbol": "package-check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "package-plus",
+      "source": "icons/source/kaui/package-plus.svg",
+      "symbol": "package-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "palette",
+      "source": "icons/source/kaui/palette.svg",
+      "symbol": "palette",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "paperclip",
+      "source": "icons/source/kaui/paperclip.svg",
+      "symbol": "paperclip",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "pause",
       "source": "icons/source/kaui/pause.svg",
       "symbol": "pause",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "pause-circle",
+      "source": "icons/source/kaui/pause-circle.svg",
+      "symbol": "pause-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "percent",
+      "source": "icons/source/kaui/percent.svg",
+      "symbol": "percent",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "phone",
+      "source": "icons/source/kaui/phone.svg",
+      "symbol": "phone",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "phone-call",
+      "source": "icons/source/kaui/phone-call.svg",
+      "symbol": "phone-call",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "pin",
+      "source": "icons/source/kaui/pin.svg",
+      "symbol": "pin",
       "ownership": "KAUI-owned"
     },
     {
@@ -390,9 +1078,57 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "play-circle",
+      "source": "icons/source/kaui/play-circle.svg",
+      "symbol": "play-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "plus-circle",
+      "source": "icons/source/kaui/plus-circle.svg",
+      "symbol": "plus-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "podcast",
+      "source": "icons/source/kaui/podcast.svg",
+      "symbol": "podcast",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "radio-tower",
+      "source": "icons/source/kaui/radio-tower.svg",
+      "symbol": "radio-tower",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "receipt",
+      "source": "icons/source/kaui/receipt.svg",
+      "symbol": "receipt",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "redo",
+      "source": "icons/source/kaui/redo.svg",
+      "symbol": "redo",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "refresh",
       "source": "icons/source/kaui/refresh.svg",
       "symbol": "refresh",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "rotate-ccw",
+      "source": "icons/source/kaui/rotate-ccw.svg",
+      "symbol": "rotate-ccw",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "rotate-cw",
+      "source": "icons/source/kaui/rotate-cw.svg",
+      "symbol": "rotate-cw",
       "ownership": "KAUI-owned"
     },
     {
@@ -402,9 +1138,39 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "scan-barcode",
+      "source": "icons/source/kaui/scan-barcode.svg",
+      "symbol": "scan-barcode",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "screen-reader",
+      "source": "icons/source/kaui/screen-reader.svg",
+      "symbol": "screen-reader",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "search",
       "source": "icons/source/kaui/search.svg",
       "symbol": "search",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "send",
+      "source": "icons/source/kaui/send.svg",
+      "symbol": "send",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "server",
+      "source": "icons/source/kaui/server.svg",
+      "symbol": "server",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "server-cog",
+      "source": "icons/source/kaui/server-cog.svg",
+      "symbol": "server-cog",
       "ownership": "KAUI-owned"
     },
     {
@@ -414,9 +1180,33 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "share",
+      "source": "icons/source/kaui/share.svg",
+      "symbol": "share",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "shield",
       "source": "icons/source/kaui/shield.svg",
       "symbol": "shield",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "shield-alert",
+      "source": "icons/source/kaui/shield-alert.svg",
+      "symbol": "shield-alert",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "shield-check",
+      "source": "icons/source/kaui/shield-check.svg",
+      "symbol": "shield-check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "shield-x",
+      "source": "icons/source/kaui/shield-x.svg",
+      "symbol": "shield-x",
       "ownership": "KAUI-owned"
     },
     {
@@ -534,9 +1324,27 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "stop-circle",
+      "source": "icons/source/kaui/stop-circle.svg",
+      "symbol": "stop-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "store",
+      "source": "icons/source/kaui/store.svg",
+      "symbol": "store",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "success",
       "source": "icons/source/kaui/success.svg",
       "symbol": "success",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "success-circle",
+      "source": "icons/source/kaui/success-circle.svg",
+      "symbol": "success-circle",
       "ownership": "KAUI-owned"
     },
     {
@@ -552,6 +1360,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "table-properties",
+      "source": "icons/source/kaui/table-properties.svg",
+      "symbol": "table-properties",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "tag",
       "source": "icons/source/kaui/tag.svg",
       "symbol": "tag",
@@ -561,6 +1375,60 @@
       "name": "terminal",
       "source": "icons/source/kaui/terminal.svg",
       "symbol": "terminal",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "text",
+      "source": "icons/source/kaui/text.svg",
+      "symbol": "text",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "text-cursor",
+      "source": "icons/source/kaui/text-cursor.svg",
+      "symbol": "text-cursor",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "translate",
+      "source": "icons/source/kaui/translate.svg",
+      "symbol": "translate",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "trash",
+      "source": "icons/source/kaui/trash.svg",
+      "symbol": "trash",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "trending-down",
+      "source": "icons/source/kaui/trending-down.svg",
+      "symbol": "trending-down",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "trending-up",
+      "source": "icons/source/kaui/trending-up.svg",
+      "symbol": "trending-up",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "truck",
+      "source": "icons/source/kaui/truck.svg",
+      "symbol": "truck",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "underline",
+      "source": "icons/source/kaui/underline.svg",
+      "symbol": "underline",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "undo",
+      "source": "icons/source/kaui/undo.svg",
+      "symbol": "undo",
       "ownership": "KAUI-owned"
     },
     {
@@ -582,9 +1450,63 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "user-check",
+      "source": "icons/source/kaui/user-check.svg",
+      "symbol": "user-check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "user-circle",
+      "source": "icons/source/kaui/user-circle.svg",
+      "symbol": "user-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "user-minus",
+      "source": "icons/source/kaui/user-minus.svg",
+      "symbol": "user-minus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "user-plus",
+      "source": "icons/source/kaui/user-plus.svg",
+      "symbol": "user-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "user-x",
+      "source": "icons/source/kaui/user-x.svg",
+      "symbol": "user-x",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "users",
       "source": "icons/source/kaui/users.svg",
       "symbol": "users",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "video",
+      "source": "icons/source/kaui/video.svg",
+      "symbol": "video",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "video-off",
+      "source": "icons/source/kaui/video-off.svg",
+      "symbol": "video-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "volume",
+      "source": "icons/source/kaui/volume.svg",
+      "symbol": "volume",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "volume-off",
+      "source": "icons/source/kaui/volume-off.svg",
+      "symbol": "volume-off",
       "ownership": "KAUI-owned"
     },
     {
@@ -597,6 +1519,36 @@
       "name": "warning",
       "source": "icons/source/kaui/warning.svg",
       "symbol": "warning",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "warning-triangle",
+      "source": "icons/source/kaui/warning-triangle.svg",
+      "symbol": "warning-triangle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "webhook",
+      "source": "icons/source/kaui/webhook.svg",
+      "symbol": "webhook",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "wifi",
+      "source": "icons/source/kaui/wifi.svg",
+      "symbol": "wifi",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "wifi-off",
+      "source": "icons/source/kaui/wifi-off.svg",
+      "symbol": "wifi-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "zap",
+      "source": "icons/source/kaui/zap.svg",
+      "symbol": "zap",
       "ownership": "KAUI-owned"
     }
   ]
