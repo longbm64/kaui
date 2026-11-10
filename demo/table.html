@@ -41,6 +41,8 @@
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="templates.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Templates</span></a>
+
           <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
           <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
           <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
@@ -66,7 +68,7 @@
           </div>
 
           <h3 class="demo-subheading">Search, sort and frozen columns</h3>
-          <div class="k-table-wrap k-mb-6" data-k-table data-k-searchable="true" data-k-sortable="true" data-k-sort-columns="0,3" data-k-freeze="1">
+          <div class="k-table-wrap k-mb-6" data-k-table data-k-searchable="true" data-k-sortable="true" data-k-sort-columns="0,3" data-k-freeze-columns="0,right:3">
             <div class="k-table__toolbar">
               <label class="k-table__search" for="demo-table-search">
                 <span class="k-table__search-icon"><i data-kaui-icon="search"></i></span>
@@ -84,7 +86,137 @@
             </table>
           </div>
 
-          <h3 class="demo-subheading">Default table</h3>
+
+          <h3 class="demo-subheading">Rich cells and column totals</h3>
+          <div class="k-table-wrap k-mb-6" data-k-table data-k-sum-columns="3">
+            <table class="k-table k-table--striped">
+              <thead><tr><th scope="col"><label class="k-table__checkbox" data-k-cell="checkbox"><input class="k-checkbox" type="checkbox" data-k-table-select-all aria-label="Select all rows"><span>Member</span></label></th><th scope="col">Avatar</th><th scope="col">Trend</th><th scope="col" data-k-table-number>Revenue</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><label class="k-table__checkbox" data-k-cell="checkbox"><input class="k-checkbox" type="checkbox" aria-label="Select Ada"><span>Ada</span></label></th><td><span class="k-table__avatar" data-k-cell="avatar"><img src="https://i.pravatar.cc/64?img=1" alt="Ada"></span></td><td><span class="k-table__chart" data-k-cell="chart" role="img" aria-label="Trend 40, 65, 55"><span class="k-table__chart-bar" style="--k-table-chart-value:40%"></span><span class="k-table__chart-bar" style="--k-table-chart-value:65%"></span><span class="k-table__chart-bar" style="--k-table-chart-value:55%"></span></span></td><td data-k-table-number data-k-sum-value="1200">$1,200</td></tr>
+                <tr><th scope="row"><label class="k-table__checkbox" data-k-cell="checkbox"><input class="k-checkbox" type="checkbox" aria-label="Select Minh"><span>Minh</span></label></th><td><span class="k-table__avatar" data-k-cell="avatar">MT</span></td><td><span class="k-table__chart" data-k-cell="chart" role="img" aria-label="Trend 70, 45, 80"><span class="k-table__chart-bar" style="--k-table-chart-value:70%"></span><span class="k-table__chart-bar" style="--k-table-chart-value:45%"></span><span class="k-table__chart-bar" style="--k-table-chart-value:80%"></span></span></td><td data-k-table-number data-k-sum-value="850">$850</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="demo-subheading">Frozen specified columns (Left &amp; Right)</h3>
+          <p class="k-text-muted k-fs-sm k-mb-3">Table with isolated viewport scroll: Column <strong>ID</strong> &amp; <strong>Member</strong> are completely fixed on the left, <strong>Actions</strong> is completely fixed on the right, and the scrollbar belongs <strong>strictly to the middle container</strong>.</p>
+          <div class="k-table-frozen-container k-mb-6">
+            <!-- Left Fixed Pane -->
+            <div class="k-table-pane--fixed-left">
+              <table class="k-table k-table--striped k-table--hover">
+                <thead>
+                  <tr>
+                    <th scope="col" style="min-width: 70px;">ID</th>
+                    <th scope="col" style="min-width: 200px;">Member</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">#001</th>
+                    <td><div class="k-flex k-items-center k-gap-2"><span class="k-table__avatar"><img src="https://i.pravatar.cc/64?img=1" alt="Ada"></span><strong>Ada Lovelace</strong></div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">#002</th>
+                    <td><div class="k-flex k-items-center k-gap-2"><span class="k-table__avatar">MT</span><strong>Minh Tran</strong></div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">#003</th>
+                    <td><div class="k-flex k-items-center k-gap-2"><span class="k-table__avatar"><img src="https://i.pravatar.cc/64?img=3" alt="Sarah"></span><strong>Sarah Connor</strong></div></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">#004</th>
+                    <td><div class="k-flex k-items-center k-gap-2"><span class="k-table__avatar">AL</span><strong>Alex Morgan</strong></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Middle Scrollable Viewport: ONLY THIS SCROLLS -->
+            <div class="k-table-viewport--scrollable">
+              <table class="k-table k-table--striped k-table--hover" style="min-width: 1050px;">
+                <thead>
+                  <tr>
+                    <th scope="col" style="min-width: 160px;">Department</th>
+                    <th scope="col" style="min-width: 180px;">Role</th>
+                    <th scope="col" style="min-width: 140px;">Location</th>
+                    <th scope="col" style="min-width: 150px;">Experience</th>
+                    <th scope="col" style="min-width: 160px;">Joining Date</th>
+                    <th scope="col" style="min-width: 160px;">Reporting To</th>
+                    <th scope="col" style="min-width: 120px;">Status</th>
+                    <th scope="col" style="min-width: 130px;" data-k-table-number>Salary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Engineering</td>
+                    <td>Principal Architect</td>
+                    <td>London, UK</td>
+                    <td>12+ years</td>
+                    <td>2021-03-15</td>
+                    <td>CEO Office</td>
+                    <td><span class="k-badge k-badge--success">Full-time</span></td>
+                    <td data-k-table-number>$145,000</td>
+                  </tr>
+                  <tr>
+                    <td>Product Design</td>
+                    <td>Lead Designer</td>
+                    <td>Hanoi, VN</td>
+                    <td>8 years</td>
+                    <td>2022-06-01</td>
+                    <td>Head of Product</td>
+                    <td><span class="k-badge k-badge--success">Full-time</span></td>
+                    <td data-k-table-number>$115,000</td>
+                  </tr>
+                  <tr>
+                    <td>Security</td>
+                    <td>Operations Director</td>
+                    <td>Los Angeles, US</td>
+                    <td>15 years</td>
+                    <td>2020-01-10</td>
+                    <td>CISO</td>
+                    <td><span class="k-badge k-badge--warning">Contract</span></td>
+                    <td data-k-table-number>$130,000</td>
+                  </tr>
+                  <tr>
+                    <td>Infrastructure</td>
+                    <td>DevOps Specialist</td>
+                    <td>Singapore</td>
+                    <td>6 years</td>
+                    <td>2023-09-20</td>
+                    <td>Platform Lead</td>
+                    <td><span class="k-badge k-badge--success">Full-time</span></td>
+                    <td data-k-table-number>$120,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Right Fixed Pane -->
+            <div class="k-table-pane--fixed-right">
+              <table class="k-table k-table--striped k-table--hover">
+                <thead>
+                  <tr>
+                    <th scope="col" style="min-width: 140px; text-align: center;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="text-align: center;"><div class="k-table__actions" style="justify-content: center;"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button><button type="button" class="k-btn k-btn--sm k-btn--secondary">Edit</button></div></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><div class="k-table__actions" style="justify-content: center;"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button><button type="button" class="k-btn k-btn--sm k-btn--secondary">Edit</button></div></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><div class="k-table__actions" style="justify-content: center;"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button><button type="button" class="k-btn k-btn--sm k-btn--secondary">Edit</button></div></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><div class="k-table__actions" style="justify-content: center;"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button><button type="button" class="k-btn k-btn--sm k-btn--secondary">Edit</button></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+
           <div class="k-table-wrap k-mb-6">
             <table class="k-table">
               <caption>Recent project activity</caption>

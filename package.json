@@ -23,7 +23,8 @@
     "build:css:prod": "sass src/scss/kaui.scss dist/kaui.min.css --style=compressed --source-map",
     "build:icons:bundle": "node scripts/merge-icon-css.mjs",
     "build:chart:dev": "sass src/scss/kaui-chart.scss dist/kaui-chart.css --style=expanded --no-source-map",
-    "build": "npm run build:css:dev && npm run build:css:prod && npm run icons:build && npm run build:icons:bundle",
+    "build:js": "cp src/js/kaui.js dist/kaui.js && cp src/js/kaui.js dist/kaui.min.js",
+    "build": "npm run build:css:dev && npm run build:css:prod && npm run icons:build && npm run build:icons:bundle && npm run build:js",
     "build:chart:prod": "sass src/scss/kaui-chart.scss dist/kaui-chart.min.css --style=compressed --no-source-map",
     "build:chart:js": "cp src/js/kaui-chart.js dist/kaui-chart.js && cp src/js/kaui-chart.js dist/kaui-chart.min.js",
     "build:chart": "npm run build:chart:dev && npm run build:chart:prod && npm run build:chart:js",
@@ -41,6 +42,8 @@
     "icons:groups:add": "node scripts/add-kaui-icon-groups.mjs && npm run icons:build",
     "icons:core:build": "node scripts/build-kaui-core.mjs",
     "serve:tailscale": "python3 -m http.server 4173 --bind 0.0.0.0 --directory .",
+    "start": "node server.mjs",
+
     "test": "node --test test/kit.test.mjs"
   },
   "devDependencies": {
@@ -54,5 +57,8 @@
     "components"
   ],
   "author": "KAUI Contributors",
-  "license": "LicenseRef-KAUI-NonCommercial"
+  "license": "LicenseRef-KAUI-NonCommercial",
+  "dependencies": {
+    "filekat": "^1.1.0"
+  }
 }

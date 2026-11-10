@@ -1,0 +1,329 @@
+/**
+ * KAUI Core Component Runtime (v1.1.0)
+ * Zero-dependency vanilla JavaScript for KAUI Interactive Components:
+ * - Dropdowns & Custom Selects (.k-dropdown, .k-dropdown-select)
+ * - Navigation Bar & Multi-level Responsive Submenus (.k-navbar)
+ * - Modal Dialogs & Confirm Overlays (.k-modal, .k-confirm)
+ * - Interactive Tabs (.k-tabs)
+ * - Accordions (.k-accordion)
+ * - Data Tables (search, sort, column totals, frozen multi-pane, select-all)
+ */
+
+(function (global) {
+  'use strict';
+
+  var Kaui = {};
+
+  // 1. Dropdowns & Custom Select (.k-dropdown, .k-dropdown-select)
+  function initDropdowns() {
+    function adjustPlacement(toggle, menu) {
+      if (!toggle || !menu) return;
+      var parent = toggle.closest('.k-dropdown');
+      if (!parent) return;
+      parent.classList.remove('k-dropdown--dropup', 'k-dropdown--align-right');
+      var toggleRect = toggle.getBoundingClientRect();
+      var menuHeight = menu.offsetHeight || 220;
+      var spaceBelow = window.innerHeight - toggleRect.bottom;
+      var spaceAbove = toggleRect.top;
+      if (spaceBelow < menuHeight && spaceAbove > spaceBelow) {
+        parent.classList.add('k-dropdown--dropup');
+      }
+      var menuWidth = menu.offsetWidth || 200;
+      if (toggleRect.left + menuWidth > window.innerWidth - 12 && toggleRect.right - menuWidth > 12) {
+        parent.classList.add('k-dropdown--align-right');
+      }
+    }
+
+    document.querySelectorAll('[data-k-dropdown-select]').forEach(function (container) {
+      var toggle = container.querySelector('.k-dropdown__toggle');
+      var menu = container.querySelector('.k-dropdown__menu');
+      var hiddenSelect = container.querySelector('select');
+      var valueDisplay = container.querySelector('.k-dropdown__value');
+      var searchInput = container.querySelector('[data-k-dropdown-search]');
+      var items = container.querySelectorAll('.k-dropdown__item');
+
+      if (toggle && menu) {
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = container.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (isOpen) {
+            adjustPlacement(toggle, menu);
+            if (searchInput) searchInput.focus();
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          var q = searchInput.value.toLowerCase().trim();
+          items.forEach(function (item) {
+            var text = item.textContent.toLowerCase();
+            item.hidden = q.length > 0 && text.indexOf(q) === -1;
+          });
+        });
+      }
+
+      items.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var val = item.getAttribute('data-value') || '';
+          var text = item.textContent.replace('✓', '').trim();
+          items.forEach(function (it) { it.classList.remove('is-selected'); it.removeAttribute('aria-selected'); });
+          item.classList.add('is-selected');
+          item.setAttribute('aria-selected', 'true');
+          if (valueDisplay) {
+            valueDisplay.textContent = text;
+            valueDisplay.classList.remove('is-placeholder');
+          }
+          if (hiddenSelect) {
+            hiddenSelect.value = val;
+            hiddenSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+          container.classList.remove('is-open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      document.querySelectorAll('.k-dropdown.is-open').forEach(function (d) {
+        if (!d.contains(e.target)) {
+          d.classList.remove('is-open');
+          var toggle = d.querySelector('.k-dropdown__toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
+  // 2. Navigation Bar & Multi-level Submenus (.k-navbar)
+  function initNavbar() {
+    document.querySelectorAll('.k-navbar').forEach(function (navbar) {
+      var toggle = navbar.querySelector('.k-navbar__toggle');
+      var menu = navbar.querySelector('.k-navbar__menu');
+
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          var isOpen = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
+      var hasChildren = navbar.querySelectorAll('.k-navbar__item--has-children');
+      hasChildren.forEach(function (item) {
+        var link = item.querySelector(':scope > .k-navbar__link');
+        var submenu = item.querySelector(':scope > .k-navbar__submenu');
+        if (link && submenu) {
+          link.addEventListener('click', function (e) {
+            if (window.innerWidth < 992 || link.tagName === 'BUTTON' || link.getAttribute('href') === '#') {
+              e.preventDefault();
+              e.stopPropagation();
+              var isOpen = item.classList.toggle('is-open');
+              link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+              if (isOpen && window.innerWidth >= 992) {
+                item.classList.remove('is-dropup', 'is-dropstart');
+                var rect = submenu.getBoundingClientRect();
+                if (rect.bottom > window.innerHeight - 12) item.classList.add('is-dropup');
+                if (rect.right > window.innerWidth - 12) item.classList.add('is-dropstart');
+              }
+            }
+          });
+        }
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.k-navbar__item--has-children')) {
+        document.querySelectorAll('.k-navbar__item--has-children.is-open').forEach(function (item) {
+          item.classList.remove('is-open');
+          var link = item.querySelector(':scope > .k-navbar__link');
+          if (link) link.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  }
+
+  // 3. Modal Dialogs (.k-modal)
+  function initModals() {
+    document.addEventListener('click', function (e) {
+      var openTrigger = e.target.closest('[data-k-modal-target]');
+      if (openTrigger) {
+        var targetId = openTrigger.getAttribute('data-k-modal-target');
+        var modal = document.querySelector(targetId);
+        if (modal) modal.classList.add('is-open');
+        return;
+      }
+
+      var dismissTrigger = e.target.closest('[data-k-modal-dismiss]');
+      if (dismissTrigger) {
+        var openModal = dismissTrigger.closest('.k-modal.is-open');
+        if (openModal) openModal.classList.remove('is-open');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        var openModal = document.querySelector('.k-modal.is-open');
+        if (openModal && openModal.getAttribute('data-k-backdrop') !== 'static') {
+          openModal.classList.remove('is-open');
+        }
+      }
+    });
+  }
+
+  // 4. Tabs & Accordions (.k-tabs, .k-accordion)
+  function initTabsAndAccordions() {
+    document.addEventListener('click', function (e) {
+      var tab = e.target.closest('.k-tabs__tab');
+      if (tab) {
+        var list = tab.closest('.k-tabs__list');
+        var targetSelector = tab.getAttribute('data-tab-target');
+        if (list && targetSelector) {
+          list.querySelectorAll('.k-tabs__tab').forEach(function (t) {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
+          var container = list.parentElement;
+          if (container) {
+            container.querySelectorAll('.k-tabs__panel').forEach(function (p) { p.classList.remove('is-active'); });
+            var targetPanel = container.querySelector(targetSelector);
+            if (targetPanel) targetPanel.classList.add('is-active');
+          }
+        }
+        return;
+      }
+
+      var trigger = e.target.closest('.k-accordion__trigger');
+      if (trigger) {
+        var item = trigger.closest('.k-accordion__item');
+        if (item) {
+          var isOpen = item.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+    });
+  }
+
+  // 5. Data Tables (Search, Sort, Sum, Frozen Multi-Pane)
+  function initTables() {
+    function normalize(text) {
+      return String(text || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+    }
+
+    document.querySelectorAll('[data-k-table]').forEach(function (root) {
+      var table = root.matches('table') ? root : root.querySelector('table');
+      var tbody = table && table.tBodies && table.tBodies[0];
+      if (!table || !tbody) return;
+
+      var rows = Array.prototype.filter.call(tbody.rows, function (row) { return !row.hasAttribute('data-k-table-no-results'); });
+      var empty = tbody.querySelector('[data-k-table-no-results]');
+      var search = root.querySelector('[data-k-table-search]');
+
+      function updateSums() {
+        var sumAttr = root.getAttribute('data-k-sum-columns') || '';
+        var sumCols = sumAttr.split(',').map(function (s) { return s.trim(); }).filter(Boolean).map(Number).filter(function (i) { return Number.isInteger(i) && i >= 0; });
+        if (!sumCols.length) return;
+
+        sumCols.forEach(function (index) {
+          var header = table.tHead && table.tHead.rows[0] && table.tHead.rows[0].cells[index];
+          if (header) header.classList.add('k-table__numeric');
+          rows.forEach(function (row) { if (row.cells[index]) row.cells[index].classList.add('k-table__numeric'); });
+        });
+
+        var footer = table.tFoot || table.createTFoot();
+        footer.className = 'k-table__footer';
+        var footerRow = footer.rows[0] || footer.insertRow();
+        var colCount = table.tHead.rows[0].cells.length;
+        while (footerRow.cells.length < colCount) footerRow.insertCell();
+        Array.prototype.forEach.call(footerRow.cells, function (cell) { cell.textContent = ''; cell.className = ''; });
+        if (footerRow.cells[0]) { footerRow.cells[0].textContent = 'Total'; footerRow.cells[0].className = 'k-table__sum-label'; }
+
+        sumCols.forEach(function (index) {
+          var total = rows.reduce(function (sum, row) {
+            if (row.hidden) return sum;
+            var cell = row.cells[index];
+            var val = cell && (cell.getAttribute('data-k-sum-value') || cell.textContent || '');
+            var num = Number(String(val).replace(/[^0-9.-]/g, ''));
+            return Number.isFinite(num) ? sum + num : sum;
+          }, 0);
+          if (footerRow.cells[index]) {
+            footerRow.cells[index].textContent = '$' + total.toLocaleString();
+            footerRow.cells[index].classList.add('k-table__numeric');
+          }
+        });
+      }
+
+      if (search) {
+        search.addEventListener('input', function () {
+          var q = normalize(search.value).trim().split(/\s+/).filter(Boolean);
+          var visible = 0;
+          rows.forEach(function (row) {
+            var text = normalize(row.textContent || '');
+            row.hidden = q.length > 0 && !q.every(function (word) { return text.indexOf(word) !== -1; });
+            if (!row.hidden) visible += 1;
+          });
+          if (empty) empty.hidden = visible !== 0;
+          updateSums();
+        });
+      }
+
+      root.querySelectorAll('[data-k-table-select-all]').forEach(function (selectAll) {
+        selectAll.addEventListener('change', function () {
+          rows.forEach(function (row) {
+            if (!row.hidden) row.querySelectorAll('input[type="checkbox"]').forEach(function (input) { input.checked = selectAll.checked; });
+          });
+        });
+      });
+
+      updateSums();
+    });
+
+    // Synchronize row heights for multi-pane frozen tables (.k-table-frozen-container)
+    function syncFrozenRowHeights() {
+      document.querySelectorAll('.k-table-frozen-container').forEach(function (container) {
+        var tables = container.querySelectorAll('.k-table');
+        if (tables.length < 2) return;
+        var headRows = Array.prototype.map.call(tables, function (t) { return t.tHead && t.tHead.rows[0]; }).filter(Boolean);
+        if (headRows.length > 1) {
+          var maxHeadH = Math.max.apply(null, headRows.map(function (r) { return r.offsetHeight; }));
+          headRows.forEach(function (r) { r.style.height = maxHeadH + 'px'; });
+        }
+        var bodyCount = (tables[0].tBodies && tables[0].tBodies[0] && tables[0].tBodies[0].rows.length) || 0;
+        for (var i = 0; i < bodyCount; i++) {
+          var rowGroup = [];
+          for (var t = 0; t < tables.length; t++) {
+            var b = tables[t].tBodies && tables[t].tBodies[0];
+            if (b && b.rows[i]) rowGroup.push(b.rows[i]);
+          }
+          if (rowGroup.length > 1) {
+            var maxH = Math.max.apply(null, rowGroup.map(function (r) { return r.offsetHeight; }));
+            rowGroup.forEach(function (r) { r.style.height = maxH + 'px'; });
+          }
+        }
+      });
+    }
+    syncFrozenRowHeights();
+    window.addEventListener('resize', syncFrozenRowHeights);
+  }
+
+  function initAll() {
+    initDropdowns();
+    initNavbar();
+    initModals();
+    initTabsAndAccordions();
+    initTables();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+
+  Kaui.init = initAll;
+  global.Kaui = Kaui;
+
+})(typeof window !== 'undefined' ? window : this);

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
   <script src="demo.js" defer></script>
+  <script src="countries.js" defer></script>
 </head>
 <body class="demo-body">
   <aside class="demo-sidebar" aria-label="Component navigation">
@@ -41,6 +42,8 @@
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="templates.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Templates</span></a>
+
           <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
           <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
           <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
@@ -70,6 +73,10 @@
               <button type="button" class="k-btn k-btn--primary" id="demo-open-modal">
                 <span class="k-btn__icon"><i data-kaui-icon="external-link"></i></span>
                 <span class="k-btn__text">Open Interactive Modal</span>
+              </button>
+              <button type="button" class="k-btn k-btn--outline-primary" id="demo-open-countries">
+                <span class="k-btn__icon"><i data-kaui-icon="globe"></i></span>
+                <span class="k-btn__text">View all countries</span>
               </button>
               <button type="button" class="k-btn k-btn--outline" id="demo-open-confirm">
                 <span class="k-btn__icon"><i data-kaui-icon="check"></i></span>
@@ -120,6 +127,32 @@
       </div>
     </div>
   </div>
+
+  <!-- Long-content modal demo: the table body scrolls while header and footer remain visible. -->
+  <div class="k-modal" id="demo-countries-modal" role="dialog" aria-modal="true" aria-labelledby="demo-countries-title" data-k-backdrop="static" aria-hidden="true">
+    <div class="k-modal-backdrop" id="demo-countries-backdrop"></div>
+    <div class="k-modal__dialog k-modal__dialog--xl demo-country-modal__dialog">
+      <div class="k-modal__header">
+        <h3 class="k-modal__title" id="demo-countries-title">Countries and time zones</h3>
+        <button type="button" class="k-modal__close k-alert__close" id="demo-close-countries" aria-label="Close countries modal"><i data-kaui-icon="x"></i></button>
+      </div>
+      <div class="k-modal__body demo-country-modal__body">
+        <p class="k-text-muted k-fs-sm k-mb-4">A reference list of 195 sovereign countries. Calling codes and representative IANA time zones are shown for testing long modal content.</p>
+        <div class="demo-country-table-wrap">
+          <table class="k-table k-table--bordered k-table--striped" aria-label="Countries, calling codes and time zones">
+            <colgroup><col><col><col><col></colgroup>
+            <thead><tr><th scope="col">No.</th><th scope="col">Calling code</th><th scope="col">Country</th><th scope="col">Time zone</th></tr></thead>
+            <tbody id="demo-countries-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="k-modal__footer">
+        <span class="k-text-muted k-fs-sm">195 countries</span>
+        <button type="button" class="k-btn k-btn--outline" id="demo-cancel-countries"><span class="k-btn__icon"><i data-kaui-icon="x"></i></span><span class="k-btn__text">Close</span></button>
+      </div>
+    </div>
+  </div>
+
 
   <div class="k-modal k-confirm" id="demo-confirm" role="dialog" aria-modal="true" aria-labelledby="demo-confirm-title" data-k-backdrop="static" aria-hidden="true">
     <div class="k-modal-backdrop" id="demo-confirm-backdrop"></div>

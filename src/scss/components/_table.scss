@@ -10,7 +10,111 @@
   overflow-x: auto;
   border: 1px solid var(--k-color-border);
   border-radius: var(--k-radius-md);
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--k-primary) transparent;
+
+  &::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--k-primary);
+    border-radius: var(--k-radius-full);
+  }
 }
+
+// --------------------------------------------------------------------------
+// Multi-Pane Architecture for Frozen Columns
+// The horizontal scroll belongs EXCLUSIVELY to .k-table-viewport--scrollable
+// Left and Right columns are completely outside of the scrolling DOM container
+// --------------------------------------------------------------------------
+.k-table-frozen-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--k-color-border);
+  border-radius: var(--k-radius-md);
+  background-color: var(--k-color-surface);
+
+  .k-table-pane--fixed-left {
+    flex: 0 0 auto;
+    z-index: 3;
+    overflow: hidden;
+    border-right: 2px solid var(--k-color-border);
+    box-shadow: 4px 0 10px -2px rgba(15, 23, 42, 0.16);
+    background-color: var(--k-color-surface);
+  }
+
+  .k-table-viewport--scrollable {
+    flex: 1 1 0;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    z-index: 1;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--k-primary) transparent;
+
+    &::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--k-primary);
+      border-radius: var(--k-radius-full);
+
+      &:hover {
+        background-color: var(--k-color-primary-600, #2563eb);
+      }
+    }
+  }
+
+  .k-table-pane--fixed-right {
+    flex: 0 0 auto;
+    z-index: 3;
+    overflow: hidden;
+    border-left: 2px solid var(--k-color-border);
+    box-shadow: -4px 0 10px -2px rgba(15, 23, 42, 0.16);
+    background-color: var(--k-color-surface);
+  }
+
+  .k-table {
+    margin: 0;
+    border: 0;
+    height: 100%;
+
+    tr {
+      height: 3.5rem;
+    }
+
+    thead tr {
+      height: 3rem;
+    }
+
+    th,
+    td {
+      height: inherit;
+      box-sizing: border-box;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+  }
+}
+
+
 
 .k-table {
   --k-table-bg: var(--k-color-surface);
@@ -36,6 +140,22 @@
     vertical-align: middle;
   }
 
+
+  th[data-k-table-number],
+  td[data-k-table-number],
+  th.k-table__numeric,
+  td.k-table__numeric,
+  .k-table__footer td.k-table__numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .k-table__visual,
+  td:has(> .k-table__avatar:only-child),
+  td:has(> .k-table__image:only-child),
+  td:has(> .k-table__chart:only-child) {
+    text-align: center;
+  }
   th {
     font-size: var(--k-size-sm);
     font-weight: var(--k-weight-semibold);
@@ -146,6 +266,92 @@
 
   /* Freeze count > 1 is progressively supported by runtime class modifiers. */
 
+
+  // Frozen / sticky specified columns
+  th.k-table__cell--frozen-left,
+  td.k-table__cell--frozen-left,
+  th[data-k-freeze="left"],
+  td[data-k-freeze="left"] {
+    position: sticky;
+    left: var(--k-table-freeze-left, 0);
+    z-index: 2;
+    background-color: var(--k-table-bg);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  th.k-table__cell--frozen-right,
+  td.k-table__cell--frozen-right,
+  th[data-k-freeze="right"],
+  td[data-k-freeze="right"] {
+    position: sticky;
+    right: var(--k-table-freeze-right, 0);
+    z-index: 2;
+    background-color: var(--k-table-bg);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+
+  th.k-table__cell--frozen-left-last,
+  td.k-table__cell--frozen-left-last {
+    overflow: visible;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--k-table-border);
+      box-shadow: 4px 0 10px rgba(15, 23, 42, 0.22);
+      pointer-events: none;
+      z-index: 4;
+    }
+  }
+
+  th.k-table__cell--frozen-right-first,
+  td.k-table__cell--frozen-right-first {
+    overflow: visible;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--k-table-border);
+      box-shadow: -4px 0 10px rgba(15, 23, 42, 0.22);
+      pointer-events: none;
+      z-index: 4;
+    }
+  }
+
+
+  thead th.k-table__cell--frozen-left,
+  thead th.k-table__cell--frozen-right,
+  tfoot td.k-table__cell--frozen-left,
+  tfoot td.k-table__cell--frozen-right {
+    z-index: 3;
+    background-color: var(--k-table-header-bg);
+  }
+
+  &--striped tbody tr:nth-child(even) > .k-table__cell--frozen-left,
+  &--striped tbody tr:nth-child(even) > .k-table__cell--frozen-right {
+    background-color: var(--k-table-stripe-bg);
+  }
+
+  &--hover tbody tr:hover > .k-table__cell--frozen-left,
+  &--hover tbody tr:hover > .k-table__cell--frozen-right {
+    background-color: var(--k-table-hover-bg);
+  }
+
+
+
   &--frozen-placeholder { display: table; }
   
 
@@ -163,6 +369,87 @@
     text-align: center;
   }
 }
+
+// Rich cell variants
+.k-table__avatar,
+.k-table__image,
+.k-table__chart,
+.k-table__checkbox {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.k-table__avatar {
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  justify-content: center;
+  border-radius: var(--k-radius-full);
+  background: var(--k-color-primary-100);
+  color: var(--k-primary);
+  font-size: var(--k-size-xs);
+  font-weight: var(--k-weight-semibold);
+}
+
+.k-table__avatar img,
+.k-table__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.k-table__image {
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  border-radius: var(--k-radius-sm);
+}
+
+.k-table__chart {
+  align-items: flex-end;
+  gap: 2px;
+  width: 4rem;
+  height: 1.75rem;
+}
+
+.k-table__chart-bar {
+  flex: 1 1 0;
+  min-width: 3px;
+  height: var(--k-table-chart-value, 50%);
+  border-radius: 2px 2px 0 0;
+  background: var(--k-primary);
+}
+
+.k-table__checkbox {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  row-gap: 0;
+  white-space: nowrap;
+}
+.k-table__checkbox .k-checkbox { margin: 0; }
+
+.k-table__checkbox > .k-checkbox {
+  display: inline-grid;
+  inline-size: 1.125rem;
+  block-size: 1.125rem;
+  min-inline-size: 1.125rem;
+  min-block-size: 1.125rem;
+  padding: 0;
+  box-sizing: border-box;
+  flex: 0 0 1.125rem;
+  vertical-align: middle;
+}
+
+.k-table__footer th,
+.k-table__footer td {
+  font-weight: var(--k-weight-semibold);
+  background: var(--k-table-header-bg);
+}
+.k-table__sum-label { color: var(--k-table-header-color); }
+
 
 // Dark theme hover must override the component's row hover rule and frozen-cell surface.
 [data-theme="dark"] .k-table.k-table--hover tbody tr:hover,

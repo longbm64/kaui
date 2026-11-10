@@ -41,6 +41,8 @@
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="templates.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Templates</span></a>
+
           <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
           <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
           <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
@@ -56,6 +58,8 @@
   </aside>
   <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
   <div class="demo-right"><header class="demo-header"><div class="k-container"><span class="demo-header__eyebrow">KAUI CSS Kit</span><span class="demo-header__context">Component Showcase</span></div></header><div class="demo-right__body"><main class="demo-main">
+
+
 <section id="cards" class="demo-section">
         <div class="k-container">
           <div class="demo-section-header">
@@ -63,14 +67,14 @@
               <i data-kaui-icon="layers"></i> Card Containers (<code>.k-card</code>) <button type="button" class="demo-copy-button" data-copy-component="cards"><span class="demo-copy-label">Copy code</span></button>
             </h2>
             <p class="demo-section-desc">
-              Structured surfaces with headers, titles, bodies, and footers. Includes interactive hover elevation and bordered modifiers.
+              Structured surfaces with headers, titles, bodies, and footers. Includes bordered modifiers, equal-height cards, and a scrollable country list.
             </p>
           </div>
 
-          <div class="k-grid k-gap-6">
+          <div class="k-grid k-gap-6 demo-card-grid">
             <!-- Basic Structured Card -->
             <div class="k-col-12 k-col-md-4">
-              <div class="k-card">
+              <div class="k-card demo-card-equal">
                 <div class="k-card__header k-flex k-justify-between k-items-center">
                   <span class="k-flex k-items-center k-gap-2"><span class="k-card__icon"><i data-kaui-icon="activity"></i></span><span class="k-fw-semibold">System Metrics</span></span>
                   <span class="k-badge k-badge--success">Online</span>
@@ -91,7 +95,7 @@
 
             <!-- Bordered Card -->
             <div class="k-col-12 k-col-md-4">
-              <div class="k-card k-card--bordered">
+              <div class="k-card k-card--bordered demo-card-equal">
                 <div class="k-card__header">
                   <h3 class="k-card__title k-flex k-items-center k-gap-2"><span class="k-card__icon"><i data-kaui-icon="panel-top"></i></span><span>Bordered Modifier</span></h3>
                 </div>
@@ -109,26 +113,230 @@
               </div>
             </div>
 
-            <!-- Interactive Hover Card -->
+            <!-- Countries Scroll Body Card -->
             <div class="k-col-12 k-col-md-4">
-              <div class="k-card k-card--bordered k-card--interactive">
+              <div class="k-card k-card--bordered demo-card-equal demo-card-countries">
                 <div class="k-card__header k-flex k-justify-between k-items-center">
-                  <span class="k-flex k-items-center k-gap-2"><span class="k-card__icon"><i data-kaui-icon="sparkles"></i></span><span class="k-badge k-badge--primary">Interactive</span></span>
-                  <span class="k-fs-xs k-text-muted">Hover Me</span>
+                  <span class="k-flex k-items-center k-gap-2"><span class="k-card__icon"><i data-kaui-icon="globe"></i></span><span class="k-badge k-badge--primary">Countries</span></span>
+                  <span class="k-fs-xs k-text-muted">195 records</span>
                 </div>
                 <div class="k-card__body">
-                  <h3 class="k-card__title">Elevating Action Card</h3>
-                  <p class="k-text-muted">
-                    The <code>.k-card--interactive</code> modifier provides smooth GPU-accelerated hover elevation transforms (<code>translateY(-2px)</code>) with enhanced shadow.
+                  <h3 class="k-card__title">Countries &amp; Time Zones</h3>
+                  <p class="k-text-muted k-mb-3">
+                    Scrollable body with evenly distributed columns: number, calling code, country name, and time zone.
                   </p>
+                  <div class="demo-country-list" role="table" aria-label="List of all current countries">
+                    <div class="demo-country-row demo-country-row--header" role="row">
+                      <span role="columnheader">No.</span>
+                      <span role="columnheader">Code</span>
+                      <span role="columnheader">Country</span>
+                      <span role="columnheader">Time Zone</span>
+                    </div>
+                    <div class="demo-country-row" role="row"><span>1</span><span>+93</span><span title="Afghanistan">Afghanistan</span><span>UTC+4:30</span></div>
+                    <div class="demo-country-row" role="row"><span>2</span><span>+355</span><span title="Albania">Albania</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>3</span><span>+213</span><span title="Algeria">Algeria</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>4</span><span>+376</span><span title="Andorra">Andorra</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>5</span><span>+244</span><span title="Angola">Angola</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>6</span><span>+1-268</span><span title="Antigua and Barbuda">Antigua and Barbuda</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>7</span><span>+54</span><span title="Argentina">Argentina</span><span>UTC-3</span></div>
+                    <div class="demo-country-row" role="row"><span>8</span><span>+374</span><span title="Armenia">Armenia</span><span>UTC+4</span></div>
+                    <div class="demo-country-row" role="row"><span>9</span><span>+61</span><span title="Australia">Australia</span><span>UTC+8 to +11</span></div>
+                    <div class="demo-country-row" role="row"><span>10</span><span>+43</span><span title="Austria">Austria</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>11</span><span>+994</span><span title="Azerbaijan">Azerbaijan</span><span>UTC+4</span></div>
+                    <div class="demo-country-row" role="row"><span>12</span><span>+1-242</span><span title="Bahamas">Bahamas</span><span>UTC-5</span></div>
+                    <div class="demo-country-row" role="row"><span>13</span><span>+973</span><span title="Bahrain">Bahrain</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>14</span><span>+880</span><span title="Bangladesh">Bangladesh</span><span>UTC+6</span></div>
+                    <div class="demo-country-row" role="row"><span>15</span><span>+1-246</span><span title="Barbados">Barbados</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>16</span><span>+375</span><span title="Belarus">Belarus</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>17</span><span>+32</span><span title="Belgium">Belgium</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>18</span><span>+501</span><span title="Belize">Belize</span><span>UTC-6</span></div>
+                    <div class="demo-country-row" role="row"><span>19</span><span>+229</span><span title="Benin">Benin</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>20</span><span>+975</span><span title="Bhutan">Bhutan</span><span>UTC+6</span></div>
+                    <div class="demo-country-row" role="row"><span>21</span><span>+591</span><span title="Bolivia">Bolivia</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>22</span><span>+387</span><span title="Bosnia and Herzegovina">Bosnia and Herzegovina</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>23</span><span>+267</span><span title="Botswana">Botswana</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>24</span><span>+55</span><span title="Brazil">Brazil</span><span>UTC-5 to -2</span></div>
+                    <div class="demo-country-row" role="row"><span>25</span><span>+673</span><span title="Brunei">Brunei</span><span>UTC+8</span></div>
+                    <div class="demo-country-row" role="row"><span>26</span><span>+359</span><span title="Bulgaria">Bulgaria</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>27</span><span>+226</span><span title="Burkina Faso">Burkina Faso</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>28</span><span>+257</span><span title="Burundi">Burundi</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>29</span><span>+238</span><span title="Cabo Verde">Cabo Verde</span><span>UTC-1</span></div>
+                    <div class="demo-country-row" role="row"><span>30</span><span>+855</span><span title="Cambodia">Cambodia</span><span>UTC+7</span></div>
+                    <div class="demo-country-row" role="row"><span>31</span><span>+237</span><span title="Cameroon">Cameroon</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>32</span><span>+1</span><span title="Canada">Canada</span><span>UTC-8 to -3:30</span></div>
+                    <div class="demo-country-row" role="row"><span>33</span><span>+236</span><span title="Central African Republic">Central African Republic</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>34</span><span>+235</span><span title="Chad">Chad</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>35</span><span>+56</span><span title="Chile">Chile</span><span>UTC-6 to -3</span></div>
+                    <div class="demo-country-row" role="row"><span>36</span><span>+86</span><span title="China">China</span><span>UTC+8</span></div>
+                    <div class="demo-country-row" role="row"><span>37</span><span>+57</span><span title="Colombia">Colombia</span><span>UTC-5</span></div>
+                    <div class="demo-country-row" role="row"><span>38</span><span>+269</span><span title="Comoros">Comoros</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>39</span><span>+242</span><span title="Congo (Brazzaville)">Congo (Brazzaville)</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>40</span><span>+243</span><span title="Congo (Kinshasa)">Congo (Kinshasa)</span><span>UTC+1 to +2</span></div>
+                    <div class="demo-country-row" role="row"><span>41</span><span>+506</span><span title="Costa Rica">Costa Rica</span><span>UTC-6</span></div>
+                    <div class="demo-country-row" role="row"><span>42</span><span>+225</span><span title="Cote d&#x27;Ivoire">Cote d&#x27;Ivoire</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>43</span><span>+385</span><span title="Croatia">Croatia</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>44</span><span>+53</span><span title="Cuba">Cuba</span><span>UTC-5</span></div>
+                    <div class="demo-country-row" role="row"><span>45</span><span>+357</span><span title="Cyprus">Cyprus</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>46</span><span>+420</span><span title="Czech Republic">Czech Republic</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>47</span><span>+45</span><span title="Denmark">Denmark</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>48</span><span>+253</span><span title="Djibouti">Djibouti</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>49</span><span>+1-767</span><span title="Dominica">Dominica</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>50</span><span>+1-809</span><span title="Dominican Republic">Dominican Republic</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>51</span><span>+593</span><span title="Ecuador">Ecuador</span><span>UTC-6 to -5</span></div>
+                    <div class="demo-country-row" role="row"><span>52</span><span>+20</span><span title="Egypt">Egypt</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>53</span><span>+503</span><span title="El Salvador">El Salvador</span><span>UTC-6</span></div>
+                    <div class="demo-country-row" role="row"><span>54</span><span>+240</span><span title="Equatorial Guinea">Equatorial Guinea</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>55</span><span>+291</span><span title="Eritrea">Eritrea</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>56</span><span>+372</span><span title="Estonia">Estonia</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>57</span><span>+268</span><span title="Eswatini">Eswatini</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>58</span><span>+251</span><span title="Ethiopia">Ethiopia</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>59</span><span>+679</span><span title="Fiji">Fiji</span><span>UTC+12</span></div>
+                    <div class="demo-country-row" role="row"><span>60</span><span>+358</span><span title="Finland">Finland</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>61</span><span>+33</span><span title="France">France</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>62</span><span>+241</span><span title="Gabon">Gabon</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>63</span><span>+220</span><span title="Gambia">Gambia</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>64</span><span>+995</span><span title="Georgia">Georgia</span><span>UTC+4</span></div>
+                    <div class="demo-country-row" role="row"><span>65</span><span>+49</span><span title="Germany">Germany</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>66</span><span>+233</span><span title="Ghana">Ghana</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>67</span><span>+30</span><span title="Greece">Greece</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>68</span><span>+1-473</span><span title="Grenada">Grenada</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>69</span><span>+502</span><span title="Guatemala">Guatemala</span><span>UTC-6</span></div>
+                    <div class="demo-country-row" role="row"><span>70</span><span>+224</span><span title="Guinea">Guinea</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>71</span><span>+245</span><span title="Guinea-Bissau">Guinea-Bissau</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>72</span><span>+592</span><span title="Guyana">Guyana</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>73</span><span>+509</span><span title="Haiti">Haiti</span><span>UTC-5</span></div>
+                    <div class="demo-country-row" role="row"><span>74</span><span>+504</span><span title="Honduras">Honduras</span><span>UTC-6</span></div>
+                    <div class="demo-country-row" role="row"><span>75</span><span>+36</span><span title="Hungary">Hungary</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>76</span><span>+354</span><span title="Iceland">Iceland</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>77</span><span>+91</span><span title="India">India</span><span>UTC+5:30</span></div>
+                    <div class="demo-country-row" role="row"><span>78</span><span>+62</span><span title="Indonesia">Indonesia</span><span>UTC+7 to +9</span></div>
+                    <div class="demo-country-row" role="row"><span>79</span><span>+98</span><span title="Iran">Iran</span><span>UTC+3:30</span></div>
+                    <div class="demo-country-row" role="row"><span>80</span><span>+964</span><span title="Iraq">Iraq</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>81</span><span>+353</span><span title="Ireland">Ireland</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>82</span><span>+972</span><span title="Israel">Israel</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>83</span><span>+39</span><span title="Italy">Italy</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>84</span><span>+1-876</span><span title="Jamaica">Jamaica</span><span>UTC-5</span></div>
+                    <div class="demo-country-row" role="row"><span>85</span><span>+81</span><span title="Japan">Japan</span><span>UTC+9</span></div>
+                    <div class="demo-country-row" role="row"><span>86</span><span>+962</span><span title="Jordan">Jordan</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>87</span><span>+7</span><span title="Kazakhstan">Kazakhstan</span><span>UTC+5</span></div>
+                    <div class="demo-country-row" role="row"><span>88</span><span>+254</span><span title="Kenya">Kenya</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>89</span><span>+686</span><span title="Kiribati">Kiribati</span><span>UTC+12 to +14</span></div>
+                    <div class="demo-country-row" role="row"><span>90</span><span>+965</span><span title="Kuwait">Kuwait</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>91</span><span>+996</span><span title="Kyrgyzstan">Kyrgyzstan</span><span>UTC+6</span></div>
+                    <div class="demo-country-row" role="row"><span>92</span><span>+856</span><span title="Laos">Laos</span><span>UTC+7</span></div>
+                    <div class="demo-country-row" role="row"><span>93</span><span>+371</span><span title="Latvia">Latvia</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>94</span><span>+961</span><span title="Lebanon">Lebanon</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>95</span><span>+266</span><span title="Lesotho">Lesotho</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>96</span><span>+231</span><span title="Liberia">Liberia</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>97</span><span>+218</span><span title="Libya">Libya</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>98</span><span>+423</span><span title="Liechtenstein">Liechtenstein</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>99</span><span>+370</span><span title="Lithuania">Lithuania</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>100</span><span>+352</span><span title="Luxembourg">Luxembourg</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>101</span><span>+261</span><span title="Madagascar">Madagascar</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>102</span><span>+265</span><span title="Malawi">Malawi</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>103</span><span>+60</span><span title="Malaysia">Malaysia</span><span>UTC+8</span></div>
+                    <div class="demo-country-row" role="row"><span>104</span><span>+960</span><span title="Maldives">Maldives</span><span>UTC+5</span></div>
+                    <div class="demo-country-row" role="row"><span>105</span><span>+223</span><span title="Mali">Mali</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>106</span><span>+356</span><span title="Malta">Malta</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>107</span><span>+692</span><span title="Marshall Islands">Marshall Islands</span><span>UTC+12</span></div>
+                    <div class="demo-country-row" role="row"><span>108</span><span>+222</span><span title="Mauritania">Mauritania</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>109</span><span>+230</span><span title="Mauritius">Mauritius</span><span>UTC+4</span></div>
+                    <div class="demo-country-row" role="row"><span>110</span><span>+52</span><span title="Mexico">Mexico</span><span>UTC-8 to -5</span></div>
+                    <div class="demo-country-row" role="row"><span>111</span><span>+691</span><span title="Micronesia">Micronesia</span><span>UTC+10 to +11</span></div>
+                    <div class="demo-country-row" role="row"><span>112</span><span>+373</span><span title="Moldova">Moldova</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>113</span><span>+377</span><span title="Monaco">Monaco</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>114</span><span>+976</span><span title="Mongolia">Mongolia</span><span>UTC+8</span></div>
+                    <div class="demo-country-row" role="row"><span>115</span><span>+382</span><span title="Montenegro">Montenegro</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>116</span><span>+212</span><span title="Morocco">Morocco</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>117</span><span>+258</span><span title="Mozambique">Mozambique</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>118</span><span>+95</span><span title="Myanmar">Myanmar</span><span>UTC+6:30</span></div>
+                    <div class="demo-country-row" role="row"><span>119</span><span>+264</span><span title="Namibia">Namibia</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>120</span><span>+674</span><span title="Nauru">Nauru</span><span>UTC+12</span></div>
+                    <div class="demo-country-row" role="row"><span>121</span><span>+977</span><span title="Nepal">Nepal</span><span>UTC+5:45</span></div>
+                    <div class="demo-country-row" role="row"><span>122</span><span>+31</span><span title="Netherlands">Netherlands</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>123</span><span>+64</span><span title="New Zealand">New Zealand</span><span>UTC+12 to +13</span></div>
+                    <div class="demo-country-row" role="row"><span>124</span><span>+505</span><span title="Nicaragua">Nicaragua</span><span>UTC-6</span></div>
+                    <div class="demo-country-row" role="row"><span>125</span><span>+227</span><span title="Niger">Niger</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>126</span><span>+234</span><span title="Nigeria">Nigeria</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>127</span><span>+850</span><span title="North Korea">North Korea</span><span>UTC+9</span></div>
+                    <div class="demo-country-row" role="row"><span>128</span><span>+389</span><span title="North Macedonia">North Macedonia</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>129</span><span>+47</span><span title="Norway">Norway</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>130</span><span>+968</span><span title="Oman">Oman</span><span>UTC+4</span></div>
+                    <div class="demo-country-row" role="row"><span>131</span><span>+92</span><span title="Pakistan">Pakistan</span><span>UTC+5</span></div>
+                    <div class="demo-country-row" role="row"><span>132</span><span>+680</span><span title="Palau">Palau</span><span>UTC+9</span></div>
+                    <div class="demo-country-row" role="row"><span>133</span><span>+970</span><span title="Palestine">Palestine</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>134</span><span>+507</span><span title="Panama">Panama</span><span>UTC-5</span></div>
+                    <div class="demo-country-row" role="row"><span>135</span><span>+675</span><span title="Papua New Guinea">Papua New Guinea</span><span>UTC+10 to +11</span></div>
+                    <div class="demo-country-row" role="row"><span>136</span><span>+595</span><span title="Paraguay">Paraguay</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>137</span><span>+51</span><span title="Peru">Peru</span><span>UTC-5</span></div>
+                    <div class="demo-country-row" role="row"><span>138</span><span>+63</span><span title="Philippines">Philippines</span><span>UTC+8</span></div>
+                    <div class="demo-country-row" role="row"><span>139</span><span>+48</span><span title="Poland">Poland</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>140</span><span>+351</span><span title="Portugal">Portugal</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>141</span><span>+974</span><span title="Qatar">Qatar</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>142</span><span>+40</span><span title="Romania">Romania</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>143</span><span>+7</span><span title="Russia">Russia</span><span>UTC+2 to +12</span></div>
+                    <div class="demo-country-row" role="row"><span>144</span><span>+250</span><span title="Rwanda">Rwanda</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>145</span><span>+1-869</span><span title="Saint Kitts and Nevis">Saint Kitts and Nevis</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>146</span><span>+1-758</span><span title="Saint Lucia">Saint Lucia</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>147</span><span>+1-784</span><span title="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>148</span><span>+685</span><span title="Samoa">Samoa</span><span>UTC+13</span></div>
+                    <div class="demo-country-row" role="row"><span>149</span><span>+378</span><span title="San Marino">San Marino</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>150</span><span>+239</span><span title="Sao Tome and Principe">Sao Tome and Principe</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>151</span><span>+966</span><span title="Saudi Arabia">Saudi Arabia</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>152</span><span>+221</span><span title="Senegal">Senegal</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>153</span><span>+381</span><span title="Serbia">Serbia</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>154</span><span>+248</span><span title="Seychelles">Seychelles</span><span>UTC+4</span></div>
+                    <div class="demo-country-row" role="row"><span>155</span><span>+232</span><span title="Sierra Leone">Sierra Leone</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>156</span><span>+65</span><span title="Singapore">Singapore</span><span>UTC+8</span></div>
+                    <div class="demo-country-row" role="row"><span>157</span><span>+421</span><span title="Slovakia">Slovakia</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>158</span><span>+386</span><span title="Slovenia">Slovenia</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>159</span><span>+677</span><span title="Solomon Islands">Solomon Islands</span><span>UTC+11</span></div>
+                    <div class="demo-country-row" role="row"><span>160</span><span>+252</span><span title="Somalia">Somalia</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>161</span><span>+27</span><span title="South Africa">South Africa</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>162</span><span>+82</span><span title="South Korea">South Korea</span><span>UTC+9</span></div>
+                    <div class="demo-country-row" role="row"><span>163</span><span>+211</span><span title="South Sudan">South Sudan</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>164</span><span>+34</span><span title="Spain">Spain</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>165</span><span>+94</span><span title="Sri Lanka">Sri Lanka</span><span>UTC+5:30</span></div>
+                    <div class="demo-country-row" role="row"><span>166</span><span>+249</span><span title="Sudan">Sudan</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>167</span><span>+597</span><span title="Suriname">Suriname</span><span>UTC-3</span></div>
+                    <div class="demo-country-row" role="row"><span>168</span><span>+46</span><span title="Sweden">Sweden</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>169</span><span>+41</span><span title="Switzerland">Switzerland</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>170</span><span>+963</span><span title="Syria">Syria</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>171</span><span>+992</span><span title="Tajikistan">Tajikistan</span><span>UTC+5</span></div>
+                    <div class="demo-country-row" role="row"><span>172</span><span>+255</span><span title="Tanzania">Tanzania</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>173</span><span>+66</span><span title="Thailand">Thailand</span><span>UTC+7</span></div>
+                    <div class="demo-country-row" role="row"><span>174</span><span>+670</span><span title="Timor-Leste">Timor-Leste</span><span>UTC+9</span></div>
+                    <div class="demo-country-row" role="row"><span>175</span><span>+228</span><span title="Togo">Togo</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>176</span><span>+676</span><span title="Tonga">Tonga</span><span>UTC+13</span></div>
+                    <div class="demo-country-row" role="row"><span>177</span><span>+1-868</span><span title="Trinidad and Tobago">Trinidad and Tobago</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>178</span><span>+216</span><span title="Tunisia">Tunisia</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>179</span><span>+90</span><span title="Türkiye">Türkiye</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>180</span><span>+993</span><span title="Turkmenistan">Turkmenistan</span><span>UTC+5</span></div>
+                    <div class="demo-country-row" role="row"><span>181</span><span>+688</span><span title="Tuvalu">Tuvalu</span><span>UTC+12</span></div>
+                    <div class="demo-country-row" role="row"><span>182</span><span>+256</span><span title="Uganda">Uganda</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>183</span><span>+380</span><span title="Ukraine">Ukraine</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>184</span><span>+971</span><span title="United Arab Emirates">United Arab Emirates</span><span>UTC+4</span></div>
+                    <div class="demo-country-row" role="row"><span>185</span><span>+44</span><span title="United Kingdom">United Kingdom</span><span>UTC+0</span></div>
+                    <div class="demo-country-row" role="row"><span>186</span><span>+1</span><span title="United States">United States</span><span>UTC-5 to -10</span></div>
+                    <div class="demo-country-row" role="row"><span>187</span><span>+598</span><span title="Uruguay">Uruguay</span><span>UTC-3</span></div>
+                    <div class="demo-country-row" role="row"><span>188</span><span>+998</span><span title="Uzbekistan">Uzbekistan</span><span>UTC+5</span></div>
+                    <div class="demo-country-row" role="row"><span>189</span><span>+678</span><span title="Vanuatu">Vanuatu</span><span>UTC+11</span></div>
+                    <div class="demo-country-row" role="row"><span>190</span><span>+379</span><span title="Vatican City">Vatican City</span><span>UTC+1</span></div>
+                    <div class="demo-country-row" role="row"><span>191</span><span>+58</span><span title="Venezuela">Venezuela</span><span>UTC-4</span></div>
+                    <div class="demo-country-row" role="row"><span>192</span><span>+84</span><span title="Vietnam">Vietnam</span><span>UTC+7</span></div>
+                    <div class="demo-country-row" role="row"><span>193</span><span>+967</span><span title="Yemen">Yemen</span><span>UTC+3</span></div>
+                    <div class="demo-country-row" role="row"><span>194</span><span>+260</span><span title="Zambia">Zambia</span><span>UTC+2</span></div>
+                    <div class="demo-country-row" role="row"><span>195</span><span>+263</span><span title="Zimbabwe">Zimbabwe</span><span>UTC+2</span></div>
+                  </div>
                 </div>
-                <div class="k-card__footer">
-                  <button type="button" class="k-btn k-btn--sm k-btn--primary k-btn--block">Launch Feature</button>
+                <div class="k-card__footer k-flex k-justify-between k-items-center">
+                  <span class="k-fs-xs k-text-muted">Scroll list to view all 195</span>
+                  <span class="k-badge k-badge--pill">All current</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-cards"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Compose cards from header, body, and footer regions. Add <code>.k-card--bordered</code> for a defined surface or <code>.k-card--interactive</code> for clickable content.</p><pre class="demo-code"><code>&lt;article class="k-card k-card--bordered"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-cards"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Compose cards from header, title, body, and footer regions. Add <code>.k-card--bordered</code> for a defined surface.</p><pre class="demo-code"><code>&lt;article class="k-card k-card--bordered"&gt;
   &lt;div class="k-card__header"&gt;Account&lt;/div&gt;
   &lt;div class="k-card__body"&gt;Plan details&lt;/div&gt;
   &lt;div class="k-card__footer"&gt;Updated today&lt;/div&gt;

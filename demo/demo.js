@@ -277,7 +277,16 @@
     var confirmModalBtn = document.getElementById('demo-confirm-modal');
     var backdrop = document.getElementById('demo-modal-backdrop');
 
-    function openModal() { if (modal) modal.classList.add('is-open'); renderKauiIcons(); }
+    function blurTrigger(element) {
+      var target = element || (document.activeElement && document.activeElement.tagName === 'BUTTON' ? document.activeElement : null);
+      if (target && typeof target.blur === 'function') target.blur();
+    }
+
+    function openModal() {
+      blurTrigger(openModalBtn);
+      if (modal) modal.classList.add('is-open');
+      renderKauiIcons();
+    }
     function isModalStatic() {
       return !modal || modal.getAttribute('data-k-backdrop') !== 'true';
     }
@@ -309,6 +318,40 @@
       }
     });
 
+
+    // Long-content countries modal demo.
+    var countriesModal = document.getElementById('demo-countries-modal');
+    var countriesOpenBtn = document.getElementById('demo-open-countries');
+    var countriesCloseBtn = document.getElementById('demo-close-countries');
+    var countriesCancelBtn = document.getElementById('demo-cancel-countries');
+    var countriesBackdrop = document.getElementById('demo-countries-backdrop');
+    var countriesBody = document.getElementById('demo-countries-body');
+    if (countriesBody && typeof demoCountries !== 'undefined') {
+      countriesBody.innerHTML = demoCountries.map(function (country, index) {
+        return '<tr><td data-k-sort-value="' + (index + 1) + '">' + (index + 1) + '</td><td>' + country[1] + '</td><td>' + country[2] + '</td><td><code>' + country[3] + '</code></td></tr>';
+      }).join('');
+    }
+    function openCountriesModal() {
+      blurTrigger(countriesOpenBtn);
+      if (countriesModal) countriesModal.classList.add('is-open');
+      renderKauiIcons();
+    }
+    function closeCountriesModal() {
+      if (countriesModal) countriesModal.classList.remove('is-open');
+    }
+    if (countriesOpenBtn) countriesOpenBtn.addEventListener('click', openCountriesModal);
+    if (countriesCloseBtn) countriesCloseBtn.addEventListener('click', closeCountriesModal);
+    if (countriesCancelBtn) countriesCancelBtn.addEventListener('click', closeCountriesModal);
+    if (countriesBackdrop) countriesBackdrop.addEventListener('click', function () {
+      if (countriesModal && countriesModal.getAttribute('data-k-backdrop') === 'true') closeCountriesModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && countriesModal && countriesModal.classList.contains('is-open')) {
+        e.preventDefault();
+        closeCountriesModal();
+      }
+    });
+
     var confirmDialog = document.getElementById('demo-confirm');
     var confirmDanger = document.getElementById('demo-confirm-danger');
     var confirmWarning = document.getElementById('demo-confirm-warning');
@@ -322,6 +365,7 @@
         return dialog.getAttribute('data-k-backdrop') !== 'true';
       }
       function open() {
+        blurTrigger(openBtn);
         dialog.classList.add('is-open');
         renderKauiIcons();
       }
@@ -572,12 +616,96 @@
     var navMenu = document.querySelector('.k-navbar__menu');
 
     if (navToggle && navMenu) {
+      function adjustItemPlacement(item) {
+        if (window.innerWidth < 768) return;
+        var submenu = item.querySelector(':scope > .k-navbar__submenu');
+        if (!submenu) return;
+        var isRootItem = item.parentElement && item.parentElement.classList.contains('k-navbar__nav');
+        var parentRect = item.getBoundingClientRect();
+        var menuRect = submenu.getBoundingClientRect();
+        var menuWidth = menuRect.width || 192;
+        var viewportPadding = 12;
+
+        // Vertical adjustment
+        var spaceBelow = window.innerHeight - parentRect.bottom;
+        var spaceAbove = parentRect.top;
+        if (menuRect.bottom > window.innerHeight - viewportPadding && spaceAbove > spaceBelow) {
+          item.classList.add('is-dropup');
+        } else {
+          item.classList.remove('is-dropup');
+        }
+
+        // Horizontal adjustment for nested submenus:
+        // Enforce a strict single-direction cascade. Once a branch direction is determined,
+        // all child submenus open consistently in that same direction (nearest side).
+        if (!isRootItem) {
+          var parentSubmenuItem = item.parentElement ? item.parentElement.closest('.k-navbar__item--has-children') : null;
+          var parentIsDropstart = parentSubmenuItem && parentSubmenuItem.classList.contains('is-dropstart');
+
+          if (parentIsDropstart) {
+            // Inherit the leftward direction strictly from ancestor
+            item.classList.add('is-dropstart');
+          } else {
+            // Find root parent item in navbar
+            var rootParent = item.closest('.k-navbar__nav > .k-navbar__item--has-children');
+            var rootRect = rootParent ? rootParent.getBoundingClientRect() : parentRect;
+            var spaceOnRight = window.innerWidth - parentRect.right;
+            var spaceOnLeft = parentRect.left;
+
+            // If not enough room on the right, or root is located on the right half of the screen
+            var shouldOpenLeft = (spaceOnRight < menuWidth + viewportPadding) ||
+                                 (rootRect.left + rootRect.width / 2 > window.innerWidth / 2 && spaceOnLeft > spaceOnRight);
+
+            if (shouldOpenLeft) {
+              item.classList.add('is-dropstart');
+            } else {
+              item.classList.remove('is-dropstart');
+            }
+          }
+        }
+      }
+
+      function positionNavbarSubmenus() {
+        if (window.innerWidth < 768) return;
+        navMenu.querySelectorAll('.k-navbar__item--has-children.is-open').forEach(function (item) {
+          adjustItemPlacement(item);
+        });
+      }
+
+      function refreshNavbarSubmenus() {
+        window.requestAnimationFrame(positionNavbarSubmenus);
+      }
+
+      function openItem(item) {
+        item.classList.add('is-open');
+        var btn = item.querySelector(':scope > .k-navbar__link[aria-expanded]');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+        adjustItemPlacement(item);
+      }
+
+      function closeItem(item) {
+        item.classList.remove('is-open', 'is-dropup', 'is-dropstart');
+        var btn = item.querySelector(':scope > .k-navbar__link[aria-expanded]');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        closeChildBranches(item);
+      }
+
+      function closeChildBranches(container) {
+        if (!container) return;
+        container.querySelectorAll('.k-navbar__item--has-children').forEach(function (child) {
+          child.classList.remove('is-open', 'is-dropup', 'is-dropstart');
+          var childBtn = child.querySelector(':scope > .k-navbar__link[aria-expanded]');
+          if (childBtn) childBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+
       navToggle.addEventListener('click', function () {
         var isOpen = navMenu.classList.toggle('is-open');
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (!isOpen) closeChildBranches(navMenu);
       });
 
-      // Close mobile menu when clicking links, and support Bootstrap-style click dropdowns.
+      // Pure Click-driven navigation: opening submenus requires clicking
       var navLinks = navMenu.querySelectorAll('.k-navbar__link');
       navLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
@@ -585,45 +713,54 @@
           var dropdownItem = parent && parent.classList.contains('k-navbar__item--has-children');
           if (dropdownItem && link.tagName === 'BUTTON') {
             event.preventDefault();
-            var siblingItems = parent.parentElement ? parent.parentElement.children : [];
-            Array.prototype.forEach.call(siblingItems, function (sibling) {
-              if (sibling !== parent && sibling.classList && sibling.classList.contains('k-navbar__item--has-children')) {
-                sibling.classList.remove('is-open');
-                var siblingButton = sibling.querySelector(':scope > .k-navbar__link[aria-expanded]');
-                if (siblingButton) siblingButton.setAttribute('aria-expanded', 'false');
-              }
-            });
-            var isOpen = parent.classList.toggle('is-open');
-            link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            var isCurrentlyOpen = parent.classList.contains('is-open');
+            if (isCurrentlyOpen) {
+              closeItem(parent);
+            } else {
+              // Close sibling branches at the same depth, then open this branch
+              var siblingItems = parent.parentElement ? parent.parentElement.children : [];
+              Array.prototype.forEach.call(siblingItems, function (sibling) {
+                if (sibling !== parent && sibling.classList && sibling.classList.contains('k-navbar__item--has-children')) {
+                  closeItem(sibling);
+                }
+              });
+              openItem(parent);
+            }
+            refreshNavbarSubmenus();
             return;
           }
           navMenu.classList.remove('is-open');
           navToggle.setAttribute('aria-expanded', 'false');
+          closeChildBranches(navMenu);
         });
       });
 
       function closeNavbarMenus() {
         navMenu.classList.remove('is-open');
         navToggle.setAttribute('aria-expanded', 'false');
-        navMenu.querySelectorAll('.k-navbar__item--has-children.is-open').forEach(function (item) {
-          item.classList.remove('is-open');
-          var button = item.querySelector(':scope > .k-navbar__link[aria-expanded]');
-          if (button) button.setAttribute('aria-expanded', 'false');
-        });
+        closeChildBranches(navMenu);
       }
 
+      window.addEventListener('resize', refreshNavbarSubmenus);
+      window.addEventListener('scroll', refreshNavbarSubmenus, true);
       document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') closeNavbarMenus();
       });
-
-      // Close mobile menu when clicking outside toggle and menu.
+      // Outside click closes all open navbar menus and mobile drawer
       document.addEventListener('click', function (event) {
-        if (!navMenu.classList.contains('is-open')) return;
         var target = event.target;
         if (!target) return;
+        var hasOpenChildren = Boolean(navMenu.querySelector('.k-navbar__item--has-children.is-open'));
+        var isMobileMenuOpen = navMenu.classList.contains('is-open');
+        if (!hasOpenChildren && !isMobileMenuOpen) return;
+
         var clickedInsideToggle = navToggle === target || (typeof navToggle.contains === 'function' && navToggle.contains(target));
-        var clickedInsideMenu = navMenu === target || (typeof navMenu.contains === 'function' && navMenu.contains(target));
-        if (!clickedInsideToggle && !clickedInsideMenu) closeNavbarMenus();
+        var clickedInsideNavbar = (typeof navMenu.contains === 'function' && navMenu.contains(target));
+
+        // If clicked completely outside the menu and toggle, dismiss all menus
+        if (!clickedInsideToggle && !clickedInsideNavbar) {
+          closeNavbarMenus();
+        }
       });
     }
 
@@ -799,13 +936,128 @@
         var table = root.matches('table') ? root : root.querySelector('table');
         var tbody = table && table.tBodies && table.tBodies[0];
         if (!table || !tbody) return;
-        var rows = Array.prototype.filter.call(tbody.rows, function (row) {
-          return !row.hasAttribute('data-k-table-no-results');
-        });
+        var rows = Array.prototype.filter.call(tbody.rows, function (row) { return !row.hasAttribute('data-k-table-no-results'); });
         var empty = tbody.querySelector('[data-k-table-no-results]');
         var search = root.querySelector('[data-k-table-search]');
         var freeze = Number(root.getAttribute('data-k-freeze'));
         if (Number.isInteger(freeze) && freeze > 0) table.classList.add('k-table--frozen-1');
+        function applyFrozenColumns() {
+          var freezeLeft = [];
+          var freezeRight = [];
+          var freezeColsAttr = root.getAttribute('data-k-freeze-columns');
+          if (freezeColsAttr) {
+            freezeColsAttr.split(',').forEach(function (token) {
+              token = token.trim();
+              if (!token) return;
+              if (token.indexOf('left:') === 0) freezeLeft.push(Number(token.replace('left:', '')));
+              else if (token.indexOf('right:') === 0) freezeRight.push(Number(token.replace('right:', '')));
+              else if (token === 'last') {
+                var headerCells = table.tHead && table.tHead.rows[0] ? table.tHead.rows[0].cells : null;
+                if (headerCells) freezeRight.push(headerCells.length - 1);
+              } else {
+                var idx = Number(token);
+                if (Number.isInteger(idx)) freezeLeft.push(idx);
+              }
+            });
+          }
+          if (table.tHead && table.tHead.rows[0]) {
+            Array.prototype.forEach.call(table.tHead.rows[0].cells, function (cell, idx) {
+              var dir = cell.getAttribute('data-k-freeze');
+              if (dir === 'left' && freezeLeft.indexOf(idx) === -1) freezeLeft.push(idx);
+              if (dir === 'right' && freezeRight.indexOf(idx) === -1) freezeRight.push(idx);
+            });
+          }
+          if (!freezeLeft.length && !freezeRight.length) return;
+          var headRow = table.tHead && table.tHead.rows[0];
+          var leftOffsets = {};
+          var currentLeft = 0;
+          freezeLeft.sort(function (a, b) { return a - b; }).forEach(function (colIdx) {
+            leftOffsets[colIdx] = currentLeft;
+            var cell = headRow && headRow.cells[colIdx];
+            currentLeft += cell ? cell.offsetWidth : 120;
+          });
+          var rightOffsets = {};
+          var currentRight = 0;
+          freezeRight.sort(function (a, b) { return b - a; }).forEach(function (colIdx) {
+            rightOffsets[colIdx] = currentRight;
+            var cell = headRow && headRow.cells[colIdx];
+            currentRight += cell ? cell.offsetWidth : 120;
+          });
+          var lastLeftCol = freezeLeft.length ? freezeLeft[freezeLeft.length - 1] : null;
+          // freezeRight was sorted descending: index 0 has the smallest column index which borders the center content
+          var firstRightCol = freezeRight.length ? freezeRight[0] : null;
+          function tagRow(row) {
+            if (!row) return;
+            freezeLeft.forEach(function (colIdx) {
+              var cell = row.cells[colIdx];
+              if (!cell) return;
+              cell.classList.add('k-table__cell--frozen-left');
+              if (colIdx === lastLeftCol) cell.classList.add('k-table__cell--frozen-left-last');
+              cell.style.setProperty('--k-table-freeze-left', leftOffsets[colIdx] + 'px');
+            });
+            freezeRight.forEach(function (colIdx) {
+              var cell = row.cells[colIdx];
+              if (!cell) return;
+              cell.classList.add('k-table__cell--frozen-right');
+              if (colIdx === firstRightCol) cell.classList.add('k-table__cell--frozen-right-first');
+              cell.style.setProperty('--k-table-freeze-right', rightOffsets[colIdx] + 'px');
+            });
+          }
+
+          if (headRow) tagRow(headRow);
+          Array.prototype.forEach.call(tbody.rows, tagRow);
+          if (table.tFoot && table.tFoot.rows[0]) tagRow(table.tFoot.rows[0]);
+          var wrap = root.matches('.k-table-wrap') ? root : root.closest('.k-table-wrap');
+          if (wrap) {
+            wrap.style.setProperty('--k-table-scroll-inset-left', currentLeft + 'px');
+            wrap.style.setProperty('--k-table-scroll-inset-right', currentRight + 'px');
+            wrap.style.setProperty('--k-table-freeze-bg', 'var(--k-table-bg, var(--k-color-surface))');
+          }
+        }
+        applyFrozenColumns();
+
+        function markVisualCells() {
+          rows.forEach(function (row) {
+            ['.k-table__avatar', '.k-table__image', '.k-table__chart'].forEach(function (selector) {
+              row.querySelectorAll(selector).forEach(function (element) {
+                var cell = element.closest('td, th');
+                if (cell && (cell.children.length === 1 && !cell.textContent.trim())) {
+                  cell.classList.add('k-table__visual');
+                }
+              });
+            });
+          });
+        }
+        markVisualCells();
+        function updateSums() {
+          var sumColumns = (root.getAttribute('data-k-sum-columns') || '').split(',').map(function (value) { return value.trim(); }).filter(Boolean).map(Number).filter(function (index) { return Number.isInteger(index) && index >= 0; });
+          if (!sumColumns.length) return;
+          sumColumns.forEach(function (index) {
+            var header = table.tHead && table.tHead.rows[0] && table.tHead.rows[0].cells[index];
+            if (header) header.classList.add('k-table__numeric');
+            rows.forEach(function (row) { if (row.cells[index]) row.cells[index].classList.add('k-table__numeric'); });
+          });
+          var footer = table.tFoot || table.createTFoot(); footer.className = 'k-table__footer';
+          var footerRow = footer.rows[0] || footer.insertRow(); var count = table.tHead.rows[0].cells.length;
+          while (footerRow.cells.length < count) footerRow.insertCell();
+          Array.prototype.forEach.call(footerRow.cells, function (cell) { cell.textContent = ''; cell.className = ''; });
+          if (footerRow.cells[0]) { footerRow.cells[0].textContent = 'Total'; footerRow.cells[0].className = 'k-table__sum-label'; }
+          sumColumns.forEach(function (index) {
+            var total = rows.reduce(function (sum, row) {
+              if (row.hidden) return sum;
+              var cell = row.cells[index];
+              var value = cell && (cell.getAttribute('data-k-sum-value') || cell.textContent || '');
+              var number = Number(String(value).replace(/[^0-9.-]/g, ''));
+              return Number.isFinite(number) ? sum + number : sum;
+            }, 0);
+            if (footerRow.cells[index]) {
+              footerRow.cells[index].textContent = '$' + total.toLocaleString();
+              footerRow.cells[index].classList.add('k-table__numeric');
+            }
+          });
+
+        }
+
 
         if (root.getAttribute('data-k-searchable') === 'true' && search) {
           search.addEventListener('input', function () {
@@ -817,10 +1069,11 @@
               if (!row.hidden) visible += 1;
             });
             if (empty) empty.hidden = visible !== 0;
+            updateSums();
           });
         }
 
-        if (root.getAttribute('data-k-sortable') !== 'true') return;
+        if (root.getAttribute('data-k-sortable') !== 'true') { updateSums(); return; }
         var columns = (root.getAttribute('data-k-sort-columns') || '').split(',').map(Number).filter(function (index) {
           return Number.isInteger(index) && index >= 0;
         });
@@ -858,11 +1111,45 @@
               return nextDescending ? -result : result;
             }).forEach(function (row) { tbody.appendChild(row); });
             if (empty) tbody.appendChild(empty);
+            applyFrozenColumns();
+            updateSums();
             renderKauiIcons();
           });
         });
+        root.querySelectorAll('[data-k-table-select-all]').forEach(function (selectAll) {
+          selectAll.addEventListener('change', function () {
+            rows.forEach(function (row) { if (!row.hidden) row.querySelectorAll('input[type="checkbox"]').forEach(function (input) { input.checked = selectAll.checked; }); });
+          });
+        });
+        updateSums();
         renderKauiIcons();
       });
+
+      function syncFrozenContainerRowHeights() {
+        document.querySelectorAll('.k-table-frozen-container').forEach(function (container) {
+          var tables = container.querySelectorAll('.k-table');
+          if (tables.length < 2) return;
+          var headRows = Array.prototype.map.call(tables, function (t) { return t.tHead && t.tHead.rows[0]; }).filter(Boolean);
+          if (headRows.length > 1) {
+            var maxHeadH = Math.max.apply(null, headRows.map(function (r) { return r.offsetHeight; }));
+            headRows.forEach(function (r) { r.style.height = maxHeadH + 'px'; });
+          }
+          var bodyCount = (tables[0].tBodies && tables[0].tBodies[0] && tables[0].tBodies[0].rows.length) || 0;
+          for (var i = 0; i < bodyCount; i++) {
+            var rowGroup = [];
+            for (var t = 0; t < tables.length; t++) {
+              var b = tables[t].tBodies && tables[t].tBodies[0];
+              if (b && b.rows[i]) rowGroup.push(b.rows[i]);
+            }
+            if (rowGroup.length > 1) {
+              var maxH = Math.max.apply(null, rowGroup.map(function (r) { return r.offsetHeight; }));
+              rowGroup.forEach(function (r) { r.style.height = maxH + 'px'; });
+            }
+          }
+        });
+      }
+      syncFrozenContainerRowHeights();
+      window.addEventListener('resize', syncFrozenContainerRowHeights);
     }
     initDataTables();
 
@@ -871,7 +1158,7 @@
     var latestManifestUrl = 'https://longbm64.github.io/kaui/dist/versions/{latest}/kaui-agent-manifest.json';
     // Component HTML copy actions
     var componentSnippets = {
-      'agent-prompt': 'You are a frontend or Flutter developer building modern UI with the KAUI design system.\\n\\nMANDATORY FIRST STEP: Use the official KAUI package for the target platform. Do not recreate KAUI components, tokens, or styles manually.\\n\\n1. For Web, React, Next.js, or Vite, install `filekat` with `npm install filekat`, then import `filekat/kaui` once in the application entrypoint (for Next.js, `app/layout.tsx`).\\n2. For Flutter, add `filekat: ^1.1.0` with `flutter pub add filekat`, then import `package:filekat/kaui.dart`.\\n3. Read the latest release from https://longbm64.github.io/kaui/dist/versions/index.json.\\n4. Take the `latest` value and construct the manifest URL: https://longbm64.github.io/kaui/dist/versions/<latest>/kaui-agent-manifest.json.\\n5. Read that manifest and inspect the live examples at https://longbm64.github.io/kaui/demo.\\n6. Reuse the closest documented KAUI markup, widget, token, and contract. Custom CSS or custom widget recreation is forbidden unless the manifest explicitly documents the requirement as unsupported.\\n7. For Web use `.k-*` BEM classes, `--k-*` tokens, `import \'filekat/kaui\'`, semantic HTML, aria attributes, and `[data-theme="dark"]`. For Flutter use `KauiTheme`, `KauiColors`, `KauiSpacing`, and the documented `Kaui*` widgets.\\n8. Before finishing, verify package installation, component contracts, responsive behavior, accessibility, dark theme support, and the Personal / Non-Commercial license. Commercial use requires written permission from contact@filekat.com.',
+      'agent-prompt': 'You are a senior frontend and UI engineer building production user interfaces using the KAUI Design System.\n\nMANDATORY FIRST STEP: Always use official KAUI tokens, classes, and conventions. Never recreate components or write arbitrary ad-hoc CSS when KAUI provides built-in contracts.\n\n1. INSTALLATION & PLATFORM CONTRACTS:\n   - Web / React / Next.js / Vite: Install `npm install filekat` and import `import \'filekat/kaui\';` once at the application entrypoint (e.g. `app/layout.tsx` or `main.js`).\n   - Flutter: Add `flutter pub add filekat` and import `import \'package:filekat/kaui.dart\';`.\n   - CDN / Static HTML: Include `<link rel="stylesheet" href="https://longbm64.github.io/kaui/dist/kaui.min.css">` and `<script src="https://longbm64.github.io/kaui/dist/kaui.min.js" defer></script>` for interactive dropdowns, navbar submenus, modal overlays, and rich table features.\n\n2. OFFICIAL MANIFEST & VERSION DOCUMENTATION:\n   - Manifest index: https://longbm64.github.io/kaui/dist/versions/index.json\n   - Read the latest release version and access canonical documentation: https://longbm64.github.io/kaui/dist/versions/<latest>/kaui-agent-manifest.json\n   - Inspect live component showcase and source code: https://longbm64.github.io/kaui/demo\n\n3. SYSTEM CONVENTIONS & TOKENS:\n   - Prefix: Always use the `.k-*` BEM hierarchy (e.g., `.k-card`, `.k-btn`, `.k-table`, `.k-modal`).\n   - Design Tokens: Consume `--k-primary`, `--k-bg`, `--k-text`, `--k-border`, `--k-spacing-*`, `--k-radius-*`.\n   - Dark Theme: Fully native via `[data-theme="dark"]` on root or containers.\n\n4. COMPONENT ARCHITECTURE & CONTRACTS:\n   - Table:\n     * Base: `.k-table-wrap`, `.k-table`, `.k-table--striped`, `.k-table--hover`, `.k-table--bordered`, `.k-table--sm`.\n     * Rich Cells: `.k-table__avatar` (avatar/initials), `.k-table__image`, `.k-table__chart` (`.k-table__chart-bar` with `--k-table-chart-value`), `.k-table__checkbox` (18x18px custom checkbox with 0.5rem spacing).\n     * Alignment: Text is left-aligned (`text-align: left`), numbers and currency are right-aligned (`data-k-table-number` / `.k-table__numeric` with tabular-nums), visual indicators are centered (`.k-table__visual`).\n     * Column Sum: Set `data-k-sum-columns="<col_indexes>"` on table root; values use `data-k-sum-value` and automatically recalculate on search/filter.\n     * Frozen Columns: Multi-pane architecture `.k-table-frozen-container` with `.k-table-pane--fixed-left`, `.k-table-viewport--scrollable` (where horizontal scroll strictly lives), and `.k-table-pane--fixed-right`.\n   - Buttons: `.k-btn` with styles `.k-btn--primary`, `.k-btn--secondary`, `.k-btn--outline`, loading state `.k-btn--loading` with `.k-btn__loader`.\n   - Forms: `.k-input`, `.k-select`, `.k-checkbox`, `.k-radio`, `.k-form-group`, `.k-form-label`, `.k-form-feedback`.\n   - Navigation: `.k-navbar`, multi-level nested submenus with viewport-aware auto-flip (`.is-dropup`, `.is-dropstart`).\n   - Feedback & Overlays: `.k-modal` (header/body/footer scroll containment), `.k-toast-container`, `.k-alert`.\n\n5. COMPLIANCE & LICENSING:\n   - KAUI 1.1.0+ is licensed for Personal & Non-Commercial use.\n   - For commercial deployment licenses, contact contact@filekat.com.',
       buttons: '<button class="k-btn k-btn--primary"><span class="k-btn__icon"><i data-kaui-icon="plus"></i></span><span class="k-btn__text">Primary Action</span></button>',
       forms: '<div class="k-input-wrapper">\n  <i data-kaui-icon="mail" class="k-input__icon k-input__icon--left"></i>\n  <input class="k-input" type="email">\n</div>',
       'full-name': '<div class="k-form-group">\n  <label for="demo-name" class="k-form-label">Full Name</label>\n  <div class="k-input-wrapper">\n    <i data-kaui-icon="user" class="k-input__icon k-input__icon--left" aria-hidden="true"></i>\n    <input type="text" id="demo-name" class="k-input" placeholder="e.g. Dang Long">\n  </div>\n  <span class="k-form-hint">Enter your legal full name as shown on official ID.</span>\n</div>',
@@ -904,6 +1191,10 @@
       charts: '<link rel="stylesheet" href="dist/kaui-chart.min.css">\n<script src="dist/kaui-chart.min.js"></script>\n\n<div id="revenue-chart" class="k-chart" data-k-chart="line" aria-label="Revenue trend"></div>\n\n<script>\n  KauiChart.create("#revenue-chart", {\n    type: "line",\n    labels: ["Jan", "Feb", "Mar", "Apr"],\n    datasets: [{ id: "revenue", label: "Revenue", data: [42, 58, 51, 74] }]\n  });\n</script>',
       'chart-line': '<div id="revenue-chart" class="k-chart" data-k-chart="line" aria-label="Revenue trend"></div>\n<script>\nKauiChart.create("#revenue-chart", { type: "line", labels: ["Jan", "Feb", "Mar"], datasets: [{ id: "revenue", label: "Revenue", data: [42, 58, 51] }] });\n</script>',
       'chart-bar': '<div id="sales-chart" class="k-chart k-chart--sm" data-k-chart="bar" aria-label="Quarterly sales"></div>\n<script>\nKauiChart.create("#sales-chart", { type: "bar", labels: ["Q1", "Q2", "Q3", "Q4"], datasets: [{ id: "sales", label: "Sales", data: [42, 68, 54, 82] }] });\n</script>',
+      'guide-navbar-basic': '<header class="k-navbar k-navbar--expand-lg k-navbar--offcanvas"><div class="k-navbar__container"><a class="k-navbar__brand" href="#">Brand</a><button class="k-navbar__toggle" type="button" aria-controls="primary-menu" aria-expanded="false">Menu</button><nav class="k-navbar__menu" id="primary-menu" aria-label="Primary navigation"><ul class="k-navbar__nav"><li><a class="k-navbar__link is-active" href="#" aria-current="page">Home</a></li><li><a class="k-navbar__link" href="#about">About</a></li></ul><div class="k-navbar__actions"><a class="k-btn k-btn--primary" href="#start">Get started</a></div></nav></div></header>',
+      'guide-navbar-nested': '<nav class="k-navbar__menu is-open" id="primary-menu" aria-label="Primary navigation"><ul class="k-navbar__nav"><li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">Products <i data-kaui-icon="chevron-down" aria-hidden="true"></i></button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#overview">Overview</a></li><li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">Advanced <i data-kaui-icon="chevron-right" aria-hidden="true"></i></button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#reports">Reports</a></li><li><a class="k-navbar__link" href="#analytics">Analytics</a></li></ul></li></ul></li></ul></nav>',
+      'guide-navbar-overflow': '<li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">Edge test</button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#overview">Overview</a></li><li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">More levels</button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#settings">Settings</a></li></ul></li></ul></li>',
+
       'icon-usage': '<svg class=\"k-icon\" aria-hidden=\"true\"><use href=\"dist/icons/sprite.svg#search\" xlink:href=\"dist/icons/sprite.svg#search\"></use></svg>',
 
       'platform-tokens': 'npm run tokens:build\nnpm run tokens:verify',

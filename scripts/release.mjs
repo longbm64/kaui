@@ -143,6 +143,8 @@ function main() {
     'kaui.css.map',
     'kaui.min.css',
     'kaui.min.css.map',
+    'kaui.js',
+    'kaui.min.js',
     'kaui-chart.css',
     'kaui-chart.js',
     'kaui-chart.min.css',

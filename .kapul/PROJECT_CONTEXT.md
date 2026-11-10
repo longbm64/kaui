@@ -1,3 +1,36 @@
+
+## Railway deployment contract
+
+- `server.mjs` is the production static HTTP entrypoint. It binds `0.0.0.0:${PORT}` (fallback `3000` locally), redirects `/` to `/demo/`, serves static files safely, and exposes `GET /health`.
+- `package.json` exports `npm start` as `node server.mjs`; `npm run build` remains the Railway build command.
+- `railway.json` is the declarative Railway configuration: build `npm run build`, start `npm start`, healthcheck `/health`.
+- `serve:tailscale` remains local-only and must not be used in Railway because it binds a fixed port.
+
+- Templates page shell contract: `demo/templates.html` must use the same canonical `.demo-sidebar`, theme preset dropdown, mobile toggle, `.demo-right` header/body/footer structure as the existing component pages (for example `demo/card.html`). Only the main catalog content may differ.
+
+
+- Sidebar navigation contract: `Templates` is grouped under `Resources` on all 20 `demo/*.html` pages; the templates page marks this item `.is-active` and does not duplicate it under Getting Started.
+
+
+- Country modal table layout contract: `.demo-country-table-wrap` never scrolls horizontally; the table uses `table-layout: fixed` and width `100%`, with columns sized 7% / 18% / 35% / 40%. Country and timezone cells may wrap (`overflow-wrap: anywhere`), so all four columns remain inside the modal body.
+- Active sidebar surface contract: `.demo-sidebar__link.is-active` uses a stronger preset-specific background (`#dbeafe` Blue, `#a5f3fc` Ocean, `#bbf7d0` Forest, `#fed7aa` Sunset, `#1e3a8a` Dark) and semibold text for clearer navigation state.
+
+- Modal trigger focus contract: `demo/demo.js` calls `blurModalTrigger(trigger)` before opening `#demo-modal`, `#demo-countries-modal`, or any confirm dialog, so closing never returns visible focus to the launch button. Dropdown focus behavior remains unchanged.
+
+
+- Text contrast contract: demo text uses slightly stronger contrast tokens (`#1e293b` for main text fallback and `#475569` for muted text) and darkens muted shades for `ocean` (`#075985`), `forest` (`#166534`), and `sunset` (`#9a3412`) to prevent dim or washed-out typography across themes.
+
+- Modal scroll contract: `.k-modal` and `.k-modal__dialog` use `overflow: hidden`; `.k-modal__dialog` is a flex column with `max-height: calc(100vh - 2rem)`; only `.k-modal__body` is the flexible scrolling region (`min-height: 0; overflow-y: auto`). Modal markup must keep the order `.k-modal__header`, `.k-modal__body`, `.k-modal__footer` when all three regions are present.
+
+
+- Templates catalog contract: `demo/templates.html` serves as the card-based template hub; each card links to a standalone page via `target="_blank" rel="noopener noreferrer"`.
+- Template example contract: Existing demo (`demo/index.html`) is retained as the first baseline example; newly added templates are `demo/templates/blog.html`, `demo/templates/dashboard.html`, and `demo/templates/e-commerce.html`.
+- Template CSS contract: Template chrome and layouts use scoped `.demo-template-*` selectors in `demo/demo.css` alongside standard `.k-*` tokens/components.
+
+
+- Modal country-list demo contract: `demo/modal.html` loads `demo/countries.js`, opens `#demo-countries-modal` from `#demo-open-countries`, renders `#demo-countries-body`, and uses `.demo-country-modal__body { overflow-y: auto }`; the table has four equal-width columns (No., Calling code, Country, Time zone). `demo/demo.js` owns open/close/Escape behavior.
+
+
 - Sidebar footer contract: `.demo-sidebar__footer` contains only the `#theme-preset` KAUI dropdown; the redundant GitHub button and Light/Dark toggle have been removed.
 
 - Custom sidebar scroll controls are removed. `.demo-sidebar__body` retains native `overflow-y: auto` scrolling for wheel, touch, trackpad, and keyboard accessibility.
@@ -63,9 +96,14 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Table contract: `src/scss/components/_table.scss` xuất `.k-table-wrap`, `.k-table`, `.k-table th/td`, `.k-table--striped`, `.k-table--hover`, `.k-table--bordered`, `.k-table--sm`, `.k-table--responsive`, `.k-table--frozen`, `.k-table__actions`, `.k-table__empty`, `.k-table__toolbar`, `.k-table__search`, và `.k-table__sort`. Partial được forward từ `components/_index.scss`; extended bundle không còn định nghĩa trùng trong `extended/_data_shell.scss`.
 - Table options contract: root `[data-k-table]` nhận `data-k-searchable="true"`, `data-k-sortable="true"`, `data-k-sort-columns="0,3"`, và `data-k-freeze="1"`. Search input là `[data-k-table-search]`; thuật toán giống dropdown: chuẩn hóa Unicode/không dấu, tách từ khóa bằng khoảng trắng và chỉ giữ row chứa đủ mọi từ khóa. Sort chỉ gắn button cho các chỉ số cột được chỉ định; giá trị số dùng `data-k-sort-value`. Freeze làm sticky `--k-table-freeze-count` cột đầu tiên.
-- Table sort icon contract: runtime dùng inline paths cho `arrow-up-down`, `arrow-up`, `arrow-down`; mọi trạng thái sort phải render đúng glyph KAUI, không fallback sang icon khác.
+- Table freeze columns contract: `data-k-freeze-columns` accepts comma-separated indexes or directions (`0,right:3`, `last`), mapping to sticky `.k-table__cell--frozen-left` and `.k-table__cell--frozen-right` with computed pixel offsets.
+- Table scrollbar contract: `.k-table-wrap` confines the scrollbar track to the scrollable center columns via `--k-table-scroll-inset-left` and `--k-table-scroll-inset-right`.
+- Table scroll stabilization contract: `.k-table-wrap` declares `overscroll-behavior-x: contain` and frozen columns promote to isolated GPU composite layers via `transform: translateZ(0)` to prevent rendering lag.
+
 - Icon renderer class contract: khi chuyển placeholder `<i data-kaui-icon>` thành SVG, phải giữ class nền `kaui-icon` và nối các class chuyên biệt của placeholder (ví dụ `.k-table__sort-icon`).
 - Sort icon registry contract: `icons/source/kaui/arrow-up-down.svg` là glyph trung tính chính thức, được build vào `dist/icons/sprite.svg`, `kaui-icons.css` và `kaui-icons.json` cùng `arrow-up`/`arrow-down`.
+
+- Cards showcase scroll contract: `.demo-card-countries .k-card__body` owns vertical scrolling with header/footer fixed; `.demo-country-list` is not independently scrollable and preserves four equal columns for number, calling code, country, and time zone.
 
 
 ## Button loading contract
@@ -78,7 +116,13 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 ## Bundle
 
 - Bundle duy nhất: `kaui.scss` biên dịch thành `dist/kaui.css` và `dist/kaui.min.css`, bao gồm toàn bộ core và advanced components.
+- Cards showcase contract: `demo/card.html` renders three equal-height cards in `#cards .demo-card-grid`; `.demo-card-countries .k-card__body` is the sole vertical scroll region, with fixed card header/footer and an intrinsic `.demo-country-list` containing four equal columns. `demo/demo.css` owns showcase-only sizing/scroll styling; core `.k-card` API remains unchanged.
+- Countries card typography contract: title/body/header/footer and country rows use compact scoped sizes (`base`, `sm`, `xs`) with tighter row spacing and preserved four-column alignment; no global `.k-card` typography changes.
+- Countries card body height contract: desktop `.demo-card-countries` is fixed at `30rem`; its `.k-card__body` is limited to `calc(30rem - 7rem)` so the body scrollbar is always available while header/footer remain fixed. Mobile uses `max-height: 22rem` and auto card height.
 - Không còn entry hoặc artifact `kaui-extended` riêng.
+
+- Cards showcase contract: `demo/card.html` renders three equal-height cards in `#cards .demo-card-grid`; the third `.demo-card-countries` has a scrollable `.demo-country-list` with four equal grid columns (number, calling code, country, time zone). `demo/demo.css` owns showcase-only sizing/scroll styling; core `.k-card` API remains unchanged.
+
 - Mọi component dùng prefix `.k-` và token `--k-*`.
 - Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:4173`; access the demo from the tailnet at `http://<tailscale-ip>:4173/demo/`. This is tailnet-only routing and does not configure public exposure.
 
@@ -323,10 +367,51 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Flutter package contract: the pub.dev package is named `filekat`, located at `packages/pub`, with public library import `package:filekat/kaui.dart`.
 - Flutter package `filekat` is version `1.1.0+` and uses the KAUI Personal / Non-Commercial License; its package LICENSE, README, and CHANGELOG must remain aligned with `NON_COMMERCIAL_LICENSE.md` and commercial contact `contact@filekat.com`.
 - Demo shell scroll contract: `.demo-body` và `.demo-right` giữ `height: 100vh` với `overflow: hidden`; `.demo-header` và `.demo-footer` là flex items cố định không co/không scroll; chỉ `.demo-right__body` có `overflow-y: auto` và `min-height: 0` để cuộn nội dung.
+
 - Header alignment contract: `.demo-sidebar__header` and `.demo-header` share `--demo-header-height` (4.25rem desktop, 3.5rem mobile), with explicit border-box height so their bottom borders align exactly.
+- Demo section title spacing contract: shared `.demo-section`/`.demo-section-header` spacing is intentionally compact (1.5rem section padding, 1rem header gap, 0.25rem title bottom margin) across all 19 demo pages.
+
 
 
 
 - Demo right-shell contract: every demo page now uses `.demo-right` beside the fixed sidebar; its ordered children are `.demo-header`, `.demo-right__body` (containing `.demo-main`), and `.demo-footer`. The header is a compact page-context bar; body owns page content; footer remains fixed to the content viewport.
 
 - Platform package layout: `packages/npm` contains the npm/Web package and `packages/pub` contains the pub.dev/Flutter package. Android and iOS native packages are currently paused and are not included in the repository package layout.
+
+
+- Navbar submenu contract: `.k-navbar__item--has-children` hỗ trợ lồng vô hạn; trên desktop submenu tự động lật lên (`.is-dropup`) khi thiếu khoảng trống phía dưới và mở ngược sang trái (`.is-dropstart`) khi thiếu khoảng trống bên phải. Runtime `demo/demo.js` đo `getBoundingClientRect()` sau khi mở và khi resize/scroll; mobile giữ submenu xếp dọc trong flow.
+
+- Blue theme readability contract: when the preset is `default` (no `data-theme` attribute), demo body text uses weight 500, muted/supporting text uses weight 500, and sidebar/Navbar links use weight 600; other theme presets retain their existing weights.
+
+- Navbar flyout demo contract: desktop `.k-navbar__nav--scroll` must use `overflow: visible` so nested flyouts are not clipped; mobile restores vertical scrolling. `demo/navbar.html` keeps Components → Advanced open on initial load so the multi-level example is immediately visible.
+
+- Navbar desktop flyout contract: submenu opens horizontally to the right by default or left with `.is-dropstart`, with `top: 0` so its top edge aligns with the parent item; mobile remains stacked in normal flow.
+
+- Navbar hover bridge contract: `.k-navbar__submenu::before` acts as an invisible continuous hit zone bridging the gap between parent and submenu across all orientations (down, dropup, flyout right, flyout left) preventing mouse hover loss during traversal.
+- Navbar submenu spacing contract: nested desktop flyout horizontal gap is `var(--k-spacing-3)` (12px) with internal submenu link padding `var(--k-spacing-2) var(--k-spacing-3)` and matching hover bridge width.
+- Navbar dynamic hover-flip contract: `demo/demo.js` binds live `mouseenter`/`focusin` measurement so deeply nested submenus (Level 3, Level 4) automatically flip left (`.is-dropstart`) whenever they reach the right viewport boundary or inherit from a dropstart parent.
+- Navbar documentation contract: project maintains `kapul-docs/TECHNICAL_DOCS.md` for developer architecture and `kapul-docs/USER_GUIDE.md` for end-user interaction/QA testing, plus multi-level examples in `README.md`.
+
+- Navbar single-direction cascade contract: once a branch orientation is determined based on nearest viewport side (right side defaults to leftward `.is-dropstart`), all descendant submenus strictly open in that same direction in a clean monotonic staircase, preventing zig-zag overlapping.
+
+- Navbar outside-click contract: clicking outside the navbar dismisses all open submenus across both desktop (`.k-navbar__item--has-children.is-open`) and mobile drawer modes (`closeNavbarMenus`).
+
+- Navbar dropstart specificity contract: `.is-dropstart` selector explicitly takes precedence over breakpoint modifiers (`.k-navbar--expand-lg`) with `right: calc(...) !important; left: auto !important;`, flipping chevron icons and cascading dropstart to deeply nested levels (Level 4+).
+
+- Navbar cascade close contract: closing any parent or root menu item (`!isOpen`, sibling switch, mobile drawer close, Escape, or outside click) recursively resets all child submenus (`is-open`, `is-dropup`, `is-dropstart`, `aria-expanded="false"`).
+- Navbar click-only interaction contract: opening any submenu requires an explicit user click (`BUTTON` trigger); hover purely provides visual highlight without opening submenus, eliminating all hover/click conflicts and ensuring deterministic cascade closing.
+
+- Navbar hover/click reconciliation contract: submenu visibility is strictly driven by `.is-open` class; hover seamlessly applies `.is-open` with debounced leave, while explicit click to close closes the branch immediately (`manuallyClosedMap`) without CSS `:hover` overriding user intent.
+- Navbar active typography contract: `.k-navbar__link.is-active` retains normal/medium font weight without forcing bold/semibold, distinguishing active state cleanly via color and surface tint.
+
+- Navbar hover weight contract: `.k-navbar__link:hover` does not increase `font-weight` preventing layout shift while applying `--demo-sidebar-active-bg` and primary tone.
+
+
+- Navbar item hover background contract: `.k-navbar__link:hover` and active/open parent links consume `--demo-sidebar-active-bg` matching the left sidebar active tone across Blue (`#dbeafe`), Ocean (`#a5f3fc`), Forest (`#bbf7d0`), Sunset (`#fed7aa`), and Dark (`#1e3a8a`).
+
+
+
+
+
+- Navbar guide contract: `demo/navbar.html` provides three independent copy actions (`guide-navbar-basic`, `guide-navbar-nested`, `guide-navbar-overflow`) covering base structure, ARIA nested menus, modifiers, responsive drawer, and viewport-aware flip behavior; payloads live in `demo/demo.js`.
+- Navbar direction contract: root submenu (`.k-navbar__nav > li > .k-navbar__submenu`) opens vertically below/above its root item; nested submenus open horizontally left/right with top edge aligned to their parent item. Runtime only applies `.is-dropstart` to nested items.

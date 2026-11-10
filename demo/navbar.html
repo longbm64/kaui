@@ -41,6 +41,8 @@
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="templates.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Templates</span></a>
+
           <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
           <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
           <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
@@ -90,6 +92,33 @@
                   </ul>
                 </li>
                 <li><a href="#icons" class="k-navbar__link">Icons</a></li>
+                <li class="k-navbar__item--has-children demo-navbar-edge-item">
+                  <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Edge test <i data-kaui-icon="chevron-down" aria-hidden="true"></i></button>
+                  <ul class="k-navbar__submenu">
+                    <li><a href="#edge-overview" class="k-navbar__link">Overview</a></li>
+                    <li class="k-navbar__item--has-children">
+                      <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">More levels <i data-kaui-icon="chevron-right" aria-hidden="true"></i></button>
+                      <ul class="k-navbar__submenu">
+                        <li><a href="#edge-settings" class="k-navbar__link">Settings</a></li>
+                        <li class="k-navbar__item--has-children">
+                          <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Level 3 <i data-kaui-icon="chevron-right" aria-hidden="true"></i></button>
+                          <ul class="k-navbar__submenu">
+                            <li><a href="#edge-security" class="k-navbar__link">Security</a></li>
+                            <li class="k-navbar__item--has-children">
+                              <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Level 4 <i data-kaui-icon="chevron-right" aria-hidden="true"></i></button>
+                              <ul class="k-navbar__submenu">
+                                <li><a href="#edge-audit" class="k-navbar__link">Audit logs</a></li>
+                                <li><a href="#edge-permissions" class="k-navbar__link">Permissions</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="#edge-access" class="k-navbar__link">Access control</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
               </ul>
               <div class="k-navbar__actions">
                 <button type="button" class="k-btn k-btn--sm k-btn--outline-primary"><span class="k-btn__icon"><i data-kaui-icon="user" aria-hidden="true"></i></span><span class="k-btn__text">Sign in</span></button>
@@ -100,21 +129,88 @@
         </header>
       </div>
     </section>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-navbar"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Use <code>.k-navbar</code> with optional modifiers for sticky, shadow, transparent, dark, compact, centered, and borderless surfaces. Add <code>.k-navbar__actions</code> for CTAs and <code>.k-navbar__submenu</code> for nested navigation.</p><pre class="demo-code"><code>&lt;header class="k-navbar k-navbar--sticky k-navbar--shadow"&gt;
+        <div class="demo-navbar-lab" aria-label="Navbar overflow behavior guide">
+          <div class="demo-navbar-lab__intro">
+            <div>
+              <span class="demo-navbar-lab__eyebrow">Interactive overflow lab</span>
+              <h3 class="demo-subheading k-mt-1 k-mb-1">Test every submenu direction</h3>
+              <p class="k-text-muted k-m-0">Open <strong>Edge test</strong>, then move through More levels and Level 3. Resize the browser or scroll near the bottom of the page to see the menu automatically choose the side with the most room.</p>
+            </div>
+            <div class="demo-navbar-lab__badges" aria-label="Supported behaviors">
+              <span class="demo-navbar-lab__badge"><i data-kaui-icon="arrow-up" aria-hidden="true"></i> Flip up</span>
+              <span class="demo-navbar-lab__badge"><i data-kaui-icon="arrow-left" aria-hidden="true"></i> Flip left</span>
+              <span class="demo-navbar-lab__badge"><i data-kaui-icon="layers" aria-hidden="true"></i> Unlimited depth</span>
+            </div>
+          </div>
+          <div class="demo-navbar-lab__steps">
+            <div><b>1</b><span>Desktop: open the right-most <strong>Edge test</strong> menu to trigger left alignment when needed.</span></div>
+            <div><b>2</b><span>Scroll close to the bottom, open a submenu, and it flips upward when below space is smaller.</span></div>
+            <div><b>3</b><span>Mobile: tap the hamburger, then tap each parent item to expand vertically.</span></div>
+          </div>
+        </div>
+          <div class="k-card k-card--bordered k-p-5 k-mt-6">
+            <h3 class="demo-subheading k-mt-0">Navbar guide &amp; code samples</h3>
+            <p class="k-text-muted">Build a responsive Navbar from four layers: a brand, a toggle button, a navigation menu, and optional actions. Use <code>k-navbar--expand-lg</code> to switch from the mobile drawer to the desktop layout at the large breakpoint.</p>
+            <div class="demo-navbar-guide-grid">
+              <article class="demo-navbar-guide-card"><h4>1. Basic structure</h4><p>Keep the toggle's <code>aria-controls</code> equal to the menu <code>id</code>. The runtime synchronizes <code>aria-expanded</code> when the drawer opens.</p><button type="button" class="demo-copy-button" data-copy-component="guide-navbar-basic"><span class="demo-copy-label">Copy basic sample</span></button></article>
+              <article class="demo-navbar-guide-card"><h4>2. Nested menus</h4><p>Use a <code>button</code> for every parent item, add <code>aria-haspopup="true"</code>, and nest another <code>.k-navbar__submenu</code> for unlimited levels.</p><button type="button" class="demo-copy-button" data-copy-component="guide-navbar-nested"><span class="demo-copy-label">Copy nested sample</span></button></article>
+              <article class="demo-navbar-guide-card"><h4>3. Smart overflow</h4><p>On desktop, open menus are measured against the viewport. They receive <code>.is-dropup</code> when the bottom is tight and <code>.is-dropstart</code> when the right edge is tight.</p><button type="button" class="demo-copy-button" data-copy-component="guide-navbar-overflow"><span class="demo-copy-label">Copy overflow sample</span></button></article>
+            </div>
+            <div class="demo-navbar-guide-notes"><strong>Recommended modifiers:</strong> <code>k-navbar--sticky</code>, <code>k-navbar--shadow</code>, <code>k-navbar--dark</code>, <code>k-navbar--compact</code>, <code>k-navbar--centered</code>, and <code>k-navbar--borderless</code>. On mobile, parent buttons expand vertically; Escape and outside click close the open menus.</div>
+
+            <div class="demo-code-samples k-mt-5">
+              <h4 class="k-fs-base k-fw-semibold k-mb-2">Code sample: Multi-level Submenu (Menu con đa cấp lồng nhau)</h4>
+              <pre class="demo-code"><code>&lt;header class="k-navbar k-navbar--expand-lg k-navbar--sticky k-navbar--shadow"&gt;
   &lt;div class="k-navbar__container"&gt;
-    &lt;a href="#" class="k-navbar__brand"&gt;Brand&lt;/a&gt;
-    &lt;nav class="k-navbar__menu"&gt;
+    &lt;a class="k-navbar__brand" href="#"&gt;Brand&lt;/a&gt;
+    &lt;button class="k-navbar__toggle" type="button" aria-controls="primary-nav" aria-expanded="false"&gt;
+      &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;nav class="k-navbar__menu" id="primary-nav"&gt;
       &lt;ul class="k-navbar__nav"&gt;
-        &lt;li&gt;&lt;a href="#" class="k-navbar__link is-active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="k-navbar__link is-active" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+
+        &lt;!-- Menu con Level 1 (mở trên/dưới) --&gt;
         &lt;li class="k-navbar__item--has-children"&gt;
-          &lt;a href="#" class="k-navbar__link"&gt;Products&lt;/a&gt;
-          &lt;ul class="k-navbar__submenu"&gt;&lt;li&gt;&lt;a href="#" class="k-navbar__link"&gt;Overview&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+          &lt;button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false"&gt;
+            Products &lt;i data-kaui-icon="chevron-down"&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;ul class="k-navbar__submenu"&gt;
+            &lt;li&gt;&lt;a class="k-navbar__link" href="#overview"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+
+            &lt;!-- Menu con Level 2 (mở ngang trái/phải, top căn phẳng) --&gt;
+            &lt;li class="k-navbar__item--has-children"&gt;
+              &lt;button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false"&gt;
+                Analytics &lt;i data-kaui-icon="chevron-right"&gt;&lt;/i&gt;
+              &lt;/button&gt;
+              &lt;ul class="k-navbar__submenu"&gt;
+                &lt;li&gt;&lt;a class="k-navbar__link" href="#reports"&gt;Realtime Reports&lt;/a&gt;&lt;/li&gt;
+
+                &lt;!-- Menu con Level 3 (tiếp tục mở theo 1 chiều gần nhất) --&gt;
+                &lt;li class="k-navbar__item--has-children"&gt;
+                  &lt;button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false"&gt;
+                    Deep Settings &lt;i data-kaui-icon="chevron-right"&gt;&lt;/i&gt;
+                  &lt;/button&gt;
+                  &lt;ul class="k-navbar__submenu"&gt;
+                    &lt;li&gt;&lt;a class="k-navbar__link" href="#security"&gt;Security&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a class="k-navbar__link" href="#audit"&gt;Audit logs&lt;/a&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
         &lt;/li&gt;
+        &lt;li&gt;&lt;a class="k-navbar__link" href="#pricing"&gt;Pricing&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;div class="k-navbar__actions"&gt;&lt;button class="k-btn k-btn--primary"&gt;Get started&lt;/button&gt;&lt;/div&gt;
+      &lt;div class="k-navbar__actions"&gt;
+        &lt;button class="k-btn k-btn--sm k-btn--primary"&gt;Sign in&lt;/button&gt;
+      &lt;/div&gt;
     &lt;/nav&gt;
   &lt;/div&gt;
-&lt;/header&gt;</code></pre></div>
+&lt;/header&gt;</code></pre>
+            </div>
+          </div>
+
   </main></div>
   <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
 </body>

@@ -77,6 +77,30 @@ import 'filekat/charts';
 
 
 ## Quick Start & Installation
+### Deploy the demo on Railway
+
+The repository is prepared for Railway as a static Node.js service. Railway runs `npm run build`, then `npm start`; the server listens on `0.0.0.0:$PORT`, exposes `/health` for the healthcheck, and serves the showcase at `/demo/` (the root path redirects there).
+
+#### Deploy from GitHub
+
+1. Push this repository to GitHub.
+2. In Railway, choose **New Project → Deploy from GitHub Repo** and select the repository.
+3. Railway reads `railway.json`. If configuring manually, use **Build Command** `npm run build` and **Start Command** `npm start`.
+4. Generate a public domain in **Settings → Networking → Generate Domain**.
+5. Open the generated domain; it should redirect from `/` to `/demo/`.
+
+#### Deploy from the Railway CLI
+
+```bash
+railway login
+railway init
+railway up
+railway domain
+```
+
+No database or environment variable is required. Do not use `serve:tailscale` in Railway; that command is for local tailnet development and binds a fixed port.
+
+
 
 ### 1. Clone & Install Build Tools
 
@@ -145,7 +169,7 @@ Link the compiled stylesheet directly in your HTML `<head>`:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Web Application</title>
-  
+
   <!-- KAUI CSS Kit (Production Compressed) -->
   <link rel="stylesheet" href="path/to/dist/kaui.min.css">
 </head>
@@ -397,32 +421,58 @@ Dismissible feedback banners for notifications:
 
 ### Navigation Bar
 
-Responsive navigation header with collapsible mobile drawer:
+Responsive navigation header with multi-level nested submenus and smart auto-flip orientation:
 
 ```html
-<header class="k-navbar">
+<header class="k-navbar k-navbar--expand-lg k-navbar--sticky k-navbar--shadow">
   <div class="k-navbar__container">
     <a href="#" class="k-navbar__brand">
       <span class="k-fw-bold k-text-primary">KAUI</span> Kit
     </a>
 
     <!-- Mobile Drawer Hamburger Toggle -->
-    <button type="button" class="k-navbar__toggle" aria-label="Toggle navigation">
+    <button type="button" class="k-navbar__toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
     <!-- Navigation Menu (adds .is-open on mobile) -->
-    <nav class="k-navbar__menu">
+    <nav class="k-navbar__menu" id="primary-nav">
       <ul class="k-navbar__nav">
         <li><a href="#" class="k-navbar__link is-active">Home</a></li>
-        <li><a href="#" class="k-navbar__link">Features</a></li>
-        <li><a href="#" class="k-navbar__link">Docs</a></li>
+
+        <!-- Multi-level Nested Submenu -->
+        <li class="k-navbar__item--has-children">
+          <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">
+            Products <i data-kaui-icon="chevron-down"></i>
+          </button>
+
+          <ul class="k-navbar__submenu">
+            <li><a href="#overview" class="k-navbar__link">Overview</a></li>
+
+            <!-- Level 2 Submenu (opens horizontally, top-aligned) -->
+            <li class="k-navbar__item--has-children">
+              <button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">
+                Analytics <i data-kaui-icon="chevron-right"></i>
+              </button>
+
+              <ul class="k-navbar__submenu">
+                <li><a href="#reports" class="k-navbar__link">Realtime Reports</a></li>
+                <li><a href="#metrics" class="k-navbar__link">User Metrics</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="#pricing" class="k-navbar__link">Pricing</a></li>
       </ul>
-      <button class="k-btn k-btn--sm k-btn--primary">Sign In</button>
+      <div class="k-navbar__actions">
+        <button class="k-btn k-btn--sm k-btn--primary">Sign In</button>
+      </div>
     </nav>
   </div>
 </header>
 ```
+
 
 ---
 

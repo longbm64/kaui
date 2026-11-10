@@ -131,7 +131,6 @@
     &.is-active {
       color: var(--k-primary);
       background: var(--k-primary-light, var(--k-color-primary-50));
-      font-weight: var(--k-weight-semibold, 600);
     }
   }
 }
@@ -280,14 +279,13 @@
     .k-navbar__link {
       display: flex;
       width: 100%;
+      padding: var(--k-spacing-2) var(--k-spacing-3);
     }
   }
 
   &__item--has-children {
     position: relative;
 
-    &:hover > .k-navbar__submenu,
-    &:focus-within > .k-navbar__submenu,
     &.is-open > .k-navbar__submenu {
       display: block;
     }
@@ -309,17 +307,43 @@
     &.is-open > .k-navbar__link .kaui-icon {
       transform: rotate(180deg);
     }
+
+    &.is-dropstart > .k-navbar__link .kaui-icon {
+      transform: rotate(180deg);
+    }
   }
 
   &__submenu &__item--has-children > &__submenu {
-    top: calc(-1 * var(--k-spacing-2));
-    left: calc(100% + var(--k-spacing-2));
+    top: 0;
+    left: calc(100% + var(--k-spacing-3));
   }
 
-  // Scrollable nav list for compact headers
+  // Viewport-aware flyout directions. Runtime toggles these classes after measuring.
+  &__item--has-children.is-dropup > &__submenu {
+    top: auto;
+    bottom: 0;
+  }
+
+  &__item--has-children.is-dropstart > &__submenu {
+    right: calc(100% + var(--k-spacing-3));
+    left: auto;
+  }
+
+  &__submenu &__item--has-children.is-dropup > &__submenu {
+    top: auto;
+    bottom: 0;
+  }
+
+  &__submenu &__item--has-children.is-dropstart > &__submenu {
+    right: calc(100% + var(--k-spacing-3));
+    left: auto;
+  }
+
+
+  // Desktop flyouts must escape the scroll container; mobile restores vertical scrolling.
   &__nav--scroll {
-    max-height: 14rem;
-    overflow-y: auto;
+    max-height: none;
+    overflow: visible;
   }
 
   // Bootstrap offcanvas drawer style adaptation
@@ -366,6 +390,10 @@
 .k-navbar--expand-lg {
   @media (max-width: 1023.98px) {
     .k-navbar__toggle { display: flex; }
+    .k-navbar__nav--scroll {
+      max-height: 14rem;
+      overflow-y: auto;
+    }
     .k-navbar__menu { display: none; flex-direction: column; width: 100%; padding-top: var(--k-spacing-3); }
     .k-navbar__menu.is-open { display: flex; }
     .k-navbar__nav { flex-direction: column; }
@@ -408,7 +436,38 @@
 
   .k-navbar__item--has-children > .k-navbar__submenu {
     position: absolute;
+    top: 0;
+    left: calc(100% + var(--k-spacing-2));
+  }
+}
+
+// Desktop submenu flyouts align their top edge with the parent item; mobile is the only stacked mode.
+@media (min-width: 768px) {
+  .k-navbar__item--has-children > .k-navbar__submenu,
+  .k-navbar--expand-sm .k-navbar__item--has-children > .k-navbar__submenu,
+  .k-navbar--expand-lg .k-navbar__item--has-children > .k-navbar__submenu {
+    top: 0;
+    left: calc(100% + var(--k-spacing-3));
+  }
+  .k-navbar__item--has-children.is-dropstart > .k-navbar__submenu,
+  .k-navbar--expand-sm .k-navbar__item--has-children.is-dropstart > .k-navbar__submenu,
+  .k-navbar--expand-lg .k-navbar__item--has-children.is-dropstart > .k-navbar__submenu {
+    right: calc(100% + var(--k-spacing-3)) !important;
+    left: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .k-navbar--expand-sm .k-navbar__nav > .k-navbar__item--has-children > .k-navbar__submenu,
+  .k-navbar--expand-lg .k-navbar__nav > .k-navbar__item--has-children > .k-navbar__submenu {
     top: calc(100% + var(--k-spacing-2));
+    right: auto;
+    bottom: auto;
     left: 0;
+  }
+  .k-navbar--expand-sm .k-navbar__nav > .k-navbar__item--has-children.is-dropup > .k-navbar__submenu,
+  .k-navbar--expand-lg .k-navbar__nav > .k-navbar__item--has-children.is-dropup > .k-navbar__submenu {
+    top: auto;
+    bottom: calc(100% + var(--k-spacing-2));
   }
 }

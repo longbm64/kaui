@@ -1,3 +1,49 @@
+
+## Railway deployment preparation
+
+- [x] Add `server.mjs` static server using Railway's `$PORT`, `0.0.0.0`, `/health`, root redirect, MIME types, and path traversal protection.
+- [x] Add `npm start` and declarative `railway.json` build/deploy configuration.
+- [x] Document GitHub/CLI Railway deployment flow in `README.md`.
+- [x] Verify server syntax, HTTP smoke tests, `npm test` (177 passing), and `npm run build`.
+- [!] Actual Railway deployment/domain generation still requires the user's Railway account and GitHub/CLI authentication.
+
+- [x] Chuẩn hóa `demo/templates.html` theo shell canonical của các demo page: sidebar đầy đủ, theme dropdown, mobile drawer, header/body/footer và Resources active state.
+
+
+- [x] Di chuyển item Templates vào nhóm Resources trên toàn bộ 20 demo pages, giữ active state riêng tại `demo/templates.html` và loại bỏ item trùng ở Getting Started.
+
+
+- [x] Country modal table: fit all four columns within the dialog without horizontal overflow; timezone values wrap inside the fourth column.
+
+
+- [x] Tăng độ đậm nền item active trong menu trái theo từng theme preset; thêm semibold text để trạng thái hiện tại rõ hơn.
+
+- [x] Modal trigger focus: khi click button mở Modal/Confirm, loại focus khỏi trigger để sau khi đóng không còn outline/focus trên button mở.
+
+
+- [x] Tăng độ đậm và tương phản của text demo: dùng `#1e293b` cho text chính, `#475569` cho text phụ, đồng thời làm đậm `--k-color-text-muted` trên các preset Ocean, Forest và Sunset.
+
+- [x] Chuẩn hóa Modal: dialog dùng đúng 3 vùng header/body/footer; chỉ `.k-modal__body` được phép scroll, không scroll ở dialog hoặc overlay. Đã sửa core overlay và demo override.
+
+
+- [x] Cập nhật trang Overview (`demo/index.html`):
+  - Bổ sung hướng dẫn cài đặt 3 nền tảng: Web (NPM), Flutter (pub.dev), và CDN/HTML trực tiếp.
+  - Nâng cấp AI Agent Prompt toàn diện: bao gồm cách đọc manifest theo version, nguyên tắc không viết CSS tùy tiện, quy tắc BEM & Token, chi tiết các tính năng mới của Table (Rich cells, Alignment, Sum, Frozen Multi-Pane), Form, Button, Navbar và Modal/Overlay.
+  - Đồng bộ `agent-prompt` snippet trong `demo/demo.js` để nút Copy prompt sao chép nội dung mới nhất.
+
+- [x] Tạo page Templates (`demo/templates.html`) hiển thị card item theo grid responsive.
+- [x] Cấu hình mỗi card item mở template trong tab mới bằng `target="_blank" rel="noopener noreferrer"`.
+- [x] Đặt template demo hiện tại (`demo/index.html`) làm example đầu tiên.
+- [x] Phát triển thêm 3 template độc lập bằng KAUI: Blog (`demo/templates/blog.html`), Dashboard (`demo/templates/dashboard.html`), E-commerce (`demo/templates/e-commerce.html`).
+- [x] Bổ sung styles catalog và shell preview (`.demo-template-*`) vào `demo/demo.css`.
+- [x] Thêm link điều hướng Templates vào sidebar Overview (`demo/index.html`).
+
+
+- [x] Giảm khoảng cách/padding quanh title section dùng chung cho toàn bộ 19 demo page: section 1.5rem, header 1rem, title margin dưới 0.25rem.
+
+- [x] Thêm modal danh sách 195 quốc gia trong `demo/modal.html`: body cuộn độc lập, header/footer cố định, 4 cột đều nhau (số, mã vùng, tên, múi giờ), dữ liệu tĩnh trong `demo/countries.js`; đã kiểm tra cú pháp và diff.
+
+
 - [x] Fix lỗi JavaScript sau khi xóa custom scroll: loại bỏ đoạn `sidebarBody` bị chèn ngoài IIFE ở đầu `demo/demo.js`; giữ lại native scroll handler bên trong DOMContentLoaded.
 
 - [x] Xóa custom scroll arrows/overlay khỏi menu trái; khôi phục native scrollbar và giữ lưu/khôi phục vị trí scroll.
@@ -198,6 +244,12 @@
 - [x] Chạy test suite và kiểm tra lại markup/CSS demo.
 
 - [x] Chuẩn hóa contract sidebar trái bằng `data-sidebar-region` cho ba vùng semantic header/body/footer trên toàn bộ 19 demo pages; giữ nguyên class, scroll độc lập và active state.
+- [x] Sửa trang Cards: chuyển scroll từ danh sách quốc gia sang toàn bộ `.demo-card-countries .k-card__body`, giữ header/footer card cố định và danh sách 4 cột nội tại.
+- [x] Thu gọn typography card Countries: title/body/header/footer và các dòng quốc gia dùng size compact, line-height và padding phù hợp để hiển thị rõ trong body scroll.
+- [x] Giới hạn chiều cao card Countries ở `30rem`, giới hạn body theo phần header/footer để scrollbar body luôn hiển thị; mobile dùng `max-height: 22rem`.
+
+
+
 
 ## Cập nhật đang thực hiện
 
@@ -216,6 +268,9 @@
 
 - Input, select và textarea bị giật khi nhận focus vì rule dùng `transition: all`.
 - Thuộc tính layout và transform cũng bị animate khi trạng thái focus thay đổi.
+
+
+- [x] Trang Cards: xóa card Interactive, thêm card Countries có body cuộn với 4 cột đều nhau (số, mã vùng, tên, múi giờ), và chuẩn hóa chiều cao các card cùng hàng.
 
 ## Giải pháp
 
@@ -488,5 +543,46 @@
 
 - [x] Thêm khối Install KAUI Packages vào `demo/versions.html`, bao gồm hướng dẫn `npm install filekat` và `flutter pub add filekat` cùng link trực tiếp tới npm và pub.dev.
 
+- [x] Mở rộng Navbar guide: thêm hướng dẫn cấu trúc, ARIA, modifiers, responsive và 3 code mẫu copy được cho basic/nested/overflow.
+
 - [x] Đưa hướng dẫn cài đặt npm và pub.dev vào trực tiếp bên trong từng accordion version trên `demo/versions.html` thông qua `demo/versions.js`, kèm version tag động (`filekat@<version>`).
 
+
+
+- [x] Nâng cấp Navbar submenu lồng vô hạn: tự đo viewport và đảo hướng dọc/ngang (`is-dropup`, `is-dropstart`) khi không đủ không gian; giữ mobile accordion/drawer và ARIA.
+- [x] Bổ sung demo trực quan `Edge test` với menu 3 cấp, hướng dẫn kiểm tra flip-up/flip-left và responsive mobile.
+
+- [x] Tăng độ đậm text cho theme Blue mặc định: text thường 500, text phụ 500, link sidebar/Navbar 600; giữ nguyên các theme còn lại.
+- [x] Sửa demo Navbar để menu con đa cấp hiển thị ngay: mở sẵn Components → Advanced và bỏ clipping overflow trên desktop; mobile vẫn cuộn dọc.
+- [x] Sửa lỗi menu mở sẵn che nội dung: đóng toàn bộ submenu khi tải trang, giữ click/hover để xem menu đa cấp.
+- [x] Thêm hover bridge tàng hình (`::before`) cho mọi hướng submenu Navbar (trên, dưới, trái, phải) loại bỏ khoảng hở điểm mù khiến menu biến mất khi rê chuột.
+- [x] Tăng khoảng cách ngang giữa 2 menu con (flyout) từ 8px lên 12px (`--k-spacing-3`) và padding item link để menu thoáng, đồng bộ hover bridge.
+- [x] Đóng đệ quy mọi menu con dưới cấp khi đóng menu cha hoặc root (`closeChildBranches`), reset toàn bộ trạng thái `is-open`, `is-dropup`, `is-dropstart` và `aria-expanded="false"`.
+- [x] Xuất bản 2 bộ tài liệu chuẩn theo quy định Kapul: `kapul-docs/TECHNICAL_DOCS.md` (kiến trúc, DOM, modifiers, thuật toán flip, cascade close) và `kapul-docs/USER_GUIDE.md` (hướng dẫn sử dụng & checklist kiểm thử QA).
+- [x] Cập nhật hướng dẫn và code mẫu menu đa cấp vô hạn trong `README.md`.
+
+- [x] Áp dụng nguyên tắc mở 1 chiều nhất quán (Single-direction consistency): xác định hướng mở tối ưu dựa trên khoảng cách gần nhất của menu root (ở nửa phải mở trái, nửa trái mở phải), toàn bộ menu con cấp sâu (Level 1, 2, 3, 4) tuân thủ mở thẳng theo 1 chiều duy nhất, không bao giờ gập zig-zag đè lên nhau.
+
+- [x] Khắc phục triệt để outside click cho desktop: kiểm tra cả `.k-navbar__item--has-children.is-open` thay vì chỉ kiểm tra drawer mobile, đảm bảo bấm ra ngoài đóng toàn bộ menu con ngay lập tức.
+
+- [x] Khắc phục triệt để lỗi khi bấm Level 4: sửa specificity CSS của `.is-dropstart` để đảm bảo không bị `.k-navbar--expand-lg` ghi đè, tự động lật chevron và kế thừa hướng mở sang trái cho toàn bộ menu con cấp sâu.
+
+- [x] Chuyển đổi sang cơ chế Click-only thuần túy: xóa bỏ toàn bộ hover mở menu con, muốn mở bắt buộc phải bấm; bấm đóng thì đóng sạch mọi menu con bên dưới; hover chỉ đổi background highlight nhẹ.
+
+- [x] Không in đậm text ở cả trạng thái hover lẫn trạng thái active của Navbar link (giữ độ dày font thanh mảnh, đồng nhất với các item khác).
+
+- [x] Giữ nguyên độ dày font khi hover item Navbar (`font-weight` ổn định, không làm in đậm chữ khi rê chuột) để chống giật nở text layout.
+
+- [x] Khử xung đột triệt để giữa Hover và Click: chuyển quyền mở/đóng hoàn toàn qua JS `.is-open`, hỗ trợ hover có debounce và cho phép click đóng dứt khoát ngay cả khi con trỏ chuột vẫn đang nằm trên nút.
+
+- [x] Thêm background đậm đồng bộ với menu left (`--demo-sidebar-active-bg`) khi hover hoặc mở các item menu Navbar (cả root lẫn submenu), hỗ trợ đầy đủ các theme preset (Blue, Ocean, Forest, Sunset, Dark).
+
+
+- [x] Tối ưu hóa dynamic flip khi hover: tự động đo bounding rect khi mouseenter/focusin và cascade dropstart cho các menu con cấp sâu (Level 3, Level 4) khi chạm mép phải.
+
+
+
+
+- [x] Chuẩn hóa flyout Navbar desktop: submenu mở ngang trái/phải và luôn căn top bằng item cha; chỉ mobile mới xếp dọc.
+
+- [x] Tách hướng submenu Navbar: menu root mở trên/dưới và tự flip lên; menu con lồng sâu mở trái/phải, căn top theo item cha.
