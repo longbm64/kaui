@@ -3441,10 +3441,48 @@ hr {
   padding: var(--k-spacing-4);
 }
 
-.k-confirm .k-modal__dialog {
-  width: min(100%, 26rem);
+.k-confirm {
+  position: fixed;
+  inset: 0;
+  z-index: var(--k-z-modal, 1050);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--k-spacing-4);
+  overflow: hidden;
 }
-.k-confirm__content {
+.k-confirm.is-open {
+  display: flex;
+}
+.k-confirm.is-open .k-confirm__backdrop {
+  animation: k-modal-backdrop-fade-in 0.2s ease-out;
+}
+.k-confirm.is-open .k-confirm__dialog {
+  animation: k-modal-dialog-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.k-confirm__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--k-z-modal-backdrop, 1040);
+  background: rgba(15, 23, 42, 0.55);
+}
+.k-confirm__dialog {
+  position: relative;
+  z-index: var(--k-z-modal, 1050);
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 26rem);
+  max-height: calc(100vh - 2rem);
+  background-color: var(--k-color-surface);
+  border-radius: var(--k-radius-lg);
+  box-shadow: var(--k-shadow-xl);
+  border: 1px solid var(--k-border);
+  overflow: hidden;
+}
+.k-confirm__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: var(--k-spacing-6) var(--k-spacing-6) var(--k-spacing-4);
   display: block;
   text-align: center;
 }
@@ -3479,9 +3517,12 @@ hr {
   color: var(--k-text-muted);
   text-align: center;
 }
-.k-confirm .k-modal__footer {
+.k-confirm__footer {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: var(--k-spacing-3);
+  padding: var(--k-spacing-4) var(--k-spacing-6) var(--k-spacing-6);
 }
 .k-confirm--warning .k-confirm__icon {
   background: var(--k-color-warning-50, rgba(245, 158, 11, 0.15));

@@ -1,3 +1,4 @@
+- Confirm component separation: `.k-confirm` and `.k-modal` are distinct independent components with separate demo pages (`demo/modal.html` and `demo/confirm.html`). Every demo page exposes both `Modal` and `Confirm` links under Components; changes must keep their markup, runtime triggers (`data-k-modal-*` vs `data-k-confirm-*`), and styling decoupled.
 
 ## Railway deployment protocol
 
@@ -76,6 +77,12 @@
 - `npm run build` — compile Sass, build icons, and bundle icon CSS.
 - `npm test` — run Node native test suite.
 - `npm run tokens:verify` and `npm run verify:release` when token/release artifacts are affected.
+- Icon expansion changes must add source SVGs through an idempotent generator, preserve existing names, run `npm run icons:priority:add` (or `npm run icons:build` after source edits), then run `npm test`, `npm run build`, and `git diff --check`. The gallery must continue to derive its catalog from the generated manifest rather than a hard-coded list.
+
+
+- Phase 2 icon changes use `npm run icons:phase2:add`; verify the generated manifest count and representative names only after the build command completes (do not run concurrent artifact checks against the same generated files).
+
+- Icon Gallery search changes are atomic across `demo/icons.html`, `demo/demo.js`, and `demo/demo.css`; preserve manifest loading, file:// fallback, category grouping, copy buttons, and accessible empty-state messaging. Verify `node --check demo/demo.js`, `npm test`, `npm run build`, and `git diff --check`.
 
 - Header alignment: `.demo-sidebar__header` and `.demo-header` both use `--demo-header-height` with fixed border-box sizing; desktop and mobile values stay synchronized.
 

@@ -1,3 +1,8 @@
+- Confirm Component Callback Contract: Hộp thoại Confirm hỗ trợ 2 mô hình xử lý callback:
+  1. Lắng nghe trực tiếp trên button DOM: `btnConfirm.addEventListener('click', ...)` để chạy logic xác nhận và `confirm.classList.remove('is-open')`; `btnCancel.addEventListener('click', ...)` để hủy.
+  2. Bọc Promise (`showConfirm(selector)`): Trả về `Promise<boolean>` tương thích `async/await`, giải phóng listener sau khi hoàn thành.
+- Release metadata banner contract: Mỗi khi chạy `#release`, `scripts/release.mjs` tự động tiêm comment header chuẩn vào toàn bộ các file trong `dist/` (CSS, JS, Dart, Kotlin, Swift) chứa thông tin version, bản quyền (2026 KAUI Contributors / Non-Commercial), website chính thức (`https://kaui.filekat.com`), và GitHub repository (`https://github.com/longbm64/kaui`).
+- JS runtime header comment cleanup contract: Cho đợt #release tới, `src/js/kaui.js` và bản minified `dist/kaui.min.js` phải được dọn dẹp / loại bỏ block comment mô tả cũ `/** * KAUI Core Component Runtime (v1.1.1) ... */` để tránh xuất hiện comment thừa trên CDN preview.
 - Template example contract: `demo/templates/dashboard.html` is the catalog's standalone dashboard page template, copied from the demo shell. The existing `demo/index.html` remains the general component showcase but is no longer listed as a template.
 
 /* Theme readability fix: opaque footer and consistent weight prevent low-frequency blur/softness on Ocean, Forest, Sunset, and Dark preset surfaces. */
@@ -129,6 +134,12 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Icon renderer class contract: khi chuyển placeholder `<i data-kaui-icon>` thành SVG, phải giữ class nền `kaui-icon` và nối các class chuyên biệt của placeholder (ví dụ `.k-table__sort-icon`).
 - Sort icon registry contract: `icons/source/kaui/arrow-up-down.svg` là glyph trung tính chính thức, được build vào `dist/icons/sprite.svg`, `kaui-icons.css` và `kaui-icons.json` cùng `arrow-up`/`arrow-down`.
 
+- Icon priority expansion: `scripts/add-kaui-priority-icons.mjs` creates 31 idempotent KAUI-owned SVG sources; `npm run icons:priority:add` invokes it then `scripts/build-icons.mjs`. The generated manifest, sprite and CSS are consumed by `demo/icons.html` through `dist/icons/kaui-icons.json`.
+
+- Icon Phase 2 expansion: `scripts/add-kaui-phase2-icons.mjs` creates 37 idempotent KAUI-owned SVG sources for data, dashboard, files, user, security and advanced actions; `npm run icons:phase2:add` rebuilds the generated registry.
+
+- Phase 3–5 icon expansion: generators `scripts/add-kaui-phase3-icons.mjs`, `scripts/add-kaui-phase4-icons.mjs`, and `scripts/add-kaui-phase5-icons.mjs` create idempotent KAUI-owned SVG sources for media/communication, commerce/infrastructure, and editing/accessibility/localization. Their npm commands rebuild the shared registry.
+
 - Cards showcase scroll contract: `.demo-card-countries .k-card__body` owns vertical scrolling with header/footer fixed; `.demo-country-list` is not independently scrollable and preserves four equal columns for number, calling code, country, and time zone.
 
 
@@ -225,19 +236,19 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Toast timestamp style: thời gian được hiển thị tinh tế ở bottom-left (không dùng viền phân cách), font size nhỏ gọn (0.6875rem), icon 12x12px đồng bộ với text.
 - Modal Dialog Overlay Contract: `.k-modal` đóng vai trò là container toàn màn hình (`position: fixed; inset: 0; z-index: var(--k-z-modal, 1050)`). `.k-modal-backdrop` có `position: fixed; inset: 0; z-index: var(--k-z-modal-backdrop, 1040)`. Phần tử `.k-modal__dialog` được thiết lập `position: relative; z-index: var(--k-z-modal, 1050)` để luôn nổi bật trên lớp backdrop đen mờ, không bao giờ bị overlay che khuất hay làm mờ bóng đen. Hỗ trợ animation mở mượt mà và đóng linh hoạt qua nút Close/Cancel/Confirm, click vào backdrop, click ngoài dialog hoặc phím Escape.
-- Confirm Component Contract: `.k-confirm` mở rộng `.k-modal` cho các luồng xác nhận compact, dùng `.k-confirm__content`, `.k-confirm__icon`, `.k-confirm__title`, `.k-confirm__message` và hỗ trợ tone `.k-confirm--warning`, `--danger`, `--success`, `--info`. Backdrop mặc định là static (`data-k-backdrop="static"`): click ngoài và Escape không đóng hộp thoại; chỉ đóng bằng nút Cancel hoặc Confirm. Đặt `data-k-backdrop="true"` nếu muốn cho phép click ngoài. Có thể dùng chung `.k-modal__footer` cho hai action Cancel/Confirm và giữ nguyên backdrop/z-index của Modal.
+- Confirm Component Contract: `.k-confirm` là một component độc lập riêng biệt với `.k-modal` (không phụ thuộc class `.k-modal`), có anatomy riêng: `.k-confirm`, `.k-confirm__backdrop`, `.k-confirm__dialog`, `.k-confirm__body`, `.k-confirm__icon`, `.k-confirm__title`, `.k-confirm__message`, `.k-confirm__footer`. Hỗ trợ các tone `.k-confirm--warning`, `--danger`, `--success`, `--info`. Backdrop mặc định là static (`data-k-backdrop="static"`): click ngoài và Escape không đóng hộp thoại; chỉ đóng bằng nút Cancel hoặc Confirm/Action. Đặt `data-k-backdrop="true"` nếu muốn cho phép click ngoài.
 - Confirm layout contract: `.k-confirm__icon` nằm trên một dòng riêng phía trên `.k-confirm__title` và `.k-confirm__message`, giúp dialog dễ đọc trên desktop/mobile; footer actions giữ nguyên layout ngang.
 - Confirm icon layout contract: `.k-confirm__icon` căn giữa theo chiều ngang (`margin-inline: auto`) và dùng kích thước 4rem với icon bên trong 2rem để tạo điểm nhấn rõ ràng.
 - Confirm warning demo contract: demo cung cấp biến thể riêng `.k-confirm.k-confirm--warning` với icon `triangle-alert`, nút action `.k-btn--warning`, backdrop static và hành vi xác nhận độc lập.
 - Confirm centered content contract: `.k-confirm__content`, title và message đều `text-align: center`; footer buttons cũng căn giữa để đồng nhất với icon và nội dung cảnh báo.
-- Confirm footer layout contract: `.k-confirm .k-modal__footer` dùng `justify-content: space-between` để Cancel nằm bên trái và Confirm/primary action nằm bên phải; nội dung phía trên vẫn căn giữa.
+- Confirm footer layout contract: `.k-confirm__footer` dùng `justify-content: space-between` để Cancel nằm bên trái và Confirm/primary action nằm bên phải; nội dung phía trên vẫn căn giữa.
 - Modal close icon contract: nút đóng header của Modal dùng icon KAUI `x` (mapped to the project `close` glyph) thay cho ký tự `&times;`, đảm bảo nét vẽ icon đồng bộ với toàn bộ kit.
-- Confirm help icon contract: dùng icon KAUI `circle-help` mapped tới glyph `info`, tránh dependency ngoài và giữ nhận diện cảnh báo nhất quán.
+- Confirm help icon contract: dùng icon KAUI chuẩn `help` (hỏi đáp/xác nhận), `warning` (cảnh báo) và `delete` (xóa dữ liệu), tránh dependency ngoài và giữ nhận diện cảnh báo nhất quán.
 - Confirm dismiss contract: Confirm dùng backdrop static, không đóng khi click ngoài/backdrop, nhưng vẫn cho phép phím Escape đóng và báo trạng thái cancelled.
 - Modal header alignment contract: `.k-modal__header .k-alert__close` được override thành flex container (width/height 2rem, `margin: 0`, `align-items: center`) để nút đóng luôn nằm ngang thẳng hàng tuyệt đối với icon và text của tiêu đề.
 - Modal title baseline contract: heading trong `.k-modal__header` được reset `margin: 0` và `line-height: 1.25`; nút close dùng cùng flex row `align-items: center` để tâm icon nằm ngang với tâm title/icon header.
 
-- Modal/Confirm footer action icon contract: every demo footer action uses `.k-btn__icon` before `.k-btn__text`; Cancel uses KAUI `x`, Confirm/Publish use `check`, and Delete uses `trash-2`.
+- Modal/Confirm footer action icon contract: every demo footer action uses `.k-btn__icon` before `.k-btn__text`; Cancel uses `close`, Confirm/Publish use `check`, and Delete uses `delete`.
 - Modal Escape contract: `Escape` always closes the open Modal as a cancel action, including static-by-default Modal; static mode only prevents backdrop/outside click dismissal.
 
 - Modal dismiss contract: Modal và Confirm đều static mặc định (`data-k-backdrop="static"` hoặc thiếu thuộc tính), không đóng khi click backdrop/click ngoài hoặc nhấn Escape; chỉ đóng bằng nút Close/Cancel/Confirm. Dùng `data-k-backdrop="true"` để bật dismiss ngoài theo opt-in.
@@ -295,6 +306,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Icon Gallery card contract: each icon is shown in a compact horizontal card with inline KAUI SVG, icon name, and a dedicated `data-copy-icon` button that copies the standalone SVG snippet with `Copied!` feedback.
 - Icon Gallery grouping contract: `renderIconGallery()` groups every manifest icon into functional sections (Actions, Navigation, Files & Content, Feedback, Account & Security, Communication, Commerce, Media, Social, Favorites & Labels, Other); each group has a heading, icon count, responsive grid, and preserves per-icon copy buttons.
 - Icon Gallery alignment contract: `.k-card.demo-icon-card` explicitly overrides the card's default column layout to a horizontal row; icon/name group is left-aligned and Copy button is right-aligned.
+- Icon Gallery search contract: `#icon-gallery-search` filters the manifest-backed gallery by icon name on input, updates the total badge, preserves category grouping/copy actions, and renders an accessible empty state when there are no matches.
+
 - KAUI Core ownership contract: `scripts/build-kaui-core.mjs` is retained as the Phase 1 historical generator for the 32 original core glyphs; production `npm run icons:build` now builds the complete 67-icon KAUI-owned registry from `icons/source/kaui/` only.
 
 - Icon library contract: `icons/manifest.json` registers only KAUI-owned SVG sources from `icons/source/kaui/`; `npm run icons:build` generates the sole production sprite/CSS/JSON artifacts. No third-party, external icon package, or CDN source is permitted.
@@ -407,7 +420,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Visual Navbar contract: demo uses KAUI-owned icon registry for brand/dropdown/actions, `.k-navbar__link.is-active` uses a subtle primary surface, dropdown buttons reset native button chrome, and action buttons use `.k-btn__icon` + `.k-btn__text`; avoid explanatory badges or third-party visual language inside the component showcase.
 
 - Multi-level Navbar contract: nested `.k-navbar__item--has-children` may contain another `.k-navbar__submenu`; desktop nested menus fly out to the right, mobile menus remain in normal flow. Each toggle is a button with `aria-haspopup="true"` and synchronized `aria-expanded`; sibling branches close when another branch opens.
-- Modal demo implementation contract: `demo/modal.html` must include `#demo-modal`, `#demo-confirm`, `#demo-confirm-warning`, and `#demo-confirm-danger` plus each referenced backdrop/action ID, because `demo/demo.js` binds interaction by these IDs.
+- Modal demo implementation contract: `demo/modal.html` includes `#demo-modal` and `#demo-countries-modal`, while `demo/confirm.html` houses `#demo-confirm`, `#demo-confirm-warning`, and `#demo-confirm-danger` plus each referenced backdrop/action ID, because `demo/demo.js` binds interaction by these IDs.
 - Flutter package contract: the pub.dev package is named `filekat`, located at `packages/pub`, with public library import `package:filekat/kaui.dart`.
 - Flutter package `filekat` is version `1.1.0+` and uses the KAUI Personal / Non-Commercial License; its package LICENSE, README, and CHANGELOG must remain aligned with `NON_COMMERCIAL_LICENSE.md` and commercial contact `contact@filekat.com`.
 - Demo shell scroll contract: `.demo-body` và `.demo-right` giữ `height: 100vh` với `overflow: hidden`; `.demo-header` và `.demo-footer` là flex items cố định không co/không scroll; chỉ `.demo-right__body` có `overflow-y: auto` và `min-height: 0` để cuộn nội dung.

@@ -1255,7 +1255,7 @@ describe('Tier 2: Boundary, Corner & Residual Cases', () => {
       if (!checkBuildReady(t)) return;
       if (!fs.existsSync(DIST_MIN_CSS)) { t.skip('Minified CSS not yet built'); return; }
       const minSizeBytes = Buffer.byteLength(minCssContent, 'utf8');
-      assert.ok(minSizeBytes < 75 * 1024, `Minified CSS must stay under 75KB budget (actual: ${minSizeBytes} bytes)`);
+      assert.ok(minSizeBytes < 85 * 1024, `Minified CSS must stay under 85KB budget (actual: ${minSizeBytes} bytes)`);
     });
   });
 

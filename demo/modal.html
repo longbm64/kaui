@@ -33,6 +33,7 @@
           <a href="badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
           <a href="alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
           <a href="modal.html" class="demo-sidebar__link is-active"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="confirm.html" class="demo-sidebar__link"><i data-kaui-icon="help"></i> <span>Confirm</span></a>
           <a href="table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
           <a href="toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
           <a href="tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
@@ -79,20 +80,8 @@
                 <span class="k-btn__icon"><i data-kaui-icon="globe"></i></span>
                 <span class="k-btn__text">View all countries</span>
               </button>
-              <button type="button" class="k-btn k-btn--outline" id="demo-open-confirm">
-                <span class="k-btn__icon"><i data-kaui-icon="check"></i></span>
-                <span class="k-btn__text">Open Confirm</span>
-              </button>
-              <button type="button" class="k-btn k-btn--warning" id="demo-open-confirm-warning">
-                <span class="k-btn__icon"><i data-kaui-icon="triangle-alert"></i></span>
-                <span class="k-btn__text">Warning Confirm</span>
-              </button>
-              <button type="button" class="k-btn k-btn--danger" id="demo-open-confirm-danger">
-                <span class="k-btn__icon"><i data-kaui-icon="trash-2"></i></span>
-                <span class="k-btn__text">Delete Confirm</span>
-              </button>
             </div>
-            <p class="k-text-muted k-fs-sm k-mt-4" id="demo-confirm-result" hidden></p>
+
           </div>
           <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-modal"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Add <code>is-open</code> to the modal container and dialog to show it. Use structured header, body, and footer areas.</p><pre class="demo-code"><code>&lt;div class="k-modal is-open" role="dialog" aria-modal="true"&gt;
   &lt;div class="k-modal-backdrop"&gt;&lt;/div&gt;
@@ -105,7 +94,7 @@
         </div>
       </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.10</span></a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.11</span></a></div></div></div></footer></div>
 
   <!-- Interactive modal dialogs. Keep these outside the content cards so the fixed overlay can cover the page. -->
   <div class="k-modal" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title" data-k-backdrop="static" aria-hidden="true">
@@ -155,67 +144,5 @@
   </div>
 
 
-  <div class="k-modal k-confirm" id="demo-confirm" role="dialog" aria-modal="true" aria-labelledby="demo-confirm-title" data-k-backdrop="static" aria-hidden="true">
-    <div class="k-modal-backdrop" id="demo-confirm-backdrop"></div>
-    <div class="k-modal__dialog">
-      <div class="k-modal__body k-confirm__content">
-        <div class="k-confirm__icon"><i data-kaui-icon="circle-help"></i></div>
-        <h3 class="k-confirm__title" id="demo-confirm-title">Save changes?</h3>
-        <p class="k-confirm__message">Your changes will be saved to this record.</p>
-      </div>
-      <div class="k-modal__footer">
-        <button type="button" class="k-btn k-btn--outline" id="demo-confirm-cancel">
-          <span class="k-btn__icon"><i data-kaui-icon="x"></i></span>
-          <span class="k-btn__text">Cancel</span>
-        </button>
-        <button type="button" class="k-btn k-btn--primary" id="demo-confirm-accept">
-          <span class="k-btn__icon"><i data-kaui-icon="check"></i></span>
-          <span class="k-btn__text">Confirm</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="k-modal k-confirm k-confirm--warning" id="demo-confirm-warning" role="dialog" aria-modal="true" aria-labelledby="demo-confirm-warning-title" data-k-backdrop="static" aria-hidden="true">
-    <div class="k-modal-backdrop" id="demo-confirm-warning-backdrop"></div>
-    <div class="k-modal__dialog">
-      <div class="k-modal__body k-confirm__content">
-        <div class="k-confirm__icon"><i data-kaui-icon="triangle-alert"></i></div>
-        <h3 class="k-confirm__title" id="demo-confirm-warning-title">Publish changes?</h3>
-        <p class="k-confirm__message">This will make the current changes visible to everyone.</p>
-      </div>
-      <div class="k-modal__footer">
-        <button type="button" class="k-btn k-btn--outline" id="demo-confirm-warning-cancel">
-          <span class="k-btn__icon"><i data-kaui-icon="x"></i></span>
-          <span class="k-btn__text">Cancel</span>
-        </button>
-        <button type="button" class="k-btn k-btn--warning" id="demo-confirm-warning-accept">
-          <span class="k-btn__icon"><i data-kaui-icon="check"></i></span>
-          <span class="k-btn__text">Publish</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="k-modal k-confirm k-confirm--danger" id="demo-confirm-danger" role="dialog" aria-modal="true" aria-labelledby="demo-confirm-danger-title" data-k-backdrop="static" aria-hidden="true">
-    <div class="k-modal-backdrop" id="demo-confirm-danger-backdrop"></div>
-    <div class="k-modal__dialog">
-      <div class="k-modal__body k-confirm__content">
-        <div class="k-confirm__icon"><i data-kaui-icon="trash-2"></i></div>
-        <h3 class="k-confirm__title" id="demo-confirm-danger-title">Delete record?</h3>
-        <p class="k-confirm__message">This action cannot be undone.</p>
-      </div>
-      <div class="k-modal__footer">
-        <button type="button" class="k-btn k-btn--outline" id="demo-confirm-danger-cancel">
-          <span class="k-btn__icon"><i data-kaui-icon="x"></i></span>
-          <span class="k-btn__text">Cancel</span>
-        </button>
-        <button type="button" class="k-btn k-btn--danger" id="demo-confirm-danger-accept">
-          <span class="k-btn__icon"><i data-kaui-icon="trash-2"></i></span>
-          <span class="k-btn__text">Delete</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

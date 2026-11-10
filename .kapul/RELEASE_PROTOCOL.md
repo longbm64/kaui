@@ -184,3 +184,30 @@ git status --short
 ```
 
 Không chạy `npm run release` nếu chưa muốn tạo version, commit, merge và deploy thật.
+
+## Release Bug Notice — Strip Header Comments in JS Artifacts
+- **Bug:** `src/js/kaui.js` chứa block comment đầu file:
+  ```js
+  /**
+   * KAUI Core Component Runtime (v1.1.1)
+   * Zero-dependency vanilla JavaScript for KAUI Interactive Components:
+   * ...
+   */
+  ```
+  Khi build `dist/kaui.min.js`, script hiện tại chỉ dùng `cp src/js/kaui.js dist/kaui.min.js`, dẫn tới việc comment header bị giữ nguyên cả số version cũ `(v1.1.1)` trong file minified trên production / CDN.
+- **Yêu cầu đợt #release tiếp theo:**
+  Xóa bỏ block comment header này (hoặc tự động strip comments khi build `dist/kaui.min.js` và `dist/kaui.js`) để không còn xuất hiện trong bundle khi inspect response/preview.
+
+
+## Distribution Artifact Header Comment & Branding Rule
+- Khi chạy lệnh `#release` (thông qua `scripts/release.mjs` và `scripts/release-flow.mjs`), toàn bộ các file artifact phân phối (CSS, JS, Tokens, Icons) **bắt buộc** phải được tự động chèn banner thông tin chuẩn ở đầu file:
+  - **Version:** Số phiên bản hiện tại (ví dụ: `v1.1.10`).
+  - **Bản quyền:** `Copyright (c) 2026 KAUI Contributors | Personal / Non-Commercial License (contact@filekat.com)`.
+  - **Website chính thức:** `https://kaui.filekat.com`.
+  - **GitHub project:** `https://github.com/longbm64/kaui`.
+- Đối với file minified (`.min.css`, `.min.js`), chèn dạng 1 dòng gọn gàng:
+  ```js
+  /*! KAUI v1.1.10 | (c) 2026 KAUI Contributors | Personal/Non-Commercial | https://kaui.filekat.com | https://github.com/longbm64/kaui */
+  ```
+- Đối với file unminified (`.css`, `.js`, `.kt`, `.swift`, `.dart`), chèn dạng block comment chuẩn.
+- Tự động thay thế hoặc xóa bỏ mọi header comment cũ trước đó để tránh lỗi đọng phiên bản cũ.

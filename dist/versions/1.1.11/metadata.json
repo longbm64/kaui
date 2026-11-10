@@ -1,0 +1,82 @@
+{
+  "version": "1.1.11",
+  "builtAt": "2026-11-10T14:29:33.371Z",
+  "files": {
+    "kaui.css": {
+      "bytes": 91583,
+      "sha256": "cba1ba2149f3a5ed4994840c7a957e8ff532c8b807956645c6c468b3fc3c6d45"
+    },
+    "kaui.css.map": {
+      "bytes": 18220,
+      "sha256": "9400dbb0bd2fc29be1c600118da4545045f056c3b40ab00d0a73e14e9bd92a5a"
+    },
+    "kaui.min.css": {
+      "bytes": 77748,
+      "sha256": "d6dbe2531bf248b59d325ca8ca98f53d8066450b40eb8103751a945b068df1d4"
+    },
+    "kaui.min.css.map": {
+      "bytes": 14053,
+      "sha256": "8ac7c0b267a1fd999b29eac311df10fd96eac7c7765c0b1ce5f202e21deae0e3"
+    },
+    "kaui.js": {
+      "bytes": 14654,
+      "sha256": "2b8e2e2e891e05dccbed0ee0606084577703888d27dfbf936da18cfcf3edd9b9"
+    },
+    "kaui.min.js": {
+      "bytes": 14547,
+      "sha256": "12077ddf7adf5a76782038ea74bc0f37168cf059fd90be185705faaeae353158"
+    },
+    "kaui-chart.css": {
+      "bytes": 4731,
+      "sha256": "b7e945fee0ac7ea2adc056aa61cb27c17210bb04c6b949af09c0c8f3729ad295"
+    },
+    "kaui-chart.js": {
+      "bytes": 18594,
+      "sha256": "04082efadd6d62c4578b61e89a579d9b1faa1728f374f723c84586360e8ae127"
+    },
+    "kaui-chart.min.css": {
+      "bytes": 3892,
+      "sha256": "00f201f1eabd3128d8df70a22b022ed2c51e8949f8b9a229d942252faa299f04"
+    },
+    "kaui-chart.min.js": {
+      "bytes": 18487,
+      "sha256": "5d8cd49c2a0a2157fc0e3f1c7aab545d7f9456927d2c261d820d588aaab31c3d"
+    },
+    "kaui-agent-manifest.json": {
+      "bytes": 12052,
+      "sha256": "3d9e5016988c6b7589d6579972501a2f63968a150c4ef3886b88a047fdfcb147"
+    },
+    "tokens/kaui.tokens.json": {
+      "bytes": 4614,
+      "sha256": "52ed79cce0f47205c5d7b20bd1a6c530feadcc0bc6cd61417e7f101773bee87c"
+    },
+    "tokens/kaui.tokens.css": {
+      "bytes": 3072,
+      "sha256": "6efdedcc5d09cc72aa4218c7a4ac82d40f12dc6cb948c9e00a493fc2c3b915fa"
+    },
+    "tokens/kaui.tokens.dart": {
+      "bytes": 4551,
+      "sha256": "969ecae6acda77b151d8f05c00fcbf68eafb262f3177e2c5ad8f66db0b5440aa"
+    },
+    "tokens/KauiTokens.kt": {
+      "bytes": 3564,
+      "sha256": "fd00b2bde6815058d2b98e53389818dd5f7a8ca88fff91702a09807f9555788d"
+    },
+    "tokens/KauiTokens.swift": {
+      "bytes": 7265,
+      "sha256": "1d3ca69b082dd7e296aee66d579f5c0bb7afe08e94c07a38b452872a7228dcdb"
+    },
+    "icons/sprite.svg": {
+      "bytes": 28050,
+      "sha256": "514584a77aa1fe30ab09465671e13a49c61d61348bb30e863934613fff8da293"
+    },
+    "icons/kaui-icons.css": {
+      "bytes": 495,
+      "sha256": "e72cfc8b590f73ee72b7c657dd45229887663b5c91ecd5559d30677e8205c901"
+    },
+    "icons/kaui-icons.json": {
+      "bytes": 37023,
+      "sha256": "4e16872129ffbc849928340fee1c03093b3cc0da87af0172b9e609a7083f8973"
+    }
+  }
+}

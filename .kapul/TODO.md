@@ -1,3 +1,9 @@
+- [x] Rà soát và chuẩn hóa toàn bộ văn bản sang tiếng Anh trên tất cả các trang demo (`demo/*.html`), bao gồm code samples, chú thích multi-level submenu, script callback guides, bảng dữ liệu mẫu và mô tả component.
+- [x] Thêm tài liệu & hướng dẫn script callback cho Confirm component trong `demo/confirm.html` (cả 2 cách: DOM listener trực tiếp và hàm Promise async/await).
+- [x] Cập nhật scripts/release.mjs và quy trình #release để tự động chèn comment header chứa đầy đủ version, bản quyền, website chính thức và GitHub project vào tất cả các file phân phối (dist/ CSS, JS, Tokens).
+- [x] Tách Modal (.k-modal) và Confirm (.k-confirm) thành 2 component hoàn toàn độc lập: tách SCSS selector riêng biệt, bổ sung runtime data-k-confirm trong kaui.js, tách thành 2 trang demo riêng (demo/modal.html và demo/confirm.html), đồng bộ toàn bộ sidebar của 21 trang demo.
+- [x] Cập nhật bộ icon chuẩn cho Confirm component: đổi icon menu và tiêu đề Confirm sang `help`, icon dialog sang `help` / `warning` / `delete`, nút Cancel sang `close`, đồng bộ trên toàn bộ 21 trang demo.
+- [ ] Fix cho đợt #release tiếp theo: Xóa bỏ block comment header `/** * KAUI Core Component Runtime (v1.1.1) ... */` khỏi file JS runtime (`src/js/kaui.js`, `dist/kaui.min.js`) để không hiển thị comment/version cũ trên production/CDN preview.
 - [x] Tạo template dashboard (`demo/templates/dashboard.html`) sao chép từ mẫu demo hiện tại và loại bỏ card Living Styleguide khỏi catalog `demo/templates.html`.
 - [x] Tạo template one-column (`demo/templates/one-column.html`) đồng bộ width của navbar container và footer khớp với body (max-width 60rem), căn giữa menu Account/Playground/API.
 - [x] Chuyển đổi toàn bộ ngôn ngữ trên trang `demo/templates/one-column.html` sang tiếng Anh (thay "Đăng xuất" thành "Log out").
@@ -192,6 +198,12 @@
 
 
 - [x] Mở rộng bộ icon KAUI bằng 35 glyph mới thuộc các nhóm Media, Layout, Device, Commerce, Navigation và Security; production registry đạt 67 icon KAUI-owned.
+- [x] Mở rộng bộ icon KAUI thêm 31 glyph ưu tiên cho navigation, actions, feedback, dashboard, data, user và security; bổ sung generator idempotent `scripts/add-kaui-priority-icons.mjs` và rebuild registry.
+- [x] Mở rộng Phase 2 thêm 37 icon KAUI cho data, dashboard, file, user, security và thao tác nâng cao; thêm generator idempotent `scripts/add-kaui-phase2-icons.mjs`.
+
+- [x] Hoàn tất liên tục Phase 3–5: bổ sung icon Media/Communication, Commerce/Infrastructure và Editing/Accessibility/Localization; rebuild registry, sprite và CSS artifacts.
+
+
 - [x] Xóa các TODO lịch sử mô tả third-party-derived registry sau khi chuyển production registry sang 67 icon KAUI-owned.
 
 
@@ -200,6 +212,8 @@
 - [x] Sửa Icon Gallery card theo hàng ngang: icon + tên canh trái, nút Copy canh phải; override `.k-card` column layout bằng selector `.k-card.demo-icon-card`.
 
 - [x] Hiển thị Icon Gallery theo nhóm chức năng, có tiêu đề và số lượng icon mỗi nhóm, giữ nguyên copy SVG từng icon.
+- [x] Thêm ô search icon vào `demo/icons.html`, lọc realtime theo tên icon, cập nhật badge tổng số và hiển thị empty state accessible khi không có kết quả.
+
 
 
 

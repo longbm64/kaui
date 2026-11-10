@@ -193,14 +193,56 @@
   }
 }
 
-// Confirm dialog — compact modal with tone icon and two actions
-// Default backdrop is static: click outside / Escape do not dismiss.
+// ==========================================================================
+// Confirm Component (.k-confirm) — Independent Dialog for Confirmations
+// ==========================================================================
 .k-confirm {
-  .k-modal__dialog {
-    width: min(100%, 26rem);
+  position: fixed;
+  inset: 0;
+  z-index: var(--k-z-modal, 1050);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--k-spacing-4);
+  overflow: hidden;
+
+  &.is-open {
+    display: flex;
+
+    .k-confirm__backdrop {
+      animation: k-modal-backdrop-fade-in 0.2s ease-out;
+    }
+
+    .k-confirm__dialog {
+      animation: k-modal-dialog-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
   }
 
-  &__content {
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: var(--k-z-modal-backdrop, 1040);
+    background: rgba(15, 23, 42, 0.55);
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: var(--k-z-modal, 1050);
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 26rem);
+    max-height: calc(100vh - 2rem);
+    background-color: var(--k-color-surface);
+    border-radius: var(--k-radius-lg);
+    box-shadow: var(--k-shadow-xl);
+    border: 1px solid var(--k-border);
+    overflow: hidden;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: var(--k-spacing-6) var(--k-spacing-6) var(--k-spacing-4);
     display: block;
     text-align: center;
   }
@@ -240,9 +282,12 @@
     text-align: center;
   }
 
-  .k-modal__footer {
+  &__footer {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: var(--k-spacing-3);
+    padding: var(--k-spacing-4) var(--k-spacing-6) var(--k-spacing-6);
   }
 
   &--warning &__icon {

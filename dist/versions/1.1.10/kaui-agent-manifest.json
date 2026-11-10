@@ -273,7 +273,7 @@
       "htmlSnippet": "<header class=\"k-navbar k-navbar--expand-lg k-navbar--sticky k-navbar--shadow\">\n  <div class=\"k-navbar__container\">\n    <a class=\"k-navbar__brand\" href=\"#\"><i data-kaui-icon=\"compass\"></i> Brand</a>\n    <button type=\"button\" class=\"k-navbar__toggle\" aria-label=\"Toggle menu\" aria-expanded=\"false\"><i data-kaui-icon=\"menu\"></i></button>\n    <div class=\"k-navbar__menu\">\n      <ul class=\"k-navbar__nav\">\n        <li><a class=\"k-navbar__link is-active\" href=\"#\">Home</a></li>\n        <li class=\"k-navbar__item--has-children\">\n          <button type=\"button\" class=\"k-navbar__link\" aria-haspopup=\"true\" aria-expanded=\"false\">Products <i data-kaui-icon=\"chevron-down\"></i></button>\n          <ul class=\"k-navbar__submenu\">\n            <li><a class=\"k-navbar__link\" href=\"#\">Analytics</a></li>\n            <li><a class=\"k-navbar__link\" href=\"#\">Security</a></li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  </div>\n</header>"
     }
   },
-  "builtAt": "2026-11-10T13:27:28.804Z",
+  "builtAt": "2026-11-10T14:05:54.984Z",
   "build": {
     "version": "1.1.10",
     "mainCss": "dist/kaui.min.css",

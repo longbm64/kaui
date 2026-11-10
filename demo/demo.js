@@ -16,7 +16,7 @@
         'layers': 'folder', 'tag': 'success', 'scan': 'search', 'message-square': 'mail', 'list-collapse': 'menu',
         'loader-2': 'settings', 'bot': 'user', 'github': 'external-link', 'globe': 'external-link', 'smartphone': 'user',
         'tablet-smartphone': 'user', 'apple': 'success', 'braces': 'settings', 'shield-check': 'success', 'sparkles': 'success',
-        'panel-top': 'folder', 'timer': 'calendar', 'bell-ring': 'bell', 'check-circle-2': 'success', 'circle-help': 'info',
+        'panel-top': 'folder', 'timer': 'calendar', 'bell-ring': 'bell', 'check-circle-2': 'success', 'help': 'info',
         'triangle-alert': 'warning', 'trash-2': 'delete', 'plus': 'add', 'x': 'close', 'activity': 'success',
         'arrow-up-down': 'arrow-up-down', 'file-code-2': 'file', 'clipboard-list': 'file', 'table-2': 'folder'
       };
@@ -380,7 +380,7 @@
         var el = document.getElementById(id);
         if (!el) return;
         el.addEventListener('click', function() {
-          if (el.classList.contains('k-modal-backdrop') && isStatic()) return;
+          if ((el.classList.contains('k-confirm__backdrop') || el.classList.contains('k-modal-backdrop')) && isStatic()) return;
           close();
           showResult('Confirmation cancelled.');
         });
@@ -1206,6 +1206,7 @@
       'guide-icons': '<svg class="k-icon" aria-hidden="true"><use href="../dist/icons/sprite.svg#search" xlink:href="../dist/icons/sprite.svg#search"></use></svg>',
       'guide-indicators': '<span class="k-spinner" aria-label="Loading"></span><div class="k-progress"><div class="k-progress__bar" style="width: 45%;"></div></div>',
       'guide-layout': '<div class="k-grid k-gap-4"><div class="k-col-12 k-col-md-6">Left column</div><div class="k-col-12 k-col-md-6">Right column</div></div>',
+      'guide-confirm': '<div class="k-confirm is-open" role="dialog" aria-modal="true" data-k-backdrop="static"><div class="k-confirm__backdrop"></div><div class="k-confirm__dialog"><div class="k-confirm__body"><div class="k-confirm__icon"><i data-kaui-icon="help"></i></div><h3 class="k-confirm__title">Save changes?</h3><p class="k-confirm__message">Your changes will be saved to this record.</p></div><div class="k-confirm__footer"><button type="button" class="k-btn k-btn--outline">Cancel</button><button type="button" class="k-btn k-btn--primary">Confirm</button></div></div></div>',
       'guide-modal': '<div class="k-modal is-open" role="dialog" aria-modal="true"><div class="k-modal__dialog"><div class="k-modal__header"><h3 class="k-modal__title">Title</h3></div><div class="k-modal__body">Dialog body text</div><div class="k-modal__footer"><button type="button" class="k-btn k-btn--primary">Confirm</button></div></div></div>',
       'guide-navbar': '<header class="k-navbar k-navbar--expand-lg k-navbar--offcanvas"><div class="k-navbar__container"><a href="#" class="k-navbar__brand">Brand</a><button type="button" class="k-navbar__toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button><nav class="k-navbar__menu" id="primary-menu"><ul class="k-navbar__nav"><li><a href="#" class="k-navbar__link is-active" aria-current="page">Home</a></li><li class="k-navbar__item--has-children"><button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Products</button><ul class="k-navbar__submenu"><li><a href="#" class="k-navbar__link">Overview</a></li><li class="k-navbar__item--has-children"><button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Advanced</button><ul class="k-navbar__submenu"><li><a href="#" class="k-navbar__link">Reports</a></li></ul></li></ul></li></ul><div class="k-navbar__actions"><button class="k-btn k-btn--primary"><span class="k-btn__text">Get started</span><span class="k-btn__icon"><i data-kaui-icon="arrow-right"></i></span></button></div></nav></div></header>',
       'guide-tabs': '<div class="k-tabs__list" role="tablist"><button class="k-tabs__tab is-active" data-tab-target="#profile" role="tab" aria-selected="true">Profile</button></div><div id="profile" class="k-tabs__panel is-active" role="tabpanel">Profile content</div>',
@@ -1321,7 +1322,12 @@
         return result;
       }, {});
       var categoryOrder = ['Actions', 'Navigation', 'Files & Content', 'Feedback', 'Account & Security', 'Communication', 'Commerce', 'Media', 'Social', 'Favorites & Labels', 'Other'];
-      grid.innerHTML = categoryOrder.filter(function (category) { return grouped[category] && grouped[category].length; }).map(function (category) {
+      var matchingCategories = categoryOrder.filter(function (category) { return grouped[category] && grouped[category].length; });
+      if (!matchingCategories.length) {
+        grid.innerHTML = '<div class="k-card k-card--bordered k-p-5 demo-icon-search-empty" role="status">No icons match your search.</div>';
+        return;
+      }
+      grid.innerHTML = matchingCategories.map(function (category) {
         var cards = grouped[category].sort().map(function (name) {
           return '<div class="k-col-6 k-col-md-4 k-col-lg-3"><article class="demo-icon-card k-card k-card--bordered">' +
             '<div class="demo-icon-card__main">' + iconSnippet(name) + '<code class="demo-icon-card__name">' + name + '</code></div>' +
@@ -1333,6 +1339,17 @@
           '<div class="k-grid k-gap-3">' + cards + '</div></section>';
       }).join('');
     }
+    var iconGallerySearch = document.getElementById('icon-gallery-search');
+    var iconGalleryNames = [];
+    function filterIconGallery() {
+      if (!iconGallerySearch) return;
+      var query = iconGallerySearch.value.trim().toLowerCase();
+      var filtered = iconGalleryNames.filter(function (name) { return !query || name.toLowerCase().indexOf(query) !== -1; });
+      renderIconGallery(filtered);
+    }
+    if (iconGallerySearch) iconGallerySearch.addEventListener('input', filterIconGallery);
+
+
 
     Promise.all([
       fetch('../dist/icons/sprite.svg').then(function (response) {
@@ -1345,9 +1362,11 @@
       })
     ]).then(function (result) {
       ensureInlineSprite(result[0]);
-      renderIconGallery(Array.isArray(result[1].icons) ? result[1].icons : iconNames);
+      iconGalleryNames = Array.isArray(result[1].icons) ? result[1].icons : iconNames;
+      renderIconGallery(iconGalleryNames);
     }).catch(function () {
-      renderIconGallery(iconNames);
+      iconGalleryNames = iconNames;
+      renderIconGallery(iconGalleryNames);
     });
 
 
