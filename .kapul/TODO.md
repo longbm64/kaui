@@ -313,6 +313,10 @@
 - [x] Sửa script `scripts/release.mjs` để tự động cập nhật số version trong footer badge `.demo-footer__badge` sang version mới mỗi khi chạy release; đã deploy và đồng bộ `v1.1.5` trên production.
 
 - [x] Đã cấu hình tự động cập nhật `packages/pub/README.md` (đoạn `filekat: ^<version>`) và `packages/pub/CHANGELOG.md` theo version mới mỗi khi release để trên pub.dev trang của version nào thì README hiển thị đúng mã cài đặt của version đó.
+- [x] Đã chuẩn hóa tài liệu AI Agent và Core SCSS cho các Preset Themes:
+  - Bổ sung `[data-theme="sunset"]`, `[data-theme="ocean"]`, `[data-theme="forest"]` vào `src/scss/base/_root.scss` để bất kỳ dự án nào import filekat/kaui đều sử dụng được trực tiếp các theme này bằng `data-theme="sunset"`.
+  - Cập nhật tài liệu `README.md`, `demo/index.html` (AI Agent Prompt), và `kaui-agent-manifest.json` ghi rõ hướng dẫn thiết lập theme cho các agent AI ở dự án khác.
+
 
 - [x] Đã tích hợp tự động hóa `#release`: mỗi lần release sẽ đồng bộ version và tự động publish đồng thời lên cả 3 nền tảng:
   1. Web CDN / Static hosting (Railway: `https://kaui.filekat.com`)

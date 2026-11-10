@@ -234,24 +234,29 @@ Link the compiled stylesheet directly in your HTML `<head>`:
 | **Elevation Shadows** | `--k-shadow-{sm..xl}` | Multi-stop realistic depth shadows (`sm`, `md`, `lg`, `xl`) |
 | **Z-Index Scale** | `--k-z-{layer}` | `dropdown`: `1000`, `sticky`: `1020`, `fixed`: `1030`, `modal`: `1050`, `tooltip`: `1080` |
 
-### Dynamic Dark Mode
+### Dynamic Theme Switching & Presets
 
-KAUI includes built-in dark theme support mapped through the `[data-theme="dark"]` attribute selector.
+KAUI includes built-in theme presets mapped through the `[data-theme]` attribute selector on `<html>` or any container:
 
-To enable dark mode, set the attribute on `document.documentElement` or any container:
+- **Sunset**: `<html data-theme="sunset">` (Warm sunset orange `#ea580c`, warm background `#fff7ed`)
+- **Ocean**: `<html data-theme="ocean">` (Fresh cyan `#0e7490`, clean cyan background `#f0fdff`)
+- **Forest**: `<html data-theme="forest">` (Natural emerald `#15803d`, fresh mint background `#f0fdf4`)
+- **Dark**: `<html data-theme="dark">` (Deep slate `#0f172a`, text `#f8fafc`)
+- **Default**: Default KAUI Blue `#2563eb` (omit `data-theme`)
+
+To enable a theme, set the attribute on `document.documentElement` or any container:
 
 ```html
-<html data-theme="dark">
+<html data-theme="sunset">
   ...
 </html>
 ```
 
-Under dark mode, surface colors (`--k-color-surface`), text colors (`--k-color-text-main`), borders (`--k-color-border`), and elevation shadows automatically remap without requiring component-level overrides.
+Under each theme, surface colors (`--k-color-surface`), text colors (`--k-color-text-main`, `--k-color-text-muted`), borders (`--k-color-border`), and primary accents automatically remap without requiring component-level overrides.
 
 ```javascript
-// Toggle Dark Mode via Vanilla JavaScript
-const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+// Switch to Sunset theme via Vanilla JavaScript
+document.documentElement.setAttribute('data-theme', 'sunset');
 ```
 
 ---
