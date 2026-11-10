@@ -119,6 +119,9 @@ Bundler users should prefer `import 'filekat/kaui';`. If a static HTML deploymen
 
 ```bash
 npm run build
+
+> **Protected branch policy:** Never edit or commit directly on `release`. Develop on `main` or a feature branch. To publish, use `#release` (equivalent to `npm run release`); it validates and merges into `release` in an isolated worktree. If the current branch is `release`, the release workflow warns and stops.
+
 npm run build:css:dev   # dist/kaui.css (expanded, with source maps)
 npm run build:css:prod  # dist/kaui.min.css (compressed, with source maps)
 npm run watch           # Watch mode

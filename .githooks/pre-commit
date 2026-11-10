@@ -1,0 +1,4 @@
+#!/bin/sh
+branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null || true)
+[ "$branch" = "release" ] || exit 0
+exec node scripts/check-protected-branch.mjs "$branch"

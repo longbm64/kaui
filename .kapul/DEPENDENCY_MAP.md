@@ -17,6 +17,11 @@
   - **Exports/public contract:** Same sidebar, theme dropdown, mobile toggle, right shell, and footer structure as `demo/card.html`; only the main catalog body is template-specific.
   - **Dependencies:** `demo/demo.css`, `demo/demo.js`, `dist/kaui.css`, `dist/icons/kaui-icons.css`.
   - **Dependents:** template catalog navigation and static demo shell checks.
+- **Node:** `scripts/check-protected-branch.mjs` + `.githooks/pre-commit` + `.githooks/pre-push`
+  - **Exports/public contract:** rejects commit/push operations when current branch is `release`; development must happen on `main`/feature branches and publish through `npm run release` (`#release`).
+  - **Dependencies:** Git branch state, Node.js.
+  - **Dependents:** local Git commit/push workflow and agent change protocol.
+
 
 
 - **Node:** shared demo sidebar Resources group

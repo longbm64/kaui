@@ -7,6 +7,9 @@
 - Never use `serve:tailscale` as the Railway start command because it binds a fixed local port.
 
 - `demo/templates.html` must be kept structurally aligned with a canonical component page such as `demo/card.html`: do not create a reduced sidebar or alternate footer. Verify the shared regions and theme dropdown before changing catalog content.
+- **Protected release branch:** tuyệt đối không chỉnh sửa, commit hoặc push trực tiếp trên `release`. Nếu branch hiện tại là `release`, agent phải cảnh báo và dừng mọi hoạt động thay đổi/deploy ngay lập tức; chỉ được phát hành thông qua `#release` từ `main` hoặc feature branch.
+- Local Git hooks (`.githooks/pre-commit`, `.githooks/pre-push`) chặn commit/push trực tiếp trên `release`; mỗi clone cần cấu hình `git config core.hooksPath .githooks`.
+
 
 
 - Sidebar menu changes must be applied atomically to all 20 `demo/*.html` pages. Keep exactly one `Templates` link per page, under `Resources`, with `.is-active` only on `demo/templates.html`; verify with a full-page count, `git diff --check`, and `npm test`.

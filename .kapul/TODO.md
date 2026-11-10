@@ -13,6 +13,8 @@
 - [x] Di chuyển item Templates vào nhóm Resources trên toàn bộ 20 demo pages, giữ active state riêng tại `demo/templates.html` và loại bỏ item trùng ở Getting Started.
 
 
+- [x] Protect `release`: agent stops immediately on that branch; versioned pre-commit/pre-push hooks block direct local commit/push; `npm install` configures hooks via `prepare`.
+
 - [x] Country modal table: fit all four columns within the dialog without horizontal overflow; timezone values wrap inside the fourth column.
 
 

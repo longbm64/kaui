@@ -43,6 +43,8 @@
     "icons:core:build": "node scripts/build-kaui-core.mjs",
     "serve:tailscale": "python3 -m http.server 4173 --bind 0.0.0.0 --directory .",
     "start": "node server.mjs",
+    "prepare": "git config core.hooksPath .githooks",
+
 
     "test": "node --test test/kit.test.mjs"
   },
