@@ -1,3 +1,4 @@
+- [x] Chuẩn hóa Modal và Confirm: Mặc định là static (click ra ngoài/backdrop không đóng) và nhấn phím Escape luôn đóng hộp thoại (chuẩn accessibility).
 - [x] Rà soát và chuẩn hóa toàn bộ văn bản sang tiếng Anh trên tất cả các trang demo (`demo/*.html`), bao gồm code samples, chú thích multi-level submenu, script callback guides, bảng dữ liệu mẫu và mô tả component.
 - [x] Thêm tài liệu & hướng dẫn script callback cho Confirm component trong `demo/confirm.html` (cả 2 cách: DOM listener trực tiếp và hàm Promise async/await).
 - [x] Cập nhật scripts/release.mjs và quy trình #release để tự động chèn comment header chứa đầy đủ version, bản quyền, website chính thức và GitHub project vào tất cả các file phân phối (dist/ CSS, JS, Tokens).

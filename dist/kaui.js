@@ -1,10 +1,14 @@
-/*!
- * KAUI CSS Kit v1.1.11
- * Copyright (c) 2026 KAUI Contributors
- * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
- * Official Website: https://kaui.filekat.com
- * GitHub Project:  https://github.com/longbm64/kaui
+/**
+ * KAUI Core Component Runtime (v1.1.1)
+ * Zero-dependency vanilla JavaScript for KAUI Interactive Components:
+ * - Dropdowns & Custom Selects (.k-dropdown, .k-dropdown-select)
+ * - Navigation Bar & Multi-level Responsive Submenus (.k-navbar)
+ * - Modal Dialogs & Confirm Overlays (.k-modal, .k-confirm)
+ * - Interactive Tabs (.k-tabs)
+ * - Accordions (.k-accordion)
+ * - Data Tables (search, sort, column totals, frozen multi-pane, select-all)
  */
+
 (function (global) {
   'use strict';
 
@@ -161,7 +165,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         var openModal = document.querySelector('.k-modal.is-open');
-        if (openModal && openModal.getAttribute('data-k-backdrop') !== 'static') {
+        if (openModal) {
           openModal.classList.remove('is-open');
         }
       }
@@ -189,7 +193,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         var openConfirm = document.querySelector('.k-confirm.is-open');
-        if (openConfirm && openConfirm.getAttribute('data-k-backdrop') !== 'static') {
+        if (openConfirm) {
           openConfirm.classList.remove('is-open');
         }
       }
