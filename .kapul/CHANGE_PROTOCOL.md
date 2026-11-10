@@ -16,6 +16,16 @@
 
 
 - Sidebar menu changes must be applied atomically to all 20 `demo/*.html` pages. Keep exactly one `Templates` link per page, under `Resources`, with `.is-active` only on `demo/templates.html`; verify with a full-page count, `git diff --check`, and `npm test`.
+- Sidebar component menu changes must be applied atomically to all demo HTML pages. Every page must expose exactly one `href="sidebar.html"` link under `Components`; `demo/sidebar.html` must mark it `.is-active` and include the `.k-sidebar` anatomy demo plus `data-copy-component="sidebar"`.
+- Sidebar demo layout changes must keep `header`/`footer` as `flex: 0 0 auto` fixed regions and `body` as the sole `overflow-y: auto` region. Use `.demo-sidebar-preview` for demo-only sizing; do not alter public `.k-*` anatomy to force demo dimensions.
+- Sidebar separator changes must preserve visible boundaries: header has a bottom border, footer has a top border, and body remains the sole scroll region between them. Verify both compiled CSS selectors and `demo/sidebar.html`.
+- Full-width sidebar separators require `.k-sidebar` to keep `padding: 0`; apply spacing on header/body/footer regions so their borders span the entire sidebar width.
+- Sidebar scrollbar alignment: `.k-sidebar__body` scrollbar must be flush with the right boundary with thin 0.35rem styling; verify both WebKit and Firefox scrollbar appearance in `dist/kaui.css` and `demo/sidebar.html`.
+
+
+
+
+
 
 
 - Country table width changes are limited to the country modal selectors in `demo/demo.css`; preserve the four-column markup and modal header/body/footer scroll contract. Verify CSS braces, `git diff --check`, `npm test`, and `npm run build`.

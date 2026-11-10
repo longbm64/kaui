@@ -1,3 +1,5 @@
+- Template example contract: `demo/templates/dashboard.html` is the catalog's standalone dashboard page template, copied from the demo shell. The existing `demo/index.html` remains the general component showcase but is no longer listed as a template.
+
 /* Theme readability fix: opaque footer and consistent weight prevent low-frequency blur/softness on Ocean, Forest, Sunset, and Dark preset surfaces. */
 
 
@@ -33,8 +35,10 @@
 
 
 - Templates catalog contract: `demo/templates.html` serves as the card-based template hub; each card links to a standalone page via `target="_blank" rel="noopener noreferrer"`.
-- Template example contract: Existing demo (`demo/index.html`) is retained as the first baseline example; newly added templates are `demo/templates/blog.html`, `demo/templates/dashboard.html`, and `demo/templates/e-commerce.html`.
+- Template example contract: `demo/templates/dashboard.html` is the catalog's standalone dashboard page template, copied from the demo shell. The existing `demo/index.html` remains the general component showcase but is no longer listed as a template.
 - Template CSS contract: Template chrome and layouts use scoped `.demo-template-*` selectors in `demo/demo.css` alongside standard `.k-*` tokens/components.
+- Template card interaction contract: `.demo-template-card` has no hover lift or shadow animation; keyboard focus remains visible through the browser focus state.
+- One-column template contract: `demo/templates/one-column.html` uses a single-column layout with synchronized 60rem width across top navbar container, content body, and footer. Icons are integrated into navbar links (user, play, code), action button (arrow-right), badge (columns), card heading (monitor), and footer version (tag).
 
 
 - Modal country-list demo contract: `demo/modal.html` loads `demo/countries.js`, opens `#demo-countries-modal` from `#demo-open-countries`, renders `#demo-countries-body`, and uses `.demo-country-modal__body { overflow-y: auto }`; the table has four equal-width columns (No., Calling code, Country, Time zone). `demo/demo.js` owns open/close/Escape behavior.
@@ -374,6 +378,16 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Sidebar navigation grouping contract: every demo page groups the shared links under accessible `.demo-sidebar__group` sections with `.demo-sidebar__group-title`; groups are Getting Started, Layout, Components, and Resources, while link URLs and active-state behavior remain unchanged.
 - Sidebar taxonomy: Components contains Buttons, Forms, Cards, Badges, Alerts, Modal, Table, Toast, Tabs, Accordion, Indicators, and Charts; Resources contains Icons, Versions, and Platforms.
 - Sidebar active-state contract: on multi-page demo documents, `demo/demo.js` derives the active `.demo-sidebar__link` from the current pathname/filename; hash-based section activation remains available only when sidebar links target same-page hashes.
+- Sidebar navigation grouping contract: every demo page groups the shared links under accessible `.demo-sidebar__group` sections with `.demo-sidebar__group-title`; groups are Getting Started, Layout, Components, and Resources. Components now includes the Sidebar demo link and `demo/sidebar.html` demonstrates the public `.k-sidebar` component.
+- Sidebar component demo contract: `demo/sidebar.html` uses a fixed-height `.demo-sidebar-preview`; `.k-sidebar__header` and `.k-sidebar__footer` are non-shrinking fixed regions, while `.k-sidebar__body` is the only scrollable region and contains enough navigation items to demonstrate scrolling.
+- Sidebar separator contract: public `.k-sidebar__header` uses `border-bottom: 1px solid var(--k-border)` and public `.k-sidebar__footer` uses `border-top: 1px solid var(--k-border)`; `.k-sidebar__body` remains the only scrollable region between these separators.
+- Full-width separator contract: `.k-sidebar` has no outer padding; spacing is owned by `.k-sidebar__header`, `.k-sidebar__body`, and `.k-sidebar__footer`, allowing header bottom and footer top borders to extend from the sidebar's left edge to its right edge.
+- Sidebar scrolling and scrollbar parity: `.k-sidebar__body` has `scrollbar-width: thin` and a WebKit scrollbar of `0.35rem` with neutral thumb color and zero track padding, placing the scrollbar flush against the right boundary of the sidebar, identical to the main KAUI left navigation shell.
+
+
+
+
+
 
 - Navigation Bar options contract: `.k-navbar--sticky`, `--borderless`, `--shadow`, `--transparent`, `--dark`, `--compact`, `--centered`; optional `.k-navbar__actions`, `.k-navbar__mobile-actions`, `.k-navbar__item--has-children` and `.k-navbar__submenu` preserve the existing base markup and responsive drawer behavior.
 - Bootstrap-inspired Navbar contract: `.k-navbar--expand-sm` / `--expand-lg` control collapse breakpoint; `.k-navbar--fixed-top` / `--fixed-bottom` provide placement; `.k-navbar--offcanvas` turns the mobile menu into a left drawer; `.k-navbar__text`, `.k-navbar__nav--scroll` and click-driven `.k-navbar__item--has-children.is-open` support Bootstrap-style content patterns without Bootstrap runtime dependencies. Toggle/dropdown controls use `aria-expanded`, `aria-controls`, `aria-haspopup`, and Escape/outside-click dismissal.
@@ -457,3 +471,5 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 - Navbar direction contract: root submenu (`.k-navbar__nav > li > .k-navbar__submenu`) opens vertically below/above its root item; nested submenus open horizontally left/right with top edge aligned to their parent item. Runtime only applies `.is-dropstart` to nested items.
+
+- Sidebar component contract: `src/scss/components/_sidebar.scss` provides reusable `.k-sidebar` anatomy (header/body/footer/nav/group/link), keyboard focus and active states, and responsive mobile behavior. The `.k-app-shell` layout remains in `src/scss/extended/_data_shell.scss` without duplicate sidebar rules.

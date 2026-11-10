@@ -1,1 +1,83 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>KAUI Template — Dashboard</title><link rel="stylesheet" href="../../dist/kaui.css"><link rel="stylesheet" href="../demo.css"></head><body class="demo-template-shell"><header class="demo-template-shell__nav"><div class="k-container"><a href="../templates.html" class="k-navbar__brand k-fw-bold">KAUI Admin</a><nav class="k-flex k-gap-4"><a href="#" class="k-navbar__link is-active">Overview</a><a href="#" class="k-navbar__link">Reports</a><a href="../templates.html" class="k-btn k-btn--sm k-btn--outline-primary">Templates</a></nav></div></header><main class="k-container k-py-8"><div class="k-flex k-justify-between k-items-center k-mb-6"><div><span class="k-fs-sm k-text-muted">Monday, September 8</span><h1 class="k-fs-3xl k-fw-bold k-mt-2">Good morning, Alex</h1></div><button class="k-btn k-btn--primary">Export report</button></div><div class="k-grid k-gap-4 k-mb-6"><div class="k-card k-card--bordered demo-template-stat k-col-12 k-col-md-3"><span class="k-fs-sm k-text-muted">Revenue</span><strong class="demo-template-stat__value">$48,290</strong><span class="k-badge k-badge--success">+12.4%</span></div><div class="k-card k-card--bordered demo-template-stat k-col-12 k-col-md-3"><span class="k-fs-sm k-text-muted">Active users</span><strong class="demo-template-stat__value">8,942</strong><span class="k-badge k-badge--info">+8.1%</span></div><div class="k-card k-card--bordered demo-template-stat k-col-12 k-col-md-3"><span class="k-fs-sm k-text-muted">Conversion</span><strong class="demo-template-stat__value">4.82%</strong><span class="k-badge k-badge--success">+2.3%</span></div><div class="k-card k-card--bordered demo-template-stat k-col-12 k-col-md-3"><span class="k-fs-sm k-text-muted">Open tasks</span><strong class="demo-template-stat__value">24</strong><span class="k-badge k-badge--warning">Needs review</span></div></div><div class="k-grid k-gap-6"><section class="k-card k-card--bordered k-col-12 k-col-md-8"><div class="k-card__header"><h2 class="k-card__title">Performance overview</h2></div><div class="k-card__body"><div class="k-flex k-items-end k-gap-3" style="height:13rem;border-bottom:1px solid var(--k-border);padding:1rem 0"><span style="height:35%;flex:1;background:var(--k-primary)"></span><span style="height:55%;flex:1;background:var(--k-primary)"></span><span style="height:46%;flex:1;background:var(--k-primary)"></span><span style="height:78%;flex:1;background:var(--k-primary)"></span><span style="height:65%;flex:1;background:var(--k-primary)"></span><span style="height:92%;flex:1;background:var(--k-primary)"></span></div></div></section><section class="k-card k-card--bordered k-col-12 k-col-md-4"><div class="k-card__header"><h2 class="k-card__title">Recent activity</h2></div><div class="k-card__body"><p><strong>New workspace</strong><br><span class="k-fs-sm k-text-muted">2 minutes ago</span></p><p><strong>Invoice paid</strong><br><span class="k-fs-sm k-text-muted">1 hour ago</span></p><p><strong>Report shared</strong><br><span class="k-fs-sm k-text-muted">Yesterday</span></p></div></section></div></main><footer class="k-container k-py-6 k-text-muted">KAUI Admin template · <a href="../templates.html">Explore all templates</a></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — Dashboard Template</title>
+  <meta name="description" content="A dashboard page template built with the KAUI CSS Kit.">
+  <link rel="stylesheet" href="../../dist/kaui.css">
+  <link rel="stylesheet" href="../../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="../demo.css">
+  <script src="../demo.js" defer></script>
+</head>
+<body class="demo-body">
+  <aside class="demo-sidebar" aria-label="Dashboard template navigation">
+    <header class="demo-sidebar__header" data-sidebar-region="header"><a href="../index.html" class="demo-sidebar__brand"><span>KAUI</span><small>CSS KIT</small></a></header>
+    <div class="demo-sidebar__body" data-sidebar-region="body"><nav class="demo-sidebar__nav">
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Getting Started</h2>
+          <a href="../index.html" class="demo-sidebar__link is-active"><i data-kaui-icon="home"></i> <span>Overview</span></a>
+          <a href="../tokens.html" class="demo-sidebar__link"><i data-kaui-icon="palette"></i> <span>Design Tokens</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Layout</h2>
+          <a href="../navbar.html" class="demo-sidebar__link"><i data-kaui-icon="compass"></i> <span>Navbar</span></a>
+          <a href="../layout.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Layout & Grid</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Components</h2>
+          <a href="../button.html" class="demo-sidebar__link"><i data-kaui-icon="square-mouse-pointer"></i> <span>Buttons</span></a>
+          <a href="../forms.html" class="demo-sidebar__link"><i data-kaui-icon="file-text"></i> <span>Forms</span></a>
+          <a href="../card.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Cards</span></a>
+          <a href="../badges.html" class="demo-sidebar__link"><i data-kaui-icon="tag"></i> <span>Badges</span></a>
+          <a href="../alerts.html" class="demo-sidebar__link"><i data-kaui-icon="bell"></i> <span>Alerts</span></a>
+          <a href="../modal.html" class="demo-sidebar__link"><i data-kaui-icon="scan"></i> <span>Modal</span></a>
+          <a href="../table.html" class="demo-sidebar__link"><i data-kaui-icon="table-2"></i> <span>Table</span></a>
+          <a href="../toast.html" class="demo-sidebar__link"><i data-kaui-icon="message-square"></i> <span>Toast</span></a>
+          <a href="../tabs.html" class="demo-sidebar__link"><i data-kaui-icon="folder"></i> <span>Tabs</span></a>
+          <a href="../accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
+          <a href="../indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
+          <a href="../charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
+          <a href="../sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+        </div>
+        <div class="demo-sidebar__group">
+          <h2 class="demo-sidebar__group-title">Resources</h2>
+          <a href="../templates.html" class="demo-sidebar__link is-active"><i data-kaui-icon="layout-grid"></i> <span>Templates</span></a>
+
+          <a href="../icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
+          <a href="../versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
+          <a href="../platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
+        </div>
+      </nav></div>
+    <footer class="demo-sidebar__footer" data-sidebar-region="footer"><div class="demo-theme-select"><span>Theme</span><div class="k-dropdown k-dropdown-select" data-k-dropdown-select data-k-theme-preset>
+  <select id="theme-preset" class="k-select k-d-none" tabindex="-1" aria-hidden="true">
+    <option value="default" selected>Blue</option><option value="ocean">Ocean</option><option value="forest">Forest</option><option value="sunset">Sunset</option><option value="dark">Dark</option>
+  </select>
+  <button type="button" class="k-input k-dropdown__toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose color theme"><span class="k-dropdown__value">Blue</span><span class="k-dropdown__chevron"><i data-kaui-icon="chevron-down"></i></span></button>
+  <div class="k-dropdown__menu" role="listbox"><button type="button" class="k-dropdown__item is-selected" data-value="default" role="option" aria-selected="true">Blue</button><button type="button" class="k-dropdown__item" data-value="ocean" role="option">Ocean</button><button type="button" class="k-dropdown__item" data-value="forest" role="option">Forest</button><button type="button" class="k-dropdown__item" data-value="sunset" role="option">Sunset</button><button type="button" class="k-dropdown__item" data-value="dark" role="option">Dark</button></div>
+</div></div></footer>
+  </aside>
+  <button type="button" class="demo-sidebar-toggle" aria-label="Open component navigation" aria-expanded="false"><i data-kaui-icon="menu" class="k-icon" aria-hidden="true"></i></button>
+  <div class="demo-right"><header class="demo-header"><div class="k-container"><span class="demo-header__eyebrow">KAUI CSS Kit</span><span class="demo-header__context">Dashboard Template</span></div></header><div class="demo-right__body"><main class="demo-main">
+<section class="demo-template-catalog">
+      <div class="k-container">
+        <div class="demo-template-intro">
+          <span class="k-badge k-badge--primary demo-template-badge">Dashboard Template</span>
+          <h1 class="k-fs-3xl k-fw-bold k-mb-3">Team Dashboard</h1>
+          <p class="k-fs-lg k-text-muted">A focused dashboard page built from the KAUI demo shell, with a sidebar, clear content hierarchy, and space for product metrics.</p>
+        </div>
+        <div class="k-grid k-grid-cols-1 k-grid-cols-md-3 k-gap-4 k-mt-6">
+          <article class="k-card k-card--bordered k-p-5"><span class="k-text-muted k-fs-sm">Active projects</span><strong class="k-d-block k-fs-3xl k-mt-2">24</strong><p class="k-text-muted k-mb-0">Across all teams this month.</p></article>
+          <article class="k-card k-card--bordered k-p-5"><span class="k-text-muted k-fs-sm">Completion rate</span><strong class="k-d-block k-fs-3xl k-mt-2">86%</strong><p class="k-text-muted k-mb-0">A steady improvement this week.</p></article>
+          <article class="k-card k-card--bordered k-p-5"><span class="k-text-muted k-fs-sm">Open tasks</span><strong class="k-d-block k-fs-3xl k-mt-2">128</strong><p class="k-text-muted k-mb-0">Review priorities and next steps.</p></article>
+        </div>
+        <div class="k-card k-card--bordered k-p-5 k-mt-6">
+          <h2 class="k-fs-xl k-fw-semibold k-mb-2">Overview</h2>
+          <p class="k-text-muted k-mb-0">Use this content area for charts, activity feeds, tables, or other operational information. The layout is intentionally lightweight so it can adapt to your product.</p>
+        </div>
+      </div>
+    </section>
+  </main></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="../versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.9</span></a></div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAUI CSS Kit — One Column App Template</title>
+  <meta name="description" content="A one-column application page template built with the KAUI CSS Kit.">
+  <link rel="stylesheet" href="../../dist/kaui.css">
+  <link rel="stylesheet" href="../../dist/icons/kaui-icons.css">
+  <link rel="stylesheet" href="../demo.css">
+  <script src="../demo.js" defer></script>
+</head>
+<body class="demo-one-column">
+  <div class="demo-one-column__shell">
+    <header class="k-navbar k-navbar--expand-lg k-navbar--shadow demo-one-column__navbar">
+      <div class="k-navbar__container">
+        <a href="../index.html" class="k-navbar__brand" aria-label="Filekat home">
+          <span class="k-navbar__brand-mark"><i data-kaui-icon="layers" aria-hidden="true"></i></span>
+          <span><span class="k-fw-bold k-text-primary">filekat.com</span></span>
+        </a>
+        <button type="button" class="k-navbar__toggle" aria-label="Toggle navigation" aria-controls="one-column-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="k-navbar__menu" id="one-column-nav" aria-label="Primary navigation">
+          <ul class="k-navbar__nav k-navbar__nav--scroll">
+            <li><a href="#account" class="k-navbar__link is-active" aria-current="page"><i data-kaui-icon="user" aria-hidden="true"></i> <span>Account</span></a></li>
+            <li><a href="#playground" class="k-navbar__link"><i data-kaui-icon="play" aria-hidden="true"></i> <span>Playground</span></a></li>
+            <li><a href="#api" class="k-navbar__link"><i data-kaui-icon="code" aria-hidden="true"></i> <span>API</span></a></li>
+          </ul>
+          <div class="k-navbar__actions">
+            <a href="#logout" class="k-btn k-btn--sm k-btn--outline-primary">
+              <span class="k-btn__text">Log out</span>
+              <span class="k-btn__icon"><i data-kaui-icon="arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="demo-one-column__content" id="account">
+      <div class="k-container">
+        <span class="k-badge k-badge--primary demo-template-badge"><i data-kaui-icon="columns" aria-hidden="true"></i> One Column Template</span>
+        <h1 class="k-fs-4xl k-fw-bold k-mb-3">Account overview</h1>
+        <p class="k-fs-lg k-text-muted k-mb-6">A clean one-column application layout for account pages, product workspaces, and focused user flows.</p>
+        <section class="k-card k-card--bordered k-p-5" id="playground" aria-labelledby="one-column-overview-title">
+          <h2 class="k-fs-xl k-fw-semibold k-mb-2" id="one-column-overview-title"><i data-kaui-icon="monitor" aria-hidden="true"></i> Welcome to your workspace</h2>
+          <p class="k-text-muted k-mb-0">Add your account details, recent activity, playground tools, or API information here. The main content area is intentionally simple and ready to extend.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="demo-one-column__footer" id="api">
+      <span>&copy; 2026 filekat.com</span>
+      <span aria-hidden="true">&bull;</span>
+      <span><i data-kaui-icon="tag" aria-hidden="true"></i> Version 1.1.9</span>
+    </footer>
+  </div>
+</body>
+</html>

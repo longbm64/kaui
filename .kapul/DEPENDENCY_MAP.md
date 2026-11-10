@@ -1,4 +1,3 @@
-
 ## Railway deployment changes
 
 - **Node:** `server.mjs`
@@ -60,9 +59,24 @@
   - **Dependencies:** `dist/kaui.css`, `dist/icons/kaui-icons.css`, `demo/demo.css`, `demo/demo.js`.
   - **Dependents:** `demo/index.html` navigation link and browser template users.
 
-- **Node:** `demo/templates/*.html` (`blog.html`, `dashboard.html`, `e-commerce.html`)
-  - **Exports/public contract:** Responsive page templates built with KAUI core classes (`.k-card`, `.k-grid`, `.k-btn`, `.k-badge`, `--k-*`).
-  - **Dependencies:** `dist/kaui.css`, `demo/demo.css`.
+- **Node:** `demo/demo.css` one-column template layout
+  - **Exports/public contract:** `.demo-one-column`, `.demo-one-column__shell`, `.demo-one-column__content`, and `.demo-one-column__footer` provide the top/middle/bottom single-column layout with synchronized 60rem width across navbar container, content body, and footer.
+  - **Dependencies:** KAUI navbar, container, card, and token classes.
+  - **Dependents:** `demo/templates/one-column.html`.
+
+- **Node:** `demo/demo.css` template card interaction
+  - **Exports/public contract:** `.demo-template-card` remains static on hover; no transform or shadow transition is applied.
+  - **Dependencies:** standard KAUI card tokens and browser focus state.
+  - **Dependents:** `demo/templates.html`.
+
+- **Node:** `demo/templates/one-column.html`
+  - **Exports/public contract:** One-column application template with `.k-navbar` top navigation, flexible content middle, and centered footer with filekat.com/version.
+  - **Dependencies:** `dist/kaui.css`, `dist/icons/kaui-icons.css`, `demo/demo.css`, `demo/demo.js`.
+  - **Dependents:** `demo/templates.html`.
+
+- **Node:** `demo/templates/dashboard.html`
+  - **Exports/public contract:** Responsive dashboard template page copying the demo sidebar/main shell with page-level metrics and overview info.
+  - **Dependencies:** `dist/kaui.css`, `dist/icons/kaui-icons.css`, `demo/demo.css`, `demo/demo.js`.
   - **Dependents:** `demo/templates.html`.
 
 
@@ -204,3 +218,30 @@
   - **Exports/public contract:** frozen rows remain aligned; resize synchronization is rAF-batched and redundant inline height writes are skipped.
   - **Dependencies:** `.k-table-frozen-container`, table row geometry.
   - **Dependents:** `dist/kaui.js`, `demo/table.html`, package table consumers.
+
+- **Node:** `demo/sidebar.html`
+  - **Exports/public contract:** Dedicated Sidebar showcase using `.k-sidebar`, `.k-sidebar__header`, `.k-sidebar__body`, `.k-sidebar__footer`, `.k-sidebar__nav`, `.k-sidebar__group`, `.k-sidebar__link`, with `data-copy-component="sidebar"`.
+  - **Dependencies:** `dist/kaui.css`, `dist/icons/kaui-icons.css`, `demo/demo.css`, `demo/demo.js`, shared demo shell.
+  - **Dependents:** Sidebar link in every `demo/*.html` page and browser/demo contract checks.
+- **Node:** `demo/*.html` Sidebar navigation link
+  - **Exports/public contract:** Exactly one `href="sidebar.html"` link under the Components group per demo page; only `demo/sidebar.html` marks it `.is-active`.
+  - **Dependencies:** shared sidebar markup and `demo/demo.js` active-page synchronization.
+
+- **Node:** `demo/demo.css` Sidebar preview
+  - **Exports/public contract:** `.demo-sidebar-preview` fixes preview height; only `.demo-sidebar-preview .k-sidebar__body` scrolls, while header/footer remain fixed.
+  - **Dependencies:** `.k-sidebar` component anatomy and `.k-app-shell` layout.
+  - **Dependents:** `demo/sidebar.html` visual showcase.
+
+  - **Dependents:** all demo navigation pages.
+
+- **Full-width implementation:** `.k-sidebar` uses `padding: 0`; header/body/footer own their internal padding so separator borders span the entire sidebar width without reducing content spacing.
+
+- **Separator contract:** `.k-sidebar__header` owns the header/body divider via `border-bottom`; `.k-sidebar__footer` owns the body/footer divider via `border-top`; `.k-sidebar__body` remains between them as the sole scroll region.
+
+
+
+## Sidebar component
+- **Node:** `src/scss/components/_sidebar.scss`
+  - **Exports/public contract:** `.k-sidebar`, `.k-sidebar__header`, `.k-sidebar__body`, `.k-sidebar__footer`, `.k-sidebar__nav`, `.k-sidebar__group`, `.k-sidebar__group-title`, `.k-sidebar__link`, including active/focus states and mobile behavior.
+  - **Dependencies:** Sass abstracts/tokens.
+  - **Dependents:** `src/scss/components/_index.scss`, `src/scss/kaui.scss`, generated `dist/kaui.css` and `dist/kaui.min.css`, package consumers.
