@@ -32,5 +32,19 @@
     },
     "./tokens/*": "./dist/tokens/*"
   },
-  "homepage": "https://kaui.filekat.com"
+  "homepage": "https://kaui.filekat.com",
+  "keywords": [
+    "css",
+    "scss",
+    "ui-kit",
+    "design-tokens",
+    "components",
+    "responsive",
+    "flexbox",
+    "grid",
+    "theme",
+    "dark-mode",
+    "filekat",
+    "kaui"
+  ]
 }

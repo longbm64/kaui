@@ -116,7 +116,17 @@ function main() {
     if (fs.existsSync(pubChangelogPath)) {
       let pubChangelog = fs.readFileSync(pubChangelogPath, 'utf8');
       if (!pubChangelog.includes(`## ${nextVersion}`)) {
-        pubChangelog = `## ${nextVersion}\n\n- Synchronized token variables and widget styles with KAUI CSS Kit v${nextVersion}.\n\n` + pubChangelog;
+        const changelogNotes = [
+          `## ${nextVersion}`,
+          '',
+          `- Synchronized with KAUI CSS Kit v${nextVersion}.`,
+          '- Typography & contrast optimization for high-clarity legibility.',
+          '- Isolated scroll containment across interactive regions (overscroll-behavior).',
+          '- Enhanced Dark mode active navigation item contrast and visibility.',
+          '- Refined footer branding, license attribution, and direct version linking.',
+          ''
+        ].join('\n');
+        pubChangelog = `${changelogNotes}\n` + pubChangelog;
         fs.writeFileSync(pubChangelogPath, pubChangelog);
         console.log(`[release] Synchronized packages/pub/CHANGELOG.md to ${nextVersion}`);
       }
@@ -132,18 +142,14 @@ function main() {
       if (fs.existsSync(LICENSE_PATH) && fs.existsSync(NON_COMMERCIAL_LICENSE_PATH)) fs.copyFileSync(NON_COMMERCIAL_LICENSE_PATH, LICENSE_PATH);
       if (fs.existsSync(DEMO_HTML_PATH)) {
         let demoHtml = fs.readFileSync(DEMO_HTML_PATH, 'utf8');
-  // Synchronize compiled artifacts into packages/npm/dist/ (exclude version archives)
+  // Clean and synchronize compiled artifacts into packages/npm/dist/ (exclude version archives)
   const npmDistDir = path.join(ROOT, 'packages/npm/dist');
+  fs.rmSync(npmDistDir, { recursive: true, force: true });
   fs.mkdirSync(npmDistDir, { recursive: true });
   fs.cpSync(path.join(ROOT, 'dist'), npmDistDir, {
     recursive: true,
     filter: (src) => !src.includes('dist/versions')
   });
-
-  // Synchronize compiled artifacts into packages/npm/dist/
-  const npmDistDir = path.join(ROOT, 'packages/npm/dist');
-  fs.mkdirSync(npmDistDir, { recursive: true });
-  fs.cpSync(path.join(ROOT, 'dist'), npmDistDir, { recursive: true });
 
         demoHtml = demoHtml.replace(/Released under MIT License\.[^<]*/, 'Personal and educational use is allowed. Commercial use requires a KAUI license.');
         fs.writeFileSync(DEMO_HTML_PATH, demoHtml);
