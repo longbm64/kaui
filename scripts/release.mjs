@@ -71,6 +71,18 @@ function main() {
       demoHtml = demoHtml.replace(/dist\/versions\/\d+\.\d+\.\d+\/kaui-agent-manifest\.json/g, `dist/versions/${nextVersion}/kaui-agent-manifest.json`);
       fs.writeFileSync(DEMO_HTML_PATH, demoHtml);
     }
+    // Update footer version badge across all demo pages
+    const demoDir = path.join(ROOT, 'demo');
+    if (fs.existsSync(demoDir)) {
+      const demoFiles = fs.readdirSync(demoDir).filter(f => f.endsWith('.html'));
+      for (const file of demoFiles) {
+        const filePath = path.join(demoDir, file);
+        let content = fs.readFileSync(filePath, 'utf8');
+        content = content.replace(/(class="demo-footer__badge"[^>]*>[\s\S]*?<span>)v\d+\.\d+\.\d+(<\/span>)/g, `$1v${nextVersion}$2`);
+        fs.writeFileSync(filePath, content);
+      }
+    }
+
 
 
     if (fs.existsSync(README_PATH)) {
