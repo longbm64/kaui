@@ -331,6 +331,8 @@
 - [x] Độc lập hóa vùng cuộn (scroll containment): áp dụng `overscroll-behavior: contain` triệt để cho `.demo-sidebar__body`, `.demo-right__body`, `pre`, `.demo-code`, `.k-dropdown__menu`, `.k-tabs__list`, modal body và table scrollable pane; khi con trỏ chuột ở vùng nào thì cuộn độc lập vùng đó, khi tới mép cuộn (top/bottom/left/right) không bị tràn sự kiện cuộn (scroll chaining) làm trôi các vùng khác.
 - [x] Sửa script `scripts/release.mjs` để tự động cập nhật số version trong footer badge `.demo-footer__badge` sang version mới mỗi khi chạy release; đã deploy và đồng bộ `v1.1.5` trên production.
 
+- [x] Đã cấu hình tự động cập nhật `packages/pub/README.md` (đoạn `filekat: ^<version>`) và `packages/pub/CHANGELOG.md` theo version mới mỗi khi release để trên pub.dev trang của version nào thì README hiển thị đúng mã cài đặt của version đó.
+
 - [x] Đã tích hợp tự động hóa `#release`: mỗi lần release sẽ đồng bộ version và tự động publish đồng thời lên cả 3 nền tảng:
   1. Web CDN / Static hosting (Railway: `https://kaui.filekat.com`)
   2. NPM package registry (`filekat@1.1.5` trên https://www.npmjs.com/package/filekat)
