@@ -1,4 +1,10 @@
-/* KAUI Chart: dependency-free SVG renderer with realtime batching. */
+/*!
+ * KAUI CSS Kit v1.1.10
+ * Copyright (c) 2026 KAUI Contributors
+ * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
+ * Official Website: https://kaui.filekat.com
+ * GitHub Project:  https://github.com/longbm64/kaui
+ */
 (function (global) {
   'use strict';
   var NS = 'http://www.w3.org/2000/svg';

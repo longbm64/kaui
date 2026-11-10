@@ -45,7 +45,7 @@
 - **Node:** `demo/demo.js` modal trigger focus
   - **Exports/public contract:** `blurTrigger()` removes focus from Modal/Confirm launch buttons before opening; closing does not restore focus to the trigger.
   - **Dependencies:** modal trigger IDs and existing modal controller.
-  - **Dependents:** `demo/modal.html` Modal/Confirm controls.
+  - **Dependents:** `demo/modal.html` Modal controls, `demo/confirm.html` Confirm controls.
 
 
 - **Node:** `src/scss/extended/_overlay.scss` Modal scroll contract

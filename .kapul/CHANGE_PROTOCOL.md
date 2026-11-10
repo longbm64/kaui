@@ -1,3 +1,4 @@
+- Confirm component separation: `.k-confirm` and `.k-modal` are distinct independent components with separate demo pages (`demo/modal.html` and `demo/confirm.html`). Every demo page exposes both `Modal` and `Confirm` links under Components; changes must keep their markup, runtime triggers (`data-k-modal-*` vs `data-k-confirm-*`), and styling decoupled.
 
 ## Railway deployment protocol
 

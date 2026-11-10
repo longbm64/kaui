@@ -380,7 +380,7 @@
         var el = document.getElementById(id);
         if (!el) return;
         el.addEventListener('click', function() {
-          if (el.classList.contains('k-modal-backdrop') && isStatic()) return;
+          if ((el.classList.contains('k-confirm__backdrop') || el.classList.contains('k-modal-backdrop')) && isStatic()) return;
           close();
           showResult('Confirmation cancelled.');
         });
@@ -1206,6 +1206,7 @@
       'guide-icons': '<svg class="k-icon" aria-hidden="true"><use href="../dist/icons/sprite.svg#search" xlink:href="../dist/icons/sprite.svg#search"></use></svg>',
       'guide-indicators': '<span class="k-spinner" aria-label="Loading"></span><div class="k-progress"><div class="k-progress__bar" style="width: 45%;"></div></div>',
       'guide-layout': '<div class="k-grid k-gap-4"><div class="k-col-12 k-col-md-6">Left column</div><div class="k-col-12 k-col-md-6">Right column</div></div>',
+      'guide-confirm': '<div class="k-confirm is-open" role="dialog" aria-modal="true" data-k-backdrop="static"><div class="k-confirm__backdrop"></div><div class="k-confirm__dialog"><div class="k-confirm__body"><div class="k-confirm__icon"><i data-kaui-icon="circle-help"></i></div><h3 class="k-confirm__title">Save changes?</h3><p class="k-confirm__message">Your changes will be saved to this record.</p></div><div class="k-confirm__footer"><button type="button" class="k-btn k-btn--outline">Cancel</button><button type="button" class="k-btn k-btn--primary">Confirm</button></div></div></div>',
       'guide-modal': '<div class="k-modal is-open" role="dialog" aria-modal="true"><div class="k-modal__dialog"><div class="k-modal__header"><h3 class="k-modal__title">Title</h3></div><div class="k-modal__body">Dialog body text</div><div class="k-modal__footer"><button type="button" class="k-btn k-btn--primary">Confirm</button></div></div></div>',
       'guide-navbar': '<header class="k-navbar k-navbar--expand-lg k-navbar--offcanvas"><div class="k-navbar__container"><a href="#" class="k-navbar__brand">Brand</a><button type="button" class="k-navbar__toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button><nav class="k-navbar__menu" id="primary-menu"><ul class="k-navbar__nav"><li><a href="#" class="k-navbar__link is-active" aria-current="page">Home</a></li><li class="k-navbar__item--has-children"><button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Products</button><ul class="k-navbar__submenu"><li><a href="#" class="k-navbar__link">Overview</a></li><li class="k-navbar__item--has-children"><button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Advanced</button><ul class="k-navbar__submenu"><li><a href="#" class="k-navbar__link">Reports</a></li></ul></li></ul></li></ul><div class="k-navbar__actions"><button class="k-btn k-btn--primary"><span class="k-btn__text">Get started</span><span class="k-btn__icon"><i data-kaui-icon="arrow-right"></i></span></button></div></nav></div></header>',
       'guide-tabs': '<div class="k-tabs__list" role="tablist"><button class="k-tabs__tab is-active" data-tab-target="#profile" role="tab" aria-selected="true">Profile</button></div><div id="profile" class="k-tabs__panel is-active" role="tabpanel">Profile content</div>',

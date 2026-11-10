@@ -172,6 +172,34 @@
     });
   }
 
+  // 3b. Confirm Dialogs (.k-confirm)
+  function initConfirms() {
+    document.addEventListener('click', function (e) {
+      var openTrigger = e.target.closest('[data-k-confirm-target]');
+      if (openTrigger) {
+        var targetId = openTrigger.getAttribute('data-k-confirm-target');
+        var confirm = document.querySelector(targetId);
+        if (confirm) confirm.classList.add('is-open');
+        return;
+      }
+
+      var dismissTrigger = e.target.closest('[data-k-confirm-dismiss]');
+      if (dismissTrigger) {
+        var openConfirm = dismissTrigger.closest('.k-confirm.is-open');
+        if (openConfirm) openConfirm.classList.remove('is-open');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        var openConfirm = document.querySelector('.k-confirm.is-open');
+        if (openConfirm && openConfirm.getAttribute('data-k-backdrop') !== 'static') {
+          openConfirm.classList.remove('is-open');
+        }
+      }
+    });
+  }
+
   // 4. Tabs & Accordions (.k-tabs, .k-accordion)
   function initTabsAndAccordions() {
     document.addEventListener('click', function (e) {
@@ -318,6 +346,7 @@
     initDropdowns();
     initNavbar();
     initModals();
+    initConfirms();
     initTabsAndAccordions();
     initTables();
   }

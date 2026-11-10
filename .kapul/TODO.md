@@ -1,3 +1,5 @@
+- [x] Cập nhật scripts/release.mjs và quy trình #release để tự động chèn comment header chứa đầy đủ version, bản quyền, website chính thức và GitHub project vào tất cả các file phân phối (dist/ CSS, JS, Tokens).
+- [x] Tách Modal (.k-modal) và Confirm (.k-confirm) thành 2 component hoàn toàn độc lập: tách SCSS selector riêng biệt, bổ sung runtime data-k-confirm trong kaui.js, tách thành 2 trang demo riêng (demo/modal.html và demo/confirm.html), đồng bộ toàn bộ sidebar của 21 trang demo.
 - [ ] Fix cho đợt #release tiếp theo: Xóa bỏ block comment header `/** * KAUI Core Component Runtime (v1.1.1) ... */` khỏi file JS runtime (`src/js/kaui.js`, `dist/kaui.min.js`) để không hiển thị comment/version cũ trên production/CDN preview.
 - [x] Tạo template dashboard (`demo/templates/dashboard.html`) sao chép từ mẫu demo hiện tại và loại bỏ card Living Styleguide khỏi catalog `demo/templates.html`.
 - [x] Tạo template one-column (`demo/templates/one-column.html`) đồng bộ width của navbar container và footer khớp với body (max-width 60rem), căn giữa menu Account/Playground/API.
