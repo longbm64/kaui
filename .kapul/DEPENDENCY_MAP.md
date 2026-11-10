@@ -182,3 +182,25 @@
   - **Exports/public contract:** `.demo-footer` dùng nền opaque, không blur; các preset Ocean/Forest/Sunset/Dark áp dụng cùng độ đậm typography để chữ và biên không bị mềm/nhòe.
   - **Dependencies:** `demo/demo.js` và `demo/versions.js` chỉ đặt `data-theme`; không thay đổi runtime preset.
   - **Dependents:** mọi `demo/*.html` dùng shared `demo.css`.
+- **Node:** `demo/demo.js` scroll scheduler
+  - **Exports/public contract:** keeps navbar overflow positioning and active sidebar section behavior; coalesces scroll work with `requestAnimationFrame` and skips closed-navbar positioning.
+  - **Dependencies:** `.k-navbar__item--has-children.is-open`, sidebar section links, browser `requestAnimationFrame`.
+  - **Dependents:** all demo pages loading `demo/demo.js`, especially `demo/navbar.html`.
+- **Scroll performance update 2:** `demo/demo.js` no longer listens to global capture-phase scroll for navbar repositioning or active-section measurement; `src/scss/base/_reset.scss` and `demo/demo.css` use native `scroll-behavior: auto`.
+
+- **Scroll responsiveness:** primary scroll containers `.demo-right__body` and `.demo-sidebar__body` use native vertical overscroll/touch behavior; modal, card, table and dropdown isolation remains scoped to those components.
+
+- **Node:** `src/js/kaui-chart.js` performance guards
+- **Navbar responsive fix:** `demo/navbar.html` uses `k-navbar--expand-lg`; its runtime geometry guard is `<1024px` (drawer/mobile), matching `src/scss/components/_navbar.scss` and preventing desktop flyout positioning in the mobile/tablet drawer range.
+- **Navbar layout container fix:** `demo/navbar.html` places `.demo-navbar-lab` and `.k-card` guide cards inside `.k-container` of `<section id="navbar">`, matching `demo/card.html`, `demo/button.html`, and `demo/charts.html`.
+- **Code block overscroll fix:** `src/scss/base/_typography.scss` and `demo/demo.css` configure `pre` with `overscroll-behavior-x: contain; overscroll-behavior-y: auto`, preventing cursor hovering over code samples from stalling vertical page scrolling.
+
+
+
+  - **Exports/public contract:** `KauiChart.create/mount` and chart instance APIs remain unchanged; offscreen charts pause rendering and pointer crosshair work is frame-batched.
+  - **Dependencies:** `IntersectionObserver`, `requestAnimationFrame`, SVG chart root.
+  - **Dependents:** `demo/charts.html`, package chart consumers.
+- **Node:** frozen-table height scheduler in `src/js/kaui.js` and `demo/demo.js`
+  - **Exports/public contract:** frozen rows remain aligned; resize synchronization is rAF-batched and redundant inline height writes are skipped.
+  - **Dependencies:** `.k-table-frozen-container`, table row geometry.
+  - **Dependents:** `dist/kaui.js`, `demo/table.html`, package table consumers.

@@ -103,3 +103,10 @@ All 19 demo pages must place the content area beside the sidebar as `.demo-right
 
 
 - Theme readability changes are scoped to `demo/demo.css`: keep `.demo-footer` opaque (no `backdrop-filter`) and apply consistent font weights across presets. Verify with `npm test`, `npm run build`, `git diff --check`, and grep that no demo footer blur remains.
+- Scroll performance changes in `demo/demo.js` must retain passive listeners, coalesce layout reads/class updates via `requestAnimationFrame`, and avoid repositioning closed navbar menus. Verify with `node --check demo/demo.js`, `npm test`, `npm run build`, and `git diff --check`.
+- For scroll jitter, prefer native `scroll-behavior: auto`; do not attach global capture-phase scroll listeners for component repositioning. Active-section tracking must be event-driven by hash/navigation or a scoped scroll container only when required.
+- Sidebar scroll persistence must not write `sessionStorage` on every scroll event; save on navigation and page lifecycle events only to keep wheel/trackpad scrolling off the synchronous storage path.
+- For perceived scroll delay, keep primary vertical containers native: `overscroll-behavior-y: auto`, `touch-action: pan-y`, and `-webkit-overflow-scrolling: touch`; retain `contain` only for intentionally isolated nested regions such as modal/table/dropdown.
+- Chart and table optimizations must keep instance APIs backward-compatible; chart rendering pauses when scrolled out of view, pointermove uses requestAnimationFrame, and table resize synchronization batches layout reads/writes. Rebuild `dist/` JS artifacts and verify with `npm test`, `npm run build`, and `git diff --check`.
+- Navbar runtime geometry checks must match the component modifier breakpoint: `.k-navbar--expand-lg` uses desktop geometry only at `min-width: 1024px`; verify mobile/tablet drawer at 768–1023px and desktop flyout at >=1024px.
+- Code blocks (`pre`) must never set blanket `overscroll-behavior: contain`; restrict containment to `overscroll-behavior-x: contain` and keep `overscroll-behavior-y: auto`. Rebuild CSS artifacts and test scrolling continuity.

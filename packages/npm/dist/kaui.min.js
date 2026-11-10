@@ -281,16 +281,14 @@
       updateSums();
     });
 
-    // Synchronize row heights for multi-pane frozen tables (.k-table-frozen-container)
     function syncFrozenRowHeights() {
       document.querySelectorAll('.k-table-frozen-container').forEach(function (container) {
         var tables = container.querySelectorAll('.k-table');
         if (tables.length < 2) return;
         var headRows = Array.prototype.map.call(tables, function (t) { return t.tHead && t.tHead.rows[0]; }).filter(Boolean);
-        if (headRows.length > 1) {
-          var maxHeadH = Math.max.apply(null, headRows.map(function (r) { return r.offsetHeight; }));
-          headRows.forEach(function (r) { r.style.height = maxHeadH + 'px'; });
-        }
+        var headHeight = 0;
+        headRows.forEach(function (row) { headHeight = Math.max(headHeight, row.offsetHeight); });
+        if (headRows.length > 1) headRows.forEach(function (row) { if (row.offsetHeight !== headHeight) row.style.height = headHeight + 'px'; });
         var bodyCount = (tables[0].tBodies && tables[0].tBodies[0] && tables[0].tBodies[0].rows.length) || 0;
         for (var i = 0; i < bodyCount; i++) {
           var rowGroup = [];
@@ -298,15 +296,22 @@
             var b = tables[t].tBodies && tables[t].tBodies[0];
             if (b && b.rows[i]) rowGroup.push(b.rows[i]);
           }
-          if (rowGroup.length > 1) {
-            var maxH = Math.max.apply(null, rowGroup.map(function (r) { return r.offsetHeight; }));
-            rowGroup.forEach(function (r) { r.style.height = maxH + 'px'; });
-          }
+          var maxH = 0;
+          rowGroup.forEach(function (row) { maxH = Math.max(maxH, row.offsetHeight); });
+          if (rowGroup.length > 1) rowGroup.forEach(function (row) { if (row.offsetHeight !== maxH) row.style.height = maxH + 'px'; });
         }
       });
     }
+    var frozenResizeFrame = 0;
+    function scheduleFrozenRowHeights() {
+      if (frozenResizeFrame) return;
+      frozenResizeFrame = requestAnimationFrame(function () {
+        frozenResizeFrame = 0;
+        syncFrozenRowHeights();
+      });
+    }
     syncFrozenRowHeights();
-    window.addEventListener('resize', syncFrozenRowHeights);
+    window.addEventListener('resize', scheduleFrozenRowHeights, { passive: true });
   }
 
   function initAll() {
