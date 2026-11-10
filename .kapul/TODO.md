@@ -329,6 +329,8 @@
 - [x] Thêm thông tin liên lạc (`contact@filekat.com`) và copyright (`&copy; 2026 KAUI Contributors`) vào main footer `.demo-footer` trên toàn bộ 20 trang demo.
 - [x] Đồng bộ padding của header trang Overview (`.demo-hero`): giảm từ `3rem 1rem` xuống `1.5rem 0` đúng chuẩn `.demo-section` của 19 trang component khác.
 - [x] Độc lập hóa vùng cuộn (scroll containment): áp dụng `overscroll-behavior: contain` triệt để cho `.demo-sidebar__body`, `.demo-right__body`, `pre`, `.demo-code`, `.k-dropdown__menu`, `.k-tabs__list`, modal body và table scrollable pane; khi con trỏ chuột ở vùng nào thì cuộn độc lập vùng đó, khi tới mép cuộn (top/bottom/left/right) không bị tràn sự kiện cuộn (scroll chaining) làm trôi các vùng khác.
+- [x] Sửa script `scripts/release.mjs` để tự động cập nhật số version trong footer badge `.demo-footer__badge` sang version mới mỗi khi chạy release; đã deploy và đồng bộ `v1.1.5` trên production.
+
 
 
 
