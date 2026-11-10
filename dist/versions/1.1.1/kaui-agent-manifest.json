@@ -2,8 +2,8 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "KAUI CSS Kit Agent Manifest",
   "version": "1.1.1",
-  "manifestUrl": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui-agent-manifest.json",
-  "liveDemoUrl": "https://longbm64.github.io/kaui/demo",
+  "manifestUrl": "https://kaui.filekat.com/dist/versions/1.1.1/kaui-agent-manifest.json",
+  "liveDemoUrl": "https://kaui.filekat.com",
   "strictRule": "MANDATORY: Use ONLY KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Custom CSS is strictly forbidden unless explicitly documented as unsupported by this manifest.",
   "tokenRegistry": {
     "source": "tokens/kaui.tokens.json",
@@ -227,7 +227,7 @@
       ]
     }
   },
-  "builtAt": "2026-11-10T05:36:55.430Z",
+  "builtAt": "2026-11-10T05:50:16.948Z",
   "build": {
     "version": "1.1.1",
     "mainCss": "dist/kaui.min.css",

@@ -8,7 +8,7 @@
       "files": [
         {
           "name": "kaui.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui.css",
           "metadata": {
             "bytes": 77578,
             "sha256": "2083338bfef4422ef5da20ba96e0cd384076a5c9585839d2dd4047868624677f"
@@ -16,7 +16,7 @@
         },
         {
           "name": "kaui.css.map",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui.css.map",
           "metadata": {
             "bytes": 16017,
             "sha256": "d2cc2185f07c2d9e6b1a60e50c03fdde61e8aff2fc942b9c845f88f62d70cb30"
@@ -24,7 +24,7 @@
         },
         {
           "name": "kaui.min.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui.min.css",
           "metadata": {
             "bytes": 65512,
             "sha256": "2b814e31f9ae5f428b92790cef0aeb1c0c3faf329cdf23d2062f40561327539b"
@@ -32,7 +32,7 @@
         },
         {
           "name": "kaui.min.css.map",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui.min.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui.min.css.map",
           "metadata": {
             "bytes": 11747,
             "sha256": "14e7eb6688c1ea916e7430cf45811f74eb180aa9e4924a2adbcc904475980b00"
@@ -40,7 +40,7 @@
         },
         {
           "name": "kaui-chart.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui-chart.css",
           "metadata": {
             "bytes": 4487,
             "sha256": "9a3fc03bd01cfb2e9c05618cd0a48dc04676ca4936112fd263d2bd33ecd30262"
@@ -48,7 +48,7 @@
         },
         {
           "name": "kaui-chart.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui-chart.js",
           "metadata": {
             "bytes": 16945,
             "sha256": "e1c5e53ff0d37c1367f531bf40a37b13a041b3e65d0d5f2fa974548f08b5f199"
@@ -56,7 +56,7 @@
         },
         {
           "name": "kaui-chart.min.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui-chart.min.css",
           "metadata": {
             "bytes": 3755,
             "sha256": "eb36136f04b2a76a62a4d3a79d975992738bb584ca7e8a30d190c701f252c8a9"
@@ -64,7 +64,7 @@
         },
         {
           "name": "kaui-chart.min.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-chart.min.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui-chart.min.js",
           "metadata": {
             "bytes": 16945,
             "sha256": "e1c5e53ff0d37c1367f531bf40a37b13a041b3e65d0d5f2fa974548f08b5f199"
@@ -72,7 +72,7 @@
         },
         {
           "name": "kaui-agent-manifest.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/kaui-agent-manifest.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/kaui-agent-manifest.json",
           "metadata": {
             "bytes": 6369,
             "sha256": "9b7bb416d23133c4a044cb6681bee8a09a8be6eb57e30a4c43fc933dac109b84"
@@ -80,7 +80,7 @@
         },
         {
           "name": "tokens/kaui.tokens.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/tokens%2Fkaui.tokens.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/tokens%2Fkaui.tokens.json",
           "metadata": {
             "bytes": 4614,
             "sha256": "babe1350bbb6fac927397032bd960749fe20ea7677d19d6963ae04e7af7330e5"
@@ -88,7 +88,7 @@
         },
         {
           "name": "tokens/kaui.tokens.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/tokens%2Fkaui.tokens.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/tokens%2Fkaui.tokens.css",
           "metadata": {
             "bytes": 2828,
             "sha256": "b54cad5b3f8234bf57336a062b076bd059fb9d649b6b5101bdc8c9e56a0c2f0c"
@@ -96,7 +96,7 @@
         },
         {
           "name": "tokens/kaui.tokens.dart",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/tokens%2Fkaui.tokens.dart",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/tokens%2Fkaui.tokens.dart",
           "metadata": {
             "bytes": 4228,
             "sha256": "1bf3f5ebcad1e1dba9c73ca880cae71d40cef79c69c4840c33962f69257a3007"
@@ -104,7 +104,7 @@
         },
         {
           "name": "tokens/KauiTokens.kt",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/tokens%2FKauiTokens.kt",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/tokens%2FKauiTokens.kt",
           "metadata": {
             "bytes": 3241,
             "sha256": "b913d280f57eb5fb30d4b8f74baa74e28ec14f50b1b5973c0215e73ebfd65a9d"
@@ -112,7 +112,7 @@
         },
         {
           "name": "tokens/KauiTokens.swift",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/tokens%2FKauiTokens.swift",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/tokens%2FKauiTokens.swift",
           "metadata": {
             "bytes": 6942,
             "sha256": "1ac54886f6f50ff6b8eb3d1d49bb310fc6eff77033af08056dac993c3607838b"
@@ -120,7 +120,7 @@
         },
         {
           "name": "icons/sprite.svg",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/icons%2Fsprite.svg",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/icons%2Fsprite.svg",
           "metadata": {
             "bytes": 10741,
             "sha256": "6752735fc1179fbf1da3c27ce7c5401386d6493a8ec2be88cd80addda431025f"
@@ -128,7 +128,7 @@
         },
         {
           "name": "icons/kaui-icons.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/icons%2Fkaui-icons.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/icons%2Fkaui-icons.css",
           "metadata": {
             "bytes": 1938,
             "sha256": "22054422ef21a61d1453a3030ca3a4a7b4bd2ee32353a139f2577ece2caacfac"
@@ -136,7 +136,7 @@
         },
         {
           "name": "icons/kaui-icons.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.0.0/icons%2Fkaui-icons.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.0.0/icons%2Fkaui-icons.json",
           "metadata": {
             "bytes": 14223,
             "sha256": "c7494d92c2427a13fd6e66fc1fdc7e89c710b787f52ed41fa85c94783df942e0"
@@ -151,7 +151,7 @@
       "files": [
         {
           "name": "kaui.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui.css",
           "metadata": {
             "bytes": 77883,
             "sha256": "9440181ce0538435a30d036d84b81282bef003108687cbcbb16ed25af7d69543"
@@ -159,7 +159,7 @@
         },
         {
           "name": "kaui.css.map",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui.css.map",
           "metadata": {
             "bytes": 16017,
             "sha256": "d2cc2185f07c2d9e6b1a60e50c03fdde61e8aff2fc942b9c845f88f62d70cb30"
@@ -167,7 +167,7 @@
         },
         {
           "name": "kaui.min.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui.min.css",
           "metadata": {
             "bytes": 65817,
             "sha256": "89c5d3b33aea9e75a7d463f8bae0a3d8d418b56f4c6e05d6fd4d86b5e196c30d"
@@ -175,7 +175,7 @@
         },
         {
           "name": "kaui.min.css.map",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui.min.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui.min.css.map",
           "metadata": {
             "bytes": 11747,
             "sha256": "14e7eb6688c1ea916e7430cf45811f74eb180aa9e4924a2adbcc904475980b00"
@@ -183,7 +183,7 @@
         },
         {
           "name": "kaui-chart.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui-chart.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui-chart.css",
           "metadata": {
             "bytes": 4487,
             "sha256": "9a3fc03bd01cfb2e9c05618cd0a48dc04676ca4936112fd263d2bd33ecd30262"
@@ -191,7 +191,7 @@
         },
         {
           "name": "kaui-chart.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui-chart.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui-chart.js",
           "metadata": {
             "bytes": 17333,
             "sha256": "35bf87504a4e271b4d7846c030089211eca819a07dae8e28dfe710e0383d4a85"
@@ -199,7 +199,7 @@
         },
         {
           "name": "kaui-chart.min.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui-chart.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui-chart.min.css",
           "metadata": {
             "bytes": 3755,
             "sha256": "eb36136f04b2a76a62a4d3a79d975992738bb584ca7e8a30d190c701f252c8a9"
@@ -207,7 +207,7 @@
         },
         {
           "name": "kaui-chart.min.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui-chart.min.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui-chart.min.js",
           "metadata": {
             "bytes": 17333,
             "sha256": "35bf87504a4e271b4d7846c030089211eca819a07dae8e28dfe710e0383d4a85"
@@ -215,7 +215,7 @@
         },
         {
           "name": "kaui-agent-manifest.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/kaui-agent-manifest.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/kaui-agent-manifest.json",
           "metadata": {
             "bytes": 6396,
             "sha256": "ab925de07872bde7d0d51f24ba64fedcf78755c18f6f58e8514e45b92d01dd77"
@@ -223,7 +223,7 @@
         },
         {
           "name": "tokens/kaui.tokens.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/tokens%2Fkaui.tokens.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/tokens%2Fkaui.tokens.json",
           "metadata": {
             "bytes": 4614,
             "sha256": "158a0a744b0dc63de8d1e26708337518ee470bdd4d43937b7cb6551542895087"
@@ -231,7 +231,7 @@
         },
         {
           "name": "tokens/kaui.tokens.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/tokens%2Fkaui.tokens.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/tokens%2Fkaui.tokens.css",
           "metadata": {
             "bytes": 2828,
             "sha256": "b54cad5b3f8234bf57336a062b076bd059fb9d649b6b5101bdc8c9e56a0c2f0c"
@@ -239,7 +239,7 @@
         },
         {
           "name": "tokens/kaui.tokens.dart",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/tokens%2Fkaui.tokens.dart",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/tokens%2Fkaui.tokens.dart",
           "metadata": {
             "bytes": 4228,
             "sha256": "1bf3f5ebcad1e1dba9c73ca880cae71d40cef79c69c4840c33962f69257a3007"
@@ -247,7 +247,7 @@
         },
         {
           "name": "tokens/KauiTokens.kt",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/tokens%2FKauiTokens.kt",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/tokens%2FKauiTokens.kt",
           "metadata": {
             "bytes": 3241,
             "sha256": "b913d280f57eb5fb30d4b8f74baa74e28ec14f50b1b5973c0215e73ebfd65a9d"
@@ -255,7 +255,7 @@
         },
         {
           "name": "tokens/KauiTokens.swift",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/tokens%2FKauiTokens.swift",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/tokens%2FKauiTokens.swift",
           "metadata": {
             "bytes": 6942,
             "sha256": "1ac54886f6f50ff6b8eb3d1d49bb310fc6eff77033af08056dac993c3607838b"
@@ -263,7 +263,7 @@
         },
         {
           "name": "icons/sprite.svg",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/icons%2Fsprite.svg",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/icons%2Fsprite.svg",
           "metadata": {
             "bytes": 10741,
             "sha256": "6752735fc1179fbf1da3c27ce7c5401386d6493a8ec2be88cd80addda431025f"
@@ -271,7 +271,7 @@
         },
         {
           "name": "icons/kaui-icons.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/icons%2Fkaui-icons.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/icons%2Fkaui-icons.css",
           "metadata": {
             "bytes": 304,
             "sha256": "2eadd31850dc05032a8a1ec75cdbd94f7c49520a5ad5a7ea49474ce47323d393"
@@ -279,7 +279,7 @@
         },
         {
           "name": "icons/kaui-icons.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.0/icons%2Fkaui-icons.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.0/icons%2Fkaui-icons.json",
           "metadata": {
             "bytes": 14223,
             "sha256": "c7494d92c2427a13fd6e66fc1fdc7e89c710b787f52ed41fa85c94783df942e0"
@@ -289,12 +289,12 @@
     },
     "1.1.1": {
       "version": "1.1.1",
-      "builtAt": "2026-11-10T05:36:55.431Z",
+      "builtAt": "2026-11-10T05:50:16.949Z",
       "directory": "dist/versions/1.1.1",
       "files": [
         {
           "name": "kaui.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui.css",
           "metadata": {
             "bytes": 86190,
             "sha256": "07a5d97b92f443f27beb49b5f8317b03cdd793c152a9b0e16ea572bf0cd741dd"
@@ -302,7 +302,7 @@
         },
         {
           "name": "kaui.css.map",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui.css.map",
           "metadata": {
             "bytes": 17322,
             "sha256": "34c6c6695ee0206bd40d7564676988c7c7e8013626ee796e633023b78b6c6c3b"
@@ -310,7 +310,7 @@
         },
         {
           "name": "kaui.min.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui.min.css",
           "metadata": {
             "bytes": 73106,
             "sha256": "3fe9fa01ce65fecd5eae4be3ea2fb00a8c20e9e95c5e17f0ba2f68b760e3e4df"
@@ -318,7 +318,7 @@
         },
         {
           "name": "kaui.min.css.map",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui.min.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui.min.css.map",
           "metadata": {
             "bytes": 12969,
             "sha256": "ad75ad33af4ac8c3d774cb761d198ce59ce4cdce4101d24dc33562631051a721"
@@ -326,7 +326,7 @@
         },
         {
           "name": "kaui.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui.js",
           "metadata": {
             "bytes": 13581,
             "sha256": "9af61ef65ecd4269be29a86ed586fb814ef60049c9af5377417ec19af0eaa0bc"
@@ -334,7 +334,7 @@
         },
         {
           "name": "kaui.min.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui.min.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui.min.js",
           "metadata": {
             "bytes": 13581,
             "sha256": "9af61ef65ecd4269be29a86ed586fb814ef60049c9af5377417ec19af0eaa0bc"
@@ -342,7 +342,7 @@
         },
         {
           "name": "kaui-chart.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui-chart.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui-chart.css",
           "metadata": {
             "bytes": 4487,
             "sha256": "9a3fc03bd01cfb2e9c05618cd0a48dc04676ca4936112fd263d2bd33ecd30262"
@@ -350,7 +350,7 @@
         },
         {
           "name": "kaui-chart.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui-chart.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui-chart.js",
           "metadata": {
             "bytes": 17331,
             "sha256": "e461b00c555134902b95b15f6d2e20e2d661a99710c0ecff40df7d2a6647caaa"
@@ -358,7 +358,7 @@
         },
         {
           "name": "kaui-chart.min.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui-chart.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui-chart.min.css",
           "metadata": {
             "bytes": 3755,
             "sha256": "eb36136f04b2a76a62a4d3a79d975992738bb584ca7e8a30d190c701f252c8a9"
@@ -366,7 +366,7 @@
         },
         {
           "name": "kaui-chart.min.js",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui-chart.min.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui-chart.min.js",
           "metadata": {
             "bytes": 17331,
             "sha256": "e461b00c555134902b95b15f6d2e20e2d661a99710c0ecff40df7d2a6647caaa"
@@ -374,23 +374,23 @@
         },
         {
           "name": "kaui-agent-manifest.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/kaui-agent-manifest.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/kaui-agent-manifest.json",
           "metadata": {
-            "bytes": 6396,
-            "sha256": "76fb2159295662b3cae752ad37af4f7628bb634fdc798635636f9f7316770678"
+            "bytes": 6377,
+            "sha256": "0a1c7af5af3a7c6a5e462784c8dc9f2295b893c56a6b4513c71461c76b50a346"
           }
         },
         {
           "name": "tokens/kaui.tokens.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/tokens%2Fkaui.tokens.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/tokens%2Fkaui.tokens.json",
           "metadata": {
             "bytes": 4614,
-            "sha256": "ac3257767dcac3329706ccd1ed0ad462d62b936ceea1691a44bda5477abf4a2a"
+            "sha256": "6ff0c461b8fc5f4770d705328a50f5eab65ed0ceb0661fceb5225650327c319b"
           }
         },
         {
           "name": "tokens/kaui.tokens.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/tokens%2Fkaui.tokens.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/tokens%2Fkaui.tokens.css",
           "metadata": {
             "bytes": 2828,
             "sha256": "b54cad5b3f8234bf57336a062b076bd059fb9d649b6b5101bdc8c9e56a0c2f0c"
@@ -398,7 +398,7 @@
         },
         {
           "name": "tokens/kaui.tokens.dart",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/tokens%2Fkaui.tokens.dart",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/tokens%2Fkaui.tokens.dart",
           "metadata": {
             "bytes": 4228,
             "sha256": "1bf3f5ebcad1e1dba9c73ca880cae71d40cef79c69c4840c33962f69257a3007"
@@ -406,7 +406,7 @@
         },
         {
           "name": "tokens/KauiTokens.kt",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/tokens%2FKauiTokens.kt",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/tokens%2FKauiTokens.kt",
           "metadata": {
             "bytes": 3241,
             "sha256": "b913d280f57eb5fb30d4b8f74baa74e28ec14f50b1b5973c0215e73ebfd65a9d"
@@ -414,7 +414,7 @@
         },
         {
           "name": "tokens/KauiTokens.swift",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/tokens%2FKauiTokens.swift",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/tokens%2FKauiTokens.swift",
           "metadata": {
             "bytes": 6942,
             "sha256": "1ac54886f6f50ff6b8eb3d1d49bb310fc6eff77033af08056dac993c3607838b"
@@ -422,7 +422,7 @@
         },
         {
           "name": "icons/sprite.svg",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/icons%2Fsprite.svg",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/icons%2Fsprite.svg",
           "metadata": {
             "bytes": 10741,
             "sha256": "6752735fc1179fbf1da3c27ce7c5401386d6493a8ec2be88cd80addda431025f"
@@ -430,7 +430,7 @@
         },
         {
           "name": "icons/kaui-icons.css",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/icons%2Fkaui-icons.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/icons%2Fkaui-icons.css",
           "metadata": {
             "bytes": 304,
             "sha256": "2eadd31850dc05032a8a1ec75cdbd94f7c49520a5ad5a7ea49474ce47323d393"
@@ -438,7 +438,7 @@
         },
         {
           "name": "icons/kaui-icons.json",
-          "url": "https://longbm64.github.io/kaui/dist/versions/1.1.1/icons%2Fkaui-icons.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.1/icons%2Fkaui-icons.json",
           "metadata": {
             "bytes": 14223,
             "sha256": "c7494d92c2427a13fd6e66fc1fdc7e89c710b787f52ed41fa85c94783df942e0"

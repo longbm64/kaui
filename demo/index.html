@@ -73,7 +73,7 @@
               <div class="k-p-3" style="background: var(--k-color-surface-subtle); border: 1px solid var(--k-border); border-radius: var(--k-radius-md);">
                 <div class="k-flex k-items-center k-justify-between k-mb-1">
                   <h3 class="k-fs-base k-fw-semibold k-m-0">1. Web / React / Next.js (NPM)</h3>
-                  <span class="k-badge k-badge--primary k-badge--pill">Recommended</span>
+                  <a class="k-btn k-btn--sm k-btn--outline-primary" href="https://www.npmjs.com/package/filekat" target="_blank" rel="noopener noreferrer">View on npm</a>
                 </div>
                 <p class="k-text-muted k-fs-sm k-mb-2">Install via npm and import the single production stylesheet at the application root.</p>
                 <pre class="demo-code" style="margin: 0;"><code>npm install filekat
@@ -86,7 +86,7 @@ import 'filekat/kaui';</code></pre>
               <div class="k-p-3" style="background: var(--k-color-surface-subtle); border: 1px solid var(--k-border); border-radius: var(--k-radius-md);">
                 <div class="k-flex k-items-center k-justify-between k-mb-1">
                   <h3 class="k-fs-base k-fw-semibold k-m-0">2. Flutter (pub.dev)</h3>
-                  <span class="k-badge k-badge--secondary k-badge--pill">Mobile &amp; Desktop</span>
+                  <a class="k-btn k-btn--sm k-btn--outline-primary" href="https://pub.dev/packages/filekat" target="_blank" rel="noopener noreferrer">View on pub.dev</a>
                 </div>
                 <p class="k-text-muted k-fs-sm k-mb-2">Add the official Flutter package from pub.dev and import the KAUI widget kit.</p>
                 <pre class="demo-code" style="margin: 0;"><code>flutter pub add filekat
@@ -103,10 +103,10 @@ import 'package:filekat/kaui.dart';</code></pre>
                 </div>
                 <p class="k-text-muted k-fs-sm k-mb-2">Include stylesheet and official KAUI runtime directly from the release CDN:</p>
                 <pre class="demo-code" style="margin: 0;"><code>&lt;!-- Stylesheet: CSS Tokens, Components &amp; Icons --&gt;
-&lt;link rel="stylesheet" href="https://longbm64.github.io/kaui/dist/kaui.min.css"&gt;
+&lt;link rel="stylesheet" href="https://kaui.filekat.com/dist/kaui.min.css"&gt;
 
 &lt;!-- Official KAUI Runtime: Dropdowns, Navbar Submenus, Modals, Tables, Tabs --&gt;
-&lt;script src="https://longbm64.github.io/kaui/dist/kaui.min.js" defer&gt;&lt;/script&gt;</code></pre>
+&lt;script src="https://kaui.filekat.com/dist/kaui.min.js" defer&gt;&lt;/script&gt;</code></pre>
               </div>
             </div>
             <p class="k-text-muted k-fs-xs k-mt-4 k-mb-0">KAUI 1.1.0+ is Personal / Non-Commercial. Commercial use requires written permission: contact@filekat.com.</p>
@@ -130,12 +130,12 @@ MANDATORY FIRST STEP: Use official KAUI components, widgets, tokens, and contrac
 1. PLATFORM INSTALLATION &amp; IMPORTS:
    - Web / React / Next.js: Run `npm install filekat` and add `import 'filekat/kaui';` at the top level of the application (e.g. `app/layout.tsx`).
    - Flutter: Run `flutter pub add filekat` and add `import 'package:filekat/kaui.dart';`.
-   - CDN / Static HTML: Include `&lt;link rel="stylesheet" href="https://longbm64.github.io/kaui/dist/kaui.min.css"&gt;` and `&lt;script src="https://longbm64.github.io/kaui/demo/demo.js" defer&gt;&lt;/script&gt;` for interactive dropdowns, navbar submenus, modal overlays, and rich table features.
+   - CDN / Static HTML: Include `&lt;link rel="stylesheet" href="https://kaui.filekat.com/dist/kaui.min.css"&gt;` and `&lt;script src="https://kaui.filekat.com.js" defer&gt;&lt;/script&gt;` for interactive dropdowns, navbar submenus, modal overlays, and rich table features.
 
 2. DOCUMENTATION &amp; MANIFEST NAVIGATION:
-   - Always read the latest index: https://longbm64.github.io/kaui/dist/versions/index.json
-   - Construct and inspect the active version manifest: https://longbm64.github.io/kaui/dist/versions/&lt;latest&gt;/kaui-agent-manifest.json
-   - Reference interactive live demos: https://longbm64.github.io/kaui/demo
+   - Always read the latest index: https://kaui.filekat.com/dist/versions/index.json
+   - Construct and inspect the active version manifest: https://kaui.filekat.com/dist/versions/&lt;latest&gt;/kaui-agent-manifest.json
+   - Reference interactive live demos: https://kaui.filekat.com
 
 3. SYSTEM CONVENTIONS &amp; THEME TOKENS:
    - BEM Hierarchy: All class names strictly follow `.k-*` (e.g. `.k-btn`, `.k-card`, `.k-table`, `.k-modal`).
@@ -162,6 +162,6 @@ MANDATORY FIRST STEP: Use official KAUI components, widgets, tokens, and contrac
       </div>
     </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a><a href="https://github.com/longbm64/kaui" class="k-navbar__link" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div><span class="k-fw-bold k-text-primary">KAUI CSS Kit</span> — Built with modern Dart Sass &amp; CSS Custom Properties.</div><div class="k-flex k-gap-4"><a href="index.html" class="k-navbar__link">Overview</a></div></div></div></footer></div>
 </body>
 </html>

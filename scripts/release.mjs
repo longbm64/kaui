@@ -12,7 +12,7 @@ const README_PATH = path.join(ROOT, 'README.md');
 const LICENSE_PATH = path.join(ROOT, 'LICENSE');
 const NON_COMMERCIAL_LICENSE_PATH = path.join(ROOT, 'NON_COMMERCIAL_LICENSE.md');
 const VERSIONS_DIR = path.join(ROOT, 'dist/versions');
-const PUBLIC_BASE_URL = 'https://longbm64.github.io/kaui';
+const PUBLIC_BASE_URL = 'https://kaui.filekat.com';
 const INDEX_JSON_PATH = path.join(VERSIONS_DIR, 'index.json');
 
 
@@ -108,8 +108,8 @@ function main() {
     name: 'KAUI CSS Kit Agent Manifest',
     version: nextVersion,
     builtAt: new Date().toISOString(),
-    manifestUrl: `https://longbm64.github.io/kaui/dist/versions/${nextVersion}/kaui-agent-manifest.json`,
-    liveDemoUrl: 'https://longbm64.github.io/kaui/demo',
+    manifestUrl: `https://kaui.filekat.com/dist/versions/${nextVersion}/kaui-agent-manifest.json`,
+    liveDemoUrl: 'https://kaui.filekat.com',
     license: {
       name: isNonCommercialVersion(nextVersion) ? 'KAUI Personal / Non-Commercial License' : 'MIT License',
       commercialUse: isNonCommercialVersion(nextVersion) ? false : true,

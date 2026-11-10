@@ -1,6 +1,6 @@
 {
   "version": "1.1.1",
-  "builtAt": "2026-11-10T05:36:55.431Z",
+  "builtAt": "2026-11-10T05:50:16.949Z",
   "files": {
     "kaui.css": {
       "bytes": 86190,
@@ -43,12 +43,12 @@
       "sha256": "e461b00c555134902b95b15f6d2e20e2d661a99710c0ecff40df7d2a6647caaa"
     },
     "kaui-agent-manifest.json": {
-      "bytes": 6396,
-      "sha256": "76fb2159295662b3cae752ad37af4f7628bb634fdc798635636f9f7316770678"
+      "bytes": 6377,
+      "sha256": "0a1c7af5af3a7c6a5e462784c8dc9f2295b893c56a6b4513c71461c76b50a346"
     },
     "tokens/kaui.tokens.json": {
       "bytes": 4614,
-      "sha256": "ac3257767dcac3329706ccd1ed0ad462d62b936ceea1691a44bda5477abf4a2a"
+      "sha256": "6ff0c461b8fc5f4770d705328a50f5eab65ed0ceb0661fceb5225650327c319b"
     },
     "tokens/kaui.tokens.css": {
       "bytes": 2828,

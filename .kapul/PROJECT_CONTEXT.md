@@ -3,7 +3,8 @@
 
 - Release baseline: version `1.1.1` artifacts are generated under `dist/versions/1.1.1/`, registered in `dist/versions/index.json`, and include `metadata.json` with file sizes and SHA-256 checksums.
 
-- `server.mjs` is the production static HTTP entrypoint. It binds `0.0.0.0:${PORT}` (fallback `3000` locally), redirects `/` to `/demo/`, serves static files safely, and exposes `GET /health`.
+- `server.mjs` is the production static HTTP entrypoint. It binds `0.0.0.0:${PORT}` (fallback `3000` locally), redirects `/` to the `/` root route, serves static files safely, and exposes `GET /health`.
+- **Root demo route contract:** the production server exposes the demo overview at `https://kaui.filekat.com/` instead of `/demo`; legacy `/demo` URLs redirect to root equivalents.
 - `package.json` exports `npm start` as `node server.mjs`; `npm run build` remains the Railway build command.
 - `railway.json` is the declarative Railway configuration: build `npm run build`, start `npm start`, healthcheck `/health`.
 - `serve:tailscale` remains local-only and must not be used in Railway because it binds a fixed port.
@@ -126,9 +127,9 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Cards showcase contract: `demo/card.html` renders three equal-height cards in `#cards .demo-card-grid`; the third `.demo-card-countries` has a scrollable `.demo-country-list` with four equal grid columns (number, calling code, country, time zone). `demo/demo.css` owns showcase-only sizing/scroll styling; core `.k-card` API remains unchanged.
 
 - Mọi component dùng prefix `.k-` và token `--k-*`.
-- Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:4173`; access the demo from the tailnet at `http://<tailscale-ip>:4173/demo/`. This is tailnet-only routing and does not configure public exposure.
+- Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:4173`; access the demo from the tailnet at `http://<tailscale-ip>:4173/`. This is tailnet-only routing and does not configure public exposure.
 
-- Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:8080`; access the demo from the tailnet at `http://<tailscale-ip>:8080/demo/`. This is tailnet-only routing and does not configure public exposure.
+- Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:8080`; access the demo from the tailnet at `http://<tailscale-ip>:8080/`. This is tailnet-only routing and does not configure public exposure.
 - NPM package consumer contract: package root `kaui` resolves to the production stylesheet (`dist/kaui.min.css`) including the generated icon CSS; `kaui/css` resolves to expanded CSS including icons; `kaui/charts` resolves to chart runtime. There is no separate icon import for normal consumers.
 
 
@@ -283,7 +284,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 
-- Agent prompt contract: explicitly instructs the agent to access and inspect `https://longbm64.github.io/kaui/demo` before writing code, then copy the closest existing markup pattern instead of inventing a new structure.
+- Agent prompt contract: explicitly instructs the agent to access and inspect `https://kaui.filekat.com` before writing code, then copy the closest existing markup pattern instead of inventing a new structure.
 - Dark theme sidebar active: `.demo-sidebar__link.is-active` dùng nền primary-900 (`#1e3a8a` fallback) để nổi bật trên nền sidebar tối; light theme giữ nguyên primary-50.
 - Dark theme sidebar hover: `.demo-sidebar__link:hover` dùng cùng nền primary-900 như trạng thái active để feedback tương tác nhất quán.
 - Dark theme table hover: `.k-table` remap `--k-table-hover-bg` sang primary-900 (`#1e3a8a` fallback), giữ row hover rõ nhưng không bị nền sáng chói.
@@ -396,6 +397,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Navbar single-direction cascade contract: once a branch orientation is determined based on nearest viewport side (right side defaults to leftward `.is-dropstart`), all descendant submenus strictly open in that same direction in a clean monotonic staircase, preventing zig-zag overlapping.
 
+- **Public URL/source privacy contract:** Public CDN/demo/release links are canonicalized to `https://kaui.filekat.com`; project-owned GitHub repository links are removed from demo footers and package metadata because the source repository is private. Third-party attribution and package registry URLs remain unchanged.
 - Navbar outside-click contract: clicking outside the navbar dismisses all open submenus across both desktop (`.k-navbar__item--has-children.is-open`) and mobile drawer modes (`closeNavbarMenus`).
 
 - Navbar dropstart specificity contract: `.is-dropstart` selector explicitly takes precedence over breakpoint modifiers (`.k-navbar--expand-lg`) with `right: calc(...) !important; left: auto !important;`, flipping chevron icons and cascading dropstart to deeply nested levels (Level 4+).

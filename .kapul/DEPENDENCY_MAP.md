@@ -2,8 +2,9 @@
 ## Railway deployment changes
 
 - **Node:** `server.mjs`
-  - **Exports/public contract:** production static HTTP server; `GET /health` returns 200; `/` redirects to `/demo/`; static paths map to repository files; binds `0.0.0.0:$PORT`.
+  - **Exports/public contract:** production static HTTP server; `GET /health` returns 200; `/` serves the demo overview at the public root; static paths map to repository files; binds `0.0.0.0:$PORT`.
   - **Dependencies:** Node built-ins only (`fs`, `http`, `path`, `url`); repository static assets.
+- **Root demo route contract:** `server.mjs` serves `demo/index.html` at `/`, maps demo pages/assets to root-relative public paths (for example `/button.html`, `/demo.css`, `/demo.js`), and redirects legacy `/demo` paths to the equivalent root path.
   - **Dependents:** `package.json` `start` script and `railway.json` deploy start command.
 - **Node:** `railway.json`
   - **Exports/public contract:** Railway build command `npm run build`, start command `npm start`, healthcheck `/health`.
@@ -15,6 +16,7 @@
 - **Node:** `package.json`
   - **New contract:** `scripts.start` launches `server.mjs`; existing build/test scripts remain unchanged.
   - **Dependents:** Railway Railpack/Nixpacks deployment and local production smoke tests.
+- **Public URL/source privacy contract:** `scripts/release.mjs`, `demo/demo.js`, `demo/versions.js`, `demo/index.html`, generated `dist/versions/**`, and README documentation must use `https://kaui.filekat.com` for public artifacts. Do not publish project-owned GitHub repository, issues, clone, or GitHub Pages links; keep only required third-party attribution and package-registry URLs.
 
 - **Node:** `demo/templates.html` canonical page shell
   - **Exports/public contract:** Same sidebar, theme dropdown, mobile toggle, right shell, and footer structure as `demo/card.html`; only the main catalog body is template-specific.

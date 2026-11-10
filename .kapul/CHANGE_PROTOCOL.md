@@ -3,6 +3,7 @@
 
 - For deployment changes, preserve the static-site contract: no runtime framework or database is required.
 - Railway must use `npm run build` and `npm start`; the server must bind `0.0.0.0` and `process.env.PORT`.
+- Verify with `node --check server.mjs`, an HTTP smoke test for `/`, `/health`, `/button.html`, and an asset, then run `npm test`, `npm run build`, and `git diff --check`. The public demo is served at `/`; legacy `/demo` paths redirect to root equivalents.
 - Verify with `node --check server.mjs`, an HTTP smoke test for `/`, `/health`, `/demo/index.html`, and an asset, then run `npm test`, `npm run build`, and `git diff --check`.
 - Never use `serve:tailscale` as the Railway start command because it binds a fixed local port.
 
@@ -86,3 +87,5 @@ All 19 demo pages must place the content area beside the sidebar as `.demo-right
 - Navbar flyout visibility changes are atomic across `src/scss/components/_navbar.scss`, `demo/navbar.html`, and generated dist CSS. Verify desktop flyout overflow, closed initial markup, mobile scroll fallback, `git diff --check`, `npm test`, and `npm run build`.
 
 - Navbar guide changes must update `demo/navbar.html` and the matching `componentSnippets` keys in `demo/demo.js` atomically. Verify all `data-copy-component` keys have payloads, then run `node --check demo/demo.js`, `git diff --check`, `npm test`, and `npm run build`.
+- **Package service links:** The public demo exposes `View on npm` (`https://www.npmjs.com/package/filekat`) and `View on pub.dev` (`https://pub.dev/packages/filekat`) actions with `target="_blank" rel="noopener noreferrer"`; version-specific registry links in `demo/versions.js` follow the same external-link contract.
+- **Official public URL contract:** Public CDN, demo, release manifest, and version artifact links use `https://kaui.filekat.com`; project-owned GitHub source links are not published. Package ecosystem links (`npmjs.com`, `pub.dev`) and third-party attribution URLs remain external by design.

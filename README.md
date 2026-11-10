@@ -79,7 +79,7 @@ import 'filekat/charts';
 ## Quick Start & Installation
 ### Deploy the demo on Railway
 
-The repository is prepared for Railway as a static Node.js service. Railway runs `npm run build`, then `npm start`; the server listens on `0.0.0.0:$PORT`, exposes `/health` for the healthcheck, and serves the showcase at `/demo/` (the root path redirects there).
+The repository is prepared for Railway as a static Node.js service. Railway runs `npm run build`, then `npm start`; the server listens on `0.0.0.0:$PORT`, exposes `/health` for the healthcheck, and serves the showcase at the `/` root route (the root path redirects there).
 
 #### Deploy from GitHub
 
@@ -87,7 +87,7 @@ The repository is prepared for Railway as a static Node.js service. Railway runs
 2. In Railway, choose **New Project → Deploy from GitHub Repo** and select the repository.
 3. Railway reads `railway.json`. If configuring manually, use **Build Command** `npm run build` and **Start Command** `npm start`.
 4. Generate a public domain in **Settings → Networking → Generate Domain**.
-5. Open the generated domain; it should redirect from `/` to `/demo/`.
+5. Open the generated domain; it should redirect from `/` to the `/` root route.
 
 #### Deploy from the Railway CLI
 
@@ -105,8 +105,7 @@ No database or environment variable is required. Do not use `serve:tailscale` in
 ### 1. Clone & Install Build Tools
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-org/kaui.git
+# Use the project files from your private source repository
 cd kaui
 
 # Install native Dart Sass compiler dependency
@@ -162,13 +161,13 @@ npm run serve:tailscale
 On this machine, the demo is available at:
 
 ```text
-http://100.121.62.115:4173/demo/
+http://100.121.62.115:4173/
 ```
 
 
 
 ```text
-http://100.121.62.115:8080/demo/
+http://100.121.62.115:8080/
 ```
 
 Use `tailscale ip -4` to verify the current Tailscale IPv4 address. Keep the terminal running while serving. Stop with `Ctrl+C`.
@@ -514,7 +513,7 @@ The registry is designed to produce future Web CSS, Flutter Dart, Android Compos
 
 
 ```text
-Read `https://longbm64.github.io/kaui/dist/versions/index.json`, take its `latest` version, then access `kaui-agent-manifest.json` inside that latest version directory.
+Read `https://kaui.filekat.com/dist/versions/index.json`, take its `latest` version, then access `kaui-agent-manifest.json` inside that latest version directory.
 ```
 
 The versioned manifest is the canonical machine-readable contract for AI agents. Update only the version segment when releasing a new version.

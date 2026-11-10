@@ -6,6 +6,11 @@ Tài liệu kỹ thuật chi tiết dành cho Developer và DevOps về kiến t
 
 ## 1. Tổng quan Kiến trúc
 
+## Quy trình `#release`
+
+Quy trình phát hành chuẩn được lưu tại [`.kapul/RELEASE_PROTOCOL.md`](../.kapul/RELEASE_PROTOCOL.md). Flow gồm bump version, build, test/verify, commit và push branch nguồn, merge/push branch `release`, rồi mới deploy. Không chạy trên `release`, không force-push và phải dừng khi có conflict.
+
+
 KAUI là thư viện CSS/SCSS Kit hiện đại xây dựng trên Dart Sass, sử dụng kiến trúc phân tầng chuẩn:
 1. **Base Layer:** `:root` biến CSS Custom Properties, reset, chuẩn hóa typography.
 2. **Layout Layer:** Container, 12-column Grid, Flexbox helpers.

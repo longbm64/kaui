@@ -187,7 +187,7 @@
 
 - [x] Tăng size header brand sidebar: KAUI lên 1.75rem, CSS KIT lên 0.8rem và đưa lên nằm cùng dòng (inline-flex baseline).
 
-- [x] Chuẩn hóa live demo URL thành `https://longbm64.github.io/kaui/demo` không có dấu slash cuối.
+- [x] Chuẩn hóa live demo URL thành `https://kaui.filekat.com` không có dấu slash cuối.
 
 - [x] Sửa prompt: sau khi đọc latest từ index.json, truy cập trực tiếp file `kaui-agent-manifest.json` của phiên bản mới nhất đó (không còn URL cứng).
 
@@ -226,7 +226,7 @@
 
 
 
-- [x] Thêm link GitHub thật (`https://github.com/longbm64/kaui`) vào sidebar footer và cập nhật link GitHub cuối trang, mở tab mới an toàn.
+- [x] Đã loại bỏ các liên kết mã nguồn GitHub khỏi giao diện công khai khi chuyển repository sang private.
 
 - [x] Đổi nền nút mũi tên scroll từ trắng tinh sang trắng khói để giảm độ chói.
 
@@ -398,6 +398,9 @@
 - [x] Search dropdown không còn option mặc định được chọn: hiển thị placeholder `Select a country...` và chỉ chọn khi người dùng tìm/chọn kết quả; Show All Only vẫn giữ `All regions` làm default.
 - [x] Thêm demo dropdown Show All Only không có input search, cấu hình bằng `data-k-show-all="true"`.
 - [x] Xóa option `All` và option placeholder `Select country...` khỏi demo Search Country/Region; giữ demo Show All riêng với `All regions` làm lựa chọn mặc định.
+- [x] Chuyển toàn bộ CDN/demo/manifest/version-artifact links sang `https://kaui.filekat.com` và xóa liên kết mã nguồn GitHub của dự án khỏi nội dung công khai/package metadata. Giữ URL npm/pub.dev và attribution bên thứ ba cần thiết.
+- [x] Đưa demo overview về root `/`, map toàn bộ trang/asset demo sang route root và redirect tương thích từ `/demo` về URL tương ứng.
+- [x] Gắn link trực tiếp tới npm (`npmjs.com/package/filekat`) và Flutter (`pub.dev/packages/filekat`) với `target="_blank" rel="noopener noreferrer"` trong Overview, Platforms và Versions.
 - [x] Khắc phục lỗi CSS: Thêm rule `.k-dropdown__item[hidden] { display: none !important; }` để việc ẩn/hiện kết quả tìm kiếm hoạt động ngay lập tức trong browser.
 - [x] Thêm điều hướng bàn phím cho Dropdown: `ArrowDown`/`ArrowUp` để di chuyển highlight qua danh sách lọc, `Enter` để chọn và `Escape` để đóng.
 - [x] Căn giữa icon Confirm và tăng kích thước vòng icon lên 4rem, SVG lên 2rem.
