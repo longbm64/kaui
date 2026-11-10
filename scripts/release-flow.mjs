@@ -34,12 +34,7 @@ function main() {
   const sourceBranch = assertSourceBranch();
   assertClean();
   run('git', ['fetch', 'origin', 'main', 'release']);
-  run('git', ['fetch', 'origin', 'main', 'release']);
   run('node', ['scripts/release.mjs', bump]);
-  run('npm', ['test']);
-  run('node', ['scripts/release.mjs', bump]);
-
-  run('npm', ['run', `release:${bump}`]);
   run('npm', ['test']);
   run('npm', ['run', 'verify:release']);
   run('npm', ['run', 'tokens:verify']);
