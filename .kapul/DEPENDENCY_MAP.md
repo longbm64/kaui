@@ -17,6 +17,8 @@
   - **New contract:** `scripts.start` launches `server.mjs`; existing build/test scripts remain unchanged.
   - **Dependents:** Railway Railpack/Nixpacks deployment and local production smoke tests.
 - **Public URL/source privacy contract:** `scripts/release.mjs`, `demo/demo.js`, `demo/versions.js`, `demo/index.html`, generated `dist/versions/**`, and README documentation must use `https://kaui.filekat.com` for public artifacts. Do not publish project-owned GitHub repository, issues, clone, or GitHub Pages links; keep only required third-party attribution and package-registry URLs.
+- **Public source/documentation contract:** `README.md` must link to the official website `https://kaui.filekat.com`, public source repository `https://github.com/longbm64/kaui`, and existing GitHub Pages demo `https://longbm64.github.io/kaui/demo`. Production artifact/CDN links remain on the official website.
+
 
 - **Node:** `demo/templates.html` canonical page shell
   - **Exports/public contract:** Same sidebar, theme dropdown, mobile toggle, right shell, and footer structure as `demo/card.html`; only the main catalog body is template-specific.

@@ -4,6 +4,8 @@
 - Release baseline: version `1.1.1` artifacts are generated under `dist/versions/1.1.1/`, registered in `dist/versions/index.json`, and include `metadata.json` with file sizes and SHA-256 checksums.
 
 - `server.mjs` is the production static HTTP entrypoint. It binds `0.0.0.0:${PORT}` (fallback `3000` locally), redirects `/` to the `/` root route, serves static files safely, and exposes `GET /health`.
+- **Public source/documentation contract:** The KAUI source repository is public at `https://github.com/longbm64/kaui`. The official production website is `https://kaui.filekat.com`; the existing GitHub Pages demo remains `https://longbm64.github.io/kaui/demo`.
+
 - **Root demo route contract:** the production server exposes the demo overview at `https://kaui.filekat.com/` instead of `/demo`; legacy `/demo` URLs redirect to root equivalents.
 - `package.json` exports `npm start` as `node server.mjs`; `npm run build` remains the Railway build command.
 - `railway.json` is the declarative Railway configuration: build `npm run build`, start `npm start`, healthcheck `/health`.
