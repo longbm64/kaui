@@ -91,3 +91,11 @@ All 19 demo pages must place the content area beside the sidebar as `.demo-right
 - **Official public URL contract:** Public CDN, demo, release manifest, and version artifact links use `https://kaui.filekat.com`; project-owned GitHub source links are not published. Package ecosystem links (`npmjs.com`, `pub.dev`) and third-party attribution URLs remain external by design.
 - **Public source policy:** The GitHub repository is intentionally public and must be linked from README/documentation as `https://github.com/longbm64/kaui`. Keep `https://kaui.filekat.com` as the official production site and retain the GitHub Pages demo URL `https://longbm64.github.io/kaui/demo` for the current showcase.
 - **License display contract:** README and public docs must label current `1.1.0+` releases as KAUI Personal / Non-Commercial; MIT references are historical `1.0.x` context only.
+
+- Second-pass blur fix: keep footer background fully opaque and use the same font rendering as core reset (`antialiased`, `grayscale`, `text-rendering: auto`). Verify no `subpixel-antialiased`, `optimizeLegibility`, or transparent footer `color-mix` remains, then run `npm test`, `npm run build`, and `git diff --check`.
+- Core package impact: when typography rendering changes are identified in demo, apply the equivalent source change in `src/scss/base/_reset.scss` before publishing; rebuild `dist/kaui.css` and `dist/kaui.min.css` because `package.json` exports those artifacts.
+- Text contrast changes in shared tokens must update `src/scss/abstracts/_tokens.scss`, then rebuild both package CSS artifacts; preserve token names and verify `--k-color-text-muted` in expanded and minified output.
+
+
+
+- Theme readability changes are scoped to `demo/demo.css`: keep `.demo-footer` opaque (no `backdrop-filter`) and apply consistent font weights across presets. Verify with `npm test`, `npm run build`, `git diff --check`, and grep that no demo footer blur remains.

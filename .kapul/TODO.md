@@ -301,6 +301,27 @@
 - [!] Không có blocker.
 - [x] Căn giữa text Donut compact: path label đối xứng quanh tâm cung, `textPath` dùng `startOffset=50%`, `text-anchor=middle` và hỗ trợ `xlink:href`.
 
+- [x] Khắc phục triệt để mờ/nhòe font ở các preset: xóa hoàn toàn nền bán trong suốt `color-mix` còn sót ở `.demo-footer`; đổi toàn bộ `demo/demo.css` từ `subpixel-antialiased`/`optimizeLegibility` sang `antialiased`/`grayscale`/`text-rendering: auto` theo đúng chuẩn core SCSS để khử tán sắc subpixel trên macOS/WebKit.
+
+- [x] Cập nhật fix vào core package: đổi `src/scss/base/_reset.scss` từ `text-rendering: optimizeSpeed` sang `auto` để package publish (`dist/kaui.css`/`dist/kaui.min.css`) cũng nhận typography rendering ổn định, không chỉ demo.
+- [x] Tăng độ rõ text cho package publish: đổi token core `--k-color-text-muted` từ `#64748b` sang `#475569` trong `src/scss/abstracts/_tokens.scss`; giữ nguyên tên token/API, rebuild expanded/minified CSS để mọi consumer nhận màu muted đậm hơn, giảm cảm giác bóng mờ và mỏi mắt.
+- [x] Sửa lỗi Dark theme active menu item bị giãn chiều cao: xóa selector `#cards .demo-card-equal` bị dính nhầm dấu phẩy `,` vào `[data-theme="dark"] .demo-sidebar__link.is-active`, trả lại chiều cao compact chuẩn `.demo-sidebar__link`.
+- [x] Đổi màu chữ và icon của active/hover item trong menu sidebar ở Dark theme: chuyển từ màu xanh tối `#1d4ed8` sang màu trắng `#ffffff` trên nền xanh đậm `#1e3a8a`, tăng tương phản tuyệt đối và không còn bị chìm/mất chữ.
+- [x] Thêm thông tin liên lạc (`contact@filekat.com`) và copyright (`&copy; 2026 KAUI Contributors`) vào main footer `.demo-footer` trên toàn bộ 20 trang demo.
+- [x] Đồng bộ padding của header trang Overview (`.demo-hero`): giảm từ `3rem 1rem` xuống `1.5rem 0` đúng chuẩn `.demo-section` của 19 trang component khác.
+- [x] Độc lập hóa vùng cuộn (scroll containment): áp dụng `overscroll-behavior: contain` triệt để cho `.demo-sidebar__body`, `.demo-right__body`, `pre`, `.demo-code`, `.k-dropdown__menu`, `.k-tabs__list`, modal body và table scrollable pane; khi con trỏ chuột ở vùng nào thì cuộn độc lập vùng đó, khi tới mép cuộn (top/bottom/left/right) không bị tràn sự kiện cuộn (scroll chaining) làm trôi các vùng khác.
+
+
+
+
+- [x] Thay chữ `Overview` (và `Showcase Demo` ở versions.html) ở góc phải footer `.demo-footer` trên toàn bộ 20 trang demo thành text version hiện tại `v1.1.4` (link trỏ tới `versions.html`).
+
+
+
+
+- [x] Rà soát preset theme: loại bỏ `backdrop-filter: blur(10px)` khỏi demo footer gây cảm giác nhòe; đồng bộ font-weight cho Ocean/Forest/Sunset/Dark và giữ nguyên semantic color của từng preset. Đã chạy 177 tests và build thành công.
+
+
 - [x] Sửa Chart opt-in runtime: fallback animation frame khi môi trường thiếu `requestAnimationFrame`, tạo series mặc định khi không truyền dataset, và cleanup đầy đủ listener khi destroy.
 - [x] Đưa Donut compact label vào centerline của vùng màu: textPath chạy ở bán kính `r` thay vì sát mép ngoài, giữ căn giữa từng lát.
 

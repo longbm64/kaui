@@ -46,7 +46,7 @@ html {
 // Body setup
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--k-text);
