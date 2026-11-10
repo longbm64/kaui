@@ -1,3 +1,4 @@
+- [ ] Fix cho đợt #release tiếp theo: Xóa bỏ block comment header `/** * KAUI Core Component Runtime (v1.1.1) ... */` khỏi file JS runtime (`src/js/kaui.js`, `dist/kaui.min.js`) để không hiển thị comment/version cũ trên production/CDN preview.
 - [x] Tạo template dashboard (`demo/templates/dashboard.html`) sao chép từ mẫu demo hiện tại và loại bỏ card Living Styleguide khỏi catalog `demo/templates.html`.
 - [x] Tạo template one-column (`demo/templates/one-column.html`) đồng bộ width của navbar container và footer khớp với body (max-width 60rem), căn giữa menu Account/Playground/API.
 - [x] Chuyển đổi toàn bộ ngôn ngữ trên trang `demo/templates/one-column.html` sang tiếng Anh (thay "Đăng xuất" thành "Log out").

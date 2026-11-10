@@ -184,3 +184,16 @@ git status --short
 ```
 
 Không chạy `npm run release` nếu chưa muốn tạo version, commit, merge và deploy thật.
+
+## Release Bug Notice — Strip Header Comments in JS Artifacts
+- **Bug:** `src/js/kaui.js` chứa block comment đầu file:
+  ```js
+  /**
+   * KAUI Core Component Runtime (v1.1.1)
+   * Zero-dependency vanilla JavaScript for KAUI Interactive Components:
+   * ...
+   */
+  ```
+  Khi build `dist/kaui.min.js`, script hiện tại chỉ dùng `cp src/js/kaui.js dist/kaui.min.js`, dẫn tới việc comment header bị giữ nguyên cả số version cũ `(v1.1.1)` trong file minified trên production / CDN.
+- **Yêu cầu đợt #release tiếp theo:**
+  Xóa bỏ block comment header này (hoặc tự động strip comments khi build `dist/kaui.min.js` và `dist/kaui.js`) để không còn xuất hiện trong bundle khi inspect response/preview.

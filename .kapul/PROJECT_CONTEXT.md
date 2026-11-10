@@ -1,3 +1,4 @@
+- JS runtime header comment cleanup contract: Cho đợt #release tới, `src/js/kaui.js` và bản minified `dist/kaui.min.js` phải được dọn dẹp / loại bỏ block comment mô tả cũ `/** * KAUI Core Component Runtime (v1.1.1) ... */` để tránh xuất hiện comment thừa trên CDN preview.
 - Template example contract: `demo/templates/dashboard.html` is the catalog's standalone dashboard page template, copied from the demo shell. The existing `demo/index.html` remains the general component showcase but is no longer listed as a template.
 
 /* Theme readability fix: opaque footer and consistent weight prevent low-frequency blur/softness on Ocean, Forest, Sunset, and Dark preset surfaces. */
