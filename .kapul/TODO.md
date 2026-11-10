@@ -1,3 +1,4 @@
+- [x] Rà soát và chuẩn hóa toàn bộ văn bản sang tiếng Anh trên tất cả các trang demo (`demo/*.html`), bao gồm code samples, chú thích multi-level submenu, script callback guides, bảng dữ liệu mẫu và mô tả component.
 - [x] Thêm tài liệu & hướng dẫn script callback cho Confirm component trong `demo/confirm.html` (cả 2 cách: DOM listener trực tiếp và hàm Promise async/await).
 - [x] Cập nhật scripts/release.mjs và quy trình #release để tự động chèn comment header chứa đầy đủ version, bản quyền, website chính thức và GitHub project vào tất cả các file phân phối (dist/ CSS, JS, Tokens).
 - [x] Tách Modal (.k-modal) và Confirm (.k-confirm) thành 2 component hoàn toàn độc lập: tách SCSS selector riêng biệt, bổ sung runtime data-k-confirm trong kaui.js, tách thành 2 trang demo riêng (demo/modal.html và demo/confirm.html), đồng bộ toàn bộ sidebar của 21 trang demo.
@@ -178,6 +179,8 @@
 
 
 - [x] Mở rộng bộ icon KAUI bằng 35 glyph mới thuộc các nhóm Media, Layout, Device, Commerce, Navigation và Security; production registry đạt 67 icon KAUI-owned.
+- [x] Mở rộng bộ icon KAUI thêm 30 glyph ưu tiên cho navigation, actions, feedback, dashboard, data, user và security; bổ sung generator idempotent `scripts/add-kaui-priority-icons.mjs` và rebuild registry.
+
 - [x] Xóa các TODO lịch sử mô tả third-party-derived registry sau khi chuyển production registry sang 67 icon KAUI-owned.
 
 

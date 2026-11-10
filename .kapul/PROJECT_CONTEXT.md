@@ -121,6 +121,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Icon renderer class contract: khi chuyển placeholder `<i data-kaui-icon>` thành SVG, phải giữ class nền `kaui-icon` và nối các class chuyên biệt của placeholder (ví dụ `.k-table__sort-icon`).
 - Sort icon registry contract: `icons/source/kaui/arrow-up-down.svg` là glyph trung tính chính thức, được build vào `dist/icons/sprite.svg`, `kaui-icons.css` và `kaui-icons.json` cùng `arrow-up`/`arrow-down`.
 
+- Icon priority expansion: `scripts/add-kaui-priority-icons.mjs` creates 30 idempotent KAUI-owned SVG sources; `npm run icons:priority:add` invokes it then `scripts/build-icons.mjs`. The generated manifest, sprite and CSS are consumed by `demo/icons.html` through `dist/icons/kaui-icons.json`.
+
 - Cards showcase scroll contract: `.demo-card-countries .k-card__body` owns vertical scrolling with header/footer fixed; `.demo-country-list` is not independently scrollable and preserves four equal columns for number, calling code, country, and time zone.
 
 

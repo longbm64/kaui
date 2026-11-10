@@ -109,35 +109,35 @@
               You can listen to button events directly, or wrap the Confirm component in a reusable Promise-based helper function for clean <code>async/await</code> workflows.
             </p>
 
-            <h4 class="k-fs-base k-fw-semibold k-mt-4 k-mb-2">Cách 1: Lắng nghe Event trực tiếp (Standard DOM Event Listeners)</h4>
-            <pre class="demo-code"><code>// Lấy các element liên quan
+            <h4 class="k-fs-base k-fw-semibold k-mt-4 k-mb-2">Method 1: Direct DOM Event Listeners</h4>
+            <pre class="demo-code"><code>// Reference elements
 const confirmDialog = document.getElementById('my-confirm');
 const btnAccept = document.getElementById('my-confirm-accept');
 const btnCancel = document.getElementById('my-confirm-cancel');
 
-// Khi bấm nút Confirm / Chấp nhận
+// When user clicks Confirm / Accept
 btnAccept.addEventListener('click', function() {
-  // 1. Thực hiện logic hành động (ví dụ gọi API, xóa dữ liệu, lưu thay đổi)
+  // 1. Run action logic (e.g. call API, persist changes, delete records)
   console.log('Action confirmed!');
 
-  // 2. Đóng hộp thoại Confirm
+  // 2. Close the dialog
   confirmDialog.classList.remove('is-open');
 });
 
-// Khi bấm nút Cancel / Hủy bỏ
+// When user clicks Cancel / Dismiss
 btnCancel.addEventListener('click', function() {
-  // 1. Thực hiện logic hủy bỏ
+  // 1. Run cancellation logic
   console.log('Action cancelled.');
 
-  // 2. Đóng hộp thoại Confirm
+  // 2. Close the dialog
   confirmDialog.classList.remove('is-open');
 });</code></pre>
 
-            <h4 class="k-fs-base k-fw-semibold k-mt-5 k-mb-2">Cách 2: Hàm tiện ích dạng Promise (Reusable <code>async/await</code> Helper)</h4>
+            <h4 class="k-fs-base k-fw-semibold k-mt-5 k-mb-2">Method 2: Promise-based Utility (Reusable <code>async/await</code> Helper)</h4>
             <pre class="demo-code"><code>/**
- * Hiển thị Confirm và trả về Promise&lt;boolean&gt;
- * @param {string} selector - Selector của hộp thoại confirm (ví dụ '#demo-confirm')
- * @returns {Promise&lt;boolean&gt;} true nếu bấm Confirm, false nếu Cancel hoặc Escape
+ * Display a Confirm dialog and resolve user choice via Promise&lt;boolean&gt;
+ * @param {string} selector - CSS selector of the confirm dialog (e.g. '#demo-confirm')
+ * @returns {Promise&lt;boolean&gt;} true if confirmed, false if cancelled or dismissed with Escape
  */
 function showConfirm(selector) {
   return new Promise((resolve) => {
@@ -166,21 +166,21 @@ function showConfirm(selector) {
     if (cancelBtn) cancelBtn.addEventListener('click', onCancel);
     document.addEventListener('keydown', onKeyDown);
 
-    // Mở hộp thoại
+    // Open dialog
     dialog.classList.add('is-open');
   });
 }
 
-// === Cách sử dụng trong code thực tế ===
+// === Real-world usage in application code ===
 async function handleDeleteItem(itemId) {
   const confirmed = await showConfirm('#demo-confirm-danger');
   if (confirmed) {
-    // Người dùng bấm Confirm / Delete -> Gọi API xóa
+    // User clicked Confirm / Delete -> execute deletion
     await apiDelete(itemId);
-    alert('Đã xóa thành công!');
+    alert('Item deleted successfully!');
   } else {
-    // Người dùng bấm Cancel -> Bỏ qua
-    console.log('Hủy thao tác xóa.');
+    // User cancelled -> abort
+    console.log('Deletion aborted.');
   }
 }</code></pre>
           </div>
