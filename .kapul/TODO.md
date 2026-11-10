@@ -13,6 +13,8 @@
 
 - [x] Publish the source-code links in README: official website `https://kaui.filekat.com`, public GitHub repository, and existing GitHub Pages demo.
 
+- [x] Fix README license badge/text so current release `1.1.3` is clearly marked KAUI Personal / Non-Commercial; retain MIT only as historical `1.0.x` information.
+
 
 - [x] Di chuyển item Templates vào nhóm Resources trên toàn bộ 20 demo pages, giữ active state riêng tại `demo/templates.html` và loại bỏ item trùng ở Getting Started.
 
