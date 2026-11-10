@@ -10,6 +10,8 @@
 - [-] Chờ chủ DNS thêm CNAME/TXT verification để Railway cấp certificate HTTPS cho `kaui.filekat.com`.
 - [ ] Chuyển Railway service từ CLI upload sang GitHub Autodeploy repository `longbm64/kaui`, branch `release`.
 - [ ] Sau khi kết nối, xác minh deployment tự động từ branch `release` và giữ domain `kaui.filekat.com`.
+- [!] Railway GitHub App chưa có quyền truy cập `longbm64/kaui`; cần cấp quyền repository trong GitHub/Railway rồi chạy lại source connect.
+
 
 - [-] Railway ownership đã verify (`Verified: yes`) và CNAME public đã đúng; certificate TLS vẫn đang `VALIDATING_OWNERSHIP`, nên tiếp tục chờ Railway hoàn tất cấp chứng chỉ trước khi đánh dấu domain HTTPS hoàn tất.
 

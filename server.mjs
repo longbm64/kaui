@@ -32,12 +32,18 @@ function resolveFile(urlPath) {
 }
 
 const server = http.createServer((req, res) => {
-  const requestUrl = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`);
-  if (requestUrl.pathname === '/health') { send(res, 200, 'ok\n'); return; }
-  if (requestUrl.pathname === '/') { res.writeHead(302, { Location: '/demo/' }); res.end(); return; }
+  let pathname;
+  try {
+    pathname = new URL(req.url || '/', 'http://localhost').pathname;
+  } catch {
+    send(res, 400, 'Bad Request\n');
+    return;
+  }
+  if (pathname === '/health') { send(res, 200, 'ok\n'); return; }
+  if (pathname === '/') { res.writeHead(302, { Location: '/demo/' }); res.end(); return; }
   if (!['GET', 'HEAD'].includes(req.method)) { send(res, 405, 'Method Not Allowed\n', { Allow: 'GET, HEAD' }); return; }
 
-  const filePath = resolveFile(requestUrl.pathname);
+  const filePath = resolveFile(pathname);
   if (!filePath) { send(res, 403, 'Forbidden\n'); return; }
   fs.stat(filePath, (statError, stats) => {
     if (statError || !stats.isFile()) { send(res, 404, 'Not Found\n'); return; }

@@ -9,6 +9,8 @@
 - Public service domain: `https://kaui-production-4c6d.up.railway.app`; custom domain configured: `https://kaui.filekat.com`.
 - Custom domain remains unverified until DNS records are added: CNAME `kaui` → `hg80i8zv.up.railway.app`; TXT `_railway-verify.kaui` → `railway-verify=fe348a2f9c764d62749b00cef390c9228f0ada7b1caa97865074446b1ab79688`.
 - Railway deployment source migration: service `kaui` will use GitHub repository `longbm64/kaui`, branch `release`; direct `railway up` is no longer the normal production flow.
+- GitHub source connection is pending because Railway CLI reports `User does not have access to the repo`; production remains online on the existing deployment until repository access is granted.
+
 
 
 
