@@ -184,6 +184,8 @@
 - [x] Mở rộng Phase 2 thêm 37 icon KAUI cho data, dashboard, file, user, security và thao tác nâng cao; thêm generator idempotent `scripts/add-kaui-phase2-icons.mjs`.
 
 - [x] Hoàn tất liên tục Phase 3–5: bổ sung icon Media/Communication, Commerce/Infrastructure và Editing/Accessibility/Localization; rebuild registry, sprite và CSS artifacts.
+- [x] Triển khai toàn diện Phase 6–15: bổ sung 180 icon chuyên ngành (Business, Logistics, AI, Finance, Health, Smart Home, Travel, Education, Publishing, Gaming); bổ sung generator `scripts/add-kaui-phase6-15-icons.mjs` và rebuild registry.
+
 
 
 - [x] Xóa các TODO lịch sử mô tả third-party-derived registry sau khi chuyển production registry sang 67 icon KAUI-owned.

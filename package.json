@@ -45,6 +45,8 @@
     "icons:phase3:add": "node scripts/add-kaui-phase3-icons.mjs && npm run icons:build",
     "icons:phase4:add": "node scripts/add-kaui-phase4-icons.mjs && npm run icons:build",
     "icons:phase5:add": "node scripts/add-kaui-phase5-icons.mjs && npm run icons:build",
+    "icons:phase6-15:add": "node scripts/add-kaui-phase6-15-icons.mjs && npm run icons:build",
+
     "icons:groups:add": "node scripts/add-kaui-icon-groups.mjs && npm run icons:build",
     "icons:core:build": "node scripts/build-kaui-core.mjs",
     "serve:tailscale": "python3 -m http.server 4173 --bind 0.0.0.0 --directory .",

@@ -10,12 +10,18 @@
   "color": "currentColor",
   "icons": [
     "accessibility",
+    "accessibility-sign",
     "activity",
     "add",
+    "ai-stars",
+    "air-conditioner",
+    "airport",
     "align-center",
     "align-left",
     "align-right",
     "analytics",
+    "api",
+    "approval",
     "archive",
     "arrow-down",
     "arrow-down-left",
@@ -24,17 +30,46 @@
     "arrow-up",
     "arrow-up-down",
     "arrow-up-right",
+    "article",
     "at-sign",
+    "badge-check",
     "banknote",
+    "battery",
+    "battery-low",
+    "bed",
     "bell",
+    "bike",
+    "billing",
+    "boarding-pass",
     "bold",
     "book",
     "book-open",
     "bookmark",
+    "bookmark-check",
+    "bookmark-plus",
+    "bot",
+    "braces",
+    "brackets",
+    "brain",
+    "branch",
+    "briefcase",
+    "broadcast",
+    "bug",
+    "bug-off",
+    "building",
+    "calculator",
     "calendar",
+    "calendar-check",
+    "calendar-medical",
+    "calendar-plus",
     "camera",
+    "camera-home",
     "captions",
+    "car",
+    "car-rental",
+    "certificate",
     "chart-bar",
+    "chart-candlestick",
     "chart-line",
     "chart-pie",
     "check",
@@ -42,7 +77,10 @@
     "chevron-left",
     "chevron-right",
     "chevron-up",
+    "classroom",
     "clipboard",
+    "clipboard-check",
+    "clipboard-x",
     "clock",
     "close",
     "cloud",
@@ -51,76 +89,140 @@
     "cloud-upload",
     "code",
     "code-branch",
+    "code-review",
+    "coffee",
     "coins",
     "collapse",
     "columns",
+    "command",
+    "comment",
+    "comments",
+    "commission",
     "compass",
+    "compass-navigation",
+    "content-calendar",
     "contrast",
     "copy",
     "cpu",
     "credit-card",
+    "credit-card-off",
+    "credit-card-plus",
+    "crown",
+    "currency",
     "dashboard",
     "database",
     "database-backup",
     "delete",
+    "delivery",
+    "deployment",
+    "dice",
+    "dollar",
+    "door",
+    "door-open",
     "download",
+    "download-cloud",
+    "draft",
     "edit",
+    "emergency",
     "error",
     "error-circle",
+    "euro",
     "expand",
+    "export",
     "external-link",
     "eye",
     "eye-dropper",
     "eye-off",
+    "fee",
     "file",
     "file-check",
     "file-code",
     "file-minus",
     "file-plus",
+    "file-spreadsheet",
     "file-text",
     "file-x",
     "film",
     "filter",
+    "filter-plus",
     "fingerprint",
+    "fire",
+    "first-aid",
+    "flight",
     "folder",
+    "folder-check",
     "folder-minus",
     "folder-open",
     "folder-plus",
+    "folder-x",
+    "fuel",
+    "function",
+    "gamepad",
     "gauge",
+    "git-branch",
+    "git-commit",
+    "git-merge",
+    "git-pull-request",
     "globe",
+    "graduation-cap",
     "grid",
     "hard-drive",
+    "hashtag",
     "headphones",
+    "health",
     "heart",
+    "heart-pulse",
     "help",
     "help-circle",
     "history",
     "home",
+    "hospital",
+    "hotel",
     "image",
     "image-plus",
+    "import",
     "inbox",
     "info",
     "info-circle",
+    "invoice",
+    "invoice-due",
+    "invoice-paid",
     "italic",
+    "joystick",
     "kanban",
     "key",
     "keyboard",
     "languages",
     "layers",
+    "lesson",
+    "library",
+    "lightbulb",
+    "lightbulb-off",
     "link",
     "link-off",
     "list",
     "list-check",
     "list-filter",
+    "live",
     "loader",
+    "location",
+    "location-plus",
     "lock",
+    "lock-keyhole",
     "log-in",
     "log-out",
+    "luggage",
     "mail",
     "map",
     "map-pin",
+    "map-pin-plus",
+    "map-route",
+    "map-search",
     "maximize",
+    "medal",
+    "medical-cross",
     "megaphone",
+    "mention",
     "menu",
     "message",
     "message-circle",
@@ -129,50 +231,94 @@
     "messages",
     "mic",
     "mic-off",
+    "milestone",
     "minimize",
     "minus-circle",
+    "moderation",
+    "money",
     "monitor",
     "more-horizontal",
     "more-vertical",
     "mouse",
+    "movie",
     "music",
+    "music-note",
+    "navigation",
     "network",
+    "newspaper",
+    "notebook",
     "notification",
     "package",
     "package-check",
     "package-plus",
+    "package-search",
+    "package-x",
     "palette",
     "paperclip",
+    "parking",
+    "passport",
+    "patient",
     "pause",
     "pause-circle",
+    "payment",
+    "pencil",
     "percent",
     "phone",
     "phone-call",
+    "piggy-bank",
+    "pill",
     "pin",
+    "pipeline",
+    "plane",
     "play",
     "play-circle",
+    "plug",
     "plus-circle",
     "podcast",
+    "power",
+    "presentation",
+    "prompt",
+    "publish",
+    "puzzle",
+    "question",
+    "quiz",
+    "quote",
+    "radio",
     "radio-tower",
     "receipt",
+    "receipt-text",
     "redo",
     "refresh",
+    "refund",
+    "research",
+    "restaurant",
+    "rocket",
+    "room-service",
     "rotate-ccw",
     "rotate-cw",
+    "route",
+    "rss",
+    "safe",
     "save",
     "scan-barcode",
+    "schedule-publish",
+    "school",
     "screen-reader",
+    "sdk",
     "search",
     "send",
     "server",
     "server-cog",
     "settings",
     "share",
+    "share-2",
     "shield",
     "shield-alert",
     "shield-check",
     "shield-x",
+    "ship",
     "shopping-cart",
+    "smart-tv",
     "smartphone",
     "social-community",
     "social-discord",
@@ -190,23 +336,46 @@
     "social-x",
     "social-youtube",
     "social-zalo",
+    "solar-panel",
+    "sort-asc",
+    "sort-desc",
+    "sparkles",
+    "speaker",
     "star",
+    "stethoscope",
     "stop-circle",
     "store",
+    "student",
     "success",
     "success-circle",
+    "suitcase",
     "sync",
     "table",
     "table-properties",
     "tag",
+    "target",
+    "task",
+    "tasks",
+    "tax",
+    "teacher",
     "terminal",
+    "terminal-square",
+    "test-tube",
     "text",
     "text-cursor",
+    "thermometer",
+    "thermostat",
+    "ticket",
+    "train",
     "translate",
     "trash",
     "trending-down",
     "trending-up",
+    "trophy",
     "truck",
+    "truck-fast",
+    "truck-off",
+    "tv",
     "underline",
     "undo",
     "unlock",
@@ -216,18 +385,29 @@
     "user-circle",
     "user-minus",
     "user-plus",
+    "user-settings",
     "user-x",
     "users",
+    "users-plus",
+    "variable",
+    "vault",
     "video",
     "video-off",
     "volume",
+    "volume-high",
     "volume-off",
     "wallet",
+    "wallet-cards",
+    "wand",
+    "warehouse",
     "warning",
     "warning-triangle",
     "webhook",
     "wifi",
+    "wifi-hotel",
     "wifi-off",
+    "wifi-router",
+    "workflow",
     "zap"
   ],
   "entries": [
@@ -235,6 +415,12 @@
       "name": "accessibility",
       "source": "icons/source/kaui/accessibility.svg",
       "symbol": "accessibility",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "accessibility-sign",
+      "source": "icons/source/kaui/accessibility-sign.svg",
+      "symbol": "accessibility-sign",
       "ownership": "KAUI-owned"
     },
     {
@@ -247,6 +433,24 @@
       "name": "add",
       "source": "icons/source/kaui/add.svg",
       "symbol": "add",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "ai-stars",
+      "source": "icons/source/kaui/ai-stars.svg",
+      "symbol": "ai-stars",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "air-conditioner",
+      "source": "icons/source/kaui/air-conditioner.svg",
+      "symbol": "air-conditioner",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "airport",
+      "source": "icons/source/kaui/airport.svg",
+      "symbol": "airport",
       "ownership": "KAUI-owned"
     },
     {
@@ -271,6 +475,18 @@
       "name": "analytics",
       "source": "icons/source/kaui/analytics.svg",
       "symbol": "analytics",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "api",
+      "source": "icons/source/kaui/api.svg",
+      "symbol": "api",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "approval",
+      "source": "icons/source/kaui/approval.svg",
+      "symbol": "approval",
       "ownership": "KAUI-owned"
     },
     {
@@ -322,9 +538,21 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "article",
+      "source": "icons/source/kaui/article.svg",
+      "symbol": "article",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "at-sign",
       "source": "icons/source/kaui/at-sign.svg",
       "symbol": "at-sign",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "badge-check",
+      "source": "icons/source/kaui/badge-check.svg",
+      "symbol": "badge-check",
       "ownership": "KAUI-owned"
     },
     {
@@ -334,9 +562,45 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "battery",
+      "source": "icons/source/kaui/battery.svg",
+      "symbol": "battery",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "battery-low",
+      "source": "icons/source/kaui/battery-low.svg",
+      "symbol": "battery-low",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bed",
+      "source": "icons/source/kaui/bed.svg",
+      "symbol": "bed",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "bell",
       "source": "icons/source/kaui/bell.svg",
       "symbol": "bell",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bike",
+      "source": "icons/source/kaui/bike.svg",
+      "symbol": "bike",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "billing",
+      "source": "icons/source/kaui/billing.svg",
+      "symbol": "billing",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "boarding-pass",
+      "source": "icons/source/kaui/boarding-pass.svg",
+      "symbol": "boarding-pass",
       "ownership": "KAUI-owned"
     },
     {
@@ -364,9 +628,105 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "bookmark-check",
+      "source": "icons/source/kaui/bookmark-check.svg",
+      "symbol": "bookmark-check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bookmark-plus",
+      "source": "icons/source/kaui/bookmark-plus.svg",
+      "symbol": "bookmark-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bot",
+      "source": "icons/source/kaui/bot.svg",
+      "symbol": "bot",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "braces",
+      "source": "icons/source/kaui/braces.svg",
+      "symbol": "braces",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "brackets",
+      "source": "icons/source/kaui/brackets.svg",
+      "symbol": "brackets",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "brain",
+      "source": "icons/source/kaui/brain.svg",
+      "symbol": "brain",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "branch",
+      "source": "icons/source/kaui/branch.svg",
+      "symbol": "branch",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "briefcase",
+      "source": "icons/source/kaui/briefcase.svg",
+      "symbol": "briefcase",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "broadcast",
+      "source": "icons/source/kaui/broadcast.svg",
+      "symbol": "broadcast",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bug",
+      "source": "icons/source/kaui/bug.svg",
+      "symbol": "bug",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "bug-off",
+      "source": "icons/source/kaui/bug-off.svg",
+      "symbol": "bug-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "building",
+      "source": "icons/source/kaui/building.svg",
+      "symbol": "building",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "calculator",
+      "source": "icons/source/kaui/calculator.svg",
+      "symbol": "calculator",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "calendar",
       "source": "icons/source/kaui/calendar.svg",
       "symbol": "calendar",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "calendar-check",
+      "source": "icons/source/kaui/calendar-check.svg",
+      "symbol": "calendar-check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "calendar-medical",
+      "source": "icons/source/kaui/calendar-medical.svg",
+      "symbol": "calendar-medical",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "calendar-plus",
+      "source": "icons/source/kaui/calendar-plus.svg",
+      "symbol": "calendar-plus",
       "ownership": "KAUI-owned"
     },
     {
@@ -376,15 +736,45 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "camera-home",
+      "source": "icons/source/kaui/camera-home.svg",
+      "symbol": "camera-home",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "captions",
       "source": "icons/source/kaui/captions.svg",
       "symbol": "captions",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "car",
+      "source": "icons/source/kaui/car.svg",
+      "symbol": "car",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "car-rental",
+      "source": "icons/source/kaui/car-rental.svg",
+      "symbol": "car-rental",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "certificate",
+      "source": "icons/source/kaui/certificate.svg",
+      "symbol": "certificate",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "chart-bar",
       "source": "icons/source/kaui/chart-bar.svg",
       "symbol": "chart-bar",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "chart-candlestick",
+      "source": "icons/source/kaui/chart-candlestick.svg",
+      "symbol": "chart-candlestick",
       "ownership": "KAUI-owned"
     },
     {
@@ -430,9 +820,27 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "classroom",
+      "source": "icons/source/kaui/classroom.svg",
+      "symbol": "classroom",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "clipboard",
       "source": "icons/source/kaui/clipboard.svg",
       "symbol": "clipboard",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "clipboard-check",
+      "source": "icons/source/kaui/clipboard-check.svg",
+      "symbol": "clipboard-check",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "clipboard-x",
+      "source": "icons/source/kaui/clipboard-x.svg",
+      "symbol": "clipboard-x",
       "ownership": "KAUI-owned"
     },
     {
@@ -484,6 +892,18 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "code-review",
+      "source": "icons/source/kaui/code-review.svg",
+      "symbol": "code-review",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "coffee",
+      "source": "icons/source/kaui/coffee.svg",
+      "symbol": "coffee",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "coins",
       "source": "icons/source/kaui/coins.svg",
       "symbol": "coins",
@@ -502,9 +922,45 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "command",
+      "source": "icons/source/kaui/command.svg",
+      "symbol": "command",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "comment",
+      "source": "icons/source/kaui/comment.svg",
+      "symbol": "comment",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "comments",
+      "source": "icons/source/kaui/comments.svg",
+      "symbol": "comments",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "commission",
+      "source": "icons/source/kaui/commission.svg",
+      "symbol": "commission",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "compass",
       "source": "icons/source/kaui/compass.svg",
       "symbol": "compass",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "compass-navigation",
+      "source": "icons/source/kaui/compass-navigation.svg",
+      "symbol": "compass-navigation",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "content-calendar",
+      "source": "icons/source/kaui/content-calendar.svg",
+      "symbol": "content-calendar",
       "ownership": "KAUI-owned"
     },
     {
@@ -532,6 +988,30 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "credit-card-off",
+      "source": "icons/source/kaui/credit-card-off.svg",
+      "symbol": "credit-card-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "credit-card-plus",
+      "source": "icons/source/kaui/credit-card-plus.svg",
+      "symbol": "credit-card-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "crown",
+      "source": "icons/source/kaui/crown.svg",
+      "symbol": "crown",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "currency",
+      "source": "icons/source/kaui/currency.svg",
+      "symbol": "currency",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "dashboard",
       "source": "icons/source/kaui/dashboard.svg",
       "symbol": "dashboard",
@@ -556,15 +1036,69 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "delivery",
+      "source": "icons/source/kaui/delivery.svg",
+      "symbol": "delivery",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "deployment",
+      "source": "icons/source/kaui/deployment.svg",
+      "symbol": "deployment",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "dice",
+      "source": "icons/source/kaui/dice.svg",
+      "symbol": "dice",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "dollar",
+      "source": "icons/source/kaui/dollar.svg",
+      "symbol": "dollar",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "door",
+      "source": "icons/source/kaui/door.svg",
+      "symbol": "door",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "door-open",
+      "source": "icons/source/kaui/door-open.svg",
+      "symbol": "door-open",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "download",
       "source": "icons/source/kaui/download.svg",
       "symbol": "download",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "download-cloud",
+      "source": "icons/source/kaui/download-cloud.svg",
+      "symbol": "download-cloud",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "draft",
+      "source": "icons/source/kaui/draft.svg",
+      "symbol": "draft",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "edit",
       "source": "icons/source/kaui/edit.svg",
       "symbol": "edit",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "emergency",
+      "source": "icons/source/kaui/emergency.svg",
+      "symbol": "emergency",
       "ownership": "KAUI-owned"
     },
     {
@@ -580,9 +1114,21 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "euro",
+      "source": "icons/source/kaui/euro.svg",
+      "symbol": "euro",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "expand",
       "source": "icons/source/kaui/expand.svg",
       "symbol": "expand",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "export",
+      "source": "icons/source/kaui/export.svg",
+      "symbol": "export",
       "ownership": "KAUI-owned"
     },
     {
@@ -607,6 +1153,12 @@
       "name": "eye-off",
       "source": "icons/source/kaui/eye-off.svg",
       "symbol": "eye-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "fee",
+      "source": "icons/source/kaui/fee.svg",
+      "symbol": "fee",
       "ownership": "KAUI-owned"
     },
     {
@@ -640,6 +1192,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "file-spreadsheet",
+      "source": "icons/source/kaui/file-spreadsheet.svg",
+      "symbol": "file-spreadsheet",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "file-text",
       "source": "icons/source/kaui/file-text.svg",
       "symbol": "file-text",
@@ -664,15 +1222,45 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "filter-plus",
+      "source": "icons/source/kaui/filter-plus.svg",
+      "symbol": "filter-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "fingerprint",
       "source": "icons/source/kaui/fingerprint.svg",
       "symbol": "fingerprint",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "fire",
+      "source": "icons/source/kaui/fire.svg",
+      "symbol": "fire",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "first-aid",
+      "source": "icons/source/kaui/first-aid.svg",
+      "symbol": "first-aid",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "flight",
+      "source": "icons/source/kaui/flight.svg",
+      "symbol": "flight",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "folder",
       "source": "icons/source/kaui/folder.svg",
       "symbol": "folder",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "folder-check",
+      "source": "icons/source/kaui/folder-check.svg",
+      "symbol": "folder-check",
       "ownership": "KAUI-owned"
     },
     {
@@ -694,15 +1282,69 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "folder-x",
+      "source": "icons/source/kaui/folder-x.svg",
+      "symbol": "folder-x",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "fuel",
+      "source": "icons/source/kaui/fuel.svg",
+      "symbol": "fuel",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "function",
+      "source": "icons/source/kaui/function.svg",
+      "symbol": "function",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "gamepad",
+      "source": "icons/source/kaui/gamepad.svg",
+      "symbol": "gamepad",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "gauge",
       "source": "icons/source/kaui/gauge.svg",
       "symbol": "gauge",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "git-branch",
+      "source": "icons/source/kaui/git-branch.svg",
+      "symbol": "git-branch",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "git-commit",
+      "source": "icons/source/kaui/git-commit.svg",
+      "symbol": "git-commit",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "git-merge",
+      "source": "icons/source/kaui/git-merge.svg",
+      "symbol": "git-merge",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "git-pull-request",
+      "source": "icons/source/kaui/git-pull-request.svg",
+      "symbol": "git-pull-request",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "globe",
       "source": "icons/source/kaui/globe.svg",
       "symbol": "globe",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "graduation-cap",
+      "source": "icons/source/kaui/graduation-cap.svg",
+      "symbol": "graduation-cap",
       "ownership": "KAUI-owned"
     },
     {
@@ -718,15 +1360,33 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "hashtag",
+      "source": "icons/source/kaui/hashtag.svg",
+      "symbol": "hashtag",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "headphones",
       "source": "icons/source/kaui/headphones.svg",
       "symbol": "headphones",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "health",
+      "source": "icons/source/kaui/health.svg",
+      "symbol": "health",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "heart",
       "source": "icons/source/kaui/heart.svg",
       "symbol": "heart",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "heart-pulse",
+      "source": "icons/source/kaui/heart-pulse.svg",
+      "symbol": "heart-pulse",
       "ownership": "KAUI-owned"
     },
     {
@@ -754,6 +1414,18 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "hospital",
+      "source": "icons/source/kaui/hospital.svg",
+      "symbol": "hospital",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "hotel",
+      "source": "icons/source/kaui/hotel.svg",
+      "symbol": "hotel",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "image",
       "source": "icons/source/kaui/image.svg",
       "symbol": "image",
@@ -763,6 +1435,12 @@
       "name": "image-plus",
       "source": "icons/source/kaui/image-plus.svg",
       "symbol": "image-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "import",
+      "source": "icons/source/kaui/import.svg",
+      "symbol": "import",
       "ownership": "KAUI-owned"
     },
     {
@@ -784,9 +1462,33 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "invoice",
+      "source": "icons/source/kaui/invoice.svg",
+      "symbol": "invoice",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "invoice-due",
+      "source": "icons/source/kaui/invoice-due.svg",
+      "symbol": "invoice-due",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "invoice-paid",
+      "source": "icons/source/kaui/invoice-paid.svg",
+      "symbol": "invoice-paid",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "italic",
       "source": "icons/source/kaui/italic.svg",
       "symbol": "italic",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "joystick",
+      "source": "icons/source/kaui/joystick.svg",
+      "symbol": "joystick",
       "ownership": "KAUI-owned"
     },
     {
@@ -820,6 +1522,30 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "lesson",
+      "source": "icons/source/kaui/lesson.svg",
+      "symbol": "lesson",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "library",
+      "source": "icons/source/kaui/library.svg",
+      "symbol": "library",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "lightbulb",
+      "source": "icons/source/kaui/lightbulb.svg",
+      "symbol": "lightbulb",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "lightbulb-off",
+      "source": "icons/source/kaui/lightbulb-off.svg",
+      "symbol": "lightbulb-off",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "link",
       "source": "icons/source/kaui/link.svg",
       "symbol": "link",
@@ -850,15 +1576,39 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "live",
+      "source": "icons/source/kaui/live.svg",
+      "symbol": "live",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "loader",
       "source": "icons/source/kaui/loader.svg",
       "symbol": "loader",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "location",
+      "source": "icons/source/kaui/location.svg",
+      "symbol": "location",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "location-plus",
+      "source": "icons/source/kaui/location-plus.svg",
+      "symbol": "location-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "lock",
       "source": "icons/source/kaui/lock.svg",
       "symbol": "lock",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "lock-keyhole",
+      "source": "icons/source/kaui/lock-keyhole.svg",
+      "symbol": "lock-keyhole",
       "ownership": "KAUI-owned"
     },
     {
@@ -871,6 +1621,12 @@
       "name": "log-out",
       "source": "icons/source/kaui/log-out.svg",
       "symbol": "log-out",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "luggage",
+      "source": "icons/source/kaui/luggage.svg",
+      "symbol": "luggage",
       "ownership": "KAUI-owned"
     },
     {
@@ -892,15 +1648,51 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "map-pin-plus",
+      "source": "icons/source/kaui/map-pin-plus.svg",
+      "symbol": "map-pin-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "map-route",
+      "source": "icons/source/kaui/map-route.svg",
+      "symbol": "map-route",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "map-search",
+      "source": "icons/source/kaui/map-search.svg",
+      "symbol": "map-search",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "maximize",
       "source": "icons/source/kaui/maximize.svg",
       "symbol": "maximize",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "medal",
+      "source": "icons/source/kaui/medal.svg",
+      "symbol": "medal",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "medical-cross",
+      "source": "icons/source/kaui/medical-cross.svg",
+      "symbol": "medical-cross",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "megaphone",
       "source": "icons/source/kaui/megaphone.svg",
       "symbol": "megaphone",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "mention",
+      "source": "icons/source/kaui/mention.svg",
+      "symbol": "mention",
       "ownership": "KAUI-owned"
     },
     {
@@ -952,6 +1744,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "milestone",
+      "source": "icons/source/kaui/milestone.svg",
+      "symbol": "milestone",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "minimize",
       "source": "icons/source/kaui/minimize.svg",
       "symbol": "minimize",
@@ -961,6 +1759,18 @@
       "name": "minus-circle",
       "source": "icons/source/kaui/minus-circle.svg",
       "symbol": "minus-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "moderation",
+      "source": "icons/source/kaui/moderation.svg",
+      "symbol": "moderation",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "money",
+      "source": "icons/source/kaui/money.svg",
+      "symbol": "money",
       "ownership": "KAUI-owned"
     },
     {
@@ -988,15 +1798,45 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "movie",
+      "source": "icons/source/kaui/movie.svg",
+      "symbol": "movie",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "music",
       "source": "icons/source/kaui/music.svg",
       "symbol": "music",
       "ownership": "KAUI-owned"
     },
     {
+      "name": "music-note",
+      "source": "icons/source/kaui/music-note.svg",
+      "symbol": "music-note",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "navigation",
+      "source": "icons/source/kaui/navigation.svg",
+      "symbol": "navigation",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "network",
       "source": "icons/source/kaui/network.svg",
       "symbol": "network",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "newspaper",
+      "source": "icons/source/kaui/newspaper.svg",
+      "symbol": "newspaper",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "notebook",
+      "source": "icons/source/kaui/notebook.svg",
+      "symbol": "notebook",
       "ownership": "KAUI-owned"
     },
     {
@@ -1024,6 +1864,18 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "package-search",
+      "source": "icons/source/kaui/package-search.svg",
+      "symbol": "package-search",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "package-x",
+      "source": "icons/source/kaui/package-x.svg",
+      "symbol": "package-x",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "palette",
       "source": "icons/source/kaui/palette.svg",
       "symbol": "palette",
@@ -1036,6 +1888,24 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "parking",
+      "source": "icons/source/kaui/parking.svg",
+      "symbol": "parking",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "passport",
+      "source": "icons/source/kaui/passport.svg",
+      "symbol": "passport",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "patient",
+      "source": "icons/source/kaui/patient.svg",
+      "symbol": "patient",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "pause",
       "source": "icons/source/kaui/pause.svg",
       "symbol": "pause",
@@ -1045,6 +1915,18 @@
       "name": "pause-circle",
       "source": "icons/source/kaui/pause-circle.svg",
       "symbol": "pause-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "payment",
+      "source": "icons/source/kaui/payment.svg",
+      "symbol": "payment",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "pencil",
+      "source": "icons/source/kaui/pencil.svg",
+      "symbol": "pencil",
       "ownership": "KAUI-owned"
     },
     {
@@ -1066,9 +1948,33 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "piggy-bank",
+      "source": "icons/source/kaui/piggy-bank.svg",
+      "symbol": "piggy-bank",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "pill",
+      "source": "icons/source/kaui/pill.svg",
+      "symbol": "pill",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "pin",
       "source": "icons/source/kaui/pin.svg",
       "symbol": "pin",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "pipeline",
+      "source": "icons/source/kaui/pipeline.svg",
+      "symbol": "pipeline",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "plane",
+      "source": "icons/source/kaui/plane.svg",
+      "symbol": "plane",
       "ownership": "KAUI-owned"
     },
     {
@@ -1084,6 +1990,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "plug",
+      "source": "icons/source/kaui/plug.svg",
+      "symbol": "plug",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "plus-circle",
       "source": "icons/source/kaui/plus-circle.svg",
       "symbol": "plus-circle",
@@ -1093,6 +2005,60 @@
       "name": "podcast",
       "source": "icons/source/kaui/podcast.svg",
       "symbol": "podcast",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "power",
+      "source": "icons/source/kaui/power.svg",
+      "symbol": "power",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "presentation",
+      "source": "icons/source/kaui/presentation.svg",
+      "symbol": "presentation",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "prompt",
+      "source": "icons/source/kaui/prompt.svg",
+      "symbol": "prompt",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "publish",
+      "source": "icons/source/kaui/publish.svg",
+      "symbol": "publish",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "puzzle",
+      "source": "icons/source/kaui/puzzle.svg",
+      "symbol": "puzzle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "question",
+      "source": "icons/source/kaui/question.svg",
+      "symbol": "question",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "quiz",
+      "source": "icons/source/kaui/quiz.svg",
+      "symbol": "quiz",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "quote",
+      "source": "icons/source/kaui/quote.svg",
+      "symbol": "quote",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "radio",
+      "source": "icons/source/kaui/radio.svg",
+      "symbol": "radio",
       "ownership": "KAUI-owned"
     },
     {
@@ -1108,6 +2074,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "receipt-text",
+      "source": "icons/source/kaui/receipt-text.svg",
+      "symbol": "receipt-text",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "redo",
       "source": "icons/source/kaui/redo.svg",
       "symbol": "redo",
@@ -1117,6 +2089,36 @@
       "name": "refresh",
       "source": "icons/source/kaui/refresh.svg",
       "symbol": "refresh",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "refund",
+      "source": "icons/source/kaui/refund.svg",
+      "symbol": "refund",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "research",
+      "source": "icons/source/kaui/research.svg",
+      "symbol": "research",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "restaurant",
+      "source": "icons/source/kaui/restaurant.svg",
+      "symbol": "restaurant",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "rocket",
+      "source": "icons/source/kaui/rocket.svg",
+      "symbol": "rocket",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "room-service",
+      "source": "icons/source/kaui/room-service.svg",
+      "symbol": "room-service",
       "ownership": "KAUI-owned"
     },
     {
@@ -1132,6 +2134,24 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "route",
+      "source": "icons/source/kaui/route.svg",
+      "symbol": "route",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "rss",
+      "source": "icons/source/kaui/rss.svg",
+      "symbol": "rss",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "safe",
+      "source": "icons/source/kaui/safe.svg",
+      "symbol": "safe",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "save",
       "source": "icons/source/kaui/save.svg",
       "symbol": "save",
@@ -1144,9 +2164,27 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "schedule-publish",
+      "source": "icons/source/kaui/schedule-publish.svg",
+      "symbol": "schedule-publish",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "school",
+      "source": "icons/source/kaui/school.svg",
+      "symbol": "school",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "screen-reader",
       "source": "icons/source/kaui/screen-reader.svg",
       "symbol": "screen-reader",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "sdk",
+      "source": "icons/source/kaui/sdk.svg",
+      "symbol": "sdk",
       "ownership": "KAUI-owned"
     },
     {
@@ -1186,6 +2224,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "share-2",
+      "source": "icons/source/kaui/share-2.svg",
+      "symbol": "share-2",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "shield",
       "source": "icons/source/kaui/shield.svg",
       "symbol": "shield",
@@ -1210,9 +2254,21 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "ship",
+      "source": "icons/source/kaui/ship.svg",
+      "symbol": "ship",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "shopping-cart",
       "source": "icons/source/kaui/shopping-cart.svg",
       "symbol": "shopping-cart",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "smart-tv",
+      "source": "icons/source/kaui/smart-tv.svg",
+      "symbol": "smart-tv",
       "ownership": "KAUI-owned"
     },
     {
@@ -1318,9 +2374,45 @@
       "ownership": "KAUI-authored brand reference; Zalo trademark remains with Zalo"
     },
     {
+      "name": "solar-panel",
+      "source": "icons/source/kaui/solar-panel.svg",
+      "symbol": "solar-panel",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "sort-asc",
+      "source": "icons/source/kaui/sort-asc.svg",
+      "symbol": "sort-asc",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "sort-desc",
+      "source": "icons/source/kaui/sort-desc.svg",
+      "symbol": "sort-desc",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "sparkles",
+      "source": "icons/source/kaui/sparkles.svg",
+      "symbol": "sparkles",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "speaker",
+      "source": "icons/source/kaui/speaker.svg",
+      "symbol": "speaker",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "star",
       "source": "icons/source/kaui/star.svg",
       "symbol": "star",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "stethoscope",
+      "source": "icons/source/kaui/stethoscope.svg",
+      "symbol": "stethoscope",
       "ownership": "KAUI-owned"
     },
     {
@@ -1336,6 +2428,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "student",
+      "source": "icons/source/kaui/student.svg",
+      "symbol": "student",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "success",
       "source": "icons/source/kaui/success.svg",
       "symbol": "success",
@@ -1345,6 +2443,12 @@
       "name": "success-circle",
       "source": "icons/source/kaui/success-circle.svg",
       "symbol": "success-circle",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "suitcase",
+      "source": "icons/source/kaui/suitcase.svg",
+      "symbol": "suitcase",
       "ownership": "KAUI-owned"
     },
     {
@@ -1372,9 +2476,51 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "target",
+      "source": "icons/source/kaui/target.svg",
+      "symbol": "target",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "task",
+      "source": "icons/source/kaui/task.svg",
+      "symbol": "task",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "tasks",
+      "source": "icons/source/kaui/tasks.svg",
+      "symbol": "tasks",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "tax",
+      "source": "icons/source/kaui/tax.svg",
+      "symbol": "tax",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "teacher",
+      "source": "icons/source/kaui/teacher.svg",
+      "symbol": "teacher",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "terminal",
       "source": "icons/source/kaui/terminal.svg",
       "symbol": "terminal",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "terminal-square",
+      "source": "icons/source/kaui/terminal-square.svg",
+      "symbol": "terminal-square",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "test-tube",
+      "source": "icons/source/kaui/test-tube.svg",
+      "symbol": "test-tube",
       "ownership": "KAUI-owned"
     },
     {
@@ -1387,6 +2533,30 @@
       "name": "text-cursor",
       "source": "icons/source/kaui/text-cursor.svg",
       "symbol": "text-cursor",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "thermometer",
+      "source": "icons/source/kaui/thermometer.svg",
+      "symbol": "thermometer",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "thermostat",
+      "source": "icons/source/kaui/thermostat.svg",
+      "symbol": "thermostat",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "ticket",
+      "source": "icons/source/kaui/ticket.svg",
+      "symbol": "ticket",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "train",
+      "source": "icons/source/kaui/train.svg",
+      "symbol": "train",
       "ownership": "KAUI-owned"
     },
     {
@@ -1414,9 +2584,33 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "trophy",
+      "source": "icons/source/kaui/trophy.svg",
+      "symbol": "trophy",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "truck",
       "source": "icons/source/kaui/truck.svg",
       "symbol": "truck",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "truck-fast",
+      "source": "icons/source/kaui/truck-fast.svg",
+      "symbol": "truck-fast",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "truck-off",
+      "source": "icons/source/kaui/truck-off.svg",
+      "symbol": "truck-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "tv",
+      "source": "icons/source/kaui/tv.svg",
+      "symbol": "tv",
       "ownership": "KAUI-owned"
     },
     {
@@ -1474,6 +2668,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "user-settings",
+      "source": "icons/source/kaui/user-settings.svg",
+      "symbol": "user-settings",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "user-x",
       "source": "icons/source/kaui/user-x.svg",
       "symbol": "user-x",
@@ -1483,6 +2683,24 @@
       "name": "users",
       "source": "icons/source/kaui/users.svg",
       "symbol": "users",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "users-plus",
+      "source": "icons/source/kaui/users-plus.svg",
+      "symbol": "users-plus",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "variable",
+      "source": "icons/source/kaui/variable.svg",
+      "symbol": "variable",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "vault",
+      "source": "icons/source/kaui/vault.svg",
+      "symbol": "vault",
       "ownership": "KAUI-owned"
     },
     {
@@ -1504,6 +2722,12 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "volume-high",
+      "source": "icons/source/kaui/volume-high.svg",
+      "symbol": "volume-high",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "volume-off",
       "source": "icons/source/kaui/volume-off.svg",
       "symbol": "volume-off",
@@ -1513,6 +2737,24 @@
       "name": "wallet",
       "source": "icons/source/kaui/wallet.svg",
       "symbol": "wallet",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "wallet-cards",
+      "source": "icons/source/kaui/wallet-cards.svg",
+      "symbol": "wallet-cards",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "wand",
+      "source": "icons/source/kaui/wand.svg",
+      "symbol": "wand",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "warehouse",
+      "source": "icons/source/kaui/warehouse.svg",
+      "symbol": "warehouse",
       "ownership": "KAUI-owned"
     },
     {
@@ -1540,9 +2782,27 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "wifi-hotel",
+      "source": "icons/source/kaui/wifi-hotel.svg",
+      "symbol": "wifi-hotel",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "wifi-off",
       "source": "icons/source/kaui/wifi-off.svg",
       "symbol": "wifi-off",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "wifi-router",
+      "source": "icons/source/kaui/wifi-router.svg",
+      "symbol": "wifi-router",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "workflow",
+      "source": "icons/source/kaui/workflow.svg",
+      "symbol": "workflow",
       "ownership": "KAUI-owned"
     },
     {

@@ -127,6 +127,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 - Phase 3–5 icon expansion: generators `scripts/add-kaui-phase3-icons.mjs`, `scripts/add-kaui-phase4-icons.mjs`, and `scripts/add-kaui-phase5-icons.mjs` create idempotent KAUI-owned SVG sources for media/communication, commerce/infrastructure, and editing/accessibility/localization. Their npm commands rebuild the shared registry.
 
+- Phase 6–15 icon expansion: `scripts/add-kaui-phase6-15-icons.mjs` creates 180 idempotent KAUI-owned SVG sources across domains (Business, Logistics, AI, Finance, Healthcare, Smart Home, Travel, Education, Publishing, Gaming); invoked via `npm run icons:phase6-15:add`.
+
 - Cards showcase scroll contract: `.demo-card-countries .k-card__body` owns vertical scrolling with header/footer fixed; `.demo-country-list` is not independently scrollable and preserves four equal columns for number, calling code, country, and time zone.
 
 
