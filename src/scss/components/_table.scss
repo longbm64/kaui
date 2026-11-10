@@ -26,6 +26,18 @@
     background-color: var(--k-primary);
     border-radius: var(--k-radius-full);
   }
+
+  // Prevent double border at the bottom edge where wrapper border and last row border meet
+  > .k-table {
+    border-bottom: 0;
+
+    tbody tr:last-child th,
+    tbody tr:last-child td,
+    tfoot tr:last-child th,
+    tfoot tr:last-child td {
+      border-bottom: 0;
+    }
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -95,6 +107,13 @@
     margin: 0;
     border: 0;
     height: 100%;
+
+    tbody tr:last-child th,
+    tbody tr:last-child td,
+    tfoot tr:last-child th,
+    tfoot tr:last-child td {
+      border-bottom: 0;
+    }
 
     tr {
       height: 3.5rem;
@@ -186,6 +205,12 @@
     td {
       border: 1px solid var(--k-table-border);
     }
+  }
+
+  // Standalone table or table with last-row border clean up when enclosed
+  &:last-child tbody tr:last-child:not(:has(~ tfoot)) th,
+  &:last-child tbody tr:last-child:not(:has(~ tfoot)) td {
+    border-bottom-color: var(--k-table-border);
   }
 
   &--sm {

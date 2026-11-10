@@ -1,3 +1,4 @@
+- Table bottom border contract: Để tránh hiện tượng viền đáy (bottom border) bị nhân đôi hoặc dày hơn bình thường khi bảng nằm bên trong `.k-table-wrap` hoặc `.k-table-frozen-container`, các ô `th` và `td` ở hàng cuối cùng (`tbody tr:last-child`, `tfoot tr:last-child`) được triệt tiêu `border-bottom: 0`, nhường lại đường viền duy nhất cho khung wrapper.
 - Confirm Component Callback Contract: Hộp thoại Confirm hỗ trợ 2 mô hình xử lý callback:
   1. Lắng nghe trực tiếp trên button DOM: `btnConfirm.addEventListener('click', ...)` để chạy logic xác nhận và `confirm.classList.remove('is-open')`; `btnCancel.addEventListener('click', ...)` để hủy.
   2. Bọc Promise (`showConfirm(selector)`): Trả về `Promise<boolean>` tương thích `async/await`, giải phóng listener sau khi hoàn thành.
