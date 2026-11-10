@@ -88,6 +88,23 @@ function main() {
     if (fs.existsSync(README_PATH)) {
       let readme = fs.readFileSync(README_PATH, 'utf8');
       readme = readme.replace(/badge\/version-\d+\.\d+\.\d+-blue/, `badge/version-${nextVersion}-blue`);
+    // 3. Sync and publish platform packages (NPM & Pub.dev)
+    const npmPkgPath = path.join(ROOT, 'packages/npm/package.json');
+    if (fs.existsSync(npmPkgPath)) {
+      const npmPkg = JSON.parse(fs.readFileSync(npmPkgPath, 'utf8'));
+      npmPkg.version = nextVersion;
+      fs.writeFileSync(npmPkgPath, JSON.stringify(npmPkg, null, 2) + '\n');
+      console.log(`[release] Synchronized packages/npm version to ${nextVersion}`);
+    }
+
+    const pubspecPath = path.join(ROOT, 'packages/pub/pubspec.yaml');
+    if (fs.existsSync(pubspecPath)) {
+      let pubYaml = fs.readFileSync(pubspecPath, 'utf8');
+      pubYaml = pubYaml.replace(/^version:\s*.*/m, `version: ${nextVersion}`);
+      fs.writeFileSync(pubspecPath, pubYaml);
+      console.log(`[release] Synchronized packages/pub version to ${nextVersion}`);
+    }
+
       fs.writeFileSync(README_PATH, readme);
     }
     if (isNonCommercialVersion(nextVersion)) {
@@ -96,6 +113,19 @@ function main() {
       if (fs.existsSync(LICENSE_PATH) && fs.existsSync(NON_COMMERCIAL_LICENSE_PATH)) fs.copyFileSync(NON_COMMERCIAL_LICENSE_PATH, LICENSE_PATH);
       if (fs.existsSync(DEMO_HTML_PATH)) {
         let demoHtml = fs.readFileSync(DEMO_HTML_PATH, 'utf8');
+  // Synchronize compiled artifacts into packages/npm/dist/ (exclude version archives)
+  const npmDistDir = path.join(ROOT, 'packages/npm/dist');
+  fs.mkdirSync(npmDistDir, { recursive: true });
+  fs.cpSync(path.join(ROOT, 'dist'), npmDistDir, {
+    recursive: true,
+    filter: (src) => !src.includes('dist/versions')
+  });
+
+  // Synchronize compiled artifacts into packages/npm/dist/
+  const npmDistDir = path.join(ROOT, 'packages/npm/dist');
+  fs.mkdirSync(npmDistDir, { recursive: true });
+  fs.cpSync(path.join(ROOT, 'dist'), npmDistDir, { recursive: true });
+
         demoHtml = demoHtml.replace(/Released under MIT License\.[^<]*/, 'Personal and educational use is allowed. Commercial use requires a KAUI license.');
         fs.writeFileSync(DEMO_HTML_PATH, demoHtml);
       }
