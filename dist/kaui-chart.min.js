@@ -37,7 +37,15 @@
     this.tip = document.createElement('div'); this.tip.className = 'k-chart__tooltip'; this.tip.hidden = true; this.root.appendChild(this.tip);
     this._move = this._move.bind(this); this._hide = this._hide.bind(this); this.root.addEventListener('pointermove', this._move); this.root.addEventListener('pointerleave', this._hide);
     this.ro = typeof ResizeObserver === 'function' ? new ResizeObserver(this._schedule.bind(this)) : null; if (this.ro) this.ro.observe(this.root);
-    this._visibility = function () { if (document.hidden) this.pause(); else this.resume(); }.bind(this); if (opts.pauseWhenHidden !== false) document.addEventListener('visibilitychange', this._visibility); this.render();
+    this._moveFrame = 0;
+    this._lastMoveEvent = null;
+    this._io = typeof IntersectionObserver === 'function' ? new IntersectionObserver(function (entries) {
+      if (!entries || !entries[0]) return;
+      if (entries[0].isIntersecting) { if (!this.pausedByUser) { this.paused = false; this.root.classList.remove('is-paused'); this._schedule(); } }
+      else { this.paused = true; this.root.classList.add('is-paused'); }
+    }.bind(this), { threshold: 0.05 }) : null;
+    if (this._io) this._io.observe(this.root);
+    this._visibility = function () { if (document.hidden) { this.paused = true; this.root.classList.add('is-paused'); } else if (!this.pausedByUser) { this.paused = false; this.root.classList.remove('is-paused'); this._schedule(); } }.bind(this); if (opts.pauseWhenHidden !== false) document.addEventListener('visibilitychange', this._visibility); this.render();
   }
   Chart.prototype._schedule = function () { if (!this.frame && !this.destroyed) this.frame = raf(this.flush.bind(this)); };
   Chart.prototype.flush = function () { this.frame = 0; if (this.pending.length) { var p = this.pending.splice(0); for (var i=0;i<p.length;i++) this._insert(p[i]); } if (!this.paused) this.render(); };
@@ -52,8 +60,8 @@
   Chart.prototype.updatePoint = function (id, index, value) { var s = this.series.find(function (x) { return x.id === id; }); if (s && index >= 0) s.data[index] = Number(value) || 0; this._schedule(); return this; };
   Chart.prototype.removeData = function (index) { if (index < 0 || index >= this.labels.length) return this; this.labels.splice(index, 1); this.series.forEach(function (s) { s.data.splice(index, 1); }); this._schedule(); return this; };
   Chart.prototype.clear = function () { this.labels.length = 0; this.series.forEach(function (s) { s.data.length = 0; }); this.pending.length = 0; this._schedule(); return this; };
-  Chart.prototype.pause = function () { this.paused = true; this.root.classList.add('is-paused'); return this; };
-  Chart.prototype.resume = function () { this.paused = false; this.root.classList.remove('is-paused'); this._schedule(); return this; };
+  Chart.prototype.pause = function () { this.paused = true; this.pausedByUser = true; this.root.classList.add('is-paused'); return this; };
+  Chart.prototype.resume = function () { this.paused = false; this.pausedByUser = false; this.root.classList.remove('is-paused'); this._schedule(); return this; };
   Chart.prototype._scaffold = function (w, h, pad) {
     var g = el('g'), plotW = w - pad.l - pad.r, plotH = h - pad.t - pad.b;
     g.appendChild(el('rect', { class: 'k-chart__plot-bg', x: 0, y: 0, width: w, height: h }));
@@ -175,20 +183,28 @@
   };
   Chart.prototype._move = function (e) {
     if (!this.labels.length) return;
-    var r = this.root.getBoundingClientRect(), i = Math.max(0, Math.min(this.labels.length - 1, Math.round(((e.clientX - r.left) / r.width) * (this.labels.length - 1))));
-    var old = this.svg.querySelector('.k-chart__crosshair'); if (old) old.remove();
-    var x = 14 + (this.labels.length < 2 ? 0 : (i / (this.labels.length - 1)) * (800 - 14 - 62));
-    this.svg.appendChild(el('line', { class: 'k-chart__crosshair', x1: x, x2: x, y1: 16, y2: 274 }));
-    var lines = [String(this.labels[i])];
-
-    this.series.forEach(function (s) { if (s.data && s.data[i] != null) lines.push((s.label || s.id) + ': ' + s.data[i]); });
-    this.tip.textContent = lines.join('\n'); this.tip.hidden = false;
-    this.tip.style.left = Math.min(r.width - 120, Math.max(0, e.clientX - r.left + 10)) + 'px';
-    this.tip.style.top = Math.max(0, e.clientY - r.top - 40) + 'px';
+    this._lastMoveEvent = e;
+    if (this._moveFrame) return;
+    this._moveFrame = raf(function () {
+      this._moveFrame = 0;
+      var event = this._lastMoveEvent;
+      var r = this.root.getBoundingClientRect(), i = Math.max(0, Math.min(this.labels.length - 1, Math.round(((event.clientX - r.left) / r.width) * (this.labels.length - 1))));
+      var old = this.svg.querySelector('.k-chart__crosshair'); if (old) old.remove();
+      var x = 14 + (this.labels.length < 2 ? 0 : (i / (this.labels.length - 1)) * (800 - 14 - 62));
+      this.svg.appendChild(el('line', { class: 'k-chart__crosshair', x1: x, x2: x, y1: 16, y2: 274 }));
+      var lines = [String(this.labels[i])];
+      this.series.forEach(function (s) { if (s.data && s.data[i] != null) lines.push((s.label || s.id) + ': ' + s.data[i]); });
+      this.tip.textContent = lines.join('\n'); this.tip.hidden = false;
+      this.tip.style.left = Math.min(r.width - 120, Math.max(0, event.clientX - r.left + 10)) + 'px';
+      this.tip.style.top = Math.max(0, event.clientY - r.top - 40) + 'px';
+    }.bind(this));
   };
-  Chart.prototype._hide = function () { this.tip.hidden = true; var old = this.svg.querySelector('.k-chart__crosshair'); if (old) old.remove(); };
+  Chart.prototype._hide = function () {
+    if (this._moveFrame) { caf(this._moveFrame); this._moveFrame = 0; }
+    this.tip.hidden = true; var old = this.svg.querySelector('.k-chart__crosshair'); if (old) old.remove();
+  };
   Chart.prototype.destroy = function () {
-    this.destroyed = true; if (this.frame) caf(this.frame); if (this.ro) this.ro.disconnect();
+    this.destroyed = true; if (this.frame) caf(this.frame); if (this._moveFrame) caf(this._moveFrame); if (this.ro) this.ro.disconnect(); if (this._io) this._io.disconnect();
     document.removeEventListener('visibilitychange', this._visibility); this.root.removeEventListener('pointermove', this._move); this.root.removeEventListener('pointerleave', this._hide); this.root.replaceChildren();
   };
   function create(target, opts) { return new Chart(target, opts); }

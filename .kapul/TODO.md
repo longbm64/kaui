@@ -86,6 +86,22 @@
 - [x] Build and prepare release `1.1.1`, including versioned CSS/JS/chart/token/icon artifacts and release metadata.
 - [x] Verify release `1.1.1` with tests, token verification, license audit, and release artifact checks.
 
+- [x] Tối ưu scroll demo: gom callback scroll vào requestAnimationFrame, bỏ lịch reposition navbar khi không có submenu mở, giữ nguyên active-state/sidebar và hành vi overflow.
+
+- [x] Tối ưu scroll demo lần 2: loại bỏ scroll listener capture toàn cục, bỏ active-section layout read trong lúc cuộn, và tắt smooth scrolling mặc định để wheel/trackpad dùng native scrolling mượt hơn.
+
+- [x] Loại bỏ ghi `sessionStorage` theo từng scroll event của sidebar để tránh block main thread; persistence vẫn lưu qua click/pagehide/beforeunload.
+
+- [x] Giảm cảm giác delay ở vùng scroll chính/sidebar: chuyển overscroll dọc về native (`overscroll-behavior-y: auto`), thêm `touch-action: pan-y` và WebKit momentum scrolling.
+- [-] Giảm scroll contention đa chiều: chart pause ngoài viewport + throttle pointermove; frozen-table resize batching/layout read-write separation. Cần profiling browser thực tế để xác nhận từng page.
+- [x] Fix Navbar demo responsive breakpoint: runtime submenu positioning now follows `.k-navbar--expand-lg` (desktop >=1024px), matching the official CSS collapse/drawer breakpoint; other demo pages retain shared shell behavior.
+- [x] Fix layout markup on `demo/navbar.html`: move `.demo-navbar-lab` and usage guide card back inside `.k-container` of `<section id="navbar">`, aligning widths and side paddings with all other demo pages.
+- [x] Fix scroll capture trapping on code blocks: change `pre` and `pre.demo-code` from `overscroll-behavior: contain` to `overscroll-behavior-x: contain` and `overscroll-behavior-y: auto`, allowing smooth vertical wheel/trackpad scrolling through code sample regions.
+
+
+
+
+
 # TODO — KAUI
 
 ## Layout restructuring

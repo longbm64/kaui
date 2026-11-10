@@ -182,8 +182,16 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 
 
 
+- **Scroll performance update:** `demo/demo.js` batches active-section updates and navbar submenu repositioning through one `requestAnimationFrame` per frame; navbar scroll work is skipped when no submenu is open. Public selectors and behavior remain unchanged.
+- **Scroll performance update 2:** removed global capture-phase scroll handling and active-section layout reads during scrolling; default scrolling is native (`scroll-behavior: auto`) to prevent queued smooth-scroll animation jitter.
+- **Scroll responsiveness contract:** `.demo-right__body` and `.demo-sidebar__body` use `overscroll-behavior-y: auto`, `touch-action: pan-y`, and `-webkit-overflow-scrolling: touch` for zero-delay native kinetic scrolling.
+
+
+
 
 - Sidebar scroll contract: `.demo-sidebar__body` keeps `overflow-y: auto` and independent scrolling, hides native scrollbars across Firefox/WebKit/Edge, and exposes `.demo-sidebar__scroll-controls` overlay arrows on hover/focus. Up/down buttons reflect top/middle/bottom scroll state and scroll by viewport-sized steps.
+- **Scroll contention mitigation:** `src/js/kaui-chart.js` pauses charts outside the viewport and batches pointer crosshair updates; frozen-table height synchronization in `src/js/kaui.js` and `demo/demo.js` batches resize work and avoids redundant height writes. Browser profiling remains required for final attribution.
+
 
 
 - Demo icon contract: all showcase and version pages use the project-owned KAUI icon registry via `data-kaui-icon`, inline KAUI SVG paths, and `dist/icons/kaui-icons.css`; no external icon CDN/runtime dependency remains.
@@ -407,6 +415,12 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Navbar outside-click contract: clicking outside the navbar dismisses all open submenus across both desktop (`.k-navbar__item--has-children.is-open`) and mobile drawer modes (`closeNavbarMenus`).
 
 - Navbar dropstart specificity contract: `.is-dropstart` selector explicitly takes precedence over breakpoint modifiers (`.k-navbar--expand-lg`) with `right: calc(...) !important; left: auto !important;`, flipping chevron icons and cascading dropstart to deeply nested levels (Level 4+).
+- Navbar demo runtime breakpoint contract: `demo/navbar.html` uses `.k-navbar--expand-lg`, so `demo/demo.js` must treat widths below `1024px` as drawer/mobile mode and only run desktop submenu geometry at `>=1024px`.
+- Navbar demo container contract: all sections, cards, and interactive labs on `demo/navbar.html` must remain inside `.k-container` to maintain max-width and responsive margin/padding consistent with other component showcases.
+- Code block scroll containment contract: `pre` elements must isolate only the horizontal axis (`overscroll-behavior-x: contain`) while keeping vertical overscroll natural (`overscroll-behavior-y: auto`) to avoid trapping vertical scrolling when the cursor is positioned over non-vertical-scrolling code blocks.
+
+
+
 
 - Navbar cascade close contract: closing any parent or root menu item (`!isOpen`, sibling switch, mobile drawer close, Escape, or outside click) recursively resets all child submenus (`is-open`, `is-dropup`, `is-dropstart`, `aria-expanded="false"`).
 - Navbar click-only interaction contract: opening any submenu requires an explicit user click (`BUTTON` trigger); hover purely provides visual highlight without opening submenus, eliminating all hover/click conflicts and ensuring deterministic cascade closing.
