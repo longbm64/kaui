@@ -221,12 +221,12 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Confirm centered content contract: `.k-confirm__content`, title và message đều `text-align: center`; footer buttons cũng căn giữa để đồng nhất với icon và nội dung cảnh báo.
 - Confirm footer layout contract: `.k-confirm__footer` dùng `justify-content: space-between` để Cancel nằm bên trái và Confirm/primary action nằm bên phải; nội dung phía trên vẫn căn giữa.
 - Modal close icon contract: nút đóng header của Modal dùng icon KAUI `x` (mapped to the project `close` glyph) thay cho ký tự `&times;`, đảm bảo nét vẽ icon đồng bộ với toàn bộ kit.
-- Confirm help icon contract: dùng icon KAUI `circle-help` mapped tới glyph `info`, tránh dependency ngoài và giữ nhận diện cảnh báo nhất quán.
+- Confirm help icon contract: dùng icon KAUI chuẩn `help` (hỏi đáp/xác nhận), `warning` (cảnh báo) và `delete` (xóa dữ liệu), tránh dependency ngoài và giữ nhận diện cảnh báo nhất quán.
 - Confirm dismiss contract: Confirm dùng backdrop static, không đóng khi click ngoài/backdrop, nhưng vẫn cho phép phím Escape đóng và báo trạng thái cancelled.
 - Modal header alignment contract: `.k-modal__header .k-alert__close` được override thành flex container (width/height 2rem, `margin: 0`, `align-items: center`) để nút đóng luôn nằm ngang thẳng hàng tuyệt đối với icon và text của tiêu đề.
 - Modal title baseline contract: heading trong `.k-modal__header` được reset `margin: 0` và `line-height: 1.25`; nút close dùng cùng flex row `align-items: center` để tâm icon nằm ngang với tâm title/icon header.
 
-- Modal/Confirm footer action icon contract: every demo footer action uses `.k-btn__icon` before `.k-btn__text`; Cancel uses KAUI `x`, Confirm/Publish use `check`, and Delete uses `trash-2`.
+- Modal/Confirm footer action icon contract: every demo footer action uses `.k-btn__icon` before `.k-btn__text`; Cancel uses `close`, Confirm/Publish use `check`, and Delete uses `delete`.
 - Modal Escape contract: `Escape` always closes the open Modal as a cancel action, including static-by-default Modal; static mode only prevents backdrop/outside click dismissal.
 
 - Modal dismiss contract: Modal và Confirm đều static mặc định (`data-k-backdrop="static"` hoặc thiếu thuộc tính), không đóng khi click backdrop/click ngoài hoặc nhấn Escape; chỉ đóng bằng nút Close/Cancel/Confirm. Dùng `data-k-backdrop="true"` để bật dismiss ngoài theo opt-in.
