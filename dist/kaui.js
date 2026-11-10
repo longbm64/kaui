@@ -1,14 +1,10 @@
-/**
- * KAUI Core Component Runtime (v1.1.1)
- * Zero-dependency vanilla JavaScript for KAUI Interactive Components:
- * - Dropdowns & Custom Selects (.k-dropdown, .k-dropdown-select)
- * - Navigation Bar & Multi-level Responsive Submenus (.k-navbar)
- * - Modal Dialogs & Confirm Overlays (.k-modal, .k-confirm)
- * - Interactive Tabs (.k-tabs)
- * - Accordions (.k-accordion)
- * - Data Tables (search, sort, column totals, frozen multi-pane, select-all)
+/*!
+ * KAUI CSS Kit v1.1.13
+ * Copyright (c) 2026 KAUI Contributors
+ * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
+ * Official Website: https://kaui.filekat.com
+ * GitHub Project:  https://github.com/longbm64/kaui
  */
-
 (function (global) {
   'use strict';
 

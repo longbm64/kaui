@@ -284,6 +284,15 @@
         });
       }
 
+      function updateLastVisibleRow() {
+        var last = null;
+        rows.forEach(function (r) {
+          r.classList.remove('is-last-row');
+          if (!r.hidden) last = r;
+        });
+        if (last) last.classList.add('is-last-row');
+      }
+
       if (search) {
         search.addEventListener('input', function () {
           var q = normalize(search.value).trim().split(/\s+/).filter(Boolean);
@@ -294,8 +303,12 @@
             if (!row.hidden) visible += 1;
           });
           if (empty) empty.hidden = visible !== 0;
+          updateLastVisibleRow();
           updateSums();
         });
+        updateLastVisibleRow();
+      } else {
+        updateLastVisibleRow();
       }
 
       root.querySelectorAll('[data-k-table-select-all]').forEach(function (selectAll) {
