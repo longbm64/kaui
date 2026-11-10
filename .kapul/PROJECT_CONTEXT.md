@@ -1,3 +1,6 @@
+- Confirm Component Callback Contract: Hộp thoại Confirm hỗ trợ 2 mô hình xử lý callback:
+  1. Lắng nghe trực tiếp trên button DOM: `btnConfirm.addEventListener('click', ...)` để chạy logic xác nhận và `confirm.classList.remove('is-open')`; `btnCancel.addEventListener('click', ...)` để hủy.
+  2. Bọc Promise (`showConfirm(selector)`): Trả về `Promise<boolean>` tương thích `async/await`, giải phóng listener sau khi hoàn thành.
 - Release metadata banner contract: Mỗi khi chạy `#release`, `scripts/release.mjs` tự động tiêm comment header chuẩn vào toàn bộ các file trong `dist/` (CSS, JS, Dart, Kotlin, Swift) chứa thông tin version, bản quyền (2026 KAUI Contributors / Non-Commercial), website chính thức (`https://kaui.filekat.com`), và GitHub repository (`https://github.com/longbm64/kaui`).
 - JS runtime header comment cleanup contract: Cho đợt #release tới, `src/js/kaui.js` và bản minified `dist/kaui.min.js` phải được dọn dẹp / loại bỏ block comment mô tả cũ `/** * KAUI Core Component Runtime (v1.1.1) ... */` để tránh xuất hiện comment thừa trên CDN preview.
 - Template example contract: `demo/templates/dashboard.html` is the catalog's standalone dashboard page template, copied from the demo shell. The existing `demo/index.html` remains the general component showcase but is no longer listed as a template.

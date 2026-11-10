@@ -99,7 +99,93 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre></div>
         </div>
-      </section>
+
+          <!-- Script Callback Guide -->
+          <div class="k-card k-card--bordered k-p-5 k-mt-6">
+            <h3 class="demo-subheading k-mt-0">
+              <i data-kaui-icon="code"></i> Script Callback Guide (Confirm &amp; Cancel Events)
+            </h3>
+            <p class="k-text-muted k-fs-sm">
+              You can listen to button events directly, or wrap the Confirm component in a reusable Promise-based helper function for clean <code>async/await</code> workflows.
+            </p>
+
+            <h4 class="k-fs-base k-fw-semibold k-mt-4 k-mb-2">Cách 1: Lắng nghe Event trực tiếp (Standard DOM Event Listeners)</h4>
+            <pre class="demo-code"><code>// Lấy các element liên quan
+const confirmDialog = document.getElementById('my-confirm');
+const btnAccept = document.getElementById('my-confirm-accept');
+const btnCancel = document.getElementById('my-confirm-cancel');
+
+// Khi bấm nút Confirm / Chấp nhận
+btnAccept.addEventListener('click', function() {
+  // 1. Thực hiện logic hành động (ví dụ gọi API, xóa dữ liệu, lưu thay đổi)
+  console.log('Action confirmed!');
+
+  // 2. Đóng hộp thoại Confirm
+  confirmDialog.classList.remove('is-open');
+});
+
+// Khi bấm nút Cancel / Hủy bỏ
+btnCancel.addEventListener('click', function() {
+  // 1. Thực hiện logic hủy bỏ
+  console.log('Action cancelled.');
+
+  // 2. Đóng hộp thoại Confirm
+  confirmDialog.classList.remove('is-open');
+});</code></pre>
+
+            <h4 class="k-fs-base k-fw-semibold k-mt-5 k-mb-2">Cách 2: Hàm tiện ích dạng Promise (Reusable <code>async/await</code> Helper)</h4>
+            <pre class="demo-code"><code>/**
+ * Hiển thị Confirm và trả về Promise&lt;boolean&gt;
+ * @param {string} selector - Selector của hộp thoại confirm (ví dụ '#demo-confirm')
+ * @returns {Promise&lt;boolean&gt;} true nếu bấm Confirm, false nếu Cancel hoặc Escape
+ */
+function showConfirm(selector) {
+  return new Promise((resolve) => {
+    const dialog = document.querySelector(selector);
+    if (!dialog) return resolve(false);
+
+    const acceptBtn = dialog.querySelector('.k-btn--primary, .k-btn--warning, .k-btn--danger');
+    const cancelBtn = dialog.querySelector('[data-k-confirm-dismiss], .k-btn--outline, #demo-confirm-cancel');
+
+    function cleanup(result) {
+      dialog.classList.remove('is-open');
+      if (acceptBtn) acceptBtn.removeEventListener('click', onAccept);
+      if (cancelBtn) cancelBtn.removeEventListener('click', onCancel);
+      document.removeEventListener('keydown', onKeyDown);
+      resolve(result);
+    }
+
+    function onAccept() { cleanup(true); }
+    function onCancel() { cleanup(false); }
+    function onKeyDown(e) {
+      if (e.key === 'Escape') cleanup(false);
+      if (e.key === 'Enter') cleanup(true);
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener('click', onAccept);
+    if (cancelBtn) cancelBtn.addEventListener('click', onCancel);
+    document.addEventListener('keydown', onKeyDown);
+
+    // Mở hộp thoại
+    dialog.classList.add('is-open');
+  });
+}
+
+// === Cách sử dụng trong code thực tế ===
+async function handleDeleteItem(itemId) {
+  const confirmed = await showConfirm('#demo-confirm-danger');
+  if (confirmed) {
+    // Người dùng bấm Confirm / Delete -> Gọi API xóa
+    await apiDelete(itemId);
+    alert('Đã xóa thành công!');
+  } else {
+    // Người dùng bấm Cancel -> Bỏ qua
+    console.log('Hủy thao tác xóa.');
+  }
+}</code></pre>
+          </div>
+
+        </section>
   </main></div>
   <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.10</span></a></div></div></div></footer></div>
 

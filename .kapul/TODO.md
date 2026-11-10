@@ -1,3 +1,4 @@
+- [x] Thêm tài liệu & hướng dẫn script callback cho Confirm component trong `demo/confirm.html` (cả 2 cách: DOM listener trực tiếp và hàm Promise async/await).
 - [x] Cập nhật scripts/release.mjs và quy trình #release để tự động chèn comment header chứa đầy đủ version, bản quyền, website chính thức và GitHub project vào tất cả các file phân phối (dist/ CSS, JS, Tokens).
 - [x] Tách Modal (.k-modal) và Confirm (.k-confirm) thành 2 component hoàn toàn độc lập: tách SCSS selector riêng biệt, bổ sung runtime data-k-confirm trong kaui.js, tách thành 2 trang demo riêng (demo/modal.html và demo/confirm.html), đồng bộ toàn bộ sidebar của 21 trang demo.
 - [x] Cập nhật bộ icon chuẩn cho Confirm component: đổi icon menu và tiêu đề Confirm sang `help`, icon dialog sang `help` / `warning` / `delete`, nút Cancel sang `close`, đồng bộ trên toàn bộ 21 trang demo.
