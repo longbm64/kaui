@@ -1,5 +1,5 @@
 /**
- * KAUI Core Component Runtime (v1.1.0)
+ * KAUI Core Component Runtime (v1.1.1)
  * Zero-dependency vanilla JavaScript for KAUI Interactive Components:
  * - Dropdowns & Custom Selects (.k-dropdown, .k-dropdown-select)
  * - Navigation Bar & Multi-level Responsive Submenus (.k-navbar)

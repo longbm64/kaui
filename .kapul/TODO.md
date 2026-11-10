@@ -77,6 +77,9 @@
 
 - [x] Restructure demo content shell into `.demo-header`, `.demo-right__body`, and `.demo-footer` so the left menu remains independent and the right content has explicit header/body/footer regions.
 
+- [x] Build and prepare release `1.1.1`, including versioned CSS/JS/chart/token/icon artifacts and release metadata.
+- [x] Verify release `1.1.1` with tests, token verification, license audit, and release artifact checks.
+
 # TODO — KAUI
 
 ## Layout restructuring

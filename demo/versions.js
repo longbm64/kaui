@@ -79,12 +79,12 @@
 
   function fallbackRegistry() {
     return {
-      latest: '1.1.0',
+      latest: '1.1.1',
       versions: {
-        '1.1.0': {
-          version: '1.1.0',
+        '1.1.1': {
+          version: '1.1.1',
           builtAt: 'Build archive available locally',
-          files: ['kaui.css', 'kaui.css.map', 'kaui.min.css', 'kaui.min.css.map', 'kaui-chart.css', 'kaui-chart.js', 'kaui-chart.min.css', 'kaui-chart.min.js', 'kaui-agent-manifest.json']
+          files: ['kaui.css', 'kaui.css.map', 'kaui.min.css', 'kaui.min.css.map', 'kaui-chart.css', 'kaui-chart.js', 'kaui-chart.min.css', 'kaui-chart.min.js', 'kaui-agent-manifest.json', 'metadata.json']
         }
       }
     };

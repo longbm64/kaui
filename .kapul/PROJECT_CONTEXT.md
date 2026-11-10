@@ -1,5 +1,5 @@
 
-## Railway deployment contract
+- Release baseline: version `1.1.1` artifacts are generated under `dist/versions/1.1.1/`, registered in `dist/versions/index.json`, and include `metadata.json` with file sizes and SHA-256 checksums.
 
 - `server.mjs` is the production static HTTP entrypoint. It binds `0.0.0.0:${PORT}` (fallback `3000` locally), redirects `/` to `/demo/`, serves static files safely, and exposes `GET /health`.
 - `package.json` exports `npm start` as `node server.mjs`; `npm run build` remains the Railway build command.

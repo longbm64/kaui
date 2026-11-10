@@ -1,6 +1,6 @@
 # KAUI — Modern SCSS/CSS Kit & Component Framework
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](package.json)
+[![Version](https://img.shields.io/badge/version-1.1.1-blue.svg)](package.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Tests: 176 passed](https://img.shields.io/badge/tests-176%20passed-brightgreen.svg)](test/kit.test.mjs)
 [![Bundle Size](https://img.shields.io/badge/bundle-<60KB%20all--in--one-informational.svg)](dist/kaui.min.css)

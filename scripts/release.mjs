@@ -184,7 +184,16 @@ function main() {
     metadata: versionManifest.files[file]
   }));
 
+  const metadata = {
+    version: nextVersion,
+    builtAt: versionManifest.builtAt,
+    files: versionManifest.files
+  };
+  fs.writeFileSync(path.join(targetDir, 'metadata.json'), JSON.stringify(metadata, null, 2) + '\n');
+
+
   let indexData = { latest: nextVersion, versions: {} };
+
   if (fs.existsSync(INDEX_JSON_PATH)) {
     try {
       indexData = JSON.parse(fs.readFileSync(INDEX_JSON_PATH, 'utf8'));
