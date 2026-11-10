@@ -1,5 +1,5 @@
 // ============================================================================
-// KAUI CSS Kit v1.1.10
+// KAUI CSS Kit v1.1.11
 // Copyright (c) 2026 KAUI Contributors | Personal / Non-Commercial License
 // Official Website: https://kaui.filekat.com
 // GitHub Project:  https://github.com/longbm64/kaui

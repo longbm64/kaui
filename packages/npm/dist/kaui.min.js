@@ -165,7 +165,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         var openModal = document.querySelector('.k-modal.is-open');
-        if (openModal && openModal.getAttribute('data-k-backdrop') !== 'static') {
+        if (openModal) {
           openModal.classList.remove('is-open');
         }
       }
@@ -193,7 +193,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         var openConfirm = document.querySelector('.k-confirm.is-open');
-        if (openConfirm && openConfirm.getAttribute('data-k-backdrop') !== 'static') {
+        if (openConfirm) {
           openConfirm.classList.remove('is-open');
         }
       }
