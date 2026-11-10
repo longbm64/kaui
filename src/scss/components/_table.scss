@@ -26,6 +26,55 @@
     background-color: var(--k-primary);
     border-radius: var(--k-radius-full);
   }
+
+  // Prevent double borders between wrapper and table (outer borders merge seamlessly at 1px)
+  .k-table {
+    border: 0;
+
+    // Remove double outer boundaries on cells adjacent to the wrapper edge
+    thead tr:first-child th,
+    tbody tr:first-child th,
+    tbody tr:first-child td {
+      border-top: 0;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td,
+    tbody tr.is-last-row th,
+    tbody tr.is-last-row td,
+    tbody tr:has(+ [data-k-table-no-results]) th,
+    tbody tr:has(+ [data-k-table-no-results]) td,
+    tbody tr:has(+ tr[hidden]) th,
+    tbody tr:has(+ tr[hidden]) td,
+    tbody tr[data-k-table-no-results] td,
+    tfoot tr:last-child th,
+    tfoot tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th:first-child,
+    td:first-child,
+    .k-table__cell--frozen-left:first-child {
+      border-left: 0;
+    }
+
+    th:last-child,
+    td:last-child,
+    .k-table__cell--frozen-right:last-child {
+      border-right: 0;
+    }
+  }
+
+  // When a toolbar is present above table, toolbar owns the divider
+  .k-table__toolbar {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .k-table__toolbar + .k-table {
+    border-top: 0;
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -95,6 +144,36 @@
     margin: 0;
     border: 0;
     height: 100%;
+
+    thead tr:first-child th,
+    tbody tr:first-child th,
+    tbody tr:first-child td {
+      border-top: 0;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td,
+    tbody tr.is-last-row th,
+    tbody tr.is-last-row td,
+    tbody tr:has(+ [data-k-table-no-results]) th,
+    tbody tr:has(+ [data-k-table-no-results]) td,
+    tbody tr:has(+ tr[hidden]) th,
+    tbody tr:has(+ tr[hidden]) td,
+    tbody tr[data-k-table-no-results] td,
+    tfoot tr:last-child th,
+    tfoot tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th:first-child,
+    td:first-child {
+      border-left: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
 
     tr {
       height: 3.5rem;
@@ -188,6 +267,12 @@
     }
   }
 
+  // Standalone table or table with last-row border clean up when enclosed
+  &:last-child tbody tr:last-child:not(:has(~ tfoot)) th,
+  &:last-child tbody tr:last-child:not(:has(~ tfoot)) td {
+    border-bottom-color: var(--k-table-border);
+  }
+
   &--sm {
 
     th,
@@ -254,6 +339,7 @@
     left: 0;
     z-index: 1;
     background-color: var(--k-table-bg);
+    border-left: 0;
     box-shadow: 1px 0 0 var(--k-table-border);
   }
 

@@ -1,5 +1,5 @@
 /*!
- * KAUI CSS Kit v1.1.12
+ * KAUI CSS Kit v1.1.13
  * Copyright (c) 2026 KAUI Contributors
  * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
  * Official Website: https://kaui.filekat.com
@@ -1969,6 +1969,45 @@ hr {
   background-color: var(--k-primary);
   border-radius: var(--k-radius-full);
 }
+.k-table-wrap .k-table {
+  border: 0;
+}
+.k-table-wrap .k-table thead tr:first-child th,
+.k-table-wrap .k-table tbody tr:first-child th,
+.k-table-wrap .k-table tbody tr:first-child td {
+  border-top: 0;
+}
+.k-table-wrap .k-table tbody tr:last-child th,
+.k-table-wrap .k-table tbody tr:last-child td,
+.k-table-wrap .k-table tbody tr.is-last-row th,
+.k-table-wrap .k-table tbody tr.is-last-row td,
+.k-table-wrap .k-table tbody tr:has(+ [data-k-table-no-results]) th,
+.k-table-wrap .k-table tbody tr:has(+ [data-k-table-no-results]) td,
+.k-table-wrap .k-table tbody tr:has(+ tr[hidden]) th,
+.k-table-wrap .k-table tbody tr:has(+ tr[hidden]) td,
+.k-table-wrap .k-table tbody tr[data-k-table-no-results] td,
+.k-table-wrap .k-table tfoot tr:last-child th,
+.k-table-wrap .k-table tfoot tr:last-child td {
+  border-bottom: 0;
+}
+.k-table-wrap .k-table th:first-child,
+.k-table-wrap .k-table td:first-child,
+.k-table-wrap .k-table .k-table__cell--frozen-left:first-child {
+  border-left: 0;
+}
+.k-table-wrap .k-table th:last-child,
+.k-table-wrap .k-table td:last-child,
+.k-table-wrap .k-table .k-table__cell--frozen-right:last-child {
+  border-right: 0;
+}
+.k-table-wrap .k-table__toolbar {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.k-table-wrap .k-table__toolbar + .k-table {
+  border-top: 0;
+}
 
 .k-table-frozen-container {
   display: flex;
@@ -2024,6 +2063,32 @@ hr {
   margin: 0;
   border: 0;
   height: 100%;
+}
+.k-table-frozen-container .k-table thead tr:first-child th,
+.k-table-frozen-container .k-table tbody tr:first-child th,
+.k-table-frozen-container .k-table tbody tr:first-child td {
+  border-top: 0;
+}
+.k-table-frozen-container .k-table tbody tr:last-child th,
+.k-table-frozen-container .k-table tbody tr:last-child td,
+.k-table-frozen-container .k-table tbody tr.is-last-row th,
+.k-table-frozen-container .k-table tbody tr.is-last-row td,
+.k-table-frozen-container .k-table tbody tr:has(+ [data-k-table-no-results]) th,
+.k-table-frozen-container .k-table tbody tr:has(+ [data-k-table-no-results]) td,
+.k-table-frozen-container .k-table tbody tr:has(+ tr[hidden]) th,
+.k-table-frozen-container .k-table tbody tr:has(+ tr[hidden]) td,
+.k-table-frozen-container .k-table tbody tr[data-k-table-no-results] td,
+.k-table-frozen-container .k-table tfoot tr:last-child th,
+.k-table-frozen-container .k-table tfoot tr:last-child td {
+  border-bottom: 0;
+}
+.k-table-frozen-container .k-table th:first-child,
+.k-table-frozen-container .k-table td:first-child {
+  border-left: 0;
+}
+.k-table-frozen-container .k-table th:last-child,
+.k-table-frozen-container .k-table td:last-child {
+  border-right: 0;
 }
 .k-table-frozen-container .k-table tr {
   height: 3.5rem;
@@ -2100,6 +2165,9 @@ hr {
 .k-table--bordered td {
   border: 1px solid var(--k-table-border);
 }
+.k-table:last-child tbody tr:last-child:not(:has(~ tfoot)) th, .k-table:last-child tbody tr:last-child:not(:has(~ tfoot)) td {
+  border-bottom-color: var(--k-table-border);
+}
 .k-table--sm th,
 .k-table--sm td {
   padding: var(--k-spacing-2);
@@ -2156,6 +2224,7 @@ hr {
   left: 0;
   z-index: 1;
   background-color: var(--k-table-bg);
+  border-left: 0;
   box-shadow: 1px 0 0 var(--k-table-border);
 }
 .k-table--frozen-1 thead th:first-child {
