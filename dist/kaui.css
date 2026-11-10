@@ -1972,6 +1972,13 @@ hr {
 }
 .k-table-wrap .k-table tbody tr:last-child th,
 .k-table-wrap .k-table tbody tr:last-child td,
+.k-table-wrap .k-table tbody tr.is-last-row th,
+.k-table-wrap .k-table tbody tr.is-last-row td,
+.k-table-wrap .k-table tbody tr:has(+ [data-k-table-no-results]) th,
+.k-table-wrap .k-table tbody tr:has(+ [data-k-table-no-results]) td,
+.k-table-wrap .k-table tbody tr:has(+ tr[hidden]) th,
+.k-table-wrap .k-table tbody tr:has(+ tr[hidden]) td,
+.k-table-wrap .k-table tbody tr[data-k-table-no-results] td,
 .k-table-wrap .k-table tfoot tr:last-child th,
 .k-table-wrap .k-table tfoot tr:last-child td {
   border-bottom: 0;
@@ -2057,6 +2064,13 @@ hr {
 }
 .k-table-frozen-container .k-table tbody tr:last-child th,
 .k-table-frozen-container .k-table tbody tr:last-child td,
+.k-table-frozen-container .k-table tbody tr.is-last-row th,
+.k-table-frozen-container .k-table tbody tr.is-last-row td,
+.k-table-frozen-container .k-table tbody tr:has(+ [data-k-table-no-results]) th,
+.k-table-frozen-container .k-table tbody tr:has(+ [data-k-table-no-results]) td,
+.k-table-frozen-container .k-table tbody tr:has(+ tr[hidden]) th,
+.k-table-frozen-container .k-table tbody tr:has(+ tr[hidden]) td,
+.k-table-frozen-container .k-table tbody tr[data-k-table-no-results] td,
 .k-table-frozen-container .k-table tfoot tr:last-child th,
 .k-table-frozen-container .k-table tfoot tr:last-child td {
   border-bottom: 0;

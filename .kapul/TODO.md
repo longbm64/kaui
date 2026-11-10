@@ -1,3 +1,4 @@
+- [x] Sửa triệt để lỗi viền đáy hàng Admin Console: hỗ trợ selector :has(+ [data-k-table-no-results]), tr[hidden] và runtime class .is-last-row khi hàng cuối cùng đứng trước hàng thông báo ẩn.
 - [x] Xử lý triệt để viền 4 cạnh của bảng Search, sort and frozen columns: triệt tiêu double border ở toolbar, cột frozen và các cell tiếp giáp wrapper để 4 cạnh luôn là 1px đồng nhất.
 - [x] Chuẩn hóa viền 4 cạnh của Table: triệt tiêu double border ở cả 4 cạnh (top, bottom, left, right) khi bảng nằm trong .k-table-wrap hoặc .k-table-frozen-container, đảm bảo độ dày đồng nhất tuyệt đối 1px.
 - [x] Khắc phục lỗi viền đáy table bị dày: triệt tiêu border-bottom thừa ở hàng cuối cùng của tbody/tfoot khi bảng nằm trong .k-table-wrap và .k-table-frozen-container.

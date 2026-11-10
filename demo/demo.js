@@ -1079,6 +1079,15 @@
 
 
         if (root.getAttribute('data-k-searchable') === 'true' && search) {
+          function updateLastVisibleRow() {
+            var last = null;
+            rows.forEach(function (r) {
+              r.classList.remove('is-last-row');
+              if (!r.hidden) last = r;
+            });
+            if (last) last.classList.add('is-last-row');
+          }
+
           search.addEventListener('input', function () {
             var words = normalize(search.value).trim().split(/\s+/).filter(Boolean);
             var visible = 0;
@@ -1088,8 +1097,10 @@
               if (!row.hidden) visible += 1;
             });
             if (empty) empty.hidden = visible !== 0;
+            updateLastVisibleRow();
             updateSums();
           });
+          updateLastVisibleRow();
         }
 
         if (root.getAttribute('data-k-sortable') !== 'true') { updateSums(); return; }
