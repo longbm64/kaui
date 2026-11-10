@@ -46,6 +46,12 @@ Version phải lấy từ manifest chính của dự án (`package.json`, `pubsp
 ## Flow bắt buộc
 
 ```text
+- Triple-platform release synchronization contract:
+  - Root `package.json`, `packages/npm/package.json`, and `packages/pub/pubspec.yaml` MUST strictly share the exact same version number upon running `#release`.
+  - Package keywords (NPM `keywords` array) and topics (Pub.dev `topics` list) must be fully declared with design-system terms (`css`, `scss`, `ui-kit`, `widgets`, `tokens`, `theme`, `responsive`, `dark-mode`).
+  - Pub.dev metadata must include `repository`, `issue_tracker`, and automatic `CHANGELOG.md` notes describing real architectural updates (typography sharpness, scroll containment, contrast improvements).
+  - Release automation (`scripts/release-flow.mjs`) publishes atomically to Railway (Web CDN), NPM (`filekat`), and Pub.dev (`filekat`).
+
 #release
   -> kiểm tra branch + working tree
   -> git fetch origin main release
