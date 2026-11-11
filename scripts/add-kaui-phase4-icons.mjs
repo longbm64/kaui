@@ -21,7 +21,7 @@ const icons = {
   network:'<circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="m7 11 10-5M7 13l10 5"/>',
   globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
   'code-branch':'<path d="M6 3v12M18 9V3M6 15a3 3 0 1 0 0 6 3 3 0 0 0 0-6M18 9a3 3 0 1 0 0 6M6 6c0 3 3 3 6 3h3"/>',
-  webhook:'<path d="M18 8a4 4 0 1 0-4-4M6 16a4 4 0 1 0 4 4M18 16a4 4 0 1 0 4 4M14 4l-4 12M10 20l4-4"/>',
+  webhook:'<circle cx="6" cy="12" r="2.25"/><circle cx="18" cy="6" r="2.25"/><circle cx="18" cy="18" r="2.25"/><path d="m8.1 10.9 7.8-3.8M8.1 13.1l7.8 3.8"/><path d="M10 4.5a8.5 8.5 0 0 1 8 1.2M18 5.7l.1 3.1-3-.9"/>',
   'cloud-cog':'<path d="M7 18a5 5 0 1 1 1-9 6 6 0 0 1 7-1"/><circle cx="17" cy="16" r="3"/><path d="M17 12v1M17 19v1M13 16h1M20 16h1M14 13l1 1M19 18l1 1M20 13l-1 1M15 18l-1 1"/>',
   'database-backup':'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 2 3.6 3 8 3M20 5v7M4 12v7c0 2 3.6 3 8 3 1.5 0 2.8-.1 4-.4M16 17h5v-5M21 17l-3 3"/>'
 };

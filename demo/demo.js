@@ -8,21 +8,64 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     // Render every demo icon from the KAUI project icon registry (no external icon CDN).
-    function renderKauiIcons() {
-      if (typeof iconSvgPaths === 'undefined' || !iconSvgPaths) return;
+    var iconSvgPaths = {
+      'add': '<path d="M12 5v14M5 12h14"/>',
+      'close': '<path d="M18 6 6 18M6 6l12 12"/>',
+      'check': '<path d="m5 12 5 5L20 7"/>',
+      'search': '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+      'edit': '<path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+      'delete': '<path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+      'save': '<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2zM17 21v-8H7v8M7 3v5h8"/>',
+      'menu': '<path d="M4 12h16M4 6h16M4 18h16"/>',
+      'arrow-left': '<path d="m12 19-7-7 7-7M5 12h14"/>',
+      'arrow-down': '<path d="M12 4v16M5 14l7 7 7-7"/>',
+      'arrow-up': '<path d="M12 20V4M5 10l7-7 7 7"/>',
+      'arrow-up-down': '<path d="M12 4v7m0-7-3 3m3-3 3 3M12 20v-7m0 7-3-3m3 3 3-3"/>',
+      'arrow-right': '<path d="M5 12h14M12 5l7 7-7 7"/>',
+      'chevron-down': '<path d="m6 9 6 6 6-6"/>',
+      'chevron-up': '<path d="m18 15-6-6-6 6"/>',
+      'chevron-left': '<path d="m15 18-6-6 6-6"/>',
+      'chevron-right': '<path d="m9 18 6-6-6-6"/>',
+      'external-link': '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+      'info': '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+      'warning': '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/>',
+      'error': '<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/>',
+      'success': '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>',
+      'settings': '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+      'user': '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+      'calendar': '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+      'bell': '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+      'mail': '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+      'lock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+      'eye': '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+      'file': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>',
+      'folder': '<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>',
+      'home': '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>',
+      'copy': '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+      'download': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
+      'code': '<path d="m8 7-5 5 5 5M16 7l5 5-5 5"/>',
+      'file-code': '<path d="M6 3h8l4 4v14H6zM14 3v5h4M9 14l-2-2 2-2M15 14l2-2-2-2"/>',
+      'terminal': '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/>',
+      'chart-no-axes-combined': '<path d="M12 20V10M18 20V4M6 20v-4"/>',
+      'panel-left': '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/>',
+      'upload': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>'
+    };
+
+        function renderKauiIcons() {
+      var paths = (typeof iconSvgPaths !== 'undefined' && iconSvgPaths) ? iconSvgPaths : {};
       var aliases = {
         'palette': 'settings', 'compass': 'external-link', 'layout-grid': 'folder', 'square-mouse-pointer': 'add',
-        'file-text': 'file', 'history': 'calendar', 'layers-3': 'folder', 'shapes': 'settings', 'chart-no-axes-combined': 'success',
+        'file-text': 'file', 'history': 'calendar', 'layers-3': 'folder', 'shapes': 'settings',
         'layers': 'folder', 'tag': 'success', 'scan': 'search', 'message-square': 'mail', 'list-collapse': 'menu',
         'loader-2': 'settings', 'bot': 'user', 'github': 'external-link', 'globe': 'external-link', 'smartphone': 'user',
-        'tablet-smartphone': 'user', 'apple': 'success', 'braces': 'settings', 'shield-check': 'success', 'sparkles': 'success',
+        'tablet-smartphone': 'user', 'apple': 'success', 'clock': 'calendar', 'braces': 'settings', 'shield-check': 'success', 'sparkles': 'success',
         'panel-top': 'folder', 'timer': 'calendar', 'bell-ring': 'bell', 'check-circle-2': 'success', 'help': 'info',
         'triangle-alert': 'warning', 'trash-2': 'delete', 'plus': 'add', 'x': 'close', 'activity': 'success',
         'arrow-up-down': 'arrow-up-down', 'file-code-2': 'file', 'clipboard-list': 'file', 'table-2': 'folder'
       };
       document.querySelectorAll('[data-kaui-icon]').forEach(function (element) {
         var name = element.getAttribute('data-kaui-icon');
-        var path = iconSvgPaths[name] || iconSvgPaths[aliases[name]] || iconSvgPaths.settings;
+        var path = paths[name] || paths[aliases[name]] || paths.settings || '<path d="M12 5v14M5 12h14"/>';
         var holder = document.createElement('span');
         holder.innerHTML = '<svg class="kaui-icon" viewBox="0 0 24 24" aria-hidden="' + (element.getAttribute('aria-hidden') || 'true') + '">' + path + '</svg>';
         var svg = holder.firstElementChild;
@@ -45,6 +88,10 @@
       var options = config || {};
       var dropdowns = document.querySelectorAll('[data-k-dropdown-select]');
       dropdowns.forEach(function (container) {
+        // The core runtime owns the theme preset dropdown. Skipping it here avoids
+        // registering a second toggle handler that immediately re-closes the menu.
+        if (container.hasAttribute('data-k-theme-preset')) return;
+
         var toggle = container.querySelector('.k-dropdown__toggle');
         var menu = container.querySelector('.k-dropdown__menu');
         var hiddenSelect = container.querySelector('select');
@@ -326,10 +373,28 @@
     var countriesCancelBtn = document.getElementById('demo-cancel-countries');
     var countriesBackdrop = document.getElementById('demo-countries-backdrop');
     var countriesBody = document.getElementById('demo-countries-body');
+    function toCountrySlug(name) {
+      return name.toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
     if (countriesBody && typeof demoCountries !== 'undefined') {
       countriesBody.innerHTML = demoCountries.map(function (country, index) {
-        return '<tr><td data-k-sort-value="' + (index + 1) + '">' + (index + 1) + '</td><td>' + country[1] + '</td><td>' + country[2] + '</td><td><code>' + country[3] + '</code></td></tr>';
+        var slug = 'flag-' + toCountrySlug(country[2]);
+        return '<tr><td data-k-sort-value="' + (index + 1) + '">' + (index + 1) + '</td><td>' + country[1] + '</td><td><span class="demo-country-flag" aria-hidden="true">' + iconSnippet(slug) + '</span> ' + country[2] + '</td><td><code>' + country[3] + '</code></td></tr>';
       }).join('');
+    }
+    function renderCountryCard() {
+      var countryList = document.querySelector('.demo-country-list');
+      if (!countryList || typeof demoCountries === 'undefined') return;
+      var rows = demoCountries.map(function (country, index) {
+        var slug = 'flag-' + toCountrySlug(country[2]);
+        return '<div class="demo-country-row" role="row"><span>' + (index + 1) + '</span><span>' + country[1] + '</span><span title="' + country[2] + '"><span class="demo-country-flag" aria-hidden="true">' + iconSnippet(slug) + '</span>' + country[2] + '</span><span>' + country[3] + '</span></div>';
+      }).join('');
+      countryList.querySelectorAll('.demo-country-row:not(.demo-country-row--header)').forEach(function (row) { row.remove(); });
+      countryList.insertAdjacentHTML('beforeend', rows);
     }
     function openCountriesModal() {
       blurTrigger(countriesOpenBtn);
@@ -1188,6 +1253,7 @@
       window.addEventListener('resize', scheduleFrozenContainerRowHeights, { passive: true });
     }
     initDataTables();
+    renderCountryCard();
 
 
 
@@ -1202,6 +1268,17 @@
       notes: '<div class="k-form-group">\n  <label for="demo-notes" class="k-form-label">Project Bio / Notes</label>\n  <textarea id="demo-notes" class="k-textarea" rows="3" placeholder="Tell us about your project..."></textarea>\n</div>',
       'valid-email': '<div class="k-form-group">\n  <label for="demo-valid-email" class="k-form-label">Valid Username / Email</label>\n  <div class="k-input-wrapper">\n    <input type="text" id="demo-valid-email" class="k-input is-valid" value="danglong@example.com">\n    <i data-kaui-icon="check-circle-2" class="k-input__icon k-input__icon--right" aria-hidden="true"></i>\n  </div>\n  <div class="k-form-feedback k-form-feedback--valid">Username is available and looks great!</div>\n</div>',
       password: '<div class="k-form-group">\n  <label for="demo-invalid-password" class="k-form-label">Account Password</label>\n  <input type="password" id="demo-invalid-password" class="k-input is-invalid" value="123">\n  <div class="k-form-feedback k-form-feedback--invalid">Password must contain at least 8 characters with numbers and symbols.</div>\n</div>',
+      'date-range': '<div class="k-input-range" data-k-input-range="date"><input class="k-input" type="text" data-k-input-format="date" placeholder="yyyy-MM-dd"><span class="k-input-range__separator">to</span><input class="k-input" type="text" data-k-input-format="date" placeholder="yyyy-MM-dd"></div>',
+      'month-range': '<div class="k-input-range" data-k-input-range="month"><input class="k-input" type="text" data-k-input-format="month" placeholder="yyyy-MM"><span class="k-input-range__separator">to</span><input class="k-input" type="text" data-k-input-format="month" placeholder="yyyy-MM"></div>',
+      amount: '<div class="k-form-group">\n  <label for="demo-amount" class="k-form-label">Amount / Money</label>\n  <div class="k-input-wrapper">\n    <input type="text" id="demo-amount" class="k-input" data-k-input-format="amount" placeholder="e.g. 1.250.000,00" value="1.250.000,00">\n  </div>\n</div>',
+      'phone-10': '<div class="k-form-group">\n  <label for="demo-phone-10" class="k-form-label">Phone 10 digits (VN)</label>\n  <div class="k-input-wrapper">\n    <input type="text" id="demo-phone-10" class="k-input" data-k-input-format="phone-10" placeholder="0912-345-678" value="0912-345-678">\n  </div>\n</div>',
+      'phone-11': '<div class="k-form-group">\n  <label for="demo-phone-11" class="k-form-label">Phone 11 digits (VN)</label>\n  <div class="k-input-wrapper">\n    <input type="text" id="demo-phone-11" class="k-input" data-k-input-format="phone-11" placeholder="02435-678-901" value="02435-678-901">\n  </div>\n</div>',
+      'phone-global': '<div class="k-form-group">\n  <label for="demo-phone-global" class="k-form-label">Phone Global (+Country Code)</label>\n  <div class="k-input-wrapper">\n    <input type="text" id="demo-phone-global" class="k-input" data-k-input-format="phone-global" placeholder="+84 945777323" value="+84 945777323">\n  </div>\n</div>',
+      datetime: '<div class="k-form-group">\n  <label for="demo-datetime" class="k-form-label">Date &amp; Time</label>\n  <div class="k-input-wrapper">\n    <input type="text" id="demo-datetime" class="k-input" data-k-input-format="datetime" placeholder="yyyy-MM-dd hh:ii:ss" value="2026-11-10 14:30:00">\n  </div>\n</div>',
+      time: '<div class="k-form-group">\n  <label for="demo-time" class="k-form-label">Time Only</label>\n  <div class="k-input-wrapper">\n    <input type="text" id="demo-time" class="k-input" data-k-input-format="time" placeholder="hh:ii:ss" value="14:30:00">\n  </div>\n</div>',
+
+
+
       'invalid-mod': '<div class="k-form-group">\n  <label for="demo-invalid-mod" class="k-form-label">Explicit Modifier State</label>\n  <input type="text" id="demo-invalid-mod" class="k-input k-input--invalid" value="invalid_token_syntax">\n  <div class="k-form-feedback k-form-feedback--invalid">Syntax error detected in token definition.</div>\n</div>',
       disabled: '<div class="k-form-group">\n  <label for="demo-disabled" class="k-form-label">Disabled Control</label>\n  <input type="text" id="demo-disabled" class="k-input is-disabled" value="Read-only system value" disabled>\n  <span class="k-form-hint">This setting is locked by administrator policy.</span>\n</div>',
       sidebar: '<div class="k-app-shell">\n  <aside class="k-sidebar" aria-label="Primary navigation">\n    <header class="k-sidebar__header">\n      <a href="#" class="k-sidebar__brand"><span>BRAND</span></a>\n    </header>\n    <div class="k-sidebar__body">\n      <nav class="k-sidebar__nav">\n        <div class="k-sidebar__group">\n          <span class="k-sidebar__group-title">Workspace</span>\n          <a class="k-sidebar__link is-active" href="#overview" aria-current="page"><i data-kaui-icon="home"></i> <span>Overview</span></a>\n          <a class="k-sidebar__link" href="#projects"><i data-kaui-icon="folder"></i> <span>Projects</span></a>\n        </div>\n      </nav>\n    </div>\n    <footer class="k-sidebar__footer">\n      <a class="k-sidebar__link" href="#help"><i data-kaui-icon="help"></i> <span>Help Center</span></a>\n    </footer>\n  </aside>\n  <main class="k-app-shell__main">Content</main>\n</div>',
@@ -1213,12 +1290,12 @@
       'guide-cards': '<article class="k-card k-card--bordered"><div class="k-card__header">Account</div><div class="k-card__body">Plan details</div><div class="k-card__footer">Updated today</div></article>',
       'guide-button-loading': '<button type="button" class="k-btn k-btn--primary k-btn--loading" aria-busy="true"><span class="k-btn__loader" aria-hidden="true"></span><span class="k-btn__text">Saving...</span></button>',
       'guide-charts': '<div id="revenue-chart" class="k-chart" aria-label="Revenue trend"></div><script>KauiChart.create("#revenue-chart", { type: "line", labels: ["Jan", "Feb", "Mar"], datasets: [{ id: "revenue", label: "Revenue", data: [42, 58, 74] }] });</script>',
-      'guide-forms': '<div class="k-form-group"><label for="email" class="k-form-label">Email</label><input id="email" class="k-input" type="email"><span class="k-form-hint">We never share your email.</span></div>',
+      'guide-forms': '<!-- Standard input -->\n<div class="k-form-group">\n  <label for="email" class="k-form-label">Email</label>\n  <input id="email" class="k-input" type="email" placeholder="name@example.com">\n  <span class="k-form-hint">We never share your email.</span>\n</div>\n\n<!-- Formatted Pickers -->\n<input type="text" class="k-input" data-k-input-format="date" placeholder="yyyy-MM-dd">\n<input type="text" class="k-input" data-k-input-format="datetime" placeholder="yyyy-MM-dd hh:ii:ss">\n<input type="text" class="k-input" data-k-input-format="time" placeholder="hh:ii:ss">\n<input type="text" class="k-input" data-k-input-format="month" placeholder="yyyy-MM">\n<input type="text" class="k-input" data-k-input-format="amount" placeholder="xxx.xxx.xxx,xx">\n<input type="text" class="k-input" data-k-input-format="phone-10" placeholder="0912-345-678">',
       'guide-icons': '<svg class="k-icon" aria-hidden="true"><use href="../dist/icons/sprite.svg#search" xlink:href="../dist/icons/sprite.svg#search"></use></svg>',
       'guide-indicators': '<span class="k-spinner" aria-label="Loading"></span><div class="k-progress"><div class="k-progress__bar" style="width: 45%;"></div></div>',
       'guide-layout': '<div class="k-grid k-gap-4"><div class="k-col-12 k-col-md-6">Left column</div><div class="k-col-12 k-col-md-6">Right column</div></div>',
       'guide-confirm': '<div class="k-confirm is-open" role="dialog" aria-modal="true" data-k-backdrop="static"><div class="k-confirm__backdrop"></div><div class="k-confirm__dialog"><div class="k-confirm__body"><div class="k-confirm__icon"><i data-kaui-icon="help"></i></div><h3 class="k-confirm__title">Save changes?</h3><p class="k-confirm__message">Your changes will be saved to this record.</p></div><div class="k-confirm__footer"><button type="button" class="k-btn k-btn--outline">Cancel</button><button type="button" class="k-btn k-btn--primary">Confirm</button></div></div></div>',
-      'guide-modal': '<div class="k-modal is-open" role="dialog" aria-modal="true"><div class="k-modal__dialog"><div class="k-modal__header"><h3 class="k-modal__title">Title</h3></div><div class="k-modal__body">Dialog body text</div><div class="k-modal__footer"><button type="button" class="k-btn k-btn--primary">Confirm</button></div></div></div>',
+      'guide-modal': '<div class="k-modal is-open" role="dialog" aria-modal="true" data-k-backdrop="static"><div class="k-modal-backdrop"></div><div class="k-modal__dialog"><div class="k-modal__header"><h3 class="k-modal__title">Title</h3></div><div class="k-modal__body">Dialog body text</div><div class="k-modal__footer"><button type="button" class="k-btn k-btn--primary">Confirm</button></div></div></div>',
       'guide-navbar': '<header class="k-navbar k-navbar--expand-lg k-navbar--offcanvas"><div class="k-navbar__container"><a href="#" class="k-navbar__brand">Brand</a><button type="button" class="k-navbar__toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button><nav class="k-navbar__menu" id="primary-menu"><ul class="k-navbar__nav"><li><a href="#" class="k-navbar__link is-active" aria-current="page">Home</a></li><li class="k-navbar__item--has-children"><button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Products</button><ul class="k-navbar__submenu"><li><a href="#" class="k-navbar__link">Overview</a></li><li class="k-navbar__item--has-children"><button type="button" class="k-navbar__link" aria-haspopup="true" aria-expanded="false">Advanced</button><ul class="k-navbar__submenu"><li><a href="#" class="k-navbar__link">Reports</a></li></ul></li></ul></li></ul><div class="k-navbar__actions"><button class="k-btn k-btn--primary"><span class="k-btn__text">Get started</span><span class="k-btn__icon"><i data-kaui-icon="arrow-right"></i></span></button></div></nav></div></header>',
       'guide-tabs': '<div class="k-tabs__list" role="tablist"><button class="k-tabs__tab is-active" data-tab-target="#profile" role="tab" aria-selected="true">Profile</button></div><div id="profile" class="k-tabs__panel is-active" role="tabpanel">Profile content</div>',
       'guide-toast': '<div class="k-toast-container k-toast-container--top-right" aria-live="polite"><div class="k-toast k-toast--success"><div class="k-toast__title">Saved</div><div class="k-toast__body">Preferences updated.</div></div></div>',
@@ -1233,6 +1310,7 @@
       'guide-navbar-overflow': '<li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">Edge test</button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#overview">Overview</a></li><li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">More levels</button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#settings">Settings</a></li></ul></li></ul></li>',
 
       'icon-usage': '<svg class=\"k-icon\" aria-hidden=\"true\"><use href=\"dist/icons/sprite.svg#search\" xlink:href=\"dist/icons/sprite.svg#search\"></use></svg>',
+      'flag-usage': '<!-- Vietnam -->\n<img src="../dist/icons/flags/flag-vietnam.svg" class="k-icon k-icon--flag-vietnam" alt="Vietnam flag" width="24" height="18">\n\n<!-- United States -->\n<img src="../dist/icons/flags/flag-united-states.svg" class="k-icon k-icon--flag-united-states" alt="United States flag" width="24" height="18">',
 
       'platform-tokens': 'npm run tokens:build\nnpm run tokens:verify',
       'platform-icons': 'npm run icons:build',
@@ -1243,47 +1321,65 @@
 
     };
 
-    var iconSvgPaths = {
-      'add': '<path d="M12 5v14M5 12h14"/>',
-      'close': '<path d="M18 6 6 18M6 6l12 12"/>',
-      'check': '<path d="m5 12 5 5L20 7"/>',
-      'search': '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
-      'edit': '<path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
-      'delete': '<path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
-      'save': '<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2zM17 21v-8H7v8M7 3v5h8"/>',
-      'menu': '<path d="M4 12h16M4 6h16M4 18h16"/>',
-      'arrow-left': '<path d="m12 19-7-7 7-7M5 12h14"/>',
-      'arrow-down': '<path d="M12 4v16M5 14l7 7 7-7"/>',
-      'arrow-up': '<path d="M12 20V4M5 10l7-7 7 7"/>',
-      'arrow-up-down': '<path d="M12 4v7m0-7-3 3m3-3 3 3M12 20v-7m0 7-3-3m3 3 3-3"/>',
-      'arrow-right': '<path d="M5 12h14M12 5l7 7-7 7"/>',
-      'chevron-down': '<path d="m6 9 6 6 6-6"/>',
-      'chevron-up': '<path d="m18 15-6-6-6 6"/>',
-      'chevron-left': '<path d="m15 18-6-6 6-6"/>',
-      'chevron-right': '<path d="m9 18 6-6-6-6"/>',
-      'external-link': '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
-      'info': '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
-      'warning': '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/>',
-      'error': '<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/>',
-      'success': '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>',
-      'settings': '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
-      'user': '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
-      'calendar': '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
-      'bell': '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
-      'mail': '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
-      'lock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
-      'eye': '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
-      'file': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>',
-      'folder': '<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>',
-      'home': '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>',
-      'copy': '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
-      'download': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
-      'upload': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>'
-    };
-    renderKauiIcons();
-    var iconNames = Object.keys(iconSvgPaths);
+
+
+    // 6c. Code Area Copy Buttons (.k-code-area)
+    function initCodeAreas() {
+      document.querySelectorAll('.k-code-area').forEach(function (area) {
+        var copyBtn = area.querySelector('.k-code-area__copy');
+        if (!copyBtn) {
+          copyBtn = document.createElement('button');
+          copyBtn.type = 'button';
+          copyBtn.className = 'k-code-area__copy';
+          copyBtn.setAttribute('aria-label', 'Copy code');
+          copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span>Copy</span>';
+          area.appendChild(copyBtn);
+        }
+
+        if (copyBtn.dataset.kCopyReady) return;
+        copyBtn.dataset.kCopyReady = 'true';
+
+        copyBtn.addEventListener('click', function () {
+          var pre = area.querySelector('pre, .k-code-area__pre');
+          var text = pre ? pre.innerText || pre.textContent : '';
+          text = text.trim();
+
+          function onCopied() {
+            copyBtn.classList.add('is-copied');
+            copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Copied!</span>';
+            setTimeout(function () {
+              copyBtn.classList.remove('is-copied');
+              copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span>Copy</span>';
+            }, 2000);
+          }
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(onCopied).catch(function () {
+              fallbackCopyText(text, onCopied);
+            });
+          } else {
+            fallbackCopyText(text, onCopied);
+          }
+        });
+      });
+
+      function fallbackCopyText(text, cb) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); if (cb) cb(); } catch (_) {}
+        document.body.removeChild(ta);
+      }
+    }
+
+    initCodeAreas();
+
     window.renderKauiIcons = renderKauiIcons;
     renderKauiIcons();
+    var iconNames = Object.keys(iconSvgPaths);
 
 
     function ensureInlineSprite(spriteXml) {
@@ -1301,11 +1397,16 @@
 
     function iconSnippet(name) {
       var paths = iconSvgPaths[name] || '';
+      var isFlag = name.indexOf('flag-') === 0;
+      if (isFlag) {
+        return '<img src="../dist/icons/flags/' + name + '.svg" class="k-icon k-icon--' + name + '" alt="" loading="lazy" aria-hidden="true">';
+      }
       return '<svg class="k-icon k-icon--' + name + '" viewBox="0 0 24 24" aria-hidden="true">' + (paths || '<use href="#' + name + '" xlink:href="#' + name + '"></use>') + '</svg>';
     }
 
     function iconCategory(name) {
       var groups = {
+        'Flags': /^flag-/,
         'Social': /^social-/,
         'Navigation': /^(arrow|chevron|compass|external-link|home|map|map-pin|menu)$/,
         'Files & Content': /^(clipboard|code|columns|file|folder|grid|image|table|terminal)$/,
@@ -1332,7 +1433,7 @@
         (result[category] = result[category] || []).push(name);
         return result;
       }, {});
-      var categoryOrder = ['Actions', 'Navigation', 'Files & Content', 'Feedback', 'Account & Security', 'Communication', 'Commerce', 'Media', 'Social', 'Favorites & Labels', 'Other'];
+      var categoryOrder = ['Actions', 'Navigation', 'Files & Content', 'Feedback', 'Account & Security', 'Communication', 'Commerce', 'Media', 'Social', 'Favorites & Labels', 'Other', 'Flags'];
       var matchingCategories = categoryOrder.filter(function (category) { return grouped[category] && grouped[category].length; });
       if (!matchingCategories.length) {
         grid.innerHTML = '<div class="k-card k-card--bordered k-p-5 demo-icon-search-empty" role="status">No icons match your search.</div>';
@@ -1381,7 +1482,11 @@
     });
 
 
-    fetch('https://kaui.filekat.com/dist/versions/index.json').then(function (response) { return response.json(); }).then(function (registry) {
+    var registryUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+      ? '/dist/versions/index.json'
+      : 'https://kaui.filekat.com/dist/versions/index.json';
+
+    fetch(registryUrl).then(function (response) { return response.json(); }).then(function (registry) {
       var latest = registry.latest;
       latestManifestUrl = 'https://kaui.filekat.com/dist/versions/' + latest + '/kaui-agent-manifest.json';
       componentSnippets['agent-prompt'] = componentSnippets['agent-prompt'].replace('{latest}', latest);

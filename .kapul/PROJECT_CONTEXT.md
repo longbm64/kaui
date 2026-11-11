@@ -1,3 +1,5 @@
+
+
 - Table hidden row border normalization contract: Trong các bảng có tính năng tìm kiếm (Search) chứa hàng thông báo ẩn `tr[data-k-table-no-results][hidden]`, hàng dữ liệu hiển thị cuối cùng (`Admin Console` hoặc hàng thỏa mãn điều kiện lọc) không được coi là `:last-child` theo CSS thuần vì còn hàng ẩn phía sau. Do đó, CSS sử dụng `:has(+ [data-k-table-no-results])`, `:has(+ tr[hidden])` và class `.is-last-row` được đồng bộ bởi runtime JavaScript để đảm bảo viền dưới của hàng hiển thị cuối cùng luôn triệt tiêu `border-bottom: 0`, ngăn ngừa triệt để lỗi double border ở đáy bảng.
 - Table toolbar & freeze double border contract: Khi `.k-table-wrap` chứa `.k-table__toolbar` (như bảng Search/Sort) hoặc cột đông băng (`.k-table__cell--frozen-left`), `.k-table__toolbar` được loại bỏ 3 cạnh ngoài (top, left, right) để nhường quyền hiển thị cho wrapper (chỉ giữ 1px border-bottom phân cách bảng). Đồng thời các cột cố định đầu dòng được triệt tiêu `border-left: 0`, đảm bảo viền 4 cạnh của bảng luôn giữ đúng 1px tuyệt đối.
 - Table 4-edge border normalization contract: Khi `.k-table` (đặc biệt là biến thể `.k-table--bordered`) nằm bên trong container bao bọc (`.k-table-wrap` hoặc `.k-table-frozen-container`), toàn bộ 4 cạnh tiếp giáp viền ngoài của bảng (border-top ở hàng đầu, border-bottom ở hàng cuối, border-left ở cột đầu, border-right ở cột cuối) đều được thiết lập về `0`. Điều này triệt tiêu hoàn toàn hiện tượng đường viền 4 cạnh bị đè chồng, đảm bảo khung bảng luôn sắc nét và đồng nhất chính xác 1px trên cả 4 cạnh.
@@ -13,6 +15,8 @@
 
 
 - `npm run release` is the canonical `#release` flow: from a clean non-`release` branch it bumps the patch version by default, builds/verifies/tests/audits, commits and pushes the source branch, merges it into protected `release`, pushes `release`, then runs `railway up` (override with `KAUI_DEPLOY_COMMAND`).
+- **Railway project constraint:** Lệnh `#release` và toàn bộ thao tác deployment của repository này được giới hạn nghiêm ngặt DUY NHẤT trên project `kaui` tại Railway (Project ID: `f651cd45-ac4e-41c1-b764-2dc7858292b6`, Service: `kaui`). Nghiêm cấm mọi thao tác nhầm lẫn sang các project khác.
+
 
 - Release baseline: version `1.1.1` artifacts are generated under `dist/versions/1.1.1/`, registered in `dist/versions/index.json`, and include `metadata.json` with file sizes and SHA-256 checksums.
 
@@ -48,6 +52,8 @@
 - Template CSS contract: Template chrome and layouts use scoped `.demo-template-*` selectors in `demo/demo.css` alongside standard `.k-*` tokens/components.
 - Template card interaction contract: `.demo-template-card` has no hover lift or shadow animation; keyboard focus remains visible through the browser focus state.
 - One-column template contract: `demo/templates/one-column.html` uses a single-column layout with synchronized 60rem width across top navbar container, content body, and footer. Icons are integrated into navbar links (user, play, code), action button (arrow-right), badge (columns), card heading (monitor), and footer version (tag).
+
+- Introduction template contract: `demo/templates/introduction.html` is a standalone getting-started page with hero CTA, token/component workflow, installation snippet, and responsive/accessibility guidance; it is linked from `demo/templates.html`.
 
 
 - Modal country-list demo contract: `demo/modal.html` loads `demo/countries.js`, opens `#demo-countries-modal` from `#demo-open-countries`, renders `#demo-countries-body`, and uses `.demo-country-modal__body { overflow-y: auto }`; the table has four equal-width columns (No., Calling code, Country, Time zone). `demo/demo.js` owns open/close/Escape behavior.
@@ -88,7 +94,8 @@ Version Archives dùng Accordion Component chuẩn KAUI (`.k-accordion__item.is-
 
 KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng `@use` theo thứ tự base, layout, components, utilities. Form controls nằm trong `src/scss/components/_form.scss`.
 
-## Tech stack
+
+- Interactive pickers contract: `data-k-input-format="date|datetime|month"` opens an accessible calendar popover, and `data-k-input-format="amount|money"` opens an inline calculator table pad (`.k-picker-popover`). Mouse interactions suppress input blur via `preventDefault` so users can seamlessly click and type simultaneously.
 
 - Dart Sass CLI qua `npm run build`.
 - Node.js native test runner qua `npm test`.
@@ -112,6 +119,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - `.k-checkbox`, `.k-radio`: custom control với `:checked` và `:focus-visible`.
 - `.k-form-group`, `.k-form-label`, `.k-form-hint`, `.k-form-feedback`: layout và thông báo validation.
 - Roadmap completion baseline: token builders generate Web/Dart/Kotlin/Swift outputs; icon builder generates the complete 67-icon KAUI-owned registry and sprite; release verifier checks 18 versioned artifacts; Flutter core widgets and platform package scaffolds exist. Native platform projects still require platform-specific CI/golden tests before production publication.
+
+- Full-color country flag registry: `scripts/add-kaui-flags.mjs` creates 195 ISO alpha-2 `flag-xx` SVG assets from the attributed flag-icons 4:3 set; `scripts/build-icons.mjs` emits `categories.flags`, 640x480 sprite viewBoxes, and `.k-icon--flag-xx` full-color sizing. Flags are available in the gallery and country modal.
 
 - Roadmap completion baseline: token builders generate Web/Dart/Kotlin/Swift outputs; icon builder generates the complete 67-icon KAUI-owned registry and sprite; release verifier checks 18 versioned artifacts; Flutter core widgets and platform package scaffolds exist. Native platform projects still require platform-specific CI/golden tests before production publication.
 - Full icon registry baseline: `icons/manifest.json` and generated `dist/icons/kaui-icons.json` contain 2,328 registered SVG icons (including legacy KAUI compatibility names); gallery renders the full registry from the inline sprite.
@@ -157,6 +166,14 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:4173`; access the demo from the tailnet at `http://<tailscale-ip>:4173/`. This is tailnet-only routing and does not configure public exposure.
 
 - Tailscale dev serving: `npm run serve:tailscale` runs Python's static server on `0.0.0.0:8080`; access the demo from the tailnet at `http://<tailscale-ip>:8080/`. This is tailnet-only routing and does not configure public exposure.
+- Platforms showcase contract: `demo/platforms.html` scopes content-height package cards to `#platforms .platform-card`; Android Compose and iOS SwiftUI are explicitly marked as upcoming/in development while Web and Flutter retain package links.
+- Platform workflow contract: `.platform-workflow-grid` equalizes only the Design Tokens and KAUI Icons cards; the full-width Release & Commercial Compliance card remains content-sized.
+- Platform card height contract: desktop `.platform-card-grid` stretches all four platform cards to the row's natural maximum height, currently defined by Web / Next.js; mobile reverts to per-card content height.
+- Platform action alignment contract: `.platform-card` uses column flex with `margin-top: auto` on bottom actions/status so buttons and status labels share the exact same horizontal baseline across the four cards.
+
+
+
+
 - NPM package consumer contract: package root `kaui` resolves to the production stylesheet (`dist/kaui.min.css`) including the generated icon CSS; `kaui/css` resolves to expanded CSS including icons; `kaui/charts` resolves to chart runtime. There is no separate icon import for normal consumers.
 
 
@@ -228,7 +245,7 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - Toast time footer contract: `.k-toast__footer` đặt bên dưới nội dung toast, chứa `.k-toast__time` hiển thị thời gian tương đối (\"bây giờ\", \"1 phút trước\",...) kèm icon đồng hồ/lịch.
 
 - Toast timestamp style: thời gian được hiển thị tinh tế ở bottom-left (không dùng viền phân cách), font size nhỏ gọn (0.6875rem), icon 12x12px đồng bộ với text.
-- Modal Dialog Overlay Contract: `.k-modal` đóng vai trò là container toàn màn hình (`position: fixed; inset: 0; z-index: var(--k-z-modal, 1050)`). `.k-modal-backdrop` có `position: fixed; inset: 0; z-index: var(--k-z-modal-backdrop, 1040)`. Phần tử `.k-modal__dialog` được thiết lập `position: relative; z-index: var(--k-z-modal, 1050)` để luôn nổi bật trên lớp backdrop đen mờ, không bao giờ bị overlay che khuất hay làm mờ bóng đen. Hỗ trợ animation mở mượt mà và đóng linh hoạt qua nút Close/Cancel/Confirm, click vào backdrop, click ngoài dialog hoặc phím Escape.
+- Modal Dialog Overlay Contract: `.k-modal` đóng vai trò là container toàn màn hình (`position: fixed; inset: 0; z-index: var(--k-z-modal, 1050)`). `.k-modal-backdrop` có `position: fixed; inset: 0; z-index: var(--k-z-modal-backdrop, 1040)`. Phần tử `.k-modal__dialog` được thiết lập `position: relative; z-index: var(--k-z-modal, 1050)` để luôn nổi bật trên lớp backdrop đen mờ, không bao giờ bị overlay che khuất hay làm mờ bóng đen. Mặc định là static (`data-k-backdrop="static"` hoặc không khai báo): click vào backdrop hoặc click ra ngoài dialog không đóng; phím Escape luôn đóng. Đặt `data-k-backdrop="true"` để opt-in dismiss ngoài.
 - Confirm Component Contract: `.k-confirm` là một component độc lập riêng biệt với `.k-modal` (không phụ thuộc class `.k-modal`), có anatomy riêng: `.k-confirm`, `.k-confirm__backdrop`, `.k-confirm__dialog`, `.k-confirm__body`, `.k-confirm__icon`, `.k-confirm__title`, `.k-confirm__message`, `.k-confirm__footer`. Hỗ trợ các tone `.k-confirm--warning`, `--danger`, `--success`, `--info`. Mặc định là static (`data-k-backdrop="static"` hoặc không khai báo): click vào backdrop hoặc click ra ngoài dialog không đóng hộp thoại; phím Escape luôn đóng hộp thoại (hoạt động tương đương Cancel). Đặt `data-k-backdrop="true"` nếu muốn cho phép click backdrop/click ngoài để đóng.
 - Confirm layout contract: `.k-confirm__icon` nằm trên một dòng riêng phía trên `.k-confirm__title` và `.k-confirm__message`, giúp dialog dễ đọc trên desktop/mobile; footer actions giữ nguyên layout ngang.
 - Confirm icon layout contract: `.k-confirm__icon` căn giữa theo chiều ngang (`margin-inline: auto`) và dùng kích thước 4rem với icon bên trong 2rem để tạo điểm nhấn rõ ràng.
@@ -383,7 +400,8 @@ KAUI là SCSS/CSS kit độc lập. Entry point là `src/scss/kaui.scss`, dùng 
 - `demo/demo.js` là runtime dùng chung, không đổi public component contracts hay API chart.
 
 - Footer demo contract: `.demo-footer` là thanh compact `position: fixed` ở đáy vùng nội dung, bắt đầu sau sidebar desktop (`left: 15.5rem`) và full-width trên mobile; `.demo-page`/`.demo-main` có bottom spacing để nội dung không bị che.
-- Component page guide contract: mỗi component showcase page (`tokens`, `navbar`, `layout`, `button`, `forms`, `charts`, `icons`, `card`, `badges`, `alerts`, `modal`, `table`, `toast`, `tabs`, `accordion`, `indicators`) có khối `Usage guide & code sample`, giải thích cách dùng ngắn gọn, code mẫu `<pre class="demo-code">` và nút sao chép `data-copy-component="guide-*"`.
+- Component page guide contract: mỗi component showcase page sử dụng component Code Area (`.k-code-area`), tự động có nút sao chép ở top-right với hiệu ứng Checkmark Copied, loại bỏ hoàn toàn các nút copy rời thủ công ở tiêu đề card.
+
 - Button loading demo contract: `demo/button.html` includes a dedicated loading code sample with `.k-btn--loading`, `.k-btn__loader`, `.k-btn__text`, and `aria-busy="true"`; copy mapping is `guide-button-loading`.
 
 - Icon Gallery grouping fix: `#icon-gallery-grid` is a plain group wrapper; each functional icon group owns its own `.k-grid`, preventing grouped sections from being laid out as grid columns. The total badge is populated from the loaded manifest/fallback count instead of a hard-coded number.

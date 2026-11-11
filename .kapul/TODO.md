@@ -1,8 +1,18 @@
+- [x] Add a dedicated `/icons.html` country flag usage demo with full-name filenames (`flag-vietnam`, `flag-united-states`), standalone `<img>` examples, and a Copy flag code action.
+
+- [x] Fix missing country flags in standalone rendering: add `xmlns:xlink` to every distributed flag SVG so flags using internal `xlink:href` references (Uruguay, Uzbekistan, Vanuatu, Vatican City, etc.) render correctly in `<img>` across browsers.
+
+- [x] Rename country flag icons to full English country names (e.g. `flag-vietnam`, `flag-united-states`, `flag-japan`). Deliver individual standalone SVG files under `dist/icons/flags/` for direct `<img>` rendering to guarantee 100% visible flags with full color gradients, defs, and clips across all browsers.
+
+- [x] Add 195 full-color ISO country flag icons (`flag-xx`) with idempotent generator, registry category metadata, sprite/CSS output, icon gallery grouping, and country modal integration. Sources are attributed in `THIRD_PARTY_NOTICES.md`.
+
 - [x] Sửa triệt để lỗi viền đáy hàng Admin Console: hỗ trợ selector :has(+ [data-k-table-no-results]), tr[hidden] và runtime class .is-last-row khi hàng cuối cùng đứng trước hàng thông báo ẩn.
 - [x] Xử lý triệt để viền 4 cạnh của bảng Search, sort and frozen columns: triệt tiêu double border ở toolbar, cột frozen và các cell tiếp giáp wrapper để 4 cạnh luôn là 1px đồng nhất.
 - [x] Chuẩn hóa viền 4 cạnh của Table: triệt tiêu double border ở cả 4 cạnh (top, bottom, left, right) khi bảng nằm trong .k-table-wrap hoặc .k-table-frozen-container, đảm bảo độ dày đồng nhất tuyệt đối 1px.
 - [x] Khắc phục lỗi viền đáy table bị dày: triệt tiêu border-bottom thừa ở hàng cuối cùng của tbody/tfoot khi bảng nằm trong .k-table-wrap và .k-table-frozen-container.
 - [x] Chuẩn hóa Modal và Confirm: Mặc định là static (click ra ngoài/backdrop không đóng) và nhấn phím Escape luôn đóng hộp thoại (chuẩn accessibility).
+- [x] Kiểm tra và đồng bộ Modal static-by-default với Confirm: core runtime chặn backdrop dismissal mặc định, hỗ trợ opt-in `data-k-backdrop="true"`, Escape vẫn đóng; cập nhật demo snippet/mô tả và dist artifacts.
+
 - [x] Rà soát và chuẩn hóa toàn bộ văn bản sang tiếng Anh trên tất cả các trang demo (`demo/*.html`), bao gồm code samples, chú thích multi-level submenu, script callback guides, bảng dữ liệu mẫu và mô tả component.
 - [x] Thêm tài liệu & hướng dẫn script callback cho Confirm component trong `demo/confirm.html` (cả 2 cách: DOM listener trực tiếp và hàm Promise async/await).
 - [x] Cập nhật scripts/release.mjs và quy trình #release để tự động chèn comment header chứa đầy đủ version, bản quyền, website chính thức và GitHub project vào tất cả các file phân phối (dist/ CSS, JS, Tokens).
@@ -14,6 +24,8 @@
 - [x] Chuyển đổi toàn bộ ngôn ngữ trên trang `demo/templates/one-column.html` sang tiếng Anh (thay "Đăng xuất" thành "Log out").
 - [x] Tích hợp các icon KAUI phù hợp vào `demo/templates/one-column.html` (user, play, code, arrow-right, columns, monitor, tag).
 - [x] Xóa hiệu ứng hover nâng card và đổi shadow trên card template; giữ trạng thái focus cho bàn phím.
+- [x] Thêm template giới thiệu sử dụng KAUI (`demo/templates/introduction.html`) với hero, workflow, installation snippet và checklist responsive/accessibility; đăng ký vào catalog `demo/templates.html`.
+
 
 
 ## Railway deployment preparation
@@ -93,8 +105,9 @@
 - [x] Thay native theme `<select>` bằng KAUI `.k-dropdown-select` chuẩn trong footer; giữ hidden select bridge, ARIA menu item state, keyboard navigation và persistence.
 
 - [x] Fix menu trái fixed: `.demo-sidebar` giữ `position: fixed`, `.demo-right` bù `margin-left: 15.5rem` trên desktop và reset về `0` trên mobile.
+- [x] Fix theme preset dropdown selection: the shared core dropdown runtime now handles the theme menu once; demo runtime skips duplicate binding and keeps preset application/persistence in sync.
 
-- [x] Thay Light/Dark toggle bằng dropdown theme preset trong footer menu: KAUI Blue, Ocean, Forest, Sunset, Dark; lưu lựa chọn qua `kaui-theme`.
+
 
 - [x] Xóa nút "View on GitHub" khỏi `.demo-sidebar__footer` trên toàn bộ 19 demo pages, dọn CSS `.demo-sidebar__github`.
 
@@ -128,7 +141,11 @@
 - [x] Run `npm test` and `npm run build`; 177 tests pass and production artifacts rebuild successfully.
 
 ## Blockers
-- [!] None.
+- Code Area component contract: `src/scss/components/_code_area.scss` provides `.k-code-area`, `.k-code-area__header`, `.k-code-area__lang`, `.k-code-area__copy`, and `.k-code-area__pre`. Clicking the copy button copies code content to clipboard with a visual checkmark feedback transition.
+- [x] Ràng buộc bảo vệ release: lệnh `#release` và script `scripts/release-flow.mjs` bắt buộc phải kiểm tra và xác nhận project Railway hiện tại là `kaui` (Project ID: `f651cd45-ac4e-41c1-b764-2dc7858292b6`), ngăn chặn tuyệt đối việc can thiệp hoặc deploy nhầm sang project khác trên Railway.
+- [x] Rà soát và nâng cấp toàn bộ 23 trang demo: thay thế toàn bộ các khối chứa code cũ (`<pre class="demo-code">`) sang component Code Area chuyên dụng (`.k-code-area` và `.k-code-area__pre`) có nút Copy tích hợp ở góc trên bên phải kèm hiệu ứng chuyển đổi Checkmark xanh (Copied!).
+- [x] Mở rộng Form input formats: date (`yyyy-MM-dd`), datetime (`yyyy-MM-dd hh:ii:ss`), month (`yyyy-MM`), password toggle, amount/money (`xxx.xxx.xxx,xx`), phone VN/global; bổ sung date-range/month-range với kiểm tra end >= start; cập nhật runtime, SCSS, demo, tests và dist artifacts.
+
 
 - [x] Chuẩn bị package Flutter public với tên `kaui`: thêm metadata GitHub, LICENSE MIT, CHANGELOG và README cài đặt; giữ `publish_to: none` cho tới khi chủ động publish.
 
@@ -478,6 +495,8 @@
 - [x] Thêm component Confirm dựa trên Modal: style compact, icon/tone warning-danger-success-info, action Cancel/Confirm và demo tương tác click ngoài/Escape.
 - [x] Thêm icon KAUI cho các nút Cancel/Publish/Delete ở footer của demo Confirm, dùng đúng `.k-btn__icon` và `.k-btn__text`.
 - [x] Confirm mặc định dùng backdrop static: click ngoài và Escape không đóng; chỉ đóng bằng nút Cancel hoặc Confirm. Opt-in dismiss bằng `data-k-backdrop="true"`.
+- [x] Vẽ lại icon `webhook` theo dạng hub kết nối ba điểm, nét cân đối trong khung 24x24; rebuild toàn bộ icon artifacts.
+
 - [x] Thêm demo Dropdown Multi-select Notification Types với Email/SMS/Push/Webhook, toggle nhiều lựa chọn và đồng bộ hidden `<select multiple>`.
 - [x] Đưa icon Confirm lên dòng riêng phía trên tiêu đề và nội dung, giữ nguyên footer actions.
 - [x] Search dropdown không còn option mặc định được chọn: hiển thị placeholder `Select a country...` và chỉ chọn khi người dùng tìm/chọn kết quả; Show All Only vẫn giữ `All regions` làm default.
@@ -617,6 +636,14 @@
 - [x] Chuẩn hóa thư mục package theo package manager: `packages/web` → `packages/npm`, `packages/flutter` → `packages/pub`; các package native Android/iOS đã tạm xóa.
 
 - [x] Tạm xóa package native Android Compose và iOS SwiftUI; chỉ giữ package phát hành hiện tại ở `packages/npm` và `packages/pub`.
+- [x] Cập nhật Platforms demo: Android Compose và iOS SwiftUI hiển thị trạng thái Coming soon/In development; các platform cards có chiều cao tự nhiên theo content và status nằm ngay sau nội dung.
+- [x] Căn đều chiều cao hai card Design Tokens và KAUI Icons trong nhóm Platform workflow; card Release bên dưới giữ nguyên chiều cao theo content.
+- [x] Chuẩn hóa chiều cao bốn platform cards theo chiều cao tự nhiên của Web / Next.js trên desktop; mobile giữ chiều cao tự nhiên theo từng card.
+- [x] Căn thẳng hàng ngang các action/status cuối card Platforms bằng flex column và `margin-top: auto`; mobile giữ flow tự nhiên.
+
+
+
+
 
 - [x] Rà soát publish lần cuối: package npm `kaui@1.1.0` có dist artifacts/exports/license metadata; package pub `kaui@1.1.0` đạt `dart pub publish --dry-run` 0 warnings.
 

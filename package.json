@@ -40,6 +40,7 @@
     "verify:release": "node scripts/verify-release.mjs",
     "icons:build": "node scripts/build-icons.mjs",
     "icons:social:add": "node scripts/add-kaui-social-icons.mjs && npm run icons:build",
+    "icons:flags:add": "node scripts/add-kaui-flags.mjs && npm run icons:build",
     "icons:priority:add": "node scripts/add-kaui-priority-icons.mjs && npm run icons:build",
     "icons:phase2:add": "node scripts/add-kaui-phase2-icons.mjs && npm run icons:build",
     "icons:phase3:add": "node scripts/add-kaui-phase3-icons.mjs && npm run icons:build",

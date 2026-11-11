@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -40,6 +41,7 @@
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
           <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -108,10 +110,10 @@
               <button type="button" class="k-alert__close" aria-label="Dismiss alert">&times;</button>
             </div>
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-alerts"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Choose a semantic modifier such as <code>.k-alert--success</code> or <code>.k-alert--danger</code>; keep the title and body separate for clear hierarchy.</p><pre class="demo-code"><code>&lt;div class="k-alert k-alert--success" role="status"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Choose a semantic modifier such as <code>.k-alert--success</code> or <code>.k-alert--danger</code>; keep the title and body separate for clear hierarchy.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;div class="k-alert k-alert--success" role="status"&gt;
   &lt;strong class="k-alert__title"&gt;Saved&lt;/strong&gt;
   &lt;div class="k-alert__body"&gt;Your changes are now live.&lt;/div&gt;
-&lt;/div&gt;</code></pre></div>
+&lt;/div&gt;</code></pre></div></div>
         </div>
       </section>
   </main></div>

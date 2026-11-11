@@ -12,6 +12,11 @@ KAUI bundles and integrates certain third-party libraries and tools subject to t
 
 - `social-zalo` is a KAUI-authored wordmark reference for integration previews; the Zalo name/trademark remains owned by Zalo Corporation.
 - The icon registry contains no third-party icon source or CDN dependency.
+## 3. Country Flag Assets (`flag-icons`)
+- Project: https://github.com/lipis/flag-icons
+- License: MIT License
+- The 195 `flag-*.svg` sources use the project's 4:3 SVG set. Flag designs remain the national symbols of their respective countries; KAUI only supplies registry/build integration.
+
 ## 3. KAUI Core Icon Set
 - `icons/source/kaui/` contains the Phase 1 KAUI-owned core registry and per-icon ownership metadata.
 - Build with `npm run icons:core:build`; generated files are `dist/icons/kaui-core-sprite.svg`, `kaui-core-icons.css`, and `kaui-core-icons.json`.

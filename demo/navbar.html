@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -39,7 +40,8 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -152,7 +154,7 @@
             <h3 class="demo-subheading k-mt-0">Navbar guide &amp; code samples</h3>
             <p class="k-text-muted">Build a responsive Navbar from four layers: a brand, a toggle button, a navigation menu, and optional actions. Use <code>k-navbar--expand-lg</code> to switch from the mobile drawer to the desktop layout at the large breakpoint.</p>
             <div class="demo-navbar-guide-grid">
-              <article class="demo-navbar-guide-card"><h4>1. Basic structure</h4><p>Keep the toggle's <code>aria-controls</code> equal to the menu <code>id</code>. The runtime synchronizes <code>aria-expanded</code> when the drawer opens.</p><button type="button" class="demo-copy-button" data-copy-component="guide-navbar-basic"><span class="demo-copy-label">Copy basic sample</span></button></article>
+              <article class="demo-navbar-guide-card"><h4>1. Basic structure</h4><p>Keep the toggle's <code>aria-controls</code> equal to the menu <code>id</code>. The runtime synchronizes <code>aria-expanded</code> when the drawer opens.</p></article>
               <article class="demo-navbar-guide-card"><h4>2. Nested menus</h4><p>Use a <code>button</code> for every parent item, add <code>aria-haspopup="true"</code>, and nest another <code>.k-navbar__submenu</code> for unlimited levels.</p><button type="button" class="demo-copy-button" data-copy-component="guide-navbar-nested"><span class="demo-copy-label">Copy nested sample</span></button></article>
               <article class="demo-navbar-guide-card"><h4>3. Smart overflow</h4><p>On desktop, open menus are measured against the viewport. They receive <code>.is-dropup</code> when the bottom is tight and <code>.is-dropstart</code> when the right edge is tight.</p><button type="button" class="demo-copy-button" data-copy-component="guide-navbar-overflow"><span class="demo-copy-label">Copy overflow sample</span></button></article>
             </div>
@@ -160,7 +162,7 @@
 
             <div class="demo-code-samples k-mt-5">
               <h4 class="k-fs-base k-fw-semibold k-mb-2">Code sample: Multi-level Submenu (Nested Responsive Navigation)</h4>
-              <pre class="demo-code"><code>&lt;header class="k-navbar k-navbar--expand-lg k-navbar--sticky k-navbar--shadow"&gt;
+              <div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;header class="k-navbar k-navbar--expand-lg k-navbar--sticky k-navbar--shadow"&gt;
   &lt;div class="k-navbar__container"&gt;
     &lt;a class="k-navbar__brand" href="#"&gt;Brand&lt;/a&gt;
     &lt;button class="k-navbar__toggle" type="button" aria-controls="primary-nav" aria-expanded="false"&gt;
@@ -207,7 +209,7 @@
       &lt;/div&gt;
     &lt;/nav&gt;
   &lt;/div&gt;
-&lt;/header&gt;</code></pre>
+&lt;/header&gt;</code></pre></div>
             </div>
           </div>
         </div>

@@ -1,3 +1,9 @@
+- **Icon Gallery flag usage:** `demo/icons.html` exposes `data-copy-component="flag-usage"` with standalone `<img>` examples for `flag-vietnam` and `flag-united-states`; `demo/demo.js` owns the matching snippet payload.
+
+- **Full country names for flags:** `scripts/add-kaui-flags.mjs` maps country names to stable slugs (`flag-vietnam`, `flag-united-states`, etc.). `scripts/build-icons.mjs` generates both the consolidated sprite and independent SVGs in `dist/icons/flags/` for guaranteed inline/img rendering. `demo/demo.js` references `dist/icons/flags/<name>.svg`.
+
+- **Country flag registry:** `scripts/add-kaui-flags.mjs` creates 195 idempotent `flag-xx.svg` assets from `demo/countries.js`; `scripts/build-icons.mjs` emits category metadata, 4:3 sprite symbols, and full-color `.k-icon--flag-xx` CSS. `demo/demo.js` renders these in the icon gallery and country modal. Sources/license are documented in `THIRD_PARTY_NOTICES.md`.
+
 ## Railway deployment changes
 
 - **Node:** `server.mjs`
@@ -79,6 +85,12 @@
   - **Dependencies:** `dist/kaui.css`, `dist/icons/kaui-icons.css`, `demo/demo.css`, `demo/demo.js`.
   - **Dependents:** `demo/templates.html`.
 
+- **Node:** `demo/templates/introduction.html`
+  - **Exports/public contract:** Standalone KAUI introduction/getting-started template with hero, three-step usage workflow, installation code sample, and responsive/accessibility guidance.
+  - **Dependencies:** `dist/kaui.css`, `dist/icons/kaui-icons.css`, `demo/demo.css`, `demo/demo.js`.
+  - **Dependents:** `demo/templates.html`.
+
+
 
 - **Node:** `demo/countries.js`
   - **Exports/public contract:** global `demoCountries` array of 195 sovereign-country rows `[ISO alpha-2, calling code, country name, representative IANA timezone]` used by the modal demo.
@@ -113,6 +125,22 @@
 
 # KAUI — Dependency Map
 
+- **Node:** `src/js/kaui.js` form runtime
+  - **Exports/public contract:** `Kaui.init()` formats `[data-k-input-format]` values (`date`, `datetime`, `month`, `amount`, `money`, `phone`), toggles `[data-k-password-toggle]`, and validates `[data-k-input-range="date|month"]` so end is not before start.
+  - **Dependencies:** native input events/constraint validation and `.k-input` classes.
+  - **Dependents:** `demo/forms.html`, package `dist/kaui.js`/`dist/kaui.min.js`, consumers using the documented data attributes.
+- **Node:** `src/js/kaui.js` modal/confirm runtime
+  - **Exports/public contract:** `[data-k-modal-target]` and `[data-k-confirm-target]` open dialogs; explicit dismiss attributes/buttons close them; backdrop dismissal is opt-in only with `data-k-backdrop="true"`; omitted/static backdrop remains open; Escape always closes the active dialog.
+  - **Dependencies:** modal/confirm DOM anatomy and `data-k-*` attributes.
+  - **Dependents:** `demo/modal.html`, `demo/confirm.html`, package `dist/kaui.js`/`dist/kaui.min.js`, consumers using documented dialog attributes.
+
+
+- **Node:** `src/scss/components/_form.scss` formatted inputs
+  - **Exports/public contract:** password toggle positioning and `.k-input-range` three-column layout.
+  - **Dependencies:** KAUI tokens.
+  - **Dependents:** `dist/kaui.css`, `dist/kaui.min.css`, form consumers.
+
+
 ## Shared demo sidebar
 
 - **Node:** `demo/*.html` (19 demo pages)
@@ -140,6 +168,8 @@
   - **Exports/public contract:** flex right shell and compact responsive header; fixed footer remains aligned after sidebar.
   - **Dependencies:** KAUI CSS custom properties.
   - **Dependents:** all 19 demo pages.
+
+- **Theme dropdown ownership:** `src/js/kaui.js` owns the shared `.k-dropdown-select` click flow. `demo/demo.js` must skip `[data-k-theme-preset]` containers in its enhanced dropdown initializer, while retaining theme application and `kaui-theme` persistence listeners.
 
 - **Node:** `demo/demo.js`
   - **Exports/public contract:** DOMContentLoaded runtime; active page/hash state; independent sidebar-body scrolling; mobile drawer; theme toggle; icon rendering.
@@ -197,6 +227,39 @@
   - **Exports/public contract:** equal-height card column layout and scrollable four-column country list, scoped to `#cards`.
   - **Dependencies:** KAUI tokens and `.k-card` anatomy.
   - **Dependents:** `demo/card.html`.
+- **Node:** `demo/platforms.html` Platform package cards
+  - **Exports/public contract:** `.platform-card-grid` and `.platform-card` provide content-height responsive cards; Android Compose exposes `Coming soon`, iOS SwiftUI exposes `In development`; Web/Flutter package links remain unchanged.
+  - **Dependencies:** `demo/demo.css` scoped platform layout/status styles, `demo/demo.js` icon aliases, `dist/kaui.css` utilities.
+  - **Dependents:** Platforms demo page and static HTML checks.
+- **Node:** `demo/demo.css` Platforms showcase rules
+  - **Exports/public contract:** `#platforms .platform-card` content-height layout with inline action/status flow.
+  - **Dependencies:** KAUI spacing/color/size tokens.
+  - **Dependents:** `demo/platforms.html`.
+
+
+- **Node:** `demo/platforms.html` Platform workflow cards
+  - **Exports/public contract:** `.platform-workflow-grid` scopes equal-height behavior to Design Tokens and KAUI Icons only; Release & Commercial Compliance remains content-height.
+  - **Dependencies:** `demo/demo.css` workflow card rules and `.k-code-area` anatomy.
+  - **Dependents:** Platforms demo page and static HTML checks.
+- **Node:** `demo/demo.css` Platform workflow card rules
+  - **Exports/public contract:** side-by-side workflow cards stretch equally; code area fills remaining card space; responsive grid behavior remains unchanged.
+  - **Dependencies:** KAUI card/flex/grid utilities.
+  - **Dependents:** `demo/platforms.html`.
+- **Node:** `demo/demo.css` Platform card height rules
+  - **Exports/public contract:** desktop `.platform-card-grid` stretches all four cards to the row's natural maximum height (Web / Next.js baseline); mobile uses content height.
+  - **Dependencies:** CSS grid stretch behavior and `.platform-card` markup.
+  - **Dependents:** `demo/platforms.html`.
+- **Node:** `demo/demo.css` Platform action alignment rules
+  - **Exports/public contract:** `.platform-card` is a column flex container; package buttons and Coming soon/In development statuses share a bottom baseline through `margin-top: auto`.
+  - **Dependencies:** platform card grid stretch and KAUI button/status typography.
+  - **Dependents:** `demo/platforms.html`.
+- **Node:** `icons/source/kaui/webhook.svg` and `scripts/add-kaui-phase4-icons.mjs`
+  - **Exports/public contract:** `webhook` uses a balanced 24x24 hub-and-spoke connection mark with three nodes and an outgoing signal accent; source and idempotent generator remain synchronized.
+  - **Dependencies:** `scripts/build-icons.mjs`, `npm run icons:build`, `npm run build:icons:bundle`.
+  - **Dependents:** `icons/manifest.json`, `dist/icons/sprite.svg`, `dist/icons/kaui-icons.css`, `dist/kaui.css`, `dist/kaui.min.css`, icon gallery/runtime.
+
+
+
 
 - `package.json` scripts define build, icon generation, token verification and release verification.
 

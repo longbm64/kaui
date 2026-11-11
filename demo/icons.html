@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -39,7 +40,8 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -64,14 +66,19 @@
         <div class="k-container">
           <div class="demo-section-header">
             <h2 class="demo-section-title"><i data-kaui-icon="shapes"></i> KAUI Icon Gallery <span id="icon-gallery-count" class="k-badge k-badge--primary k-badge--pill">Loading icons...</span></h2>
-            <p class="demo-section-desc">Proprietary 24x24 SVG icons rendered from <code>dist/icons/sprite.svg</code> using <code>currentColor</code>. Browse the registry by functional group and copy any icon's SVG usage.</p>
+            <p class="demo-section-desc">Browse the 400+ KAUI registry, including 195 full-color country flags (<code>flag-xx</code>) rendered from the shared SVG sprite. Search by name and copy any icon's SVG usage.</p>
           </div>
           <div class="k-card k-card--bordered k-p-4 k-mb-5"><div class="k-flex k-items-center k-justify-between k-flex-wrap k-gap-2"><span class="k-fs-sm">Sprite: <a href="../dist/icons/sprite.svg" target="_blank" rel="noopener noreferrer">dist/icons/sprite.svg</a> &bull; Manifest: <a href="../dist/icons/kaui-icons.json" target="_blank" rel="noopener noreferrer">kaui-icons.json</a></span><button type="button" class="demo-copy-button" data-copy-component="icon-usage"><span class="demo-copy-label">Copy usage</span></button></div></div>
+          <div class="k-card k-card--bordered k-p-5 k-mb-5"><div class="k-flex k-items-center k-justify-between k-flex-wrap k-gap-2"><div><h3 class="demo-subheading k-mt-0 k-mb-1">Country flag usage</h3><p class="k-text-muted k-fs-sm k-m-0">Use the full country name in the flag filename. Standalone SVG files preserve every flag detail and work with <code>&lt;img&gt;</code>.</p></div><button type="button" class="demo-copy-button" data-copy-component="flag-usage"><span class="demo-copy-label">Copy flag code</span></button></div><div class="k-code-area k-mt-4"><pre class="k-code-area__pre"><code>&lt;!-- Vietnam --&gt;
+&lt;img src="../dist/icons/flags/flag-vietnam.svg" class="k-icon k-icon--flag-vietnam" alt="Vietnam flag" width="24" height="18"&gt;
+
+&lt;!-- United States --&gt;
+&lt;img src="../dist/icons/flags/flag-united-states.svg" class="k-icon k-icon--flag-united-states" alt="United States flag" width="24" height="18"&gt;</code></pre></div></div>
           <div class="demo-icon-search k-mb-5"><label class="k-sr-only" for="icon-gallery-search">Search icons</label><div class="k-input-wrapper"><i data-kaui-icon="search" class="k-input__icon k-input__icon--left" aria-hidden="true"></i><input id="icon-gallery-search" class="k-input" type="search" autocomplete="off" placeholder="Search icons by name..." aria-controls="icon-gallery-grid"></div></div>
           <div id="icon-gallery-grid"><div class="k-card k-card--bordered k-p-4"><p class="k-text-muted">Loading icons...</p></div></div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-icons"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Reference sprite glyphs by ID using <code>&lt;use href="...#id"&gt;</code>, or use <code>data-kaui-icon</code> with the built-in helper runtime.</p><pre class="demo-code"><code>&lt;svg class="k-icon" aria-hidden="true"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Reference sprite glyphs by ID using <code>&lt;use href="...#id"&gt;</code>, or use <code>data-kaui-icon</code> with the built-in helper runtime.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;svg class="k-icon" aria-hidden="true"&gt;
   &lt;use href="../dist/icons/sprite.svg#search" xlink:href="../dist/icons/sprite.svg#search"&gt;&lt;/use&gt;
-&lt;/svg&gt;</code></pre></div>
+&lt;/svg&gt;</code></pre></div></div>
         </div>
       </section>
   </main></div>

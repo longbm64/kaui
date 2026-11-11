@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -40,6 +41,7 @@
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
           <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -115,15 +117,15 @@
           <div class="k-card k-card--bordered k-p-4" style="max-width: 480px;">
             <button type="button" class="k-btn k-btn--primary k-btn--block">Full-Width Block Button (<code>.k-btn--block</code>)</button>
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-buttons"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Use <code>.k-btn</code> with one semantic variant. Keep icon and label in <code>.k-btn__icon</code> and <code>.k-btn__text</code> spans for consistent alignment.</p><pre class="demo-code"><code>&lt;button type="button" class="k-btn k-btn--primary"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Use <code>.k-btn</code> with one semantic variant. Keep icon and label in <code>.k-btn__icon</code> and <code>.k-btn__text</code> spans for consistent alignment.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;button type="button" class="k-btn k-btn--primary"&gt;
   &lt;span class="k-btn__icon"&gt;＋&lt;/span&gt;
   &lt;span class="k-btn__text"&gt;Save changes&lt;/span&gt;
-&lt;/button&gt;</code></pre></div>
+&lt;/button&gt;</code></pre></div></div>
 
-          <div class="k-card k-card--bordered k-p-5 k-mt-4"><h3 class="demo-subheading k-mt-0">Loading button sample <button type="button" class="demo-copy-button" data-copy-component="guide-button-loading"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Add <code>.k-btn--loading</code> and keep the loader inside the button. The class disables interaction, hides the optional icon, and keeps the label available to assistive technology.</p><pre class="demo-code"><code>&lt;button type="button" class="k-btn k-btn--primary k-btn--loading" aria-busy="true"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-4"><h3 class="demo-subheading k-mt-0">Loading button sample</h3><p class="k-text-muted k-fs-sm">Add <code>.k-btn--loading</code> and keep the loader inside the button. The class disables interaction, hides the optional icon, and keeps the label available to assistive technology.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;button type="button" class="k-btn k-btn--primary k-btn--loading" aria-busy="true"&gt;
   &lt;span class="k-btn__loader" aria-hidden="true"&gt;&lt;/span&gt;
   &lt;span class="k-btn__text"&gt;Saving...&lt;/span&gt;
-&lt;/button&gt;</code></pre></div>
+&lt;/button&gt;</code></pre></div></div>
         </div>
       </section>
   </main></div>

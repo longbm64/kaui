@@ -20,10 +20,12 @@ Khi chạy `#release` hoặc `npm run release`, hệ thống phải:
 - Branch phát triển: `main` hoặc feature branch.
 - Branch phát hành: `release`.
 - Không chạy release trực tiếp trên `release` hoặc detached HEAD.
-- Working tree phải sạch trước khi bắt đầu.
+- Working tree có thể chứa thay đổi chưa commit khi người dùng gọi `#release`; flow phải tự động `git add -A` và commit với message `chore: prepare working tree for release`, sau đó mới bump version và thực hiện các bước release. Không hỏi lại người dùng.
 - Không dùng `git reset --hard`, force-push hoặc tự động stash/xóa code.
 - Nếu có merge conflict, dừng ngay để xử lý thủ công.
 - Không deploy nếu build/test/verify/merge/push thất bại.
+- **Ràng buộc Project Railway duy nhất:** Dự án này **CHỈ ĐƯỢC PHÉP** thao tác và deploy lên đúng project **`kaui`** trên Railway (Project ID: `f651cd45-ac4e-41c1-b764-2dc7858292b6`, Service: `kaui`). Tuyệt đối nghiêm cấm deploy hoặc can thiệp sang bất kỳ project nào khác (như `kapul` hoặc các workspace/project khác). Flow release phải xác thực tên project Railway hiện tại là `kaui` trước khi thực hiện deploy.
+
 
 ## Version
 

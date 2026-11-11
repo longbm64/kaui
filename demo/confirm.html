@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -39,11 +40,13 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
           <a href="templates.html" class="demo-sidebar__link"><i data-kaui-icon="layout-grid"></i> <span>Templates</span></a>
+
           <a href="icons.html" class="demo-sidebar__link"><i data-kaui-icon="shapes"></i> <span>Icons</span></a>
           <a href="versions.html" class="demo-sidebar__link"><i data-kaui-icon="history"></i> <span>Versions</span></a>
           <a href="platforms.html" class="demo-sidebar__link"><i data-kaui-icon="layers-3"></i> <span>Platforms</span></a>
@@ -84,7 +87,7 @@
             </div>
             <p class="k-text-muted k-fs-sm k-mt-4" id="demo-confirm-result" hidden></p>
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-confirm"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Add <code>is-open</code> to the confirm container to show it. It features a centered icon, title, message, and separated action buttons.</p><pre class="demo-code"><code>&lt;div class="k-confirm is-open" role="dialog" aria-modal="true" data-k-backdrop="static"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Add <code>is-open</code> to the confirm container to show it. It features a centered icon, title, message, and separated action buttons.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;div class="k-confirm is-open" role="dialog" aria-modal="true" data-k-backdrop="static"&gt;
   &lt;div class="k-confirm__backdrop"&gt;&lt;/div&gt;
   &lt;div class="k-confirm__dialog"&gt;
     &lt;div class="k-confirm__body"&gt;
@@ -97,7 +100,7 @@
       &lt;button type="button" class="k-btn k-btn--primary"&gt;Confirm&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre></div>
+&lt;/div&gt;</code></pre></div></div>
         </div>
 
           <!-- Script Callback Guide -->
@@ -110,7 +113,7 @@
             </p>
 
             <h4 class="k-fs-base k-fw-semibold k-mt-4 k-mb-2">Method 1: Direct DOM Event Listeners</h4>
-            <pre class="demo-code"><code>// Reference elements
+            <div class="k-code-area"><pre class="k-code-area__pre"><code>// Reference elements
 const confirmDialog = document.getElementById('my-confirm');
 const btnAccept = document.getElementById('my-confirm-accept');
 const btnCancel = document.getElementById('my-confirm-cancel');
@@ -131,10 +134,10 @@ btnCancel.addEventListener('click', function() {
 
   // 2. Close the dialog
   confirmDialog.classList.remove('is-open');
-});</code></pre>
+});</code></pre></div>
 
             <h4 class="k-fs-base k-fw-semibold k-mt-5 k-mb-2">Method 2: Promise-based Utility (Reusable <code>async/await</code> Helper)</h4>
-            <pre class="demo-code"><code>/**
+            <div class="k-code-area"><pre class="k-code-area__pre"><code>/**
  * Display a Confirm dialog and resolve user choice via Promise&lt;boolean&gt;
  * @param {string} selector - CSS selector of the confirm dialog (e.g. '#demo-confirm')
  * @returns {Promise&lt;boolean&gt;} true if confirmed, false if cancelled or dismissed with Escape
@@ -182,7 +185,7 @@ async function handleDeleteItem(itemId) {
     // User cancelled -> abort
     console.log('Deletion aborted.');
   }
-}</code></pre>
+}</code></pre></div>
           </div>
 
         </section>
