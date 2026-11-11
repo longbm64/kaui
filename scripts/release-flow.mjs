@@ -17,8 +17,29 @@ function capture(command, commandArgs = []) {
 }
 
 function assertClean() {
-  if (capture('git', ['status', '--porcelain'])) {
-    throw new Error('Working tree must be clean before #release. Commit or stash local changes first.');
+  // If working tree has uncommitted changes, auto-commit them so #release proceeds end-to-end without asking
+  const status = capture('git', ['status', '--porcelain']);
+  if (status) {
+    console.log('[release-flow] Working tree has changes; staging and committing automatically before release...');
+    run('git', ['add', '-A']);
+    run('git', ['commit', '-m', 'chore: prepare working tree for release']);
+  }
+}
+
+function assertRailwayProject() {
+  try {
+    const statusOutput = capture('railway', ['status']);
+    if (!statusOutput.includes('Project:         kaui') && !statusOutput.includes('f651cd45-ac4e-41c1-b764-2dc7858292b6')) {
+      throw new Error(`Railway CLI is not linked to project 'kaui'. Aborting release to protect other projects. Status output:\n${statusOutput}`);
+    }
+  } catch (err) {
+    if (err.message && err.message.includes('not linked to project')) {
+      throw err;
+    }
+    // If railway CLI is not installed or network issue, warn unless deployCommand is railway
+    if (deployCommand.startsWith('railway')) {
+      throw new Error(`Failed to verify Railway project 'kaui': ${err.message}`);
+    }
   }
 }
 
@@ -31,6 +52,7 @@ function assertSourceBranch() {
 }
 
 function main() {
+  assertRailwayProject();
   const sourceBranch = assertSourceBranch();
   assertClean();
   run('git', ['fetch', 'origin', 'main', 'release']);

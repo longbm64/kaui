@@ -1,3 +1,5 @@
+- **Flag SVG namespace contract:** `scripts/add-kaui-flags.mjs` and `scripts/build-icons.mjs` must emit `xmlns:xlink="http://www.w3.org/1999/xlink"` on all standalone flag SVGs because 44 national flag assets use internal `xlink:href` references. Verify all 195 files contain the namespace and direct HTTP responses return 200.
+
 - Confirm component separation: `.k-confirm` and `.k-modal` are distinct independent components with separate demo pages (`demo/modal.html` and `demo/confirm.html`). Every demo page exposes both `Modal` and `Confirm` links under Components; changes must keep their markup, runtime triggers (`data-k-modal-*` vs `data-k-confirm-*`), and styling decoupled.
 
 ## Railway deployment protocol
@@ -15,7 +17,10 @@
 - `demo/templates.html` must be kept structurally aligned with a canonical component page such as `demo/card.html`: do not create a reduced sidebar or alternate footer. Verify the shared regions and theme dropdown before changing catalog content.
 - **Protected release branch:** tuyệt đối không chỉnh sửa, commit hoặc push trực tiếp trên `release`. Nếu branch hiện tại là `release`, agent phải cảnh báo và dừng mọi hoạt động thay đổi/deploy ngay lập tức; chỉ được phát hành thông qua `#release` từ `main` hoặc feature branch.
 - Local Git hooks (`.githooks/pre-commit`, `.githooks/pre-push`) chặn commit/push trực tiếp trên `release`; mỗi clone cần cấu hình `git config core.hooksPath .githooks`.
-- **Canonical `#release` flow:** run `npm run release [patch|minor|major]` from a clean `main`/feature branch. It bumps and builds the version, runs `npm test`, `npm run verify:release`, `npm run tokens:verify`, and `npm run audit:license`, commits/pushes the source branch, merges with `--no-verify` into protected `release`, pushes `release`, then deploys with `railway up`. Set `KAUI_DEPLOY_COMMAND` to override the deploy command. Do not run from `release` or with uncommitted changes.
+- **Canonical `#release` flow:** khi người dùng gửi lệnh `#release` (hoặc `npm run release`), agent và script thực hiện trọn vẹn mọi bước tự động không cần hỏi lại: tự stage/commit nếu working tree có thay đổi, bump version, build, test, verify token/release/license, merge branch `release`, push `main` và `release`, sau đó deploy lên đúng project `kaui` trên Railway.
+
+- **Railway project isolation constraint:** Lệnh `#release` và mọi thao tác deployment của dự án KAUI **CHỈ ĐƯỢC PHÉP** thao tác trên project `kaui` (Project ID: `f651cd45-ac4e-41c1-b764-2dc7858292b6`) trên Railway. Tuyệt đối KHÔNG ĐƯỢC PHÉP deploy, link hay tác động sang bất kỳ project nào khác (như `kapul`). `scripts/release-flow.mjs` kiểm tra và xác thực `railway status` trỏ đúng project `kaui` trước khi thực hiện deploy.
+
 
 
 
@@ -39,6 +44,8 @@
 
 - Modal scroll changes affect `src/scss/extended/_overlay.scss` and all modal consumers in `demo/modal.html`; verify no modal selector retains dialog/overlay scrolling. Rebuild `dist/kaui.css`/`dist/kaui.min.css`, then run `npm test` and `npm run build`.
 
+- Modal/Confirm runtime contract: Core `src/js/kaui.js` keeps both dialogs static by default; only `data-k-backdrop="true"` enables backdrop dismissal, while Escape always closes. Keep demo controller behavior aligned with this public contract.
+
 
 - Template page changes: keep standalone templates under `demo/templates/` and link from `demo/templates.html` using `target="_blank" rel="noopener noreferrer"`.
 - Do not introduce runtime framework dependencies; use `.demo-template-*` auxiliary styles and standard `.k-*` component classes.
@@ -56,6 +63,8 @@
 1. Read `.kapul/PROJECT_CONTEXT.md`, `.kapul/TODO.md`, and `.kapul/DEPENDENCY_MAP.md`.
 2. Search all references to the target selector/API and assess blast radius.
 3. Preserve public `.k-*` and `.demo-*` contracts unless the task explicitly changes them.
+
+- Shared theme dropdown behavior is initialized by `dist/kaui.js` (built from `src/js/kaui.js`); `demo/demo.js` must not bind the same `[data-k-theme-preset]` container a second time. Theme changes still flow through the hidden select `change` event and are persisted under `kaui-theme`.
 
 ## During changes
 
@@ -78,6 +87,8 @@
 - `npm test` — run Node native test suite.
 - `npm run tokens:verify` and `npm run verify:release` when token/release artifacts are affected.
 - Icon expansion changes must add source SVGs through an idempotent generator, preserve existing names, run `npm run icons:priority:add` (or `npm run icons:build` after source edits), then run `npm test`, `npm run build`, and `git diff --check`. The gallery must continue to derive its catalog from the generated manifest rather than a hard-coded list.
+- Country flag icon expansion uses `npm run icons:flags:add`; it downloads the 195 ISO flags idempotently from the attributed flag-icons source, then runs `npm run icons:build`. Verify `categories.flags` count, representative `flag-vn`/`flag-us` symbols, `npm test`, `npm run build`, and `git diff --check`.
+
 
 
 - Phase 2 icon changes use `npm run icons:phase2:add`; verify the generated manifest count and representative names only after the build command completes (do not run concurrent artifact checks against the same generated files).

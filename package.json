@@ -1,6 +1,6 @@
 {
   "name": "kaui",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Production-ready modern SCSS/CSS kit with design tokens, responsive layout, and UI components",
   "main": "dist/kaui.css",
   "style": "dist/kaui.min.css",
@@ -40,6 +40,7 @@
     "verify:release": "node scripts/verify-release.mjs",
     "icons:build": "node scripts/build-icons.mjs",
     "icons:social:add": "node scripts/add-kaui-social-icons.mjs && npm run icons:build",
+    "icons:flags:add": "node scripts/add-kaui-flags.mjs && npm run icons:build",
     "icons:priority:add": "node scripts/add-kaui-priority-icons.mjs && npm run icons:build",
     "icons:phase2:add": "node scripts/add-kaui-phase2-icons.mjs && npm run icons:build",
     "icons:phase3:add": "node scripts/add-kaui-phase3-icons.mjs && npm run icons:build",

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -39,7 +40,8 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -87,13 +89,13 @@
               <p class="k-text-muted">Hardware security keys and TOTP authenticator app verification are enforced for all sessions.</p>
             </div>
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-tabs"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Pair each tab with a panel using <code>data-tab-target</code>. Mark the initial tab and panel with <code>is-active</code> and expose tab semantics with ARIA roles.</p><pre class="demo-code"><code>&lt;div class="k-tabs__list" role="tablist"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Pair each tab with a panel using <code>data-tab-target</code>. Mark the initial tab and panel with <code>is-active</code> and expose tab semantics with ARIA roles.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;div class="k-tabs__list" role="tablist"&gt;
   &lt;button class="k-tabs__tab is-active" data-tab-target="#profile" role="tab" aria-selected="true"&gt;Profile&lt;/button&gt;
 &lt;/div&gt;
-&lt;div id="profile" class="k-tabs__panel is-active" role="tabpanel"&gt;Profile content&lt;/div&gt;</code></pre></div>
+&lt;div id="profile" class="k-tabs__panel is-active" role="tabpanel"&gt;Profile content&lt;/div&gt;</code></pre></div></div>
         </div>
       </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.13</span></a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.14</span></a></div></div></div></footer></div>
 </body>
 </html>

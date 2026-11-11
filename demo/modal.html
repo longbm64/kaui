@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
   <script src="countries.js" defer></script>
 </head>
@@ -40,7 +41,8 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -83,18 +85,18 @@
             </div>
 
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-modal"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Add <code>is-open</code> to the modal container and dialog to show it. Use structured header, body, and footer areas.</p><pre class="demo-code"><code>&lt;div class="k-modal is-open" role="dialog" aria-modal="true"&gt;
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Add <code>is-open</code> to the modal container and <code>data-k-backdrop="static"</code> to keep it static (the default). Use <code>data-k-backdrop="true"</code> only when click-outside dismissal is required.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;div class="k-modal is-open" role="dialog" aria-modal="true" data-k-backdrop="static"&gt;
   &lt;div class="k-modal-backdrop"&gt;&lt;/div&gt;
   &lt;div class="k-modal__dialog"&gt;
     &lt;div class="k-modal__header"&gt;&lt;h3 class="k-modal__title"&gt;Title&lt;/h3&gt;&lt;/div&gt;
     &lt;div class="k-modal__body"&gt;Dialog body text&lt;/div&gt;
     &lt;div class="k-modal__footer"&gt;&lt;button type="button" class="k-btn k-btn--primary"&gt;Confirm&lt;/button&gt;&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre></div>
+&lt;/div&gt;</code></pre></div></div>
         </div>
       </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.13</span></a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.14</span></a></div></div></div></footer></div>
 
   <!-- Interactive modal dialogs. Keep these outside the content cards so the fixed overlay can cover the page. -->
   <div class="k-modal" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title" data-k-backdrop="static" aria-hidden="true">
@@ -104,7 +106,7 @@
         <h3 class="k-modal__title" id="demo-modal-title">Interactive Modal</h3>
         <button type="button" class="k-modal__close k-alert__close" id="demo-close-modal" aria-label="Close modal"><i data-kaui-icon="x"></i></button>
       </div>
-      <div class="k-modal__body"><p class="k-m-0">This modal is opened and closed with the buttons below, a click outside the dialog, or the Escape key.</p></div>
+      <div class="k-modal__body"><p class="k-m-0">This modal is opened and closed with the buttons below or the Escape key. Backdrop and outside clicks do not close it by default.</p></div>
       <div class="k-modal__footer">
         <button type="button" class="k-btn k-btn--outline" id="demo-cancel-modal">
           <span class="k-btn__icon"><i data-kaui-icon="x"></i></span>

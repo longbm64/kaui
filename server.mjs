@@ -18,7 +18,11 @@ const MIME_TYPES = {
 };
 
 function send(res, statusCode, body, headers = {}) {
-  res.writeHead(statusCode, { 'Content-Type': 'text/plain; charset=utf-8', ...headers });
+  res.writeHead(statusCode, {
+    'Content-Type': 'text/plain; charset=utf-8',
+    'Access-Control-Allow-Origin': '*',
+    ...headers
+  });
   res.end(body);
 }
 
@@ -51,7 +55,10 @@ const server = http.createServer((req, res) => {
   fs.stat(filePath, (statError, stats) => {
     if (statError || !stats.isFile()) { send(res, 404, 'Not Found\n'); return; }
     res.writeHead(200, {
-      'Cache-Control': path.extname(filePath) === '.html' ? 'no-cache' : 'public, max-age=3600',
+      'Access-Control-Allow-Origin': '*',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0',
       'Content-Length': stats.size,
       'Content-Type': MIME_TYPES[path.extname(filePath).toLowerCase()] || 'application/octet-stream'
     });

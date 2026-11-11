@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -39,7 +40,8 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -67,52 +69,54 @@
             <p class="demo-section-desc">KAUI tokens and contracts are prepared for Web/Next.js, Flutter, Android Compose, and iOS SwiftUI.</p>
           </div>
 
-          <div class="k-grid k-gap-4 k-mb-6">
-            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="globe" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Web / Next.js</h3><p class="k-text-muted k-fs-sm">Import the single CSS bundle globally.</p><code class="demo-code">kaui</code><a class="k-btn k-btn--sm k-btn--outline-primary k-mt-3" href="https://www.npmjs.com/package/filekat" target="_blank" rel="noopener noreferrer">View npm package</a></article></div>
-            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="smartphone" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Flutter</h3><p class="k-text-muted k-fs-sm">Use KauiTheme and core native widgets.</p><code class="demo-code">kaui</code><a class="k-btn k-btn--sm k-btn--outline-primary k-mt-3" href="https://pub.dev/packages/filekat" target="_blank" rel="noopener noreferrer">View pub.dev package</a></article></div>
-            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="tablet-smartphone" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Android Compose</h3><p class="k-text-muted k-fs-sm">Generate Compose tokens from the registry.</p><code class="demo-code">com.kaui</code></article></div>
-            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4"><i data-kaui-icon="apple" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">iOS SwiftUI</h3><p class="k-text-muted k-fs-sm">Use KauiTokens with SwiftUI views.</p><code class="demo-code">KaUI</code></article></div>
+
+
+          <div class="k-grid k-gap-4 k-mb-6 platform-card-grid">
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4 platform-card"><i data-kaui-icon="globe" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Web / Next.js</h3><p class="k-text-muted k-fs-sm">Import the single CSS bundle globally.</p><code class="demo-code">kaui</code><a class="k-btn k-btn--sm k-btn--outline-primary k-mt-3" href="https://www.npmjs.com/package/filekat" target="_blank" rel="noopener noreferrer">View npm package</a></article></div>
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4 platform-card"><i data-kaui-icon="smartphone" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Flutter</h3><p class="k-text-muted k-fs-sm">Use KauiTheme and core native widgets.</p><code class="demo-code">kaui</code><a class="k-btn k-btn--sm k-btn--outline-primary k-mt-3" href="https://pub.dev/packages/filekat" target="_blank" rel="noopener noreferrer">View pub.dev package</a></article></div>
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4 platform-card"><i data-kaui-icon="tablet-smartphone" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">Android Compose</h3><p class="k-text-muted k-fs-sm">Generate Compose tokens from the registry.</p><code class="demo-code">com.kaui</code><span class="platform-card__status"><i data-kaui-icon="clock" aria-hidden="true"></i> Coming soon</span></article></div>
+            <div class="k-col-12 k-col-md-6 k-col-lg-3"><article class="k-card k-card--bordered k-p-4 platform-card"><i data-kaui-icon="apple" class="k-card__icon k-mb-3"></i><h3 class="k-card__title">iOS SwiftUI</h3><p class="k-text-muted k-fs-sm">Use KauiTokens with SwiftUI views.</p><code class="demo-code">KaUI</code><span class="platform-card__status"><i data-kaui-icon="clock" aria-hidden="true"></i> In development</span></article></div>
           </div>
 
-          <div class="k-grid k-gap-4">
+          <div class="k-grid k-gap-4 platform-workflow-grid">
             <div class="k-col-12 k-col-lg-6">
               <article class="k-card k-card--bordered k-p-5">
                 <div class="k-flex k-items-center k-justify-between k-mb-3"><h3 class="k-card__title"><i data-kaui-icon="braces"></i> Design Tokens</h3><button type="button" class="demo-copy-button" data-copy-component="platform-tokens"><span class="demo-copy-label">Copy command</span></button></div>
                 <p class="k-text-muted k-fs-sm">One JSON source generates platform-ready token outputs.</p>
-                <pre class="demo-code"><code>npm run tokens:build
+                <div class="k-code-area"><pre class="k-code-area__pre"><code>npm run tokens:build
 npm run tokens:verify
 
 Source: tokens/kaui.tokens.json
-Output: dist/tokens/</code></pre>
+Output: dist/tokens/</code></pre></div>
               </article>
             </div>
             <div class="k-col-12 k-col-lg-6">
               <article class="k-card k-card--bordered k-p-5">
                 <div class="k-flex k-items-center k-justify-between k-mb-3"><h3 class="k-card__title"><i data-kaui-icon="shapes"></i> KAUI Icons</h3><button type="button" class="demo-copy-button" data-copy-component="platform-icons"><span class="demo-copy-label">Copy command</span></button></div>
                 <p class="k-text-muted k-fs-sm">Proprietary 24x24 SVG icons using currentColor and a shared sprite.</p>
-                <pre class="demo-code"><code>npm run icons:build
+                <div class="k-code-area"><pre class="k-code-area__pre"><code>npm run icons:build
 
 Source: icons/source/
-Output: dist/icons/</code></pre>
+Output: dist/icons/</code></pre></div>
               </article>
             </div>
             <div class="k-col-12">
               <article class="k-card k-card--bordered k-p-5">
                 <div class="k-flex k-items-center k-justify-between k-mb-3"><h3 class="k-card__title"><i data-kaui-icon="shield-check"></i> Release &amp; Commercial Compliance</h3><button type="button" class="demo-copy-button" data-copy-component="platform-release"><span class="demo-copy-label">Copy commands</span></button></div>
                 <p class="k-text-muted k-fs-sm">Verify artifacts, licenses, manifests, tokens, and icon outputs before publishing a release.</p>
-                <pre class="demo-code"><code>npm run audit:license
+                <div class="k-code-area"><pre class="k-code-area__pre"><code>npm run audit:license
 npm run verify:release
 npm test
 
 KAUI 1.0.x: MIT License
 KAUI 1.1.0+: Personal / Non-Commercial
-Commercial permission: contact@filekat.com</code></pre>
+Commercial permission: contact@filekat.com</code></pre></div>
               </article>
             </div>
           </div>
         </div>
       </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.13</span></a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.14</span></a></div></div></div></footer></div>
 </body>
 </html>

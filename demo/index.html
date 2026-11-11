@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -39,7 +40,8 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -63,7 +65,7 @@
 <section id="hero" class="demo-hero demo-hero--wide">
       <div class="k-container">
         <div class="demo-overview-header">
-          <span class="k-badge k-badge--primary k-badge--pill k-mb-3">v1.1.13 Production Ready</span>
+          <span class="k-badge k-badge--primary k-badge--pill k-mb-3">v1.1.14 Production Ready</span>
           <h1 class="k-fs-4xl k-fw-bold k-mb-3">Modern SCSS/CSS Kit &amp; Living Styleguide</h1>
           <p class="k-fs-xl k-text-muted k-mb-6">
             A lightweight, production-ready SCSS framework featuring a two-tier design token architecture, responsive 12-column grid, versatile BEM UI components, and native dark theme support.
@@ -78,10 +80,10 @@
                   <a class="k-btn k-btn--sm k-btn--outline-primary" href="https://www.npmjs.com/package/filekat" target="_blank" rel="noopener noreferrer">View on npm</a>
                 </div>
                 <p class="k-text-muted k-fs-sm k-mb-2">Install via npm and import the single production stylesheet at the application root.</p>
-                <pre class="demo-code" style="margin: 0;"><code>npm install filekat
+                <div class="k-code-area"><pre class="k-code-area__pre"><code>npm install filekat
 
 // app/layout.tsx (Next.js) or src/main.jsx (Vite)
-import 'filekat/kaui';</code></pre>
+import 'filekat/kaui';</code></pre></div>
               </div>
 
               <!-- 2. Flutter -->
@@ -91,10 +93,10 @@ import 'filekat/kaui';</code></pre>
                   <a class="k-btn k-btn--sm k-btn--outline-primary" href="https://pub.dev/packages/filekat" target="_blank" rel="noopener noreferrer">View on pub.dev</a>
                 </div>
                 <p class="k-text-muted k-fs-sm k-mb-2">Add the official Flutter package from pub.dev and import the KAUI widget kit.</p>
-                <pre class="demo-code" style="margin: 0;"><code>flutter pub add filekat
+                <div class="k-code-area"><pre class="k-code-area__pre"><code>flutter pub add filekat
 
 // lib/main.dart
-import 'package:filekat/kaui.dart';</code></pre>
+import 'package:filekat/kaui.dart';</code></pre></div>
               </div>
 
               <!-- 3. CDN / HTML -->
@@ -104,11 +106,11 @@ import 'package:filekat/kaui.dart';</code></pre>
                   <span class="k-badge k-badge--info k-badge--pill">Zero Setup</span>
                 </div>
                 <p class="k-text-muted k-fs-sm k-mb-2">Include stylesheet and official KAUI runtime directly from the release CDN:</p>
-                <pre class="demo-code" style="margin: 0;"><code>&lt;!-- Stylesheet: CSS Tokens, Components &amp; Icons --&gt;
+                <div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;!-- Stylesheet: CSS Tokens, Components &amp; Icons --&gt;
 &lt;link rel="stylesheet" href="https://kaui.filekat.com/dist/kaui.min.css"&gt;
 
 &lt;!-- Official KAUI Runtime: Dropdowns, Navbar Submenus, Modals, Tables, Tabs --&gt;
-&lt;script src="https://kaui.filekat.com/dist/kaui.min.js" defer&gt;&lt;/script&gt;</code></pre>
+&lt;script src="https://kaui.filekat.com/dist/kaui.min.js" defer&gt;&lt;/script&gt;</code></pre></div>
               </div>
             </div>
             <p class="k-text-muted k-fs-xs k-mt-4 k-mb-0">KAUI 1.1.0+ is Personal / Non-Commercial. Commercial use requires written permission: contact@filekat.com.</p>
@@ -135,7 +137,7 @@ Always consult official KAUI documentation and manifest before writing code. Do 
            GET https://kaui.filekat.com/dist/versions/index.json -&gt; read "latest" version.
    Step 2: Fetch and read the official machine-readable manifest:
            GET https://kaui.filekat.com/dist/versions/&lt;version&gt;/kaui-agent-manifest.json
-           (e.g., https://kaui.filekat.com/dist/versions/1.1.13/kaui-agent-manifest.json)
+           (e.g., https://kaui.filekat.com/dist/versions/1.1.14/kaui-agent-manifest.json)
            This manifest provides exact HTML snippets, classes, tokens, variants, and anatomy for EVERY component:
            - Buttons (components.button.htmlSnippet)
            - Navbar &amp; submenus (components.navbar.htmlSnippet)
@@ -178,6 +180,6 @@ Always consult official KAUI documentation and manifest before writing code. Do 
       </div>
     </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.13</span></a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.14</span></a></div></div></div></footer></div>
 </body>
 </html>

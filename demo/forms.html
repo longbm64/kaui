@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../dist/kaui.css">
   <link rel="stylesheet" href="../dist/icons/kaui-icons.css">
   <link rel="stylesheet" href="demo.css">
+  <script src="../dist/kaui.js" defer></script>
   <script src="demo.js" defer></script>
 </head>
 <body class="demo-body">
@@ -39,7 +40,8 @@
           <a href="accordion.html" class="demo-sidebar__link"><i data-kaui-icon="list-collapse"></i> <span>Accordion</span></a>
           <a href="indicators.html" class="demo-sidebar__link"><i data-kaui-icon="loader-2"></i> <span>Indicators</span></a>
           <a href="charts.html" class="demo-sidebar__link"><i data-kaui-icon="chart-no-axes-combined"></i> <span>Charts</span></a>
-          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="layers"></i> <span>Sidebar</span></a>
+          <a href="sidebar.html" class="demo-sidebar__link"><i data-kaui-icon="panel-left"></i> <span>Sidebar</span></a>
+          <a href="code-area.html" class="demo-sidebar__link"><i data-kaui-icon="code"></i> <span>Code Area</span></a>
         </div>
         <div class="demo-sidebar__group">
           <h2 class="demo-sidebar__group-title">Resources</h2>
@@ -115,6 +117,8 @@
                     </div>
                   </div>
                 </div>
+
+
 
                 <div class="k-form-group">
                   <div class="demo-form-label"><label for="demo-region-all" class="k-form-label">Region (Show All Option)</label><button type="button" class="demo-copy-button" data-copy-component="region-all"><span class="demo-copy-label">Copy code</span></button></div>
@@ -202,6 +206,8 @@
               <div class="k-card k-card--bordered k-p-6">
                 <h3 class="k-fs-lg k-fw-semibold k-mb-4">Validation States &amp; Feedback</h3>
 
+
+
                 <!-- Valid Input -->
                 <div class="k-form-group">
                   <div class="demo-form-label"><label for="demo-valid-email" class="k-form-label">Valid Username / Email</label><button type="button" class="demo-copy-button" data-copy-component="valid-email"><span class="demo-copy-label">Copy code</span></button></div>
@@ -235,14 +241,153 @@
               </div>
             </div>
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample <button type="button" class="demo-copy-button" data-copy-component="guide-forms"><span class="demo-copy-label">Copy code</span></button></h3><p class="k-text-muted k-fs-sm">Wrap controls in <code>.k-form-group</code>, pair labels with controls, and use <code>.k-form-feedback</code> for validation messaging.</p><pre class="demo-code"><code>&lt;div class="k-form-group"&gt;
+
+
+          <!-- Dedicated Card: Formatted Inputs & Interactive Pickers -->
+          <div class="k-card k-card--bordered k-p-6 k-mt-6">
+            <h3 class="k-fs-lg k-fw-semibold k-mb-4">Formatted Inputs &amp; Interactive Pickers</h3>
+            <p class="k-text-muted k-fs-sm k-mb-4">Controls with real-time formatting masks and interactive popovers (calendar, calculator). Users can select values from the popover or type directly seamlessly.</p>
+
+            <div class="k-grid k-gap-6">
+              <div class="k-col-12 k-col-md-6">
+                <!-- Date range with Calendar Picker -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label class="k-form-label">Date Range</label><button type="button" class="demo-copy-button" data-copy-component="date-range"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-range" data-k-input-range="date">
+                    <input class="k-input" type="text" data-k-input-format="date" placeholder="yyyy-MM-dd" aria-label="Start date">
+                    <span class="k-input-range__separator" aria-hidden="true">to</span>
+                    <input class="k-input" type="text" data-k-input-format="date" placeholder="yyyy-MM-dd" aria-label="End date">
+                  </div>
+                  <div class="k-form-feedback k-form-feedback--invalid k-d-none" data-k-range-feedback>End date cannot be earlier than start date.</div>
+                  <span class="k-form-hint">Interactive calendar popover or direct typing (yyyy-MM-dd).</span>
+                </div>
+
+                <!-- Month range with Month Picker -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label class="k-form-label">Month Range</label><button type="button" class="demo-copy-button" data-copy-component="month-range"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-range" data-k-input-range="month">
+                    <input class="k-input" type="text" data-k-input-format="month" placeholder="yyyy-MM" aria-label="Start month">
+                    <span class="k-input-range__separator" aria-hidden="true">to</span>
+                    <input class="k-input" type="text" data-k-input-format="month" placeholder="yyyy-MM" aria-label="End month">
+                  </div>
+                  <div class="k-form-feedback k-form-feedback--invalid k-d-none" data-k-range-feedback>End month cannot be earlier than start month.</div>
+                  <span class="k-form-hint">Interactive month popover or direct typing (yyyy-MM).</span>
+                </div>
+
+                <!-- Datetime with Calendar Picker -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-datetime" class="k-form-label">Date &amp; Time</label><button type="button" class="demo-copy-button" data-copy-component="datetime"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                    <input type="text" id="demo-datetime" class="k-input" data-k-input-format="datetime" placeholder="yyyy-MM-dd hh:ii:ss" value="2026-11-10 14:30:00">
+                  </div>
+                  <span class="k-form-hint">Select date from calendar or type directly (yyyy-MM-dd hh:ii:ss).</span>
+                </div>
+                <!-- Time with Calculator Pad -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-time" class="k-form-label">Time Only</label><button type="button" class="demo-copy-button" data-copy-component="time"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                    <input type="text" id="demo-time" class="k-input" data-k-input-format="time" placeholder="hh:ii:ss" value="14:30:00">
+                  </div>
+                  <span class="k-form-hint">Time format (hh:ii:ss). Select time from picker or type directly.</span>
+                </div>
+
+              </div>
+
+              <div class="k-col-12 k-col-md-6">
+                <!-- Amount & Money -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-amount" class="k-form-label">Amount / Money</label><button type="button" class="demo-copy-button" data-copy-component="amount"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                    <input type="text" id="demo-amount" class="k-input" data-k-input-format="amount" placeholder="e.g. 1.250.000,00" value="1.250.000,00">
+                  </div>
+                  <span class="k-form-hint">Formatted currency (xxx.xxx.xxx,xx). Type directly with automatic decimal &amp; thousands separators.</span>
+                </div>
+
+                <!-- Phone VN (10 digits) -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-phone-10" class="k-form-label">Phone 10 digits (VN)</label><button type="button" class="demo-copy-button" data-copy-component="phone-10"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                    <input type="text" id="demo-phone-10" class="k-input" data-k-input-format="phone-10" placeholder="0912-345-678" value="0912-345-678">
+                  </div>
+                  <span class="k-form-hint">Standard 10-digit mobile (xxxx-xxx-xxx).</span>
+                </div>
+
+                <!-- Phone VN (11 digits) -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-phone-11" class="k-form-label">Phone 11 digits (VN)</label><button type="button" class="demo-copy-button" data-copy-component="phone-11"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                    <input type="text" id="demo-phone-11" class="k-input" data-k-input-format="phone-11" placeholder="02435-678-901" value="02435-678-901">
+                  </div>
+                  <span class="k-form-hint">11-digit landline or prefix (xxxxx-xxx-xxx).</span>
+                </div>
+
+                <!-- Phone Global with Country Code -->
+                <div class="k-form-group">
+                  <div class="demo-form-label"><label for="demo-phone-global" class="k-form-label">Phone Global (+Country Code)</label><button type="button" class="demo-copy-button" data-copy-component="phone-global"><span class="demo-copy-label">Copy code</span></button></div>
+                  <div class="k-input-wrapper">
+                    <input type="text" id="demo-phone-global" class="k-input" data-k-input-format="phone-global" placeholder="+84 945777323" value="+84 945777323">
+                  </div>
+                  <span class="k-form-hint">International with calling code (+mã vùng xxxxx, tự nhận dạng mã vùng 1, 2, 3 số).</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Wrap controls in <code>.k-form-group</code>, pair labels with controls, and use <code>data-k-input-format</code> for automatic masking &amp; interactive pickers.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;!-- 1. Standard text input with label &amp; hint --&gt;
+&lt;div class="k-form-group"&gt;
   &lt;label for="email" class="k-form-label"&gt;Email&lt;/label&gt;
-  &lt;input id="email" class="k-input" type="email"&gt;
+  &lt;input id="email" class="k-input" type="email" placeholder="name@example.com"&gt;
   &lt;span class="k-form-hint"&gt;We never share your email.&lt;/span&gt;
-&lt;/div&gt;</code></pre></div>
+&lt;/div&gt;
+
+&lt;!-- 2. Input with icon prefix --&gt;
+&lt;div class="k-input-wrapper"&gt;
+  &lt;i data-kaui-icon="mail" class="k-input__icon k-input__icon--left"&gt;&lt;/i&gt;
+  &lt;input class="k-input" type="email" placeholder="user@company.com"&gt;
+&lt;/div&gt;
+
+&lt;!-- 3. Password input with native eye toggle --&gt;
+&lt;div class="k-input-wrapper"&gt;
+  &lt;input type="password" id="user-pwd" class="k-input" placeholder="Password"&gt;
+  &lt;button type="button" class="k-input__password-toggle" data-k-password-toggle="user-pwd" aria-label="Toggle password"&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- 4. Date Picker (yyyy-MM-dd) --&gt;
+&lt;input type="text" class="k-input" data-k-input-format="date" placeholder="yyyy-MM-dd"&gt;
+
+&lt;!-- 5. Date &amp; Time Picker with time selector (yyyy-MM-dd hh:ii:ss) --&gt;
+&lt;input type="text" class="k-input" data-k-input-format="datetime" placeholder="yyyy-MM-dd hh:ii:ss"&gt;
+
+&lt;!-- 6. Time Only with time picker (hh:ii:ss) --&gt;
+&lt;input type="text" class="k-input" data-k-input-format="time" placeholder="hh:ii:ss"&gt;
+
+&lt;!-- 7. Month Picker (yyyy-MM) --&gt;
+&lt;input type="text" class="k-input" data-k-input-format="month" placeholder="yyyy-MM"&gt;
+
+&lt;!-- 8. Date Range Validation (start &lt;= end) --&gt;
+&lt;div class="k-input-range" data-k-input-range="date"&gt;
+  &lt;input class="k-input" type="text" data-k-input-format="date" placeholder="Start date"&gt;
+  &lt;span class="k-input-range__separator"&gt;to&lt;/span&gt;
+  &lt;input class="k-input" type="text" data-k-input-format="date" placeholder="End date"&gt;
+&lt;/div&gt;
+
+&lt;!-- 9. Month Range Validation (start &lt;= end) --&gt;
+&lt;div class="k-input-range" data-k-input-range="month"&gt;
+  &lt;input class="k-input" type="text" data-k-input-format="month" placeholder="Start month"&gt;
+  &lt;span class="k-input-range__separator"&gt;to&lt;/span&gt;
+  &lt;input class="k-input" type="text" data-k-input-format="month" placeholder="End month"&gt;
+&lt;/div&gt;
+
+&lt;!-- 10. Amount / Money auto-formatted (1.250.000,00) --&gt;
+&lt;input type="text" class="k-input" data-k-input-format="amount" placeholder="xxx.xxx.xxx,xx"&gt;
+
+&lt;!-- 11. Phone numbers (10 digits, 11 digits, Global) --&gt;
+&lt;input type="text" class="k-input" data-k-input-format="phone-10" placeholder="0912-345-678"&gt;
+&lt;input type="text" class="k-input" data-k-input-format="phone-11" placeholder="02435-678-901"&gt;
+&lt;input type="text" class="k-input" data-k-input-format="phone-global" placeholder="+84 945777323"&gt;</code></pre></div></div>
         </div>
       </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.13</span></a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.14</span></a></div></div></div></footer></div>
 </body>
 </html>
