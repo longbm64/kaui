@@ -148,6 +148,201 @@
     "fingerprint",
     "fire",
     "first-aid",
+    "flag-afghanistan",
+    "flag-albania",
+    "flag-algeria",
+    "flag-andorra",
+    "flag-angola",
+    "flag-antigua-and-barbuda",
+    "flag-argentina",
+    "flag-armenia",
+    "flag-australia",
+    "flag-austria",
+    "flag-azerbaijan",
+    "flag-bahamas",
+    "flag-bahrain",
+    "flag-bangladesh",
+    "flag-barbados",
+    "flag-belarus",
+    "flag-belgium",
+    "flag-belize",
+    "flag-benin",
+    "flag-bhutan",
+    "flag-bolivia",
+    "flag-bosnia-and-herzegovina",
+    "flag-botswana",
+    "flag-brazil",
+    "flag-brunei",
+    "flag-bulgaria",
+    "flag-burkina-faso",
+    "flag-burundi",
+    "flag-cabo-verde",
+    "flag-cambodia",
+    "flag-cameroon",
+    "flag-canada",
+    "flag-central-african-republic",
+    "flag-chad",
+    "flag-chile",
+    "flag-china",
+    "flag-colombia",
+    "flag-comoros",
+    "flag-costa-rica",
+    "flag-croatia",
+    "flag-cuba",
+    "flag-cyprus",
+    "flag-czechia",
+    "flag-democratic-republic-of-the-congo",
+    "flag-denmark",
+    "flag-djibouti",
+    "flag-dominica",
+    "flag-dominican-republic",
+    "flag-east-timor",
+    "flag-ecuador",
+    "flag-egypt",
+    "flag-el-salvador",
+    "flag-equatorial-guinea",
+    "flag-eritrea",
+    "flag-estonia",
+    "flag-eswatini",
+    "flag-ethiopia",
+    "flag-fiji",
+    "flag-finland",
+    "flag-france",
+    "flag-gabon",
+    "flag-gambia",
+    "flag-georgia",
+    "flag-germany",
+    "flag-ghana",
+    "flag-greece",
+    "flag-grenada",
+    "flag-guatemala",
+    "flag-guinea",
+    "flag-guinea-bissau",
+    "flag-guyana",
+    "flag-haiti",
+    "flag-honduras",
+    "flag-hungary",
+    "flag-iceland",
+    "flag-india",
+    "flag-indonesia",
+    "flag-iran",
+    "flag-iraq",
+    "flag-ireland",
+    "flag-israel",
+    "flag-italy",
+    "flag-jamaica",
+    "flag-japan",
+    "flag-jordan",
+    "flag-kazakhstan",
+    "flag-kenya",
+    "flag-kiribati",
+    "flag-kosovo",
+    "flag-kuwait",
+    "flag-kyrgyzstan",
+    "flag-laos",
+    "flag-latvia",
+    "flag-lebanon",
+    "flag-lesotho",
+    "flag-liberia",
+    "flag-libya",
+    "flag-liechtenstein",
+    "flag-lithuania",
+    "flag-luxembourg",
+    "flag-madagascar",
+    "flag-malawi",
+    "flag-malaysia",
+    "flag-maldives",
+    "flag-mali",
+    "flag-malta",
+    "flag-marshall-islands",
+    "flag-mauritania",
+    "flag-mauritius",
+    "flag-mexico",
+    "flag-micronesia",
+    "flag-moldova",
+    "flag-monaco",
+    "flag-mongolia",
+    "flag-montenegro",
+    "flag-morocco",
+    "flag-mozambique",
+    "flag-myanmar",
+    "flag-namibia",
+    "flag-nauru",
+    "flag-nepal",
+    "flag-netherlands",
+    "flag-new-zealand",
+    "flag-nicaragua",
+    "flag-niger",
+    "flag-nigeria",
+    "flag-north-korea",
+    "flag-north-macedonia",
+    "flag-norway",
+    "flag-oman",
+    "flag-pakistan",
+    "flag-palau",
+    "flag-palestine",
+    "flag-panama",
+    "flag-papua-new-guinea",
+    "flag-paraguay",
+    "flag-peru",
+    "flag-philippines",
+    "flag-poland",
+    "flag-portugal",
+    "flag-qatar",
+    "flag-republic-of-the-congo",
+    "flag-romania",
+    "flag-russia",
+    "flag-rwanda",
+    "flag-saint-kitts-and-nevis",
+    "flag-saint-lucia",
+    "flag-saint-vincent-and-the-grenadines",
+    "flag-samoa",
+    "flag-san-marino",
+    "flag-sao-tome-and-principe",
+    "flag-saudi-arabia",
+    "flag-senegal",
+    "flag-serbia",
+    "flag-seychelles",
+    "flag-sierra-leone",
+    "flag-singapore",
+    "flag-slovakia",
+    "flag-slovenia",
+    "flag-solomon-islands",
+    "flag-somalia",
+    "flag-south-africa",
+    "flag-south-korea",
+    "flag-south-sudan",
+    "flag-spain",
+    "flag-sri-lanka",
+    "flag-sudan",
+    "flag-suriname",
+    "flag-sweden",
+    "flag-switzerland",
+    "flag-syria",
+    "flag-tajikistan",
+    "flag-tanzania",
+    "flag-thailand",
+    "flag-togo",
+    "flag-tonga",
+    "flag-trinidad-and-tobago",
+    "flag-tunisia",
+    "flag-turkiye",
+    "flag-turkmenistan",
+    "flag-tuvalu",
+    "flag-uganda",
+    "flag-ukraine",
+    "flag-united-arab-emirates",
+    "flag-united-kingdom",
+    "flag-united-states",
+    "flag-uruguay",
+    "flag-uzbekistan",
+    "flag-vanuatu",
+    "flag-vatican-city",
+    "flag-venezuela",
+    "flag-vietnam",
+    "flag-yemen",
+    "flag-zambia",
+    "flag-zimbabwe",
     "flight",
     "folder",
     "folder-check",
@@ -410,2405 +605,4369 @@
     "workflow",
     "zap"
   ],
+  "categories": {
+    "flags": [
+      "flag-afghanistan",
+      "flag-albania",
+      "flag-algeria",
+      "flag-andorra",
+      "flag-angola",
+      "flag-antigua-and-barbuda",
+      "flag-argentina",
+      "flag-armenia",
+      "flag-australia",
+      "flag-austria",
+      "flag-azerbaijan",
+      "flag-bahamas",
+      "flag-bahrain",
+      "flag-bangladesh",
+      "flag-barbados",
+      "flag-belarus",
+      "flag-belgium",
+      "flag-belize",
+      "flag-benin",
+      "flag-bhutan",
+      "flag-bolivia",
+      "flag-bosnia-and-herzegovina",
+      "flag-botswana",
+      "flag-brazil",
+      "flag-brunei",
+      "flag-bulgaria",
+      "flag-burkina-faso",
+      "flag-burundi",
+      "flag-cabo-verde",
+      "flag-cambodia",
+      "flag-cameroon",
+      "flag-canada",
+      "flag-central-african-republic",
+      "flag-chad",
+      "flag-chile",
+      "flag-china",
+      "flag-colombia",
+      "flag-comoros",
+      "flag-costa-rica",
+      "flag-croatia",
+      "flag-cuba",
+      "flag-cyprus",
+      "flag-czechia",
+      "flag-democratic-republic-of-the-congo",
+      "flag-denmark",
+      "flag-djibouti",
+      "flag-dominica",
+      "flag-dominican-republic",
+      "flag-east-timor",
+      "flag-ecuador",
+      "flag-egypt",
+      "flag-el-salvador",
+      "flag-equatorial-guinea",
+      "flag-eritrea",
+      "flag-estonia",
+      "flag-eswatini",
+      "flag-ethiopia",
+      "flag-fiji",
+      "flag-finland",
+      "flag-france",
+      "flag-gabon",
+      "flag-gambia",
+      "flag-georgia",
+      "flag-germany",
+      "flag-ghana",
+      "flag-greece",
+      "flag-grenada",
+      "flag-guatemala",
+      "flag-guinea",
+      "flag-guinea-bissau",
+      "flag-guyana",
+      "flag-haiti",
+      "flag-honduras",
+      "flag-hungary",
+      "flag-iceland",
+      "flag-india",
+      "flag-indonesia",
+      "flag-iran",
+      "flag-iraq",
+      "flag-ireland",
+      "flag-israel",
+      "flag-italy",
+      "flag-jamaica",
+      "flag-japan",
+      "flag-jordan",
+      "flag-kazakhstan",
+      "flag-kenya",
+      "flag-kiribati",
+      "flag-kosovo",
+      "flag-kuwait",
+      "flag-kyrgyzstan",
+      "flag-laos",
+      "flag-latvia",
+      "flag-lebanon",
+      "flag-lesotho",
+      "flag-liberia",
+      "flag-libya",
+      "flag-liechtenstein",
+      "flag-lithuania",
+      "flag-luxembourg",
+      "flag-madagascar",
+      "flag-malawi",
+      "flag-malaysia",
+      "flag-maldives",
+      "flag-mali",
+      "flag-malta",
+      "flag-marshall-islands",
+      "flag-mauritania",
+      "flag-mauritius",
+      "flag-mexico",
+      "flag-micronesia",
+      "flag-moldova",
+      "flag-monaco",
+      "flag-mongolia",
+      "flag-montenegro",
+      "flag-morocco",
+      "flag-mozambique",
+      "flag-myanmar",
+      "flag-namibia",
+      "flag-nauru",
+      "flag-nepal",
+      "flag-netherlands",
+      "flag-new-zealand",
+      "flag-nicaragua",
+      "flag-niger",
+      "flag-nigeria",
+      "flag-north-korea",
+      "flag-north-macedonia",
+      "flag-norway",
+      "flag-oman",
+      "flag-pakistan",
+      "flag-palau",
+      "flag-palestine",
+      "flag-panama",
+      "flag-papua-new-guinea",
+      "flag-paraguay",
+      "flag-peru",
+      "flag-philippines",
+      "flag-poland",
+      "flag-portugal",
+      "flag-qatar",
+      "flag-republic-of-the-congo",
+      "flag-romania",
+      "flag-russia",
+      "flag-rwanda",
+      "flag-saint-kitts-and-nevis",
+      "flag-saint-lucia",
+      "flag-saint-vincent-and-the-grenadines",
+      "flag-samoa",
+      "flag-san-marino",
+      "flag-sao-tome-and-principe",
+      "flag-saudi-arabia",
+      "flag-senegal",
+      "flag-serbia",
+      "flag-seychelles",
+      "flag-sierra-leone",
+      "flag-singapore",
+      "flag-slovakia",
+      "flag-slovenia",
+      "flag-solomon-islands",
+      "flag-somalia",
+      "flag-south-africa",
+      "flag-south-korea",
+      "flag-south-sudan",
+      "flag-spain",
+      "flag-sri-lanka",
+      "flag-sudan",
+      "flag-suriname",
+      "flag-sweden",
+      "flag-switzerland",
+      "flag-syria",
+      "flag-tajikistan",
+      "flag-tanzania",
+      "flag-thailand",
+      "flag-togo",
+      "flag-tonga",
+      "flag-trinidad-and-tobago",
+      "flag-tunisia",
+      "flag-turkiye",
+      "flag-turkmenistan",
+      "flag-tuvalu",
+      "flag-uganda",
+      "flag-ukraine",
+      "flag-united-arab-emirates",
+      "flag-united-kingdom",
+      "flag-united-states",
+      "flag-uruguay",
+      "flag-uzbekistan",
+      "flag-vanuatu",
+      "flag-vatican-city",
+      "flag-venezuela",
+      "flag-vietnam",
+      "flag-yemen",
+      "flag-zambia",
+      "flag-zimbabwe"
+    ]
+  },
   "entries": [
     {
       "name": "accessibility",
       "source": "icons/source/kaui/accessibility.svg",
       "symbol": "accessibility",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "accessibility-sign",
       "source": "icons/source/kaui/accessibility-sign.svg",
       "symbol": "accessibility-sign",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "activity",
       "source": "icons/source/kaui/activity.svg",
       "symbol": "activity",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "add",
       "source": "icons/source/kaui/add.svg",
       "symbol": "add",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "ai-stars",
       "source": "icons/source/kaui/ai-stars.svg",
       "symbol": "ai-stars",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "air-conditioner",
       "source": "icons/source/kaui/air-conditioner.svg",
       "symbol": "air-conditioner",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "airport",
       "source": "icons/source/kaui/airport.svg",
       "symbol": "airport",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "align-center",
       "source": "icons/source/kaui/align-center.svg",
       "symbol": "align-center",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "align-left",
       "source": "icons/source/kaui/align-left.svg",
       "symbol": "align-left",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "align-right",
       "source": "icons/source/kaui/align-right.svg",
       "symbol": "align-right",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "analytics",
       "source": "icons/source/kaui/analytics.svg",
       "symbol": "analytics",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "api",
       "source": "icons/source/kaui/api.svg",
       "symbol": "api",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "approval",
       "source": "icons/source/kaui/approval.svg",
       "symbol": "approval",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "archive",
       "source": "icons/source/kaui/archive.svg",
       "symbol": "archive",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "arrow-down",
       "source": "icons/source/kaui/arrow-down.svg",
       "symbol": "arrow-down",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "arrow-down-left",
       "source": "icons/source/kaui/arrow-down-left.svg",
       "symbol": "arrow-down-left",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "arrow-left",
       "source": "icons/source/kaui/arrow-left.svg",
       "symbol": "arrow-left",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "arrow-right",
       "source": "icons/source/kaui/arrow-right.svg",
       "symbol": "arrow-right",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "arrow-up",
       "source": "icons/source/kaui/arrow-up.svg",
       "symbol": "arrow-up",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "arrow-up-down",
       "source": "icons/source/kaui/arrow-up-down.svg",
       "symbol": "arrow-up-down",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "arrow-up-right",
       "source": "icons/source/kaui/arrow-up-right.svg",
       "symbol": "arrow-up-right",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "article",
       "source": "icons/source/kaui/article.svg",
       "symbol": "article",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "at-sign",
       "source": "icons/source/kaui/at-sign.svg",
       "symbol": "at-sign",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "badge-check",
       "source": "icons/source/kaui/badge-check.svg",
       "symbol": "badge-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "banknote",
       "source": "icons/source/kaui/banknote.svg",
       "symbol": "banknote",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "battery",
       "source": "icons/source/kaui/battery.svg",
       "symbol": "battery",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "battery-low",
       "source": "icons/source/kaui/battery-low.svg",
       "symbol": "battery-low",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bed",
       "source": "icons/source/kaui/bed.svg",
       "symbol": "bed",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bell",
       "source": "icons/source/kaui/bell.svg",
       "symbol": "bell",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bike",
       "source": "icons/source/kaui/bike.svg",
       "symbol": "bike",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "billing",
       "source": "icons/source/kaui/billing.svg",
       "symbol": "billing",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "boarding-pass",
       "source": "icons/source/kaui/boarding-pass.svg",
       "symbol": "boarding-pass",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bold",
       "source": "icons/source/kaui/bold.svg",
       "symbol": "bold",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "book",
       "source": "icons/source/kaui/book.svg",
       "symbol": "book",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "book-open",
       "source": "icons/source/kaui/book-open.svg",
       "symbol": "book-open",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bookmark",
       "source": "icons/source/kaui/bookmark.svg",
       "symbol": "bookmark",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bookmark-check",
       "source": "icons/source/kaui/bookmark-check.svg",
       "symbol": "bookmark-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bookmark-plus",
       "source": "icons/source/kaui/bookmark-plus.svg",
       "symbol": "bookmark-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bot",
       "source": "icons/source/kaui/bot.svg",
       "symbol": "bot",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "braces",
       "source": "icons/source/kaui/braces.svg",
       "symbol": "braces",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "brackets",
       "source": "icons/source/kaui/brackets.svg",
       "symbol": "brackets",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "brain",
       "source": "icons/source/kaui/brain.svg",
       "symbol": "brain",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "branch",
       "source": "icons/source/kaui/branch.svg",
       "symbol": "branch",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "briefcase",
       "source": "icons/source/kaui/briefcase.svg",
       "symbol": "briefcase",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "broadcast",
       "source": "icons/source/kaui/broadcast.svg",
       "symbol": "broadcast",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bug",
       "source": "icons/source/kaui/bug.svg",
       "symbol": "bug",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "bug-off",
       "source": "icons/source/kaui/bug-off.svg",
       "symbol": "bug-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "building",
       "source": "icons/source/kaui/building.svg",
       "symbol": "building",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "calculator",
       "source": "icons/source/kaui/calculator.svg",
       "symbol": "calculator",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "calendar",
       "source": "icons/source/kaui/calendar.svg",
       "symbol": "calendar",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "calendar-check",
       "source": "icons/source/kaui/calendar-check.svg",
       "symbol": "calendar-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "calendar-medical",
       "source": "icons/source/kaui/calendar-medical.svg",
       "symbol": "calendar-medical",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "calendar-plus",
       "source": "icons/source/kaui/calendar-plus.svg",
       "symbol": "calendar-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "camera",
       "source": "icons/source/kaui/camera.svg",
       "symbol": "camera",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "camera-home",
       "source": "icons/source/kaui/camera-home.svg",
       "symbol": "camera-home",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "captions",
       "source": "icons/source/kaui/captions.svg",
       "symbol": "captions",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "car",
       "source": "icons/source/kaui/car.svg",
       "symbol": "car",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "car-rental",
       "source": "icons/source/kaui/car-rental.svg",
       "symbol": "car-rental",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "certificate",
       "source": "icons/source/kaui/certificate.svg",
       "symbol": "certificate",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chart-bar",
       "source": "icons/source/kaui/chart-bar.svg",
       "symbol": "chart-bar",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chart-candlestick",
       "source": "icons/source/kaui/chart-candlestick.svg",
       "symbol": "chart-candlestick",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chart-line",
       "source": "icons/source/kaui/chart-line.svg",
       "symbol": "chart-line",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chart-pie",
       "source": "icons/source/kaui/chart-pie.svg",
       "symbol": "chart-pie",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "check",
       "source": "icons/source/kaui/check.svg",
       "symbol": "check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chevron-down",
       "source": "icons/source/kaui/chevron-down.svg",
       "symbol": "chevron-down",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chevron-left",
       "source": "icons/source/kaui/chevron-left.svg",
       "symbol": "chevron-left",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chevron-right",
       "source": "icons/source/kaui/chevron-right.svg",
       "symbol": "chevron-right",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "chevron-up",
       "source": "icons/source/kaui/chevron-up.svg",
       "symbol": "chevron-up",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "classroom",
       "source": "icons/source/kaui/classroom.svg",
       "symbol": "classroom",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "clipboard",
       "source": "icons/source/kaui/clipboard.svg",
       "symbol": "clipboard",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "clipboard-check",
       "source": "icons/source/kaui/clipboard-check.svg",
       "symbol": "clipboard-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "clipboard-x",
       "source": "icons/source/kaui/clipboard-x.svg",
       "symbol": "clipboard-x",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "clock",
       "source": "icons/source/kaui/clock.svg",
       "symbol": "clock",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "close",
       "source": "icons/source/kaui/close.svg",
       "symbol": "close",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "cloud",
       "source": "icons/source/kaui/cloud.svg",
       "symbol": "cloud",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "cloud-cog",
       "source": "icons/source/kaui/cloud-cog.svg",
       "symbol": "cloud-cog",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "cloud-download",
       "source": "icons/source/kaui/cloud-download.svg",
       "symbol": "cloud-download",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "cloud-upload",
       "source": "icons/source/kaui/cloud-upload.svg",
       "symbol": "cloud-upload",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "code",
       "source": "icons/source/kaui/code.svg",
       "symbol": "code",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "code-branch",
       "source": "icons/source/kaui/code-branch.svg",
       "symbol": "code-branch",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "code-review",
       "source": "icons/source/kaui/code-review.svg",
       "symbol": "code-review",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "coffee",
       "source": "icons/source/kaui/coffee.svg",
       "symbol": "coffee",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "coins",
       "source": "icons/source/kaui/coins.svg",
       "symbol": "coins",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "collapse",
       "source": "icons/source/kaui/collapse.svg",
       "symbol": "collapse",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "columns",
       "source": "icons/source/kaui/columns.svg",
       "symbol": "columns",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "command",
       "source": "icons/source/kaui/command.svg",
       "symbol": "command",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "comment",
       "source": "icons/source/kaui/comment.svg",
       "symbol": "comment",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "comments",
       "source": "icons/source/kaui/comments.svg",
       "symbol": "comments",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "commission",
       "source": "icons/source/kaui/commission.svg",
       "symbol": "commission",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "compass",
       "source": "icons/source/kaui/compass.svg",
       "symbol": "compass",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "compass-navigation",
       "source": "icons/source/kaui/compass-navigation.svg",
       "symbol": "compass-navigation",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "content-calendar",
       "source": "icons/source/kaui/content-calendar.svg",
       "symbol": "content-calendar",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "contrast",
       "source": "icons/source/kaui/contrast.svg",
       "symbol": "contrast",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "copy",
       "source": "icons/source/kaui/copy.svg",
       "symbol": "copy",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "cpu",
       "source": "icons/source/kaui/cpu.svg",
       "symbol": "cpu",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "credit-card",
       "source": "icons/source/kaui/credit-card.svg",
       "symbol": "credit-card",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "credit-card-off",
       "source": "icons/source/kaui/credit-card-off.svg",
       "symbol": "credit-card-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "credit-card-plus",
       "source": "icons/source/kaui/credit-card-plus.svg",
       "symbol": "credit-card-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "crown",
       "source": "icons/source/kaui/crown.svg",
       "symbol": "crown",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "currency",
       "source": "icons/source/kaui/currency.svg",
       "symbol": "currency",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "dashboard",
       "source": "icons/source/kaui/dashboard.svg",
       "symbol": "dashboard",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "database",
       "source": "icons/source/kaui/database.svg",
       "symbol": "database",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "database-backup",
       "source": "icons/source/kaui/database-backup.svg",
       "symbol": "database-backup",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "delete",
       "source": "icons/source/kaui/delete.svg",
       "symbol": "delete",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "delivery",
       "source": "icons/source/kaui/delivery.svg",
       "symbol": "delivery",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "deployment",
       "source": "icons/source/kaui/deployment.svg",
       "symbol": "deployment",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "dice",
       "source": "icons/source/kaui/dice.svg",
       "symbol": "dice",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "dollar",
       "source": "icons/source/kaui/dollar.svg",
       "symbol": "dollar",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "door",
       "source": "icons/source/kaui/door.svg",
       "symbol": "door",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "door-open",
       "source": "icons/source/kaui/door-open.svg",
       "symbol": "door-open",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "download",
       "source": "icons/source/kaui/download.svg",
       "symbol": "download",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "download-cloud",
       "source": "icons/source/kaui/download-cloud.svg",
       "symbol": "download-cloud",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "draft",
       "source": "icons/source/kaui/draft.svg",
       "symbol": "draft",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "edit",
       "source": "icons/source/kaui/edit.svg",
       "symbol": "edit",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "emergency",
       "source": "icons/source/kaui/emergency.svg",
       "symbol": "emergency",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "error",
       "source": "icons/source/kaui/error.svg",
       "symbol": "error",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "error-circle",
       "source": "icons/source/kaui/error-circle.svg",
       "symbol": "error-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "euro",
       "source": "icons/source/kaui/euro.svg",
       "symbol": "euro",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "expand",
       "source": "icons/source/kaui/expand.svg",
       "symbol": "expand",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "export",
       "source": "icons/source/kaui/export.svg",
       "symbol": "export",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "external-link",
       "source": "icons/source/kaui/external-link.svg",
       "symbol": "external-link",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "eye",
       "source": "icons/source/kaui/eye.svg",
       "symbol": "eye",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "eye-dropper",
       "source": "icons/source/kaui/eye-dropper.svg",
       "symbol": "eye-dropper",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "eye-off",
       "source": "icons/source/kaui/eye-off.svg",
       "symbol": "eye-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "fee",
       "source": "icons/source/kaui/fee.svg",
       "symbol": "fee",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file",
       "source": "icons/source/kaui/file.svg",
       "symbol": "file",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file-check",
       "source": "icons/source/kaui/file-check.svg",
       "symbol": "file-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file-code",
       "source": "icons/source/kaui/file-code.svg",
       "symbol": "file-code",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file-minus",
       "source": "icons/source/kaui/file-minus.svg",
       "symbol": "file-minus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file-plus",
       "source": "icons/source/kaui/file-plus.svg",
       "symbol": "file-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file-spreadsheet",
       "source": "icons/source/kaui/file-spreadsheet.svg",
       "symbol": "file-spreadsheet",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file-text",
       "source": "icons/source/kaui/file-text.svg",
       "symbol": "file-text",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "file-x",
       "source": "icons/source/kaui/file-x.svg",
       "symbol": "file-x",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "film",
       "source": "icons/source/kaui/film.svg",
       "symbol": "film",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "filter",
       "source": "icons/source/kaui/filter.svg",
       "symbol": "filter",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "filter-plus",
       "source": "icons/source/kaui/filter-plus.svg",
       "symbol": "filter-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "fingerprint",
       "source": "icons/source/kaui/fingerprint.svg",
       "symbol": "fingerprint",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "fire",
       "source": "icons/source/kaui/fire.svg",
       "symbol": "fire",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "first-aid",
       "source": "icons/source/kaui/first-aid.svg",
       "symbol": "first-aid",
+      "category": "ui",
       "ownership": "KAUI-owned"
+    },
+    {
+      "name": "flag-afghanistan",
+      "source": "icons/source/kaui/flag-afghanistan.svg",
+      "symbol": "flag-afghanistan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-albania",
+      "source": "icons/source/kaui/flag-albania.svg",
+      "symbol": "flag-albania",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-algeria",
+      "source": "icons/source/kaui/flag-algeria.svg",
+      "symbol": "flag-algeria",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-andorra",
+      "source": "icons/source/kaui/flag-andorra.svg",
+      "symbol": "flag-andorra",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-angola",
+      "source": "icons/source/kaui/flag-angola.svg",
+      "symbol": "flag-angola",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-antigua-and-barbuda",
+      "source": "icons/source/kaui/flag-antigua-and-barbuda.svg",
+      "symbol": "flag-antigua-and-barbuda",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-argentina",
+      "source": "icons/source/kaui/flag-argentina.svg",
+      "symbol": "flag-argentina",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-armenia",
+      "source": "icons/source/kaui/flag-armenia.svg",
+      "symbol": "flag-armenia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-australia",
+      "source": "icons/source/kaui/flag-australia.svg",
+      "symbol": "flag-australia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-austria",
+      "source": "icons/source/kaui/flag-austria.svg",
+      "symbol": "flag-austria",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-azerbaijan",
+      "source": "icons/source/kaui/flag-azerbaijan.svg",
+      "symbol": "flag-azerbaijan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-bahamas",
+      "source": "icons/source/kaui/flag-bahamas.svg",
+      "symbol": "flag-bahamas",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-bahrain",
+      "source": "icons/source/kaui/flag-bahrain.svg",
+      "symbol": "flag-bahrain",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-bangladesh",
+      "source": "icons/source/kaui/flag-bangladesh.svg",
+      "symbol": "flag-bangladesh",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-barbados",
+      "source": "icons/source/kaui/flag-barbados.svg",
+      "symbol": "flag-barbados",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-belarus",
+      "source": "icons/source/kaui/flag-belarus.svg",
+      "symbol": "flag-belarus",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-belgium",
+      "source": "icons/source/kaui/flag-belgium.svg",
+      "symbol": "flag-belgium",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-belize",
+      "source": "icons/source/kaui/flag-belize.svg",
+      "symbol": "flag-belize",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-benin",
+      "source": "icons/source/kaui/flag-benin.svg",
+      "symbol": "flag-benin",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-bhutan",
+      "source": "icons/source/kaui/flag-bhutan.svg",
+      "symbol": "flag-bhutan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-bolivia",
+      "source": "icons/source/kaui/flag-bolivia.svg",
+      "symbol": "flag-bolivia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-bosnia-and-herzegovina",
+      "source": "icons/source/kaui/flag-bosnia-and-herzegovina.svg",
+      "symbol": "flag-bosnia-and-herzegovina",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-botswana",
+      "source": "icons/source/kaui/flag-botswana.svg",
+      "symbol": "flag-botswana",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-brazil",
+      "source": "icons/source/kaui/flag-brazil.svg",
+      "symbol": "flag-brazil",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-brunei",
+      "source": "icons/source/kaui/flag-brunei.svg",
+      "symbol": "flag-brunei",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-bulgaria",
+      "source": "icons/source/kaui/flag-bulgaria.svg",
+      "symbol": "flag-bulgaria",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-burkina-faso",
+      "source": "icons/source/kaui/flag-burkina-faso.svg",
+      "symbol": "flag-burkina-faso",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-burundi",
+      "source": "icons/source/kaui/flag-burundi.svg",
+      "symbol": "flag-burundi",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-cabo-verde",
+      "source": "icons/source/kaui/flag-cabo-verde.svg",
+      "symbol": "flag-cabo-verde",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-cambodia",
+      "source": "icons/source/kaui/flag-cambodia.svg",
+      "symbol": "flag-cambodia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-cameroon",
+      "source": "icons/source/kaui/flag-cameroon.svg",
+      "symbol": "flag-cameroon",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-canada",
+      "source": "icons/source/kaui/flag-canada.svg",
+      "symbol": "flag-canada",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-central-african-republic",
+      "source": "icons/source/kaui/flag-central-african-republic.svg",
+      "symbol": "flag-central-african-republic",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-chad",
+      "source": "icons/source/kaui/flag-chad.svg",
+      "symbol": "flag-chad",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-chile",
+      "source": "icons/source/kaui/flag-chile.svg",
+      "symbol": "flag-chile",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-china",
+      "source": "icons/source/kaui/flag-china.svg",
+      "symbol": "flag-china",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-colombia",
+      "source": "icons/source/kaui/flag-colombia.svg",
+      "symbol": "flag-colombia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-comoros",
+      "source": "icons/source/kaui/flag-comoros.svg",
+      "symbol": "flag-comoros",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-costa-rica",
+      "source": "icons/source/kaui/flag-costa-rica.svg",
+      "symbol": "flag-costa-rica",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-croatia",
+      "source": "icons/source/kaui/flag-croatia.svg",
+      "symbol": "flag-croatia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-cuba",
+      "source": "icons/source/kaui/flag-cuba.svg",
+      "symbol": "flag-cuba",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-cyprus",
+      "source": "icons/source/kaui/flag-cyprus.svg",
+      "symbol": "flag-cyprus",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-czechia",
+      "source": "icons/source/kaui/flag-czechia.svg",
+      "symbol": "flag-czechia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-democratic-republic-of-the-congo",
+      "source": "icons/source/kaui/flag-democratic-republic-of-the-congo.svg",
+      "symbol": "flag-democratic-republic-of-the-congo",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-denmark",
+      "source": "icons/source/kaui/flag-denmark.svg",
+      "symbol": "flag-denmark",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-djibouti",
+      "source": "icons/source/kaui/flag-djibouti.svg",
+      "symbol": "flag-djibouti",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-dominica",
+      "source": "icons/source/kaui/flag-dominica.svg",
+      "symbol": "flag-dominica",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-dominican-republic",
+      "source": "icons/source/kaui/flag-dominican-republic.svg",
+      "symbol": "flag-dominican-republic",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-east-timor",
+      "source": "icons/source/kaui/flag-east-timor.svg",
+      "symbol": "flag-east-timor",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-ecuador",
+      "source": "icons/source/kaui/flag-ecuador.svg",
+      "symbol": "flag-ecuador",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-egypt",
+      "source": "icons/source/kaui/flag-egypt.svg",
+      "symbol": "flag-egypt",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-el-salvador",
+      "source": "icons/source/kaui/flag-el-salvador.svg",
+      "symbol": "flag-el-salvador",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-equatorial-guinea",
+      "source": "icons/source/kaui/flag-equatorial-guinea.svg",
+      "symbol": "flag-equatorial-guinea",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-eritrea",
+      "source": "icons/source/kaui/flag-eritrea.svg",
+      "symbol": "flag-eritrea",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-estonia",
+      "source": "icons/source/kaui/flag-estonia.svg",
+      "symbol": "flag-estonia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-eswatini",
+      "source": "icons/source/kaui/flag-eswatini.svg",
+      "symbol": "flag-eswatini",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-ethiopia",
+      "source": "icons/source/kaui/flag-ethiopia.svg",
+      "symbol": "flag-ethiopia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-fiji",
+      "source": "icons/source/kaui/flag-fiji.svg",
+      "symbol": "flag-fiji",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-finland",
+      "source": "icons/source/kaui/flag-finland.svg",
+      "symbol": "flag-finland",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-france",
+      "source": "icons/source/kaui/flag-france.svg",
+      "symbol": "flag-france",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-gabon",
+      "source": "icons/source/kaui/flag-gabon.svg",
+      "symbol": "flag-gabon",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-gambia",
+      "source": "icons/source/kaui/flag-gambia.svg",
+      "symbol": "flag-gambia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-georgia",
+      "source": "icons/source/kaui/flag-georgia.svg",
+      "symbol": "flag-georgia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-germany",
+      "source": "icons/source/kaui/flag-germany.svg",
+      "symbol": "flag-germany",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-ghana",
+      "source": "icons/source/kaui/flag-ghana.svg",
+      "symbol": "flag-ghana",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-greece",
+      "source": "icons/source/kaui/flag-greece.svg",
+      "symbol": "flag-greece",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-grenada",
+      "source": "icons/source/kaui/flag-grenada.svg",
+      "symbol": "flag-grenada",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-guatemala",
+      "source": "icons/source/kaui/flag-guatemala.svg",
+      "symbol": "flag-guatemala",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-guinea",
+      "source": "icons/source/kaui/flag-guinea.svg",
+      "symbol": "flag-guinea",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-guinea-bissau",
+      "source": "icons/source/kaui/flag-guinea-bissau.svg",
+      "symbol": "flag-guinea-bissau",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-guyana",
+      "source": "icons/source/kaui/flag-guyana.svg",
+      "symbol": "flag-guyana",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-haiti",
+      "source": "icons/source/kaui/flag-haiti.svg",
+      "symbol": "flag-haiti",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-honduras",
+      "source": "icons/source/kaui/flag-honduras.svg",
+      "symbol": "flag-honduras",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-hungary",
+      "source": "icons/source/kaui/flag-hungary.svg",
+      "symbol": "flag-hungary",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-iceland",
+      "source": "icons/source/kaui/flag-iceland.svg",
+      "symbol": "flag-iceland",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-india",
+      "source": "icons/source/kaui/flag-india.svg",
+      "symbol": "flag-india",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-indonesia",
+      "source": "icons/source/kaui/flag-indonesia.svg",
+      "symbol": "flag-indonesia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-iran",
+      "source": "icons/source/kaui/flag-iran.svg",
+      "symbol": "flag-iran",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-iraq",
+      "source": "icons/source/kaui/flag-iraq.svg",
+      "symbol": "flag-iraq",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-ireland",
+      "source": "icons/source/kaui/flag-ireland.svg",
+      "symbol": "flag-ireland",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-israel",
+      "source": "icons/source/kaui/flag-israel.svg",
+      "symbol": "flag-israel",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-italy",
+      "source": "icons/source/kaui/flag-italy.svg",
+      "symbol": "flag-italy",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-jamaica",
+      "source": "icons/source/kaui/flag-jamaica.svg",
+      "symbol": "flag-jamaica",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-japan",
+      "source": "icons/source/kaui/flag-japan.svg",
+      "symbol": "flag-japan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-jordan",
+      "source": "icons/source/kaui/flag-jordan.svg",
+      "symbol": "flag-jordan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-kazakhstan",
+      "source": "icons/source/kaui/flag-kazakhstan.svg",
+      "symbol": "flag-kazakhstan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-kenya",
+      "source": "icons/source/kaui/flag-kenya.svg",
+      "symbol": "flag-kenya",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-kiribati",
+      "source": "icons/source/kaui/flag-kiribati.svg",
+      "symbol": "flag-kiribati",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-kosovo",
+      "source": "icons/source/kaui/flag-kosovo.svg",
+      "symbol": "flag-kosovo",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-kuwait",
+      "source": "icons/source/kaui/flag-kuwait.svg",
+      "symbol": "flag-kuwait",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-kyrgyzstan",
+      "source": "icons/source/kaui/flag-kyrgyzstan.svg",
+      "symbol": "flag-kyrgyzstan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-laos",
+      "source": "icons/source/kaui/flag-laos.svg",
+      "symbol": "flag-laos",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-latvia",
+      "source": "icons/source/kaui/flag-latvia.svg",
+      "symbol": "flag-latvia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-lebanon",
+      "source": "icons/source/kaui/flag-lebanon.svg",
+      "symbol": "flag-lebanon",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-lesotho",
+      "source": "icons/source/kaui/flag-lesotho.svg",
+      "symbol": "flag-lesotho",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-liberia",
+      "source": "icons/source/kaui/flag-liberia.svg",
+      "symbol": "flag-liberia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-libya",
+      "source": "icons/source/kaui/flag-libya.svg",
+      "symbol": "flag-libya",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-liechtenstein",
+      "source": "icons/source/kaui/flag-liechtenstein.svg",
+      "symbol": "flag-liechtenstein",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-lithuania",
+      "source": "icons/source/kaui/flag-lithuania.svg",
+      "symbol": "flag-lithuania",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-luxembourg",
+      "source": "icons/source/kaui/flag-luxembourg.svg",
+      "symbol": "flag-luxembourg",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-madagascar",
+      "source": "icons/source/kaui/flag-madagascar.svg",
+      "symbol": "flag-madagascar",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-malawi",
+      "source": "icons/source/kaui/flag-malawi.svg",
+      "symbol": "flag-malawi",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-malaysia",
+      "source": "icons/source/kaui/flag-malaysia.svg",
+      "symbol": "flag-malaysia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-maldives",
+      "source": "icons/source/kaui/flag-maldives.svg",
+      "symbol": "flag-maldives",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-mali",
+      "source": "icons/source/kaui/flag-mali.svg",
+      "symbol": "flag-mali",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-malta",
+      "source": "icons/source/kaui/flag-malta.svg",
+      "symbol": "flag-malta",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-marshall-islands",
+      "source": "icons/source/kaui/flag-marshall-islands.svg",
+      "symbol": "flag-marshall-islands",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-mauritania",
+      "source": "icons/source/kaui/flag-mauritania.svg",
+      "symbol": "flag-mauritania",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-mauritius",
+      "source": "icons/source/kaui/flag-mauritius.svg",
+      "symbol": "flag-mauritius",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-mexico",
+      "source": "icons/source/kaui/flag-mexico.svg",
+      "symbol": "flag-mexico",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-micronesia",
+      "source": "icons/source/kaui/flag-micronesia.svg",
+      "symbol": "flag-micronesia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-moldova",
+      "source": "icons/source/kaui/flag-moldova.svg",
+      "symbol": "flag-moldova",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-monaco",
+      "source": "icons/source/kaui/flag-monaco.svg",
+      "symbol": "flag-monaco",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-mongolia",
+      "source": "icons/source/kaui/flag-mongolia.svg",
+      "symbol": "flag-mongolia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-montenegro",
+      "source": "icons/source/kaui/flag-montenegro.svg",
+      "symbol": "flag-montenegro",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-morocco",
+      "source": "icons/source/kaui/flag-morocco.svg",
+      "symbol": "flag-morocco",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-mozambique",
+      "source": "icons/source/kaui/flag-mozambique.svg",
+      "symbol": "flag-mozambique",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-myanmar",
+      "source": "icons/source/kaui/flag-myanmar.svg",
+      "symbol": "flag-myanmar",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-namibia",
+      "source": "icons/source/kaui/flag-namibia.svg",
+      "symbol": "flag-namibia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-nauru",
+      "source": "icons/source/kaui/flag-nauru.svg",
+      "symbol": "flag-nauru",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-nepal",
+      "source": "icons/source/kaui/flag-nepal.svg",
+      "symbol": "flag-nepal",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-netherlands",
+      "source": "icons/source/kaui/flag-netherlands.svg",
+      "symbol": "flag-netherlands",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-new-zealand",
+      "source": "icons/source/kaui/flag-new-zealand.svg",
+      "symbol": "flag-new-zealand",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-nicaragua",
+      "source": "icons/source/kaui/flag-nicaragua.svg",
+      "symbol": "flag-nicaragua",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-niger",
+      "source": "icons/source/kaui/flag-niger.svg",
+      "symbol": "flag-niger",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-nigeria",
+      "source": "icons/source/kaui/flag-nigeria.svg",
+      "symbol": "flag-nigeria",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-north-korea",
+      "source": "icons/source/kaui/flag-north-korea.svg",
+      "symbol": "flag-north-korea",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-north-macedonia",
+      "source": "icons/source/kaui/flag-north-macedonia.svg",
+      "symbol": "flag-north-macedonia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-norway",
+      "source": "icons/source/kaui/flag-norway.svg",
+      "symbol": "flag-norway",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-oman",
+      "source": "icons/source/kaui/flag-oman.svg",
+      "symbol": "flag-oman",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-pakistan",
+      "source": "icons/source/kaui/flag-pakistan.svg",
+      "symbol": "flag-pakistan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-palau",
+      "source": "icons/source/kaui/flag-palau.svg",
+      "symbol": "flag-palau",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-palestine",
+      "source": "icons/source/kaui/flag-palestine.svg",
+      "symbol": "flag-palestine",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-panama",
+      "source": "icons/source/kaui/flag-panama.svg",
+      "symbol": "flag-panama",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-papua-new-guinea",
+      "source": "icons/source/kaui/flag-papua-new-guinea.svg",
+      "symbol": "flag-papua-new-guinea",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-paraguay",
+      "source": "icons/source/kaui/flag-paraguay.svg",
+      "symbol": "flag-paraguay",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-peru",
+      "source": "icons/source/kaui/flag-peru.svg",
+      "symbol": "flag-peru",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-philippines",
+      "source": "icons/source/kaui/flag-philippines.svg",
+      "symbol": "flag-philippines",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-poland",
+      "source": "icons/source/kaui/flag-poland.svg",
+      "symbol": "flag-poland",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-portugal",
+      "source": "icons/source/kaui/flag-portugal.svg",
+      "symbol": "flag-portugal",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-qatar",
+      "source": "icons/source/kaui/flag-qatar.svg",
+      "symbol": "flag-qatar",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-republic-of-the-congo",
+      "source": "icons/source/kaui/flag-republic-of-the-congo.svg",
+      "symbol": "flag-republic-of-the-congo",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-romania",
+      "source": "icons/source/kaui/flag-romania.svg",
+      "symbol": "flag-romania",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-russia",
+      "source": "icons/source/kaui/flag-russia.svg",
+      "symbol": "flag-russia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-rwanda",
+      "source": "icons/source/kaui/flag-rwanda.svg",
+      "symbol": "flag-rwanda",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-saint-kitts-and-nevis",
+      "source": "icons/source/kaui/flag-saint-kitts-and-nevis.svg",
+      "symbol": "flag-saint-kitts-and-nevis",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-saint-lucia",
+      "source": "icons/source/kaui/flag-saint-lucia.svg",
+      "symbol": "flag-saint-lucia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-saint-vincent-and-the-grenadines",
+      "source": "icons/source/kaui/flag-saint-vincent-and-the-grenadines.svg",
+      "symbol": "flag-saint-vincent-and-the-grenadines",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-samoa",
+      "source": "icons/source/kaui/flag-samoa.svg",
+      "symbol": "flag-samoa",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-san-marino",
+      "source": "icons/source/kaui/flag-san-marino.svg",
+      "symbol": "flag-san-marino",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-sao-tome-and-principe",
+      "source": "icons/source/kaui/flag-sao-tome-and-principe.svg",
+      "symbol": "flag-sao-tome-and-principe",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-saudi-arabia",
+      "source": "icons/source/kaui/flag-saudi-arabia.svg",
+      "symbol": "flag-saudi-arabia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-senegal",
+      "source": "icons/source/kaui/flag-senegal.svg",
+      "symbol": "flag-senegal",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-serbia",
+      "source": "icons/source/kaui/flag-serbia.svg",
+      "symbol": "flag-serbia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-seychelles",
+      "source": "icons/source/kaui/flag-seychelles.svg",
+      "symbol": "flag-seychelles",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-sierra-leone",
+      "source": "icons/source/kaui/flag-sierra-leone.svg",
+      "symbol": "flag-sierra-leone",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-singapore",
+      "source": "icons/source/kaui/flag-singapore.svg",
+      "symbol": "flag-singapore",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-slovakia",
+      "source": "icons/source/kaui/flag-slovakia.svg",
+      "symbol": "flag-slovakia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-slovenia",
+      "source": "icons/source/kaui/flag-slovenia.svg",
+      "symbol": "flag-slovenia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-solomon-islands",
+      "source": "icons/source/kaui/flag-solomon-islands.svg",
+      "symbol": "flag-solomon-islands",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-somalia",
+      "source": "icons/source/kaui/flag-somalia.svg",
+      "symbol": "flag-somalia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-south-africa",
+      "source": "icons/source/kaui/flag-south-africa.svg",
+      "symbol": "flag-south-africa",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-south-korea",
+      "source": "icons/source/kaui/flag-south-korea.svg",
+      "symbol": "flag-south-korea",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-south-sudan",
+      "source": "icons/source/kaui/flag-south-sudan.svg",
+      "symbol": "flag-south-sudan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-spain",
+      "source": "icons/source/kaui/flag-spain.svg",
+      "symbol": "flag-spain",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-sri-lanka",
+      "source": "icons/source/kaui/flag-sri-lanka.svg",
+      "symbol": "flag-sri-lanka",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-sudan",
+      "source": "icons/source/kaui/flag-sudan.svg",
+      "symbol": "flag-sudan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-suriname",
+      "source": "icons/source/kaui/flag-suriname.svg",
+      "symbol": "flag-suriname",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-sweden",
+      "source": "icons/source/kaui/flag-sweden.svg",
+      "symbol": "flag-sweden",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-switzerland",
+      "source": "icons/source/kaui/flag-switzerland.svg",
+      "symbol": "flag-switzerland",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-syria",
+      "source": "icons/source/kaui/flag-syria.svg",
+      "symbol": "flag-syria",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-tajikistan",
+      "source": "icons/source/kaui/flag-tajikistan.svg",
+      "symbol": "flag-tajikistan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-tanzania",
+      "source": "icons/source/kaui/flag-tanzania.svg",
+      "symbol": "flag-tanzania",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-thailand",
+      "source": "icons/source/kaui/flag-thailand.svg",
+      "symbol": "flag-thailand",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-togo",
+      "source": "icons/source/kaui/flag-togo.svg",
+      "symbol": "flag-togo",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-tonga",
+      "source": "icons/source/kaui/flag-tonga.svg",
+      "symbol": "flag-tonga",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-trinidad-and-tobago",
+      "source": "icons/source/kaui/flag-trinidad-and-tobago.svg",
+      "symbol": "flag-trinidad-and-tobago",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-tunisia",
+      "source": "icons/source/kaui/flag-tunisia.svg",
+      "symbol": "flag-tunisia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-turkiye",
+      "source": "icons/source/kaui/flag-turkiye.svg",
+      "symbol": "flag-turkiye",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-turkmenistan",
+      "source": "icons/source/kaui/flag-turkmenistan.svg",
+      "symbol": "flag-turkmenistan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-tuvalu",
+      "source": "icons/source/kaui/flag-tuvalu.svg",
+      "symbol": "flag-tuvalu",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-uganda",
+      "source": "icons/source/kaui/flag-uganda.svg",
+      "symbol": "flag-uganda",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-ukraine",
+      "source": "icons/source/kaui/flag-ukraine.svg",
+      "symbol": "flag-ukraine",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-united-arab-emirates",
+      "source": "icons/source/kaui/flag-united-arab-emirates.svg",
+      "symbol": "flag-united-arab-emirates",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-united-kingdom",
+      "source": "icons/source/kaui/flag-united-kingdom.svg",
+      "symbol": "flag-united-kingdom",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-united-states",
+      "source": "icons/source/kaui/flag-united-states.svg",
+      "symbol": "flag-united-states",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-uruguay",
+      "source": "icons/source/kaui/flag-uruguay.svg",
+      "symbol": "flag-uruguay",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-uzbekistan",
+      "source": "icons/source/kaui/flag-uzbekistan.svg",
+      "symbol": "flag-uzbekistan",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-vanuatu",
+      "source": "icons/source/kaui/flag-vanuatu.svg",
+      "symbol": "flag-vanuatu",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-vatican-city",
+      "source": "icons/source/kaui/flag-vatican-city.svg",
+      "symbol": "flag-vatican-city",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-venezuela",
+      "source": "icons/source/kaui/flag-venezuela.svg",
+      "symbol": "flag-venezuela",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-vietnam",
+      "source": "icons/source/kaui/flag-vietnam.svg",
+      "symbol": "flag-vietnam",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-yemen",
+      "source": "icons/source/kaui/flag-yemen.svg",
+      "symbol": "flag-yemen",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-zambia",
+      "source": "icons/source/kaui/flag-zambia.svg",
+      "symbol": "flag-zambia",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
+    },
+    {
+      "name": "flag-zimbabwe",
+      "source": "icons/source/kaui/flag-zimbabwe.svg",
+      "symbol": "flag-zimbabwe",
+      "category": "flags",
+      "ownership": "Country flag artwork sourced from flag-icons; national insignia remain respective national symbols"
     },
     {
       "name": "flight",
       "source": "icons/source/kaui/flight.svg",
       "symbol": "flight",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "folder",
       "source": "icons/source/kaui/folder.svg",
       "symbol": "folder",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "folder-check",
       "source": "icons/source/kaui/folder-check.svg",
       "symbol": "folder-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "folder-minus",
       "source": "icons/source/kaui/folder-minus.svg",
       "symbol": "folder-minus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "folder-open",
       "source": "icons/source/kaui/folder-open.svg",
       "symbol": "folder-open",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "folder-plus",
       "source": "icons/source/kaui/folder-plus.svg",
       "symbol": "folder-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "folder-x",
       "source": "icons/source/kaui/folder-x.svg",
       "symbol": "folder-x",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "fuel",
       "source": "icons/source/kaui/fuel.svg",
       "symbol": "fuel",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "function",
       "source": "icons/source/kaui/function.svg",
       "symbol": "function",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "gamepad",
       "source": "icons/source/kaui/gamepad.svg",
       "symbol": "gamepad",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "gauge",
       "source": "icons/source/kaui/gauge.svg",
       "symbol": "gauge",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "git-branch",
       "source": "icons/source/kaui/git-branch.svg",
       "symbol": "git-branch",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "git-commit",
       "source": "icons/source/kaui/git-commit.svg",
       "symbol": "git-commit",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "git-merge",
       "source": "icons/source/kaui/git-merge.svg",
       "symbol": "git-merge",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "git-pull-request",
       "source": "icons/source/kaui/git-pull-request.svg",
       "symbol": "git-pull-request",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "globe",
       "source": "icons/source/kaui/globe.svg",
       "symbol": "globe",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "graduation-cap",
       "source": "icons/source/kaui/graduation-cap.svg",
       "symbol": "graduation-cap",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "grid",
       "source": "icons/source/kaui/grid.svg",
       "symbol": "grid",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "hard-drive",
       "source": "icons/source/kaui/hard-drive.svg",
       "symbol": "hard-drive",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "hashtag",
       "source": "icons/source/kaui/hashtag.svg",
       "symbol": "hashtag",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "headphones",
       "source": "icons/source/kaui/headphones.svg",
       "symbol": "headphones",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "health",
       "source": "icons/source/kaui/health.svg",
       "symbol": "health",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "heart",
       "source": "icons/source/kaui/heart.svg",
       "symbol": "heart",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "heart-pulse",
       "source": "icons/source/kaui/heart-pulse.svg",
       "symbol": "heart-pulse",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "help",
       "source": "icons/source/kaui/help.svg",
       "symbol": "help",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "help-circle",
       "source": "icons/source/kaui/help-circle.svg",
       "symbol": "help-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "history",
       "source": "icons/source/kaui/history.svg",
       "symbol": "history",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "home",
       "source": "icons/source/kaui/home.svg",
       "symbol": "home",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "hospital",
       "source": "icons/source/kaui/hospital.svg",
       "symbol": "hospital",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "hotel",
       "source": "icons/source/kaui/hotel.svg",
       "symbol": "hotel",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "image",
       "source": "icons/source/kaui/image.svg",
       "symbol": "image",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "image-plus",
       "source": "icons/source/kaui/image-plus.svg",
       "symbol": "image-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "import",
       "source": "icons/source/kaui/import.svg",
       "symbol": "import",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "inbox",
       "source": "icons/source/kaui/inbox.svg",
       "symbol": "inbox",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "info",
       "source": "icons/source/kaui/info.svg",
       "symbol": "info",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "info-circle",
       "source": "icons/source/kaui/info-circle.svg",
       "symbol": "info-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "invoice",
       "source": "icons/source/kaui/invoice.svg",
       "symbol": "invoice",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "invoice-due",
       "source": "icons/source/kaui/invoice-due.svg",
       "symbol": "invoice-due",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "invoice-paid",
       "source": "icons/source/kaui/invoice-paid.svg",
       "symbol": "invoice-paid",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "italic",
       "source": "icons/source/kaui/italic.svg",
       "symbol": "italic",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "joystick",
       "source": "icons/source/kaui/joystick.svg",
       "symbol": "joystick",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "kanban",
       "source": "icons/source/kaui/kanban.svg",
       "symbol": "kanban",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "key",
       "source": "icons/source/kaui/key.svg",
       "symbol": "key",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "keyboard",
       "source": "icons/source/kaui/keyboard.svg",
       "symbol": "keyboard",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "languages",
       "source": "icons/source/kaui/languages.svg",
       "symbol": "languages",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "layers",
       "source": "icons/source/kaui/layers.svg",
       "symbol": "layers",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "lesson",
       "source": "icons/source/kaui/lesson.svg",
       "symbol": "lesson",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "library",
       "source": "icons/source/kaui/library.svg",
       "symbol": "library",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "lightbulb",
       "source": "icons/source/kaui/lightbulb.svg",
       "symbol": "lightbulb",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "lightbulb-off",
       "source": "icons/source/kaui/lightbulb-off.svg",
       "symbol": "lightbulb-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "link",
       "source": "icons/source/kaui/link.svg",
       "symbol": "link",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "link-off",
       "source": "icons/source/kaui/link-off.svg",
       "symbol": "link-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "list",
       "source": "icons/source/kaui/list.svg",
       "symbol": "list",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "list-check",
       "source": "icons/source/kaui/list-check.svg",
       "symbol": "list-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "list-filter",
       "source": "icons/source/kaui/list-filter.svg",
       "symbol": "list-filter",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "live",
       "source": "icons/source/kaui/live.svg",
       "symbol": "live",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "loader",
       "source": "icons/source/kaui/loader.svg",
       "symbol": "loader",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "location",
       "source": "icons/source/kaui/location.svg",
       "symbol": "location",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "location-plus",
       "source": "icons/source/kaui/location-plus.svg",
       "symbol": "location-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "lock",
       "source": "icons/source/kaui/lock.svg",
       "symbol": "lock",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "lock-keyhole",
       "source": "icons/source/kaui/lock-keyhole.svg",
       "symbol": "lock-keyhole",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "log-in",
       "source": "icons/source/kaui/log-in.svg",
       "symbol": "log-in",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "log-out",
       "source": "icons/source/kaui/log-out.svg",
       "symbol": "log-out",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "luggage",
       "source": "icons/source/kaui/luggage.svg",
       "symbol": "luggage",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "mail",
       "source": "icons/source/kaui/mail.svg",
       "symbol": "mail",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "map",
       "source": "icons/source/kaui/map.svg",
       "symbol": "map",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "map-pin",
       "source": "icons/source/kaui/map-pin.svg",
       "symbol": "map-pin",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "map-pin-plus",
       "source": "icons/source/kaui/map-pin-plus.svg",
       "symbol": "map-pin-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "map-route",
       "source": "icons/source/kaui/map-route.svg",
       "symbol": "map-route",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "map-search",
       "source": "icons/source/kaui/map-search.svg",
       "symbol": "map-search",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "maximize",
       "source": "icons/source/kaui/maximize.svg",
       "symbol": "maximize",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "medal",
       "source": "icons/source/kaui/medal.svg",
       "symbol": "medal",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "medical-cross",
       "source": "icons/source/kaui/medical-cross.svg",
       "symbol": "medical-cross",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "megaphone",
       "source": "icons/source/kaui/megaphone.svg",
       "symbol": "megaphone",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "mention",
       "source": "icons/source/kaui/mention.svg",
       "symbol": "mention",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "menu",
       "source": "icons/source/kaui/menu.svg",
       "symbol": "menu",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "message",
       "source": "icons/source/kaui/message.svg",
       "symbol": "message",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "message-circle",
       "source": "icons/source/kaui/message-circle.svg",
       "symbol": "message-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "message-plus",
       "source": "icons/source/kaui/message-plus.svg",
       "symbol": "message-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "message-square",
       "source": "icons/source/kaui/message-square.svg",
       "symbol": "message-square",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "messages",
       "source": "icons/source/kaui/messages.svg",
       "symbol": "messages",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "mic",
       "source": "icons/source/kaui/mic.svg",
       "symbol": "mic",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "mic-off",
       "source": "icons/source/kaui/mic-off.svg",
       "symbol": "mic-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "milestone",
       "source": "icons/source/kaui/milestone.svg",
       "symbol": "milestone",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "minimize",
       "source": "icons/source/kaui/minimize.svg",
       "symbol": "minimize",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "minus-circle",
       "source": "icons/source/kaui/minus-circle.svg",
       "symbol": "minus-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "moderation",
       "source": "icons/source/kaui/moderation.svg",
       "symbol": "moderation",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "money",
       "source": "icons/source/kaui/money.svg",
       "symbol": "money",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "monitor",
       "source": "icons/source/kaui/monitor.svg",
       "symbol": "monitor",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "more-horizontal",
       "source": "icons/source/kaui/more-horizontal.svg",
       "symbol": "more-horizontal",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "more-vertical",
       "source": "icons/source/kaui/more-vertical.svg",
       "symbol": "more-vertical",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "mouse",
       "source": "icons/source/kaui/mouse.svg",
       "symbol": "mouse",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "movie",
       "source": "icons/source/kaui/movie.svg",
       "symbol": "movie",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "music",
       "source": "icons/source/kaui/music.svg",
       "symbol": "music",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "music-note",
       "source": "icons/source/kaui/music-note.svg",
       "symbol": "music-note",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "navigation",
       "source": "icons/source/kaui/navigation.svg",
       "symbol": "navigation",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "network",
       "source": "icons/source/kaui/network.svg",
       "symbol": "network",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "newspaper",
       "source": "icons/source/kaui/newspaper.svg",
       "symbol": "newspaper",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "notebook",
       "source": "icons/source/kaui/notebook.svg",
       "symbol": "notebook",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "notification",
       "source": "icons/source/kaui/notification.svg",
       "symbol": "notification",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "package",
       "source": "icons/source/kaui/package.svg",
       "symbol": "package",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "package-check",
       "source": "icons/source/kaui/package-check.svg",
       "symbol": "package-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "package-plus",
       "source": "icons/source/kaui/package-plus.svg",
       "symbol": "package-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "package-search",
       "source": "icons/source/kaui/package-search.svg",
       "symbol": "package-search",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "package-x",
       "source": "icons/source/kaui/package-x.svg",
       "symbol": "package-x",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "palette",
       "source": "icons/source/kaui/palette.svg",
       "symbol": "palette",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "paperclip",
       "source": "icons/source/kaui/paperclip.svg",
       "symbol": "paperclip",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "parking",
       "source": "icons/source/kaui/parking.svg",
       "symbol": "parking",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "passport",
       "source": "icons/source/kaui/passport.svg",
       "symbol": "passport",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "patient",
       "source": "icons/source/kaui/patient.svg",
       "symbol": "patient",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "pause",
       "source": "icons/source/kaui/pause.svg",
       "symbol": "pause",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "pause-circle",
       "source": "icons/source/kaui/pause-circle.svg",
       "symbol": "pause-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "payment",
       "source": "icons/source/kaui/payment.svg",
       "symbol": "payment",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "pencil",
       "source": "icons/source/kaui/pencil.svg",
       "symbol": "pencil",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "percent",
       "source": "icons/source/kaui/percent.svg",
       "symbol": "percent",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "phone",
       "source": "icons/source/kaui/phone.svg",
       "symbol": "phone",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "phone-call",
       "source": "icons/source/kaui/phone-call.svg",
       "symbol": "phone-call",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "piggy-bank",
       "source": "icons/source/kaui/piggy-bank.svg",
       "symbol": "piggy-bank",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "pill",
       "source": "icons/source/kaui/pill.svg",
       "symbol": "pill",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "pin",
       "source": "icons/source/kaui/pin.svg",
       "symbol": "pin",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "pipeline",
       "source": "icons/source/kaui/pipeline.svg",
       "symbol": "pipeline",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "plane",
       "source": "icons/source/kaui/plane.svg",
       "symbol": "plane",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "play",
       "source": "icons/source/kaui/play.svg",
       "symbol": "play",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "play-circle",
       "source": "icons/source/kaui/play-circle.svg",
       "symbol": "play-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "plug",
       "source": "icons/source/kaui/plug.svg",
       "symbol": "plug",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "plus-circle",
       "source": "icons/source/kaui/plus-circle.svg",
       "symbol": "plus-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "podcast",
       "source": "icons/source/kaui/podcast.svg",
       "symbol": "podcast",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "power",
       "source": "icons/source/kaui/power.svg",
       "symbol": "power",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "presentation",
       "source": "icons/source/kaui/presentation.svg",
       "symbol": "presentation",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "prompt",
       "source": "icons/source/kaui/prompt.svg",
       "symbol": "prompt",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "publish",
       "source": "icons/source/kaui/publish.svg",
       "symbol": "publish",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "puzzle",
       "source": "icons/source/kaui/puzzle.svg",
       "symbol": "puzzle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "question",
       "source": "icons/source/kaui/question.svg",
       "symbol": "question",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "quiz",
       "source": "icons/source/kaui/quiz.svg",
       "symbol": "quiz",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "quote",
       "source": "icons/source/kaui/quote.svg",
       "symbol": "quote",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "radio",
       "source": "icons/source/kaui/radio.svg",
       "symbol": "radio",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "radio-tower",
       "source": "icons/source/kaui/radio-tower.svg",
       "symbol": "radio-tower",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "receipt",
       "source": "icons/source/kaui/receipt.svg",
       "symbol": "receipt",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "receipt-text",
       "source": "icons/source/kaui/receipt-text.svg",
       "symbol": "receipt-text",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "redo",
       "source": "icons/source/kaui/redo.svg",
       "symbol": "redo",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "refresh",
       "source": "icons/source/kaui/refresh.svg",
       "symbol": "refresh",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "refund",
       "source": "icons/source/kaui/refund.svg",
       "symbol": "refund",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "research",
       "source": "icons/source/kaui/research.svg",
       "symbol": "research",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "restaurant",
       "source": "icons/source/kaui/restaurant.svg",
       "symbol": "restaurant",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "rocket",
       "source": "icons/source/kaui/rocket.svg",
       "symbol": "rocket",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "room-service",
       "source": "icons/source/kaui/room-service.svg",
       "symbol": "room-service",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "rotate-ccw",
       "source": "icons/source/kaui/rotate-ccw.svg",
       "symbol": "rotate-ccw",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "rotate-cw",
       "source": "icons/source/kaui/rotate-cw.svg",
       "symbol": "rotate-cw",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "route",
       "source": "icons/source/kaui/route.svg",
       "symbol": "route",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "rss",
       "source": "icons/source/kaui/rss.svg",
       "symbol": "rss",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "safe",
       "source": "icons/source/kaui/safe.svg",
       "symbol": "safe",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "save",
       "source": "icons/source/kaui/save.svg",
       "symbol": "save",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "scan-barcode",
       "source": "icons/source/kaui/scan-barcode.svg",
       "symbol": "scan-barcode",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "schedule-publish",
       "source": "icons/source/kaui/schedule-publish.svg",
       "symbol": "schedule-publish",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "school",
       "source": "icons/source/kaui/school.svg",
       "symbol": "school",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "screen-reader",
       "source": "icons/source/kaui/screen-reader.svg",
       "symbol": "screen-reader",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "sdk",
       "source": "icons/source/kaui/sdk.svg",
       "symbol": "sdk",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "search",
       "source": "icons/source/kaui/search.svg",
       "symbol": "search",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "send",
       "source": "icons/source/kaui/send.svg",
       "symbol": "send",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "server",
       "source": "icons/source/kaui/server.svg",
       "symbol": "server",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "server-cog",
       "source": "icons/source/kaui/server-cog.svg",
       "symbol": "server-cog",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "settings",
       "source": "icons/source/kaui/settings.svg",
       "symbol": "settings",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "share",
       "source": "icons/source/kaui/share.svg",
       "symbol": "share",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "share-2",
       "source": "icons/source/kaui/share-2.svg",
       "symbol": "share-2",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "shield",
       "source": "icons/source/kaui/shield.svg",
       "symbol": "shield",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "shield-alert",
       "source": "icons/source/kaui/shield-alert.svg",
       "symbol": "shield-alert",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "shield-check",
       "source": "icons/source/kaui/shield-check.svg",
       "symbol": "shield-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "shield-x",
       "source": "icons/source/kaui/shield-x.svg",
       "symbol": "shield-x",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "ship",
       "source": "icons/source/kaui/ship.svg",
       "symbol": "ship",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "shopping-cart",
       "source": "icons/source/kaui/shopping-cart.svg",
       "symbol": "shopping-cart",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "smart-tv",
       "source": "icons/source/kaui/smart-tv.svg",
       "symbol": "smart-tv",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "smartphone",
       "source": "icons/source/kaui/smartphone.svg",
       "symbol": "smartphone",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-community",
       "source": "icons/source/kaui/social-community.svg",
       "symbol": "social-community",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-discord",
       "source": "icons/source/kaui/social-discord.svg",
       "symbol": "social-discord",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-facebook",
       "source": "icons/source/kaui/social-facebook.svg",
       "symbol": "social-facebook",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-github",
       "source": "icons/source/kaui/social-github.svg",
       "symbol": "social-github",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-instagram",
       "source": "icons/source/kaui/social-instagram.svg",
       "symbol": "social-instagram",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-linkedin",
       "source": "icons/source/kaui/social-linkedin.svg",
       "symbol": "social-linkedin",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-reddit",
       "source": "icons/source/kaui/social-reddit.svg",
       "symbol": "social-reddit",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-share",
       "source": "icons/source/kaui/social-share.svg",
       "symbol": "social-share",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-telegram",
       "source": "icons/source/kaui/social-telegram.svg",
       "symbol": "social-telegram",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-threads",
       "source": "icons/source/kaui/social-threads.svg",
       "symbol": "social-threads",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-tiktok",
       "source": "icons/source/kaui/social-tiktok.svg",
       "symbol": "social-tiktok",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-wechat",
       "source": "icons/source/kaui/social-wechat.svg",
       "symbol": "social-wechat",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-whatsapp",
       "source": "icons/source/kaui/social-whatsapp.svg",
       "symbol": "social-whatsapp",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-x",
       "source": "icons/source/kaui/social-x.svg",
       "symbol": "social-x",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-youtube",
       "source": "icons/source/kaui/social-youtube.svg",
       "symbol": "social-youtube",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "social-zalo",
       "source": "icons/source/kaui/social-zalo.svg",
       "symbol": "social-zalo",
+      "category": "ui",
       "ownership": "KAUI-authored brand reference; Zalo trademark remains with Zalo"
     },
     {
       "name": "solar-panel",
       "source": "icons/source/kaui/solar-panel.svg",
       "symbol": "solar-panel",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "sort-asc",
       "source": "icons/source/kaui/sort-asc.svg",
       "symbol": "sort-asc",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "sort-desc",
       "source": "icons/source/kaui/sort-desc.svg",
       "symbol": "sort-desc",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "sparkles",
       "source": "icons/source/kaui/sparkles.svg",
       "symbol": "sparkles",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "speaker",
       "source": "icons/source/kaui/speaker.svg",
       "symbol": "speaker",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "star",
       "source": "icons/source/kaui/star.svg",
       "symbol": "star",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "stethoscope",
       "source": "icons/source/kaui/stethoscope.svg",
       "symbol": "stethoscope",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "stop-circle",
       "source": "icons/source/kaui/stop-circle.svg",
       "symbol": "stop-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "store",
       "source": "icons/source/kaui/store.svg",
       "symbol": "store",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "student",
       "source": "icons/source/kaui/student.svg",
       "symbol": "student",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "success",
       "source": "icons/source/kaui/success.svg",
       "symbol": "success",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "success-circle",
       "source": "icons/source/kaui/success-circle.svg",
       "symbol": "success-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "suitcase",
       "source": "icons/source/kaui/suitcase.svg",
       "symbol": "suitcase",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "sync",
       "source": "icons/source/kaui/sync.svg",
       "symbol": "sync",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "table",
       "source": "icons/source/kaui/table.svg",
       "symbol": "table",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "table-properties",
       "source": "icons/source/kaui/table-properties.svg",
       "symbol": "table-properties",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "tag",
       "source": "icons/source/kaui/tag.svg",
       "symbol": "tag",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "target",
       "source": "icons/source/kaui/target.svg",
       "symbol": "target",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "task",
       "source": "icons/source/kaui/task.svg",
       "symbol": "task",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "tasks",
       "source": "icons/source/kaui/tasks.svg",
       "symbol": "tasks",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "tax",
       "source": "icons/source/kaui/tax.svg",
       "symbol": "tax",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "teacher",
       "source": "icons/source/kaui/teacher.svg",
       "symbol": "teacher",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "terminal",
       "source": "icons/source/kaui/terminal.svg",
       "symbol": "terminal",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "terminal-square",
       "source": "icons/source/kaui/terminal-square.svg",
       "symbol": "terminal-square",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "test-tube",
       "source": "icons/source/kaui/test-tube.svg",
       "symbol": "test-tube",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "text",
       "source": "icons/source/kaui/text.svg",
       "symbol": "text",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "text-cursor",
       "source": "icons/source/kaui/text-cursor.svg",
       "symbol": "text-cursor",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "thermometer",
       "source": "icons/source/kaui/thermometer.svg",
       "symbol": "thermometer",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "thermostat",
       "source": "icons/source/kaui/thermostat.svg",
       "symbol": "thermostat",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "ticket",
       "source": "icons/source/kaui/ticket.svg",
       "symbol": "ticket",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "train",
       "source": "icons/source/kaui/train.svg",
       "symbol": "train",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "translate",
       "source": "icons/source/kaui/translate.svg",
       "symbol": "translate",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "trash",
       "source": "icons/source/kaui/trash.svg",
       "symbol": "trash",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "trending-down",
       "source": "icons/source/kaui/trending-down.svg",
       "symbol": "trending-down",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "trending-up",
       "source": "icons/source/kaui/trending-up.svg",
       "symbol": "trending-up",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "trophy",
       "source": "icons/source/kaui/trophy.svg",
       "symbol": "trophy",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "truck",
       "source": "icons/source/kaui/truck.svg",
       "symbol": "truck",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "truck-fast",
       "source": "icons/source/kaui/truck-fast.svg",
       "symbol": "truck-fast",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "truck-off",
       "source": "icons/source/kaui/truck-off.svg",
       "symbol": "truck-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "tv",
       "source": "icons/source/kaui/tv.svg",
       "symbol": "tv",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "underline",
       "source": "icons/source/kaui/underline.svg",
       "symbol": "underline",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "undo",
       "source": "icons/source/kaui/undo.svg",
       "symbol": "undo",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "unlock",
       "source": "icons/source/kaui/unlock.svg",
       "symbol": "unlock",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "upload",
       "source": "icons/source/kaui/upload.svg",
       "symbol": "upload",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "user",
       "source": "icons/source/kaui/user.svg",
       "symbol": "user",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "user-check",
       "source": "icons/source/kaui/user-check.svg",
       "symbol": "user-check",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "user-circle",
       "source": "icons/source/kaui/user-circle.svg",
       "symbol": "user-circle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "user-minus",
       "source": "icons/source/kaui/user-minus.svg",
       "symbol": "user-minus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "user-plus",
       "source": "icons/source/kaui/user-plus.svg",
       "symbol": "user-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "user-settings",
       "source": "icons/source/kaui/user-settings.svg",
       "symbol": "user-settings",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "user-x",
       "source": "icons/source/kaui/user-x.svg",
       "symbol": "user-x",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "users",
       "source": "icons/source/kaui/users.svg",
       "symbol": "users",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "users-plus",
       "source": "icons/source/kaui/users-plus.svg",
       "symbol": "users-plus",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "variable",
       "source": "icons/source/kaui/variable.svg",
       "symbol": "variable",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "vault",
       "source": "icons/source/kaui/vault.svg",
       "symbol": "vault",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "video",
       "source": "icons/source/kaui/video.svg",
       "symbol": "video",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "video-off",
       "source": "icons/source/kaui/video-off.svg",
       "symbol": "video-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "volume",
       "source": "icons/source/kaui/volume.svg",
       "symbol": "volume",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "volume-high",
       "source": "icons/source/kaui/volume-high.svg",
       "symbol": "volume-high",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "volume-off",
       "source": "icons/source/kaui/volume-off.svg",
       "symbol": "volume-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "wallet",
       "source": "icons/source/kaui/wallet.svg",
       "symbol": "wallet",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "wallet-cards",
       "source": "icons/source/kaui/wallet-cards.svg",
       "symbol": "wallet-cards",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "wand",
       "source": "icons/source/kaui/wand.svg",
       "symbol": "wand",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "warehouse",
       "source": "icons/source/kaui/warehouse.svg",
       "symbol": "warehouse",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "warning",
       "source": "icons/source/kaui/warning.svg",
       "symbol": "warning",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "warning-triangle",
       "source": "icons/source/kaui/warning-triangle.svg",
       "symbol": "warning-triangle",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "webhook",
       "source": "icons/source/kaui/webhook.svg",
       "symbol": "webhook",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "wifi",
       "source": "icons/source/kaui/wifi.svg",
       "symbol": "wifi",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "wifi-hotel",
       "source": "icons/source/kaui/wifi-hotel.svg",
       "symbol": "wifi-hotel",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "wifi-off",
       "source": "icons/source/kaui/wifi-off.svg",
       "symbol": "wifi-off",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "wifi-router",
       "source": "icons/source/kaui/wifi-router.svg",
       "symbol": "wifi-router",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "workflow",
       "source": "icons/source/kaui/workflow.svg",
       "symbol": "workflow",
+      "category": "ui",
       "ownership": "KAUI-owned"
     },
     {
       "name": "zap",
       "source": "icons/source/kaui/zap.svg",
       "symbol": "zap",
+      "category": "ui",
       "ownership": "KAUI-owned"
     }
   ]

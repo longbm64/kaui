@@ -1,3 +1,10 @@
+/*!
+ * KAUI CSS Kit v1.1.14
+ * Copyright (c) 2026 KAUI Contributors
+ * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
+ * Official Website: https://kaui.filekat.com
+ * GitHub Project:  https://github.com/longbm64/kaui
+ */
 @charset "UTF-8";
 :root {
   --k-color-primary-50: #eff6ff;
@@ -4851,18 +4858,6 @@ hr {
   background: var(--k-color-error-50);
   color: var(--k-error);
 }
-
-/** KAUI Official Icons. 100% KAUI-owned artwork; country flags retain their respective national insignia status. */
-.k-icon{display:inline-block;width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.k-icon[class*="k-icon--flag-"]{width:1.5rem;height:1.125rem;fill:initial;stroke:none;vertical-align:-.15em;}
-.k-icon--social-x{fill:currentColor;stroke:none;}
-.k-icon--social-zalo{fill:currentColor;stroke:none;}
-
-/** KAUI Official Icons. 100% KAUI-owned artwork; country flags retain their respective national insignia status. */
-.k-icon{display:inline-block;width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.k-icon[class*="k-icon--flag-"]{width:1.5rem;height:1.125rem;fill:initial;stroke:none;vertical-align:-.15em;}
-.k-icon--social-x{fill:currentColor;stroke:none;}
-.k-icon--social-zalo{fill:currentColor;stroke:none;}
 
 /** KAUI Official Icons. 100% KAUI-owned artwork; country flags retain their respective national insignia status. */
 .k-icon{display:inline-block;width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
