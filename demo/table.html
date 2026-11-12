@@ -253,52 +253,57 @@
               <tbody><tr><td colspan="2" class="k-table__empty">No notifications to display.</td></tr></tbody>
             </table>
           </div>
-          <h3 class=\"demo-subheading\">Pagination with search &amp; page-size controls</h3>
-          <div class=\"k-table-wrap k-mb-6\" data-k-table data-k-searchable=\"true\" data-k-pagination=\"true\" data-k-page-size=\"4\">
-            <div class=\"k-table__toolbar\">
-              <label class=\"k-table__search\" for=\"demo-paginated-search\">
-                <span class=\"k-table__search-icon\"><i data-kaui-icon=\"search\"></i></span>
-                <input id=\"demo-paginated-search\" class=\"k-input k-table__search-input\" data-k-table-search type=\"search\" placeholder=\"Search team members...\" aria-label=\"Search team members\">
+          <h3 class="demo-subheading">Pagination with search, jump &amp; page-size controls</h3>
+          <div class="k-table-wrap k-mb-6" data-k-table data-k-searchable="true" data-k-pagination="true" data-k-page-size="4">
+            <div class="k-table__toolbar">
+              <label class="k-table__search" for="demo-paginated-search">
+                <span class="k-table__search-icon"><i data-kaui-icon="search"></i></span>
+                <input id="demo-paginated-search" class="k-input k-table__search-input" data-k-table-search type="search" placeholder="Search team members..." aria-label="Search team members">
               </label>
             </div>
-            <table class=\"k-table k-table--striped k-table--hover\" aria-label=\"Paginated team directory\">
+            <table class="k-table k-table--striped k-table--hover" aria-label="Paginated team directory">
               <thead>
                 <tr>
-                  <th scope=\"col\">Employee</th>
-                  <th scope=\"col\">Department</th>
-                  <th scope=\"col\">Location</th>
-                  <th scope=\"col\">Status</th>
-                  <th scope=\"col\">Actions</th>
+                  <th scope="col">Employee</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr data-k-table-no-results hidden><td colspan=\"5\" class=\"k-table__empty\">No team members matched your search.</td></tr>
-                <tr><th scope=\"row\">Dang Long</th><td>Engineering</td><td>Da Nang, VN</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Minh Tran</th><td>Product Design</td><td>Ho Chi Minh, VN</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Anh Nguyen</th><td>Marketing</td><td>Hanoi, VN</td><td><span class=\"k-badge k-badge--secondary\">Draft</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Alex Morgan</th><td>DevOps</td><td>Singapore, SG</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Taylor Kim</th><td>Content</td><td>Seoul, KR</td><td><span class=\"k-badge k-badge--warning\">Review</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Sarah Connor</th><td>Quality Assurance</td><td>Tokyo, JP</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">David Miller</th><td>Finance</td><td>Sydney, AU</td><td><span class=\"k-badge k-badge--danger\">Offline</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Elena Rostova</th><td>Product Management</td><td>Berlin, DE</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Carlos Silva</th><td>Customer Success</td><td>Sao Paulo, BR</td><td><span class=\"k-badge k-badge--warning\">On Leave</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
-                <tr><th scope=\"row\">Chloe Martin</th><td>Human Resources</td><td>Paris, FR</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr data-k-table-no-results hidden><td colspan="5" class="k-table__empty">No team members matched your search.</td></tr>
+                <tr><th scope="row">Dang Long</th><td>Engineering</td><td>Da Nang, VN</td><td><span class="k-badge k-badge--success">Active</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Minh Tran</th><td>Product Design</td><td>Ho Chi Minh, VN</td><td><span class="k-badge k-badge--success">Active</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Anh Nguyen</th><td>Marketing</td><td>Hanoi, VN</td><td><span class="k-badge k-badge--secondary">Draft</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Alex Morgan</th><td>DevOps</td><td>Singapore, SG</td><td><span class="k-badge k-badge--success">Active</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Taylor Kim</th><td>Content</td><td>Seoul, KR</td><td><span class="k-badge k-badge--warning">Review</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Sarah Connor</th><td>Quality Assurance</td><td>Tokyo, JP</td><td><span class="k-badge k-badge--success">Active</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">David Miller</th><td>Finance</td><td>Sydney, AU</td><td><span class="k-badge k-badge--danger">Offline</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Elena Rostova</th><td>Product Management</td><td>Berlin, DE</td><td><span class="k-badge k-badge--success">Active</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Carlos Silva</th><td>Customer Success</td><td>Sao Paulo, BR</td><td><span class="k-badge k-badge--warning">On Leave</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
+                <tr><th scope="row">Chloe Martin</th><td>Human Resources</td><td>Paris, FR</td><td><span class="k-badge k-badge--success">Active</span></td><td><div class="k-table__actions"><button type="button" class="k-btn k-btn--sm k-btn--outline">View</button></div></td></tr>
               </tbody>
             </table>
-            <div class=\"k-table__pagination\">
-              <div class=\"k-table__pagination-info\">
+            <div class="k-table__pagination">
+              <div class="k-table__pagination-info">
                 Showing <strong data-k-table-pagination-start>1</strong> to <strong data-k-table-pagination-end>4</strong> of <strong data-k-table-pagination-total>10</strong> entries
               </div>
-              <div class=\"k-table__pagination-controls\">
-                <label class=\"k-table__pagination-size\">
+              <div class="k-table__pagination-controls">
+                <label class="k-table__pagination-size">
                   Rows per page:
-                  <select class=\"k-select\" data-k-table-page-size aria-label=\"Rows per page\">
-                    <option value=\"4\" selected>4</option>
-                    <option value=\"8\">8</option>
-                    <option value=\"12\">12</option>
+                  <select class="k-select" data-k-table-page-size aria-label="Rows per page">
+                    <option value="4" selected>4</option>
+                    <option value="8">8</option>
+                    <option value="12">12</option>
                   </select>
                 </label>
-                <nav class=\"k-pagination k-pagination--sm k-table__pagination-nav\" data-k-table-pagination-nav aria-label=\"Table pagination\"></nav>
+                <label class="k-table__pagination-jump">
+                  Go to page:
+                  <input type="number" class="k-input" data-k-table-page-jump min="1" max="3" value="1" aria-label="Jump to page">
+                  <span>/ <span data-k-table-pagination-pages>3</span></span>
+                </label>
+                <nav class="k-pagination k-pagination--sm k-table__pagination-nav" data-k-table-pagination-nav aria-label="Table pagination"></nav>
               </div>
             </div>
           </div>
@@ -332,7 +337,7 @@
     &lt;/tbody&gt;
   &lt;/table&gt;
 
-  &lt;!-- Pagination bar --&gt;
+  &lt;!-- Pagination bar with jump input --&gt;
   &lt;div class="k-table__pagination"&gt;
     &lt;div class="k-table__pagination-info"&gt;
       Showing &lt;strong data-k-table-pagination-start&gt;1&lt;/strong&gt; to &lt;strong data-k-table-pagination-end&gt;5&lt;/strong&gt; of &lt;strong data-k-table-pagination-total&gt;20&lt;/strong&gt; entries
@@ -346,6 +351,11 @@
           &lt;option value="25"&gt;25&lt;/option&gt;
         &lt;/select&gt;
       &lt;/label&gt;
+      &lt;label class="k-table__pagination-jump"&gt;
+        Go to page:
+        &lt;input type="number" class="k-input" data-k-table-page-jump min="1" max="4" value="1"&gt;
+        &lt;span&gt;/ &lt;span data-k-table-pagination-pages&gt;4&lt;/span&gt;&lt;/span&gt;
+      &lt;/label&gt;
       &lt;nav class="k-pagination k-pagination--sm k-table__pagination-nav" data-k-table-pagination-nav aria-label="Table pagination"&gt;&lt;/nav&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -353,6 +363,6 @@
         </div>
       </section>
   </main></div>
-  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.15</span></a></div></div></div></footer></div>
+  <footer class="demo-footer"><div class="k-container"><div class="k-flex k-justify-between k-items-center k-flex-wrap k-gap-4"><div class="demo-footer__left"><span class="demo-footer__brand"><span class="k-fw-bold k-text-primary">KAUI</span> CSS Kit</span><span class="demo-footer__sep">&bull;</span><span>&copy; 2026 KAUI Contributors</span><span class="demo-footer__sep">&bull;</span><a href="mailto:contact@filekat.com" class="demo-footer__link"><i data-kaui-icon="mail"></i><span>contact@filekat.com</span></a></div><div class="demo-footer__right"><a href="versions.html" class="demo-footer__badge"><i data-kaui-icon="tag"></i><span>v1.1.16</span></a></div></div></div></footer></div>
 </body>
 </html>
