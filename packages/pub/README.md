@@ -6,7 +6,7 @@ KAUI cross-platform token and widget foundation for Flutter (package: filekat).
 
 ```yaml
 dependencies:
-  filekat: ^1.1.16
+  filekat: ^1.1.17
 ```
 
 Then run:
@@ -23,5 +23,5 @@ Official website and documentation:
 
 ## License
 
-KAUI `1.1.16+` is available for personal, educational, research, prototype, and other non-commercial use only. Commercial use requires prior written permission. See the package `LICENSE` file or contact `contact@filekat.com`.
+KAUI `1.1.17+` is available for personal, educational, research, prototype, and other non-commercial use only. Commercial use requires prior written permission. See the package `LICENSE` file or contact `contact@filekat.com`.
 

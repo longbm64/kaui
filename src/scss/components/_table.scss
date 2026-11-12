@@ -508,15 +508,53 @@
     color: var(--k-text-muted);
     white-space: nowrap;
 
+    .k-dropdown {
+      position: relative;
+    }
+
+    .k-dropdown__toggle {
+      height: 1.875rem;
+      min-height: 1.875rem;
+      padding: 0 var(--k-spacing-2);
+      font-size: var(--k-size-xs);
+      border-radius: var(--k-radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--k-spacing-2);
+      cursor: pointer;
+    }
+
+    .k-dropdown__value {
+      font-size: var(--k-size-xs);
+    }
+
+    .k-dropdown__chevron {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+    }
+
+    .k-dropdown__menu {
+      min-width: 5rem;
+      padding: var(--k-spacing-1);
+    }
+
+    .k-dropdown__item {
+      padding: var(--k-spacing-1) var(--k-spacing-2);
+      font-size: var(--k-size-xs);
+    }
+
     .k-select {
       width: auto;
-      min-width: 4.5rem;
-      height: 2rem;
+      min-width: 4rem;
+      height: 1.875rem;
+      min-height: 1.875rem;
       padding-top: 0;
       padding-bottom: 0;
       padding-left: var(--k-spacing-2);
-      padding-right: 1.75rem;
+      padding-right: 1.5rem;
       font-size: var(--k-size-xs);
+      border-radius: var(--k-radius-sm);
     }
   }
 
@@ -529,11 +567,13 @@
     white-space: nowrap;
 
     .k-input {
-      width: 3.5rem;
-      height: 2rem;
+      width: 3.25rem;
+      height: 1.875rem;
+      min-height: 1.875rem;
       padding: 0 var(--k-spacing-2);
       text-align: center;
       font-size: var(--k-size-xs);
+      border-radius: var(--k-radius-sm);
       -moz-appearance: textfield;
 
       &::-webkit-outer-spin-button,
