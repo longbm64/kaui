@@ -13,3 +13,6 @@ npm-debug.log*
 credentials.json
 secrets.json
 .dart_tool/
+.verification_evidence/
+verification_evidence/
+
