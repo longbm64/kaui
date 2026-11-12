@@ -1,3 +1,12 @@
+- [x] Thiết kế phân trang (Pagination) cho Table component KAUI:
+  - Bổ sung SCSS styling cho table pagination: `.k-table__pagination`, `.k-table__pagination-info`, `.k-table__pagination-controls`, `.k-table__pagination-nav`, `.k-table__pagination-size`, tích hợp chuẩn viền và dark theme.
+  - Bổ sung data attributes và JS runtime trong `src/js/kaui.js` & `demo/demo.js`: `data-k-pagination="true"`, `data-k-page-size="4"`, hỗ trợ Prev/Next, số trang, Page size select, hiển thị "Showing X-Y of Z entries", tương thích 100% với search, sort và sums.
+  - Đưa demo phân trang lên `demo/table.html` với đầy đủ tính năng tương tác.
+  - Viết code mẫu đầy đủ trong phần Usage guide & code sample trên `demo/table.html`.
+  - Cập nhật tài liệu `.kapul/PROJECT_CONTEXT.md` và `.kapul/DEPENDENCY_MAP.md`.
+  - Chạy `npm run build` và `npm test` để xác minh chất lượng (180/180 tests PASS).
+
+
 - [x] Add a dedicated `/icons.html` country flag usage demo with full-name filenames (`flag-vietnam`, `flag-united-states`), standalone `<img>` examples, and a Copy flag code action.
 
 - [x] Fix missing country flags in standalone rendering: add `xmlns:xlink` to every distributed flag SVG so flags using internal `xlink:href` references (Uruguay, Uzbekistan, Vanuatu, Vatican City, etc.) render correctly in `<img>` across browsers.

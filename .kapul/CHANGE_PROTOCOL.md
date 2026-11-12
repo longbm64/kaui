@@ -1,3 +1,10 @@
+# Nguyên tắc giữ vững chính kiến kỹ thuật & phản biện khách quan (Technical Integrity & Anti-Sycophancy)
+- AI Agent PHẢI có chính kiến kỹ thuật độc lập, phân tích và hành động dựa trên sự thật của codebase, logic hệ thống, tiêu chuẩn an toàn/bảo mật và best practices.
+- TUYỆT ĐỐI KHÔNG "vuốt theo", nịnh bợ hoặc đồng ý mù quáng với nhận định hay yêu cầu có sai sót của người dùng chỉ để làm hài lòng nhất thời hay làm bừa cho qua chuyện.
+- Khi người dùng đưa ra nhận định sai, giải pháp chắp vá (hack/workaround) che giấu lỗi gốc (root cause), lỗ hổng bảo mật hoặc nguy cơ làm gãy vỡ hệ thống: Agent BẮT BUỘC PHẢI thẳng thắn phản biện (respectful & firm challenge), chỉ rõ nguyên nhân và bằng chứng kỹ thuật cụ thể (file, hàm, dòng code, log, API contract), cảnh báo hậu quả/phạm vi ảnh hưởng (blast radius), và chủ động đề xuất giải pháp đúng đắn, an toàn, chuẩn kiến trúc.
+- Luôn giữ thái độ tôn trọng, tích cực và hợp tác nhưng kiên định bảo vệ chất lượng, sự an toàn và tính bền vững của sản phẩm.
+
+
 - **Flag SVG namespace contract:** `scripts/add-kaui-flags.mjs` and `scripts/build-icons.mjs` must emit `xmlns:xlink="http://www.w3.org/1999/xlink"` on all standalone flag SVGs because 44 national flag assets use internal `xlink:href` references. Verify all 195 files contain the namespace and direct HTTP responses return 200.
 
 - Confirm component separation: `.k-confirm` and `.k-modal` are distinct independent components with separate demo pages (`demo/modal.html` and `demo/confirm.html`). Every demo page exposes both `Modal` and `Confirm` links under Components; changes must keep their markup, runtime triggers (`data-k-modal-*` vs `data-k-confirm-*`), and styling decoupled.

@@ -253,11 +253,102 @@
               <tbody><tr><td colspan="2" class="k-table__empty">No notifications to display.</td></tr></tbody>
             </table>
           </div>
-          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Wrap the table in <code>.k-table-wrap</code> for responsive overflow; use <code>.k-table--striped</code> or <code>.k-table--hover</code> to add readability.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;div class="k-table-wrap"&gt;
+          <h3 class=\"demo-subheading\">Pagination with search &amp; page-size controls</h3>
+          <div class=\"k-table-wrap k-mb-6\" data-k-table data-k-searchable=\"true\" data-k-pagination=\"true\" data-k-page-size=\"4\">
+            <div class=\"k-table__toolbar\">
+              <label class=\"k-table__search\" for=\"demo-paginated-search\">
+                <span class=\"k-table__search-icon\"><i data-kaui-icon=\"search\"></i></span>
+                <input id=\"demo-paginated-search\" class=\"k-input k-table__search-input\" data-k-table-search type=\"search\" placeholder=\"Search team members...\" aria-label=\"Search team members\">
+              </label>
+            </div>
+            <table class=\"k-table k-table--striped k-table--hover\" aria-label=\"Paginated team directory\">
+              <thead>
+                <tr>
+                  <th scope=\"col\">Employee</th>
+                  <th scope=\"col\">Department</th>
+                  <th scope=\"col\">Location</th>
+                  <th scope=\"col\">Status</th>
+                  <th scope=\"col\">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-k-table-no-results hidden><td colspan=\"5\" class=\"k-table__empty\">No team members matched your search.</td></tr>
+                <tr><th scope=\"row\">Dang Long</th><td>Engineering</td><td>Da Nang, VN</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Minh Tran</th><td>Product Design</td><td>Ho Chi Minh, VN</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Anh Nguyen</th><td>Marketing</td><td>Hanoi, VN</td><td><span class=\"k-badge k-badge--secondary\">Draft</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Alex Morgan</th><td>DevOps</td><td>Singapore, SG</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Taylor Kim</th><td>Content</td><td>Seoul, KR</td><td><span class=\"k-badge k-badge--warning\">Review</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Sarah Connor</th><td>Quality Assurance</td><td>Tokyo, JP</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">David Miller</th><td>Finance</td><td>Sydney, AU</td><td><span class=\"k-badge k-badge--danger\">Offline</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Elena Rostova</th><td>Product Management</td><td>Berlin, DE</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Carlos Silva</th><td>Customer Success</td><td>Sao Paulo, BR</td><td><span class=\"k-badge k-badge--warning\">On Leave</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+                <tr><th scope=\"row\">Chloe Martin</th><td>Human Resources</td><td>Paris, FR</td><td><span class=\"k-badge k-badge--success\">Active</span></td><td><div class=\"k-table__actions\"><button type=\"button\" class=\"k-btn k-btn--sm k-btn--outline\">View</button></div></td></tr>
+              </tbody>
+            </table>
+            <div class=\"k-table__pagination\">
+              <div class=\"k-table__pagination-info\">
+                Showing <strong data-k-table-pagination-start>1</strong> to <strong data-k-table-pagination-end>4</strong> of <strong data-k-table-pagination-total>10</strong> entries
+              </div>
+              <div class=\"k-table__pagination-controls\">
+                <label class=\"k-table__pagination-size\">
+                  Rows per page:
+                  <select class=\"k-select\" data-k-table-page-size aria-label=\"Rows per page\">
+                    <option value=\"4\" selected>4</option>
+                    <option value=\"8\">8</option>
+                    <option value=\"12\">12</option>
+                  </select>
+                </label>
+                <nav class=\"k-pagination k-pagination--sm k-table__pagination-nav\" data-k-table-pagination-nav aria-label=\"Table pagination\"></nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="k-card k-card--bordered k-p-5 k-mt-6"><h3 class="demo-subheading k-mt-0">Usage guide &amp; code sample</h3><p class="k-text-muted k-fs-sm">Wrap the table in <code>.k-table-wrap</code> for responsive overflow; use <code>.k-table--striped</code> or <code>.k-table--hover</code> to add readability. Use <code>data-k-table data-k-pagination="true" data-k-page-size="5"</code> with <code>.k-table__pagination</code> to activate built-in responsive pagination with search and sort support.</p><div class="k-code-area"><pre class="k-code-area__pre"><code>&lt;!-- Basic Responsive Table --&gt;
+&lt;div class="k-table-wrap"&gt;
   &lt;table class="k-table k-table--striped k-table--hover"&gt;
     &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
     &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Core API&lt;/td&gt;&lt;td&gt;Healthy&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
   &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;!-- Table with Search, Sort &amp; Pagination --&gt;
+&lt;div class="k-table-wrap" data-k-table data-k-searchable="true" data-k-sortable="true" data-k-pagination="true" data-k-page-size="5"&gt;
+  &lt;!-- Optional search toolbar --&gt;
+  &lt;div class="k-table__toolbar"&gt;
+    &lt;label class="k-table__search" for="search-input"&gt;
+      &lt;span class="k-table__search-icon"&gt;&lt;i data-kaui-icon="search"&gt;&lt;/i&gt;&lt;/span&gt;
+      &lt;input id="search-input" class="k-input k-table__search-input" data-k-table-search type="search" placeholder="Search..."&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;table class="k-table k-table--striped k-table--hover"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Project&lt;/th&gt;&lt;th scope="col"&gt;Owner&lt;/th&gt;&lt;th scope="col"&gt;Status&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr data-k-table-no-results hidden&gt;&lt;td colspan="3" class="k-table__empty"&gt;No results found.&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th scope="row"&gt;KAUI&lt;/th&gt;&lt;td&gt;Dang Long&lt;/td&gt;&lt;td&gt;Active&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th scope="row"&gt;Design Tokens&lt;/th&gt;&lt;td&gt;Minh Tran&lt;/td&gt;&lt;td&gt;Review&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;!-- Pagination bar --&gt;
+  &lt;div class="k-table__pagination"&gt;
+    &lt;div class="k-table__pagination-info"&gt;
+      Showing &lt;strong data-k-table-pagination-start&gt;1&lt;/strong&gt; to &lt;strong data-k-table-pagination-end&gt;5&lt;/strong&gt; of &lt;strong data-k-table-pagination-total&gt;20&lt;/strong&gt; entries
+    &lt;/div&gt;
+    &lt;div class="k-table__pagination-controls"&gt;
+      &lt;label class="k-table__pagination-size"&gt;
+        Rows per page:
+        &lt;select class="k-select" data-k-table-page-size&gt;
+          &lt;option value="5" selected&gt;5&lt;/option&gt;
+          &lt;option value="10"&gt;10&lt;/option&gt;
+          &lt;option value="25"&gt;25&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/label&gt;
+      &lt;nav class="k-pagination k-pagination--sm k-table__pagination-nav" data-k-table-pagination-nav aria-label="Table pagination"&gt;&lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre></div></div>
         </div>
       </section>

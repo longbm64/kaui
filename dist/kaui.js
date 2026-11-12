@@ -1,10 +1,14 @@
-/*!
- * KAUI CSS Kit v1.1.14
- * Copyright (c) 2026 KAUI Contributors
- * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
- * Official Website: https://kaui.filekat.com
- * GitHub Project:  https://github.com/longbm64/kaui
+/**
+ * KAUI Core Component Runtime (v1.1.1)
+ * Zero-dependency vanilla JavaScript for KAUI Interactive Components:
+ * - Dropdowns & Custom Selects (.k-dropdown, .k-dropdown-select)
+ * - Navigation Bar & Multi-level Responsive Submenus (.k-navbar)
+ * - Modal Dialogs & Confirm Overlays (.k-modal, .k-confirm)
+ * - Interactive Tabs (.k-tabs)
+ * - Accordions (.k-accordion)
+ * - Data Tables (search, sort, column totals, frozen multi-pane, select-all)
  */
+
 (function (global) {
   'use strict';
 
@@ -264,6 +268,28 @@
       var empty = tbody.querySelector('[data-k-table-no-results]');
       var search = root.querySelector('[data-k-table-search]');
 
+      // Pagination setup
+      var hasPagination = root.getAttribute('data-k-pagination') === 'true' || !!root.querySelector('.k-table__pagination');
+      var pageSize = parseInt(root.getAttribute('data-k-page-size') || '10', 10);
+      if (isNaN(pageSize) || pageSize <= 0) pageSize = 10;
+      var currentPage = 1;
+      var paginationRoot = root.querySelector('.k-table__pagination');
+      var sizeSelect = paginationRoot ? paginationRoot.querySelector('[data-k-table-page-size]') : null;
+      var startSpan = paginationRoot ? paginationRoot.querySelector('[data-k-table-pagination-start]') : null;
+      var endSpan = paginationRoot ? paginationRoot.querySelector('[data-k-table-pagination-end]') : null;
+      var totalSpan = paginationRoot ? paginationRoot.querySelector('[data-k-table-pagination-total]') : null;
+      var navContainer = paginationRoot ? paginationRoot.querySelector('[data-k-table-pagination-nav]') : null;
+
+      function getSearchMatchedRows() {
+        if (!search) return rows.slice();
+        var q = normalize(search.value).trim().split(/\s+/).filter(Boolean);
+        if (!q.length) return rows.slice();
+        return rows.filter(function (row) {
+          var text = normalize(row.textContent || '');
+          return q.every(function (word) { return text.indexOf(word) !== -1; });
+        });
+      }
+
       function updateSums() {
         var sumAttr = root.getAttribute('data-k-sum-columns') || '';
         var sumCols = sumAttr.split(',').map(function (s) { return s.trim(); }).filter(Boolean).map(Number).filter(function (i) { return Number.isInteger(i) && i >= 0; });
@@ -298,6 +324,135 @@
         });
       }
 
+      function renderPaginationControls(totalMatches) {
+        if (!hasPagination || !paginationRoot) return;
+        var totalPages = Math.ceil(totalMatches / pageSize) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
+
+        var startEntry = totalMatches === 0 ? 0 : (currentPage - 1) * pageSize + 1;
+        var endEntry = Math.min(currentPage * pageSize, totalMatches);
+
+        if (startSpan) startSpan.textContent = startEntry;
+        if (endSpan) endSpan.textContent = endEntry;
+        if (totalSpan) totalSpan.textContent = totalMatches;
+
+        if (navContainer) {
+          navContainer.innerHTML = '';
+          var prevBtn = document.createElement('button');
+          prevBtn.type = 'button';
+          prevBtn.className = 'k-pagination__item' + (currentPage <= 1 ? ' is-disabled' : '');
+          prevBtn.setAttribute('aria-label', 'Previous page');
+          prevBtn.setAttribute('title', 'Previous page');
+          if (currentPage <= 1) {
+            prevBtn.disabled = true;
+            prevBtn.setAttribute('aria-disabled', 'true');
+          }
+          prevBtn.innerHTML = '‹';
+          prevBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage > 1) {
+              currentPage--;
+              applyVisibility();
+            }
+          });
+          navContainer.appendChild(prevBtn);
+
+          var pages = [];
+          if (totalPages <= 7) {
+            for (var p = 1; p <= totalPages; p++) pages.push(p);
+          } else {
+            pages.push(1);
+            if (currentPage > 3) pages.push('...');
+            var startP = Math.max(2, currentPage - 1);
+            var endP = Math.min(totalPages - 1, currentPage + 1);
+            if (currentPage <= 3) endP = 4;
+            if (currentPage >= totalPages - 2) startP = totalPages - 3;
+            for (var p2 = startP; p2 <= endP; p2++) {
+              if (pages.indexOf(p2) === -1) pages.push(p2);
+            }
+            if (currentPage < totalPages - 2) pages.push('...');
+            pages.push(totalPages);
+          }
+
+          pages.forEach(function (pItem) {
+            if (pItem === '...') {
+              var ellipsis = document.createElement('span');
+              ellipsis.className = 'k-pagination__ellipsis';
+              ellipsis.textContent = '…';
+              navContainer.appendChild(ellipsis);
+            } else {
+              var pBtn = document.createElement('button');
+              pBtn.type = 'button';
+              pBtn.className = 'k-pagination__item' + (pItem === currentPage ? ' is-active' : '');
+              pBtn.setAttribute('aria-label', 'Page ' + pItem);
+              if (pItem === currentPage) pBtn.setAttribute('aria-current', 'page');
+              pBtn.textContent = pItem;
+              pBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (currentPage !== pItem) {
+                  currentPage = pItem;
+                  applyVisibility();
+                }
+              });
+              navContainer.appendChild(pBtn);
+            }
+          });
+
+          var nextBtn = document.createElement('button');
+          nextBtn.type = 'button';
+          nextBtn.className = 'k-pagination__item' + (currentPage >= totalPages ? ' is-disabled' : '');
+          nextBtn.setAttribute('aria-label', 'Next page');
+          nextBtn.setAttribute('title', 'Next page');
+          if (currentPage >= totalPages) {
+            nextBtn.disabled = true;
+            nextBtn.setAttribute('aria-disabled', 'true');
+          }
+          nextBtn.innerHTML = '›';
+          nextBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+              currentPage++;
+              applyVisibility();
+            }
+          });
+          navContainer.appendChild(nextBtn);
+        }
+      }
+
+      function applyVisibility() {
+        var matchedRows = getSearchMatchedRows();
+        var totalMatches = matchedRows.length;
+
+        if (hasPagination) {
+          var totalPages = Math.ceil(totalMatches / pageSize) || 1;
+          if (currentPage > totalPages) currentPage = totalPages;
+          if (currentPage < 1) currentPage = 1;
+
+          var startIndex = (currentPage - 1) * pageSize;
+          var endIndex = startIndex + pageSize;
+
+          rows.forEach(function (row) {
+            var matchIdx = matchedRows.indexOf(row);
+            if (matchIdx !== -1 && matchIdx >= startIndex && matchIdx < endIndex) {
+              row.hidden = false;
+            } else {
+              row.hidden = true;
+            }
+          });
+
+          renderPaginationControls(totalMatches);
+        } else {
+          rows.forEach(function (row) {
+            row.hidden = matchedRows.indexOf(row) === -1;
+          });
+        }
+
+        if (empty) empty.hidden = totalMatches !== 0;
+        updateLastVisibleRow();
+        updateSums();
+      }
+
       function updateLastVisibleRow() {
         var last = null;
         rows.forEach(function (r) {
@@ -307,23 +462,26 @@
         if (last) last.classList.add('is-last-row');
       }
 
+      if (sizeSelect) {
+        sizeSelect.value = String(pageSize);
+        sizeSelect.addEventListener('change', function () {
+          var val = parseInt(sizeSelect.value, 10);
+          if (!isNaN(val) && val > 0) {
+            pageSize = val;
+            currentPage = 1;
+            applyVisibility();
+          }
+        });
+      }
+
       if (search) {
         search.addEventListener('input', function () {
-          var q = normalize(search.value).trim().split(/\s+/).filter(Boolean);
-          var visible = 0;
-          rows.forEach(function (row) {
-            var text = normalize(row.textContent || '');
-            row.hidden = q.length > 0 && !q.every(function (word) { return text.indexOf(word) !== -1; });
-            if (!row.hidden) visible += 1;
-          });
-          if (empty) empty.hidden = visible !== 0;
-          updateLastVisibleRow();
-          updateSums();
+          currentPage = 1;
+          applyVisibility();
         });
-        updateLastVisibleRow();
-      } else {
-        updateLastVisibleRow();
       }
+
+      applyVisibility();
 
       root.querySelectorAll('[data-k-table-select-all]').forEach(function (selectAll) {
         selectAll.addEventListener('change', function () {
