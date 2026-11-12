@@ -1,0 +1,102 @@
+/*!
+ * KAUI CSS Kit v1.1.17
+ * Copyright (c) 2026 KAUI Contributors
+ * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
+ * Official Website: https://kaui.filekat.com
+ * GitHub Project:  https://github.com/longbm64/kaui
+ */
+:root {
+  --k-color-primary50: #eff6ff;
+  --k-color-primary100: #dbeafe;
+  --k-color-primary200: #bfdbfe;
+  --k-color-primary300: #93c5fd;
+  --k-color-primary400: #60a5fa;
+  --k-color-primary500: #3b82f6;
+  --k-color-primary600: #2563eb;
+  --k-color-primary700: #1d4ed8;
+  --k-color-secondary50: #f8fafc;
+  --k-color-secondary100: #f1f5f9;
+  --k-color-secondary200: #e2e8f0;
+  --k-color-secondary500: #64748b;
+  --k-color-secondary600: #475569;
+  --k-color-secondary700: #334155;
+  --k-color-neutral50: #f8fafc;
+  --k-color-neutral100: #f1f5f9;
+  --k-color-neutral200: #e2e8f0;
+  --k-color-neutral300: #cbd5e1;
+  --k-color-neutral400: #94a3b8;
+  --k-color-neutral500: #64748b;
+  --k-color-neutral600: #475569;
+  --k-color-neutral700: #334155;
+  --k-color-neutral800: #1e293b;
+  --k-color-neutral900: #0f172a;
+  --k-color-success50: #ecfdf5;
+  --k-color-success100: #d1fae5;
+  --k-color-success500: #10b981;
+  --k-color-success600: #059669;
+  --k-color-success700: #047857;
+  --k-color-warning50: #fffbeb;
+  --k-color-warning100: #fef3c7;
+  --k-color-warning500: #f59e0b;
+  --k-color-warning600: #d97706;
+  --k-color-warning700: #b45309;
+  --k-color-error50: #fef2f2;
+  --k-color-error100: #fee2e2;
+  --k-color-error500: #ef4444;
+  --k-color-error600: #dc2626;
+  --k-color-error700: #b91c1c;
+  --k-color-info50: #f0f9ff;
+  --k-color-info100: #e0f2fe;
+  --k-color-info500: #0ea5e9;
+  --k-color-info600: #0284c7;
+  --k-color-info700: #0369a1;
+  --k-color-amber50: #fffbeb;
+  --k-color-amber100: #fef3c7;
+  --k-color-amber200: #fde68a;
+  --k-color-amber300: #fcd34d;
+  --k-color-amber400: #fbbf24;
+  --k-color-amber500: #f59e0b;
+  --k-color-amber600: #d97706;
+  --k-color-amber700: #b45309;
+  --k-color-brown50: #fafaf9;
+  --k-color-brown100: #f5f5f4;
+  --k-color-brown200: #e7e5e4;
+  --k-color-brown300: #d6d3d1;
+  --k-color-brown400: #a8a29e;
+  --k-color-brown500: #78716c;
+  --k-color-brown600: #57534e;
+  --k-color-brown700: #44403c;
+  --k-color-brown800: #292524;
+  --k-color-brown900: #1c1917;
+  --k-color-surface-default: #ffffff;
+  --k-color-surface-subtle: #f8fafc;
+  --k-color-text-main: #0f172a;
+  --k-color-text-muted: #64748b;
+  --k-color-border-default: #e2e8f0;
+  --k-color-border-subtle: #f1f5f9;
+  --k-spacing-0: 0;
+  --k-spacing-1: 0.25rem;
+  --k-spacing-2: 0.5rem;
+  --k-spacing-3: 0.75rem;
+  --k-spacing-4: 1rem;
+  --k-spacing-5: 1.25rem;
+  --k-spacing-6: 1.5rem;
+  --k-spacing-8: 2rem;
+  --k-spacing-10: 2.5rem;
+  --k-spacing-12: 3rem;
+  --k-spacing-16: 4rem;
+  --k-radius-none: 0;
+  --k-radius-sm: 0.25rem;
+  --k-radius-md: 0.375rem;
+  --k-radius-lg: 0.5rem;
+  --k-radius-xl: 0.75rem;
+  --k-radius-full: 9999px;
+  --k-size-xs: 0.75rem;
+  --k-size-sm: 0.875rem;
+  --k-size-base: 1rem;
+  --k-size-lg: 1.125rem;
+  --k-size-xl: 1.25rem;
+  --k-size-2xl: 1.5rem;
+  --k-size-3xl: 1.875rem;
+  --k-size-4xl: 2.25rem;
+}
