@@ -88,9 +88,9 @@
       var options = config || {};
       var dropdowns = document.querySelectorAll('[data-k-dropdown-select]');
       dropdowns.forEach(function (container) {
-        // The core runtime owns the theme preset dropdown. Skipping it here avoids
+        // The core runtime owns the theme preset dropdown and table pagination dropdown. Skipping it here avoids
         // registering a second toggle handler that immediately re-closes the menu.
-        if (container.hasAttribute('data-k-theme-preset')) return;
+        if (container.hasAttribute('data-k-theme-preset') || container.closest('.k-table__pagination')) return;
 
         var toggle = container.querySelector('.k-dropdown__toggle');
         var menu = container.querySelector('.k-dropdown__menu');
