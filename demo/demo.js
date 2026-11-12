@@ -1026,9 +1026,13 @@
         var hasPagination = root.getAttribute('data-k-pagination') === 'true' || !!root.querySelector('.k-table__pagination');
         var pageSize = parseInt(root.getAttribute('data-k-page-size') || '10', 10);
         if (isNaN(pageSize) || pageSize <= 0) pageSize = 10;
-        var currentPage = 1;
         var paginationRoot = root.querySelector('.k-table__pagination');
-        var sizeSelect = paginationRoot ? paginationRoot.querySelector('[data-k-table-page-size]') : null;
+        var pageSizeInput = paginationRoot ? paginationRoot.querySelector('[data-k-table-page-size]') : null;
+        if (!root.hasAttribute('data-k-page-size') && pageSizeInput && pageSizeInput.value) {
+          var parsedInputSize = parseInt(pageSizeInput.value, 10);
+          if (!isNaN(parsedInputSize) && parsedInputSize > 0) pageSize = parsedInputSize;
+        }
+        var currentPage = 1;
         var startSpan = paginationRoot ? paginationRoot.querySelector('[data-k-table-pagination-start]') : null;
         var endSpan = paginationRoot ? paginationRoot.querySelector('[data-k-table-pagination-end]') : null;
         var totalSpan = paginationRoot ? paginationRoot.querySelector('[data-k-table-pagination-total]') : null;
@@ -1347,16 +1351,28 @@
           if (last) last.classList.add('is-last-row');
         }
 
-        if (sizeSelect) {
-          sizeSelect.value = String(pageSize);
-          sizeSelect.addEventListener('change', function () {
-            var val = parseInt(sizeSelect.value, 10);
+        if (pageSizeInput) {
+          pageSizeInput.value = String(pageSize);
+          var handlePageSizeChange = function () {
+            var val = parseInt(pageSizeInput.value, 10);
             if (!isNaN(val) && val > 0) {
               pageSize = val;
               currentPage = 1;
               applyVisibility();
+            } else {
+              pageSizeInput.value = String(pageSize);
             }
-          });
+          };
+          pageSizeInput.addEventListener('change', handlePageSizeChange);
+          if (pageSizeInput.tagName === 'INPUT') {
+            pageSizeInput.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                handlePageSizeChange();
+                pageSizeInput.blur();
+              }
+            });
+          }
         }
         if (jumpInput) {
           jumpInput.addEventListener('keydown', function (e) {
