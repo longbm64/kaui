@@ -2661,6 +2661,26 @@ hr {
   padding-right: 1.75rem;
   font-size: var(--k-size-xs);
 }
+.k-table__pagination-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--k-spacing-2);
+  font-size: var(--k-size-sm);
+  color: var(--k-text-muted);
+  white-space: nowrap;
+}
+.k-table__pagination-jump .k-input {
+  width: 3.5rem;
+  height: 2rem;
+  padding: 0 var(--k-spacing-2);
+  text-align: center;
+  font-size: var(--k-size-xs);
+  -moz-appearance: textfield;
+}
+.k-table__pagination-jump .k-input::-webkit-outer-spin-button, .k-table__pagination-jump .k-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .k-table__pagination-nav {
   display: inline-flex;
   align-items: center;
