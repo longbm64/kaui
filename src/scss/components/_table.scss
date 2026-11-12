@@ -27,6 +27,10 @@
     border-radius: var(--k-radius-full);
   }
 
+  &:has(.k-dropdown.is-open) {
+    overflow-x: visible;
+  }
+
   // Prevent double borders between wrapper and table (outer borders merge seamlessly at 1px)
   .k-table {
     border: 0;
@@ -512,6 +516,14 @@
       position: relative;
     }
 
+    // Force dropdown-select menu to display upward (dropup) above the footer pagination bar
+    .k-dropdown__menu {
+      top: auto;
+      bottom: calc(100% + var(--k-spacing-1));
+      min-width: 4.5rem;
+      padding: var(--k-spacing-1);
+    }
+
     .k-dropdown__toggle {
       height: 1.875rem;
       min-height: 1.875rem;
@@ -532,11 +544,6 @@
       display: inline-flex;
       align-items: center;
       font-size: 0.75rem;
-    }
-
-    .k-dropdown__menu {
-      min-width: 5rem;
-      padding: var(--k-spacing-1);
     }
 
     .k-dropdown__item {

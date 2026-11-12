@@ -1,5 +1,5 @@
 /*!
- * KAUI CSS Kit v1.1.17
+ * KAUI CSS Kit v1.1.18
  * Copyright (c) 2026 KAUI Contributors
  * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
  * Official Website: https://kaui.filekat.com
@@ -2261,6 +2261,9 @@ hr {
   background-color: var(--k-primary);
   border-radius: var(--k-radius-full);
 }
+.k-table-wrap:has(.k-dropdown.is-open) {
+  overflow-x: visible;
+}
 .k-table-wrap .k-table {
   border: 0;
 }
@@ -2661,6 +2664,12 @@ hr {
 .k-table__pagination-size .k-dropdown {
   position: relative;
 }
+.k-table__pagination-size .k-dropdown__menu {
+  top: auto;
+  bottom: calc(100% + var(--k-spacing-1));
+  min-width: 4.5rem;
+  padding: var(--k-spacing-1);
+}
 .k-table__pagination-size .k-dropdown__toggle {
   height: 1.875rem;
   min-height: 1.875rem;
@@ -2679,10 +2688,6 @@ hr {
   display: inline-flex;
   align-items: center;
   font-size: 0.75rem;
-}
-.k-table__pagination-size .k-dropdown__menu {
-  min-width: 5rem;
-  padding: var(--k-spacing-1);
 }
 .k-table__pagination-size .k-dropdown__item {
   padding: var(--k-spacing-1) var(--k-spacing-2);
