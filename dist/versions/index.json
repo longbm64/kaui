@@ -1,5 +1,5 @@
 {
-  "latest": "1.1.17",
+  "latest": "1.1.18",
   "versions": {
     "1.0.0": {
       "version": "1.0.0",
@@ -2824,6 +2824,165 @@
         {
           "name": "icons/kaui-icons.json",
           "url": "https://kaui.filekat.com/dist/versions/1.1.17/icons%2Fkaui-icons.json",
+          "metadata": {
+            "bytes": 140208,
+            "sha256": "a16b150a993ebb2a9ec2f5e248f9c4e5971c7d091810a2d1f54b3c5e99eb3085"
+          }
+        }
+      ]
+    },
+    "1.1.18": {
+      "version": "1.1.18",
+      "builtAt": "2026-11-12T07:22:26.333Z",
+      "directory": "dist/versions/1.1.18",
+      "files": [
+        {
+          "name": "kaui.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui.css",
+          "metadata": {
+            "bytes": 109847,
+            "sha256": "a7dbfe036b50585e07e952cd8adfba36d17440b024064c4dde9ffc1da67719b4"
+          }
+        },
+        {
+          "name": "kaui.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui.css.map",
+          "metadata": {
+            "bytes": 21079,
+            "sha256": "c0ad0ab5f5ebf0f5c06eb94b2d6a9a9dda6a8c031a8379d31be10faf9d16e525"
+          }
+        },
+        {
+          "name": "kaui.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui.min.css",
+          "metadata": {
+            "bytes": 93921,
+            "sha256": "fb8f8fd3f1780280e4a5a024fcfa00c19a38440da81e2f0eb77d39f35f2c5ec8"
+          }
+        },
+        {
+          "name": "kaui.min.css.map",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui.min.css.map",
+          "metadata": {
+            "bytes": 16803,
+            "sha256": "39f02f1c8e978d581fca50377b149a00e318ccf4ac66daeb0a004c669e7ca31e"
+          }
+        },
+        {
+          "name": "kaui.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui.js",
+          "metadata": {
+            "bytes": 60102,
+            "sha256": "91895623aeaf9d173ce58b42e6c2f4d01cc9793476274bbbab55195d9c49e387"
+          }
+        },
+        {
+          "name": "kaui.min.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui.min.js",
+          "metadata": {
+            "bytes": 59995,
+            "sha256": "a1cc2e86ef4f8ddd8ec0e2c29710478198adeecfc23b24cd4915f756869d4976"
+          }
+        },
+        {
+          "name": "kaui-chart.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui-chart.css",
+          "metadata": {
+            "bytes": 4731,
+            "sha256": "b654888fc93f49072b18da352391bf1eefea1ea8202ab738739a0873c93bd0f9"
+          }
+        },
+        {
+          "name": "kaui-chart.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui-chart.js",
+          "metadata": {
+            "bytes": 18594,
+            "sha256": "aab58f4ab60b3826a989a948dca21dcd0b6e372fec5875b2ce95935272e8a5f2"
+          }
+        },
+        {
+          "name": "kaui-chart.min.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui-chart.min.css",
+          "metadata": {
+            "bytes": 3892,
+            "sha256": "e1174136d9620083dcf67959472722c00747302088bf3109b1ddb9c4c6b14819"
+          }
+        },
+        {
+          "name": "kaui-chart.min.js",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui-chart.min.js",
+          "metadata": {
+            "bytes": 18487,
+            "sha256": "cb1335dbbb6badfadb09fd4be3b8d2836057a70583f4cf1b8221d8ce95ce903e"
+          }
+        },
+        {
+          "name": "kaui-agent-manifest.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/kaui-agent-manifest.json",
+          "metadata": {
+            "bytes": 12052,
+            "sha256": "3b7889d5cd3c96f3695285a20e9eecce102e837a8181969328543cb40cc19a71"
+          }
+        },
+        {
+          "name": "tokens/kaui.tokens.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/tokens%2Fkaui.tokens.json",
+          "metadata": {
+            "bytes": 4614,
+            "sha256": "d08f4d36912c2e7e16317e65701eac77faaab8262607e767103d22019bcae90d"
+          }
+        },
+        {
+          "name": "tokens/kaui.tokens.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/tokens%2Fkaui.tokens.css",
+          "metadata": {
+            "bytes": 3072,
+            "sha256": "7fe701f75a61c68f8c5ee67444fef2adc3f6c024607d8e09d98caf5a8435cf2f"
+          }
+        },
+        {
+          "name": "tokens/kaui.tokens.dart",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/tokens%2Fkaui.tokens.dart",
+          "metadata": {
+            "bytes": 4551,
+            "sha256": "c37719588d3f074ccd3edf5fb72d0f803680473a1a0e169e9cceda1ec7564f99"
+          }
+        },
+        {
+          "name": "tokens/KauiTokens.kt",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/tokens%2FKauiTokens.kt",
+          "metadata": {
+            "bytes": 3564,
+            "sha256": "1a15c9a31845521a7fcac4e21e6211c4c12a9b08548f0206a580b30a368cc575"
+          }
+        },
+        {
+          "name": "tokens/KauiTokens.swift",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/tokens%2FKauiTokens.swift",
+          "metadata": {
+            "bytes": 7265,
+            "sha256": "7fe9178110b1246407c7b2621e33804e76da9b55a7e4dd7fb969e5616de53ccb"
+          }
+        },
+        {
+          "name": "icons/sprite.svg",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/icons%2Fsprite.svg",
+          "metadata": {
+            "bytes": 1343201,
+            "sha256": "615fa9d98dbe5c491e8203ba88b2c03da79e0fc8b030758335c9b88cad941d0c"
+          }
+        },
+        {
+          "name": "icons/kaui-icons.css",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/icons%2Fkaui-icons.css",
+          "metadata": {
+            "bytes": 605,
+            "sha256": "ce1594c9b1e781fb31dcc64b5b824bb15f5f06ee999d5ff20b296cac52e84a0d"
+          }
+        },
+        {
+          "name": "icons/kaui-icons.json",
+          "url": "https://kaui.filekat.com/dist/versions/1.1.18/icons%2Fkaui-icons.json",
           "metadata": {
             "bytes": 140208,
             "sha256": "a16b150a993ebb2a9ec2f5e248f9c4e5971c7d091810a2d1f54b3c5e99eb3085"
