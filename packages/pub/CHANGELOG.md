@@ -1,3 +1,11 @@
+## 1.1.20
+
+- Synchronized with KAUI CSS Kit v1.1.20.
+- Typography & contrast optimization for high-clarity legibility.
+- Isolated scroll containment across interactive regions (overscroll-behavior).
+- Enhanced Dark mode active navigation item contrast and visibility.
+- Refined footer branding, license attribution, and direct version linking.
+
 ## 1.1.19
 
 - Synchronized with KAUI CSS Kit v1.1.19.
