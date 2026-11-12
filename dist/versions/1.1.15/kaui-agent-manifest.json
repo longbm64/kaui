@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "KAUI CSS Kit Agent Manifest",
+  "version": "1.1.15",
+  "manifestUrl": "https://kaui.filekat.com/dist/versions/1.1.15/kaui-agent-manifest.json",
+  "liveDemoUrl": "https://kaui.filekat.com",
+  "strictRule": "MANDATORY: Use ONLY KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Custom CSS is strictly forbidden unless explicitly documented as unsupported by this manifest.",
+  "tokenRegistry": {
+    "source": "tokens/kaui.tokens.json",
+    "verifiedOutput": "dist/tokens/kaui.tokens.json",
+    "verifyCommand": "npm run tokens:verify",
+    "platformTargets": [
+      "web",
+      "nextjs",
+      "flutter",
+      "android-compose",
+      "ios-swiftui"
+    ]
+  },
+  "license": {
+    "name": "KAUI Personal / Non-Commercial License",
+    "commercialUse": false,
+    "permissionRequired": true,
+    "contact": "contact@filekat.com",
+    "transition": "KAUI 1.0.x remains MIT; KAUI 1.1.0+ requires permission for commercial use."
+  },
+  "stylesheet": {
+    "bundle": "dist/kaui.min.css",
+    "description": "Production compressed single stylesheet containing both core and extended UI components plus design tokens and layout utilities.",
+    "chartsOptIn": {
+      "css": "dist/kaui-chart.min.css",
+      "js": "dist/kaui-chart.min.js"
+    }
+  },
+  "conventions": {
+    "prefix": "k-",
+    "methodology": "BEM (.k-block__element--modifier)",
+    "stateClasses": [
+      "is-valid",
+      "is-invalid",
+      "is-active",
+      "is-disabled",
+      "is-open",
+      "is-loading"
+    ],
+    "designTokens": "Use CSS custom properties only: var(--k-primary), var(--k-secondary), var(--k-color-surface), var(--k-color-border), var(--k-spacing-*), var(--k-radius-*).",
+    "theme": "Support [data-theme=\"dark\"], [data-theme=\"ocean\"], [data-theme=\"forest\"], and [data-theme=\"sunset\"] natively without rewriting component styles.",
+    "themePresets": {
+      "default": "Default KAUI Blue palette (no data-theme attribute needed)",
+      "dark": "Set data-theme=\"dark\" on <html> or container for dark mode",
+      "ocean": "Set data-theme=\"ocean\" on <html> or container for cyan/ocean palette",
+      "forest": "Set data-theme=\"forest\" on <html> or container for emerald/forest palette",
+      "sunset": "Set data-theme=\"sunset\" on <html> or container for orange/warm amber palette"
+    },
+    "externalLibraries": "ZERO external UI frameworks. Pure HTML + KAUI classes + semantic aria-* attributes."
+  },
+  "layout": {
+    "container": [
+      ".k-container",
+      ".k-container--fluid"
+    ],
+    "grid": [
+      ".k-grid",
+      ".k-col-12",
+      ".k-col-md-6",
+      ".k-col-lg-4",
+      ".k-col-sm-*",
+      ".k-col-xl-*"
+    ],
+    "gap": [
+      ".k-gap-0",
+      ".k-gap-1",
+      ".k-gap-2",
+      ".k-gap-3",
+      ".k-gap-4",
+      ".k-gap-6",
+      ".k-gap-8",
+      ".k-gap-12",
+      ".k-gap-16"
+    ],
+    "flex": [
+      ".k-flex",
+      ".k-flex-col",
+      ".k-flex-wrap",
+      ".k-items-center",
+      ".k-items-start",
+      ".k-items-end",
+      ".k-justify-between",
+      ".k-justify-center",
+      ".k-justify-end"
+    ]
+  },
+  "components": {
+    "button": {
+      "base": ".k-btn",
+      "variants": [
+        ".k-btn--primary",
+        ".k-btn--secondary",
+        ".k-btn--outline",
+        ".k-btn--success",
+        ".k-btn--warning",
+        ".k-btn--danger"
+      ],
+      "sizes": [
+        ".k-btn--sm",
+        ".k-btn--lg",
+        ".k-btn--block"
+      ],
+      "states": [
+        ":disabled",
+        ".is-disabled",
+        ".k-btn--loading",
+        ".is-loading"
+      ],
+      "anatomy": [
+        ".k-btn__icon",
+        ".k-btn__loader",
+        ".k-btn__text"
+      ],
+      "htmlSnippet": "<button type=\"button\" class=\"k-btn k-btn--primary\">\n  <span class=\"k-btn__icon\"><i data-kaui-icon=\"plus\"></i></span>\n  <span class=\"k-btn__text\">Button Text</span>\n</button>"
+    },
+    "form": {
+      "layout": [
+        ".k-form-group",
+        ".k-form-label",
+        ".k-form-hint",
+        ".k-form-feedback",
+        ".k-form-feedback--valid",
+        ".k-form-feedback--invalid"
+      ],
+      "controls": [
+        ".k-input",
+        ".k-select",
+        ".k-textarea"
+      ],
+      "iconWrapper": [
+        ".k-input-wrapper",
+        ".k-input__icon--left",
+        ".k-input__icon--right"
+      ],
+      "states": [
+        ".is-valid",
+        ".is-invalid",
+        ".is-disabled"
+      ]
+    },
+    "card": {
+      "base": ".k-card",
+      "anatomy": [
+        ".k-card__header",
+        ".k-card__title",
+        ".k-card__icon",
+        ".k-card__body",
+        ".k-card__footer"
+      ],
+      "modifiers": [
+        ".k-card--bordered",
+        ".k-card--interactive"
+      ],
+      "htmlSnippet": "<div class=\"k-card k-card--bordered\">\n  <div class=\"k-card__header k-flex k-justify-between k-items-center\">\n    <span class=\"k-fw-semibold\">Card Title</span>\n    <span class=\"k-badge k-badge--primary\">Status</span>\n  </div>\n  <div class=\"k-card__body\">\n    <p class=\"k-text-muted\">Card content goes here.</p>\n  </div>\n  <div class=\"k-card__footer\">\n    <button type=\"button\" class=\"k-btn k-btn--sm k-btn--primary\">Action</button>\n  </div>\n</div>"
+    },
+    "badge": {
+      "base": ".k-badge",
+      "variants": [
+        ".k-badge--primary",
+        ".k-badge--secondary",
+        ".k-badge--success",
+        ".k-badge--warning",
+        ".k-badge--danger",
+        ".k-badge--info"
+      ],
+      "modifiers": [
+        ".k-badge--pill"
+      ],
+      "htmlSnippet": "<span class=\"k-badge k-badge--success k-badge--pill\">Live</span>"
+    },
+    "alert": {
+      "base": ".k-alert",
+      "variants": [
+        ".k-alert--success",
+        ".k-alert--warning",
+        ".k-alert--error",
+        ".k-alert--info"
+      ],
+      "anatomy": [
+        ".k-alert__title",
+        ".k-alert__body",
+        ".k-alert__close"
+      ],
+      "htmlSnippet": "<div class=\"k-alert k-alert--success\" role=\"status\">\n  <strong class=\"k-alert__title\">Success!</strong>\n  <div class=\"k-alert__body\">Operation completed.</div>\n  <button type=\"button\" class=\"k-alert__close\" aria-label=\"Close alert\"><i data-kaui-icon=\"x\"></i></button>\n</div>"
+    },
+    "table": {
+      "base": ".k-table-wrap",
+      "table": ".k-table",
+      "modifiers": [
+        ".k-table--striped",
+        ".k-table--hover",
+        ".k-table--bordered",
+        ".k-table--sm",
+        ".k-table--responsive",
+        ".k-table--frozen"
+      ]
+    },
+    "extended": {
+      "modal": [
+        ".k-modal",
+        ".k-modal-backdrop",
+        ".k-modal__dialog",
+        ".k-modal__header",
+        ".k-modal__body",
+        ".k-modal__footer"
+      ],
+      "confirm": [
+        ".k-confirm",
+        ".k-confirm__content",
+        ".k-confirm__icon",
+        ".k-confirm__title",
+        ".k-confirm__message"
+      ],
+      "toast": [
+        ".k-toast-container",
+        ".k-toast",
+        ".k-toast__title",
+        ".k-toast__message",
+        ".k-toast__footer",
+        ".k-toast__time"
+      ],
+      "tabs": [
+        ".k-tabs__list",
+        ".k-tabs__tab",
+        ".k-tabs__panel"
+      ],
+      "accordion": [
+        ".k-accordion",
+        ".k-accordion__item",
+        ".k-accordion__header",
+        ".k-accordion__body"
+      ],
+      "modalSnippet": "<div class=\"k-modal is-open\" role=\"dialog\" aria-modal=\"true\">\n  <div class=\"k-modal-backdrop\"></div>\n  <div class=\"k-modal__dialog\">\n    <div class=\"k-modal__header\">\n      <h3 class=\"k-modal__title\">Modal Title</h3>\n      <button type=\"button\" class=\"k-modal__close\" aria-label=\"Close\"><i data-kaui-icon=\"x\"></i></button>\n    </div>\n    <div class=\"k-modal__body\">\n      <p>Modal body content scrolls independently.</p>\n    </div>\n    <div class=\"k-modal__footer k-flex k-justify-end k-gap-2\">\n      <button type=\"button\" class=\"k-btn k-btn--outline\">Cancel</button>\n      <button type=\"button\" class=\"k-btn k-btn--primary\">Confirm</button>\n    </div>\n  </div>\n</div>",
+      "toastSnippet": "<div class=\"k-toast-container k-toast-container--top-right\" aria-live=\"polite\">\n  <div class=\"k-toast k-toast--success\">\n    <div class=\"k-toast__content\">\n      <div class=\"k-toast__title\">Saved successfully</div>\n      <div class=\"k-toast__body\">Your changes are now live.</div>\n    </div>\n  </div>\n</div>",
+      "tabsSnippet": "<div class=\"k-tabs\">\n  <div class=\"k-tabs__list\" role=\"tablist\">\n    <button type=\"button\" class=\"k-tabs__tab is-active\" role=\"tab\" aria-selected=\"true\">Tab 1</button>\n    <button type=\"button\" class=\"k-tabs__tab\" role=\"tab\" aria-selected=\"false\">Tab 2</button>\n  </div>\n  <div class=\"k-tabs__panel is-active\" role=\"tabpanel\">Panel 1 content</div>\n  <div class=\"k-tabs__panel\" role=\"tabpanel\">Panel 2 content</div>\n</div>",
+      "accordionSnippet": "<div class=\"k-accordion\">\n  <div class=\"k-accordion__item is-open\">\n    <button type=\"button\" class=\"k-accordion__trigger\" aria-expanded=\"true\">\n      <span>Item Title</span>\n    </button>\n    <div class=\"k-accordion__body\">\n      <p>Collapsible item body content.</p>\n    </div>\n  </div>\n</div>"
+    },
+    "navbar": {
+      "description": "Responsive top navigation bar with brand, links, action buttons, mobile offcanvas drawer, and viewport-aware multi-level submenus.",
+      "classes": {
+        "base": ".k-navbar",
+        "container": ".k-navbar__container",
+        "brand": ".k-navbar__brand",
+        "menu": ".k-navbar__menu",
+        "nav": ".k-navbar__nav",
+        "item": ".k-navbar__item",
+        "link": ".k-navbar__link",
+        "hasChildren": ".k-navbar__item--has-children",
+        "submenu": ".k-navbar__submenu",
+        "actions": ".k-navbar__actions",
+        "toggle": ".k-navbar__toggle",
+        "modifiers": [
+          ".k-navbar--expand-sm",
+          ".k-navbar--expand-md",
+          ".k-navbar--expand-lg",
+          ".k-navbar--sticky",
+          ".k-navbar--fixed-top",
+          ".k-navbar--fixed-bottom",
+          ".k-navbar--offcanvas",
+          ".k-navbar--shadow",
+          ".k-navbar--dark",
+          ".k-navbar--compact",
+          ".k-navbar--centered",
+          ".k-navbar--borderless"
+        ]
+      },
+      "htmlSnippet": "<header class=\"k-navbar k-navbar--expand-lg k-navbar--sticky k-navbar--shadow\">\n  <div class=\"k-navbar__container\">\n    <a class=\"k-navbar__brand\" href=\"#\"><i data-kaui-icon=\"compass\"></i> Brand</a>\n    <button type=\"button\" class=\"k-navbar__toggle\" aria-label=\"Toggle menu\" aria-expanded=\"false\"><i data-kaui-icon=\"menu\"></i></button>\n    <div class=\"k-navbar__menu\">\n      <ul class=\"k-navbar__nav\">\n        <li><a class=\"k-navbar__link is-active\" href=\"#\">Home</a></li>\n        <li class=\"k-navbar__item--has-children\">\n          <button type=\"button\" class=\"k-navbar__link\" aria-haspopup=\"true\" aria-expanded=\"false\">Products <i data-kaui-icon=\"chevron-down\"></i></button>\n          <ul class=\"k-navbar__submenu\">\n            <li><a class=\"k-navbar__link\" href=\"#\">Analytics</a></li>\n            <li><a class=\"k-navbar__link\" href=\"#\">Security</a></li>\n          </ul>\n        </li>\n      </ul>\n    </div>\n  </div>\n</header>"
+    }
+  },
+  "builtAt": "2026-11-12T07:00:02.052Z",
+  "build": {
+    "version": "1.1.15",
+    "mainCss": "dist/kaui.min.css",
+    "chartCss": "dist/kaui-chart.min.css",
+    "chartJs": "dist/kaui-chart.min.js",
+    "artifactDirectory": "dist/versions/1.1.15/",
+    "generatedBy": "npm run build:versioned or npm run release:patch|minor|major"
+  },
+  "tokenFiles": [
+    "dist/tokens/kaui.tokens.json",
+    "dist/tokens/kaui.tokens.css",
+    "dist/tokens/kaui.tokens.dart",
+    "dist/tokens/KauiTokens.kt",
+    "dist/tokens/KauiTokens.swift"
+  ],
+  "iconFiles": [
+    "dist/icons/sprite.svg",
+    "dist/icons/kaui-icons.css",
+    "dist/icons/kaui-icons.json"
+  ]
+}
