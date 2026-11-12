@@ -181,11 +181,11 @@
 
 
 - **Node:** `src/scss/components/_table.scss`
-  - **Exports/public contract:** `.k-table__avatar`, `.k-table__image`, `.k-table__chart`, `.k-table__chart-bar`, `.k-table__checkbox`, `.k-table__footer`, `.k-table__sum-label` rich-cell/summary styles.
-  - **Dependencies:** KAUI tokens and form checkbox styles.
+  - **Exports/public contract:** `.k-table__avatar`, `.k-table__image`, `.k-table__chart`, `.k-table__chart-bar`, `.k-table__checkbox`, `.k-table__footer`, `.k-table__sum-label`, `.k-table__pagination`, `.k-table__pagination-info`, `.k-table__pagination-controls`, `.k-table__pagination-size`, `.k-table__pagination-nav` rich-cell, summary and pagination styles.
+  - **Dependencies:** KAUI tokens, form select/checkbox styles, and `.k-pagination` base styles.
   - **Dependents:** `dist/kaui.css`, `demo/table.html`, table consumers.
 - **Node:** `demo/demo.js` table runtime
-  - **Exports/public contract:** `initDataTables()` supports search/sort/freeze, select-all checkbox, and `data-k-sum-columns` footer totals.
+  - **Exports/public contract:** `initDataTables()` supports search/sort/freeze, select-all checkbox, `data-k-sum-columns` footer totals, and `data-k-pagination="true"` page-size/page navigation.
   - **Dependencies:** `[data-k-table]`, table DOM, `renderKauiIcons()`.
   - **Dependents:** `demo/table.html` and any consumer using the documented data attributes.
 

@@ -1,5 +1,5 @@
 /*!
- * KAUI CSS Kit v1.1.13
+ * KAUI CSS Kit v1.1.14
  * Copyright (c) 2026 KAUI Contributors
  * License: KAUI Personal / Non-Commercial License (contact@filekat.com)
  * Official Website: https://kaui.filekat.com

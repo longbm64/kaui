@@ -75,6 +75,13 @@
   .k-table__toolbar + .k-table {
     border-top: 0;
   }
+
+  // When pagination is present below table, pagination owns the divider
+  .k-table__pagination {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -453,6 +460,71 @@
     padding: var(--k-spacing-6);
     color: var(--k-text-muted);
     text-align: center;
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--k-spacing-3);
+    padding: var(--k-spacing-3) var(--k-spacing-4);
+    border-top: 1px solid var(--k-table-border);
+    background-color: var(--k-table-bg);
+    color: var(--k-text-muted);
+    font-size: var(--k-size-sm);
+  }
+
+  &__pagination-info {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--k-spacing-1);
+    color: var(--k-text-muted);
+    font-size: var(--k-size-sm);
+    line-height: 1.5;
+
+    strong,
+    b,
+    [data-k-table-pagination-start],
+    [data-k-table-pagination-end],
+    [data-k-table-pagination-total] {
+      color: var(--k-table-color);
+      font-weight: var(--k-weight-semibold);
+    }
+  }
+
+  &__pagination-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--k-spacing-3);
+    flex-wrap: wrap;
+  }
+
+  &__pagination-size {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--k-spacing-2);
+    font-size: var(--k-size-sm);
+    color: var(--k-text-muted);
+    white-space: nowrap;
+
+    .k-select {
+      width: auto;
+      min-width: 4.5rem;
+      height: 2rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: var(--k-spacing-2);
+      padding-right: 1.75rem;
+      font-size: var(--k-size-xs);
+    }
+  }
+
+  &__pagination-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--k-spacing-1);
+    flex-wrap: wrap;
   }
 }
 
