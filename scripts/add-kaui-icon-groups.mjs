@@ -1,24 +1,48 @@
 import fs from 'node:fs';
 import path from 'node:path';
+
 const dir = path.join(process.cwd(), 'icons/source/kaui');
 fs.mkdirSync(dir, { recursive: true });
+
 const groups = {
-  filter: '<path d="M3 4h18l-7 8v8l-4-2v-6z"/>', refresh: '<path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v6h-6"/>', sync: '<path d="M4 7h12l-3-3M20 17H8l3 3M16 7l4 4-4 4M8 17l-4-4 4-4"/>',
-  'arrow-up': '<path d="M12 20V4M5 10l7-7 7 7"/>', 'arrow-down': '<path d="M12 4v16M5 14l7 7 7-7"/>', compass: '<circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4z"/>', map: '<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/>', 'map-pin': '<path d="M12 21s-7-7-7-11a7 7 0 1 1 14 0c0 4-7 11-7 11z"/><circle cx="12" cy="10" r="2"/>',
-  help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3M12 17h.01"/>', heart: '<path d="M19.5 12.5 12 20l-7.5-7.5a5 5 0 0 1 7-7.2l.5.7.5-.7a5 5 0 0 1 7 7.2z"/>', star: '<path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>',
-  users: '<circle cx="9" cy="8" r="3.5"/><path d="M3 20c.6-3.2 2.7-5 6-5s5.4 1.8 6 5M16 5a3 3 0 0 1 0 6M16 14c2.4.4 4 2 5 5"/>', unlock: '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0"/>', shield: '<path d="M12 2 4 5v7c0 5 3.8 9 8 10 4.2-1 8-5 8-10V5z"/>', 'eye-off': '<path d="M2 2l20 20M3 12s3-6 9-6c2 0 4 .6 5 1.5M21 12s-3 6-9 6c-2 0-4-.6-5.5-1.7"/>',
-  'file-text': '<path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h4"/>', 'file-code': '<path d="M6 3h8l4 4v14H6zM14 3v5h4M9 14l-2-2 2-2M15 14l2-2-2-2"/>', 'folder-plus': '<path d="M3 7h7l2 2h9v10H3zM12 11v6M9 14h6"/>', clipboard: '<rect x="6" y="5" width="12" height="16" rx="2"/><path d="M9 5V3h6v2"/>', tag: '<path d="M3 12.5V4h8.5L21 13.5 12.5 22zM7.5 8.5h.01"/>',
-  grid: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>', layers: '<path d="m12 2 10 5-10 5L2 7zM2 12l10 5 10-5M2 17l10 5 10-5"/>', columns: '<rect x="4" y="4" width="6" height="16"/><rect x="14" y="4" width="6" height="16"/>', table: '<rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M9 4v16M15 4v16"/>',
-  play: '<path d="m6 4 14 8-14 8z"/>', pause: '<path d="M7 4v16M17 4v16"/>', camera: '<rect x="3" y="7" width="18" height="14" rx="2"/><circle cx="12" cy="14" r="3.5"/><path d="M8 7l2-3h4l2 3"/>', image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="1"/><path d="m21 16-5-5-8 8"/>', smartphone: '<rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="18" r="1"/>', monitor: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6M12 16v4"/>', code: '<path d="m8 7-5 5 5 5M16 7l5 5-5 5"/>', terminal: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/>', 'credit-card': '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/>', 'shopping-cart': '<circle cx="8" cy="19" r="1"/><circle cx="17" cy="19" r="1"/><path d="M2 3h3l3 12h10l2-8H6"/>', wallet: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M16 13h2"/>'
-  wallet: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M16 13h2"/>',
-,
-  'social-facebook':'<path d="M14 21v-8h3l.5-3H14V8c0-1 .5-2 2-2h1.5V3.2C17 3.1 16 3 15 3c-3 0-5 1.8-5 5v2H7v3h3v8z"/>', 'social-zalo':'<path d="M5 4h14v16H5z"/><path d="M8 16 16 8H9M12 8h4v4"/>', 'social-threads':'<path d="M12 21c-5 0-8-3.5-8-9s3-9 8-9c4.2 0 7 2.2 8 6"/><path d="M8 12c1.5-2 6-2 8 0 2 2.5 0 6-4 6-3 0-5-2-5-4 0-3 4-4 8-2 3 1 4 3 4 5"/>', 'social-telegram':'<path d="m3 11 18-7-4 16-5-5-3 3v-6zM9 15l8-7"/>', 'social-instagram':'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/>', 'social-youtube':'<path d="M4 7.5a2 2 0 0 1 1.7-2c4.2-.6 8.4-.6 12.6 0a2 2 0 0 1 1.7 2v9a2 2 0 0 1-1.7 2c-4.2.6-8.4.6-12.6 0a2 2 0 0 1-1.7-2zM10 9l5 3-5 3z"/>', 'social-tiktok':'<path d="M14 4v11a4 4 0 1 1-3-3.9M14 4c1 2 2.5 3 5 3"/>', 'social-linkedin':'<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10v6M8 7.5v.01M12 16v-3a2 2 0 0 1 4 0v3M12 10v6"/>', 'social-x':'<path d="M5 4 19 20M19 4 5 20"/>', 'social-whatsapp':'<path d="M12 3a9 9 0 0 1 8.5 12l.5 5-5-1A9 9 0 1 1 12 3zM9 8c.5 3 2 5 5 6l1-1 2 1"/>', 'social-discord':'<path d="M6 6c4-2 8-2 12 0l2 10c-4 3-12 3-16 0zM9 12h.01M15 12h.01"/>', 'social-github':'<path d="M8 19c-4 1-4-2-6-2M16 19v-3c0-1-.5-2-1.5-2.5 3-.3 6-1.5 6-6a5 5 0 0 0-1.3-3.5A4 4 0 0 0 19 1.5S17.5 1 16 2.5a13 13 0 0 0-8 0C6.5 1 5 1.5 5 1.5a4 4 0 0 0-.2 2.5A5 5 0 0 0 3.5 7c0 4.5 3 5.7 6 6C8.5 14 8 15 8 16v3"/>', 'social-reddit':'<circle cx="12" cy="13" r="8"/><path d="M8 14c2 2 6 2 8 0M9 11h.01M15 11h.01M12 5l1-3 3 1"/>', 'social-wechat':'<path d="M4 12a6 5 0 0 1 10-3 5 5 0 0 1 6 5 5 5 0 0 1-7 4l-4 2 .7-3A6 5 0 0 1 4 12zM8 12h.01M12 12h.01M16 14h.01"/>', 'social-share':'<circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="m8 11 8-4M8 13l8 4"/>', 'social-community':'<circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 20c.5-3 2-5 5-5s4.5 2 5 5M11 20c.5-3 2-5 5-5s4.5 2 5 5"/>'
+  filter: '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>',
+  refresh: '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>',
+  sync: '<path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
+  'arrow-up': '<path d="m5 12 7-7 7 7M12 19V5"/>',
+  'arrow-down': '<path d="M12 5v14m7-7-7 7-7-7"/>',
+  compass: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
+  map: '<path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0zM15 5.764v15M9 3.236v15"/>',
+  'map-pin': '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+  help: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>',
+  heart: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+  star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+  unlock: '<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>',
+  shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+  'eye-off': '<path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49M14.084 14.158a3 3 0 0 1-4.242-4.242M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143M2 2l20 20"/>',
+  'file-text': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>',
+  'file-code': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6m-10 4-2 2 2 2m4-4 2 2-2 2"/>',
+  'folder-plus': '<path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="M12 10v6M9 13h6"/>',
+  clipboard: '<rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>',
+  tag: '<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>',
+  grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
+  layers: '<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65M22 17.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/>',
+  columns: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/>',
+  table: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>',
+  play: '<polygon points="6 3 20 12 6 21 6 3"/>',
+  pause: '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>',
+  camera: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+  image: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>',
+  smartphone: '<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/>',
+  monitor: '<rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+  code: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+  terminal: '<polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>',
+  'credit-card': '<rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><path d="M6 15h4"/>',
+  'shopping-cart': '<circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>',
+  wallet: '<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>'
 };
 
-for (const [name, inner] of Object.entries(groups)) fs.writeFileSync(path.join(dir, `${name}.svg`), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>\n`);
-console.log(`[icons:groups] Added ${Object.keys(groups).length} KAUI-owned icons.`);
-
-
-};
-for (const [name, inner] of Object.entries(groups)) fs.writeFileSync(path.join(dir, `${name}.svg`), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>\n`);
+for (const [name, inner] of Object.entries(groups)) {
+  fs.writeFileSync(path.join(dir, `${name}.svg`), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>\n`);
+}
 console.log(`[icons:groups] Added ${Object.keys(groups).length} KAUI-owned icons.`);

@@ -12,8 +12,8 @@
   --k-card-border-color: var(--k-color-border);
   --k-card-border-radius: var(--k-radius-lg);
   --k-card-shadow: var(--k-shadow-sm);
-  --k-card-header-height: 3.5rem;
-  --k-card-footer-height: 3.5rem;
+  --k-card-header-height: 2.75rem;
+  --k-card-footer-height: 2.75rem;
 
   // Surface container structure
   display: flex;
@@ -43,7 +43,7 @@
     justify-content: space-between;
     gap: var(--k-spacing-3);
     height: var(--k-card-header-height);
-    padding: var(--k-spacing-4);
+    padding: var(--k-spacing-2) var(--k-spacing-4);
     border-bottom: 1px solid var(--k-color-border);
     background-color: transparent;
   }
@@ -81,7 +81,7 @@
     justify-content: flex-end;
     gap: var(--k-spacing-3);
     height: var(--k-card-footer-height);
-    padding: var(--k-spacing-3);
+    padding: var(--k-spacing-2) var(--k-spacing-4);
     border-top: 1px solid var(--k-color-border);
     background-color: var(--k-color-surface-subtle);
   }

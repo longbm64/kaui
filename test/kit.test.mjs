@@ -1159,6 +1159,18 @@ describe('Tier 2: Boundary, Corner & Residual Cases', () => {
       if (!hasCards()) { t.skip('Cards scheduled for M4'); return; }
       assert.match(cssContent, /\.k-card__header[^{]*\{[^}]*padding:/, '.k-card__header must declare padding');
     });
+
+    it('2.11.6 Card and modal header/footer heights use compact 2.75rem sizing and harmonic padding', (t) => {
+      if (!checkBuildReady(t)) return;
+      if (!hasCards()) { t.skip('Cards scheduled for M4'); return; }
+      assert.equal(getVarValue(cssContent, '--k-card-header-height'), '2.75rem');
+      assert.equal(getVarValue(cssContent, '--k-card-footer-height'), '2.75rem');
+      assert.equal(getVarValue(cssContent, '--k-modal-header-height'), '2.75rem');
+      assert.equal(getVarValue(cssContent, '--k-modal-footer-height'), '2.75rem');
+      assert.match(cssContent, /\.k-card__header[^{]*\{[^}]*padding:\s*var\(--k-spacing-2\)\s+var\(--k-spacing-4\)/);
+      assert.match(cssContent, /\.k-card__footer[^{]*\{[^}]*padding:\s*var\(--k-spacing-2\)\s+var\(--k-spacing-4\)/);
+      assert.match(cssContent, /\.k-modal__header[^{]*\{[^}]*padding:\s*var\(--k-spacing-2\)\s+var\(--k-spacing-4\)/);
+    });
   });
 
   // Feature Area 12: Badges & Alerts Edge Safeguards (5 assertions)
