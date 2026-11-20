@@ -17,7 +17,7 @@ const required = [
   'kaui-agent-manifest.json', 'metadata.json',
   'tokens/kaui.tokens.json', 'tokens/kaui.tokens.css', 'tokens/kaui.tokens.dart',
   'tokens/KauiTokens.kt', 'tokens/KauiTokens.swift',
-  'icons/sprite.svg', 'icons/kaui-icons.css', 'icons/kaui-icons.json'
+  'icons/sprite.svg', 'icons/sprite-ui.svg', 'icons/kaui-icons.css', 'icons/kaui-icons.json'
 ];
 
 for (const file of required) {

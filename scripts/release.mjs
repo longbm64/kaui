@@ -197,15 +197,6 @@ function main() {
       if (fs.existsSync(LICENSE_PATH) && fs.existsSync(NON_COMMERCIAL_LICENSE_PATH)) fs.copyFileSync(NON_COMMERCIAL_LICENSE_PATH, LICENSE_PATH);
       if (fs.existsSync(DEMO_HTML_PATH)) {
         let demoHtml = fs.readFileSync(DEMO_HTML_PATH, 'utf8');
-  // Clean and synchronize compiled artifacts into packages/npm/dist/ (exclude version archives)
-  const npmDistDir = path.join(ROOT, 'packages/npm/dist');
-  fs.rmSync(npmDistDir, { recursive: true, force: true });
-  fs.mkdirSync(npmDistDir, { recursive: true });
-  fs.cpSync(path.join(ROOT, 'dist'), npmDistDir, {
-    recursive: true,
-    filter: (src) => !src.includes('dist/versions')
-  });
-
         demoHtml = demoHtml.replace(/Released under MIT License\.[^<]*/, 'Personal and educational use is allowed. Commercial use requires a KAUI license.');
         fs.writeFileSync(DEMO_HTML_PATH, demoHtml);
       }
@@ -220,6 +211,16 @@ function main() {
 
   // Apply standardized license & metadata banner to all built distribution files
   applyReleaseBanners(nextVersion);
+
+  // Clean and synchronize compiled artifacts into packages/npm/dist/ (exclude version archives)
+  const npmDistDir = path.join(ROOT, 'packages/npm/dist');
+  fs.rmSync(npmDistDir, { recursive: true, force: true });
+  fs.mkdirSync(npmDistDir, { recursive: true });
+  fs.cpSync(path.join(ROOT, 'dist'), npmDistDir, {
+    recursive: true,
+    filter: (src) => !src.includes('dist/versions')
+  });
+  console.log('[release] Synchronized dist/ artifacts to packages/npm/dist/.');
 
   const targetDir = path.join(VERSIONS_DIR, nextVersion);
   fs.mkdirSync(targetDir, { recursive: true });
@@ -245,7 +246,7 @@ function main() {
     strictRule: 'MANDATORY: Use ONLY KAUI CSS Kit. Do NOT invent, custom-write, or recreate CSS when matching KAUI classes, components, or tokens exist. Custom CSS is strictly forbidden unless explicitly documented as unsupported by this manifest.',
 
     tokenFiles: ["dist/tokens/kaui.tokens.json", "dist/tokens/kaui.tokens.css", "dist/tokens/kaui.tokens.dart", "dist/tokens/KauiTokens.kt", "dist/tokens/KauiTokens.swift"],
-    iconFiles: ["dist/icons/sprite.svg", "dist/icons/kaui-icons.css", "dist/icons/kaui-icons.json"],
+    iconFiles: ["dist/icons/sprite.svg", "dist/icons/sprite-ui.svg", "dist/icons/kaui-icons.css", "dist/icons/kaui-icons.json"],
     build: {
       version: nextVersion,
       mainCss: 'dist/kaui.min.css',
@@ -281,6 +282,7 @@ function main() {
     'tokens/KauiTokens.kt',
     'tokens/KauiTokens.swift',
     'icons/sprite.svg',
+    'icons/sprite-ui.svg',
     'icons/kaui-icons.css',
     'icons/kaui-icons.json'
   ];

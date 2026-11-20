@@ -48,6 +48,7 @@
       'terminal': '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/>',
       'chart-no-axes-combined': '<path d="M12 20V10M18 20V4M6 20v-4"/>',
       'panel-left': '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/>',
+      'shapes': '<circle cx="17.5" cy="17.5" r="3.5"/><path d="M8.3 4.2a1 1 0 0 1 1.7 0l3.7 6.3A1 1 0 0 1 12.8 12H5.5a1 1 0 0 1-.9-1.5Z"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
       'upload': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>'
     };
 
@@ -55,7 +56,7 @@
       var paths = (typeof iconSvgPaths !== 'undefined' && iconSvgPaths) ? iconSvgPaths : {};
       var aliases = {
         'palette': 'settings', 'compass': 'external-link', 'layout-grid': 'folder', 'square-mouse-pointer': 'add',
-        'file-text': 'file', 'history': 'calendar', 'layers-3': 'folder', 'shapes': 'settings',
+        'file-text': 'file', 'history': 'calendar', 'layers-3': 'folder',
         'layers': 'folder', 'tag': 'success', 'scan': 'search', 'message-square': 'mail', 'list-collapse': 'menu',
         'loader-2': 'settings', 'bot': 'user', 'github': 'external-link', 'globe': 'external-link', 'smartphone': 'user',
         'tablet-smartphone': 'user', 'apple': 'success', 'clock': 'calendar', 'braces': 'settings', 'shield-check': 'success', 'sparkles': 'success',
@@ -1549,7 +1550,7 @@
       'guide-navbar-nested': '<nav class="k-navbar__menu is-open" id="primary-menu" aria-label="Primary navigation"><ul class="k-navbar__nav"><li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">Products <i data-kaui-icon="chevron-down" aria-hidden="true"></i></button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#overview">Overview</a></li><li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">Advanced <i data-kaui-icon="chevron-right" aria-hidden="true"></i></button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#reports">Reports</a></li><li><a class="k-navbar__link" href="#analytics">Analytics</a></li></ul></li></ul></li></ul></nav>',
       'guide-navbar-overflow': '<li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">Edge test</button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#overview">Overview</a></li><li class="k-navbar__item--has-children"><button class="k-navbar__link" type="button" aria-haspopup="true" aria-expanded="false">More levels</button><ul class="k-navbar__submenu"><li><a class="k-navbar__link" href="#settings">Settings</a></li></ul></li></ul></li>',
 
-      'icon-usage': '<svg class=\"k-icon\" aria-hidden=\"true\"><use href=\"dist/icons/sprite.svg#search\" xlink:href=\"dist/icons/sprite.svg#search\"></use></svg>',
+      'icon-usage': '<svg class="k-icon" aria-hidden="true"><use href="dist/icons/sprite-ui.svg#office-excel"></use></svg>',
       'flag-usage': '<!-- Vietnam -->\n<img src="../dist/icons/flags/flag-vietnam.svg" class="k-icon k-icon--flag-vietnam" alt="Vietnam flag" width="24" height="18">\n\n<!-- United States -->\n<img src="../dist/icons/flags/flag-united-states.svg" class="k-icon k-icon--flag-united-states" alt="United States flag" width="24" height="18">',
 
       'platform-tokens': 'npm run tokens:build\nnpm run tokens:verify',
@@ -1644,22 +1645,106 @@
       return '<svg class="k-icon k-icon--' + name + '" viewBox="0 0 24 24" aria-hidden="true">' + (paths || '<use href="#' + name + '" xlink:href="#' + name + '"></use>') + '</svg>';
     }
 
+    function renderGalleryIcon(name) {
+      if (name.indexOf('flag-') === 0) {
+        return '<img src="../dist/icons/flags/' + name + '.svg" class="k-icon k-icon--' + name + '" alt="" loading="lazy" aria-hidden="true">';
+      }
+      return '<svg class="k-icon k-icon--' + name + '" viewBox="0 0 24 24" aria-hidden="true"><use href="#' + name + '"></use></svg>';
+    }
+
+    function copyIconSnippet(name) {
+      if (name.indexOf('flag-') === 0) {
+        var countryLabel = name.slice(5).replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+        return '<img src="dist/icons/flags/' + name + '.svg" class="k-icon k-icon--' + name + '" alt="' + countryLabel + ' flag" width="24" height="18">';
+      }
+      return '<svg class="k-icon k-icon--' + name + '" aria-hidden="true"><use href="dist/icons/sprite-ui.svg#' + name + '"></use></svg>';
+    }
+
+    var iconCategoryRules = [
+      ['Flags', /^flag-/],
+      ['Office & Documents', /^(office-|file($|-)|folder|clipboard|book|notebook$|archive$|article$|newspaper$|draft$|publish$|schedule-publish$|content-calendar$|quote$|tasks?$|approval$|certificate$|presentation$|briefcase$|table|columns$|grid$|kanban$|list|paperclip$|layers$|dashboard$)/],
+      ['Actions & Controls', /^(add|close|check|edit|pencil|delete|trash|save|copy|download|upload|export|import|search|filter|filter-plus|sort-asc|sort-desc|refresh|sync|rotate-cw|rotate-ccw|undo|redo|expand|collapse|maximize|minimize|pin|link|link-off|share|share-2|send|more-horizontal|more-vertical|plus-circle|minus-circle|menu|home|external-link|log-in|log-out|settings|sparkles|wand)$/],
+      ['Navigation & Travel', /^(arrow-|chevron-|compass|map|location|navigation$|route$|car|bike$|plane$|flight$|airport$|train$|ship$|fuel$|parking$|hotel$|bed$|room-service$|luggage$|suitcase$|passport$|ticket$|boarding-pass$|restaurant$|coffee$|door)/],
+      ['Business & Finance', /^(credit-card|shopping-cart$|wallet|money$|currency$|dollar$|euro$|coins$|banknote$|payment$|billing$|invoice|receipt|fee$|tax$|commission$|refund$|piggy-bank$|safe$|vault$|percent$|store$|warehouse$|building$|calculator$|package|truck|delivery$|scan-barcode$|chart-|analytics$|trending-|gauge$|activity$|milestone$|target$|workflow$|pipeline$|calendar|clock$|history$)/],
+      ['Development & Tech', /^(code|terminal|braces$|brackets$|git-|branch$|bug|api$|sdk$|function$|variable$|command$|webhook$|server|database|cloud|download-cloud$|cpu$|hard-drive$|wifi|network$|globe$|monitor$|smartphone$|keyboard$|mouse$|bot$|brain$|ai-stars$|prompt$|rocket$|deployment$|test-tube$|battery|plug$|power$|solar-panel$|lightbulb|thermostat$|air-conditioner$|smart-tv$|tv$|camera-home$|loader$|zap$)/],
+      ['Communication & Social', /^(social-|bell$|notification$|mail$|inbox$|message|comment|phone|at-sign$|mention$|hashtag$|megaphone$|broadcast$|live$|rss$|podcast$|radio)/],
+      ['Account & Security', /^(user|lock|unlock$|key$|fingerprint$|shield|eye$|eye-off$|badge-check$|moderation$)/],
+      ['Media & Entertainment', /^(camera$|image|video|film$|movie$|play|pause|stop-circle$|music|headphones$|mic|volume|speaker$|gamepad$|joystick$|dice$|puzzle$|trophy$|medal$|crown$|fire$|heart$|star$|tag$)/],
+      ['Education & Health', /^(graduation-cap$|school$|classroom$|student$|teacher$|lesson$|library$|research$|quiz$|question$|medical-|hospital$|stethoscope$|pill$|health$|heart-pulse$|thermometer$|patient$|emergency$|first-aid$)/],
+      ['Text, Design & Accessibility', /^(bold$|italic$|underline$|align-|text|palette$|eye-dropper$|contrast$|accessibility|languages$|translate$|captions$|screen-reader$)/],
+      ['Feedback & Status', /^(info|warning|error|success|help)/]
+    ];
+
+    var iconCategoryOrder = [
+      'Office & Documents',
+      'Actions & Controls',
+      'Navigation & Travel',
+      'Business & Finance',
+      'Development & Tech',
+      'Communication & Social',
+      'Account & Security',
+      'Media & Entertainment',
+      'Education & Health',
+      'Text, Design & Accessibility',
+      'Feedback & Status',
+      'Flags'
+    ];
+
     function iconCategory(name) {
-      var groups = {
-        'Flags': /^flag-/,
-        'Social': /^social-/,
-        'Navigation': /^(arrow|chevron|compass|external-link|home|map|map-pin|menu)$/,
-        'Files & Content': /^(clipboard|code|columns|file|folder|grid|image|table|terminal)$/,
-        'Commerce': /^(credit-card|shopping-cart|wallet)$/,
-        'Communication': /^(bell|mail|users?)$/,
-        'Account & Security': /^(eye|eye-off|lock|shield|unlock|user)$/,
-        'Media': /^(camera|pause|play|refresh|sync)$/,
-        'Actions': /^(add|check|close|copy|delete|download|edit|save|upload)$/,
-        'Feedback': /^(error|help|info|success|warning)$/,
-        'Favorites & Labels': /^(heart|star|tag)$/
-      };
-      var category = Object.keys(groups).find(function (label) { return groups[label].test(name); });
-      return category || 'Other';
+      for (var i = 0; i < iconCategoryRules.length; i++) {
+        if (iconCategoryRules[i][1].test(name)) return iconCategoryRules[i][0];
+      }
+      return 'Other';
+    }
+
+    var iconSearchAliases = {
+      ppt: ['powerpoint', 'slides', 'presentation'],
+      pptx: ['powerpoint', 'slides', 'presentation'],
+      ppf: ['powerpoint', 'pdf', 'slides', 'presentation'],
+      powerpoint: ['powerpoint', 'slides', 'presentation'],
+      slide: ['slides', 'presentation'],
+      xls: ['excel', 'spreadsheet', 'sheets', 'csv'],
+      xlsx: ['excel', 'spreadsheet', 'sheets', 'csv'],
+      excel: ['excel', 'spreadsheet', 'sheets', 'csv'],
+      sheet: ['spreadsheet', 'sheets', 'excel'],
+      doc: ['word', 'docs', 'file-text'],
+      docx: ['word', 'docs', 'file-text'],
+      word: ['word', 'docs', 'file-text'],
+      pdf: ['pdf', 'office-pdf'],
+      zip: ['zip', 'archive', 'folder-zip'],
+      rar: ['zip', 'archive', 'folder-zip'],
+      compress: ['zip', 'archive', 'folder-zip'],
+      office: ['office-', 'file-word', 'file-excel', 'file-powerpoint', 'file-pdf', 'file-csv', 'file-zip', 'file-spreadsheet', 'file-signature']
+    };
+
+    var iconGalleryNames = [];
+    var activeIconCategory = 'All';
+
+    function iconMatchesQuery(name, query) {
+      if (!query) return true;
+      var lower = name.toLowerCase();
+      if (lower.indexOf(query) !== -1) return true;
+      var terms = iconSearchAliases[query];
+      if (terms && terms.some(function (term) { return lower.indexOf(term) !== -1; })) return true;
+      return iconCategory(name).toLowerCase().indexOf(query) !== -1;
+    }
+
+    function renderIconCategoryFilters(names) {
+      var container = document.getElementById('icon-gallery-filters');
+      if (!container) return;
+      var counts = names.reduce(function (acc, name) {
+        var cat = iconCategory(name);
+        acc[cat] = (acc[cat] || 0) + 1;
+        return acc;
+      }, {});
+      var items = ['All'].concat(iconCategoryOrder.filter(function (cat) { return counts[cat]; }));
+      if (counts.Other) items.push('Other');
+      container.innerHTML = items.map(function (cat) {
+        var count = cat === 'All' ? names.length : counts[cat];
+        var isActive = activeIconCategory === cat;
+        return '<button type="button" class="demo-icon-filter' + (isActive ? ' is-active' : '') + '" data-icon-category="' + cat + '" aria-pressed="' + (isActive ? 'true' : 'false') + '">' +
+          '<span>' + cat + '</span><span class="k-opacity-75">(' + count + ')</span></button>';
+      }).join('');
     }
 
     function renderIconGallery(names) {
@@ -1668,58 +1753,86 @@
       var count = document.getElementById('icon-gallery-count');
       if (count) count.textContent = names.length.toLocaleString() + ' icons';
 
-      var grouped = names.reduce(function (result, name) {
+      var scoped = activeIconCategory === 'All'
+        ? names
+        : names.filter(function (name) { return iconCategory(name) === activeIconCategory; });
+
+      if (count && activeIconCategory !== 'All') {
+        count.textContent = scoped.length.toLocaleString() + ' / ' + names.length.toLocaleString() + ' icons';
+      }
+
+      var grouped = scoped.reduce(function (result, name) {
         var category = iconCategory(name);
         (result[category] = result[category] || []).push(name);
         return result;
       }, {});
-      var categoryOrder = ['Actions', 'Navigation', 'Files & Content', 'Feedback', 'Account & Security', 'Communication', 'Commerce', 'Media', 'Social', 'Favorites & Labels', 'Other', 'Flags'];
-      var matchingCategories = categoryOrder.filter(function (category) { return grouped[category] && grouped[category].length; });
+      var orderWithOther = iconCategoryOrder.concat(grouped.Other ? ['Other'] : []);
+      var matchingCategories = orderWithOther.filter(function (category) { return grouped[category] && grouped[category].length; });
       if (!matchingCategories.length) {
         grid.innerHTML = '<div class="k-card k-card--bordered k-p-5 demo-icon-search-empty" role="status">No icons match your search.</div>';
         return;
       }
       grid.innerHTML = matchingCategories.map(function (category) {
-        var cards = grouped[category].sort().map(function (name) {
-          return '<div class="k-col-6 k-col-md-4 k-col-lg-3"><article class="demo-icon-card k-card k-card--bordered">' +
-            '<div class="demo-icon-card__main">' + iconSnippet(name) + '<code class="demo-icon-card__name">' + name + '</code></div>' +
+        var cards = grouped[category].slice().sort().map(function (name) {
+          return '<div class="k-col-12 k-col-sm-6 k-col-md-4 k-col-lg-3"><article class="demo-icon-card k-card k-card--bordered">' +
+            '<div class="demo-icon-card__main">' + renderGalleryIcon(name) + '<code class="demo-icon-card__name" title="' + name + '">' + name + '</code></div>' +
             '<button type="button" class="demo-icon-copy demo-copy-button" data-copy-icon="' + name + '"><span class="demo-copy-label">Copy</span></button>' +
           '</article></div>';
         }).join('');
-        return '<section class="demo-icon-group" aria-labelledby="icon-group-' + category.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '">' +
-          '<div class="demo-icon-group__header"><h3 id="icon-group-' + category.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '" class="demo-subheading">' + category + '</h3><span class="k-badge k-badge--pill">' + grouped[category].length + ' icons</span></div>' +
+        var slugId = category.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+        return '<section class="demo-icon-group" aria-labelledby="icon-group-' + slugId + '">' +
+          '<div class="demo-icon-group__header"><h3 id="icon-group-' + slugId + '" class="demo-subheading">' + category + '</h3><span class="k-badge k-badge--pill">' + grouped[category].length + ' icons</span></div>' +
           '<div class="k-grid k-gap-3">' + cards + '</div></section>';
       }).join('');
     }
+
     var iconGallerySearch = document.getElementById('icon-gallery-search');
-    var iconGalleryNames = [];
+    var iconGalleryGrid = document.getElementById('icon-gallery-grid');
+    var iconGalleryFilters = document.getElementById('icon-gallery-filters');
+
     function filterIconGallery() {
-      if (!iconGallerySearch) return;
-      var query = iconGallerySearch.value.trim().toLowerCase();
-      var filtered = iconGalleryNames.filter(function (name) { return !query || name.toLowerCase().indexOf(query) !== -1; });
+      var query = iconGallerySearch ? iconGallerySearch.value.trim().toLowerCase() : '';
+      var filtered = iconGalleryNames.filter(function (name) { return iconMatchesQuery(name, query); });
+      renderIconCategoryFilters(filtered);
       renderIconGallery(filtered);
     }
-    if (iconGallerySearch) iconGallerySearch.addEventListener('input', filterIconGallery);
 
+    if (iconGallerySearch) {
+      var iconSearchTimer = null;
+      iconGallerySearch.addEventListener('input', function () {
+        if (iconSearchTimer) clearTimeout(iconSearchTimer);
+        iconSearchTimer = setTimeout(filterIconGallery, 100);
+      });
+    }
 
+    if (iconGalleryFilters) {
+      iconGalleryFilters.addEventListener('click', function (event) {
+        var btn = event.target.closest('[data-icon-category]');
+        if (!btn) return;
+        activeIconCategory = btn.getAttribute('data-icon-category') || 'All';
+        filterIconGallery();
+      });
+    }
 
-    Promise.all([
-      fetch('../dist/icons/sprite.svg').then(function (response) {
-        if (!response.ok) throw new Error('Icon sprite request failed');
-        return response.text();
-      }),
-      fetch('../dist/icons/kaui-icons.json').then(function (response) {
-        if (!response.ok) throw new Error('Icon manifest request failed');
-        return response.json();
-      })
-    ]).then(function (result) {
-      ensureInlineSprite(result[0]);
-      iconGalleryNames = Array.isArray(result[1].icons) ? result[1].icons : iconNames;
-      renderIconGallery(iconGalleryNames);
-    }).catch(function () {
-      iconGalleryNames = iconNames;
-      renderIconGallery(iconGalleryNames);
-    });
+    if (iconGalleryGrid) {
+      Promise.all([
+        fetch('../dist/icons/sprite-ui.svg').then(function (response) {
+          if (!response.ok) throw new Error('Icon sprite request failed');
+          return response.text();
+        }),
+        fetch('../dist/icons/kaui-icons.json').then(function (response) {
+          if (!response.ok) throw new Error('Icon manifest request failed');
+          return response.json();
+        })
+      ]).then(function (result) {
+        ensureInlineSprite(result[0]);
+        iconGalleryNames = Array.isArray(result[1].icons) ? result[1].icons : iconNames;
+        filterIconGallery();
+      }).catch(function () {
+        iconGalleryNames = iconNames;
+        filterIconGallery();
+      });
+    }
 
 
     var registryUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
@@ -1747,7 +1860,7 @@
       var button = event.target.closest('[data-copy-icon]');
       if (!button) return;
       var name = button.getAttribute('data-copy-icon');
-      copyText(iconSnippet(name), function () {
+      copyText(copyIconSnippet(name), function () {
         var label = button.querySelector('.demo-copy-label');
         if (label) label.textContent = 'Copied!';
         button.classList.add('is-copied');
@@ -1782,9 +1895,12 @@
           if (promptBlock) payload = promptBlock.textContent;
         }
         if (!payload) return;
+        var label = button.querySelector('.demo-copy-label');
+        if (label && !button.dataset.originalLabel) {
+          button.dataset.originalLabel = label.textContent;
+        }
         copyText(payload, function () {
-          var label = button.querySelector('.demo-copy-label');
-          var fallbackText = key === 'agent-prompt' ? 'Copy prompt' : 'Copy code';
+          var fallbackText = button.dataset.originalLabel || (key === 'agent-prompt' ? 'Copy prompt' : 'Copy code');
           if (label) label.textContent = 'Copied!';
           button.classList.add('is-copied');
           setTimeout(function () {

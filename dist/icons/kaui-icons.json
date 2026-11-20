@@ -1,6 +1,6 @@
 {
   "name": "KAUI Icons",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "license": "KAUI Proprietary",
   "ownership": "KAUI-authored artwork; brand references retain respective trademark ownership",
   "canvas": "24x24",
@@ -135,13 +135,33 @@
     "eye-off",
     "fee",
     "file",
+    "file-archive",
+    "file-audio",
+    "file-badge",
+    "file-chart",
     "file-check",
     "file-code",
+    "file-copy",
+    "file-csv",
+    "file-download",
+    "file-excel",
+    "file-image",
+    "file-json",
+    "file-lock",
+    "file-markdown",
     "file-minus",
+    "file-pdf",
     "file-plus",
+    "file-powerpoint",
+    "file-search",
+    "file-signature",
     "file-spreadsheet",
     "file-text",
+    "file-upload",
+    "file-video",
+    "file-word",
     "file-x",
+    "file-zip",
     "film",
     "filter",
     "filter-plus",
@@ -443,6 +463,26 @@
     "newspaper",
     "notebook",
     "notification",
+    "office-access",
+    "office-docs",
+    "office-excel",
+    "office-folder-zip",
+    "office-forms",
+    "office-onedrive",
+    "office-onenote",
+    "office-outlook",
+    "office-pdf",
+    "office-powerpoint",
+    "office-presentation",
+    "office-printer",
+    "office-scanner",
+    "office-sheets",
+    "office-signature",
+    "office-slides",
+    "office-spreadsheet",
+    "office-stamp",
+    "office-teams",
+    "office-word",
     "package",
     "package-check",
     "package-plus",
@@ -606,6 +646,49 @@
     "zap"
   ],
   "categories": {
+    "office": [
+      "file-archive",
+      "file-audio",
+      "file-badge",
+      "file-chart",
+      "file-copy",
+      "file-csv",
+      "file-download",
+      "file-excel",
+      "file-image",
+      "file-json",
+      "file-lock",
+      "file-markdown",
+      "file-pdf",
+      "file-powerpoint",
+      "file-search",
+      "file-signature",
+      "file-spreadsheet",
+      "file-upload",
+      "file-video",
+      "file-word",
+      "file-zip",
+      "office-access",
+      "office-docs",
+      "office-excel",
+      "office-folder-zip",
+      "office-forms",
+      "office-onedrive",
+      "office-onenote",
+      "office-outlook",
+      "office-pdf",
+      "office-powerpoint",
+      "office-presentation",
+      "office-printer",
+      "office-scanner",
+      "office-sheets",
+      "office-signature",
+      "office-slides",
+      "office-spreadsheet",
+      "office-stamp",
+      "office-teams",
+      "office-word"
+    ],
     "flags": [
       "flag-afghanistan",
       "flag-albania",
@@ -1688,6 +1771,34 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "file-archive",
+      "source": "icons/source/kaui/file-archive.svg",
+      "symbol": "file-archive",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-audio",
+      "source": "icons/source/kaui/file-audio.svg",
+      "symbol": "file-audio",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-badge",
+      "source": "icons/source/kaui/file-badge.svg",
+      "symbol": "file-badge",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-chart",
+      "source": "icons/source/kaui/file-chart.svg",
+      "symbol": "file-chart",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "file-check",
       "source": "icons/source/kaui/file-check.svg",
       "symbol": "file-check",
@@ -1702,10 +1813,73 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "file-copy",
+      "source": "icons/source/kaui/file-copy.svg",
+      "symbol": "file-copy",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-csv",
+      "source": "icons/source/kaui/file-csv.svg",
+      "symbol": "file-csv",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-download",
+      "source": "icons/source/kaui/file-download.svg",
+      "symbol": "file-download",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-excel",
+      "source": "icons/source/kaui/file-excel.svg",
+      "symbol": "file-excel",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-image",
+      "source": "icons/source/kaui/file-image.svg",
+      "symbol": "file-image",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-json",
+      "source": "icons/source/kaui/file-json.svg",
+      "symbol": "file-json",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-lock",
+      "source": "icons/source/kaui/file-lock.svg",
+      "symbol": "file-lock",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-markdown",
+      "source": "icons/source/kaui/file-markdown.svg",
+      "symbol": "file-markdown",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "file-minus",
       "source": "icons/source/kaui/file-minus.svg",
       "symbol": "file-minus",
       "category": "ui",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-pdf",
+      "source": "icons/source/kaui/file-pdf.svg",
+      "symbol": "file-pdf",
+      "category": "office",
       "ownership": "KAUI-owned"
     },
     {
@@ -1716,10 +1890,31 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "file-powerpoint",
+      "source": "icons/source/kaui/file-powerpoint.svg",
+      "symbol": "file-powerpoint",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-search",
+      "source": "icons/source/kaui/file-search.svg",
+      "symbol": "file-search",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-signature",
+      "source": "icons/source/kaui/file-signature.svg",
+      "symbol": "file-signature",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "file-spreadsheet",
       "source": "icons/source/kaui/file-spreadsheet.svg",
       "symbol": "file-spreadsheet",
-      "category": "ui",
+      "category": "office",
       "ownership": "KAUI-owned"
     },
     {
@@ -1730,10 +1925,38 @@
       "ownership": "KAUI-owned"
     },
     {
+      "name": "file-upload",
+      "source": "icons/source/kaui/file-upload.svg",
+      "symbol": "file-upload",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-video",
+      "source": "icons/source/kaui/file-video.svg",
+      "symbol": "file-video",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-word",
+      "source": "icons/source/kaui/file-word.svg",
+      "symbol": "file-word",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
       "name": "file-x",
       "source": "icons/source/kaui/file-x.svg",
       "symbol": "file-x",
       "category": "ui",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "file-zip",
+      "source": "icons/source/kaui/file-zip.svg",
+      "symbol": "file-zip",
+      "category": "office",
       "ownership": "KAUI-owned"
     },
     {
@@ -3841,6 +4064,146 @@
       "source": "icons/source/kaui/notification.svg",
       "symbol": "notification",
       "category": "ui",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-access",
+      "source": "icons/source/kaui/office-access.svg",
+      "symbol": "office-access",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-docs",
+      "source": "icons/source/kaui/office-docs.svg",
+      "symbol": "office-docs",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-excel",
+      "source": "icons/source/kaui/office-excel.svg",
+      "symbol": "office-excel",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-folder-zip",
+      "source": "icons/source/kaui/office-folder-zip.svg",
+      "symbol": "office-folder-zip",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-forms",
+      "source": "icons/source/kaui/office-forms.svg",
+      "symbol": "office-forms",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-onedrive",
+      "source": "icons/source/kaui/office-onedrive.svg",
+      "symbol": "office-onedrive",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-onenote",
+      "source": "icons/source/kaui/office-onenote.svg",
+      "symbol": "office-onenote",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-outlook",
+      "source": "icons/source/kaui/office-outlook.svg",
+      "symbol": "office-outlook",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-pdf",
+      "source": "icons/source/kaui/office-pdf.svg",
+      "symbol": "office-pdf",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-powerpoint",
+      "source": "icons/source/kaui/office-powerpoint.svg",
+      "symbol": "office-powerpoint",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-presentation",
+      "source": "icons/source/kaui/office-presentation.svg",
+      "symbol": "office-presentation",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-printer",
+      "source": "icons/source/kaui/office-printer.svg",
+      "symbol": "office-printer",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-scanner",
+      "source": "icons/source/kaui/office-scanner.svg",
+      "symbol": "office-scanner",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-sheets",
+      "source": "icons/source/kaui/office-sheets.svg",
+      "symbol": "office-sheets",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-signature",
+      "source": "icons/source/kaui/office-signature.svg",
+      "symbol": "office-signature",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-slides",
+      "source": "icons/source/kaui/office-slides.svg",
+      "symbol": "office-slides",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-spreadsheet",
+      "source": "icons/source/kaui/office-spreadsheet.svg",
+      "symbol": "office-spreadsheet",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-stamp",
+      "source": "icons/source/kaui/office-stamp.svg",
+      "symbol": "office-stamp",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-teams",
+      "source": "icons/source/kaui/office-teams.svg",
+      "symbol": "office-teams",
+      "category": "office",
+      "ownership": "KAUI-owned"
+    },
+    {
+      "name": "office-word",
+      "source": "icons/source/kaui/office-word.svg",
+      "symbol": "office-word",
+      "category": "office",
       "ownership": "KAUI-owned"
     },
     {
